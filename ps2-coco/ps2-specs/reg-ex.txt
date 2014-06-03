@@ -1,0 +1,29 @@
+format initial data from spreadsheet...
+^([^\t]{1,})\t([^\t]{1,})\t([^\t]{1,})\t([^\t,]{2,2})([^\t,]{2,2})
+{0x\2,\t'\1',\t0x\4,\t0x\5},\t\t// \1
+
+\tcase '\1':\t\t// \1\n\t\tmatrix.msb = \3;\n\t\tmatrix.lsb = \4;\n\t\tvalue = '\2';\n\t\tbreak;
+
+replace anything longer than 'x' with 0
+^('[A-Z0-9]{2,}')
+0
+
+
+switch (scancode)
+{
+	case \1:
+		matrix.msb = \3;
+		matrix.lsb = \4;
+		char = \2;
+		break;
+};
+
+
+  \1    \2        \3     \4         \5
+{0x11,	0,		0xF7,	0x7F},		// LALT
+
+\{(0x[0-9a-z]{2,2}),[\t]{1,}([^\t]{1,}),[\t]{1,}(0x[0-9a-z]{2,2}),[\t]{1,}(0x[0-9a-z]{2,2})\},(.*)$
+
+\tcase \1:\5\n\t\tmatrix.msb = \3;\n\t\tmatrix.lsb = \4;\n\t\tvalue = '\2';\n\t\tbreak;
+
+

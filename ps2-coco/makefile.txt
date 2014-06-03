@@ -1,0 +1,21 @@
+http://docs.linux.cz/programming/tools/www.math.umn.edu/systems_guide/make-3.80/make_2.html
+
+
+GCCFLAGS=-g -Os -Wall -mmcu=atmega168 
+LINKFLAGS=-Wl,-u,vfprintf -lprintf_flt -Wl,-u,vfscanf -lscanf_flt -lm
+AVRDUDEFLAGS=-c avr109 -p m168 -b 115200 -P COM3
+LINKOBJECTS=../libnerdkits/delay.o ../libnerdkits/lcd.o ../libnerdkits/uart.o
+
+all: keyboard-upload
+
+keyboard.hex: keyboard.c
+ make -C ../libnerdkits
+ avr-gcc ${GCCFLAGS} ${LINKFLAGS} -o keyboard.o keyboard.c ${LINKOBJECTS}
+ avr-objcopy -j .text -O ihex keyboard.o keyboard.hex
+
+keyboard.ass: keyboard.hex
+ avr-objdump -S -d keyboard.o > keyboard.ass
+
+keyboard-upload: keyboard.hex
+ avrdude ${AVRDUDEFLAGS} -U flash:w:keyboard.hex:a
+ 

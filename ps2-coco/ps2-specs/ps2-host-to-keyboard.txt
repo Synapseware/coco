@@ -1,0 +1,6 @@
+Host to Keyboard
+The Host to Keyboard Protocol is initiated by taking the KBD data line low. However to prevent the keyboard from sending data at the same time that you attempt to send the keyboard data, it is common to take the KBD Clock line low for more than 60us. This is more than one bit length. Then the KBD data line is taken low, while the KBD clock line is released.
+
+The keyboard will start generating a clock signal on it's KBD clock line. This process can take up to 10mS. After the first falling edge has been detected, you can load the first data bit on the KBD Data line. This bit will be read into the keyboard on the next falling edge, after which you can place the next bit of data. This process is repeated for the 8 data bits. After the data bits come an Odd Parity Bit.
+
+Once the Parity Bit has been sent and the KBD Data Line is in a idle (High) state for the next clock cycle, the keyboard will acknowledge the reception of the new data. The keyboard does this by taking the KBD Data line low for the next clock transition. If the KBD Data line is not idle after the 10th bit (Start, 8 Data bits + Parity), the keyboard will continue to send a KBD Clock signal until the KBD Data line becomes idle.

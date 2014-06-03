@@ -1,0 +1,91 @@
+new object []{0x11, new object [] {0xF0,0x11}, "1111011101111111"},		// LALT
+new object []{0x12, new object [] {0xF0,0x12}, "0111111101111111"},		// LSHIFT
+new object []{0x14, new object [] {0xF0,0x14}, "1110111101111111"},		// LCTRL
+new object []{0x15, new object [] {0xF0,0x15}, "1111110111110111"},		// Q
+new object []{0x16, new object [] {0xF0,0x16}, "1111110111011111"},		// 1
+new object []{0x21, new object [] {0xF0,0x21}, "1111011111111110"},		// C
+new object []{0x22, new object [] {0xF0,0x22}, "1111111011101111"},		// X
+new object []{0x23, new object [] {0xF0,0x23}, "1110111111111110"},		// D
+new object []{0x24, new object [] {0xF0,0x24}, "1101111111111110"},		// E
+new object []{0x25, new object [] {0xF0,0x25}, "1110111111011111"},		// 4
+new object []{0x25, new object [] {0xF0,0x25}, "0110111101011111"},		// 3
+new object []{0x26, new object [] {0xF0,0x26}, "1111011111011111"},
+new object []{0x26, new object [] {0xF0,0x26}, "0111011101011111"},
+new object []{0x29, new object [] {0xF0,0x29}, "0111111111101111"},
+new object []{0x31, new object [] {0xF0,0x31}, "1011111111111101"},
+new object []{0x33, new object [] {0xF0,0x33}, "1111111011111101"},
+new object []{0x34, new object [] {0xF0,0x34}, "0111111111111110"},
+new object []{0x35, new object [] {0xF0,0x35}, "1111110111101111"},
+new object []{0x36, new object [] {0xF0,0x36}, "1011111111011111"},
+new object []{0x41, new object [] {0xF0,0x41}, "1110111110111111"},
+new object []{0x41, new object [] {0xF0,0x41}, "1110111110111111"},
+new object []{0x42, new object [] {0xF0,0x42}, "1111011111111101"},
+new object []{0x43, new object [] {0xF0,0x43}, "1111110111111101"},
+new object []{0x44, new object [] {0xF0,0x44}, "0111111111111101"},
+new object []{0x45, new object [] {0xF0,0x45}, "1111111011011111"},
+new object []{0x45, new object [] {0xF0,0x45}, "1111110110111111"},
+new object []{0x46, new object [] {0xF0,0x46}, "1111110110111111"},
+new object []{0x46, new object [] {0xF0,0x46}, "1111111010111111"},
+new object []{0x49, new object [] {0xF0,0x49}, "1011111110111111"},
+new object []{0x49, new object [] {0xF0,0x49}, "1011111110111111"},
+new object []{0x52, new object [] {0xF0,0x52}, "0111101101011111"},
+new object []{0x52, new object [] {0xF0,0x52}, "0111111101011111"},
+new object []{0x55, new object [] {0xF0,0x55}, "1111011110111111"},
+new object []{0x55, new object [] {0xF0,0x55}, "1101111110111111"},
+new object []{0x58, new object [] {0xF0,0x58}, "0111111001111110"},
+new object []{0x59, new object [] {0xF0,0x59}, "0111111101111111"},
+new object []{0x69, new object [] {0xF0,0x69}, "1111110111011111"},
+new object []{0x70, new object [] {0xF0,0x70}, "1111111011011111"},
+new object []{0x71, new object [] {0xF0,0x71}, "1011111110111111"},
+new object []{0x72, new object [] {0xF0,0x72}, "1111101111011111"},
+new object []{0x73, new object [] {0xF0,0x73}, "1101111111011111"},
+new object []{0x74, new object [] {0xF0,0x74}, "1011111111011111"},
+new object []{0x75, new object [] {0xF0,0x75}, "1111111010111111"},
+new object []{0x76, new object [] {0xF0,0x76}, "1111110101111111"},
+new object []{0x79, new object [] {0xF0,0x79}, "1111011110111111"},
+new object []{0x05, new object [] {0xF0,0x05}, "1101111101111111"},
+new object []{0x06, new object [] {0xF0,0x06}, "1011111101111111"},
+new object []{0x1A, new object [] {0xF0,0x1A}, "1111101111101111"},
+new object []{0x1B, new object [] {0xF0,0x1B}, "1111011111110111"},
+new object []{0x1C, new object [] {0xF0,0x1C}, "1111110111111110"},
+new object []{0x1D, new object [] {0xF0,0x1D}, "0111111111110111"},
+new object []{0x1E, new object [] {0xF0,0x1E}, "1111111011111110"},
+new object []{0x1E, new object [] {0xF0,0x1E}, "1111101111011111"},
+new object []{0x2A, new object [] {0xF0,0x2A}, "1011111111110111"},
+new object []{0x2B, new object [] {0xF0,0x2B}, "1011111111111110"},
+new object []{0x2C, new object [] {0xF0,0x2C}, "1110111111110111"},
+new object []{0x2D, new object [] {0xF0,0x2D}, "1111101111110111"},
+new object []{0x2E, new object [] {0xF0,0x2E}, "1101111111011111"},
+new object []{0x2E, new object [] {0xF0,0x2E}, "0101111101011111"},
+new object []{0x32, new object [] {0xF0,0x32}, "1111101111111110"},
+new object []{0x3A, new object [] {0xF0,0x3A}, "1101111111111101"},
+new object []{0x3B, new object [] {0xF0,0x3B}, "1111101111111101"},
+new object []{0x3C, new object [] {0xF0,0x3C}, "1101111111110111"},
+new object []{0x3D, new object [] {0xF0,0x3D}, "0111111111011111"},
+new object []{0x3D, new object [] {0xF0,0x3D}, "0011111101011111"},
+new object []{0x3E, new object [] {0xF0,0x3E}, "1111111010111111"},
+new object []{0x3E, new object [] {0xF0,0x3E}, "0111101100111111"},
+new object []{0x4A, new object [] {0xF0,0x4A}, "0111111110111111"},
+new object []{0x4A, new object [] {0xF0,0x4A}, "0111111110111111"},
+new object []{0x4B, new object [] {0xF0,0x4B}, "1110111111111101"},
+new object []{0x4C, new object [] {0xF0,0x4C}, "1111101110111111"},
+new object []{0x4C, new object [] {0xF0,0x4C}, "1111011110111111"},
+new object []{0x4D, new object [] {0xF0,0x4D}, "1111111011110111"},
+new object []{0x4E, new object [] {0xF0,0x4E}, "1101111110111111"},
+new object []{0x5A, new object [] {0xF0,0x5A}, "1111111001111111"},
+new object []{0x6B, new object [] {0xF0,0x6B}, "1110111111011111"},
+new object []{0x6C, new object [] {0xF0,0x6C}, "0111111111011111"},
+new object []{0x7A, new object [] {0xF0,0x7A}, "1111011111011111"},
+new object []{0x7B, new object [] {0xF0,0x7B}, "1101111110111111"},
+new object []{0x7C, new object [] {0xF0,0x7C}, "0111101100111111"},
+new object []{0x7D, new object [] {0xF0,0x7D}, "1111110110111111"},
+
+new object []{0xE0,0x11, new object [] {0xE0,0xF0,0x11}, "1111011101111111"},	// RALT
+new object []{0xE0,0x14, new object [] {0xE0,0xF0,0x14}, "1110111101111111"},	// RCTRL
+new object []{0xE0,0x4A, new object [] {0xE0,0xF0,0x4A}, "0111111110111111"},	// KP /
+new object []{0xE0,0x6B, new object [] {0xE0,0xF0,0x6B}, "1101111111101111"},	// LARROW
+new object []{0xE0,0x72, new object [] {0xE0,0xF0,0x72}, "1110111111101111"},	// DARROW
+new object []{0xE0,0x74, new object [] {0xE0,0xF0,0x74}, "1011111111101111"},	// RARROW?
+new object []{0xE0,0x75, new object [] {0xE0,0xF0,0x75}, "1111011111101111"},	// RARROW?
+
+new object []{0xE1,0x14,0x77,0xE1,0xF0,0x14,0xF0,0x77}, null, "1111101101111111"},	// BREAK

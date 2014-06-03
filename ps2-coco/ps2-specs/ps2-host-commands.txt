@@ -1,0 +1,23 @@
+Host Commands
+These commands are sent by the Host to the Keyboard. The most common command would be the setting/resetting of the Status Indicators (i.e. the Num lock, Caps Lock & Scroll Lock LEDs). The more common and useful commands are shown below.
+
+ED	Set Status LED's - This command can be used to turn on and off the Num Lock, Caps Lock & Scroll Lock LED's. After Sending ED, keyboard will reply with ACK (FA) and wait for another byte which determines their Status. Bit 0 controls the Scroll Lock, Bit 1 the Num Lock and Bit 2 the Caps lock. Bits 3 to 7 are ignored.
+EE	Echo - Upon sending a Echo command to the Keyboard, the keyboard should reply with a Echo (EE)
+F0	Set Scan Code Set. Upon Sending F0, keyboard will reply with ACK (FA) and wait for another byte, 01-03 which determines the Scan Code Used. Sending 00 as the second byte will return the Scan Code Set currently in Use
+F3	Set Typematic Repeat Rate. Keyboard will Acknowledge command with FA and wait for second byte, which determines the Typematic Repeat Rate.
+F4	Keyboard Enable - Clears the keyboards output buffer, enables Keyboard Scanning and returns an Acknowledgment.
+F5	Keyboard Disable - Resets the keyboard, disables Keyboard Scanning and returns an Acknowledgment.
+FE	Resend - Upon receipt of the resend command the keyboard will re- transmit the last byte sent.
+FF	Reset - Resets the Keyboard.
+
+
+Commands
+Now if the Host Commands are send from the host to the keyboard, then the keyboard commands must be sent from the keyboard to host. If you think this way, you must be correct. Below details some of the commands which the keyboard can send.
+
+
+FA	Acknowledge
+AA	Power On Self Test Passed (BAT Completed)
+EE	See Echo Command (Host Commands)
+FE	Resend - Upon receipt of the resend command the Host should re-transmit the last byte sent.
+00	Error or Buffer Overflow
+FF	Error or Buffer Overflow

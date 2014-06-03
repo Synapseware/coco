@@ -1,0 +1,27 @@
+scan codes:
+
+shift+a
+	12 1c f0 1c f0 12
+
+shift+a^+s
+	12 1c f0 1c 1b f0 1b f0 12
+   
+caps
+	58 f0 58
+
+space
+	29 f0 29
+
+shift+space
+	12 29 f0 29 f0 12
+
+shift a, q, w, s
+	12 1c f0 1c 15 f0 15 1d f0 1d 1b f0 1b f0 12
+
+
+shift+a then +s
+	12 1c 1c 1c 1b 1b 1b f0 1c f0 1b f0 12
+
+
+(d-arrow, then rt-arrow)
+	e0 72 e0 72 e0 72 e0 74 e0 74 e0 f0 74 e0 f0 72

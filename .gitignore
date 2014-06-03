@@ -1,0 +1,57 @@
+#Basic ignores
+default/
+.dep/
+/_tools
+/_docs
+/_bootloaders
+ext.txt
+low.txt
+high.txt
+TcfTransactionLog.csv
+**.directory
+
+#Ignore AVR Studio and Visual Studio files
+[Dd]ebug/
+[Rr]elease/
+*.suo
+*.avrsuo
+*.atsuo
+*.user
+#Ignore files produced by Eagle
+*.b#*
+*.l#*
+*.s#*
+*.avw
+eagleup/
+Visual Micro/
+**.vcxproj.filters
+**.opensdf
+**.sdf
+
+
+#Ignore specific arduino release folders
+arduino/arduino-1.0.5/
+
+#Ignore build artifacts
+*.o
+*.a
+*.lst
+*.eep
+*.hex
+*.elf
+*.lss
+*.map
+*.sym
+
+
+#Ignore credential headers
+private/
+credentials.h
+
+
+#Ignore binary and image files
+*.bin
+*.dat
+*.jpg
+*.jpeg
+*.gif

@@ -1,0 +1,8 @@
+- How to interpret data from the keyboard...
+
+
+Whenever the MAKE code is sent, output the key (will allow for key-repeat on coco)
+Whenever the BREAK code is sent, stop outputting the key
+
+For control keys, ignore repeats - only change on MAKE and BREAK
+

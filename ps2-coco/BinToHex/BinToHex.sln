@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinToHex", "BinToHex.csproj", "{ABCFCED3-780D-4009-85EC-EEC51C8EFAEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABCFCED3-780D-4009-85EC-EEC51C8EFAEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABCFCED3-780D-4009-85EC-EEC51C8EFAEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABCFCED3-780D-4009-85EC-EEC51C8EFAEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABCFCED3-780D-4009-85EC-EEC51C8EFAEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

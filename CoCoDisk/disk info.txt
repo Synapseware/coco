@@ -1,0 +1,116 @@
+1A910 - FAT start (IDAM table)
+1B055 - Sector 2 start
+
+
+
+Sector 3 (physical 11)
+	IDAM pointer is 0x-8ddf
+	1B6EF start point
+
+
+IDAM		PS		LS
+AB 80		1		1
+FD 81		2		12
+4F 83		3		5
+A1 84		4		16
+F3 85		5		9
+45 87		6		2
+97 88		7		13
+E9 89		8		6
+3B 8B		9		17
+8D 8C		10		10
+DF 8D		11		3
+31 8F		12		14
+83 90		13		7
+D5 91		14		18
+27 93		15		11
+79 94		16		4
+CB 95		17		15
+1D 97		18		8
+
+
+EDTASM.BIN
+     Name: 45 44 54 41 53 4D 20 20 42 49 4E
+   	 Type: 02 (0 = Basic, 1 = Data, 2 = Assembly/binary, 3 = Text)
+ Text/Bin: 00 (0 = bin, ff = asc)
+  Granule: 20 (dec 32)
+ Last len: 00 8A
+ Reserved: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ GAT List: 20 21 22 23 24 25 C8 (masked with 1F = 8)
+ File Len: 5 granules + 8 sectors in the last granule + 8A (138) bytes in the last sector
+ 			(5 * 9 + 8) * 256 + 138 = 13706 bytes
+
+ Preamble: 00 34 80 16 00
+Postamble: FF 00 00 16 00
+
+
+GAT: 1B082
+	FF		0
+	FF		
+	FF		
+	FF		
+	FF		4
+	FF		
+	FF		
+	FF		
+	FF		
+	FF		9
+	FF		
+	FF		
+	FF		
+	FF		
+	FF		14
+	FF		
+	FF		
+	FF		
+	FF		
+	FF		19
+	FF		
+	FF		
+	17		
+	C1		
+	C6		24
+	16		
+	1B		
+	18		
+	1D		
+	1A		29
+	1F		
+	1C		
+	21		
+	22		
+	23		34
+	24		
+	25		
+	C8		
+	27		
+	28		39
+	29		
+	C3		
+	2B		
+	C3		
+	FF		44
+	FF		
+	FF		
+	FF		
+	FF		
+	FF		49
+	FF		
+	FF		
+	FF		
+	FF		
+	FF		54
+	FF		
+	FF		
+	FF		
+	FF		
+	FF		59
+	FF		
+	FF		
+	FF		
+	FF		
+	FF		64
+	FF		
+	FF		
+	FF		67
+

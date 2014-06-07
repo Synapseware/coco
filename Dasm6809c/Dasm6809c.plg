@@ -1,0 +1,228 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Dasm6809c - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\matthew\AppData\Local\Temp\RSPE72C.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/Dasm6809c.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ  /c 
+"C:\Synapseware\code\coco3\Dasm6809c\Dasm6809c.cpp"
+]
+Creating command line "cl.exe @C:\Users\matthew\AppData\Local\Temp\RSPE72C.tmp" 
+<h3>Output Window</h3>
+Compiling...
+Dasm6809c.cpp
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(89) : error C2440: 'initializing' : cannot convert from 'char [2]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(89) : error C2440: 'initializing' : cannot convert from 'char [2]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(89) : error C2440: 'initializing' : cannot convert from 'char [2]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(89) : error C2440: 'initializing' : cannot convert from 'char [2]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [2]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [2]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [2]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [2]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [2]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [3]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [3]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [3]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [2]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [2]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [3]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [3]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [3]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [3]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [3]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(90) : error C2440: 'initializing' : cannot convert from 'char [3]' to 'unsigned char *'
+        Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(96) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(96) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(96) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(96) : error C2440: 'initializing' : cannot convert from 'char [7]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(97) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(97) : error C2440: 'initializing' : cannot convert from 'char [4]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(97) : error C2440: 'initializing' : cannot convert from 'char [8]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(97) : error C2440: 'initializing' : cannot convert from 'char [24]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(98) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(98) : error C2440: 'initializing' : cannot convert from 'char [4]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(98) : error C2440: 'initializing' : cannot convert from 'char [8]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(98) : error C2440: 'initializing' : cannot convert from 'char [24]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(99) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(99) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(99) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(99) : error C2440: 'initializing' : cannot convert from 'char [11]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(100) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(100) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(100) : error C2440: 'initializing' : cannot convert from 'char [12]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(100) : error C2440: 'initializing' : cannot convert from 'char [20]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(101) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(101) : error C2440: 'initializing' : cannot convert from 'char [4]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(101) : error C2440: 'initializing' : cannot convert from 'char [8]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(101) : error C2440: 'initializing' : cannot convert from 'char [24]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(102) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(102) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(102) : error C2440: 'initializing' : cannot convert from 'char [10]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(102) : error C2440: 'initializing' : cannot convert from 'char [13]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(103) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(103) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(103) : error C2440: 'initializing' : cannot convert from 'char [6]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(103) : error C2440: 'initializing' : cannot convert from 'char [23]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(104) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(104) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(104) : error C2440: 'initializing' : cannot convert from 'char [12]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(104) : error C2440: 'initializing' : cannot convert from 'char [19]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(105) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(105) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(105) : error C2440: 'initializing' : cannot convert from 'char [10]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(105) : error C2440: 'initializing' : cannot convert from 'char [13]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(106) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(106) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(106) : error C2440: 'initializing' : cannot convert from 'char [6]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(106) : error C2440: 'initializing' : cannot convert from 'char [11]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(107) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(107) : error C2440: 'initializing' : cannot convert from 'char [4]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(107) : error C2440: 'initializing' : cannot convert from 'char [8]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(107) : error C2440: 'initializing' : cannot convert from 'char [24]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(108) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(108) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(108) : error C2440: 'initializing' : cannot convert from 'char [6]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(108) : error C2440: 'initializing' : cannot convert from 'char [11]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(109) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(109) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(109) : error C2440: 'initializing' : cannot convert from 'char [2]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(109) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(110) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(110) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(110) : error C2440: 'initializing' : cannot convert from 'char [7]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(110) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(111) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(111) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(111) : error C2440: 'initializing' : cannot convert from 'char [4]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(111) : error C2440: 'initializing' : cannot convert from 'char [6]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(113) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(113) : error C2440: 'initializing' : cannot convert from 'char [7]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(113) : error C2440: 'initializing' : cannot convert from 'char [12]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(113) : error C2440: 'initializing' : cannot convert from 'char [24]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(114) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(114) : error C2440: 'initializing' : cannot convert from 'char [7]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(114) : error C2440: 'initializing' : cannot convert from 'char [12]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(114) : error C2440: 'initializing' : cannot convert from 'char [24]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(115) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(115) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(115) : error C2440: 'initializing' : cannot convert from 'char [4]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(115) : error C2440: 'initializing' : cannot convert from 'char [13]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(116) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        None of the functions with this name in scope match the target type
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(116) : error C2440: 'initializing' : cannot convert from 'char [5]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(116) : error C2440: 'initializing' : cannot convert from 'char [11]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(116) : error C2440: 'initializing' : cannot convert from 'char [19]' to 'int (__cdecl *)(void)'
+        There is no context in which this conversion is possible
+c:\synapseware\code\coco3\dasm6809c\dasm6809c.h(117) : error C2440: 'initializing' : cannot convert from '' to 'int (__cdecl *)(void)'
+        error count exceeds 100; stopping compilation
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+Dasm6809c.obj - 102 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

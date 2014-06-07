@@ -1,0 +1,13 @@
+8000000
+
+divide by 1024, set wait at 75 (for 100us delay)
+	- this is 800 no-op instructions.  :)
+
+
+	- create a 10us wait function
+	- loop within it 80 times
+
+
+at 8mHz, each instruction takes 1/8us, or 125ns.
+
+

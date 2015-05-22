@@ -1,8 +1,0 @@
-FF70 - EEPROM Programmer
-111111  1101 1100  00
-
-
-FF70 = LSB
-FF71 = MSB
-FF72 = Data
-FF73 = not used

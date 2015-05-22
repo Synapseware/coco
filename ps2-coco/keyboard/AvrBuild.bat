@@ -1,2 +1,0 @@
-@ECHO OFF
-"C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\avrasm2.exe" -S "C:\Synapseware\code\electronics\cocokeyboard\labels.tmp" -fI -W+ie -C V2 -o "C:\Synapseware\code\electronics\cocokeyboard\cocokeyboard.hex" -d "C:\Synapseware\code\electronics\cocokeyboard\cocokeyboard.obj" -e "C:\Synapseware\code\electronics\cocokeyboard\cocokeyboard.eep" -m "C:\Synapseware\code\electronics\cocokeyboard\cocokeyboard.map" "C:\Synapseware\code\electronics\cocokeyboard\cocokeyboard.asm"

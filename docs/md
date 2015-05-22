@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>6809 / 6809E CPU</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 6.00.2800.1170" name=3DGENERATOR></HEAD>
+<BODY bgColor=3D#ffffff>
+<H1><FONT color=3D#0000ff>6809 / 6809E CPU</FONT></H1>
+<H2><FONT color=3D#0000ff>Pinout</FONT></H2>
+<DIV align=3Dcenter>
+<CENTER>
+<TABLE borderColor=3D#ffffff cellSpacing=3D0 borderColorDark=3D#ffffff=20
+borderColorLight=3D#ffffff border=3D1>
+  <TBODY>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD bgColor=3D#ff00ff><TT>6809E</TT></TD>
+    <TD bgColor=3D#ff00ff>&nbsp;</TD>
+    <TD bgColor=3D#00ff00><TT>6809</TT></TD>
+    <TD bgColor=3D#00ff00>&nbsp;</TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><TT>Vss</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>1</TT></TD>
+    <TD borderColor=3D#808080 borderColorLight=3D#c0c0c0 align=3Dmiddle=20
+    bgColor=3D#000000 borderColorDark=3D#808080 rowSpan=3D20><FONT=20
+      color=3D#000000><TT>--</TT></FONT><FONT=20
+      color=3D#ffffff><TT>6809E</TT></FONT><FONT=20
+    color=3D#000000><TT>--</TT></FONT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>40</TT></TD>
+    <TD noWrap><TT>!HALT</TT></TD>
+    <TD noWrap><TT>&lt;--</TT></TD></TR>
+  <TR>
+    <TD><TT>--&gt;</TT></TD>
+    <TD><TT>!NMI</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>2</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>39</TT></TD>
+    <TD bgColor=3D#ff00ff><TT>TSC</TT></TD>
+    <TD bgColor=3D#ff00ff><TT>&lt;--</TT></TD>
+    <TD bgColor=3D#00ff00><TT>XTAL</TT></TD>
+    <TD bgColor=3D#00ff00><TT>&lt;--</TT></TD></TR>
+  <TR>
+    <TD><TT>--&gt;</TT></TD>
+    <TD><TT>!IRQ</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>3</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>38</TT></TD>
+    <TD bgColor=3D#ff00ff><TT>LIC</TT></TD>
+    <TD bgColor=3D#ff00ff><TT>--&gt;</TT></TD>
+    <TD bgColor=3D#00ff00><TT>EXTAL</TT></TD>
+    <TD bgColor=3D#00ff00><TT>&lt;-- </TT></TD></TR>
+  <TR>
+    <TD noWrap><TT>--&gt;</TT></TD>
+    <TD noWrap><TT>!FIRQ</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>4</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>37</TT></TD>
+    <TD><TT>!RESET</TT></TD>
+    <TD><TT>&lt;--</TT></TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>BS</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>5</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>36</TT></TD>
+    <TD bgColor=3D#ff00ff><TT>AVMA</TT></TD>
+    <TD bgColor=3D#ff00ff><TT>--&gt;</TT></TD>
+    <TD bgColor=3D#00ff00><TT>!MRDY</TT></TD>
+    <TD bgColor=3D#00ff00><TT>&lt;--</TT></TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>BA</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>6</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>35</TT></TD>
+    <TD><TT>Q</TT></TD>
+    <TD><TT>&lt;--</TT></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><TT>Vcc</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>7</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>34</TT></TD>
+    <TD><TT>E</TT></TD>
+    <TD><TT>&lt;--</TT></TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>A0</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>8</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>33</TT></TD>
+    <TD bgColor=3D#ff00ff><TT>BUSY</TT></TD>
+    <TD bgColor=3D#ff00ff><TT>--&gt;</TT></TD>
+    <TD noWrap bgColor=3D#00ff00><TT>!DMA/!BREQ</TT></TD>
+    <TD noWrap bgColor=3D#00ff00><TT>&lt;--</TT></TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>A1</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>9</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>32</TT></TD>
+    <TD><TT>R/!W</TT></TD>
+    <TD><TT>--&gt;</TT></TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>A2</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>10</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>31</TT></TD>
+    <TD><TT>D0</TT></TD>
+    <TD><TT>&lt;-&gt;</TT></TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>A3</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>11</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>30</TT></TD>
+    <TD><TT>D1</TT></TD>
+    <TD><TT>&lt;-&gt;</TT></TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>A4</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>12</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>29</TT></TD>
+    <TD><TT>D2</TT></TD>
+    <TD><TT>&lt;-&gt;</TT></TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>A5</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>13</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>28</TT></TD>
+    <TD><TT>D3</TT></TD>
+    <TD><TT>&lt;-&gt;</TT></TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>A6</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>14</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>27</TT></TD>
+    <TD><TT>D4</TT></TD>
+    <TD><TT>&lt;-&gt;</TT></TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>A7</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>15</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>26</TT></TD>
+    <TD><TT>D5</TT></TD>
+    <TD><TT>&lt;-&gt;</TT></TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>A8</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>16</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>25</TT></TD>
+    <TD><TT>D6</TT></TD>
+    <TD><TT>&lt;-&gt;</TT></TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>A9</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>17</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>24</TT></TD>
+    <TD><TT>D7</TT></TD>
+    <TD><TT>&lt;-&gt;</TT></TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>A10</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>18</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>23</TT></TD>
+    <TD><TT>A15</TT></TD>
+    <TD><TT>--&gt;</TT></TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>A11</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>19</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>22</TT></TD>
+    <TD><TT>A14</TT></TD>
+    <TD><TT>--&gt;</TT></TD></TR>
+  <TR>
+    <TD><TT>&lt;--</TT></TD>
+    <TD><TT>A12</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>20</TT></TD>
+    <TD align=3Dright bgColor=3D#c0c0c0><TT>21</TT></TD>
+    <TD><TT>A13</TT></TD>
+    <TD><TT>--&gt;</TT></TD></TR></TBODY></TABLE></CENTER></DIV>
+<P>The 6809 is usually in a DIP40 package, as shown above.<BR>Motorola =
+also had=20
+a PLCC44 version too.</P>
+<HR SIZE=3D1>
+
+<H2><FONT color=3D#0000ff>Hardware structure</FONT></H2>
+<P>Approximate VHDL entity only!</P><PRE><STRONG>entity</STRONG> 6809E =
+<STRONG>is</STRONG>
+<STRONG>port</STRONG>(    D:	<STRONG>inout	</STRONG>std_logic_vector(7 =
+<STRONG>downto</STRONG> 0);	-- tristate, bidirectional
+	A:	<STRONG>inout</STRONG>	std_logic_vector(15 <STRONG>downto</STRONG> =
+0);	-- tristate output
+	E,Q:	<STRONG>in	</STRONG>std_logic;	-- clocks
+	n_RST:	<STRONG>in	</STRONG>std_logic;	-- Reset
+	n_IRQ:	<STRONG>in	</STRONG>std_logic;	-- Interrupt Request
+	n_FIRQ:	<STRONG>in	</STRONG>std_logic;	-- Fast Interrupt Request
+	n_NMI:	<STRONG>in	</STRONG>std_logic;	-- Non-Maskable Interrupt
+	n_HALT:	<STRONG>in	</STRONG>std_logic;	-- Halt
+	LIC:	<STRONG>in</STRONG>	std_logic;	-- Last Instruction Cycle
+	n_WR:	<STRONG>out	</STRONG>std_logic;	-- Read Not Write
+	AVMA:	<STRONG>out</STRONG>	std_logic;	-- Advanced Valid Memory Address
+	BUSY:	<STRONG>out</STRONG>	std_logic;	-- Busy
+	TSC:	<STRONG>out</STRONG>	std_logic;	-- Tri-State-Control
+	BS:	<STRONG>out</STRONG>	std_logic;	-- Bus State
+	BA:	<STRONG>out</STRONG>	std_logic;	-- Bus Available
+	)
+<STRONG>end entity</STRONG> 6809<STRONG>E;</STRONG></PRE>
+<P>Checked against <A=20
+href=3D"http://www.howell1964.freeserve.co.uk/parts/6809_data_sheet.htm">=
+<STRONG>6809E=20
+data sheet</STRONG></A></P></BODY></HTML>

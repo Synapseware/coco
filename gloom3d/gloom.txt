@@ -1,0 +1,36 @@
+GLOOM.BIN
+
+This program is simply an example.
+
+There has been talk on the CoCo listserver about 'Doom' for the CoCo, and
+most people's impression was that it was completely impossible.  It was my
+opinion that is WAS possible, though it wouldn't be as fast or as graphically
+complex as the PC version.
+
+I don't have the time to make a game, but I did manage to scrape up a little
+demonstration of a first person perspective '3D' walk through maze program.
+I've kept it as elementary as possible to save time.  (You can still walk
+right through walls.  The minimum size of a 'square' on the map is very
+large.  There is no 'anything' to this demo other than walking in a 128x64
+map.)
+
+I've also kept it strictly 6809 code to make a point.  If a stock 6809 can do
+THIS, imagine what a 6309 version would run like?
+
+The program runs in 256x192 in 16 colors.  The graphics engine writes BYTES
+to the screen to improve performance, but that limits the effective
+resolution to 128x192.  Overall it runs at about 15 frames per second, give
+or take a bit for variations in CPU power demanded.
+
+The program breaks down to:
+96K of 'RADAR TABLE' (Data table used to eliminate on the fly calculations)
+16K of 'MAP' (The 128x64 playing area)
+ 1K of program code (actually, it's less than 1K.)
+
+I don't have the time to make a game, but I just felt I had to make a point.
+If anyone wants to make a first person perspective game out of this, contact
+me and I'll send you the source code.
+
+				John Kowalski (Sock Master)
+				sock@axess.com
+				http://users.axess.com/twilight/sock/

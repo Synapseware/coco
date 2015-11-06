@@ -1,0 +1,86 @@
+ADDFIND.BAS  [00] COCO 2 Machine Langua file address finder
+ALARM.BAS    [00] COCO 2 Alarm clock
+ARCHIVES.BIN [00] COCO 2 TC compatible file archiver
+BINTOBAS.BAS [00] COCO 2 Converts binary program to BASIC
+BUDGET.BAS   [00] COCO 2 Home finance and budget program
+CAL.BAS      [00] COCO 2 Calendar printer
+CALCPRNT.BAS [00] COCO 2 Printing calculator
+CC3DATER.BAS [00] COCO 3 Appointment calendar
+CHECKBK.TXT  [00] COCO 3 Documentation for CHEKDEMO.COM
+CHECKS3.BAS  [00] COCO 3 Checkbook register
+CHEKDEMO.COM [00] COCO 3 Checkbook Plus demo
+CLOCK.BAS    [00] COCO 2 Machine language digital clock
+CNFGDIR2.BAS [00] COCO 3 Configure program for UNCNDIR2.BIN
+COCODOC.BAS  [00] COCO 2 File management utility
+COCOWORD.BAS [00] COCO 3 Word processor
+CUSTOM1.BIN  [00] COCO 3 Disk Basic enhancer
+CUSTOM1.DOC  [00] COCO 3 Documentation for CUSTOM1.BIN
+DATAGE.BAS   [00] COCO 2 Convert ML program to BASIC data
+DB.ARC       [00] COCO 2 Database
+DECIDE.BAS   [00] COCO 2 Decision maker
+DECOMP.BAS   [00] COCO 3 Decompressor for CHEKDEMO.COM
+DISKCOMP.BIN [00] COCO 2 Disk comparer
+DISKTEST.BIN [00] COCO 2 Disk drive tester
+DISKWASH.BAS [00] COCO 2 File management utility
+DSD2.BAS     [00] COCO 2 Allows access to other side of disk
+DSDD.BAS     [00] COCO 2 Another double sided disk utility
+DSHRINK.BIN  [00] COCO 2 Disk shrinker
+DSKDMP.BAS   [00] COCO 2 Disk printer
+EASYLIST.BAS [00] COCO 2 Scroll through BASIC program
+ENVELOPE.BAS [00] COCO 2 Envelope addresser and printer
+FDOS.BIN     [00] COCO 3 Disk Basic Enhancer (See FDOS.DOC)
+FDOS.DOC     [00] COCO 3 Documentation for FDOS.BIN
+FILER.ARC    [00] COCO 2 Disk file cataloger
+GENEAL.BAS   [00] COCO 2 Keep track of your family tree
+HANDYMAN.BAS [00] COCO 2 Handyman construction calculations
+HOMEPAC.DSK  [00] COCO 2 Home finance and accounting package
+KDSKDOC1.TXT [00] COCO 2 Popular KDSK disk editor utility documentation - Part 1
+KDSKDOC2.TXT [00] COCO 2 Popular KDSK disk editor utility documentation - Part 2
+KDSKUTIL.BIN [00] COCO 2 Popular KDSK disk editor utility with many features
+LABEL.BAS    [00] COCO 2 Prints mailing labels
+LANDLORD.ARC [00] COCO 2 Rental unit management system
+MAGICMU.ARC  [00] COCO 2 (Only) Mouse and menu program
+MAKECASS.BAS [00] COCO 2 Transfer binary files disk to tape
+MDOS.BAS     [00] COCO 3 Disk Basic modification utility
+MOVIES.BAS   [00] COCO 3 Keeps inventory of video movies
+MULTBACK.BIN [00] COCO 2 Multiple disk backup utility
+MULTBACK.DOC [00] COCO 2 Documentation for MULTBACK.DOC
+NEWCMDS.BIN  [00] COCO 3 New commands for the COCO 3
+NEWCMDS.DOC  [00] COCO 3 Documentation for NEWCMDS.DOC
+NEWDOS.ARC   [00] COCO 2 New Dos and commands for the COCO 2
+P80X28.BAS   [00] COCO 3 Change text screen to 80 x 28
+PCLEAR0.BAS  [00] COCO 2 Use all memory reserved for graphics
+PRINT.BIN    [00] COCO 2 Ascii file print utility
+RAMDISKS.ARC [00] COCO 3 Ram disk and memory test utilities
+RBCALC.BAS   [00] COCO 2 Spreadsheet (See also RBCALC.DOC)
+RBCALC.DOC   [00] COCO 2 Documentation for RBCALC.BAS
+REGIS.BAS    [00] COCO 2 Hide notes or information on disk
+REGISTER.BAS [00] COCO 2 Checkbook register
+REVDEMO.ARC  [00] COCO 3 Revelation demo
+ROM.BAS      [00] COCO 2 Move BASIC to ram
+ROMBACK.BAS  [00] COCO 2 Backup paks to disk (need ROMFIX.BIN)
+ROMFIX.BIN   [00] COCO 2 Needed with ROMBACK.BAS
+SCOREBRD.BAS [00] COCO 2 Scoreboard
+SCRN51.BIN   [00] COCO 2 51 column text screen driver
+SCRN51.DOC   [00] COCO 2 Documentation for SCRN51.BIN
+SNAP.BIN     [00] COCO 3 Disk editor
+SPLITTER.BAS [00] COCO 2 Text file splitter
+STARWORD.BAS [00] COCO 2 Word processor for Star NX 1000
+STOCK.BAS    [00] COCO 2 Keeps track of inventory and costs
+SU3.BAS      [00] COCO 3 Super file management utility
+TAPECNTL.BAS [00] COCO 2 ML program for easy control of tape
+TC12.BIN     [00] COCO 2 TC ARC/unARC utility
+TC3.BIN      [00] COCO 3 TC ARC/unARC utility
+TC40.BIN     [00] COCO 3 (512K) TC ARC/unARC utility
+TIMER.BIN    [00] COCO 2 Graphical disk drive timer
+TVTESTER.BAS [00] COCO 2 Graphics for TV adjustment
+UNARC512.BIN [00] COCO 3 (512K) TC and IBM compatible unARC
+UNCNDIR2.BIN [00] COCO 3 Disk label printer
+UNLOCK.BIN   [00] COCO 2 Attempts to fix a bad disk
+VCRMANGR.BAS [00] COCO 2 Video rental management program
+VIRTUAL.ARC  [00] COCO 3 (512K) Create several virtual COCOs
+WEATHER.BAS  [00] COCO 2 Weather analysis program
+WP2.BAS      [00] COCO 2 Word processor (see also WP2.DOC)
+WP2.DOC      [00] COCO 2 Documentation for WP2.BAS
+ZIPCODE.BAS  [01] COCO 3 Compress/decompress entire disk
+

@@ -1,0 +1,226 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1254">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>9.</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0">
+    <tr>
+        <td><font size="2" face="Arial"><em><strong><span style="mso-spacerun: yes">       </span></strong></em></font><a
+        name="9.8 The SLIB command"><font size="2" face="Arial"><em><strong>
+        9.8 The SLIB command</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Once you have constructed your
+        source<span style="mso-spacerun: yes">  </span>library,<span style="mso-spacerun: yes">  </span>you<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>from<br>
+<span style="mso-spacerun: yes">                  </span>time to time want to make minor
+        changes to it,<span style="mso-spacerun: yes">  </span>either adding<span style="mso-spacerun: yes">  </span>new<br>
+<span style="mso-spacerun: yes">                  </span>functions, or removing old ones ones.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>You could make such changes
+        simply by editing the<span style="mso-spacerun: yes">  </span>EXTINDEX.LIB<br>
+<span style="mso-spacerun: yes">                  </span>file,<span style="mso-spacerun: yes">  </span>however you would have to be
+        very careful<span style="mso-spacerun: yes">  </span>not<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>add<span style="mso-spacerun: yes">  </span>or<br>
+<span style="mso-spacerun: yes">                  </span>delete the wrong entry,<span style="mso-spacerun: yes">  </span>and you
+        would have to manually<span style="mso-spacerun: yes">  </span>determine<br>
+<span style="mso-spacerun:
+yes">                  </span>if<span style="mso-spacerun: yes">  </span>adding<span style="mso-spacerun: yes">  </span>or<span style="mso-spacerun: yes">  </span>removing<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun: yes"> 
+</span>        would<span style="mso-spacerun: yes">  </span>adversely<span style="mso-spacerun: yes">  </span>affect<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>remainder of the library.<span style="mso-spacerun: yes">  </span>For
+        example, you could accidently add a<br>
+<span style="mso-spacerun: yes">                  </span>duplicate of another symbol name,<span style="mso-spacerun: yes">  </span>or
+        remove<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>symbol<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>is<br>
+<span style="mso-spacerun: yes">                  </span>referred to by another file.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>To simplify maintenance of
+        source libraries,<span style="mso-spacerun: yes">  </span>you can make<span style="mso-spacerun: yes">  </span>use<br>
+<span style="mso-spacerun:
+yes">                  </span>of the<span style="mso-spacerun: yes">  </span>&quot;Source Librarian&quot;,<span style="mso-spacerun: yes"> 
+</span>        a utility program which automates the<br>
+<span style="mso-spacerun:
+yes">                  </span>addition and removal of source files,
+        and automatically reports of<br>
+<span style="mso-spacerun: yes">                  </span>any inconsistencies occurring in the
+        source library.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>To use SLIB,<span style="mso-spacerun: yes">  </span>you must first
+        position yourself to the directory<br>
+<span style="mso-spacerun: yes">                  </span>containing the source library.<span style="mso-spacerun: yes">  </span>And
+        then execute<span style="mso-spacerun: yes">  </span>SLIB<span style="mso-spacerun: yes">  </span>using<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>command options described later to
+        indicate the action to be taken<br>
+<span style="mso-spacerun: yes">                  </span>on the library.<span style="mso-spacerun: yes">  </span>If you do not<span style="mso-spacerun: yes">  </span>specify<span style="mso-spacerun:
+yes"> 
+</span>        any<span style="mso-spacerun: yes">  </span>actions,<span style="mso-spacerun: yes">  </span>SLIB<span style="mso-spacerun: yes">  </span>will<br>
+<span style="mso-spacerun: yes">                  </span>simply examine the library and report
+        its size and content.<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                     </span>You may use multiple command
+        options in a single<span style="mso-spacerun: yes">  </span>SLIB<span style="mso-spacerun: yes">  </span>command<br>
+<span style="mso-spacerun: yes">                  </span>if you wish to add and/or remove more
+        than one file at a time.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>After<span style="mso-spacerun: yes">  </span>executing<span style="mso-spacerun: yes">  </span>any<span style="mso-spacerun: yes">  </span>command,<span style="mso-spacerun: yes"> 
+</span>        SLIB<span style="mso-spacerun: yes">  </span>will<span style="mso-spacerun: yes">   </span>report<span style="mso-spacerun: yes">   </span>on<span style="mso-spacerun: yes">   </span>any<br>
+<span style="mso-spacerun: yes">                  </span>inconsistencies which it finds in the
+        library.<span style="mso-spacerun: yes">  </span>If any are<span style="mso-spacerun: yes">  </span>found,<br>
+<span style="mso-spacerun:
+yes">                  </span>and you have used a command which
+        caused changes, SLIB will prompt<br>
+<span style="mso-spacerun: yes">                  </span>for permission before writing the
+        updated library file.<br>
+        <br>
+        <em><strong><span style="mso-spacerun: yes">          </span>9.8.1 Command line options</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>The following options
+        control the action(s)<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>will<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                     </span>performed by SLIB on the source
+        library index file.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>?<span style="mso-spacerun: yes">       </span>- Display
+        command line help summary.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>?=file<span style="mso-spacerun: yes">  </span>- Display
+        information about named source file.<br>
+        <br>
+<span style="mso-spacerun: yes">                   </span><span style="mso-spacerun:
+yes">     </span>a=file<span style="mso-spacerun: yes">  </span>- Add specified
+        file as standard functions.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>i=index - Use the
+        specified INDEX file, if not specified,<br>
+<span style="mso-spacerun: yes">                                  </span>the
+        filename 'EXTINDEX.LIB' is assumed.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>m=file<span style="mso-spacerun: yes">  </span>- Add named
+        source file as a MIDDLE file.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>p=file<span style="mso-spacerun: yes">  </span>- Add named
+        source file as a PREFIX file.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>-q<span style="mso-spacerun: yes">      </span>- Quiet mode:
+        SLIB will not display informational<br>
+<span style="mso-spacerun:
+yes">                                  </span>messages
+        or ask for permission to update index.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>r=file<span style="mso-spacerun: yes">  </span>- Remove the
+        named file from the index.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>s=file<span style="mso-spacerun: yes">  </span>- Add named
+        source file as a SUFFIX file.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>-w<span style="mso-spacerun: yes">      </span>- Write
+        inhibit:<span style="mso-spacerun: yes">  </span>SLIB will not write the updated<br>
+<span style="mso-spacerun: yes">                                  </span>library
+        index.<span style="mso-spacerun: yes">  </span>This is useful if you just want<br>
+<span style="mso-spacerun: yes">                                  </span>to see
+        what would happen if you add or remove a<br>
+<span style="mso-spacerun:
+yes">                                  </span>file.<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">               </span> </font><a
+        name="9.9 Making a source library"><font size="2"
+        face="Arial"><em><strong>9.9 Making a source library</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>To make a complete source
+        linkable library,<span style="mso-spacerun:
+yes">  </span>follow these basic<br>
+<span style="mso-spacerun: yes">                  </span>steps:<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>1) If you have assembly language
+        library functions, run the SINDEX<br>
+<span style="mso-spacerun: yes">                     </span>utility to create an index file
+        with the names of<span style="mso-spacerun: yes">  </span>any<span style="mso-spacerun: yes">  </span>symbols<br>
+<span style="mso-spacerun:
+yes">                     </span>defined in them.<span style="mso-spacerun: yes">  </span>Edit this
+        file and remove all names which are<br>
+<span style="mso-spacerun: yes">                     </span>LOCAL to the files. Only the
+        global function and variable names<br>
+<span style="mso-spacerun:
+yes">                     </span>should remain.<span style="mso-spacerun: yes">  </span>NOTE:<span style="mso-spacerun: yes">  </span>Also
+        leave in any other symbols or names<br>
+<span style="mso-spacerun: yes">                     </span>which you don't want changed by
+        SCONVERT.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>2)<span style="mso-spacerun: yes">  </span>Use SCONVERT to convert the<span style="mso-spacerun: yes">  </span>assembly<span style="mso-spacerun: yes"> 
+</span>        language<span style="mso-spacerun: yes">  </span>sources<span style="mso-spacerun: yes">  </span>into<br>
+<span style="mso-spacerun: yes">                     </span>library format, using the index
+        file created above as your KEEP<br>
+<span style="mso-spacerun:
+yes">                     </span>file<span style="mso-spacerun: yes">  </span>(K=EXTINDEX.LIB).<span style="mso-spacerun: yes">  </span>You
+        may send the output files directly<br>
+<span style="mso-spacerun: yes">                     </span>to your source library
+        directory.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>3)<span style="mso-spacerun: yes">  </span>Edit the converted assembly
+        language<span style="mso-spacerun: yes">  </span>sources<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>change<span style="mso-spacerun: yes">  </span>any<br>
+<span style="mso-spacerun: yes">                     </span>declarations for uninitialized
+        data into '$DD' directives,<span style="mso-spacerun: yes">  </span>and<br>
+<span style="mso-spacerun:
+yes">                     </span>to add any '$SE' and '$EX'
+        directives which may be needed.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>4) Compile all of your 'C' library
+        functions to assembly language,<br>
+<span style="mso-spacerun: yes">                     </span>using a code generator which
+        outputs the appropriate directives<br>
+<span style="mso-spacerun:
+yes">                     </span>for SLINK.<span style="mso-spacerun: yes">  </span>Send the ASM output
+        files to<span style="mso-spacerun: yes">  </span>your<span style="mso-spacerun: yes">  </span>source<span style="mso-spacerun: yes">  </span>library<br>
+<span style="mso-spacerun:
+yes">                     </span>directory.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>5)<span style="mso-spacerun: yes">  </span>From within your library
+        directory,<span style="mso-spacerun: yes">  </span>run<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>SINDEX<span style="mso-spacerun: yes">  </span>utility<br>
+<span style="mso-spacerun: yes">                     </span>again.<span style="mso-spacerun:
+yes">  </span>This will create an<span style="mso-spacerun: yes">  </span>index<span style="mso-spacerun: yes"> 
+</span>        file<span style="mso-spacerun: yes">  </span>(EXTINDEX.LIB)<span style="mso-spacerun:
+yes">  </span>which<br>
+<span style="mso-spacerun: yes">                     </span>contains the names of all global
+        symbols.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>6) Edit the index file and remove any
+        non-public symbol names. You<br>
+<span style="mso-spacerun:
+yes">                     </span>should also change the headers
+        for the '&lt;',<span style="mso-spacerun: yes">  </span>'^' and '&gt;' files,<br>
+<span style="mso-spacerun: yes">                     </span>and add the '$' record for
+        reserved memory information.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>7)<span style="mso-spacerun: yes">  </span>Run the SLIB utility,<span style="mso-spacerun: yes">  </span>to check
+        the new library for<span style="mso-spacerun: yes">  </span>duplicate<br>
+<span style="mso-spacerun: yes">                     </span>symbols,<span style="mso-spacerun: yes">  </span>unresolved<span style="mso-spacerun: yes">  </span>external<span style="mso-spacerun: yes">  
+</span>        references<span style="mso-spacerun: yes">   </span>and<span style="mso-spacerun: yes">   </span>any<span style="mso-spacerun: yes">   </span>other<br>
+<span style="mso-spacerun: yes">                     </span>inconsistencies.<br>
+        </font></td>
+    </tr>
+</table>
+<table width="605" border="0">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2">&quot;Converted by 
+        BiPOM Electronics to HTML format from original Micro C documentation by 
+        Dunfield Development Systems. Please see the Micro C documentation that 
+        is included with Micro C for the original forms of these pages.&quot;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

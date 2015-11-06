@@ -1,0 +1,3189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\Basic09 - Ch 9 Pg 101-126.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics / 9
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+KILLBUFF 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Deallocate Get/Put buffer<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+tax:  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RUN <B>GFX2("KILLBUFF",group, buffer)
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Deallocates the indicated Get/Put buffer. You select group and
+buffer numbers when you define a buffer or when you load or
+get a window image. For more information on Get/Put buffers,
+see DEFBUFF, PUT, GET, and GPLOAD.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Parameters:<BR>
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+group The group number of the buffer you want to<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+deallocate, in the range 1-199. Buffer Group<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Numbers 0 and 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+200-255 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+are reserved for OS-9<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+system use.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Arial Narrow" COLOR="#000000">
+<I>buffer </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The number of the buffer to deallocate, in the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+range 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+1-255.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Examples:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2("KILLBUFF",1,5)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Sample Program:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure draws a figure on a window screen, loads it
+into a buffer, then repeatedly places it in new locations on the
+screen. Each new PUT erases the previous image.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE putdown
+ODIM X,Y,T,J:INTEGER
+ORUN GFX2("CUROFF")
+ORUN GFX2("CLEAR")
+ORUN GFX2("ELLIPSE",320,96,12,4)
+ORUN GFX2C"CIRCLE",320,90,5)
+ORUN GFX2("COLOR",1)
+ORUN GFX2C"FILL",320,96)
+ORUN GFX2("COLOR",3)
+nRUN GFX2("FILL",320,90)
+ORUN GFX2("BAR",305,100,335,104)
+pRUN GFX2("GET",1,1,288,85,50,23)
+ORUN GFX2("GET",1 ,2,1 ,1 ,50,23)
+pRUN GFX2("PUT",1,2,288,85)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000000.JPG" WIDTH="19" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000001.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-101<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 .Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OJ =1 0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pFOR T=20 TO 559 STEP 6<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OJ=J+2<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"PUT", 1 , 1 ,T, J)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"KILLHUFF",1 ,1 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"CURON")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000002.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000003.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000004.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-102<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics / 9
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+LINE 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Draw a line<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RUN <B>GFX2([path,]"LINE"[,xcorl,ycorl],xcor2,
+ycorz
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Draws a line in one of the following ways:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; From the current draw pointer to the specified X- and Ycoordinates.
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; From the specified beginning X- and Y-coordinates to
+the specified ending X- and Y-coordinates.
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>path The </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+route to the window in which you want to<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+draw a line.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+xcorl,ycorl The optional beginning X- and Y-coordinates<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+for the line.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+xcor2,ycor2 The ending X- and Y-coordinates for the line.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2("LINE",192,128)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2("LINE",0,0,192,128)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure draws a sine wave of vertical lines across a
+window.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE waves
+pDIM A,X,Y,Z:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OCALC=0 _<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DA=100<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2("CLEAR")<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>' ORUN GFX2("COLOR",3,2)<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR X=0 TO 638 STEP 1
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OCALC=CALC+.05
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OY=A-SIN (CALC) * 1 5
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OZ=Y+25
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-103
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000005.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000006.JPG" WIDTH="18" HEIGHT="3">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+ORUN GFX2C"LINE",X,Y,X,Z)
+ONEXT X
+pEND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000007.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+9-104<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000008.JPG" WIDTH="139" HEIGHT="4">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics l 9<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+LOGIC
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000009.JPG" WIDTH="24" HEIGHT="7">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000010.JPG" WIDTH="100" HEIGHT="13">
+</FONT>
+</H2>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Perform logic function<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RUN GFX2("LOGIC","function")<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Causes BASIC09 to perform the specified logic function on all data bits used by subsequent drawing functions.
+Once set, the logic function remains in effect until you turn<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+LOGIC off.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>function </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+can be one of the following logical functions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OFF<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+AND -<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OR -<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+XOR  -<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2C"LOGIC","AND")<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2C"LOGIC","XOR")<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+no logic
+performs AND logic
+performs OR logic
+performs XOR logic<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure uses LOGIC to draw a horizontal bar across a
+background of multicolored vertical bars. Using XOR logic, the
+procedure causes the horizontal bar to change the color of each
+vertical bar.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000011.JPG" WIDTH="22" HEIGHT="8">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE logic<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pDIM A,Z,T,X,Y,COLOR:INTEGER<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2C"LOGIC","OFF")<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2C"CLEAR")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pCOLOR=0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=0 TO 619 STEP 20<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>COLOR=COLOR+1<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2C"COLOR",COLOR<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2C"HAR",T,0,T+20,190)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pNEXT T<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2C"COLOR",3,2)<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2C"LOGIC","XOR")<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000012.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-105<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>(FOR T=1 TO 1 0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"BAR",0,80,639,112)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"LOGIC","OFF")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OEND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\Basic09 - Ch 9 Pg 101-12613.gif" WIDTH="22" HEIGHT="5">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-106<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Displaying </U>Text <U>and Graphics l 9
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+OWSET 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Establish an overlay window<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\Basic09 - Ch 9 Pg 101-12614.gif" WIDTH="18" HEIGHT="3">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>RUN GFX2([path,]"OWSET",save switch,xpos,
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I>ypos,xsizeysize,foreground,background)
+</UL>
+</UL>
+</UL>
+<BR>
+</I></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Creates an overlay window on a previously existing
+device window. Reconfigures the current device window paths
+to use a new area of the screen as the current device window.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>path </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The route to the window in which you want to<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+set an overlay.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>save switch </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Either 0 or 1. A value of 0 tells BASIC09 not<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to save the overlaid area. A value of 1 tells<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 to save the overlaid area and restore<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+it when the new window closes.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+xpos The character column in which to start the<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+new window (upper left corner).<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ypos The character row in. which to start the new<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+window (upper left corner).<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>xsize </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The width of the new window in characters.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ysize The depth of the new window in rows.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>foreground </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The foreground color of the new window.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>background </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The background color of the new window.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2("OWSET",00,44,10,32,8,00,06)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure creates six progressively smaller overlay windows, labeling each. It then waits for you to press a key, after
+which it erases all the windows and leaves the original window
+intact.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\Basic09 - Ch 9 Pg 101-12615.gif" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\Basic09 - Ch 9 Pg 101-12616.gif" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000014.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+9-107<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE overwin
+ODIM X,Y,X1 ,Y1 ,T,J,H,L,PLACE:INTEGER
+pD I M RESPONSE : STR I NG 1 1 J
+oX=0 \Y=0
+pX1 =80 \Y1 =24
+OPLACE-33
+OFOR T=1 TO 6
+OIF T=2 OR T=6 THEN
+pH = 3
+DELSE H=2
+DENDIF
+ORUN GFX2C"OWSET",1 ,X,Y,X1 ,Y1 ,H,T)
+OX-X+6 \Y=Y+2
+OX1 =X1 -1 2 \Y1 =Y1 -4
+pFOR J=1 TO 5
+OPRINT TAHCPLACE); "Overlay Screen "; T
+ONEXT J
+OPLACE=PLACE-6
+ONEXT T
+OPRINT "Press A Key...";
+OGET x1,RESPONSE
+OFOR T=1 TO 6
+ORUN GFX2C"OWEND")
+ONEXT T
+REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000015.JPG" WIDTH="22" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000016.JPG" WIDTH="22" HEIGHT="5">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-108<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000017.JPG" WIDTH="363" HEIGHT="1">
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Displaying Text and Graphics / 9
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+PALETTE 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Set color for palette registers
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax:  </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RUN <B>GFX2([path,]"PALETTE",register,color)
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Sets palette colors. Lets you install any of the Color
+Computer's 64 colors in the palette for use with text and
+graphics.
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:
+</UL>
+</UL>
+<BR>
+  </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+path The route to the window where you want to<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+change palette colors.<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+register The number of the register in which you want<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to install a new color.<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+color The code of the new color you want to install.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+/- <B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2("PALETTE",13,32)
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure draws a series of bars and circles, then repeatedly changes their colors using PALETTE.
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE palette
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DIM T,K,J,X,Y,COLOR:INTEGER
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OD I M RESPONSE : STR I NG t 1 l
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2("COLOR",3,2,2)
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OCOLOR=0
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2("CLEAR")
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2("CUROFF")
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR Y=0 TO 23 STEP 3
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2("COLOR",COLOR)
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2("HAR",0,Y,639,Y+3)
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OCOLOR-COLOR+1
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF COLOR=2 THEN
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OCOLOR=COLOR+ 1
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OEND I F
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT Y
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR Y=164 TO 185 STEP 3
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-109
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"COLOR",COLOR)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"BAR",0,Y,639,Y+3)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pCOLOR=COLOR+ 1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>(NEXT Y<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OCOLOR=0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR K=45 TO 1 70 STEP 48<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>FOR T=1 0 0 TO 580 STEP 1 0 0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pRUN GFX2C"COLOR",3)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"CIRCLE",T,K,30)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"COLOR",COLOR)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pRUN GFX2C"FILL",T,K)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OCOLOR=COLOR+1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF COLOR=2 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OCOLOR=COLOR+1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND I F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT K<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pREPEAT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OX=RNDC63)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OREPEAT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OY=RNDC16)+1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OUNTIL Y&lt;&gt;2<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"PALETTE",Y,X)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN INKEYCRESPONSE)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OUNTIL RESPONSE&gt;""<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"DEFCOL")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"CURON")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000018.JPG" WIDTH="24" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000019.JPG" WIDTH="22" HEIGHT="6">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-110<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Displaying Text and G</U>r<U>ap</U>h<U>ics / 9
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+PATTERN 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>Select pattern buffer<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Syntax:  </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>RUN GFX2E[path,]"PATTERN",group, buffer)<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Selects the contents of a preloaded Get/Put buffer as
+a pattern for graphics functions. Although PATTERN can use
+a buffer of any size, it uses a specific number of bytes, depending on the screen format in use:<BR>
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Color Pattern Bits<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Mode Array Size Per Pel<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+02 4 bytes x 8 bytes = 32 bytes 1<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+04 8 bytes x 8 bytes = 64 bytes 2<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+16 16 bytes x 8 bytes = 128 bytes 4<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The pattern array is a 32 x 8 pel representation of graphics
+memory. It takes the current color mode into consideration to
+define the number of bits per pel and pels per byte. If the
+buffer is larger than the number of bytes required, PATTERN
+ignores the extra bytes. BASIC09 uses the selected pattern
+with all draw commands until you change the pattern or turn
+off the pattern function by specifying a group and buffer number of 0.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Parameters:<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+path The route to the window in which you want to<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+use a new graphics pattern.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+group The group number of the buffer you want to<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+use for a graphics pattern.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>buffer </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The buffer number that you want to use for a<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+graphics pattern. _<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2C"PATTERN",1,3)<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-111
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000020.JPG" WIDTH="24" HEIGHT="9">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000021.JPG" WIDTH="207" HEIGHT="1">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000022.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure loads the current window data at location 0,0
+into a buffer to use as a draw pattern. It then draws a circle and
+fills the circle with the pattern in the buffer.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE pattern<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pDIM X,Y,T:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"GET",1 ,1 ,0,0,5,5)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"COLOR",4)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"CLEAR")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"CIRCLE",320,96,100)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"FILL",320,96)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"PATTERN",1 ,1 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"COLOR",3)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"FILL",320,96)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"PATTERN",0,0)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000023.JPG" WIDTH="22" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000024.JPG" WIDTH="25" HEIGHT="8">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-112<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics / 9<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+POINT 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Mark a point<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000025.JPG" WIDTH="16" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000026.JPG" WIDTH="16" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000027.JPG" WIDTH="22" HEIGHT="8">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax:  </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RUN GFX2([path,]"POINT"[,xcorycor])<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Sets the pixel at the current draw pointer position
+or at the specified coordinates to the current foreground color.
+If you do not specify coordinates, POINT sets the pixel at the
+draw pointer.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+path The route to the window in which you want to<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+turn on the specified pixels.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+xcorycor Optional coordinates for the POINT function.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The X-coordinates are in the range 0-639. The<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Y-coordinates are in the range 0-191.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2C"POINT")<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2C"PO I NT",192, 1 28)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure uses POINT to produce a swirl design on a window screen.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE point
+CHASE 0
+ODIM XC20),YC20):INTEGER
+pDIM T,R,J,K:INTEGER
+DJ = 0
+OK = 0
+pRUN GFX2C"CUROFF")
+ORUN GFX2C"CLEAR")
+pFOR T=1 TO 288 STEP 3
+pJ=J+1
+OFOR R=0 TO 11
+pXCR)=INTCT*SINC30*R+K))+320
+OYCR)=INTCJ*COSC30*R+K))+96
+pRUN GFX2C"POINT",XCR),YCR))<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-113<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pK=K+1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT R<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pNEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"CURON")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>FIEND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000028.JPG" WIDTH="206" HEIGHT="2">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000029.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000030.JPG" WIDTH="22" HEIGHT="5">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-114<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics / 9
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+PRO P SW 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>Proportional space switch<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Syntax:  </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RUN GFX2([path,]"PROPSW",",switch")<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Enables or disables the automatic proportional spacing of characters on graphic screens.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>path </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The route to the window in which you want to<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+use proportional character spacing.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>switch </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Either OFF to turn proportional spacing off, or<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ON to turn proportional spacing on. The<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+default setting of the switch is OFF.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2("PROPSW","ON")<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure produces a demonstration of the BASIC09 proportional spacing function.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE proport<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM LINE:STRING<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pDIM LETTER:STRINGf1]<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM T,J,K,FLAG:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2("CLEAR")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFLAG=1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pFOR T=1 TO 1 2<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pREAD LINE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pFOR J=1 TO LEN(LINE)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OLETTER=MID$(LINE,J,1) _<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF LETTER&lt;&gt;"!" AND LETTER&lt;&gt;"V" THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT LETTER;<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OENDIF<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF LETTER="!" THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pFLAG=FLAG* -1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF FLAG&gt;O THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2("PROPSW","OFF")<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-115
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000031.JPG" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000032.JPG" WIDTH="18" HEIGHT="3">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ELSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"PROPSW","ON")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pENDI F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND I F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF LETTER="*" THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT CHR$C34);<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OEND I F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pNEXT J<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT \ PRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA "This is a demonstration of"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA "!Proportional Spacing! using"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA "HASIC09's GFX2 module."<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA </TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+<B>sell<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA "!The quick brown fox jumped. . . !"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA "The quick brown fox jumped..."<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA </TT>
+</FONT>
+<FONT SIZE="1" FACE="Garamond1" COLOR="#000000">
+<B>1811<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA "Use the command"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA "!RUN GFX2C#PROPSWx,xON#)!"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA "to turn proportional spacing on."<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA "Use !RUN GFX2C#PROPSWx,#OFF#)!"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA "to turn proportional spacing off"<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000033.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000034.JPG" WIDTH="24" HEIGHT="8">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-116<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Displaying Text and Graphics / 9<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+PUT 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>Put a saved data block on the window<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>tax:  </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>RUN GFX2([path,]"PUT",group,buffer,
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>xcorycor)
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Places the image in the specified Get/Put buffer on
+the window. PUT requires only the group and buffer numbers
+and the window coordinates for the upper left corner of the
+image. The GET function saves the dimensions of the block in
+the buffer. PUT automatically handles window format
+conversion.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+path The route to the window where you want to<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+place a pre-saved image.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+group The group number of the buffer in which to<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+save the window data.<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>buffer </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The buffer number in which to save the win<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+dow data.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+xcorycor The X- and Y-coordinates of the upper left cor<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ner of the window position. The X-coordinates<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+are in the range 0-639. The Y-coordinates are<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+in the range 0-191.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+RUN GFX2C"PUT",1,5,100,50)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000035.JPG" WIDTH="133" HEIGHT="2">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000036.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+9-117<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure draws a character, loads it into a buffer, then ,,.&middot;~,,<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+repeatedly replaces the character to the window screen using<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PUT. Each new image erases the previous image, giving an<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+impression of animation.<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE putdown<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]DIM X,Y,T,J:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"CUROFF")<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"CLEAR")<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"ELLIPSE",320,96,12,4)<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"CIRCLE",320,90,5)<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"COLOR",1 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"FILL",320,96)<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"COLOR",3)<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"FILL",320,90)<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"BAR",305,100,335,104)<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"GET",1,1,288,85,50,23)<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"GET",1 ,2,1 ,1 ,50,23)<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"PUT",1,2,288,85)<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]J =1 0,<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]FOR T=20 TO 559 STEP 6<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]J=J+2<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"PUT", 1 , 1 ,T,J)<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]NEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"KILLHUFF",1 ,1 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]RUN GFX2C"CURON")<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>[]END<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000037.JPG" WIDTH="22" HEIGHT="6">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>9-118<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics / 9<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+PUTGC 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>Put graphics cursor<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000038.JPG" WIDTH="24" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000039.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000040.JPG" WIDTH="18" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Syntax:  </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>RUN GFX2([path,]"PUTGC",xcorycor)<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>Places and displays the graphics cursor at the specified location. Use screen relative coordinates for this function,
+not window relative coordinates. The horizontal range is
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>0-639. </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The vertical range is 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>0-191.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+path The route to the window where you want to<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+display a graphics cursor.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+xcorycor The screen coordinates for the cursor location.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The X coordinates are in the range 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>0-639. </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Y coordinates are in the range 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>0-191.<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2C"PUTGC",100,5)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure displays the available graphic cursors stored in
+group 202. Before this procedure can work, you must merge the
+Stdptrs file in the SYS directory of your system disk with the
+window you are using. For instance, if your system diskette is in
+Drive /D0, merge Stdptrs with Window 1, by typing:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>merge /d0/sy5/5tdptrs &gt; /w1 ENTER<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE viewcur
+DDIM T,Z:INTEGER
+DRUN GFX2C"CLEAR")
+DFOR T=1 TO 7
+DRUN GFX2C"GCSET",202,T)
+DRUN GFX2C"PUTGC",320,96)
+OFOR Z=1 TO 6000
+DNEXT Z
+DNEXT T
+DRUN GFX2C"GCSET",0,0)
+DEND<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-119<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+REVON 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Reverse video on<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+REVOFF 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Reverse video off<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Syntax: RUN GFX2([path,]"REVON")<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+RUN GFX2([pat,hj"REVOFF")
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Function: Enables or disables reverse video characters. Once
+set, reverse video remains in effect until you execute the
+reverse video off function.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Parameters:<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+path The route to the window in which you want to
+display reverse characters.
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Examples:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2("REVON")
+RUN GFX2("REVOFF")<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000041.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000042.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000043.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-120<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000044.JPG" WIDTH="59" HEIGHT="2">
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics / 9
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+SCALE SW 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Enable/disable scaling
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RUN GFX2([path, ]"SCALE 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sw","s yvi tch")
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Enables or disables scaling when drawing on variously formatted windows. Scaling in windows is normally on.
+If scaling is off, coordinates are relative to the window origin
+coordinates. Scaling does not affect text.
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:
+</UL>
+</UL>
+<BR>
+  </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>path </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The route to the window where you want to<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+turn scaling off or on.<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>switch </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Either OFF (disable scaling) or ON (enable<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+scaling).<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+.. , <B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2("SCALESW","OFF")
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure runs a routine of drawing a design in overlay
+windows twice. The routine runs once with scaling off and once
+with scaling on. After the first routine pauses, press the space
+bar to see the second demonstration.
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE Scale
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM X,Y,X1 ,Y1 ,T,H,J,R,W,Z: INTEGER
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pDIM RESPONSE:STRING[1]
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2("CLEAR")
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR J=1 TO 2
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DI F J=1 THEN
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2("SCALESW","OFF") -
+</UL>
+</UL>
+<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DELSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2("SCALESW","ON")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OENDI F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OX=0 \Y=0 \X1 =80 \Y1 =24<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=1 TO 4<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF T=2 OR T=6 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OH = 3<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-121
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000045.JPG" WIDTH="24" HEIGHT="8">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000046.JPG" WIDTH="196" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OELSE H=2<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OEND I F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"OWSET",1 ,X,Y,X1 ,Y1 ,H,T)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR R=1 TO 35<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OW=40*S I NCR)+1 70<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OZ=25*COSCR)+45<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"CIRCLE",W,Z,30)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT R<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OX=X+G \Y=Y+2 \X1 =X1 -1 2 \Y1 =Y1 -4<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "Press A Key<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OGET #1 ,RESPONSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=1 TO 4<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2C"OWEND")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT J<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+9-122<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000047.JPG" WIDTH="20" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000048.JPG" WIDTH="31" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000049.JPG" WIDTH="22" HEIGHT="5">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics / 9<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+SELECT
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000050.JPG" WIDTH="24" HEIGHT="8">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000051.JPG" WIDTH="19" HEIGHT="3">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000052.JPG" WIDTH="19" HEIGHT="18">
+</FONT>
+</H2>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Select next window<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RUN GFX2([path,"SELECT")<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+SELECT causes a window to display if the procedure is operating in the active window. If the procedure is not
+in the active window, the newly selected window displays
+when you press 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>CLEAR </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+. If you do not specify a path, BASIC09
+selects the device using the standard input, standard output,
+and standard error paths, Paths 0, 1, and 2.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+path  The path to the window to select.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2("SELECT")
+RUN GFX2(1,"SELECT")
+RUN GFX2(PATH,"SELECT")<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+From /TERM, this procedure temporarily opens a path to
+Window 3, creates the window format, and uses SELECT to display the new window. It draws a design, then returns to the
+/TERM screen and closes the path.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE design<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pDIM PATH,T,Y:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OOPEN #PATH,"/W3":WRITE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pRUN GFX2(PATH,"DWSET",5,0,0,80,24,3,2,2)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pRUN GFX2(PATH,"SELECT") _<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><U>Fly</U>= 1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pFOR T=1 TO 200 STEP 3<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Ely =Y+1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2(PATH,"ELLIPSE",320,96,T,Y)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pRUN GFX2(PATH,"COLOR",1,2)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=200 TO 1 STEP -6<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2(PATH,"ELLIPSE",320,96,T,Y)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000053.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-123<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF INTCT/3)=T/3 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pY=Y#1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pEND I F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T~'<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2(1,"SELECT")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2CPATH,"DWEND")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OCLOSE #PATH<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OEND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000054.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+9-124<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000055.JPG" WIDTH="137" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics / 9<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+SETDPTR 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Set draw pointer<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: RUN GFX2([path,]"SETDPTR",xcorycor)<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>Places the draw pointer at the specified coordinates.
+The draw pointer selects the beginning point of the next
+graphics draw function (such as CIRCLE, LINE, BOX, and so
+on), if you do not supply other coordinates.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>path<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>xcor,ycor<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The route to the screen where you want to set
+the draw pointer.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The screen coordinates for the draw pointer
+location. The X-coordinates are in the range
+0-639. The Y-coordinates are in the range 0191.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2("SETDPTR",100,5)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure uses coordinates from a DATA statement for setting the draw pointer to create a series of star shapes.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE star<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pDIM X,Y,T,J:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT CHR$(12)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR J=1 TO 1 0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DREAD X,Y<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2("SETDPTR",X+J,Y+J+J)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=1 TO S<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DREAD X , Y<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX2("LINE",X+J,Y+J+J)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT J<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA 320,46,440,146,200,84,440,84,200,146,320,46<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000056.JPG" WIDTH="18" HEIGHT="20">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000057.JPG" WIDTH="86" HEIGHT="1">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-125<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 Ref<U>e</U>ren<U>ce<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+UNDLNONUnderline characters on<BR>
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+UNDLNOFF 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Underline characters off<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RUN GFX2([path,]"UNDLNON")<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RUN GFX2([path,]"UNDLNOFF")
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Enables or disables character underline. After you
+execute UNDLNON, all characters displayed are underlined
+until you execute UNDLNOFF. The default is UNDLNOFF.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+path The route to the window where you want to
+use underline characters.
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Examples:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2("UNDLNON"-)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX2("UNDLNOFF")<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000058.JPG" WIDTH="20" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000059.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000060.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~14\GR000061.JPG" WIDTH="277" HEIGHT="2">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-126<BR>
+</FONT>
+</BODY>
+</HTML>

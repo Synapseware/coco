@@ -1,0 +1,515 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>E:\MYDOCU~1\OCR\OS-9CO~1\CH1~1\OS-9 L-II Commands Ch 1.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<UL>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<U>Chapter 1
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<U>Introduction</U>
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+</U><FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\CH1~1\GR000000.JPG" WIDTH="18" HEIGHT="3">
+</FONT>
+</H2>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Getting Started With OS-9 </I>contains the information you must
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+know to use the system. However, the handbook reveals only a
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+small part of OS-9's capabilities. To learn about all of its fea
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tures, you need to know more about how OS-9 works. This intro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+duction provides such basic background information.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>The Kernel<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+At the center of the OS-9 system is a module (program) called a
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>kernel. </I>(See the following illustration.) The kernel provides basic
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+system services, such as multitasking and memory management.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+It links other system modules and serves as the system adminis
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+trator, supervisor, and resource manager.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\CH1~1\GR000001.JPG" WIDTH="323" HEIGHT="254">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Figure </B>1<BR>
+<BR>
+<P ALIGN="CENTER">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Term is your keyboard and video.
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+T1 and T2 are additional terminals.
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+P is a printer.
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+M1, M2, and M3 are modems.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+1-1
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Commands Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Garamond" COLOR="#000000">
+<B>The Input/Output Manager<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Although the kernel manages OS-9, it does not directly process
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the input and output of data among the other modules and your
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+computer 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>hardware </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(printers, disk drives, terminals, and so on).
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Instead the kernel passes this responsibility to the input/output
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+manager, IOMAN.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IOMAN has three 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>submanagers: </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+a character file manager, a pipe
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+file manager, and a disk file manager. The responsibilities of
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+these managers are as follows:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>The Character </B>Handles the transfer of data between OS-9<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>File Manager </B>and 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>character devices </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(devices that operate<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+on a character-by-character basis, such as<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+terminals, printers, or modems). The<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sequential character file manager (SCF) can<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+handle any number or type of such devices.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>The Pipe File </B>Handles communication between processes<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Manager </B>or tasks. Pipes let you use the output of one<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+process as the input of another process.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>The Disk File </B>This Random Block File Manager (RBF)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Manager </B>handles the transfer of data to and from<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>block-oriented, random access </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+devices, such<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+as a disk drive system.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Device Drivers<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC310, PIPER, and CC3DISK are 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>device drivers. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+These files con
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tain code that transforms standard data into a form acceptable
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to a particular device, whether it is a terminal, printer, modem,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+disk drive, any other device, or another file. PIPES transfers
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+data between processes.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Device Descriptors<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Term, T1, P, M1, D0, and so on, are 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>device descriptors. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+These
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+files describe the devices connected to the system. They contain
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+device initialization data as well as code that directs OS-9 to the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+physical addresses of the ports to which devices are connected.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\CH1~1\GR000002.JPG" WIDTH="20" HEIGHT="8">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\CH1~1\GR000003.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\CH1~1\GR000004.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\CH1~1\GR000005.JPG" WIDTH="25" HEIGHT="5">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Introduction l 1
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Garamond" COLOR="#000000">
+<B>The Shell<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The kernel, in conjunction with IOMAN and its associated man
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+agers and modules, make up the OS-9 operating system. These
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+modules handle all of the system's functions. However, OS-9
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+needs directions before it can accomplish useful tasks.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Directions to the system have two sources: commands and appli
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+cations or computer language programs.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Before commands are useful to the kernel, the shell must inter
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+pret them. It analyzes commands and converts them into code
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+that the kernel can understand.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Some application programs and computer languages also use the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+shell's functions. Others can access the kernel directly and do not
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+need to go through the shell.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Garamond" COLOR="#000000">
+<B>Going On<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Chapters 2 through 5 contain detailed information on the opera
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+tion of the OS-9 system illustrated in Figure 1. These chapters
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+more fully describe the composition of files and directories. They
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+tell about advanced features of commands and of the shell and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+contain information on multiprogramming and memory
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+management.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Chapter 6 contains descriptions of the OS-9 commands. Chapter
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+7 tells you how to use OS-9's Macro Text Editor.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\CH1~1\GR000006.JPG" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\CH1~1\GR000007.JPG" WIDTH="266" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+1-3<BR>
+</FONT>
+</BODY>
+</HTML>

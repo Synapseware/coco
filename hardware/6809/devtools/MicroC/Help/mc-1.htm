@@ -1,0 +1,1668 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1254">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>3.</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0" width="630">
+    <tr>
+        <td><a name="4. MEMORY ALLOCATION AND REFERENCING"><font
+        size="2" face="Arial"><strong>4. MEMORY ALLOCATION AND
+        REFERENCING</strong></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun:
+yes">               </span></font><a name="4.1 6816 Memory Models"><font
+        size="2" face="Arial"><em><strong>4.1 6816 Memory Models</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>The 6816 compiler supports two<span style="mso-spacerun: yes"> 
+</span>        &quot;memory models&quot;,<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>permit<br>
+<span style="mso-spacerun: yes">                  </span>the compiler to be used in different
+        hardware configurations:<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>4.1.1 SMALL model</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>This model assumes that
+        CODE and DATA will<span style="mso-spacerun: yes">  </span>share<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>single<br>
+<span style="mso-spacerun: yes">                     </span>64K block of memory.<span style="mso-spacerun: yes">  </span>To use<span style="mso-spacerun: yes">  </span>this<span style="mso-spacerun: yes"> 
+</span>        model,<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>hardware<span style="mso-spacerun: yes">  </span>must<br>
+<span style="mso-spacerun: yes">                     </span>support mapping both ROM and RAM
+        into a single 64K block. NOTE:<br>
+<span style="mso-spacerun: yes">                     </span>In ROM-only systems,<span style="mso-spacerun: yes">  </span>the 1K of
+        memory on the 6816 chip can<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun:
+yes">                     </span>configured to meet this
+        requirements.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>SMALL model notes:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>- Initialized variables
+        occupy ROM only.<br>
+<span style="mso-spacerun: yes">                        </span>- Limited to 64K TOTAL
+        code + data memory.<br>
+<span style="mso-spacerun:
+yes">                        </span>- Initialized variables
+        cannot be altered.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>4.1.2 LARGE model</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>This model assumes<span style="mso-spacerun: yes">  </span>that<span style="mso-spacerun: yes"> 
+</span>        the<span style="mso-spacerun: yes">  </span>CODE<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>DATA<span style="mso-spacerun: yes">  </span>will<span style="mso-spacerun: yes">  </span>occupy<br>
+<span style="mso-spacerun:
+yes">                     </span>separate blocks of memory (up to
+        64K each).<span style="mso-spacerun: yes">  </span>It is suitable for<br>
+<span style="mso-spacerun: yes">                     </span>hardware implementation in which
+        ROM and RAM cannot<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>shared<br>
+<span style="mso-spacerun:
+yes">                     </span>in a single 64K memory block.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>LARGE model notes:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>- Permits 64K data + 64K
+        code &amp; initialized data<br>
+<span style="mso-spacerun: yes">                        </span>- Initialized variables
+        may be altered.<br>
+<span style="mso-spacerun:
+yes">                        </span>- Initialized data
+        occupies RAM space.<br>
+        </font><p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="4.2 8051 Memory Models"><font size="2" face="Arial"><em><strong>4.2
+        8051 Memory Models</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The 8051 compiler<span style="mso-spacerun: yes">  </span>supports<span style="mso-spacerun: yes">  </span>five<span style="mso-spacerun: yes"> 
+</span>        different<span style="mso-spacerun: yes">  </span>&quot;memory<span style="mso-spacerun: yes">  </span>models&quot;,<br>
+<span style="mso-spacerun: yes">                  </span>which offer various methods of using
+        the 8051 memory architecture:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span><em><strong>4.2.1 TINY Model</strong></em><br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>Assumes NO external RAM is
+        available. Any initialized global<br>
+<span style="mso-spacerun: yes">                     </span>variables are placed in ROM.<span style="mso-spacerun: yes">  </span>All
+        references to external memory<br>
+<span style="mso-spacerun: yes">                     </span>are via<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>CODE<span style="mso-spacerun: yes">  </span>address<span style="mso-spacerun: yes"> 
+</span>        space<span style="mso-spacerun: yes">  </span>(MOVC<span style="mso-spacerun: yes">  </span>instruction).<span style="mso-spacerun: yes">  </span>Local<br>
+<span style="mso-spacerun: yes">                     </span>variables are allocated in
+        INTERNAL ram.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>TINY model notes:<br>
+<span style="mso-spacerun: yes">                        </span>- No external RAM required<br>
+<span style="mso-spacerun:
+yes">                        </span>- Minimal hardware system
+        requirements.<br>
+<span style="mso-spacerun: yes">                        </span>- Only 128/256 bytes RAM
+        available.<br>
+<span style="mso-spacerun: yes">                        </span>- Initialized variables
+        occupy ROM only.<br>
+<span style="mso-spacerun:
+yes">                        </span>- Initialized variables
+        may not be modified.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>4.2.2 SMALL Model</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Requires that ROM and RAM
+        be overlapped into<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>single<span style="mso-spacerun: yes">  </span>64K<br>
+<span style="mso-spacerun: yes">            </span><span style="mso-spacerun: yes">         </span>address space, which is accessed
+        with MOVX. Local variables are<br>
+<span style="mso-spacerun: yes">                     </span>allocated in INTERNAL ram.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                    </span>SMALL model notes:<br>
+<span style="mso-spacerun:
+yes">                        </span>- Up to 64K data + code
+        (combined)<br>
+<span style="mso-spacerun: yes">                        </span>- Requires RAM and ROM to
+        be overlapped in hardware.<br>
+<span style="mso-spacerun: yes">                        </span>- Local variables are fast
+        to access.<br>
+<span style="mso-spacerun:
+yes">                        </span>- Local variable space is
+        quite limited.<br>
+<span style="mso-spacerun: yes">                        </span>- Initialized variables
+        occupy ROM only.<br>
+<span style="mso-spacerun: yes">                        </span>- Initialized variables
+        may not be modified.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>4.2.3 COMPACT Model</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Similar to SMALL,<span style="mso-spacerun: yes">  </span>except
+        that local variables are allocated<br>
+<span style="mso-spacerun: yes">                     </span>an a &quot;pseudo&quot; stack
+        located in external RAM.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>COMPACT model notes:<br>
+<span style="mso-spacerun: yes">                        </span>- Up to 64K data + code
+        (combined)<br>
+<span style="mso-spacerun: yes">                        </span>- Requires RAM and ROM to
+        be overlapped in hardware.<br>
+<span style="mso-spacerun: yes">                        </span>- Local variables may be
+        as large as available RAM.<br>
+<span style="mso-spacerun: yes">                        </span>- Local variables are
+        slower to access.<br>
+<span style="mso-spacerun:
+yes">                        </span>- Initialized variables
+        occupy ROM only.<br>
+<span style="mso-spacerun: yes">                        </span>- Initialized variables
+        may not be modified.<br>
+        </font></span></p><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">
+        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><em><strong>4.2.4 MEDIUM
+        Model</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Similar to SMALL,<span style="mso-spacerun: yes">  </span>except
+        that initialized data is copied to<br>
+<span style="mso-spacerun: yes">                     </span>the RAM before program execution
+        begins.<span style="mso-spacerun:
+yes">  </span>This<span style="mso-spacerun: yes">  </span>eliminates<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                     </span>requirement<span style="mso-spacerun: yes">  </span>that<span style="mso-spacerun: yes">  </span>ROM<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes"> 
+</span>        RAM<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun:
+yes">  </span>overlapped,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">   </span>allows<br>
+<span style="mso-spacerun:
+yes">                     </span>initialized<span style="mso-spacerun: yes">  </span>variables<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes"> 
+</span>        modified<span style="mso-spacerun: yes">  </span>by<span style="mso-spacerun: yes">  </span>your<span style="mso-spacerun: yes">  </span>program<span style="mso-spacerun: yes">  </span>at<br>
+<span style="mso-spacerun: yes">                     </span>runtime.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>MEDIUM model notes:<br>
+<span style="mso-spacerun: yes">             </span><span style="mso-spacerun:
+yes">           </span>- Allows up to 64K of data
+        + 64K of code &amp; initialized data.<br>
+<span style="mso-spacerun: yes">                        </span>- Does not require
+        overlapped ROM/RAM.<br>
+<span style="mso-spacerun:
+yes">                        </span>- Local variables are fast
+        to access.<br>
+<span style="mso-spacerun: yes">                        </span>- Local variable space is
+        quite limited.<br>
+<span style="mso-spacerun: yes">                        </span>- Initialized variables
+        occupy RAM.<br>
+<span style="mso-spacerun:
+yes">                        </span>- Initialized variables
+        may be modified at runtime.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>4.2.5 LARGE Model</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Similar to COMPACT,<span style="mso-spacerun: yes">  </span>except
+        that initialized data is<span style="mso-spacerun: yes">  </span>copied<br>
+<span style="mso-spacerun: yes">                     </span>to the RAM before program
+        execution begins. This eliminates the<br>
+<span style="mso-spacerun:
+yes">                     </span>requirement<span style="mso-spacerun: yes">  </span>that<span style="mso-spacerun: yes">  </span>ROM<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes"> 
+</span>        RAM<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun:
+yes">  </span>overlapped,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">   </span>allows<br>
+<span style="mso-spacerun:
+yes">                     </span>initialized variables to be
+        modified by you program at runtime.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>LARGE model notes:<br>
+<span style="mso-spacerun: yes">                        </span>- Allows up to 64K of data
+        + 64K of code &amp; initialized data.<br>
+<span style="mso-spacerun: yes">                        </span>- Does not require
+        overlapped ROM/RAM.<br>
+<span style="mso-spacerun: yes">                        </span>- Local variables may be
+        as large as available RAM.<br>
+<span style="mso-spacerun:
+yes">                        </span>- Local variables are
+        slower to access.<br>
+<span style="mso-spacerun: yes">                        </span>- Initialized variables
+        occupy RAM.<br>
+<span style="mso-spacerun: yes">                        </span>- Initialized variables
+        may be modified at runtime.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>To differentiate accesses to
+        INTERNAL and EXTERNAL memory,<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>code generator makes use of the
+        &quot;register&quot;<span style="mso-spacerun: yes">  </span>attribute.<span style="mso-spacerun: yes">  </span>Any global<br>
+<span style="mso-spacerun:
+yes">                  </span>variables which are declared with the
+        &quot;register&quot;<span style="mso-spacerun: yes">  </span>are allocated in<br>
+<span style="mso-spacerun: yes">                  </span>INTERNAL memory.<span style="mso-spacerun: yes">  </span>Globals which are
+        NOT<span style="mso-spacerun: yes">  </span>declared<span style="mso-spacerun: yes">  </span>&quot;register&quot;<span style="mso-spacerun: yes">  </span>are<br>
+<span style="mso-spacerun: yes">                  </span>allocated in EXTERNAL memory.<span style="mso-spacerun: yes">  </span>Although
+        this is inconsistent<span style="mso-spacerun: yes">  </span>with<br>
+<span style="mso-spacerun:
+yes">                  </span>the standard<span style="mso-spacerun: yes">  </span>'C'<span style="mso-spacerun: yes">  </span>use of<span style="mso-spacerun: yes">  </span>&quot;register&quot;<span style="mso-spacerun: yes"> 
+</span>        (which cannot<span style="mso-spacerun:
+yes">  </span>normally<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                  </span>applied to globals),<span style="mso-spacerun: yes">  </span>this method was
+        chosen because it<span style="mso-spacerun: yes">  </span>preserves<br>
+<span style="mso-spacerun:
+yes">                  </span>the general notion that
+        &quot;register&quot; means &quot;efficient&quot;.<br>
+        </span></font></p><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">
+        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="4.3 8051 LOCAL Variables"><font size="2"
+        face="Arial"><em><strong>4.3 8051 LOCAL Variables</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>In the TINY,<span style="mso-spacerun: yes">  </span>SMALL and MEDIUM
+        memory models,<span style="mso-spacerun: yes">  </span>LOCAL<span style="mso-spacerun: yes">  </span>variables<br>
+<span style="mso-spacerun:
+yes">                  </span>are allocated on the 8031/8051
+        internal CPU stack.<span style="mso-spacerun: yes">  </span>Since there is<br>
+<span style="mso-spacerun: yes">                  </span>only 120 bytes of memory for internal<span style="mso-spacerun: yes"> 
+</span>        variables<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>stack,<br>
+<span style="mso-spacerun: yes">                  </span>care should be exercised is the use of
+        local variables when<span style="mso-spacerun: yes">  </span>using<br>
+<span style="mso-spacerun: yes">                  </span>these<span style="mso-spacerun:
+yes">  </span>memory<span style="mso-spacerun: yes">  </span>models.<span style="mso-spacerun: yes">  </span>(If<span style="mso-spacerun: yes">  </span>you<span style="mso-spacerun: yes"> 
+</span>        are<span style="mso-spacerun: yes">  </span>using<span style="mso-spacerun: yes">  </span>an<span style="mso-spacerun: yes">  </span>8032/8052<span style="mso-spacerun: yes">   </span>type<br>
+<span style="mso-spacerun:
+yes">                  </span>processor,<span style="mso-spacerun: yes">  </span>the amount of available
+        internal RAM increases to<span style="mso-spacerun: yes">  </span>248<br>
+<span style="mso-spacerun: yes">                  </span>bytes).<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>In the COMPACT and LARGE<span style="mso-spacerun: yes">  </span>memory<span style="mso-spacerun: yes"> 
+</span>        model,<span style="mso-spacerun: yes">  </span>LOCAL<span style="mso-spacerun: yes">  </span>variables<span style="mso-spacerun: yes">  </span>are<br>
+<span style="mso-spacerun: yes">                  </span>allocated in external memory.<span style="mso-spacerun: yes">  </span>This
+        allows local variables<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun:
+yes">  </span>be<br>
+</font></span><font
+        size="2" face="Arial"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;
+mso-fareast-font-family:&quot;MS Mincho&quot;"><span style="mso-spacerun: yes">                  </span>any number and size up to the limits
+        of available RAM.</span></font></p>
+        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="4.4 8051 GLOBAL Variables"><font size="2"
+        face="Arial"><em><strong>4.4 8051 GLOBAL Variables</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">           </span><span style="mso-spacerun: yes">          </span>GLOBAL variables which<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>declared<span style="mso-spacerun: yes"> 
+</span>        as<span style="mso-spacerun: yes">  </span>&quot;register&quot;<span style="mso-spacerun: yes">  </span>will<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                  </span>allocated<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>internal<span style="mso-spacerun: yes">  </span>memory.<span style="mso-spacerun: yes">  </span>These<span style="mso-spacerun: yes"> 
+</span>        variables<span style="mso-spacerun: yes">  </span>MUST<span style="mso-spacerun: yes">  </span>NOT<span style="mso-spacerun: yes">   </span>be<br>
+<span style="mso-spacerun: yes">                  </span>initialized in the declaration.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>GLOBAL variables which<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>NOT<span style="mso-spacerun: yes"> 
+</span>        declared<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>&quot;register&quot;<span style="mso-spacerun: yes">  </span>are<br>
+<span style="mso-spacerun:
+yes">                  </span>allocated in EXTERNAL memory.<span style="mso-spacerun:
+yes">  </span>In<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes"> 
+</span>        TINY,<span style="mso-spacerun: yes">  </span>SMALL<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>COMPACT<br>
+<span style="mso-spacerun:
+yes">                  </span>memory models,<span style="mso-spacerun: yes">  </span>any such variables
+        which are<span style="mso-spacerun: yes">  </span>initialized<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>declaration are allocated in ROM,<span style="mso-spacerun: yes">  </span>and
+        thus will not be<span style="mso-spacerun: yes">  </span>alterable<br>
+<span style="mso-spacerun:
+yes">                  </span>by your program.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>By default, a reference via a
+        pointer occurs to INTERNAL memory<br>
+<span style="mso-spacerun: yes">                  </span>if that pointer is declared as
+        &quot;register&quot;,<span style="mso-spacerun: yes">  </span>and to EXTERNAL memory<br>
+<span style="mso-spacerun: yes">                  </span>if it is not.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>For GLOBAL pointer variables,<span style="mso-spacerun: yes">  </span>this
+        means that the pointer will<br>
+<span style="mso-spacerun:
+yes">                  </span>reference the same type of memory in
+        which it is defined.<span style="mso-spacerun: yes">  </span>You may<br>
+<span style="mso-spacerun: yes">                  </span>use casts to force a pointer<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>reference<span style="mso-spacerun: yes"> 
+</span>        a<span style="mso-spacerun: yes">  </span>specific<span style="mso-spacerun: yes">  </span>type<span style="mso-spacerun: yes">  </span>of<br>
+<span style="mso-spacerun: yes">                  </span>memory. For example:<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>/* Global pointer definitions */<br>
+<span style="mso-spacerun: yes">               </span><span style="mso-spacerun: yes">     </span>register int *iptr;<span style="mso-spacerun: yes">       </span>/*
+        Allocated in INTERNAL */<br>
+<span style="mso-spacerun: yes">                    </span>int *eptr;<span style="mso-spacerun: yes">               
+</span>        /* Allocated in EXTERNAL */<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>/* ... pointer accesses (must be
+        inside function) */<br>
+<span style="mso-spacerun:
+yes">                    </span>*iptr;<span style="mso-spacerun:
+yes">                   
+</span>        /* Reference INTERNAL */<br>
+<span style="mso-spacerun: yes">                    </span>*eptr;<span style="mso-spacerun:
+yes">                   
+</span>        /* Reference EXTERNAL */<br>
+<span style="mso-spacerun: yes">                    </span>*(int*)iptr;<span style="mso-spacerun: yes">             
+</span>        /* Reference EXTERNAL */<br>
+<span style="mso-spacerun: yes">                    </span>*(register int*)eptr;<span style="mso-spacerun: yes">     </span>/*
+        Reference INTERNAL */<br>
+        </font></span></p><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">
+        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="4.5 AVR Memory Referencing Notes"><font size="2"
+        face="Arial"><em><strong>4.5 AVR Memory Referencing Notes</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>!!! NOTE !!! When compiling for AVR's
+        with CODE &lt;= 8K (2313, 4414,<br>
+<span style="mso-spacerun: yes">                  </span>8515),<span style="mso-spacerun: yes">  </span>you **MUST** use the -Z
+        option to force RJMP/RCALL,<span style="mso-spacerun: yes">  </span>since<br>
+<span style="mso-spacerun: yes">                  </span>JMP/CALL are not supported on these
+        devices.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The biggest &quot;gotcha&quot;<span style="mso-spacerun: yes"> 
+</span>        in using 'C'<span style="mso-spacerun: yes">  </span>on the AVR is the fact that<br>
+<span style="mso-spacerun: yes">                  </span>the AVR has two totally separate
+        memory address spaces (CODE/FLASH<br>
+<span style="mso-spacerun:
+yes">                  </span>and DATA/RAM),<span style="mso-spacerun: yes">  </span>which are accessed in
+        completely different<span style="mso-spacerun:
+yes">  </span>ways).<br>
+<span style="mso-spacerun: yes">                  </span>'C'<span style="mso-spacerun: yes">  </span>has the notion that any data can
+        be referencd with<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>single<br>
+<span style="mso-spacerun:
+yes">                  </span>pointer,<span style="mso-spacerun: yes">  </span>however the AVR does not<span style="mso-spacerun: yes">  </span>work<span style="mso-spacerun: yes"> 
+</span>        this<span style="mso-spacerun: yes">  </span>way,<span style="mso-spacerun: yes">  </span>due<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>requirement that different
+        instructions and registers be used when<br>
+<span style="mso-spacerun: yes">                  </span>accessing CODE memory vs DATA memory.<span style="mso-spacerun: yes"> 
+</span>        One solition<span style="mso-spacerun: yes">  </span>would<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>to<br>
+<span style="mso-spacerun: yes">                  </span>copy the constant data to<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>RAM,<span style="mso-spacerun: yes"> 
+</span>        however<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>AVR's<span style="mso-spacerun: yes">  </span>limited<br>
+<span style="mso-spacerun: yes">                  </span>on-chip RAM makes this impractical.
+        Another way to work around the<br>
+<span style="mso-spacerun: yes">                  </span>problem would be to utilize runtime
+        library routines which<span style="mso-spacerun: yes">  </span>assign<br>
+<span style="mso-spacerun:
+yes">                  </span>virtual addresses to the two memory
+        spaces.<span style="mso-spacerun: yes">  </span>This would result<span style="mso-spacerun:
+yes">  </span>in<br>
+<span style="mso-spacerun: yes">                  </span>an unacceptable overhead<span style="mso-spacerun: yes">  </span>(All<span style="mso-spacerun: yes">  </span>memory<span style="mso-spacerun: yes"> 
+</span>        references<span style="mso-spacerun: yes">  </span>would<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>via<br>
+<span style="mso-spacerun: yes">                  </span>subroutine calls).<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Micro-C's approach to this
+        problem, is to place all initialized<br>
+<span style="mso-spacerun: yes">                  </span>global<span style="mso-spacerun:
+yes">  </span>or<span style="mso-spacerun: yes">  </span>static<span style="mso-spacerun: yes">  </span>data<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun:
+yes">  
+</span>        CODE<span style="mso-spacerun: yes">   </span>(flash)<span style="mso-spacerun: yes">   </span>memory,<span style="mso-spacerun: yes">   </span>and<br>
+<span style="mso-spacerun: yes">                  </span>uninitialized data in the DATA<span style="mso-spacerun: yes">  </span>(ram)<span style="mso-spacerun: yes"> 
+</span>        memory.<span style="mso-spacerun: yes">  </span>Direct accesses to<br>
+<span style="mso-spacerun: yes">                  </span>these variables will generate the
+        correct code for the memory type<br>
+<span style="mso-spacerun: yes">                  </span>where the variable is located.<span style="mso-spacerun: yes">  </span>Pointer<span style="mso-spacerun: yes"> 
+</span>        variables<span style="mso-spacerun: yes">  </span>will<span style="mso-spacerun: yes">  </span>normally<br>
+<span style="mso-spacerun:
+yes">                  </span>only reference the DATA/RAM memory,<span style="mso-spacerun: yes">  </span>however
+        Micro-C<span style="mso-spacerun:
+yes">  </span>provides<span style="mso-spacerun: yes">  </span>an<br>
+<span style="mso-spacerun: yes">                  </span>extension to C in that it allows the
+        &quot;const&quot;<span style="mso-spacerun: yes">  </span>attribute to force a<br>
+<span style="mso-spacerun: yes">                  </span>pointer to reference CODE/DATA memory.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>You must be very careful<span style="mso-spacerun: yes">  </span>about<span style="mso-spacerun: yes"> 
+</span>        pointers<span style="mso-spacerun: yes">  </span>(especially<span style="mso-spacerun: yes">  </span>implied<br>
+<span style="mso-spacerun: yes">                  </span>ones which are generated by passing an
+        array<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun:
+yes">  </span>function<span style="mso-spacerun: yes">  </span>for<br>
+<span style="mso-spacerun: yes">                  </span>example).<span style="mso-spacerun:
+yes">  </span>Any pointer<span style="mso-spacerun: yes">  </span>(or<span style="mso-spacerun: yes">  </span>pointer/array<span style="mso-spacerun:
+yes"> 
+</span>        argument)<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>will<br>
+<span style="mso-spacerun:
+yes">                  </span>access constant data from the CODE
+        memory must<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>declared<span style="mso-spacerun: yes">  </span>with<br>
+<span style="mso-spacerun: yes">                  </span>the &quot;const&quot; attribute.<span style="mso-spacerun: yes">  </span>Otherwise,<span style="mso-spacerun: yes"> 
+</span>        Micro-C will silently generate<br>
+<span style="mso-spacerun: yes">                  </span>accesses to the DATA memory, which
+        will of course not contain what<br>
+<span style="mso-spacerun: yes">                  </span>you expected! In the same manner,
+        attempting to access DATA memory<br>
+<span style="mso-spacerun: yes">                  </span>with a pointer that has been given the
+        &quot;const&quot; attribute will also<br>
+<span style="mso-spacerun:
+yes">                  </span>produce incorrect results.<br>
+        </font></span></p><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">
+        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="5. ADVANCED TOPICS"><font size="2" face="Arial"><strong>5.
+        ADVANCED TOPICS</strong></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>This section provides information on
+        the more advanced aspects<span style="mso-spacerun: yes">  </span>of<br>
+<span style="mso-spacerun:
+yes">               </span>MICRO-C,<span style="mso-spacerun: yes">  </span>which is<span style="mso-spacerun: yes">  </span>generally<span style="mso-spacerun:
+yes">  </span>not<span style="mso-spacerun: yes">  </span>needed<span style="mso-spacerun: yes"> 
+</span>        for<span style="mso-spacerun: yes">  </span>casual<span style="mso-spacerun: yes">  </span>use<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">               </span>language.<br>
+        </font></span></p><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">
+        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="5.1 Conversion Rules"><font size="2" face="Arial"><em><strong>5.1
+        Conversion Rules</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>MICRO-C keep track of the<span style="mso-spacerun: yes">  </span>&quot;type&quot;<span style="mso-spacerun: yes"> 
+</span>        of each value<span style="mso-spacerun: yes">  </span>used<span style="mso-spacerun:
+yes">  </span>in<span style="mso-spacerun: yes">  </span>all<br>
+<span style="mso-spacerun: yes">                  </span>expressions.<span style="mso-spacerun: yes">  </span>This type identifies
+        certain characteristics of<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>value,<span style="mso-spacerun: yes">  </span>such<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">   </span>size<span style="mso-spacerun: yes">   </span>range<span style="mso-spacerun: yes">  
+</span>        (8/16<span style="mso-spacerun: yes">   </span>bits),<span style="mso-spacerun: yes">   </span>numeric<span style="mso-spacerun: yes">   </span>scope<br>
+<span style="mso-spacerun:
+yes">                  </span>(signed/unsigned), reference
+        (value/pointer) etc.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>When an<span style="mso-spacerun:
+yes">  </span>operation<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>performed<span style="mso-spacerun: yes"> 
+</span>        on<span style="mso-spacerun: yes">  </span>two<span style="mso-spacerun:
+yes">  </span>values<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>have<br>
+<span style="mso-spacerun:
+yes">                  </span>identical &quot;types&quot;, MICRO-C
+        assigns that same &quot;type&quot; to the result.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>When the<span style="mso-spacerun: yes">  </span>two<span style="mso-spacerun: yes">  </span>value<span style="mso-spacerun: yes">  </span>&quot;types&quot;<span style="mso-spacerun:
+yes"> 
+</span>        involved<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>an<span style="mso-spacerun: yes">  </span>operation<span style="mso-spacerun: yes">  </span>are<br>
+<span style="mso-spacerun: yes">                  </span>different,<span style="mso-spacerun:
+yes">  </span>MICRO-C calculates the
+        &quot;type&quot;<span style="mso-spacerun:
+yes">  </span>of the result using the<br>
+<span style="mso-spacerun:
+yes">                  </span>following rules:<br>
+        </font></span></p><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">
+        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><em><strong>5.1.1 Size
+        range</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>If both values are<span style="mso-spacerun: yes">  </span>direct<span style="mso-spacerun: yes"> 
+</span>        (not<span style="mso-spacerun: yes">  </span>pointer)<span style="mso-spacerun: yes">  </span>references,<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                     </span>result will be 8 bits only if<span style="mso-spacerun: yes">  </span>both<span style="mso-spacerun: yes"> 
+</span>        values<span style="mso-spacerun: yes">  </span>were<span style="mso-spacerun: yes">  </span>8<span style="mso-spacerun: yes">  </span>bits.<span style="mso-spacerun: yes">  </span>If<br>
+<span style="mso-spacerun: yes">                </span><span style="mso-spacerun:
+yes">     </span>either value was 16 bits, the
+        result will be 16 bits.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>If one value is a pointer,<span style="mso-spacerun: yes"> 
+</span>        and the<span style="mso-spacerun: yes">  </span>other<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>direct,<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                     </span>result will be a pointer to the
+        same size value as the original<br>
+<span style="mso-spacerun: yes">                     </span>pointer.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>If both values were
+        pointers,<span style="mso-spacerun: yes">  </span>the result will be a<span style="mso-spacerun: yes">  </span>pointer<br>
+<span style="mso-spacerun: yes">                     </span>to 16 bits only if both original<span style="mso-spacerun: yes"> 
+</span>        pointers<span style="mso-spacerun: yes">  </span>referenced<span style="mso-spacerun: yes">  </span>16<span style="mso-spacerun: yes">  </span>bit<br>
+<span style="mso-spacerun: yes">                     </span>values. If either pointer
+        referenced an 8 bit value, the result<br>
+<span style="mso-spacerun: yes">                     </span>will reference an 8 bit value.<br>
+        <br>
+<span style="mso-spacerun: yes">                  <em><strong></strong></em></span><em><strong>5.1.2 Numeric Scope</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>The result of an
+        expression is considered to be signed<span style="mso-spacerun: yes">  </span>only<br>
+<span style="mso-spacerun:
+yes">                     </span>if both original values were
+        signed.<span style="mso-spacerun: yes">  </span>If either<span style="mso-spacerun: yes">  </span>value<span style="mso-spacerun: yes">  </span>was<span style="mso-spacerun: yes">  </span>an<br>
+<span style="mso-spacerun:
+yes">                     </span>unsigned value, the result is
+        unsigned.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>5.1.3 Reference</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>If either of the original
+        values was a pointer,<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>result<br>
+<span style="mso-spacerun:
+yes">                     </span>will<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>pointer.<span style="mso-spacerun: yes">  </span>One<span style="mso-spacerun: yes"> 
+</span>        exception<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>this<span style="mso-spacerun: yes">  </span>rule<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">   </span>the<br>
+<span style="mso-spacerun: yes">                     </span>subtraction of two pointers,
+        which yields an integer result.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>Note that this<span style="mso-spacerun: yes">  </span>&quot;calculated&quot;<span style="mso-spacerun: yes"> 
+</span>        result type is used<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes">  </span>partial<br>
+<span style="mso-spacerun:
+yes">                  </span>results within an expression. Whenever
+        a symbol such as a variable<br>
+<span style="mso-spacerun: yes">                  </span>or function is referenced,<span style="mso-spacerun: yes">  </span>the type
+        of that symbol is taken<span style="mso-spacerun: yes">  </span>from<br>
+<span style="mso-spacerun: yes">                  </span>its declaration,<span style="mso-spacerun: yes">  </span>no matter what<span style="mso-spacerun:
+yes">  </span>&quot;type&quot;<span style="mso-spacerun: yes"> 
+</span>        of value was last stored<br>
+<span style="mso-spacerun: yes">                  </span>(variable) or returned (function).<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>The TYPECAST<span style="mso-spacerun: yes">  </span>operation<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes"> 
+</span>        be<span style="mso-spacerun: yes">  </span>used<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>override<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>type<br>
+</span><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+&quot;MS Mincho&quot;"><span style="mso-spacerun: yes">                  </span>calculated for the result of an
+        expression if necessary</span></font></p><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+&quot;MS Mincho&quot;">
+        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="5.2 Accessing on-chip registers and hardware"><font
+        size="2" face="Arial"><em><strong>5.2 Accessing on-chip
+        registers and hardware</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>6808,6811,6812,8051:<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>You may access any of the
+        on-chip registers directly from<span style="mso-spacerun: yes">  </span>with<br>
+<span style="mso-spacerun: yes">                  </span>your 'C' program, by including an
+        appropriate &quot;extern&quot; declaration<br>
+<span style="mso-spacerun:
+yes">                  </span>for each<span style="mso-spacerun: yes">  </span>register<span style="mso-spacerun: yes">  </span>prior<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>using<span style="mso-spacerun: yes"> 
+</span>        it.<span style="mso-spacerun: yes">  </span>The<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun: yes">  </span>&quot;{CPU}reg.h&quot;<br>
+<span style="mso-spacerun: yes">                  </span>contains a complete set of
+        declarations for<span style="mso-spacerun:
+yes">  </span>all<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>on-chip<br>
+<span style="mso-spacerun: yes">                  </span>registers.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>6816:<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>You may access any of the
+        on-chip registers directly from<span style="mso-spacerun:
+yes">  </span>with<br>
+<span style="mso-spacerun: yes">                  </span>your 'C'<span style="mso-spacerun: yes">  </span>program,<span style="mso-spacerun:
+yes">  </span>by
+        &quot;peek()&quot;ing and<span style="mso-spacerun: yes">  </span>&quot;poke()&quot;ing to the
+        correct<br>
+<span style="mso-spacerun:
+yes">                  </span>locations in memory bank 15 (0x0f).<span style="mso-spacerun: yes">  </span>The
+        file &quot;6816reg.h&quot; contains<br>
+<span style="mso-spacerun: yes">                  </span>a complete set of declarations for all
+        of the on-chip registers.<br>
+        </font></span></p><p>
+        <span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="5.3 Assembly Language Interface"><font size="2"
+        face="Arial"><em><strong>5.3 Assembly Language Interface</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>Assembly language programs may
+        be called from 'C' functions and<br>
+<span style="mso-spacerun: yes">                  </span>vice versa.<span style="mso-spacerun: yes">  </span>These programs may be in
+        the form of inline<span style="mso-spacerun: yes">  </span>assembly<br>
+<span style="mso-spacerun: yes">                  </span>language statements in the 'C'<span style="mso-spacerun: yes">  </span>source
+        code,<span style="mso-spacerun:
+yes">  </span>or separately linked<br>
+<span style="mso-spacerun:
+yes">                  </span>modules.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>The MICRO-C runtime<span style="mso-spacerun: yes">  </span>library<span style="mso-spacerun: yes">  </span>includes<span style="mso-spacerun: yes"> 
+</span>        a<span style="mso-spacerun: yes">  </span>number<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>assembly<br>
+<span style="mso-spacerun:
+yes">                  </span>language subroutines which provide
+        various services<span style="mso-spacerun: yes">  </span>(such<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>16<br>
+<span style="mso-spacerun: yes">                  </span>bit<span style="mso-spacerun: yes">  </span>multiplication,<span style="mso-spacerun: yes">  </span>division,<span style="mso-spacerun: yes">  </span>etc).<span style="mso-spacerun: yes"> 
+</span>        These<span style="mso-spacerun: yes">  </span>routines<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>well<br>
+<span style="mso-spacerun: yes">                  </span>documented in the library startup code
+        files ({CPU}RL?.ASM), which<br>
+<span style="mso-spacerun: yes">                  </span>you should examine before<span style="mso-spacerun: yes">  </span>attempting<span style="mso-spacerun: yes"> 
+</span>        to<span style="mso-spacerun: yes">  </span>use<span style="mso-spacerun:
+yes">  </span>assembly <span style="mso-spacerun: yes"> </span>language<br>
+<span style="mso-spacerun: yes">                  </span>within MICRO-C.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Global variables defined in 'C'
+        exist at absolute addresses and<br>
+<span style="mso-spacerun: yes">                  </span>may be referenced directly by name
+        from assembly language.<span style="mso-spacerun: yes">  </span>Global<br>
+<span style="mso-spacerun:
+yes">                  </span>names which are referenced<span style="mso-spacerun:
+yes">  </span>by<span style="mso-spacerun: yes">  </span>both<span style="mso-spacerun: yes"> 
+</span>        assembly<span style="mso-spacerun: yes">  </span>language<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>'C'<br>
+<span style="mso-spacerun:
+yes">                  </span>should not be longer than 15
+        characters.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>When MICRO-C calls any routine<span style="mso-spacerun: yes"> 
+</span>        ('C'<span style="mso-spacerun:
+yes">  </span>or assembler),<span style="mso-spacerun: yes">  </span>it<span style="mso-spacerun: yes">  </span>first<br>
+<span style="mso-spacerun:
+yes">                  </span>pushes all arguments to the routine
+        onto the processor<span style="mso-spacerun: yes">  </span>stack,<span style="mso-spacerun: yes">  </span>in<br>
+<span style="mso-spacerun:
+yes">                  </span>the order in<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>they<span style="mso-spacerun: yes">  </span>occur<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes"> 
+</span>        the<span style="mso-spacerun:
+yes">  </span>argument<span style="mso-spacerun: yes">  </span>list<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>function.<span style="mso-spacerun: yes">  </span>This means that the LAST
+        argument to<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>function<span style="mso-spacerun: yes">  </span>is<br>
+<span style="mso-spacerun: yes">                  </span>CLOSEST to the top of the processor
+        stack.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Arguments are always pushed as
+        16 bit values.<span style="mso-spacerun: yes">  </span>Character values<br>
+<span style="mso-spacerun: yes">                  </span>are extended to 16 bits,<span style="mso-spacerun: yes">  </span>and arrays
+        are passed as 16 bit pointers<br>
+<span style="mso-spacerun:
+yes">                  </span>to the array.<span style="mso-spacerun: yes">  </span>(MICRO-C knows that
+        arrays which are arguments<span style="mso-spacerun:
+yes">  </span>are<br>
+<span style="mso-spacerun: yes">                  </span>actually<span style="mso-spacerun: yes">  </span>pointers,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>automatically<span style="mso-spacerun: yes"> 
+</span>        references<span style="mso-spacerun: yes">  </span>through<span style="mso-spacerun: yes">   </span>the<br>
+<span style="mso-spacerun: yes">                  </span>pointer).<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>After pushing the arguments,<span style="mso-spacerun: yes">  </span>MICRO-C
+        then generates a<span style="mso-spacerun: yes">  </span>machine<br>
+<span style="mso-spacerun: yes">                  </span>language subroutine<span style="mso-spacerun: yes">  </span>call,<span style="mso-spacerun: yes">  </span>thereby<span style="mso-spacerun: yes"> 
+</span>        executing<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>code<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>routine.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Once the called routine returns,
+        the arguments are removed from<br>
+<span style="mso-spacerun: yes">                  </span>the stack by the calling program.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>It is the responsibility of the
+        called function to<span style="mso-spacerun: yes">  </span>remove<span style="mso-spacerun:
+yes">  </span>any<br>
+<span style="mso-spacerun: yes">                  </span>saved registers and local variable
+        space from the stack before<span style="mso-spacerun: yes">  </span>it<br>
+<span style="mso-spacerun:
+yes">                  </span>returns.<span style="mso-spacerun: yes">  </span>If a value is to be
+        returned to the calling program,<span style="mso-spacerun:
+yes">  </span>it<br>
+<span style="mso-spacerun: yes">                  </span>is expected to be in the 16 bit
+        ACCUMULATOR.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>Examine<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>supplied<span style="mso-spacerun: yes">  </span>library<span style="mso-spacerun: yes"> 
+</span>        functions,<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>well<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>code<br>
+<span style="mso-spacerun: yes">                  </span>produced by the compiler to gain more
+        insight into the<span style="mso-spacerun: yes">  </span>techniques<br>
+<span style="mso-spacerun: yes">                  </span>of accessing local variables and
+        arguments.<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                  </span><strong>6808:</strong><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The 16 bit accumulator is
+        maintained in registers H:X<span style="mso-spacerun:
+yes">  </span>(H=High,<br>
+<span style="mso-spacerun: yes">                  </span>X=Low).<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Local variables in a function
+        may be referenced as offsets from<br>
+<span style="mso-spacerun: yes">                  </span>the stack pointer.<span style="mso-spacerun: yes">  </span>Note that offsets
+        must<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>adjusted<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>number of additional bytes which are<span style="mso-spacerun: yes"> 
+</span>        pushed<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>popped<span style="mso-spacerun: yes">  </span>on<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>stack during the execution of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>function.<span style="mso-spacerun: yes"> 
+</span>        The<span style="mso-spacerun: yes">  </span>address<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun: yes">                  </span>particular local variable is
+        calculated as:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                       
+</span>        &quot;stack pointer&quot;<br>
+<span style="mso-spacerun: yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                 </span><span style="mso-spacerun:
+yes">       </span>(size of all preceding
+        local variables in bytes)<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Arguments to a<span style="mso-spacerun: yes">  </span>function<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes"> 
+</span>        also<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>referenced<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>direct<br>
+<span style="mso-spacerun:
+yes">                  </span>offsets from the stack pointer,<span style="mso-spacerun:
+yes">  </span>in
+        much the<span style="mso-spacerun: yes">  </span>same<span style="mso-spacerun: yes">  </span>way<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>local<br>
+<span style="mso-spacerun: yes">                  </span>variables are.<span style="mso-spacerun: yes">  </span>The address of a
+        particular argument is calculated<br>
+<span style="mso-spacerun: yes">                  </span>as:<br>
+        <br>
+<span style="mso-spacerun: yes">                                       
+</span>        &quot;stack pointer&quot;<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                         </span><span style="mso-spacerun:
+yes">    </span>(size of all
+        local variables in bytes)<br>
+<span style="mso-spacerun: yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                             </span>(Size of return
+        address on stack (2))<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                              </span>(# arguments
+        from LAST argument) * 2<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>If a function has been declared<span style="mso-spacerun: yes"> 
+</span>        as<span style="mso-spacerun: yes">  </span>&quot;register&quot;,<span style="mso-spacerun: yes">  </span>MICRO-C<span style="mso-spacerun: yes">  </span>will<br>
+<span style="mso-spacerun: yes">                  </span>load its 'H:X' accumulator with the
+        number of arguments which were<br>
+<span style="mso-spacerun: yes">                  </span>passed, each time the function is
+        called. This allows the function<br>
+<span style="mso-spacerun: yes">                  </span>to determine the location of the<span style="mso-spacerun: yes">  </span>first<span style="mso-spacerun: yes"> 
+</span>        argument,<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                  </span>calculated as:<br>
+        <br>
+<span style="mso-spacerun: yes">                                       
+</span>        &quot;stack pointer&quot;<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                                   </span>(accumulator
+        contents) * 2<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                             </span>(size of all
+        local variables in bytes)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                             </span>(Size of return
+        address on stack (2))<br>
+        <br clear="all" style="page-break-before:always">
+                  </font></span><font
+        size="2" face="Arial"><strong>6809,6811,6812:</strong><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>INLINE assembly code on the
+        68HC11 should preserve the<span style="mso-spacerun: yes">  </span>content<br>
+<span style="mso-spacerun:
+yes">                  </span>of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>'Y'<span style="mso-spacerun: yes">  </span>register<span style="mso-spacerun: yes">  </span>(which<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes"> 
+</span>        used<span style="mso-spacerun: yes">  </span>internally<span style="mso-spacerun: yes">   </span>for<span style="mso-spacerun: yes">   </span>stack<br>
+<span style="mso-spacerun: yes">                  </span>addressing).<span style="mso-spacerun: yes">  </span>This restriction does
+        not apply to assembly language<br>
+<span style="mso-spacerun:
+yes">                  </span>functions. All other registers may be
+        used freely.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The 16 bit accumulator is
+        maintained in registers A:B<span style="mso-spacerun: yes">  </span>(A=High,<br>
+<span style="mso-spacerun: yes">                  </span>B=Low)<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Local variables in a function
+        may be referenced as offsets from<br>
+<span style="mso-spacerun: yes">                  </span>the stack pointer.<span style="mso-spacerun: yes">  </span>Note that offsets
+        must<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>adjusted<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>number of additional bytes which are<span style="mso-spacerun: yes"> 
+</span>        pushed<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>popped<span style="mso-spacerun: yes">  </span>on<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>stack during the execution of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>function.<span style="mso-spacerun: yes"> 
+</span>        The<span style="mso-spacerun: yes">  </span>address<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun: yes">                  </span>particular local variable is
+        calculated as:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                       
+</span>        &quot;stack pointer&quot;<br>
+<span style="mso-spacerun: yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun: yes">                     </span><span style="mso-spacerun: yes">                          </span>+<br>
+<span style="mso-spacerun: yes">                        </span>(size of all preceding
+        local variables in bytes)<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Arguments to a<span style="mso-spacerun: yes">  </span>function<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes"> 
+</span>        also<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>referenced<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>direct<br>
+<span style="mso-spacerun: yes">                  </span>offsets from the stack pointer,<span style="mso-spacerun: yes">  </span>in
+        much the<span style="mso-spacerun: yes">  </span>same<span style="mso-spacerun: yes">  </span>way<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>local<br>
+<span style="mso-spacerun: yes">                  </span>variables are.<span style="mso-spacerun: yes">  </span>The address of a
+        particular argument is calculated<br>
+<span style="mso-spacerun: yes">                  </span>as:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                       
+</span>        &quot;stack pointer&quot;<br>
+<span style="mso-spacerun: yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun: yes">                             </span><span style="mso-spacerun: yes">                  </span>+<br>
+<span style="mso-spacerun: yes">                             </span>(size of all
+        local variables in bytes)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                             </span>(Size of return
+        address on stack (2))<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                              </span>(# arguments
+        from LAST argument) * 2<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>If a function has been declared<span style="mso-spacerun: yes"> 
+</span>        as<span style="mso-spacerun: yes">  </span>&quot;register&quot;,<span style="mso-spacerun: yes">  </span>MICRO-C<span style="mso-spacerun: yes">  </span>will<br>
+<span style="mso-spacerun: yes">                  </span>load the<span style="mso-spacerun: yes">  </span>'D'<span style="mso-spacerun: yes">  </span>accumulator with the
+        number of arguments which were<br>
+<span style="mso-spacerun: yes">                  </span>passed, each time the function is
+        called. This allows the function<br>
+<span style="mso-spacerun: yes">                  </span>to determine the location of the<span style="mso-spacerun: yes">  </span>first<span style="mso-spacerun: yes"> 
+</span>        argument,<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                  </span>calculated as:<br>
+        <br>
+<span style="mso-spacerun: yes">                                       
+</span>        &quot;stack pointer&quot;<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                                   </span>(accumulator
+        contents) * 2<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                             </span>(size of all
+        local variables in bytes)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                             </span>(Size of return
+        address on stack (2))<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                  </span><strong>6816:</strong><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Any code written<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>assembly<span style="mso-spacerun: yes"> 
+</span>        language<span style="mso-spacerun: yes">  </span>should<span style="mso-spacerun: yes">  </span>preserve<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>contents of the 'Z'<span style="mso-spacerun: yes">  </span>index register,<span style="mso-spacerun: yes"> 
+</span>        which is used internally for<br>
+<span style="mso-spacerun: yes">                  </span>stack addressing.<span style="mso-spacerun: yes">  </span>The addressing
+        extension registers (EK, XY,<span style="mso-spacerun: yes">  </span>YK<br>
+<span style="mso-spacerun:
+yes">                  </span>and ZK) should also be preserved.<span style="mso-spacerun: yes">  </span>All
+        other general registers may<br>
+<span style="mso-spacerun: yes">                  </span>be used freely.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The 16 bit accumulator is
+        maintained in registers A:B<span style="mso-spacerun: yes">  </span>(A=High,<br>
+<span style="mso-spacerun: yes">                  </span>B=Low).<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>When a called function executes,<span style="mso-spacerun: yes"> 
+</span>        the first things usually done<br>
+<span style="mso-spacerun: yes">                  </span>are:<br>
+<span style="mso-spacerun: yes">                     </span>- Preserve callers stack frame
+        pointer ('Z' index register)<br>
+<span style="mso-spacerun: yes">                     </span>- Establish stack frame pointer
+        for this function<br>
+<span style="mso-spacerun: yes">                     </span>- Reserve stack space for local
+        variables.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Local variables in a function
+        may<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>referenced<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>negative<br>
+<span style="mso-spacerun: yes">                  </span>offsets from the stack frame pointer.<span style="mso-spacerun: yes"> 
+</span>        The address of a particular<br>
+<span style="mso-spacerun: yes">                  </span>local variable is calculated as:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                     </span>&quot;stack
+        frame pointer&quot;<br>
+<span style="mso-spacerun: yes">                                              
+</span>        -<br>
+<span style="mso-spacerun: yes">                                 </span>(Size of
+        all local variables)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                            </span>(size of all
+        preceding local variables)<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Arguments to a function may<span style="mso-spacerun: yes">  </span>also<span style="mso-spacerun: yes"> 
+</span>        be<span style="mso-spacerun: yes">  </span>referenced<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>positive<br>
+<span style="mso-spacerun: yes">                  </span>offsets from the stack pointer,<span style="mso-spacerun: yes">  </span>in
+        much the<span style="mso-spacerun: yes">  </span>same<span style="mso-spacerun: yes">  </span>way<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>local<br>
+<span style="mso-spacerun: yes">                  </span>variables are.<span style="mso-spacerun: yes">  </span>The address of a
+        particular argument is calculated<br>
+<span style="mso-spacerun: yes">              </span><span style="mso-spacerun: yes">    </span>as:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                     </span>&quot;stack
+        frame pointer&quot;<br>
+<span style="mso-spacerun: yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                          </span>(Size of 'Z' stacked
+        at function entry (2))<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                               </span>(Size of
+        saved return address (2))<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                          </span>(Size of saved
+        Condition Code Register (2))<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                              </span>(# arguments
+        from LAST argument) * 2<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>If a function has been declared<span style="mso-spacerun: yes"> 
+</span>        as<span style="mso-spacerun: yes">  </span>&quot;register&quot;,<span style="mso-spacerun: yes">  </span>MICRO-C<span style="mso-spacerun: yes">  </span>will<br>
+<span style="mso-spacerun: yes">                  </span>load the<span style="mso-spacerun: yes">  </span>'D'<span style="mso-spacerun: yes">  </span>accumulator with the
+        number of arguments which were<br>
+<span style="mso-spacerun: yes">                  </span>passed, each time the function is
+        called. This allows the function<br>
+<span style="mso-spacerun: yes">                  </span>to determine the location of the<span style="mso-spacerun: yes">  </span>first<span style="mso-spacerun: yes"> 
+</span>        argument,<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                  </span>calculated as:<br>
+        <br>
+<span style="mso-spacerun: yes">                                     </span>&quot;stack
+        frame pointer&quot;<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                          </span>(Size of 'Z' stacked
+        at function entry (2))<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                               </span>(Size of
+        saved return address (2))<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                          </span>(Size of saved
+        Condition Code Register (2))<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                                   </span>(Accumulator
+        contents) * 2<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                  </span><strong>8051:</strong><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>If you modify the 8051 REGISTER
+        BANK in ANY<span style="mso-spacerun: yes">  </span>assembly<span style="mso-spacerun: yes">  </span>language<br>
+<span style="mso-spacerun: yes">                  </span>code<span style="mso-spacerun:
+yes">  </span>(INLINE or FUNCTION),<span style="mso-spacerun: yes">  </span>you
+        must reset it to ZERO before your<br>
+<span style="mso-spacerun:
+yes">                  </span>code completes.<span style="mso-spacerun: yes">  </span>It is also your
+        responsibility to make sure<span style="mso-spacerun:
+yes">  </span>that<br>
+<span style="mso-spacerun: yes">                  </span>you do not<span style="mso-spacerun: yes">  </span>&quot;clobber&quot;<span style="mso-spacerun: yes">  </span>INTERNAL
+        memory if you<span style="mso-spacerun: yes">  </span>move<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>register<br>
+<span style="mso-spacerun: yes">                  </span>bank.<span style="mso-spacerun:
+yes">  </span>If necessary,<span style="mso-spacerun: yes">  </span>the startup
+        code can be<span style="mso-spacerun: yes">  </span>modified<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>allow<br>
+<span style="mso-spacerun: yes">                  </span>space for additional register banks<span style="mso-spacerun: yes">  </span>(This
+        would also<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun:
+yes">  </span>a<span style="mso-spacerun: yes">  </span>good<br>
+<span style="mso-spacerun: yes">                  </span>idea if you employ interrupt handlers
+        that use the registers).<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>INLINE code should preserve the
+        contents of R0<span style="mso-spacerun: yes">  </span>(which is<span style="mso-spacerun: yes">  </span>used<br>
+<span style="mso-spacerun: yes">                  </span>internally for stack addressing).<span style="mso-spacerun: yes">  </span>This
+        restriction does not apply<br>
+<span style="mso-spacerun: yes">                 </span><span style="mso-spacerun: yes"> </span>to assembly language functions.<span style="mso-spacerun: yes">  </span>All
+        other registers may<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>used<br>
+<span style="mso-spacerun: yes">                  </span>freely.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Globals and static variables
+        which are declared<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>&quot;register&quot;<br>
+<span style="mso-spacerun: yes">                  </span>will exist in INTERNAL ram,<span style="mso-spacerun: yes">  </span>and may
+        be<span style="mso-spacerun: yes">  </span>loaded<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>stored<span style="mso-spacerun: yes">  </span>with<br>
+<span style="mso-spacerun: yes">                  </span>simple instructions.<span style="mso-spacerun: yes">  </span>Globals which
+        are not &quot;register&quot;<span style="mso-spacerun: yes">  </span>will be in<br>
+<span style="mso-spacerun: yes">                  </span>EXTERNAL ram, and must be accessed
+        through the DATA POINTER (DPTR)<br>
+<span style="mso-spacerun: yes">                  </span>register.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The 8051 processor stack grows
+        UPWARD in memory,<span style="mso-spacerun: yes">  </span>which is<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>opposite of most other CPU's.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Local variables in a function
+        may be referenced as offsets from<br>
+<span style="mso-spacerun: yes">                  </span>the stack pointer.<span style="mso-spacerun: yes">  </span>Note that offsets
+        must<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>adjusted<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>number of additional bytes which are<span style="mso-spacerun: yes"> 
+</span>        pushed<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>popped<span style="mso-spacerun: yes">  </span>on<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>stack during the execution of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>function.<span style="mso-spacerun: yes"> 
+</span>        The<span style="mso-spacerun: yes">  </span>address<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun: yes">                  </span>particular local variable is
+        calculated as:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                       
+</span>        &quot;stack pointer&quot;<br>
+<span style="mso-spacerun: yes">                                              
+</span>        -<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        -<br>
+<span style="mso-spacerun: yes">                        </span>(size of all preceding
+        local variables in bytes)<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Arguments to a<span style="mso-spacerun: yes">  </span>function<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes"> 
+</span>        also<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>referenced<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>direct<br>
+<span style="mso-spacerun: yes">                  </span>offsets from the stack pointer,<span style="mso-spacerun: yes">  </span>in
+        much the<span style="mso-spacerun: yes">  </span>same<span style="mso-spacerun: yes">  </span>way<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>local<br>
+<span style="mso-spacerun: yes">                  </span>variables are.<span style="mso-spacerun: yes">  </span>The address of a
+        particular argument is calculated<br>
+<span style="mso-spacerun: yes">                  </span>as:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                       
+</span>        &quot;stack pointer&quot;<br>
+<span style="mso-spacerun: yes">                                              
+</span>        -<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        -<br>
+<span style="mso-spacerun: yes">                             </span>(size of all
+        local variables in bytes)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        -<br>
+<span style="mso-spacerun: yes">                             </span>(Size of return
+        address on stack (2))<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        -<br>
+<span style="mso-spacerun: yes">                              </span>(# arguments
+        from LAST argument) * 2<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                     </span>If a function has been declared<span style="mso-spacerun: yes"> 
+</span>        as<span style="mso-spacerun: yes">  </span>&quot;register&quot;,<span style="mso-spacerun: yes">  </span>MICRO-C<span style="mso-spacerun: yes">  </span>will<br>
+<span style="mso-spacerun: yes">                  </span>load the accumulator with<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>number<span style="mso-spacerun: yes"> 
+</span>        of<span style="mso-spacerun: yes">  </span>arguments<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>were<br>
+<span style="mso-spacerun: yes">                  </span>passed, each time the function is
+        called. This allows the function<br>
+<span style="mso-spacerun: yes">                  </span>to determine the location of the<span style="mso-spacerun: yes">  </span>first<span style="mso-spacerun:
+yes"> 
+</span>        argument,<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                  </span>calculated as:<br>
+        <br>
+        <br>
+<span style="mso-spacerun:
+yes">                                       
+</span>        &quot;stack pointer&quot;<br>
+<span style="mso-spacerun: yes">                                              
+</span>        -<br>
+<span style="mso-spacerun: yes">                                   </span>(accumulator
+        contents) * 2<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        -<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        -<br>
+<span style="mso-spacerun: yes">            </span><span style="mso-spacerun:
+yes">                 </span>(size of all
+        local variables in bytes)<br>
+<span style="mso-spacerun: yes">                                              
+</span>        -<br>
+<span style="mso-spacerun: yes">                             </span>(Size of return
+        address on stack (2))<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                  </span><strong>8085:</strong><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The 16 bit accumulator is
+        maintained in registers H:L<span style="mso-spacerun:
+yes">  </span>(H=High,<br>
+<span style="mso-spacerun: yes">                  </span>L=Low).<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Local variables in a function
+        may be referenced as offsets from<br>
+<span style="mso-spacerun: yes">                  </span>the stack pointer.<span style="mso-spacerun: yes">  </span>Note that offsets
+        must<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>adjusted<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                </span><span style="mso-spacerun: yes">  </span>number of additional bytes which are<span style="mso-spacerun: yes"> 
+</span>        pushed<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>popped<span style="mso-spacerun: yes">  </span>on<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>stack during the execution of<span style="mso-spacerun:
+yes">  </span>the<span style="mso-spacerun: yes">  </span>function.<span style="mso-spacerun: yes"> 
+</span>        The<span style="mso-spacerun: yes">  </span>address<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun:
+yes">                  </span>particular local variable is
+        calculated as:<br>
+        <br>
+<span style="mso-spacerun: yes">                                       
+</span>        &quot;stack pointer&quot;<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                        </span>(size of all preceding
+        local variables in bytes)<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Arguments to a<span style="mso-spacerun: yes">  </span>function<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes"> 
+</span>        also<span style="mso-spacerun: yes">  </span>be <span style="mso-spacerun: yes"> </span>referenced<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>direct<br>
+<span style="mso-spacerun: yes">                  </span>offsets from the stack pointer,<span style="mso-spacerun: yes">  </span>in
+        much the<span style="mso-spacerun: yes">  </span>same<span style="mso-spacerun: yes">  </span>way<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>local<br>
+<span style="mso-spacerun: yes">                  </span>variables are.<span style="mso-spacerun: yes">  </span>The address of a
+        particular argument is calculated<br>
+<span style="mso-spacerun: yes">                  </span>as:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                       
+</span>        &quot;stack pointer&quot;<br>
+<span style="mso-spacerun: yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                             </span>(size of all
+        local variables in bytes)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                             </span>(Size of return
+        address on stack (2))<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                              </span>(# arguments
+        from LAST argument) * 2<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>If a function has been declared<span style="mso-spacerun: yes"> 
+</span>        as<span style="mso-spacerun: yes">  </span>&quot;register&quot;,<span style="mso-spacerun: yes">  </span>MICRO-C<span style="mso-spacerun: yes">  </span>will<br>
+<span style="mso-spacerun: yes">                  </span>load the 'HL'<span style="mso-spacerun: yes">  </span>accumulator with the
+        number of arguments which were<br>
+<span style="mso-spacerun: yes">                  </span>passed, each time the function is
+        called. This allows the function<br>
+<span style="mso-spacerun: yes">                  </span>to determine the location of the<span style="mso-spacerun: yes">  </span>first<span style="mso-spacerun:
+yes"> 
+</span>        argument,<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                  </span>calculated as:<br>
+        <br>
+<span style="mso-spacerun: yes">                                       
+</span>        &quot;stack pointer&quot;<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                                   </span>(accumulator
+        contents) * 2<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                             </span>(size of all
+        local variables in bytes)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                             </span>(Size of return
+        address on stack (2))<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                  </span><strong>8086,8096:</strong><br>
+        <br>
+<span style="mso-spacerun: yes">              </span><span style="mso-spacerun: yes">       </span>The 16 bit accumulator is
+        maintained in register AX.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Any assembly language code<span style="mso-spacerun: yes">  </span>should<span style="mso-spacerun: yes"> 
+</span>        preserve<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>register<span style="mso-spacerun: yes">  </span>BP<br>
+<span style="mso-spacerun:
+yes">                  </span>which is used for stack addressing.
+        Normally, an assembly language<br>
+<span style="mso-spacerun: yes">                  </span>function would save BP on the stack,<span style="mso-spacerun: yes"> 
+</span>        and then copy SP to<span style="mso-spacerun: yes">  </span>BP<span style="mso-spacerun: yes">  </span>for<br>
+<span style="mso-spacerun: yes">                  </span>its own stack addressing.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Local variables in a function
+        may<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>referenced<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>negative<br>
+<span style="mso-spacerun: yes">                  </span>offsets from the stack frame pointer.<span style="mso-spacerun: yes"> 
+</span>        The address of a particular<br>
+<span style="mso-spacerun: yes">                  </span>local variable is calculated as:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                     </span>&quot;stack
+        frame pointer&quot;<br>
+<span style="mso-spacerun: yes">                                              
+</span>        -<br>
+<span style="mso-spacerun: yes">                                 </span>(Size of
+        all local variables)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                            </span>(size of all
+        preceding local variables)<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Arguments to a function may<span style="mso-spacerun: yes">  </span>also<span style="mso-spacerun: yes"> 
+</span>        be<span style="mso-spacerun: yes">  </span>referenced<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>positive<br>
+<span style="mso-spacerun: yes">                  </span>offsets from the stack pointer,<span style="mso-spacerun: yes">  </span>in
+        much the<span style="mso-spacerun: yes">  </span>same<span style="mso-spacerun: yes">  </span>way<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>local<br>
+<span style="mso-spacerun: yes">                  </span>variables are.<span style="mso-spacerun: yes">  </span>The address of a
+        particular argument is calculated<br>
+<span style="mso-spacerun: yes">                  </span>as:<br>
+        <br>
+<span style="mso-spacerun: yes">          </span><span style="mso-spacerun: yes">                           </span>&quot;stack
+        frame pointer&quot;<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                          </span>(Size of 'BP' stacked
+        at function entry (2))<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                               </span>(Size of
+        saved return address (2))<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                              </span>(# arguments
+        from LAST argument) * 2<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>If a function has been declared<span style="mso-spacerun: yes"> 
+</span>        as<span style="mso-spacerun: yes">  </span>&quot;register&quot;,<span style="mso-spacerun: yes">  </span>MICRO-C<span style="mso-spacerun: yes">  </span>will<br>
+<span style="mso-spacerun: yes">                  </span>load the 'AX'<span style="mso-spacerun: yes">  </span>accumulator with the
+        number of arguments which were<br>
+<span style="mso-spacerun: yes">             </span><span style="mso-spacerun: yes">     </span>passed, each time the function is
+        called. This allows the function<br>
+<span style="mso-spacerun: yes">                  </span>to determine the location of the<span style="mso-spacerun: yes">  </span>first<span style="mso-spacerun: yes"> 
+</span>        argument,<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                  </span>calculated as:<br>
+        <br>
+<span style="mso-spacerun: yes">                                     </span>&quot;stack
+        frame pointer&quot;<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                          </span>(Size of 'BP' stacked
+        at function entry (2))<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                               </span>(Size of
+        saved return address (2))<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                                   </span>(Accumulator
+        contents) * 2<br>
+        <br clear="all" style="page-break-before:always">
+                  </font></span><font
+        size="2" face="Arial"><strong>AVR:</strong><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>All assembly language code<span style="mso-spacerun: yes">  </span>on<span style="mso-spacerun: yes"> 
+</span>        the<span style="mso-spacerun: yes">  </span>AVR<span style="mso-spacerun: yes">  </span>should<span style="mso-spacerun: yes">  </span>preserve<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>content of the 'Y' (R28:R29) register.<span style="mso-spacerun: yes"> 
+</span>        This is used by C as the C<br>
+<span style="mso-spacerun: yes">                  </span>stack pointer. If you intend to
+        PUSH/POP a lot of data, you should<br>
+<span style="mso-spacerun:
+yes">                  </span>save it via -Y, Y+ instead,<span style="mso-spacerun:
+yes">  </span>as this
+        stack is much larger than the<br>
+<span style="mso-spacerun: yes">                  </span>hardware stack.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The 16 bit accumulator is
+        maintained in register W (R25:R24)<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>Local variables in a function
+        may be referenced as offsets from<br>
+<span style="mso-spacerun: yes">                  </span>the Y pointer.<span style="mso-spacerun: yes">  </span>Note that offsets
+        must be adjusted for the<span style="mso-spacerun: yes">  </span>number<br>
+<span style="mso-spacerun: yes">                  </span>of additional bytes which are pushed<span style="mso-spacerun: yes"> 
+</span>        and<span style="mso-spacerun:
+yes">  </span>popped<span style="mso-spacerun: yes">  </span>on<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>Ystack<br>
+<span style="mso-spacerun: yes">                  </span>during the execution of the function.<span style="mso-spacerun: yes"> 
+</span>        The address of a particular<br>
+<span style="mso-spacerun: yes">                  </span>local variable is calculated as:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                      
+</span>        &quot;Y stack pointer&quot;<br>
+<span style="mso-spacerun: yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun: yes">         </span><span style="mso-spacerun: yes">                                     
+</span>        +<br>
+<span style="mso-spacerun: yes">                        </span>(size of all preceding
+        local variables in bytes)<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Arguments to a<span style="mso-spacerun: yes">  </span>function<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes"> 
+</span>        also<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>referenced<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>direct<br>
+<span style="mso-spacerun: yes">                  </span>offsets from the stack pointer,<span style="mso-spacerun: yes">  </span>in
+        much the<span style="mso-spacerun: yes">  </span>same<span style="mso-spacerun: yes">  </span>way<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>local<br>
+<span style="mso-spacerun: yes">                  </span>variables are.<span style="mso-spacerun: yes">  </span>The address of a
+        particular argument is calculated<br>
+<span style="mso-spacerun: yes">                  </span>as:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                      
+</span>        &quot;Y stack pointer&quot;<br>
+<span style="mso-spacerun: yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun: yes">                </span><span style="mso-spacerun: yes">                               </span>+<br>
+<span style="mso-spacerun: yes">                             </span>(size of all
+        local variables in bytes)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                              </span>(# arguments
+        from LAST argument) * 2<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>If a function has been declared<span style="mso-spacerun: yes"> 
+</span>        as<span style="mso-spacerun: yes">  </span>&quot;register&quot;,<span style="mso-spacerun: yes">  </span>MICRO-C<span style="mso-spacerun: yes">  </span>will<br>
+<span style="mso-spacerun: yes">                  </span>load the W accumulator with the number<span style="mso-spacerun: yes"> 
+</span>        of<span style="mso-spacerun: yes">  </span>arguments<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>were<br>
+<span style="mso-spacerun: yes">                  </span>passed, each time the function is
+        called. This allows the function<br>
+<span style="mso-spacerun: yes">                  </span>to determine the location of the<span style="mso-spacerun: yes">  </span>first<span style="mso-spacerun: yes"> 
+</span>        argument,<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                  </span>calculated as:<br>
+        <br>
+<span style="mso-spacerun: yes">                                      
+</span>        &quot;Y stack pointer&quot;<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                                            
+</span>        W * 2<br>
+<span style="mso-spacerun: yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                           </span>(# bytes pushed
+        during function execution)<br>
+<span style="mso-spacerun:
+yes">                                              
+</span>        +<br>
+<span style="mso-spacerun: yes">                             </span>(size of all
+        local variables in bytes)<br>
+        </font></p>
+        <p><a name="5.4 Compiling for ROM"></a><font size="2"
+        face="Arial"><em><strong><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">5.4 Compiling for ROM</span></strong></em></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The output from the compiler is
+        entirely<span style="mso-spacerun:
+yes">  </span>&quot;clean&quot;,<span style="mso-spacerun: yes">  </span>and may<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun:
+yes">                  </span>placed in Read Only Memory (ROM).<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The addresses for code and data
+        storage are established by<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>startup files in the runtime library,
+        called {CPU}RL*.ASM. You may<br>
+<span style="mso-spacerun:
+yes">                  </span>examine and modify these files to suit
+        your own particular<span style="mso-spacerun: yes">  </span>memory<br>
+<span style="mso-spacerun: yes">                  </span>allocation needs.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><strong>6808,6809,6811,6812,8085,8096:</strong><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The compiler places all
+        initialized<span style="mso-spacerun: yes">  </span>global<span style="mso-spacerun: yes">  </span>variables<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>output file as part of the code image.<span style="mso-spacerun: yes"> 
+</span>        When the program is stored<br>
+<span style="mso-spacerun: yes">                  </span>in ROM,<span style="mso-spacerun:
+yes">  </span>those variables are also
+        stored in ROM,<span style="mso-spacerun:
+yes">  </span>and will not<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                  </span>modifiable.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>When the program is to be placed
+        in ROM, you may not initialize<br>
+<span style="mso-spacerun: yes">                  </span>any variables which you intend to
+        modify<span style="mso-spacerun:
+yes">  </span>later.<span style="mso-spacerun: yes">  </span>Those<span style="mso-spacerun: yes">  </span>variables<br>
+<span style="mso-spacerun:
+yes">                  </span>must be explicitly initialized by code
+        executed at<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>beginning<br>
+<span style="mso-spacerun: yes">                  </span>of the program.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Variables which you do not
+        intend to<span style="mso-spacerun: yes">  </span>modify<span style="mso-spacerun: yes">  </span>(such<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>tables<br>
+<span style="mso-spacerun: yes">                  </span>etc.)<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>initialized<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes"> 
+</span>        declaration,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>will<span style="mso-spacerun: yes">   </span>be<br>
+<span style="mso-spacerun: yes">                  </span>permanently saved in the ROM as part
+        of the static code image.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><strong>6816:</strong><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>When<span style="mso-spacerun: yes">  </span>compiling<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>SMALL<span style="mso-spacerun: yes">  </span>model,<span style="mso-spacerun: yes"> 
+</span>        the<span style="mso-spacerun: yes">  </span>compiler<span style="mso-spacerun: yes">  </span>places<span style="mso-spacerun: yes">   </span>all<br>
+<span style="mso-spacerun:
+yes">                  </span>initialized global variables in the
+        output file<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>part<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>code image. When the program is stored
+        in ROM, those variables are<br>
+<span style="mso-spacerun: yes">                  </span>also stored in ROM,<span style="mso-spacerun: yes">  </span>and will not be
+        modifiable.<span style="mso-spacerun: yes">  </span>In LARGE<span style="mso-spacerun: yes">  </span>model,<br>
+<span style="mso-spacerun:
+yes">                  </span>initialized data is copied to RAM,<span style="mso-spacerun: yes">  </span>and
+        may therefore be<span style="mso-spacerun: yes">  </span>modified<br>
+<span style="mso-spacerun:
+yes">                  </span>at any time.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>When a SMALL model program is to
+        be placed in ROM, you must not<br>
+<span style="mso-spacerun: yes">                  </span>initialize any variables which you
+        intend to modify<span style="mso-spacerun: yes">  </span>later.<span style="mso-spacerun: yes">  </span>Those<br>
+<span style="mso-spacerun: yes">                  </span>variables must be explicitly
+        initialized by code executed<span style="mso-spacerun: yes">  </span>at<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>beginning of the program.<br>
+        </font></span></p><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">
+        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="5.5 Direct/Internal .vs. Extended/External memory"><font
+        size="2" face="Arial"><em><strong>5.5 Direct/Internal
+        .vs. Extended/External memory</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><strong>6808:</strong><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>To allow the user to control
+        allocation of variables in<span style="mso-spacerun: yes">  </span>direct<br>
+<span style="mso-spacerun: yes">              </span><span style="mso-spacerun:
+yes">    </span>($50-$FF)<span style="mso-spacerun: yes">  </span>and extended memory
+        ($100-up),<span style="mso-spacerun: yes">  </span>MICRO-C/08 makes use of<br>
+<span style="mso-spacerun: yes">                  </span>the &quot;register&quot; keyword.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>GLOBAL variables which<span style="mso-spacerun:
+yes">  </span>are<span style="mso-spacerun: yes">  </span>declared<span style="mso-spacerun: yes"> 
+</span>        as<span style="mso-spacerun: yes">  </span>&quot;register&quot;<span style="mso-spacerun: yes">  </span>will<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                  </span>allocated<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>DIRECT<span style="mso-spacerun: yes">  </span>memory.<span style="mso-spacerun: yes">  </span>These<span style="mso-spacerun: yes"> 
+</span>        variables<span style="mso-spacerun: yes">   </span>MUST<span style="mso-spacerun: yes">   </span>NOT<span style="mso-spacerun: yes">   </span>be<br>
+<span style="mso-spacerun: yes">                  </span>initialized in the declaration.<span style="mso-spacerun: yes">  </span>GLOBAL
+        variables<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>NOT<br>
+<span style="mso-spacerun: yes">                  </span>declared as &quot;register&quot; are
+        allocated in EXTENDED memory.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>This preserves the notion that<span style="mso-spacerun: yes"> 
+</span>        &quot;register&quot;<span style="mso-spacerun: yes">  </span>means<span style="mso-spacerun: yes">  </span>&quot;efficient&quot;,<br>
+<span style="mso-spacerun: yes">                  </span>allowing the 6808 to use
+        &quot;direct&quot; addressing for those variables.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><strong>6811,6816,8051:</strong><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>To allow<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>user<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>control<span style="mso-spacerun: yes"> 
+</span>        allocation<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>variables<span style="mso-spacerun: yes">  </span>in<br>
+<span style="mso-spacerun:
+yes">                  </span>internal and external memory,<span style="mso-spacerun:
+yes">  </span>MICRO-C
+        makes use of the &quot;register&quot;<br>
+<span style="mso-spacerun: yes">                  </span>keyword.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>GLOBAL variables which<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>declared<span style="mso-spacerun: yes"> 
+</span>        as<span style="mso-spacerun: yes">  </span>&quot;register&quot;<span style="mso-spacerun: yes">  </span>will<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                  </span>allocated<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>internal<span style="mso-spacerun: yes">  </span>memory.<span style="mso-spacerun: yes">  </span>These<span style="mso-spacerun: yes"> 
+</span>        variables<span style="mso-spacerun: yes">  </span>MUST<span style="mso-spacerun: yes">  </span>NOT<span style="mso-spacerun: yes">   </span>be<br>
+<span style="mso-spacerun: yes">                  </span>initialized in the declaration.<span style="mso-spacerun: yes">  </span>GLOBAL
+        variables<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>NOT<br>
+<span style="mso-spacerun: yes">                  </span>declared as &quot;register&quot; are
+        allocated in EXTERNAL memory.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>To preserve the notion that
+        &quot;register&quot;<span style="mso-spacerun: yes">  </span>means &quot;efficient&quot;,<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>68HC11 internal memory should be
+        positioned within the<span style="mso-spacerun: yes">  </span>first<span style="mso-spacerun:
+yes">  </span>256<br>
+<span style="mso-spacerun: yes">                  </span>bytes of memory<span style="mso-spacerun: yes">  </span>address<span style="mso-spacerun: yes">  </span>space,<span style="mso-spacerun: yes">  </span>allowing<span style="mso-spacerun: yes"> 
+</span>        the<span style="mso-spacerun: yes">  </span>use<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>&quot;direct&quot;<br>
+<span style="mso-spacerun: yes">                  </span>addressing for those variables.<br>
+        </font></span></p><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">
+        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="5.6 Testing 8086 programs under MS-DOS"><font
+        size="2" face="Arial"><em><strong>5.6 Testing 8086
+        programs under MS-DOS</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>The<span style="mso-spacerun: yes">  </span>8086<span style="mso-spacerun: yes">  </span>compiler<span style="mso-spacerun: yes">  </span>normally<span style="mso-spacerun: yes"> 
+</span>        generates<span style="mso-spacerun: yes">  </span>HEX<span style="mso-spacerun: yes">  </span>download<span style="mso-spacerun: yes">   </span>files<br>
+<span style="mso-spacerun: yes">                  </span>suitable for loading by MON86,<span style="mso-spacerun: yes">  </span>or<span style="mso-spacerun: yes">  </span>an<span style="mso-spacerun: yes"> 
+</span>        EPROM<span style="mso-spacerun: yes">  </span>programmer.<span style="mso-spacerun: yes">  </span>It<span style="mso-spacerun: yes">  </span>is<br>
+<span style="mso-spacerun: yes">          </span><span style="mso-spacerun:
+yes">        </span>possible however to run your program
+        under MS-DOS<span style="mso-spacerun: yes">  </span>(using<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>PC<br>
+<span style="mso-spacerun: yes">                  </span>compatible startup code supplied with
+        the compiler)<span style="mso-spacerun: yes">  </span>if you<span style="mso-spacerun: yes">  </span>wish.<br>
+<span style="mso-spacerun:
+yes">                  </span>To do so,<span style="mso-spacerun: yes">  </span>compile in TINY model,<span style="mso-spacerun: yes">  </span>and
+        convert the<span style="mso-spacerun: yes">  </span>resultant<span style="mso-spacerun: yes">  </span>HEX<br>
+<span style="mso-spacerun: yes">                  </span>file into a binary .COM file using the
+        HEXFMT HEXFMT<span style="mso-spacerun: yes">  </span>utility.<span style="mso-spacerun: yes">  </span>If<br>
+<span style="mso-spacerun: yes">                  </span>your program is larger than 8K,<span style="mso-spacerun: yes">  </span>you
+        will have to specify the size<br>
+<span style="mso-spacerun: yes">                  </span>of the image that HEXFMT is
+        manipulating (use s=):<br>
+        <br>
+<span style="mso-spacerun:
+yes">                            </span>HEXFMT hello.hex
+        -bt s=1024 w=hello.com<br>
+        <br>
+<span style="mso-spacerun: yes">              </span><span style="mso-spacerun:
+yes">    </span>The<span style="mso-spacerun: yes">  </span>above<span style="mso-spacerun: yes">  </span>reads<span style="mso-spacerun: yes">  </span>HELLO.HEX<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes"> 
+</span>        writes<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>binary<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun: yes">   </span>named<br>
+<span style="mso-spacerun: yes">                  </span>HELLO.COM,<span style="mso-spacerun: yes">  </span>which is 1K bytes in<span style="mso-spacerun: yes">  </span>size.<span style="mso-spacerun:
+yes"> 
+</span>        This<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun: yes">  </span>can<span style="mso-spacerun: yes">  </span>then<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                  </span>executed under MS-DOS simply by
+        typing:<br>
+        <br>
+        </font></span></p><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">
+        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="6. THE MICRO-C PREPROCESSOR"><font size="2"
+        face="Arial"><strong>6. THE MICRO-C PREPROCESSOR</strong></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>The MICRO-C Preprocessor is a source
+        code filter,<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>provides<br>
+<span style="mso-spacerun: yes">               </span>greater capabilities than the preprocessor
+        which is integral<span style="mso-spacerun:
+yes">  </span>to<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">          </span><span style="mso-spacerun:
+yes">     </span>MICRO-C compiler.<span style="mso-spacerun: yes">  </span>It has been implemented
+        as a stand<span style="mso-spacerun: yes">  </span>alone<span style="mso-spacerun: yes">  </span>utility<br>
+<span style="mso-spacerun: yes">               </span>program which processes the source code
+        before it is compiled.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>Due to the higher complexity of<span style="mso-spacerun: yes">  </span>this<span style="mso-spacerun: yes"> 
+</span>        preprocessor,<span style="mso-spacerun: yes">  </span>it<span style="mso-spacerun: yes">  </span>operates<br>
+<span style="mso-spacerun: yes">               </span>slightly slower than the the integral
+        MICRO-C preprocessor.<span style="mso-spacerun:
+yes">  </span>This<span style="mso-spacerun: yes">  </span>is<br>
+<span style="mso-spacerun: yes">               </span>mainly due to the fact that it reads each
+        line from the file and then<br>
+<span style="mso-spacerun: yes">               </span>copies it to a new line while performing the
+        macro substitution. This<br>
+<span style="mso-spacerun: yes">               </span>is necessary since each macro may contain
+        parameters<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>must<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">               </span>replaced &quot;on the fly&quot; when it is
+        referenced.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>The integral MICRO-C preprocessor is
+        very FAST,<span style="mso-spacerun: yes">  </span>because<span style="mso-spacerun: yes">  </span>it<span style="mso-spacerun: yes">  </span>does<br>
+<span style="mso-spacerun: yes">               </span>not copy the input line.<span style="mso-spacerun: yes">  </span>When it
+        encounters a '#define'd symbol,<span style="mso-spacerun: yes">  </span>it<br>
+<span style="mso-spacerun:
+yes">               </span>simply adjusts the input scanner pointer to
+        point to<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>definition<br>
+<span style="mso-spacerun: yes">               </span>of that symbol.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>Keeping the extended preprocessor as a
+        stand alone utility<span style="mso-spacerun: yes">  </span>allows<br>
+<span style="mso-spacerun: yes">               </span>you<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>choose<span style="mso-spacerun: yes">  </span>between<span style="mso-spacerun: yes">  </span>greater<span style="mso-spacerun: yes">   </span>MACRO<span style="mso-spacerun: yes">  
+</span>        capability<span style="mso-spacerun: yes">   </span>and<span style="mso-spacerun: yes">   </span>faster<br>
+<span style="mso-spacerun: yes">               </span>compilation.<span style="mso-spacerun: yes">  </span>It also allows the system to
+        continue to<span style="mso-spacerun: yes">  </span>run<span style="mso-spacerun: yes">  </span>on<span style="mso-spacerun: yes">  </span>very<br>
+<span style="mso-spacerun: yes">               </span>small hardware platforms.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>The additional capabilities of the
+        extended preprocessor are:<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>- Parameterized MACROs.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>- Multiple line MACROs.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>- Nested conditionals.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>- Numeric conditionals (#if)<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>- User generated errors (#error)<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>- Ability to undefine MACRO
+        symbols.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                    </span>- Library reference in include
+        file names (&lt;&gt; and &quot;&quot;)<br>
+        <br clear="all" style="page-break-before:always">
+        </font></span></p>
+        </span></span></span></span></span></span></span></span></span></span></td>
+    </tr>
+</table>
+<p>&nbsp;</p>
+<table width="605" border="0">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2">&quot;Converted by 
+        BiPOM Electronics to HTML format from original Micro C documentation by 
+        Dunfield Development Systems. Please see the Micro C documentation that 
+        is included with Micro C for the original forms of these pages.&quot;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

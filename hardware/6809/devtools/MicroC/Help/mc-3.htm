@@ -1,0 +1,571 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1254">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>9.</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0" width="630">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="10. THE MAKE UTILITY"><font size="2" face="Arial"><strong>10.
+        THE MAKE UTILITY</strong></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>The MAKE utility provides a method of
+        automating the<span style="mso-spacerun:
+yes">  </span>building<span style="mso-spacerun: yes">  </span>of<br>
+<span style="mso-spacerun: yes">               </span>larger programs consisting of more that one
+        module.<span style="mso-spacerun: yes">  </span>The main benefit<br>
+<span style="mso-spacerun: yes">               </span>of MAKE is that it keeps track of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>files<span style="mso-spacerun: yes"> 
+</span>        that<span style="mso-spacerun: yes">  </span>each<span style="mso-spacerun: yes">  </span>module<span style="mso-spacerun: yes">  </span>is<br>
+<span style="mso-spacerun: yes">               </span>dependent on,<span style="mso-spacerun:
+yes">  </span>and will rebuild a module if
+        any of those<span style="mso-spacerun: yes">  </span>files<span style="mso-spacerun: yes">  </span>have<br>
+<span style="mso-spacerun: yes">               </span>been modified since<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun:
+yes">  </span>module<span style="mso-spacerun: yes">  </span>was<span style="mso-spacerun: yes">  </span>last<span style="mso-spacerun: yes"> 
+</span>        built.<span style="mso-spacerun: yes">  </span>This<span style="mso-spacerun: yes">  </span>frees<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">               </span>programmer from<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun:
+yes">  </span>task<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>remembering<span style="mso-spacerun: yes"> 
+</span>        which<span style="mso-spacerun: yes">  </span>files<span style="mso-spacerun: yes">  </span>have<span style="mso-spacerun: yes">  </span>been<br>
+<span style="mso-spacerun: yes">               </span>changed, and the commands needed to rebuild
+        the dependent modules.<br>
+        <br>
+        </font><a name="10.1 MAKEfiles"><font size="2"
+        face="Arial"><span style="mso-spacerun: yes">       </span>1<em><strong>0.1 MAKEfiles</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>To use MAKE, you must first
+        create a MAKEFILE,<span style="mso-spacerun: yes">  </span>which is a text<br>
+<span style="mso-spacerun: yes">                  </span>file containing entries for each
+        module in the program. Each entry<br>
+<span style="mso-spacerun: yes">                  </span>consists of a DEPENDENCY list, and a
+        series of COMMANDS.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>10.1.1 MAKEfile Entries</strong></em><br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>A dependency list in MAKE
+        is a line which contains the<span style="mso-spacerun: yes">  </span>name<br>
+<span style="mso-spacerun: yes">                     </span>of the module, followed by a
+        ':',<span style="mso-spacerun: yes">  </span>followed by the names of any<br>
+<span style="mso-spacerun: yes">                     </span>files on which that module
+        depends.<span style="mso-spacerun: yes">  </span>The module name MUST begin<br>
+<span style="mso-spacerun: yes">                     </span>in column 1.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span><span style="mso-spacerun: yes">   </span>When MAKE is invoked,<span style="mso-spacerun: yes">  </span>it
+        will process each dependency list,<br>
+<span style="mso-spacerun: yes">                     </span>and<span style="mso-spacerun:
+yes">  </span>will<span style="mso-spacerun: yes">  </span>execute<span style="mso-spacerun: yes">  </span>any<span style="mso-spacerun: yes">  </span>following<span style="mso-spacerun: yes"> 
+</span>        commands<span style="mso-spacerun: yes">  </span>(up<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">   </span>another<br>
+<span style="mso-spacerun: yes">                     </span>dependency list) if (1)<span style="mso-spacerun: yes">  </span>the
+        module does not exist,<span style="mso-spacerun: yes">  </span>or (2)<span style="mso-spacerun: yes">  </span>if<br>
+<span style="mso-spacerun: yes">                     </span>any of the files to the right of
+        the ':' have a timestamp which<br>
+<span style="mso-spacerun: yes">                     </span>is later than that of the
+        module. For example:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>main.asm : main.c main.h
+        \\MC\\{CPU}io.h<br>
+<span style="mso-spacerun:
+yes">                            </span>\\MC\\mcc main.c
+        main.tmp<br>
+<span style="mso-spacerun: yes">                            </span>\\MC\\mco</font></span><font
+        size="2" face="Arial">main.tmp
+        main.asm<br>
+<span style="mso-spacerun: yes">         </span><span style="mso-spacerun: yes">                   </span>-del main.tmp<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>In the above example,<span style="mso-spacerun: yes">  </span>the
+        'main.asm'<span style="mso-spacerun:
+yes">  </span>would be rebuilt<span style="mso-spacerun: yes">  </span>(by<br>
+<span style="mso-spacerun: yes">                     </span>compiling and optimizing
+        'main.c') if either it did not already<br>
+<span style="mso-spacerun: yes">                     </span>exist,<span style="mso-spacerun:
+yes">  </span>or any of 'main.c',<span style="mso-spacerun: yes">  </span>'main.h'<span style="mso-spacerun: yes"> 
+</span>        or<span style="mso-spacerun: yes">  </span>'\MC\{CPU}io.h'<span style="mso-spacerun:
+yes">  </span>was<br>
+<span style="mso-spacerun: yes">                     </span>found to have a later timestamp.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>The '-'<span style="mso-spacerun: yes">  </span>preceding the
+        'del'<span style="mso-spacerun: yes">  </span>command prevents it from being<br>
+<span style="mso-spacerun: yes">                     </span>displayed. Unless the '-q'
+        option is enabled, MAKE will display<br>
+<span style="mso-spacerun: yes">                     </span>any commands not preceded by '-'
+        as they are executed.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>NOTE:<span style="mso-spacerun: yes">  </span>To enter a single
+        '\'<span style="mso-spacerun: yes">  </span>in the MAKEFILE,<span style="mso-spacerun:
+yes">  </span>you must use<br>
+<span style="mso-spacerun: yes">                     </span>'\\',<span style="mso-spacerun: yes">  </span>this is because like
+        'C',<span style="mso-spacerun: yes">  </span>MAKE uses<span style="mso-spacerun: yes">  </span>'\'<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>&quot;protect&quot;<br>
+<span style="mso-spacerun: yes">                     </span>special<span style="mso-spacerun:
+yes">  </span>characters<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>otherwise<span style="mso-spacerun: yes"> 
+</span>        are<span style="mso-spacerun: yes">  </span>used<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes">   </span>special<br>
+<span style="mso-spacerun: yes">                     </span>functions (such as '\', '$' and
+        '#').<span style="mso-spacerun: yes">  </span>The first '\' &quot;protects&quot;<br>
+<span style="mso-spacerun:
+yes">                     </span>the second one, allowing it to
+        pass through as source text.<br>
+        <br clear="all" style="page-break-before:always">
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>10.1.2 Macro Substitutions</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Sometimes in a MAKEFILE,
+        you have a single file or directory<br>
+<span style="mso-spacerun: yes">                     </span>path that you use<span style="mso-spacerun: yes">  </span>over<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes"> 
+</span>        over<span style="mso-spacerun: yes">  </span>again.<span style="mso-spacerun: yes">  </span>If<span style="mso-spacerun: yes">  </span>it<span style="mso-spacerun:
+yes">  </span>is<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>long<br>
+<span style="mso-spacerun:
+yes">                     </span>directory path,<span style="mso-spacerun: yes">  </span>this may
+        involve<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>lot<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>typing,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>it<br>
+<span style="mso-spacerun: yes">                     </span>becomes inconvenient to change
+        that name<span style="mso-spacerun: yes">  </span>(if you want to use a<br>
+<span style="mso-spacerun: yes">                     </span>different directory etc.)
+        because it is repeated many times.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>MAKE includes a MACRO
+        facility,<span style="mso-spacerun: yes">  </span>which allows you to<span style="mso-spacerun: yes">  </span>define<br>
+<span style="mso-spacerun:
+yes">                     </span>variable names which will be
+        replaced with a text<span style="mso-spacerun: yes">  </span>string<span style="mso-spacerun: yes">  </span>when<br>
+<span style="mso-spacerun: yes">                     </span>used in subsequent MAKEfile
+        lines. Names are defined by placing<br>
+<span style="mso-spacerun: yes">                     </span>them in the MAKEfile,<span style="mso-spacerun: yes">  </span>followed
+        by<span style="mso-spacerun: yes">  </span>'=',<span style="mso-spacerun: yes">  </span>and the text<span style="mso-spacerun: yes">  </span>string.<br>
+<span style="mso-spacerun:
+yes">                     </span>Macro names being defined MUST
+        begin in<span style="mso-spacerun: yes">  </span>column<span style="mso-spacerun: yes">  </span>one,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>may<br>
+<span style="mso-spacerun:
+yes">                     </span>consist of the characters
+        ('a'-'z', 'A'-'Z', '0'-'9', and '_').<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Whenever MAKE encounters a<span style="mso-spacerun: yes"> 
+</span>        '$'<span style="mso-spacerun: yes">  </span>in the file,<span style="mso-spacerun: yes">  </span>it takes<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                     </span>name immediately following, and
+        performs the macro replacement:<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span><span style="mso-spacerun:
+yes">    </span>mcdir = C:\\MC<br>
+<span style="mso-spacerun:
+yes">                        </span>main.asm : main.c main.h
+        $mcdir\\{CPU}io.h<br>
+<span style="mso-spacerun: yes">                            </span>$mcdir\\mccmain.c
+        main.tmp<br>
+<span style="mso-spacerun: yes">                            </span>$mcdir\\mcomain.tmp
+        main.asm<br>
+<span style="mso-spacerun: yes">                            </span>del main.tmp<br>
+        <br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>When a macro name is
+        immediately<span style="mso-spacerun: yes">  </span>followed<span style="mso-spacerun: yes">  </span>by<span style="mso-spacerun: yes">  </span>alphanumeric<br>
+<span style="mso-spacerun:
+yes">                     </span>text,<span style="mso-spacerun: yes">  </span>use a single<span style="mso-spacerun: yes">  </span>'\'<span style="mso-spacerun:
+yes">  </span>to
+        separate it from<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>text.<span style="mso-spacerun: yes">  </span>This<br>
+<span style="mso-spacerun:
+yes">                     </span>&quot;protects&quot;<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>first<span style="mso-spacerun: yes"> 
+</span>        character<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun:
+yes">  </span>text<span style="mso-spacerun: yes">   </span>from<span style="mso-spacerun: yes">   </span>being<br>
+<span style="mso-spacerun:
+yes">                     </span>interpreted as part of the macro
+        name:<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span><span style="mso-spacerun:
+yes">   </span>mcdir = C:\\MC\\<br>
+<span style="mso-spacerun:
+yes">                        </span>main.asm : main.c main.h
+        $mcdir\{CPU}io.h<br>
+<span style="mso-spacerun: yes">                            </span>$mcdir\mccmain.c
+        main.tmp<br>
+<span style="mso-spacerun: yes">                            </span>$mcdir\mcomain.tmp
+        main.asm<br>
+<span style="mso-spacerun: yes">                            </span>del main.tmp<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>There<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>several<span style="mso-spacerun: yes">  </span>predefined<span style="mso-spacerun: yes"> 
+</span>        macro<span style="mso-spacerun: yes">  </span>symbols<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">   </span>are<br>
+<span style="mso-spacerun: yes">                     </span>available:<br>
+        <br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>$*<span style="mso-spacerun:
+yes">      </span>= The full
+        name of the dependent module (name.type).<br>
+<span style="mso-spacerun: yes">                        </span>$@<span style="mso-spacerun:
+yes">      </span>= The name
+        only of the dependent module.<br>
+<span style="mso-spacerun: yes">                        </span>$.<span style="mso-spacerun:
+yes">      </span>= The full
+        name of each file in the dependency list,<br>
+<span style="mso-spacerun: yes">                                  </span>separated
+        from each other by a single space.<br>
+<span style="mso-spacerun: yes">                        </span>$,<span style="mso-spacerun: yes">      </span>= The full
+        name of each file in the dependency list,<br>
+<span style="mso-spacerun:
+yes">                                  </span>separated
+        from each other by a single comma.<br>
+<span style="mso-spacerun: yes">                        </span>$:<span style="mso-spacerun: yes">      </span>= The name
+        only of each file in the dependency list,<br>
+<span style="mso-spacerun: yes">                                  </span>separated
+        from each other by a single space.<br>
+<span style="mso-spacerun: yes">                        </span>$;<span style="mso-spacerun:
+yes">      </span>= The name
+        only of each file in the dependency list,<br>
+<span style="mso-spacerun: yes">                                  </span>separated
+        from each other by a single comma.<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                        </span>File names in the
+        dependency list which are preceded by<span style="mso-spacerun:
+yes">  </span>'-'<br>
+<span style="mso-spacerun: yes">                     </span>will not be included in the '$.
+        $, $: $;' macro expansions:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>mcdir = C:\\MC<br>
+<span style="mso-spacerun: yes">                        </span>main.asm : main.c -main.h
+        -$mcdir\\{CPU}io.h<br>
+<span style="mso-spacerun: yes">                            </span>$mcdir\\mcc$.
+        $@.TMP<br>
+<span style="mso-spacerun: yes">                            </span>$mcdir\\mco$@.TMP
+        $*<br>
+<span style="mso-spacerun: yes">                            </span>del $@.TMP<br>
+        <br>
+        <em><strong><span style="mso-spacerun: yes">          </span>10.1.3 MAKEfile Comments</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">               </span><span style="mso-spacerun:
+yes">         </span>Whenever MAKE encounters
+        the '#'<span style="mso-spacerun:
+yes">  </span>character in the MAKEFILE,<br>
+<span style="mso-spacerun:
+yes">                     </span>it treats the remainder of the
+        line as a comment,<span style="mso-spacerun: yes">  </span>and does not<br>
+<span style="mso-spacerun:
+yes">                     </span>process it:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span># Define Directories<br>
+<span style="mso-spacerun: yes">                        </span>mcdir = C:\\MC<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span># Build the MAIN module<br>
+<span style="mso-spacerun: yes">                        </span>main.asm : main.c -main.h
+        -$mcdir\\{CPU}io.h<br>
+<span style="mso-spacerun: yes">                            </span>$mcdir\\mcc $.
+        $@.TMP<span style="mso-spacerun: yes">                 </span># Compile<br>
+<span style="mso-spacerun: yes">                            </span>$mcdir\\mco $@.TMP
+        $*<span style="mso-spacerun: yes">                 </span># Optimize<br>
+<span style="mso-spacerun: yes">                            </span>del $@.TMP<span style="mso-spacerun: yes">                             
+</span>        # Delete tmp<br>
+        <br>
+<span style="mso-spacerun: yes">               <em><strong>   </strong></em></span><em><strong>10.1.4 Ordering the
+        MAKEfile</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>MAKE processes the
+        MAKEfile is sequential fashion,<span style="mso-spacerun: yes">  </span>with the<br>
+<span style="mso-spacerun:
+yes">                     </span>entries near the top being
+        processed before<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>entries<span style="mso-spacerun: yes">  </span>near<br>
+<span style="mso-spacerun: yes">                     </span>the bottom.<span style="mso-spacerun: yes">  </span>To insure that
+        each module is built properly,<span style="mso-spacerun: yes">  </span>any<br>
+<span style="mso-spacerun: yes">                     </span>files appearing in the
+        dependency list for a module<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>are<br>
+<span style="mso-spacerun:
+yes">                     </span>themselves dependent<span style="mso-spacerun: yes">  </span>on<span style="mso-spacerun: yes">  </span>other<span style="mso-spacerun: yes"> 
+</span>        files,<span style="mso-spacerun: yes">  </span>should<span style="mso-spacerun: yes">  </span>have<span style="mso-spacerun: yes">  </span>MAKEfile<br>
+<span style="mso-spacerun:
+yes">                     </span>entries which occur BEFORE the
+        entries for<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>modules<span style="mso-spacerun: yes">  </span>which<br>
+<span style="mso-spacerun: yes">                     </span>are dependent on them:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span># Define Directories<br>
+<span style="mso-spacerun: yes">                        </span>mcdir = C:\\MC<br>
+<span style="mso-spacerun: yes">                        </span>temp<span style="mso-spacerun:
+yes">  </span>= D:<br>
+<span style="mso-spacerun: yes">                        </span># Build the MAIN module<br>
+<span style="mso-spacerun:
+yes">                        </span>main.asm : main.c -main.h
+        -$mcdir\\{CPU}io.h<br>
+<span style="mso-spacerun: yes">                            </span>$mcdir\\mcp $.
+        $temp\\$@1.TMP -l l=$mcdir<br>
+<span style="mso-spacerun:
+yes">                            </span>$mcdir\\mcc$temp\\$@1.TMP
+        $temp\\$@2.TMP -l<br>
+<span style="mso-spacerun: yes">                            </span>$mcdir\\mco $temp\\$@2.TMP
+        $*<br>
+<span style="mso-spacerun: yes">                        </span># Build the SUB module<br>
+<span style="mso-spacerun: yes">                        </span>sub.asm : sub.c -sub.h<br>
+<span style="mso-spacerun: yes">                            </span>$mcdir\\mcp $.
+        $temp\\$@1.TMP -l l=$mcdir<br>
+<span style="mso-spacerun: yes">                            </span>$mcdir\\mcc
+        $temp\\$@1.TMP $temp\\$@2.TMP -l<br>
+<span style="mso-spacerun: yes">                            </span>$mcdir\\mco $temp\\$@2.TMP
+        $*<br>
+<span style="mso-spacerun: yes">                        </span># Link the final file
+        &amp; generate listing<br>
+<span style="mso-spacerun:
+yes">                        </span># NOTE: If either of the
+        above modules is rebuilt,<br>
+<span style="mso-spacerun: yes">                        </span>#<span style="mso-spacerun: yes">       </span>this entry
+        will be guaranteed to execute.<br>
+<span style="mso-spacerun: yes">                        </span>prog.hex : main.asm
+        sub.asm<br>
+<span style="mso-spacerun: yes">                            </span>$mcdir\\slink $.
+        $@.asm l=$mcdir\\lib<span style="mso-special-character:
+footnote-continuation-separator">    </span>$mcdir\\asm @ -fs<br>
+<span style="mso-spacerun: yes">                            </span>del $temp\\*.TMP<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>NOTE: For compilers supporting
+        multiple memory models,<span style="mso-spacerun: yes">  </span>add the<br>
+<span style="mso-spacerun: yes">                     </span>appropriate m= options and I=
+        options to MCCand SLINK<br>
+        <br clear="all" style="page-break-before:always">
+        <br>
+        <em><strong><span style="mso-spacerun: yes">       </span></strong></em></font><a
+        name="10.2 Directives"><font size="2" face="Arial"><em><strong>10.2
+        Directives</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Like 'C', MAKE recognizes
+        several &quot;directives&quot; in the MAKEfile.<br>
+<span style="mso-spacerun: yes">                  </span>These<span style="mso-spacerun:
+yes">  </span>directives<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>only<span style="mso-spacerun: yes">  </span>recognized<span style="mso-spacerun: yes"> 
+</span>        if<span style="mso-spacerun: yes">  </span>they<span style="mso-spacerun: yes">  </span>occur<span style="mso-spacerun: yes">  </span>at<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>beginning of the input line:<br>
+        <br>
+<span style="mso-spacerun: yes">                </span><span style="mso-spacerun:
+yes">  </span><em><strong>10.2.1 @include
+        &lt;filename&gt;</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>This command causes the
+        indicated file to be opened and read<br>
+<span style="mso-spacerun:
+yes">                     </span>in as the source<span style="mso-spacerun: yes">  </span>text.<span style="mso-spacerun: yes">  </span>When<span style="mso-spacerun: yes"> 
+</span>        the<span style="mso-spacerun: yes">  </span>end<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun:
+yes">  </span>the<span style="mso-spacerun: yes">  </span>new<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun: yes">  </span>is<br>
+<span style="mso-spacerun: yes">                     </span>encountered,<span style="mso-spacerun: yes">  </span>processing will
+        continue with the line<span style="mso-spacerun: yes">  </span>following<br>
+<span style="mso-spacerun: yes">                     </span>&quot;@include&quot; in the
+        original MAKEfile.<br>
+        <br>
+<span style="mso-spacerun: yes">                  <em><strong></strong></em></span><em><strong>10.2.2 @ifdef &lt;name&gt;
+        [name...]</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Processes the following
+        lines<span style="mso-spacerun: yes">  </span>(up to @else of @endif)<span style="mso-spacerun: yes">  </span>only<br>
+<span style="mso-spacerun:
+yes">                     </span>if one of the given MACRO names
+        is defined. NOTE: &lt;name&gt; should<br>
+<span style="mso-spacerun: yes">            </span><span style="mso-spacerun: yes">         </span>not be preceded by '$',
+        otherwise its CONTENTS will be tested.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>10.2.3 @ifndef
+        &lt;name&gt; [name...]</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Processes the following
+        lines<span style="mso-spacerun: yes">  </span>(up to @else of @endif)<span style="mso-spacerun: yes">  </span>only<br>
+<span style="mso-spacerun:
+yes">                     </span>if one of the given MACRO name
+        is NOT defined.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>10.2.4 @ifeq &lt;word1&gt;
+        &lt;word2&gt; [word3...]</strong></em><br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>Processes the following
+        lines<span style="mso-spacerun: yes">  </span>(up to @else of @endif)<span style="mso-spacerun: yes">  </span>only<br>
+<span style="mso-spacerun:
+yes">                     </span>if the first word matches one of
+        the remaining<span style="mso-spacerun: yes">  </span>words<span style="mso-spacerun: yes">  </span>exactly.<br>
+<span style="mso-spacerun: yes">                     </span>This is useful for testing the
+        value of a defined MACRO symbol.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>10.2.5 @ifne &lt;word1&gt;
+        &lt;word2&gt;</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Processes the following
+        lines<span style="mso-spacerun: yes">  </span>(up to @else or @endif)<span style="mso-spacerun: yes">  </span>only<br>
+<span style="mso-spacerun: yes">                     </span>if the first word does not match
+        any of the following words.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>10.2.6 @else</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Processes the following
+        lines<span style="mso-spacerun: yes">  </span>(up to @endif)<span style="mso-spacerun: yes">  </span>only<span style="mso-spacerun: yes">  </span>if<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                     </span>preceding @ifdef, @ifndef, @ifeq
+        or @ifne was false.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>10.2.7 @endif</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Terminates @ifdef,
+        @ifndef, @ifeq and @ifne.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>10.2.8 @type &lt;text&gt;</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                 </span><span style="mso-spacerun:
+yes">       </span>Displays the following
+        text.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>10.2.9 @abort [text]</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Terminates MAKE with an
+        'Aborted!' message.<span style="mso-spacerun: yes">  </span>Any text on the<br>
+<span style="mso-spacerun: yes">                     </span>remainder of the line will be
+        appended to the message.<br>
+        <br clear="all" style="page-break-before:
+always">
+<span style="mso-spacerun: yes">           <em><strong>    </strong></em></span></font><a
+        name="10.3 The MAKE command"><font size="2" face="Arial"><em><strong>10.3
+        The MAKE command</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The format of the MAKE command
+        line is:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                   </span>MAKE
+        [makefile] [options]<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>[makefile]<span style="mso-spacerun: yes">  </span>is the name of the
+        MAKEfile to process.<span style="mso-spacerun: yes">  </span>If no name<br>
+<span style="mso-spacerun:
+yes">          </span><span style="mso-spacerun: yes">        </span>is given, MAKE assumes the default
+        name 'MAKEFILE'.<br>
+        <br>
+<span style="mso-spacerun:
+yes">          <em><strong>        </strong></em></span><em><strong>10.3.1 Command Line
+        Options</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>MAKE accepts the following
+        command line [options]:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>?<span style="mso-spacerun: yes">       </span>- Causes
+        MAKE to output a short summary<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                                  </span>available
+        command line options.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>-d<span style="mso-spacerun: yes">      </span>- Instructs
+        MAKE to operate in &quot;debug&quot; mode, and<br>
+<span style="mso-spacerun:
+yes">                                  </span>display
+        the commands which it<span style="mso-spacerun: yes">  </span>would<span style="mso-spacerun: yes">  </span>execute,<br>
+<span style="mso-spacerun: yes">                                  </span>without
+        actually executing them. This provides<br>
+<span style="mso-spacerun: yes">                                  </span>a
+        method of quickly testing the MAKEFILE.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>-q<span style="mso-spacerun: yes">      </span>- Instructs
+        MAKE to be quiet, and not display the<br>
+<span style="mso-spacerun:
+yes">                                  </span>informational
+        messages and commands executed as<br>
+<span style="mso-spacerun: yes">                                  </span>it
+        progresses.<br>
+        <br>
+<span style="mso-spacerun: yes">                </span>&lt;name&gt;=&lt;text&gt;<span style="mso-spacerun: yes">   </span>-
+        Pre-defines a macro<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>specified<span style="mso-spacerun: yes">  </span>&lt;name&gt;<br>
+<span style="mso-spacerun: yes">                                  </span>with
+        the string value<span style="mso-spacerun: yes">  </span>&lt;text&gt;.<span style="mso-spacerun: yes">  </span>This<span style="mso-spacerun: yes">  </span>OVERRIDES<br>
+<span style="mso-spacerun: yes">                                  </span>any
+        definition within the MAKEfile,<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>may<br>
+<span style="mso-spacerun: yes">                                </span><span style="mso-spacerun: yes">  </span>be
+        used to establish a &quot;default&quot; value.<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">               </span></font><a name="10.4 The TOUCH command"><font
+        size="2" face="Arial"><em><strong>10.4 The TOUCH command</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>TOUCH is a small utility program
+        which sets<span style="mso-spacerun:
+yes">  </span>the<span style="mso-spacerun: yes">  </span>timestamp<span style="mso-spacerun: yes">  </span>of<br>
+<span style="mso-spacerun:
+yes">                  </span>one or more files to the current or<span style="mso-spacerun: yes">  </span>specified<span style="mso-spacerun: yes"> 
+</span>        time/date.<span style="mso-spacerun: yes">  </span>It<span style="mso-spacerun: yes">  </span>is<br>
+<span style="mso-spacerun:
+yes">                  </span>useful as a<span style="mso-spacerun: yes">  </span>method<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>forcing<span style="mso-spacerun: yes">  </span>MAKE<span style="mso-spacerun: yes"> 
+</span>        to<span style="mso-spacerun: yes">  </span>recognize<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun:
+yes">  </span>as<br>
+<span style="mso-spacerun: yes">                  </span>&quot;changed&quot;, even when it has
+        not.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>For example,<span style="mso-spacerun: yes">  </span>if you<span style="mso-spacerun: yes">  </span>had<span style="mso-spacerun: yes">  </span>decided<span style="mso-spacerun: yes"> 
+</span>        to<span style="mso-spacerun: yes">  </span>&quot;undo&quot;<span style="mso-spacerun: yes">  </span>several<span style="mso-spacerun: yes">  </span>recent<br>
+<span style="mso-spacerun:
+yes">              </span><span style="mso-spacerun: yes">    </span>changes by restoring a backup of
+        'main.c',<span style="mso-spacerun: yes">  </span>the restored file will<br>
+<span style="mso-spacerun: yes">                  </span>probably have a timestamp which is<span style="mso-spacerun: yes">  </span>older<span style="mso-spacerun: yes"> 
+</span>        than<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>last<span style="mso-spacerun: yes">  </span>module<br>
+<span style="mso-spacerun: yes">                  </span>which was built. In this case, MAKE
+        would be unaware that the file<br>
+<span style="mso-spacerun: yes">                  </span>has changed, and would therefore not
+        rebuild the module.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The TOUCH command could then be
+        used to &quot;update&quot;<span style="mso-spacerun: yes">  </span>the timestamp<br>
+<span style="mso-spacerun: yes">                  </span>of 'main.c' to the current time,
+        causing MAKE to recognize it as a<br>
+<span style="mso-spacerun: yes">                  </span>changed file.<br>
+        <br>
+<span style="mso-spacerun: yes">                                         
+</span>        TOUCH main.c<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>You could also use TOUCH to
+        force rebuilding of several files:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                   </span>TOUCH
+        main.c sub1.c sub2.c<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Or even ALL '.C' files:<br>
+        <br>
+<span style="mso-spacerun: yes">                                          
+</span>        TOUCH *.c<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>TOUCH can also be used to set
+        the timestamp of<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun:
+yes">  </span>to<span style="mso-spacerun: yes">  </span>an<br>
+<span style="mso-spacerun: yes">                  </span>arbitrary value,<span style="mso-spacerun: yes">  </span>this may be useful<span style="mso-spacerun:
+yes"> 
+</span>        to<span style="mso-spacerun: yes">  </span>PREVENT<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>change<span style="mso-spacerun: yes">  </span>from<br>
+<span style="mso-spacerun: yes">                  </span>causing an update:<br>
+        <br>
+<span style="mso-spacerun: yes">                                 </span>TOUCH
+        main.c t=0:00 d=31/10/80<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>NOTE:<span style="mso-spacerun: yes">  </span>Use of the 't='<span style="mso-spacerun: yes">  </span>or
+        'd='<span style="mso-spacerun: yes">  </span>parameters to TOUCH allows the<br>
+<span style="mso-spacerun:
+yes">                  </span>possibility that a changed file<span style="mso-spacerun:
+yes">  </span>will<span style="mso-spacerun: yes"> 
+</span>        go<span style="mso-spacerun: yes">  </span>unnoticed.<span style="mso-spacerun: yes">  </span>CAUTION<span style="mso-spacerun: yes">  </span>is<br>
+<span style="mso-spacerun: yes">                  </span>advised.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The MSDOS<span style="mso-spacerun: yes">  </span>implementation<span style="mso-spacerun:
+yes">  </span>of<span style="mso-spacerun: yes"> 
+</span>        TOUCH<span style="mso-spacerun: yes">  </span>supports<span style="mso-spacerun: yes">  </span>'-h'<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>'-s'<br>
+<span style="mso-spacerun:
+yes">                  </span>options,<span style="mso-spacerun: yes">  </span>which cause it to set the<span style="mso-spacerun: yes"> 
+</span>        timestamp<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>HIDDEN<span style="mso-spacerun: yes">  </span>and/or<br>
+<span style="mso-spacerun: yes">                  </span>SYSTEM files. If these options are not
+        used, TOUCH will not affect<br>
+<span style="mso-spacerun: yes">                  </span>those types of files.<br>
+        </font></td>
+    </tr>
+</table>
+<table width="605" border="0">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2">&quot;Converted by 
+        BiPOM Electronics to HTML format from original Micro C documentation by 
+        Dunfield Development Systems. Please see the Micro C documentation that 
+        is included with Micro C for the original forms of these pages.&quot;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

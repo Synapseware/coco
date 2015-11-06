@@ -1,0 +1,2114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\Basic09 - Ch 4.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<UL>
+<UL>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<U>Chapter 4
+</UL>
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+The Edit Mode
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000000.JPG" WIDTH="271" HEIGHT="2">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000001.JPG" WIDTH="18" HEIGHT="3">
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+,<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+You briefly used the BASIC09 built-in editor to create the Add
+procedure in Chapter 2. In addition to the features you learned
+there, the editor has other important functions.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Although you can use any text editor or word processor to write
+BASIC09 procedures, the BASIC09 editor offers two handy
+features:
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+&middot; It is both 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>string </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+and 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>line number </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+oriented. You can
+search for strings of characters, and replace them, and
+you can reference text with optional line numbers.
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+&middot; It interfaces with the compiler and 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>decompiler. </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+This feature lets BASIC09 check continuously for syntax errors
+and enables you to use procedures that conserve memory.
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+Edit Commands
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The following is a summary of the edit commands:<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B><U>Command Function<BR>
+</U></B>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Moves the edit pointer to the next line. Causes<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+a command to execute.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>+ <B>number </I></B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Moves the edit pointer ahead 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>number </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+lines.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
++ * Moves the edit pointer to the last line.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I>-number </I></B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Moves the edit pointer back 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>number </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+lines.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+-* Moves the edit pointer to the first line.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I>text </I></B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Inserts an unnumbered text line before the<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+current line.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I>ntext </I></B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Inserts the line numbered 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>n </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+in its correct _<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+numeric position.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>n </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Moves the edit pointer to the line numbered 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>n.<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>clstrllstr2/ </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Changes the next occurrence of strl to str2.<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+4-1
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000002.JPG" WIDTH="20" HEIGHT="4">
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Command  Function<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+c*lstrllstr2l  Changes all occurrences of ctrl to str2.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+d Deletes the current line.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+d* Deletes all the lines in the procedure.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+1 Lists the current procedure line.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+1* Lists all the procedure lines.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+q Terminates the edit session.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+r Renumbers lines beginning at the current line<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+in increments of 10.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+r* Renumbers all lines in increments of 10.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+r 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>n </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Renumbers lines beginning at Line n in<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+increments of 10.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>r n1 n2 </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Renumbers lines beginning at Line n1 in<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+increments of n2.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+s <B>/string/ </B>Searches for the first occurrence of string.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+s* /string/ Searches for all occurrences of string.<BR>
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+Using the Editor<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The easiest way to understand the edit commands is to use
+them. The following sections show you the functions of BASIC09
+edit mode.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The manual uses line numbers in the following procedure to
+acquaint you with all the functions of the editor. Remember,
+however, line numbers are not required with BASIC09. Procedures and programs without line numbers are shorter, faster,
+and easier to read.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+First, you need a procedure with which to work. Position yourself in the system mode. Then, type this line:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>e prose ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000003.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000004.JPG" WIDTH="306" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+4-2<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000005.JPG" WIDTH="336" HEIGHT="1">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>The Edit Mode / 4
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Now, type the following. (Remember, the small rectangle represents a space.)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000006.JPG" WIDTH="16" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0100 DIM PHRASES(30):STRING<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>01 20 FOR T-1 TO 30<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0130 READ PHRASES(t)<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>01 40 NEXT T<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0160 PRINT<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>01 70 F I RST-RND(1 0<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0180 SECOND=RND(9)+1 1<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0190 THIRD=RND(9)+21<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0200 PRINT PHRASESCFIRST);<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0210 PRINT PHRASES(SECOND);<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0220 PRINT PHRASES(THIRD);<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0240 PRINT<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>030 0 DATA "Love[]" , "An orange[]",<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>" H uma n i t y0" , " A k i 5 5F1"<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0310 DATA "A dark cloudy","A goose feather[]",<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>"A Pop5icle0"<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0320 DATA "Home cooking[]" ,"Cold pizza[]",<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>"Rock n' Ro 1 10"<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0330 DATA "i5 charming like[]","makes me dream of0"<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0340 DATA "i5 a5 sticky asp","can ooze<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>like[]","Sme115 like[]"<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0350 DATA "can be as tough to forget a50","can<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>hurt like[]"<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0360 DATA "can be a5 cynical a50","makes a mockery<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>of0_<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0370 DATA "drives me a5 crazy a50"<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0380 DATA "a sticky lollipop.","a web of<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>intrigue."<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0390 DATA "castor oil.","a chocolate bath.","a<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>broken toe."<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0400 DATA "honey and things.","personal<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>defeat .", "a wet diaper."<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>0410 DATA "Strange happenings.","a pennyle55<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>purse."<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When you finish typing the procedure, type 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+q ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to return to
+the system mode. Now you can test the program by typing
+either:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+run 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>or<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<B>run prose </B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+4-3<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000007.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000008.JPG" WIDTH="16" HEIGHT="2">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000009.JPG" WIDTH="252" HEIGHT="2">
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+After trying the procedure, return to the edit mode by typing 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>e
+ENTER .</B>
+</FONT>
+</P>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>After displaying the procedure's </B>name, the editor displays Line
+100 preceded by an asterisk. The asterisk lets you know which
+line is the 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>current line (or </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the line at which the edit pointer is
+located).
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Searching Through a Procedure<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can examine a procedure in three ways:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Press 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to display the procedure one line at a time.
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Skip through the procedure to a particular line.
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+9 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+List part or all of the procedure to the screen.
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When you use either of the first two methods, the line you select
+to display becomes your current line. When you use the third
+method, the current line does not change.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Using </B>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow1" COLOR="#000000">
+ENTER<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you are still positioned at Line 100, but want to examine the
+first line of data, Line 300, press 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+12 times to move down.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Using the Plus Sign to Move Forward<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Another method of moving to a specific line is to type a plus
+sign followed by the number of lines you need to advance to get
+there. Positioned at Line 100, you can type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
++ 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>1 2 ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Whether you press 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or use the plus sign, the last line displayed is now your current line.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000010.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>4-4<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000011.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000012.JPG" WIDTH="20" HEIGHT="4">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>The Edit Mode <U>/ 4<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000013.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Accessing a Line Using the Line Number<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The third way to move to a particular line is to type the line
+number, followed by 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+. For instance, to jump back to Line
+100, type:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+1 0 0 ENTER
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The editor displays Line 100 and makes it your current line.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Using the Minus Sign to Move Backward<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In the same manner that you move forward in the procedure
+using the plus sign, you can move backward using the minus
+sign, or hyphen.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Type 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+3 0 0 ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to return to Line 300. To display Line 240 and
+make it your current line, type:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+- ENTER
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To display Line 190 and make it your current line, type:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+- 4 ENTER
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>The Global Symbol<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The BASIC09 editor also makes use of the asterisk as a global
+symbol. For instance, following a command with an asterisk
+causes that command to affect the entire procedure.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This feature lets you move quickly to the beginning and end of
+the procedure. To return to Line 100, the first line, type:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+- * ENTER
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To move to the end of the procedure, past all the numbered lines,
+type:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
++ * ENTER  -
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4-5
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000014.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000015.JPG" WIDTH="18" HEIGHT="4">
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Using LIST<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The LIST command lets you select one or more lines for display<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+on your screen. To see this, make the first line your current line, ~`<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+then type:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>1 ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To list one or more lines, type the LIST command followed by the
+number of lines you want displayed. For instance, typing 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>15</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ENTER </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+causes the current line and four others to appear on the
+screen, as shown in the following sequence of commands and the
+resulting display:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+- * 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>15 ENTER
+</UL>
+<BR>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE Prose
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>100 DIM PHRASESC30): STRING
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>120 FOR T=1 TO 30
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>13OREAD PHRASESCT)
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>140 NEXT T
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>160 PRINT
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can also use LIST with the BASIC09 global symbol, *. Typing an asterisk after the LIST command produces a listing of
+the entire procedure.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Deleting Lines<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Earlier, the manual showed that you can delete the current line
+by typing 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+d <B>ENTER </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+. Because this is such a simple process, be
+sure you don't do it by accident. Removing the wrong line, or too
+many lines, is very frustrating in a complex procedure.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can also remove a group of lines from a procedure by typing
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+d, 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+followed by the number of lines you want to delete. This command deletes the current line and specified following lines.
+Again, be careful.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can remove all of the lines in a procedure by using the
+global symbol, *. Typing 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+d * <B>ENTER </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+erases all procedure text.
+However, the procedure name still resides in the workspace. To
+delete an entire procedure, including the name, use the KILL
+command from the system mode.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000016.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000017.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000018.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4-6<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>T<U>he Edit Mode / 4<BR>
+</U></I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000019.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you decide you don't like the nouns used in the DATA lines of
+the Prose procedure, erase all of the DATA lines containing
+nouns (Lines 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>300-320) </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and replace them. To do so, make Line
+300 your current line by typing:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>3 0 0 </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Then type:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>d </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Line 300 disappears and Line 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>310 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+takes its place as the current
+line.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+An alternate method of deleting the DATA lines uses only one
+command. To delete Lines 300 through 410, follow the DELETE
+command with the number of lines you want to remove in this
+case, three:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>d 3 </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Lines 300, 310, and 320 disappear. Line 330 becomes the current line. Move back a line to check that the deletions worked.
+The line numbers now skip from 240 to 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>330.</I>
+</FONT>
+</P>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Now, you need new nouns for the procedure. Type them in the
+same style as the old lines, such as:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>0300 DATA "A Telephone0,"A tickle0",
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"A gir10","A boy0"
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>031 5 DATA "Had 1 uc k0" "MoneyO","A bad betO",
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"A lumpy bedO"
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>0320 DATA "A deep thought0","Sunlight0"
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Save a copy of your procedure to disk by exiting the editor and
+using the SAVE command. Then return to the edit mode and try
+the global delete by typing:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>d * <B>ENTER
+</UL>
+<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Changing Text<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Using CHANGE tells the editor to search for existing text and
+replace it with new text. CHANGE, like DELETE, can easily
+cause unwanted results if you are not careful.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4-?
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000020.JPG" WIDTH="16" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000021.JPG" WIDTH="18" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The CHANGE command requires that you use delimiters to separate the command from the search text, and to separate the
+search text from the new text. You can select any of the following
+characters for a delimiter, as long as it does not appear in either
+the search text or the new text:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+! # % ^ &amp; () - + = JJ[] 
+</FONT>
+<FONT SIZE="1" FACE="Garamond1" COLOR="#000000">
+11 ,1 
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>C &gt; , ? / I
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Do not use the global symbol (*) for search and replace operations. This manual uses a slash (/) as the CHANGE delimiter.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following steps outline the correct use of CHANGE:<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1. Position the editor either before or on the line in which
+you want to make a change.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+2. Type 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+c 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(for CHANGE). Do not use a preceding space.
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3. Type a delimiter character, such as / .
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4. Type the characters to be changed, following them with
+the delimiter.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+5. Type the new text, followed by the delimiter.
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6. Press 
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT><B>ENTER .
+</UL>
+</UL>
+<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT><BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Note: </B>It is a good idea to turn on OS-9's upper- and lowercase function before attempting change or search operations. If you do not, you cannot tell whether the text you
+want to find is upper- or lowercase, or some combination of
+the two. If you type the wrong case, the change or search
+fails.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In case you didn't notice when typing the procedure, Line 410
+contains an incorrectly spelled word, pennyless. To correct this
+error, type the following:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT><B>c/Pennyless/Pennile55/ </B></TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Immediately, the editor displays Line 410, with pennyless
+changed to penniless.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Suppose you decide to change the number of sentence combinations available in Prose. The procedure now has 30 data entries.
+If you add five subjects, five verb phrases, and five objects, the
+procedure also needs other changes (for instance, the DIM statement in Line 100, the loop size in Line 120, and the RND statements in Lines 170 through 190).
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4-8<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000022.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000023.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000024.JPG" WIDTH="20" HEIGHT="4">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>The Edit Mode / 4
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A quick way to change the number 30 in Lines 100 and 120 is
+to use CHANGE's global function. To change all occurrences of
+30 to 45, position the editor at Line 100, and type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>c*/30/45/ ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use the CHANGE and global CHANGE functions to adjust the
+RND statement values in Lines 170, 180, and 190.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+As well as making changes, you can use the CHANGE command
+to quickly delete portions of text within a line. To do this, type
+delimiters without new text, in this fashion:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>c/Ofeather// </TT></B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This command changes the text 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>A g o o s e f e a t h e r </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+in Line 210
+t0 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>A goose.</B></TT>
+</FONT>
+</P>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Searching for Text<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The editor's SEARCH command, S, works in the same manner
+as the CHANGE command. However, SEARCH only requires
+you to specify a block of text to find.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+With SEARCH, you use delimiters to enclose the text to find. To
+test the function, position the editor at the beginning of text by
+typing:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+- * 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Now, search for the word phrases, by typing:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>s/phrases/ </TT></B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The screen displays:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>*0000 100 DIM phra5e5(30):STRING
+</UL>
+<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To find all occurrences of phrases throughout the procedure, use
+the global symbol. Type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>5*/Phra5e5/ </TT></B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000025.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000026.JPG" WIDTH="18" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>4-9<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Renumbering Lines<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The RENUMBER command, 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+R, 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+reorders all numbered lines and
+all references to numbered lines. You can give RENUMBER
+either one or two parameters. The first is the beginning line
+number. The second is the increment you want. The default
+increment is 10.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For instance, the Prose procedure line numbers skip from Line
+100 to Line 120. You can renumber the entire procedure by moving the editor to Line 100, and then typing:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+r 10 ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To change the numbering to increments of 5, beginning at Line
+100, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+r 1 0 0 , S ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can also change line numbering in portions of the procedure.
+To do this move the editor to the line where you want the new
+numbering to begin. Then, type in the new parameters. To
+renumber Line 100 as Line 200 and continue with increments of
+10, position the editor at Line 100. Then, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+r 2 0 0 , 1 0 ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you are not positioned at the first line of a procedure, but you
+wish to renumber all lines, you can use the global symbol to do
+the job. From anywhere in the procedure, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+r * 1 0 0 , 1 0 ENTER
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This renumbers the entire procedure in increments of 10.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Adding Lines<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+There are two ways to add new lines to a procedure. You can:<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Position the editor one line below the position for the new
+line. Then, type the new line and press 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+. When
+inserting lines without numbers, be sure to type a space
+as the first character of the line to tell the editor that
+the following text is a new procedure line.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Type a new line, giving it a line number that falls
+between two existing line numbers.
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4-10
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000027.JPG" WIDTH="20" HEIGHT="5">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>The Edit Mode / 4<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following procedure adds more choices to the Prose program.
+It also adds a feature that lets you press 
+</FONT>
+<FONT SIZE="2" FACE="Verdana1" COLOR="#000000">
+~n~TER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+for additional
+output, rather than having to rerun the procedure. Use the
+information presented in this section to help you insert the new
+lines into your program. Because you must change some lines,
+as well as add lines, the following listing includes the entire
+procedure.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Referring to the original Prose listing, the lines to change are:
+100, 120, 170, 180, and 190.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The lines to add are: 110, 150, 230, 250, 260, 270, 305, 325,
+372, 374, 376, 420, 430.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+PROCEDURE pro5e2<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+100 DIM PHRASESC45):STRING<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+110 DIM RESPONSE:STRING<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+120 FOR T=1 TO 45<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+130 READ PHRASESCt)<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+140 NEXT T<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+150 REPEAT<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+160 PRINT<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+170 FIRST=RNDC15)<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+180 SECOND=RNDC14)+16<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+190 THIRD=RNDC 1 4)+31<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+200 PRINT PHRASESCFIRST);.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+210 PRINT PHRASESCSECOND);<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+220 PRINT PHRASESCTHIRD);<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+230 PRINT.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+240 PRINT<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+250 PRINT "0000000000Pre55 ENTER f or another<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+witticism..."<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+260 INPUT "0000000=Or pre55 the SPACEBAR and pre55<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+ENTER to end...",RESPONSE<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+270 UNTIL RESPONSE),""<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+300 DATA "LoveO","An orange[]","Humanity[]",<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+"A k i 5 50"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+305 DATA "A computer[]","A book[]", "Mi5ery0" -<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+310 DATA "A dark cloud[]","A goose feather[]",<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+"A Pops i c 1 e0"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+320 DATA "Home cook ing[]","Cold pizza[]",<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+"Rock n' Ro 1 10"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+325 DATA "Snow in JuneO","A gla55 hourse0"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+330 DATA "i5 charming likep","makes me dream of0"<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Verdana" COLOR="#000000">
+4-11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000028.JPG" WIDTH="210" HEIGHT="1">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000029.JPG" WIDTH="20" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000030.JPG" WIDTH="18" HEIGHT="4">
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Garamond" COLOR="#000000">
+340 DATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"is as sticky a50","can ooze like0",<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"smells like0"<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Garamond" COLOR="#000000">
+350 DATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"can be as tough to forget asp",~'~,<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"can hurt 1 i k e0"<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Garamond" COLOR="#000000">
+360 DATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"can be as cynical a50",<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"makes a mockery of0"<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Garamond" COLOR="#000000">
+370 DATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"drives me as crazy a50"<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Garamond" COLOR="#000000">
+372 DATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"can bother me like0","blackens my hopes<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>like0"<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Garamond" COLOR="#000000">
+374 DATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"can tickle me like0","can be as funny<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>a </TT>
+</FONT>
+<FONT SIZE="1" FACE="Garamond1" COLOR="#000000">
+<B>50II<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Garamond" COLOR="#000000">
+376 DATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"has the effect of0"
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Garamond1" COLOR="#000000">
+380 DATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"a sticky lollypop.","a web of
+intrigue."
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Garamond1" COLOR="#000000">
+390 DATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"castor oil.","a chocolate bath.","a
+broken toe."
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Garamond1" COLOR="#000000">
+400 DATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"honey and things.","personal
+defeat.","a wet diaper."
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Garamond1" COLOR="#000000">
+410 DATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"strange happenings.","a penniless
+purse."
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Garamond1" COLOR="#000000">
+420 DATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"a slimy snake.","a bad habit."
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Garamond1" COLOR="#000000">
+430 DATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"a bad memory chip.","a good fight.","a
+silly friend."<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+The Next Step<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Even the best programmers make mistakes -a lot of them.
+BASIC09 provides a way to catch programming mistakes quickly
+and correct them. The next chapter tells you about BASIC09's
+powerful debugging functions.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000031.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4-12<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~5\GR000032.JPG" WIDTH="389" HEIGHT="2">
+</FONT>
+</BODY>
+</HTML>

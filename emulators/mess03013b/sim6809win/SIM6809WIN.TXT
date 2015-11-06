@@ -1,0 +1,36 @@
+Sim6809win - Simulator für das Motorola-6809-System des TI-Praktikums
+             an der Universität Ulm
+
+Simulator Version 0.24 vom 05.02.2000
+
+Simulator Copyright (C) 1998-2000 by Raimund Specht
+	  raimund.specht@informatik.uni-ulm.de
+	  
+http://home.primusnetz.de/rspecht/computer/studium/sim6809.htm
+
+Win32 GUI Version 0.02 vom 07.02.2000
+
+Win32 GUI Copyright (C) 2000 by Volker Janzen
+          volker.janzen@informatik.uni-ulm.de
+          http://www.uni-ulm.de/~s_vjanze/index.html
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation.
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRENTY; without even the implied warrenty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.
+
+6809 monitor program (*):
+     Copyright (C) 1997 by Jörg Siedenburg
+     joerg.siedenburg@informatik.uni-ulm.de
+
+(*) may not be under GPL license
+
+-----------
+Allgemeines
+-----------
+
+Vor euch liegt die zweite Quick&Dirty Portierung des 6809 Simulators nach Win32. Ich habe
+nur den Simulatorquelltext genommen

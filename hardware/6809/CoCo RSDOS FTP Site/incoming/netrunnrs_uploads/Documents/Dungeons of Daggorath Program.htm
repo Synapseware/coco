@@ -1,0 +1,767 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm -->
+<!--Remove this script section if you edit this page--><HTML><HEAD><TITLE>Dungeons of Daggorath Program:</TITLE>
+<SCRIPT language=JavaScript>
+<!--
+var nav;
+function tcnavpop() {
+ var ag = window.navigator.userAgent;
+ var ver = parseInt(ag.charAt(ag.indexOf("/")+1),10);
+ if (top == this && !nav) {
+   nav = window.open(
+    "http://home.talkcity.com/homepopup.html?url=/Arcade/colorcomputer/Daggorath.htm",
+    "tcnav",
+    "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=570,height=113"
+   );
+ }
+}
+tcnavpop();
+// -->
+</SCRIPT>
+
+<META content="text/html; charset=iso-8859-1" http-equiv=Content-Type>
+<META content="MSHTML 5.00.2614.3401" name=GENERATOR></HEAD>
+<BODY>
+<P align=center><FONT size=2><IMG height=531 
+src="Dungeons of Daggorath Program_files/DAGGOR1.jpg" width=569></FONT></P>
+<P align=center><FONT size=2>Dungeons of Daggorath Program:</FONT></P>
+<P align=center><FONT size=2>© 1982 DynaMicro, Inc.</FONT></P>
+<P align=center><FONT size=2>Licensed to Tandy Corporation.</FONT></P>
+<P align=center><FONT size=2>All Rights Reserved.</FONT></P>
+<P align=center><FONT size=1>This applications software for the Tandy Color 
+microcomputer is retained in a read-only memory (ROM) format. All portions of 
+this software, whether in the ROM format or other source code form format, and 
+the ROM circuitry, are copyrighted and are the proprietary and trade secret 
+information of Tandy Corporation and/or its licensor. Use, reproduction or 
+publication of any portion of this material without the prior written 
+authorization by Tandy Corporation is strictly prohibited.</FONT></P>
+<P align=center><FONT size=1>Dungeons of Daggorath Program Manual:</FONT></P>
+<P align=center><FONT size=1>© 1983 Tandy Corporation</FONT></P>
+<P align=center><FONT size=1>All Rights Reserved.</FONT></P>
+<P align=center><FONT size=1>Reproduction or use, without express written 
+permission from Tandy Corporation, of any portion of this manual is prohibited. 
+While reasonable efforts have been taken in the preparation of this manual to 
+assure its accuracy, Tandy Corporation assumes no liability resulting from any 
+errors or omissions in this manual, or from the use of the information contained 
+herein.</FONT></P>
+<P align=center><FONT size=1>10 9 8 7 6 5 4 3 2</FONT></P>
+<P align=center><FONT face=Arial size=4><B>Table of Contents</B></FONT></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Introduction"><FONT 
+face=Arial size=1>Introduction</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Required Equipment"><FONT 
+face=Arial size=1>Required Equipment</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Required Equipment"><FONT 
+face=Arial size=1>Loading Instruction</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Playing the Game"><FONT 
+face=Arial size=1>Playing the Game</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#The Display"><FONT 
+face=Arial size=1>The Display</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Commands"><FONT 
+face=Arial size=1>Commands</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Moving in the Dungeon"><FONT 
+face=Arial size=1>Moving in the Dungeon</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Levels and Climbing in the Dungeon"><FONT 
+face=Arial size=1>Levels and Climbing in the Dungeon</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Creatures"><FONT 
+face=Arial size=1>Creatures</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Objects"><FONT 
+face=Arial size=1>Objects</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Object Types"><FONT 
+face=Arial size=1>Object Types</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Magic"><FONT 
+face=Arial size=1>Magic</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Reveal"><FONT 
+face=Arial size=1>Reveal</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Incant"><FONT 
+face=Arial size=1>Incant</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Your Heartbeat"><FONT 
+face=Arial size=1>Your Heartbeat</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Parting Words"><FONT 
+face=Arial size=1>Parting Words</FONT></A></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Appendix A"><FONT 
+face=Arial size=1>Appendix A</FONT></A><FONT face=Arial size=1> - Summary of 
+Commands</FONT></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Appendix B"><FONT 
+face=Arial size=1>Appendix B</FONT></A><FONT face=Arial size=1> - Partial List 
+of Abbreviations</FONT></P>
+<P><A 
+href="http://homepages.msn.com/Arcade/colorcomputer/Daggorath.htm#Appendix C"><FONT 
+face=Arial size=1>Appendix C</FONT></A><FONT face=Arial size=1>. Saving and 
+Reloading Games</FONT></P>
+<P><FONT size=5><I>L</I></FONT><FONT size=2><I>ONG </I></FONT><FONT 
+size=1><I>AGO, in the faraway hamlet of Rivenshire, there lived a gentle, simple 
+folk. For many long years they lived, loved and labored in the seclusion of the 
+peaceful valley, protected from the influence and danger of the outside world by 
+the towering mountains of Daggorath.</I></FONT></P>
+<P><FONT size=1><I>But alas, no good thing remains untouched forever. And so it 
+was, in the time now known as the Year of Darkness, that a monstrous Evil came 
+to Rivenshire, and the shadows of Daggorath fell long upon the land. The crops, 
+once healthy and strong, stood withered in the fields. The herds of cattle and 
+sheep wandered in listless stupor and slowly wasted away. Even the children of 
+the Shire became ill and did not respond to the most powerful 
+potions.</I></FONT></P>
+<P><FONT size=1><I>In desperation, the people cried out for a reason, for 
+understanding, for deliverance. Then a wise old master of the village came forth 
+to speak . . . </I></FONT></P>
+<P><FONT size=5><SUP><I>"</I></SUP><I>T</I></FONT><FONT size=1><I>here is a 
+tale," he said, "passed down for centuries and almost forgotten, of a time in 
+the Olden Days when a curse such as this descended on the land. Deep beneath 
+these towering crags, in the Dungeons of Daggorath, an evil Wizard made his home 
+and grew in power But before his destruction of the land was complete, a brave 
+adventurer ventured into the fearsome Dungeons and drove the Wizard away, saving 
+Rivenshire from a devilish fate. The Wizard, however, was not destroyed and 
+swore, even as he fled, that one day he would return with his legions of evil, 
+more powerful than ever, to reinhabit the Dungeons of Daggorath and destroy all 
+the land to avenge his defeat. I have heard rumors in recent times that this 
+same Wizard has come into possession of the ancient and mighty Ring of Endings 
+and is now more powerful than even I fear that this is true and that he has 
+returned to destroy us."</I></FONT></P>
+<P><FONT size=5><I>A</I></FONT><FONT size=1><I>nd lo, the people of the village 
+trembled and begged of the master, "What shall we do... who now will save us?" 
+When the crowd was silent, the master spoke. "Behold this Book," he said, 
+raising the ancient volume above his head for all to see, "for it is said to 
+have been left by the adventurer and was passed down to me by my father's 
+father's father. It tells of the mysteries and dangers of the Dungeon. The 
+secrets of The Book I can share with you. But alas, where will we find one so 
+bold as to face the deadly dangers of the Dungeons of Daggorath?"</I></FONT></P>
+<P><FONT size=1><I>To the amazement of all who watched, there came from the 
+crowd a stranger whose face spoke of courage and wisdom. The stranger reached 
+out a hand to take The Book. The master smiled slowly and said, "Even as it was 
+prophesied. . . so be it. I shall teach you the ways of the Dungeon that you may 
+venture forth and slay the Wizard. You must listen carefully and study well, for 
+mistakes are deadly in the Dungeons of Daggorath." Thus began the lesson. 
+.</I></FONT></P>
+<P><A name=Introduction><FONT face=Arial><B>Introduction</B></FONT></A></P>
+<P><FONT face=Arial size=1>The animated color graphics of this exciting 
+adventure game make your task tearfully realistic. The Dungeon is a complex, 
+multi-level maze deep within the mountains of Daggorath and tilled with evil 
+creations of the Wizard - fearsome creatures that can snuff out your fragile 
+existence in an instant. Beware... for once you have been transported into the 
+Dungeon, there are only two ways out: <B>DESTROY THE WIZARD or 
+DIE!</B></FONT></P>
+<P>&nbsp;</P>
+<P><A name="Required Equipment"><FONT face=Arial><B>Required 
+Equipment</B></FONT></A></P>
+<P><FONT face=Arial size=1>To begin your adventure, you need the 
+following:</FONT></P>
+<P><FONT face=Symbol size=1>·</FONT><FONT face=Arial size=1> A Tandy® Color 
+Computer with at least 16k RAM</FONT></P>
+<P><FONT face=Symbol size=1>·</FONT><FONT face=Arial size=1> Standard TV (Color 
+recommended)</FONT></P>
+<P><A name="Loading Instructions"><FONT face=Arial><B>Loading 
+Instructions</B></FONT></A></P>
+<P><FONT face=Arial size=1>1. Before inserting or removing a Program Pak&#8482; 
+cartridge, make sure the computer is off. Failure to do so could result in 
+damage to the Program Pak.</FONT></P>
+<P><FONT face=Arial size=1>2. Connect the Color Computer to the television set, 
+and move the antenna switchbox control to Computer (or Game). See your Tandy 
+Color Computer Operation Manual for further details regarding 
+connections.</FONT></P>
+<P><FONT face=Arial size=1>3. Insert the Dungeons of Daggorath Program Pak&#8482;, 
+label side up, into the slot located on the right side of the computer. Press 
+firmly until it engages securely, but do not force it.</FONT></P>
+<P><FONT face=Arial size=1>4. Turn on the television, and tune it to Channel 3 
+or 4 (whichever is least active in your area).</FONT></P>
+<P>&nbsp;</P>
+<P><A name="Playing the Game"><FONT face=Arial><B>Playing the 
+Game</B></FONT></A></P>
+<P><FONT face=Arial size=1>To begin your adventure, you must first be 
+transported to the Dungeon. After loading the program, a chilling preview of the 
+mysteries of the Dungeon appears on the screen. You might even catch a glimpse 
+of the Wizard himself! Read through The Book, and when you think you can 
+successfully complete your task, press any key to be transported into the 
+Dungeon. But first, you must know more of the evil sanctum you are about to 
+enter.</FONT></P>
+<P>&nbsp;</P>
+<P><A name="The Display"><FONT face=Arial><B>The Display</B></FONT></A></P>
+<P><FONT face=Arial size=1>You can view the Dungeon at the top of the screen. A 
+single line on the left and right sides of the screen shows what you are holding 
+in your left and right hands. The center of the screen monitors your heartbeat. 
+You can actually see your heart and hear its beating as you wind your way 
+through the dark passages of horror. Enter commands at the tour line command 
+entry area at the bottom of the screen.</FONT></P>
+<P><IMG height=729 src="Dungeons of Daggorath Program_files/DAGGOR3.jpg" 
+width=700></P>
+<P><A name=Commands><FONT face=Arial size=3><B>Commands</B></FONT></A></P>
+<P><FONT face=Arial size=2>To enter commands in the Dungeon, type the desired 
+command, with spaces between the words of multi-word commands, and press [ENTER] 
+If you make a mistake in typing a command, press the [&lt;-] key to erase one 
+character at a time and continue typing the command. It you enter an illegal or 
+impossible command, ??? appears after the command, and no action is 
+taken.</FONT></P>
+<P><FONT face=Arial size=2>You can enter commands in rapid succession. Simply 
+continue typing. The computer stores the commands you type and then displays and 
+carries them out as rapidly as possible.</FONT></P>
+<P><FONT face=Arial size=2>Commands can be abbreviated to the shortest set of 
+letters that cannot be confused with another command word. For example, ATTACK 
+LEFT can be abbreviated A L, and PULL LEFT SWORD can be abbreviated P L SW. 
+SWORD cannot be abbreviated with just an S, as this can be confused with SHIELD. 
+You must still enter spaces between abbreviated words. If you try to enter an 
+abbreviation that is too short, ??? appears after the command.</FONT></P>
+<P><FONT face=Arial size=2>The appendices at the end of The Book contain a 
+Summary of Commands (Appendix A), a Partial List of Allowable Abbreviations 
+(Appendix B), and the commands you need to use to save and reload a game 
+(Appendix C).</FONT></P>
+<P><A name="Moving In the Dungeon"><FONT face=Arial size=3><B>Moving In the 
+Dungeon</B></FONT></A></P>
+<P><FONT face=Arial size=2>Enter the command MOVE to step one cell forward in 
+the Dungeon. If you are facing a wall, you will "bump" into it. You may move 
+past a creature that is directly in front of you by moving forward. The 
+creature, however, will follow you and attempt to move fast enough to jump back 
+in front of you.</FONT></P>
+<P><FONT face=Arial size=2>To step back, type MOVE BACK. You can also turn in 
+either direction by typing TURN LEFT or TURN RIGHT. Type TURN AROUND to turn 
+completely around in the same cell. Use the commands MOVE LEFT or MOVE RIGHT to 
+sidestep (move sideways without turning).</FONT></P>
+<P><FONT face=Arial size=2>A TORCH will help you see which way to MOVE in the 
+Dungeon. You can MOVE with no TORCH (in total darkness), but you will bump into 
+walls. This is not a recommended method of traveling in the Dungeon, for you 
+might bump into the dreaded creatures.</FONT></P>
+<P>&nbsp;</P>
+<P><A name="Levels and Climbing In the Dungeon"><FONT face=Arial 
+size=3><B>Levels and Climbing In the Dungeon</B></FONT></A></P>
+<P><FONT face=Arial size=2>The Dungeon is a multi-level maze. There are three 
+known levels, but there are rumors that the real Wizard lives beyond in even 
+deeper levels. If you want to explore the first three levels, you must find a 
+hole or a ladder to move between the levels. Beyond that, you are on your 
+own.</FONT></P>
+<P><FONT face=Arial size=2>If you are standing next to a hole, type CLIMB DOWN. 
+You are then on the level below and can see the hole you just climbed through 
+directly above you. But be careful... if you climb down a hole, you cannot go 
+back up.</FONT></P>
+<P><FONT face=Arial size=2>It you are standing next to a ladder, you can move up 
+or down by using the commands CLIMB UP or CLIMB DOWN. Be especially wary of 
+climbing up... for it is said that if the Wizard senses you retreating up a 
+level, he will punish your faintheartedness with the wrath of his most fearsome 
+creatures.</FONT></P>
+<P>&nbsp;</P>
+<P><A name=Creatures><FONT face=Arial size=3><B>Creatures</B></FONT></A></P>
+<P><FONT face=Arial size=2>The Dungeon is filled with terrible creatures, 
+henchmen of the evil Wizard. You will encounter Vipers, Spiders, Evil Knights, 
+the Smiling Blobs, massive Stone Giants, Scorpions, Wraiths, and the awesome 
+Galdrogs. These demons of darkness will attempt to seek you out and destroy you. 
+They grow more powerful and more deadly as you descend deeper into the 
+Dungeon.</FONT></P>
+<P><FONT face=Arial size=2>Each creature has a characteristic sound that it will 
+sometimes make as it approaches from any direction. The sound grows louder as 
+the creature approaches. Listen carefully in the Dungeon, for you can often tell 
+which creature to expect from the sound you hear. If the creature is in the cell 
+with you, the sound is very loud, and you will be attacked. You will hear the 
+blow strike you if it finds its mark. This is extremely hazardous to your 
+health.</FONT></P>
+<P><FONT face=Arial size=2>If you have your wits about you, you can use the 
+ATTACK command to fend off or destroy your attacker. Use an object (such as a 
+SWORD) if you have one, but your empty hand is better than nothing.</FONT></P>
+<P><FONT face=Arial size=2>One technique you might use to defeat creatures 
+involves attacking several</FONT></P>
+<P><FONT face=Arial size=2>times in rapid succession and then moving several 
+steps and turning around. This method lets your heart rate slow down while the 
+creature approaches. Then you are ready to attack again as the creature enters 
+your cell.</FONT></P>
+<P><FONT face=Arial size=2>Creatures attack faster as they become more powerful. 
+Time your attack to strike the creature just as it enters your cell and before 
+it has a chance to strike you. Entering several ATTACKS followed by MOVES in 
+rapid succession (don't wait for the command to be displayed) helps to get your 
+blows in and gets you out of danger before the creature has a chance to destroy 
+you.</FONT></P>
+<P><FONT face=Arial size=2>The Blob might require ten or so successful sword 
+hits to kill when you first encounter it. The Stone Giant might take six or 
+seven hits to destroy. You might be able to kill Spiders with only one blow, but 
+Vipers will take two or three.</FONT></P>
+<P><FONT face=Arial size=2>Both the Blob and the Stone Giant can often kill you 
+with one blow - so be quick and move before they strike!</FONT></P>
+<P>&nbsp;</P>
+<P><FONT face=Arial size=2>In the Dungeon, the victor of a struggle draws 
+strength from the defeated foe. Be cautious, but master many creatures as you 
+move through the Dungeon so your strength may increase. The stronger you become, 
+the fewer hits it will take to destroy a creature. If you go to a deeper level 
+without mastering most of the creatures on the levels above, your strength will 
+be no match for the creatures you encounter. Eventually, if you survive, you 
+will face the evil Wizard. Defeating the Wizard will be the ultimate struggle, 
+for his strength is greater than all his creatures.</FONT></P>
+<P><FONT face=Arial size=2>BUT BE WARNED... long before you face the real 
+Wizard, he will send a demon in his image to test your worthiness and resolve. 
+Only after defeating the Wizard's image will the true challenge 
+begin.</FONT></P>
+<P><FONT face=Arial size=2>BE PREPARED FOR ANYTHING!</FONT></P>
+<P>&nbsp;</P>
+<P><A name=Objects><FONT face=Arial size=3><B>Objects</B></FONT></A></P>
+<P><FONT face=Arial size=2>Within the Dungeon there will be a number of objects 
+which must be used in your quest. The creatures will have collected most of the 
+objects in the Dungeon by the time you arrive. There are six object 
+classes:</FONT></P>
+<P><FONT face=Arial size=2>TORCH SWORD SHIELD FLASK SCROLL RING</FONT></P>
+<P><FONT face=Arial size=2>There are several types within each of these object 
+classes. For example, a TORCH can be a PINE TORCH or a LUNAR TORCH. The chart 
+below will clarify the various types of objects. The types of RINGs, however, 
+will not be listed in the chart. You must discover them yourself.</FONT></P>
+<P align=center><FONT face=Arial size=3><B>Types of Objects</B></FONT></P>
+<TABLE border=0 cellPadding=7 cellSpacing=0 width=652>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="20%"><FONT face=Arial 
+      size=1><STRONG>TORCH</STRONG></FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial 
+      size=1><STRONG>SWORD</STRONG></FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial 
+      size=1><STRONG>SHIELD</STRONG></FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial 
+      size=1><STRONG>FLASK</STRONG></FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial 
+      size=1><STRONG>SCROLL</STRONG></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="20%"><FONT face=Arial size=1>PINE</FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial size=1>WOODEN</FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial size=1>LEATHER</FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial size=1>HALE</FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial size=1>VISION</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="20%"><FONT face=Arial size=1>LUNAR</FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial size=1>IRON</FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial size=1>BRONZE</FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial size=1>ABYE</FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial size=1>SEER</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="20%"><FONT face=Arial size=1>SOLAR</FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial size=1>ELVISH</FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial size=1>MITHRIL</FONT></TD>
+    <TD vAlign=top width="20%"><FONT face=Arial size=1>THEWS</FONT></TD>
+    <TD vAlign=top width="20%">&nbsp;</TD></TR></TBODY></TABLE>
+<P><FONT face=Arial size=2>When you first enter the Dungeon, you will be given a 
+backpack containing a PINE TORCH and a WOODEN SWORD. You can find other objects 
+within the Dungeon and can get them when they are on the floor. At any time, you 
+can see what objects are in your backpack and on the floor by typing 
+EXAMINE.</FONT></P>
+<P><FONT face=Arial size=2>You can look at the Dungeon by typing LOOK (but only 
+after an EXAMINE command).</FONT></P>
+<P><FONT face=Arial size=2>To grab something from your backpack, you must first 
+have an empty hand. Then use the PULL command, as in PULL LEFT PINE TORCH. To 
+place something you are holding into your backpack, type STOW LEFT (for left 
+hand) or STOW RIGHT (for right hand). Your right or left hand is now empty and 
+the object you are holding is in the backpack.</FONT></P>
+<P><FONT face=Arial size=2>Creatures in the Dungeon are aware that objects are 
+valuable and will gather objects they encounter as they move throughout the 
+Dungeon. A creature will continue to carry the objects it has collected until it 
+is destroyed. When a creature is destroyed, the objects (if any) will drop to 
+the floor. The objects will remain where they fall, even if you leave the area, 
+unless you pick them up or another creature comes by and picks them up. You can 
+pick up an object from the floor using the GET command only if you have an empty 
+hand (ex-ample: GET RIGHT SHIELD). You can drop an object to the floor from 
+either hand by typing DROP LEFT or DROP RIGHT respectively. This leaves one hand 
+empty, and the object you were holding now appears on the floor of the cell you 
+occupy.</FONT></P>
+<P><FONT face=Arial size=2><B>Object Types</B></FONT></P>
+<P><FONT face=Arial size=2>TORCH No rays of light penetrate the Dungeon. You 
+will need the TORCH to find your way. When you first enter the Dungeon, you will 
+see only darkness. If you want to see you must PULL the TORCH into either hand 
+and light it by typing USE LEFT or USE RIGHT. You will hear the match strike, 
+and the TORCH will be mounted on your backpack. Your hand is now empty, and you 
+can see. If you EXAMINE your backpack, the TORCH currently in use is highlighted 
+After an EXAMINE command you must LOOK to see the lit Dungeon.</FONT></P>
+<P><FONT face=Arial size=2>In time, all TORCHes burn down and eventually die. As 
+this happens, you can see less and less in the Dungeon. The PINE TORCH lasts 
+fifteen minutes. The LUNAR TORCH holds some magic light and will last for thirty 
+minutes. The SOLAR TORCH is the most powerful and lasts for sixty 
+minutes.</FONT></P>
+<P><FONT face=Arial size=2>It is vital that you find another TORCH before your 
+light goes out, or you will be in pitch darkness and at the mercy of the 
+Wizard.</FONT></P>
+<P><FONT face=Arial size=2>SWORD The Dungeon is very dangerous. Only a fool 
+would enter without holding close his best and sharpest SWORD. When facing a 
+creature, you can attempt to strike him with a SWORD you are holding by typing 
+ATTACK LEFT or ATTACK RIGHT, depending on which hand your SWORD is in. If 
+you</FONT></P>
+<P><FONT face=Arial size=2>miss, you hear the swish of your sword through the 
+air. If you hit, you hear the blow strike and the command area shows!!! after 
+the attack command to show that you have made contact.</FONT></P>
+<P><FONT face=Arial size=2>Stronger creatures are naturally harder to hit. You 
+will also find that you miss more often as the light from your torch grows dim. 
+It becomes even more important to find other torches before your light burns too 
+low.</FONT></P>
+<P><FONT face=Arial size=2>As you grow stronger (if you survive), the force and 
+effect of your blows increase. But do not expect the creatures of the Dungeon to 
+fall from a single blow. And beware... for even as you strike, they will strike 
+back, often with fatal results.</FONT></P>
+<P><FONT face=Arial size=2>SHIELD When you hold a SHIELD in your hand, you are 
+protected from some of the force of an attacking creature's blow. This may save 
+your life! The effectiveness of a SHIELD depends somewhat on your strength and 
+the strength of the creature you are facing.</FONT></P>
+<P><FONT face=Arial size=2>You can also ATTACK with a SHIELD. The MITHRIL SHIELD 
+is quite powerful and can be used effectively as a weapon.</FONT></P>
+<P><FONT face=Arial size=2>Attacking with a SHIELD is better than attacking with 
+an empty hand and makes a great noise. But BE CAREFUL.... jokesters tend to have 
+very short careers in the Dungeon!</FONT></P>
+<P><FONT face=Arial size=2>FLASK In the Dungeon you might also find various 
+magical FLASKs, which may serve you in your quest. If you are holding a FLASK 
+and type USE LEFT or USE RIGHT (depending on which hand it is in), you will pour 
+the contents of the FLASK down your throat. Be careful... flasks may harm you or 
+greatly aid you. Their effects may be striking or subtle, short-lived or 
+permanent.</FONT></P>
+<P><FONT face=Arial size=2>You may get a clue to the nature of a FLASK from its 
+name when you are able to REVEAL it. But the only way to really learn the true 
+effect of a FLASK is by trying it in different situations.</FONT></P>
+<P><FONT face=Arial size=2>SCROLL It is said that in the Dungeon there are 
+SCROLLs that may be of immeasurable value in conquering the Powers of Evil. To 
+use a SCROLL you are holding, type USE LEFT or USE RIGHT.</FONT></P>
+<P><FONT face=Arial size=2>RING RINGs are extremely magical ! They can serve as 
+weapons of great power, and can strike down mighty enemies in a twinkling. But 
+now that they are under a powerful magic spell that prevents their use by mere 
+mortals.</FONT></P>
+<P><FONT face=Arial size=2>Learn how to unleash the power of a RING in the 
+"Magic" section.</FONT></P>
+<P><FONT face=Arial size=2><B>Magic</B></FONT></P>
+<P><FONT face=Arial size=2>The Dungeon is a magic place. Creatures, torches, 
+weapons and certain doors in the Dungeon have magical powers. Creatures that are 
+very magical (like the Wizard) are best fought with magic weapons and can only 
+be seen fully under a TORCH that throws magical light. You must learn from the 
+Dungeon as you proceed.</FONT></P>
+<P><FONT face=Arial size=2>There is both Physical and Magical light in the 
+Dungeon. The PINE TORCH, for example, radiates Physical light, so certain magic 
+passages cannot be seen. Even though you cannot see these magic passages, you 
+can move through them. So it will appear that you can step through the walls in 
+some places. If you have magic light the passages will appear as triangles. 
+Other passages will appear as rectangles and can be seen in any 
+light.</FONT></P>
+<P><FONT face=Arial size=2>As you proceed in the Dungeon, you must find more 
+powerful magic torches to reveal the magic doors and creatures.</FONT></P>
+<P>&nbsp;</P>
+<P><FONT face=Arial size=2><B>Reveal</B></FONT></P>
+<P><FONT face=Arial size=2>Objects in the Dungeon often have hidden natures that 
+are not immediately known. To discover the full power of an object, you should 
+always attempt to REVEAL it. To REVEAL an object, you must be holding it in 
+either hand and type REVEAL RIGHT or REVEAL LEFT, respectively. For example, you 
+may be holding a TORCH that can be REVEALed as a more powerful LUNAR TORCH. The 
+more powerful an object, the more strength it takes to REVEAL it. If you are 
+unable to REVEAL an object you have found, you should save it</FONT></P>
+<P><FONT face=Arial size=2>in your backpack. After you have grown in wisdom and 
+strength, try again to REVEAL it.</FONT></P>
+<P><FONT face=Arial size=2>Like other objects, the full powers of a SCROLL or a 
+RING cannot be used until you have REVEALed them.</FONT></P>
+<P>&nbsp;</P>
+<P><FONT face=Arial size=2><B>Incant</B></FONT></P>
+<P><FONT face=Arial size=2>Only RINGs can be INCANTed. Attacking with a RING 
+(even after you have REVEALed it) won't have much more effect than a bare-handed 
+slap. The RING will make its magical sound, but will hold no power until it has 
+been INCANTed. You must use your wisdom to determine the magic name of a RING. 
+Then you must INCANT the magic name to release the RING's awesome power. The 
+type of RING that you may REVEAL serves as a clue to the magic name of the RING. 
+For example, if a RING is found and REVEALed to be an IRON RING, a possible 
+incantation is to type INCANT STEEL, and press [ENTER] If the incantation is 
+correct, the RING transforms into a STEEL RING of great power. If the 
+incantation is wrong (which it is!), nothing at all happens, and you are left to 
+ponder the correct incantation.</FONT></P>
+<P><FONT face=Arial size=2>After you have successfully INCANTed a RING, you can 
+ATTACK using the RING as a magic weapon of great power. But use it wisely, for 
+its power is not limitless, and use of a RING also puts a great strain on your 
+heart. It is rumored that even the power of the evil Wizard is derived from a 
+RING which he holds. If you manage to defeat the real Wizard, you must find the 
+Wizard's RING, for it may hold the secret to your future. Remember ALL RINGs can 
+be INCANTed.</FONT></P>
+<P><FONT face=Arial size=2><B>Your Heartbeat</B></FONT></P>
+<P><FONT face=Arial size=2>Throughout your adventure in the Dungeon, you see and 
+hear your heart beating as you continue the journey. Many things affect your 
+heart rate. Moving fast or with a heavy load, swinging a SWORD or wielding a 
+RING, being attacked and struck by a creature . . all these and more will make 
+your heart beat more rapidly.</FONT></P>
+<P><FONT face=Arial size=2>Time and rest, if you can find them, will bring your 
+heart rate down. If you allow your heart rate to climb too high, you will faint. 
+This stops you in your tracks, but alas, the creatures do not stop and will 
+continue to track and attack you. If your heart rate climbs even further, your 
+weary heart may simply burst, and you will have failed in your quest. The faster 
+your heart is beating, the easier a creature's blow will kill you or cause you 
+to faint. It is best to be rested before attempting to master a powerful 
+creature. As you grow stronger, so will your heart, and activities which once 
+would have killed you will become easy.</FONT></P>
+<P><FONT face=Arial size=2>Go then, with caution, and grow in 
+strength.</FONT></P>
+<P align=center><A name="PARTING WORDS"><FONT size=4><STRONG><I>PARTING 
+WORDS</I></STRONG></FONT></A></P>
+<P>&nbsp;</P>
+<P><FONT size=5><I>"H</I></FONT><FONT size=3><I>aving studied hard and mastered 
+The Book, " said the Master, "you are now ready to brave the Dungeon. Keep The 
+Book with you always and refer to it often, for it contains much that can help 
+you. Reread it after traveling in the Dungeon for a time, and you will 
+understand much that may previously have been unclear. Remember to discover the 
+nature of objects by revealing them, and strive to master the riddles of the 
+rings. Seek out more powerful torches to see the magic passages and magical 
+creatures of the Dungeon. "Study the Dungeon as you venture forth, for there is 
+much about it that I do nor know and cannot tell you. Learn its ways and the 
+ways of the creatures. Study their habits and use the knowledge against them. It 
+is sometimes better to strike and run to fight again than to stand and bravely 
+die.</I></FONT></P>
+<P><FONT size=5><I>"A</I></FONT><FONT size=3><I>void standing still for very 
+long, especially in long corridors, unless you wish to attract unfriendly 
+company. Creatures will track you down straight corridors, even through 
+doorways. You can sometimes lose them by running in a loop or a zig-zag or by 
+hiding. Try to rest between battles so you can better handle the many surprises 
+of the Dungeon. Be sure to keep your wits about you... you will surely need 
+them.</I></FONT></P>
+<P><FONT size=3><I>"Above all do not give up hope. It is foretold that success 
+can be yours if you will persevere. Go then, for yourself, and for all that is 
+good in the world. The Wizard can be vanquished and the power of the Wizard's 
+ring can be yours. The future awaits you! Go forth, and triumph!"</I></FONT></P>
+<P><A name="Appendix A"><FONT face=Arial size=1><B>Appendix A</B></FONT></A></P>
+<P><FONT face=Arial size=1><B>Summary of Commands</B></FONT></P>
+<P><FONT face=Arial size=1>The following summary of commands serves as a quick 
+reference to help you remember and use the commands. Each command is presented 
+in the following format:</FONT></P>
+<P><FONT face=Arial size=1><B>NAME </B>(The name of this type of 
+command)<BR>Usage: (This shows the various forms the command can take and 
+briefly describes the effect of each form. For more detail, refer to The 
+Book.)<BR>Note: When the word "object" is used, you may type either an object 
+class (like TORCH), or a specific object type (like PINE TORCH). For example, 
+GET LEFT object refers to the whole class of commands like GET LEFT PINE TORCH, 
+GET LEFT SWORD, and so on.</FONT></P>
+<P><FONT face=Arial size=1><B>MOVE</B></FONT></P>
+<P><FONT face=Arial size=1>Usage: MOVE - Step one cell forward<BR>MOVE BACK - 
+Step one cell back<BR>MOVE LEFT - Step one cell left without turning<BR>MOVE 
+RIGHT - Step one cell right without turning</FONT></P>
+<P><FONT face=Arial size=1><B>TURN</B></FONT></P>
+<P><FONT face=Arial size=1>Usage: TURN LEFT - Turn left in the current 
+cell<BR>TURN RIGHT - Turn right in the current cell<BR>TURN AROUND - Turn around 
+in the current cell</FONT></P>
+<P><FONT face=Arial size=1><B>CLIMB</B></FONT></P>
+<P><FONT face=Arial size=1>Usage: CLIMB UP - Climb up a ladder<BR>CLIMB DOWN - 
+Climb down a ladder or a hole</FONT></P>
+<P><FONT face=Arial size=1><B>EXAMINE</B></FONT></P>
+<P><FONT face=Arial size=1>Usage: EXAMlNE - Show a list of objects on the floor 
+of the cell you occupy plus a list of everything you are carrying in your 
+backpack</FONT></P>
+<P><FONT face=Arial size=1>Note: Any lit TORCH is highlighted on the display. 
+</FONT></P>
+<P><FONT face=Arial size=1><B>LOOK</B></FONT></P>
+<P><FONT face=Arial size=1>Usage: LOOK - Look at the Dungeon after an EXAMINE 
+command</FONT></P>
+<P><FONT face=Arial size=1><B>GET</B></FONT></P>
+<P><FONT face=Arial size=1>Usage: GET LEFT object - Get an object from the floor 
+with your left hand<BR>GET RIGHT object - Get an object from the floor with your 
+right hand</FONT></P>
+<P><FONT face=Arial size=1>Note: The object you type must be on the floor of the 
+cell you occupy, and the hand you choose must be empty.</FONT></P>
+<P><FONT face=Arial size=1><B>DROP</B></FONT></P>
+<P><FONT face=Arial size=1>Usage: DROP LEFT - Drop the object in your left hand 
+(if any) to the floor<BR>DROP RIGHT - Drop the object in your right hand (if 
+any) to the floor</FONT></P>
+<P><FONT face=Arial size=1><B>PULL</B></FONT></P>
+<P><FONT face=Arial size=1>Usage: PULL LEFT object - Pull an object from your 
+backpack with your left hand<BR>PULL RIGHT object - Pull an object from your 
+backpack with your right hand</FONT></P>
+<P><FONT face=Arial size=1>Note: The object you type must be in your backpack, 
+and the hand you choose must be empty.</FONT></P>
+<P><FONT face=Arial size=1><B>STOW</B></FONT></P>
+<P><FONT face=Arial size=1>Usage: STOW LEFT - Stow the object in your left hand 
+(if any) into your backpack<BR>STOW RIGHT - Stow the object in your right hand 
+(if any) into your backpack</FONT></P>
+<P><FONT face=Arial size=1><B>ATTACK</B></FONT></P>
+<P><FONT face=Arial size=1>Usage: ATTACK LEFT - Attack with the object in your 
+left hand (or with your empty hand)<BR>ATTACK RIGHT - Attack with the object in 
+your right hand (or with your empty hand)</FONT></P>
+<P><FONT face=Arial size=1><B>USE</B></FONT></P>
+<P><FONT face=Arial size=1>Usage: USE LEFT - Use the object in your left hand 
+(effect depends on the object)<BR>USE RIGHT - Use the object in your right hand 
+(effect depends on the object)</FONT></P>
+<P><FONT face=Arial size=1><B>Note:</B> The USE command can be used with three 
+types of objects, and its effect varies depending on the object 
+selected:<BR>TORCH - To USE a TORCH is to light it and mount it on your 
+backpack<BR>FLASK - To USE a FLASK is to pour its contents down your 
+throat<BR>SCROLL - To USE a SCROLL, the SCROLL must be REVEALed. Try 
+it!</FONT></P>
+<P><FONT face=Arial size=1><B>REVEAL</B></FONT></P>
+<P><FONT face=Arial size=1>Usage: REVEAL LEFT - Attempt to "reveal" the type of 
+object in your left hand<BR>REVEAL RIGHT - Attempt to "reveal" the type of 
+obiect in your right hand</FONT></P>
+<P><FONT face=Arial size=1><B>INCANT</B></FONT></P>
+<P><FONT face=Arial size=1>Usage: INCANT magic word- Attempt to conjure up the 
+magic power of a RING by "incanting" its magical name</FONT></P>
+<P><FONT face=Arial size=1><B>Note: </B>When you INCANT, type only the single 
+word you are in-canting, such as INCANT STEEL.</FONT></P>
+<P><FONT face=Arial size=1><B>CASSETTE COMMANDS</B></FONT></P>
+<P><FONT face=Arial size=1>Usage: ZSAVE<B> </B>filename - Save the current state 
+of the game on cassette with the filename that was typed in<BR>ZLOAD filename - 
+Load from cassette a game you saved earlier with the given filename</FONT></P>
+<P><A name="Appendix B"><FONT face=Arial size=1><B>Appendix B</B></FONT></A></P>
+<P><FONT face=Arial size=1><B>Partial List of Abbreviations</B></FONT></P>
+<P><FONT face=Arial size=2>Commands can be abbreviated to the shortest set of 
+letters that cannot be confused with another command. Remember that you must 
+still enter the spaces between the abbreviated command words, and always press 
+<U>E N T E R</U> after typing the command. If you try an abbreviation that is 
+too short, ??? appears after the command.</FONT></P>
+<TABLE border=1 cellSpacing=1 width=320>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=2><B>Full 
+      Command</B></FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=2><B>Shortest 
+      Abbreviation</B></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>MOVE</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>M</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>MOVE BACK</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>M B</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>MOVE LEFT</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>M L</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>MOVE RIGHT</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>M R</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%">&nbsp;</TD>
+    <TD vAlign=top width="50%">&nbsp;</TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>TURN LEFT</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>T L</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>TURN RIGHT</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>T R</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>TURNAROUND</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>T A</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%">&nbsp;</TD>
+    <TD vAlign=top width="50%">&nbsp;</TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>CLIMBUP</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>C U</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>CLIMBDOWN</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>C D</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%">&nbsp;</TD>
+    <TD vAlign=top width="50%">&nbsp;</TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>EXAMINE</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>E</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>LOOK</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>L</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%">&nbsp;</TD>
+    <TD vAlign=top width="50%">&nbsp;</TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>GET LEFT 
+TORCH</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>GLT</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>GET RIGHT WOODEN 
+      SWORD</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>G R W SW</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%">&nbsp;</TD>
+    <TD vAlign=top width="50%">&nbsp;</TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>DROP LEFT</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>D L</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>DROP RIGHT</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>D R</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%">&nbsp;</TD>
+    <TD vAlign=top width="50%">&nbsp;</TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>PULL LEFT 
+    SHIELD</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>P L SH</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>PULL RIGHT LEATHER 
+      SHIELD</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>P R LE SH</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%">&nbsp;</TD>
+    <TD vAlign=top width="50%">&nbsp;</TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>STOW LEFT</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>S L</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>STOW RlGHT</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>S R</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%">&nbsp;</TD>
+    <TD vAlign=top width="50%">&nbsp;</TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>ATTACK LEFT</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>A L</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>ATTACKRIGHT</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>A R</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%">&nbsp;</TD>
+    <TD vAlign=top width="50%">&nbsp;</TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>USE LEFT</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>U L</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>USE RIGHT</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>U R</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%">&nbsp;</TD>
+    <TD vAlign=top width="50%">&nbsp;</TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>REVEAL LEFT</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>R L</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>REVEAL RIGHT</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>R R</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width="50%">&nbsp;</TD>
+    <TD vAlign=top width="50%">&nbsp;</TD></TR>
+  <TR>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>INCANT STEEL</FONT></TD>
+    <TD vAlign=top width="50%"><FONT face=Arial size=1>I 
+  STEEL</FONT></TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<P><A name="Appendix C"><FONT face=Arial size=2><B>Appendix C</B></FONT></A></P>
+<P><FONT face=Arial size=1><B>Saving and Reloading Games</B></FONT></P>
+<P><FONT face=Arial size=1>By using a cassette recorder and the commands ZLOAD 
+and ZSAVE, you can save the entire state of the game at any point and restart 
+there at a later time.</FONT></P>
+<P><FONT face=Arial size=1>Refer to the Tandy Color Basic Manual (Chapter 8) 
+that came with your Color Computer for information on how to connect the tape 
+recorder to</FONT></P>
+<P><FONT face=Arial size=1>the computer and how to set the volume level. Be sure 
+to follow the tips at the end of the chapter on how to make good recordings. To 
+save your adventure at any point, have the cassette positioned on blank tape and 
+have the volume set correctly. Then press the PLAY and RECORD buttons at the 
+same time until they lock. Type ZSAVE "name" and press <U>E N T E R. </U>"Name" 
+is the name you choose for the game you want to save. The quotation marks will 
+not display on your screen as you type them, but they are necessary.</FONT></P>
+<P><FONT face=Arial size=1>After the game has been saved, the cassette stops 
+moving. Press the STOP button. Do not leave the recorder in Play/Record mode, as 
+this can damage the tape. You may then move the cassette forward with the FAST 
+FORWARD button for a couple of seconds and be ready to save another game at a 
+later time.</FONT></P>
+<P><FONT face=Arial size=1>To load an adventure you have previously saved, 
+rewind the cassette to the start of the saved game, and press the PLAY button. 
+Then type ZLOAD "name" and press <U>E N T E R</U>, where "name" is the name you 
+gave to that game.</FONT></P>
+<P><FONT face=Arial size=1>The tape then begins to move and load your saved 
+game. If you saved and loaded correctly, you will find yourself back in the 
+exact situation you were in when you saved the game. If there was a problem with 
+the load (such as wrong name, wrong volume setting, or a faulty or unerased 
+tape), the game simply starts over. We recommend using Tandy CCR-81 cassette 
+recorder (or equivalent) for maximum reliability. It is best to note the tape 
+counter setting at the beginning of each saved game and to leave a few seconds 
+of blank tape between each saved game so that you can be sure you are positioned 
+in front of the correct data (by checking the counter) when you attempt to 
+reload.</FONT></P>
+<P><FONT face=Arial size=1>Be sure to save early and often to prevent losing a 
+long game due to a power failure or other mishap. It is advisable to do two 
+ZSAVEs in succession.</FONT></P></BODY></HTML>

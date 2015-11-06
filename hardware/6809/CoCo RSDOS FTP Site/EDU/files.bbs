@@ -1,0 +1,20 @@
+BASICMAP.BAS [00] COCO 2 Produces map of GOTO's and GOSUB's
+BOBO.BAS     [00] COCO 2 Even/odd guessing game
+COILCALC.BAS [00] COCO 2 Calculate coil inductance/reactance
+GRAPHICS.BAS [00] COCO 2 Block graphics tutorial
+GUESSFR.BAS  [00] COCO 2 Fraction tutorial
+HPASSFIL.BAS [00] COCO 2 Electronics high pass filter design
+HURKLE.BAS   [00] COCO 2 Learn to use grids
+IC555.BAS    [00] COCO 2 Calculate values for 555 timer
+MULTIPLY.BAS [00] COCO 2 Multiplication table drills
+PIZZA.BAS    [00] COCO 2 Grid learning game
+PWRDES.BAS   [00] COCO 2 Power supply designer
+RCPHASE.BAS  [00] COCO 2 RC phase shift network circuits
+REVERSE.BAS  [00] COCO 2 Number logic
+SATTRK.BAS   [00] COCO 2 Satellite tracker simulation
+SCRAMBLE.BAS [00] COCO 2 Scrambled word game
+SHAPES.BAS   [00] COCO 2 Learn about shapes
+TASKTT.BAS   [00] COCO 3 Tutorial on manipulating memory
+TYCOON.BAS   [00] COCO 2 Learn business strategy
+ULTRAGRP.ARC [00] COCO 3 Graphs Algebra and Trig equations
+

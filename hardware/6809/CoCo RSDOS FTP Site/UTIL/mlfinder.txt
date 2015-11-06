@@ -1,0 +1,14 @@
+MLFINDER.BIN is a short binary file for the Color Computer which tells
+you the load address, end address, and execution address for binary
+files on a disk base system. It also supplies the track, sector, and
+byte at which the code starts on the disk. Data can be sent to a
+printer.
+
+The program will work with all versions of the Coco, although the help
+message was formatted for the wide screen Coco3.
+
+USAGE:
+LOADM"MLFINDER"
+EXEC
+
+You will get prompting for how to use the program. 

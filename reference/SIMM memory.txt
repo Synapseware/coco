@@ -1,0 +1,39 @@
+SIMM's:
+
+8bit data bus
+
+10 bit address bus with row/column select
+
+
+30-pin SIMM Memory Module Pinout
+Pin #	Signal Name Signal Description 
+ 1		VCC +5 VDC 
+ 2		/CAS Column Address Strobe 
+ 3		DQ0 Data 0 
+ 4		A0 Address 0 
+ 5		A1 Address 1 
+ 6		DQ1 Data 1 
+ 7		A2 Address 2 
+ 8		A3 Address 3 
+ 9		GND Ground 
+10		DQ2 Data 2 
+11		A4 Address 4 
+12		A5 Address 5 
+13		DQ3 Data 3 
+14		A6 Address 6 
+15		A7 Address 7 
+16		DQ4 Data 4 
+17		A8 Address 8 
+18		A9 Address 9 
+19		A10 Address 10 
+20		DQ5 Data 5 
+21		/WE Write Enable 
+22		GND Ground 
+23		DQ6 Data 6 
+24		A11 Address 11 
+25		DQ7 Data 7 
+26		QP Data Parity Out 
+27		/RAS Row Address Strobe 
+28		/CASP Something Parity 
+29		DP Data Parity In 
+30		VCC +5 VDC 

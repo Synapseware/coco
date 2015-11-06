@@ -1,0 +1,291 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1254">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>2.</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0" width="630">
+    <tr>
+        <td><a name="2. THE COMMAND CO-ORDINATOR"><font size="2"
+        face="Arial"><strong>2. THE COMMAND CO-ORDINATOR</strong></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+             CC '  is a utility which co-ordinates the
+        execution of  programs required for each step of the
+        compilation process to provide a simple &quot;one
+        step&quot; compilation command</font><p
+        class="MsoPlainText"><a name="2.1 The CC command"><font
+        size="2" face="Arial"><strong><i>2.1 The CC command</i></strong></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+                     The format of the 'CC' command
+        is:<br>
+        <br>
+                                    
+        CC &lt;name&gt; [options]</font></p>
+        <p class="MsoPlainText"><font size="2" face="Arial"><strong><i>2.1.1
+        Command line options</i></strong><br>
+        <br>
+        </font></p>
+        <table border="0" width="600">
+            <tr>
+                <td width="75"><font size="2" face="Arial">-</font><font
+                size="1" face="Arial">A</font></td>
+                <td><font size="1" face="Arial">produce ASSEMBLER
+                (.ASM) output file</font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">-C</font></td>
+                <td><font size="1" face="Arial">include 'C'
+                source as comments in ASM files</font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">-F</font></td>
+                <td><font size="1" face="Arial">fold identical
+                string constants.</font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">-I</font></td>
+                <td><font size="1" face="Arial">output INTEL hex
+                file (default is MOTOROLA)       </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">-K</font></td>
+                <td><font size="1" face="Arial">KEEP all
+                temporary files (do not delete)        </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">-L</font></td>
+                <td><font size="1" face="Arial">Generate assembly
+                listing file        </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">-M</font></td>
+                <td><font size="1" face="Arial">Invoke xasm MACRO
+                processor (See XASM manual)        </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">-O</font></td>
+                <td><font size="1" face="Arial">OPTIMIZE the
+                output code (using MCO)          </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">-P</font></td>
+                <td><font size="1" face="Arial">use the extended
+                PRE-PROCESSOR (MCP)    </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">-Q</font></td>
+                <td><font size="1" face="Arial">QUIET mode
+                (suppress informational messages)       </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">-S</font></td>
+                <td><font size="1" face="Arial">Include symbol
+                info as comments in ASM files     </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">-X </font></td>
+                <td><font size="1" face="Arial">produce eXtended
+                ASM file (includes libraries)       </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">H=mcdir</font></td>
+                <td><font size="1" face="Arial">specify MICRO-C
+                home directory        .</font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">S=file</font></td>
+                <td><font size="1" face="Arial">specify Startup
+                override file     </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">T=mctmp</font></td>
+                <td><font size="1" face="Arial">specify prefix
+                for TEMPORARY files    </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">name=xx</font></td>
+                <td><font size="1" face="Arial">Predefine macro
+                symbol (use with -P only)      </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">8051: 
+                -Z</font></td>
+                <td><font size="1" face="Arial">Zap LJMP/LCALL to
+                AJMP/ACALL (2K addressing) </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">M=TSCML</font></td>
+                <td><font size="1" face="Arial">Specify the
+                memory model to use: (Tiny, Small, Compact,
+                Medium, or Large)    </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">6816:  M=SL</font></td>
+                <td><font size="1" face="Arial">Specify the
+                memory model to use  (Small or Large)   </font></td>
+            </tr>
+        </table>
+        <table border="0">
+            <tr>
+                <td width="75"><font size="1" face="Arial">8086:
+                M=TSR</font></td>
+                <td><font size="1" face="Arial">Specify the
+                memory model to use:  (Tiny, Small or
+                Rom)     </font></td>
+            </tr>
+            <tr>
+                <td width="75"><font size="1" face="Arial">AVR:   
+                -Z</font></td>
+                <td><font size="1" face="Arial">Zap JMP/CALL to
+                RJMP/RCALL (4K addressing)           
+                !!! NOTE!!! You **MUST** use -Z when compiling
+                for AVR's with   less than 8K of memory (2313,
+                4414, 8515)</font></td>
+            </tr>
+        </table>
+        <p class="MsoPlainText"><font size="2" face="Arial">When executing
+        the sub-commands, CC will search the MICRO-C home
+        directory, as well as any directories specified in the 
+        'PATH'  environment variable.  Libraries are accessed
+        from the MICRO-C home directory only.<br>
+        <br>
+        The environment variable 'MCDIR' is examined
+        to determine the path to the MICRO-C home directory. If
+        MCDIR is not defined, CC will assume the string '\MC'.
+        You may override this directory by using the 'h=' option
+        on the command line.<br>
+        <br>
+        Intermediate results from each command are stored in
+        &quot;temporary&quot; files, which are fed as input to
+        the next command.Temporary files will be deleted once
+        they are no longer needed, except in the case where a
+        command fails. When this happens, any temporary file
+        which was being used as input to that    command will
+        not be deleted, allowing you to examine it for the cause
+        of the error.<br>
+        <br>
+        The environment variable 'TEMP' is examined to determine
+        the directory in which to place temporary files. If you
+        wish to use  a different directory or a special prefix
+        on the temporary file names,  you may override 'TEMP'
+        with the environment variable 'MCTMP'. Note that to allow
+        the use of prefix characters on the file name, 'MCTMP' is
+        pre-pended to the file name exactly as it is defined. You
+        may override either directory prefix by using the 't='
+        option on the command line. Here are example 'SET'
+        commands suitable for inclusion in the AUTOEXEC.BAT file,
+        of an IBM/PC based MICRO-C system which has the home
+        directory in 'C:\MC', and a TEMP directory on a RAMDISK
+        as drive 'D':<br>
+        <br>
+                            SET MCDIR=C:\MC<br>
+                            SET
+        MCTMP=D:\TEMP\      (Note trailing '\')<br>
+        <br>
+                            Note: DO NOT put
+        spaces WITHIN or AFTER the SET command<br>
+        <br>
+        The  '-A'  option causes  CC   to bypass the linker
+        and assembler, and produce assembly source code as the
+        output file:&lt;name&gt;.ASM (an executable file is NOT
+        generated). Use of this option disables '-I, -L, -X and
+        S='. If the '-C' option is also used, the output file
+        will contain the 'C' source code in the       
+        form of comments. NOTE: This will also restrict the
+        optimizer to operate only on sections of code produced by
+        a single 'C' line. If -S is used, information about the
+        C symbols will be included as &quot;special&quot;
+        comments.</font></p>
+        <p class="MsoPlainText"><font size="2" face="Arial">The
+        '-F'  option causes the compiler to &quot;fold&quot; its
+        literal pool (the area of memory where string constants
+        are stored).This means that identical strings not
+        contained in explicit variables, will occur only once in
+        memory. Since most programs never modify such strings, it
+        is usually safe to do this. Note          
+        however that this is a violation of the 'C' standard
+        (&quot;The 'C' Programming Language&quot; page 181 -
+        &quot;All strings, even  when written identically, are
+        distinct&quot;), and it is possible to write programs
+        which will not work properly when this option is used.<br>
+        <br>
+        The '-X' option is similar to '-A', except that the
+        program is passed through the source linker, resulting in
+        a &quot;.ASM&quot; file containing the complete
+        program, including startup code and library functions.
+        Use of this option disables '-I and -L'.</font></p>
+        <p class="MsoPlainText"><font size="2" face="Arial">The 
+        '-M'  option causes CC to invoke the xasm MACRO
+        processor, allowing macros to be used in your inline
+        assembly code (See XASM manual). For the sake of
+        efficiency, this is done BEFORE the program is passed
+        through the source linker. This means that macros in
+        files from the library will NOT be processed. If library
+        files contain macros, they should be processed BEFORE
+        they are placed in the library. The  'S=' option allows
+        you to specify an alternate startup file (must be in the
+        library) to support the use of multiple system
+        configurations (see SLINK).</font></p>
+        <p class="MsoPlainText"><a name="2.2 Troubleshooting"><font
+        size="2" face="Arial"><em><strong>2.2 Troubleshooting</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+        If any of the programs executed by CC fail to complete
+        properly (return a non-zero exit code), CC will show a
+        message &quot;PGM failed (RC)&quot;, where PGM is the
+        name of the offending program, and RC is the exit code
+        value. Common exit code meanings under MSDOS are:<br>
+        <br>
+                        2  - Command not found
+        (Check MCDIR, PATH)<br>
+                        3  - Invalid directory
+        (Check MCDIR, MCTMP, command line)<br>
+                        4  - Out of file handles
+        (Increase FILES= in CONFIG.SYS)<br>
+                        5  - Bad filename    
+        (Check MCDIR, MCTMP)<br>
+                        254 - Program found errors
+        during processing<br>
+                        255 - Program was invoked
+        with incorrect arguments<br>
+        <br>
+                     APPENDIX 1 of the DDSIDE manual
+        contains a complete list of MSDOS exit codes.<br>
+        <br>
+        Any time that you have problems getting CC to run it's
+        commands properly, check the settings of the PATH, MCDIR,
+        TEMP and MCTMP environment variables. Make sure that all
+        directories in       PATH exist and are accessible,
+        and that MCTMP (if used) includes the trailing '\' to
+        separate the filename from the directory. (NOTE: When
+        TEMP is used,  CC automatically adds a '\' if
+        the      environment variable string does not end
+        with one). If your TEMP specification is unusually long,
+        it may cause CC to overrun the maximum DOS command line
+        length, since it is included multiple times in some of
+        the commands.</font></p>
+        </td>
+    </tr>
+</table>
+<p>&nbsp;</p>
+<table width="605" border="0">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2">&quot;Converted by 
+        BiPOM Electronics to HTML format from original Micro C documentation by 
+        Dunfield Development Systems. Please see the Micro C documentation that 
+        is included with Micro C for the original forms of these pages.&quot;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,660 @@
+ From: "Matthew"
+
+                         Dungeons of Daggorath Program
+                            (c) 1982 DynaMicro, Inc.
+                         Licensed to Tandy Corporation
+                              All Rights Reserved
+
+ This applications software for the Tandy Color microcomputer is retained in
+ a read-only memory (ROM) format.  All portions of this software whether in
+ the ROM format or other source code form format, and the ROM circuitry, are
+ copyrighted and are the proprietary and trade secret information of Tandy
+ Corporation and/or its licensor.  Use, reproduction or publication or
+ publication of any portion of this material without the prior written
+ authorization by Tandy Corporation is strictly prohibited.
+
+
+                       Dungeons of Daggorath Program Manual:
+                             (c) 1983 Tandy Corporation
+                                 All Rights Reserved
+
+
+
+                            TABLE OF CONTENTS
+
+ Introduction .......................................... 9
+ Required Equipment .................................... 9
+ Loading Instruction ................................... 9
+ Playing the Game ......................................10
+ The Display ...........................................10
+ Commands ..............................................12
+ Moving in the Dungeon .................................13
+     Levels and climbing in the Dungeon ................13
+ Creatures .............................................14
+ Objects ...............................................16
+     Object Types ......................................18
+ Magic..................................................21
+    Reveal .............................................21
+    Incant .............................................22
+ Your Heartbeat.........................................23
+ Parting Words..........................................25
+ Appendix A - Summary of Commands ......................27
+ Appendix B - Partial List of Abbreviations ............31
+ Appendix C - Saving and Reloading Games................33
+
+
+
+ LONG AGO, in the faraway hamlet of Rivenshire, there lived a gentle, simple
+ folk.  For many long years they lived, loved and labored in the seclusion
+ of the peaceful valley, protected from the influence and danger of the outside
+ world byt the towering mountains of Daggorath.
+
+ But alas, no good thing remains untouched forever.  And so it was, in the
+ time now known as the year of Darkness, that a monstrous Evil came to
+ Rivenshire, and the shadows of Daggorath fell long upon the land.  The
+ crops, once healthy and strong, stood withered in the fields.  The herds of
+ cattle and sheep wandered in listless stupor and slowly wasted away.  Even
+ the children of the Shire became ill and did not respond to the most
+ powerful potions.
+
+ In desperation, the people cried out for a reason, for understanding, for
+ deliverance.  Then a wise old master of the village came forth to speak...
+ "There is a talk," he said, "passed down for centuries and almost
+ forgotten,of a time in the Olden Days when a curse such as this descended on the
+ land.
+ Deep beneath these towering crags, in the Dungeons of Daggorath, an evil
+ Wizard made his home and grew in power.  But before his destruction of the
+ land was complete, a brave adventurer ventured into the fearsome Dungeons
+ and drove the Wizard away, saving Rivenshire from a devilish fate.  The
+ Wizard, however was not destroyed and swore, even as he fled, that one day
+ he would return with his legions of evil, more powerful than ever, to
+ reinhabit the Dungeons of Daggorath and destroy all the land to avenge his
+ defeat.  I have heard rumors in recent times that this same Wizard has come
+ into possession of the ancient and mighty Ring of Endings and is now more
+ powerful than ever.  I fear that this is true and that he has returned to
+ destroy us.
+ And lo, the people of the village trembled and begged of the master, "What
+ shall we do... who now will save us?" When the crowd was silent, the master
+ spoke.
+ "Behold this book," he said, raising the ancient volume above his head for
+ all t osee, "for it is said to have been left by the adventurer and was
+ passed down to me by my father's father's father.  It tells of the
+ mysteries and dangers of the Dungeon.  The secrets of The Book I can share with you.
+ But alas, where will we find one so bold as to face the deadly dangers
+ of the Dungeons of Daggorath?"
+
+ To the amazement of all who watched, there came from the crowd a stranger
+ whose face  spoke of courage and wisdom.  The stranger reached out a hand
+ to take The Book.  The master smiled slowly and said "Even as it was
+ prophecied... so be it.  I shall teach you the ways of the Dungeon that you
+ may venture forth and slay the Wizard.  You must listen carefully and study
+ well, for mistakes are deadly in the Dungeons of Daggorath."  Thus began
+ the lesson...
+
+
+ Introduction
+
+ The animated color graphics of this exciting adventure game make your task
+ fearfully realistic.  The Dungeon is a complex, multi-level maze deep
+ within the mountains of Daggorate and filled with evil crations of the Wizard -
+ fearsome creatures that can snuff out your fragile existence in an instant.
+ Beware... for once you have been transported into the Dungeon, there are
+ only two ways out:  DESTROY THE WIZARD OR DIE!
+
+
+ Required Equipment
+
+ To begin your adventure, you need the following:
+
+ * A Tandy(r) Color Computer with at least 16K RAM
+ * Standard TV (Color recommended)
+
+
+
+ Loading Instructions
+
+ 1.  Before inserting or removing a Program Pak(tm) cartridge, make sure the
+ computer is off.  Failure to do so could result in damage to the Program
+ Pak.
+
+ 2. Conect the Color Computer to the television set, and move the antenna
+ switchbox control to Computer (or Game).  See your tandy Color Computer
+ Operation Manual for further details regarding connections.
+
+ 3. Insert the Dungeons of Daggorath(tm), label side up, into the slot
+ located on the right side of the computer.  Press firmly until it engages
+ securely, but do not force it.
+
+ 4. Turn on the television, and tune it to Channel 3 or 4 (whichever is
+ least active in your area).
+
+ Playing the Game
+
+ To begin your adventure, you must forst be transported to the Dungeon.
+ After loading the program, a chilling preview of the mysteries of the
+ Dungeon appears on the screen.  You might even catch a glimpse of the
+ Wizard himself!  Read through the Book, and when you think you can successfully
+ complete your task, press any key to be transported into the Dungeon.  But
+ first you must know more of the evil sanctum you are about to enter.
+
+
+ The Display
+
+ You can view the Dungeon at the top of the screen.  A single line on the
+ left and right side sof the screen shows what you are holding in your left
+ and right hands.  The center of the screen monitors your heartbeat.  You
+ can actually see your heart and hear its beating as you wind your way through
+ the dark passages of horror.  Enter commands at the four line command extra
+ area at the bottom of the screen.
+
+ COMMANDS
+
+ To enter commands in the Dungeon, type the desired command, with spaces
+ between the words of multi-word commands, and press [enter].  If you make a
+ mistake in typing a command, press the [<-] key to erase one character at a
+ time and continue typing the command.  If you enter an illegal or
+ impossible command, ??? appears after the command, and no action is taken.
+
+ You can enter commands in rapid succession.  Simply continue typing.  The
+ computer stores the commands  you type and then displays and carries them
+ out as rapidly as possible.
+
+ Commands can be abbreviated to the shortest set of letters that cannot be
+ confused with another command word.  For example, ATTACK LEFT can be
+ abbreviated A L, and PULL LEFT SWORD can be abbreviated  P L SW.  SWORD
+ cannot be abbreviated with just an S, this can be confused with SHIELD.
+ You must still enter spaces between abbreviated words.  If you try to enter an
+ abbreviation that is too short, ??? appears after the command.
+
+ The appendices at the end of the Book contain a summary of Commands
+ (Appendix A), a Partial list of Allowable Abbreviations (Appendix B), and
+ the commands you need to save and reload a game (Appendix C).
+ Moving in the Dungeon
+
+ Enter the command MOVE to step one cell forward in the Dungeon.  If you are
+ facing a wall, you will "bump" into it.  You may move past a creature that
+ is directly in front of you by moving forward.  The creature, however, will
+ follow you and attempt to move fast enough to jump back in front of you.
+
+ To step back, type MOVE BACK.  You can also turn in either direction by
+ typing TURN LEFT or TURN RIGHT.  Type TURN AROUDN to turn completely around
+ in the same cell.  Use the commands MOVE LEFT or MOVE RIGHT to sidestep
+ (move sideways without turning)
+
+ A TORCH will help you see which way to MOVE in the Dungeon.  You can MOVE
+ with no TORCH (in total darkness), but you will bump into walls.  THis is
+ not a recommended method of traveling in the Dungeon, for you might bump
+ into the dreaded creatures.
+
+ Levels and Climbing in the Dungeon
+
+ The Dungeon is a multi-level maze.  There are three known levels, but there
+ are rumors that the real Wizard lives beyond in even deeper levels.  If you
+ want to explore the first three levels, you must find a hole or a ladder to
+ move between the levels.  Beyond that, you are on your own.
+
+ If you are standing next to a hole, type CLIMB DOWN.  You are then on the
+ level below and can see the hole you just climbed through directly above
+ you.  But be careful... If you clumb down a hole, you cannot go back up.
+
+
+ If you are standing next to a ladder, you can move up or down by using the
+ commands CLIMB UP or CLIMB DOWN.  Be especially wary of climbing up.  For
+ it is said that if the Wizard senses you retrating up a level, he will punish
+ your faintheartedness with the wrath of his most fearsome creatures.
+
+ Creatures
+
+ The Dungeon is filled with terrible creatures, henchmen of the evil Wizard.
+ You will encounted Vipers, Spiders, Evil Knights, The Smiling Blobs,
+ massive Stone Giants, Scorpions, Wraiths, and the awesome Galdrogs.  These demons
+ of darkness will appempt to seek you out  and destroy you.  They grow more
+ powerful and more deadly as you descend deeper into the Dungeon.
+
+ Each creature has a characteristic sound that it will sometimes make as it
+ approaches from any direction.  The sound grows louder as the creature
+ approaches.  Listen carefully in the Dungeon, for you can often tell which
+ creature to expect from the sound you hear.  If the creature is in the cell
+ with you, the sound is very loud, and you will be attacked.  You will hear
+ the blow strike you if it finds its mark.  This is extremely hazardous to
+ your health.
+
+ If you have your wits about you, you can use the ATTACL command to fend off
+ or destroy your attacker.  Use an object (such as a SWORD) if you have one,
+ but your empty hand is better than nothing.
+
+ One technique you might use to defeat creatures involves attacking several
+
+ times in rapid succession and then moving several steps and turning around.
+ THis method lets your heart rate slow down while the creature approaches.
+ Then you are ready to attack again as the creature enters your cell.
+
+ Creatures attack faster as they become more powerful.  Time your attack to
+ strike the creature just as it enters your cell and before it has a chance
+ to strike you.  Entering several ATTACKS followed by MOVES in rapid
+ succession (don't wait for the command to be displayed) helps to get your
+ blows in and gets you out of danger before the creature has a chance to
+ destroy you.
+
+ The Blob might require ten or so successful sword hits to kill when you
+ first encounter it.  The Stone Giant might take six or seven hits to
+ destroy.  You might be able to kill Spiders with only one blow, but Vipers
+ will take two or three.
+
+ Both the Blob and the Stone Giant can often kill you with one blow - so be
+ quick and move before they strike!
+
+ In the Dungeon, the victor of a struggle draws strngth from the defeated
+ foe.  Be cautious, but master many creatuers as you move through the
+ Dungeon so your strength may increase.  The stronger you become, the fewer hits it
+ will take to destroy a creature.  If you go to a deeper level without
+ mastering most of the creatures you encounter, your strength will be no
+ match for the creatures you encounter.  Eventually, if you survive, you
+ will face the evil Wizard.  Defeating the Eizard will be the ultimate struggle,
+ for his strength is greater than his creatures.
+ BUT BE WARNED...long before you face the real Wizard, he will send a demon
+ in his image to test your worthiness and resolve.  Only after defeating the
+ Wizard's image will the true challenge begin.
+
+ BE PREPARED FOR ANYTHING!
+
+ Objects
+
+ Within the Dungeon there will be a number of objects which must be used in
+ your quest.  The creatuers will have collected most of the objects in the
+ Dungeon by the time you arrive.  There are six object classes:
+
+    TORCH   SWORD   SHIELD   FLASK   SCROLL   RING
+
+
+ There are several types within each of these onject ckasses.  For example,
+ a
+ TORCH can be a PINE TORCH or a LUNAR TORCH.  The chart below will clarify
+ the various types of objects.  The types of RINGs, however, will not be
+ listed in the chart.  You must discover them yourself.
+
+
+ |---------------------------------------------------------------------------
+ -|
+ |                       TYPES OF OBJECTS
+  |
+ |--------+---------+---------+----------+------------+----------------------
+ -|
+ | TORCH  |  SWORD  | SHIELD  |  FLASK   |   SCROLL   |
+  |
+ |________|_________|_________|__________|____________|
+  |
+ |        |  WOODEN | LEATHER |  HALE    |   VISION   |
+  |
+ | PINE   |  IRON   | BRONZE  |  ABYE    |   SEER     |
+  |
+ | LUNAR  |  ELVISH | MITHRIL |  THEWS   |            |
+  |
+ | SOLAR  |         |         |          |            |
+  |
+ |________+_________+_________+__________+____________+______________________
+ __
+ When you first enter the Dungeon, you will be given a backpack containing a
+ PINE TORCH and a WOODEN SWORD.  You can find other onjects within the
+ Dungeon and get them when they ar eon the floor.  At any time, you can see
+ what onjects are in your backpack and on the floor by typing EXAMINE. (or
+ Ex)
+
+ You can look at the Dungeon by typing LOOK (but only after an EXAMINE
+ command)
+
+ To grab something from your backpack, you must first have an empty hand.
+ Then use the PULL command, as in PULL LEFT PINE TORCH.  To place something
+ you are holding into your backpack, type STOW LEFT (for left hand) or STOW
+ RIGHT (for right hand).  Your right or left hand is now empty and the
+ object you are holding is in the backpack.
+
+ Creatures in the dungeon are aware that objects are valuable and will
+ gather objects they encounter as they move throughout the Dungeon.  A creature
+ will continue to carry the objects it has collected until it is destroyed.  When
+ a creature is destroyed, the objects (if any) will drop to the floor.  The
+ objects will remain where they fall, even if you leave the area, unless you
+ pick them up or another creature comes by and picks them up.  You can pick
+ up an object from the floor using the GET command only if you have an empty
+ hand (example: GET RIGHT SHIELD).  You can drop an object to the floor from
+ either hand by typing DROP LEFT or DROP RIGHT respectively.  This leaves
+ one hand empty, and the onject you were holding now appears on the floor of the
+ cell you occupy.
+ Object Types
+
+ TORCH           No rays of light penetrate the Dungeon.  You will need the
+                 TORCH to find your way.  When you first enter the Dungeon,
+                 you will see only darkness.  If you want to see you must
+                 PULL the TORCH into either hand and light it by typing USE
+                 LEFT or USE RIGHT.  You will hear the match strike, and the
+                 TORCH will be mounted on your backpack.  Your hand is now
+                 empty, and you can see.  If you EXAMINE your backpack, the
+                 torch currently in use is highlighted.  After an EXAMINE
+                 command, you must LOOK to see the lit Dungeon.
+
+ In time, all TORCHes burn down and eventually die.  As this happens, you
+ can see less and less in the Dungeon.  The PINE TORCH lasts fifteen minutes.
+ The LUNAR TORCH holds some magic light and will last for thirty minutes.
+ The SOLAR TORCH is the most powerful and lasts for sixty minutes.
+
+ It is vital that you find another TORCH before your light goes out, or you
+ will be in pitch darkness and at the mercy of the Wizard.
+
+
+ SWORD           The Dungeon is very dangerous.  Only a fool would enter
+                 without holding close his best and sharpest SWORD.  When
+                 facing a creature, you can attempt to strike him with a
+                 SWORD you are holding by typing ATTACK LEFT or ATTACK
+ RIGHT,
+                 depending on which hand your SWORD is in.  If you
+         miss, you hear the swish of your sword through the air.  If you hit,
+         you hear the blow strike and the command area shows !!! after the
+         attack command to show that you have made contact.
+
+         Stronger creatures are naturally harder to hit.  You will also find
+         that you miss more often as your torch grows dim.  It becomes even
+         more important to find other torches before your light burns too
+         low.
+
+         As you grow stronger (if you survive), the force and effect of your
+         blows increase.  But do not expect the creatures of the Dungeon to
+         fall from a single blow.  And beware... for even as you strike,they
+         will strike back, often with fatal results.
+
+
+ SHIELD: WHen you hold a SHIELD in your hand, you are protected from some of
+         the force of an attacking creature's blow.  This may save your life!
+         The effectiveness of a SHIELD depends somewhat on your strength and
+         the strength of the creature you are facing.
+
+         You can also ATTACK with a SHIELD.  The MITHRIL SHIELF is quite
+         powerful and can be used effectively as a weapon.
+
+ Attacking with a shield is better than attacking with an empty hand and
+ makes a great noise. But BE CAREFUL.... -jokesters tend to have very short
+ careers in the Dungeon!
+ FLASK           In the Dungeon you might also find various magical FLASKs,
+                 which may serve you in your quest.  If you are holding a
+                 FLASK and type USE LEFT or USE RIGHT (depending on which
+                 hand it is in), you will pour the contents of the FLASK
+                 down your throat.  Be careful... Flasks may harm you or
+                 greatly aid you.  Their effects may be striking or subtle,
+                 short-lived, or permanent.
+
+                 You may get a clue to the nature of a FLASK from its name
+                 when you are able to REVEAL it.  But the only way to really
+                 learn the true effect of a FLASK is by trying it in
+                 different situations.
+
+
+ SCROLL          It is said that in the Dungeon there are SCROLLs that may
+ be
+                 of immeasurable value in conquering the Powers of Evil.  To
+                 use a SCROLL you are holding, type USE LEFT or USE RIGHT.
+
+
+ RING            RINs are extremely magical!  They can serve as weapons of
+                 great power, and can strike down mighty enemies in a
+                 twinkling.  BUt now that they are under a powerful magic
+                 spell that prevents their use by mere mortals.
+
+                 Learn how to unleash the power of a RING in the "Magic"
+                 section.
+
+
+
+
+ Magic
+
+ The Dungeon is a magic place.  Creatures, torches, weapons and certain
+ doors in the Dungeon have magical powers.  Creatures that are very magical (like
+ the Wizard) are best fought with magic weapons and can only be seen fully
+ under a TORCH that throws magical light.  You must learn from the Dungeon
+ as you proceed.
+
+ There is both Physical and Magical light in the dungeon.  The PINE TORCH,
+ for example, radiates Physical light, so certain magic passages cannot be
+ seen.  Even though you cannot see these magic passages, you can move
+ through them.  So it will appeat that you can step through the walls in some places.
+ If you have magic light the passages will appear as triangles.  Other
+ passages will appear as rectangles and can be seen in any light.
+
+ As you proceed in the Dungeon, you mush find more powerful magic torches to
+ reveal the magic doors and creatures.
+
+
+ REVEAL
+
+ Objects in the Dungeon often have hidden natures that are not immediately
+ known.  To discover the full power of an object, you should always attempt
+ ro REVEAL it.  To REVEAL an object, you must be holding it in either hand
+ and type REVEAL RIGHT or REVEAL LEFT, respectively.  For example, you may
+ be holding a TORCh that can be REVEALed as a more powerful LUNAR TORCH.  The
+ more powerful an onject, the more strength it takes to REVEAL it.  If you
+ are unable to REVEAL an object you have found, you should save it
+ in your backpack. After you have grown in wisdom and strength, try again to
+ REVEAL it.
+
+ Like other objects, the full powers of a SCROLL or a  RING cannot be used
+ until you have REVEALed them.
+
+
+ INCANT
+
+ Only RINGs can be INCANTed.  Attacking with a RING (even after you have
+ REVEALed it) won't have much more effect than a bare-handed slap.  The RING
+ will make its magical sound, but will hold no power until it has been
+ INCANTed.  YOu must use your wisdom to determine the magic name of a RING.
+ Then you must INCANT the magic name to release the RING's awesome power.
+ The type of RING that you may reveal serves as a clue to the magic name of
+ the RING.  For example, if a RING is found and REVEAL-ed to be an IRON
+ RING, a possible incantation is to type INCANT STEEL, and press [enter].  If the
+ incantation is correct, the RING transformed into a STEEL RING of great
+ power.  IF the incantation is wrong (which it is!), nothing at all happens,
+ and you are left to ponder the correct incatation.
+
+ After you have successfully INCANTed a RING, you can ATTACK using the RING
+ as a magic weapon of great power.  But use it wisely, for its power is not
+ limitless, and the use of a RING also puts a great strain on your heart.
+ It is rumored that even the power of the evil Wizard is derived from a RING
+ which he holds.  If you manage to defeat the real Wizard, you must find the
+ Wizard's RING, for it may hold the secret to your future.  Remember ALL
+ RINGs can be INCANTed.
+
+ Your Heartbeat
+
+ Throughout your adventure in the Dungeon, you see and hear your heart
+ beating as you continue through the Journey.  Many things affect your heart
+ rate.  Moving fast or with a heavy load, swinging a sword or wielding a
+ RING, being attacked and struck by a creature... all these and more will
+ make your heart beat more rapidly.
+
+ Time and rest, if you can find them, will bring your heart rate down.  If
+ you allow your heart rate to climb too high, you will faint.  This stops
+ you in your tracks, but alas, the creatures do not stop and will continue to
+ track and attack you.  If you heart rate climbs even further, your weary
+ heart may simply burst, and you will have failed in your quest.  The faster
+ your heart is beating, the easier a creatures blow will kill you or cause
+ you to faint.  It is best to be rested before attempting to master a
+ powerful creature.  As you grow stronger, so will your heart, and
+ activities which once would have killed you will become easy.
+
+ Go then, with caution, and grow in strength.
+
+
+ APPENDIX A
+
+ Summary of Commands
+
+ The following summary of commands serves as a quick reference to help you
+ remember and use the commands.  Each command is presented in the following
+ format:
+
+ NAME    (The name of this type of command)
+  Usage: (This shows the various forms the command can take and briefly
+  describes the effect of each form.  For more detail, refer to The Book.)
+
+         Note: when the word "object" is used, you may type wither an object
+         class (like TORCH), or a specific object type (like PINE TORCH).
+ For
+         examplem GET LEFT object refers to the whole class of commands like
+         GET LEFT PINE TORCH, GET LEFT SWORD, and so on.
+
+
+ MOVE
+  Usage: MOVE            -    Step one cell forward
+         MOVE BACK       -    Step one cell back
+         MOVE LEFT       -    Step one cell left without turning
+         MOVE RIGHT      -    Step one cell right without turning
+
+ TURN
+  Usage: TURN LEFT       -    Turn left in the current cell
+         TURN RIGHT      -    Turn right in the current cell
+         TURN AROUND     -    Turn around in the current cell`
+
+
+ CLIMB
+  Usage: CLIMB UP        -     Climb up a ladder
+         CLIMB DOWN      -    Climb down a ladder or a hole
+
+ EXAMINE
+  Usage: EXAMINE         -    Show a list of objects on the floor of the
+                              cell you occupy plus a list of everything
+                              you are carrying in your backpac
+
+         Note: Any lit TORCH is highlighted on the display.
+
+ LOOK
+  Usage: LOOK            -    Look at the Dungeon afte an EXAMINE command
+
+ GET
+  Usage: GET LEFT object -     Get an object from the floor with your left
+                               hand
+         GET RIGHT object-     Get an object from the floor with your
+ right
+                               hand
+
+         Note: The object you type must be on the floor of the cell you
+         occupy, and the hand you choose must be empty.
+
+ DROP
+  Usage: DROP LEFT       -     Drop the object in your left hand (if any)
+                               to the floor
+         DROP RIGHT      -     Drop the object in your right hand (If any)
+                               to the floor
+
+
+ PULL
+  Usage: PULL LEFT object        -    Pull an object from your backpack
+                                      with your left hand
+         PULL RIGHT object       -    Pull an object from your backpack
+                                      with your right hand
+
+         Note: The object you type must be in your backpack, and the hand
+ you
+         choose must be empty.
+
+ STOW
+  Usage: STOW LEFT       -     Stow the object in your left hand (if any)
+                               into your backpack
+         STOW RIGHT      -     Stow the object in your right hand (if any)
+                               into your backpack
+
+ ATTACK
+  Usage: ATTACK LEFT     -     Attack with the object in your left hand
+                               (or with your empty hand)
+         ATTACK RIGHT    -     Attack with the object in your right hand
+                               (or with your empty hand)
+
+ USE
+  Usage: USE LEFT        -     Use the object in your left hand (effect
+                               depends on the object)
+         USE RIGHT       -     Use the object in your right hand (effect
+                               depends on the object)
+
+         Note: the USE command can be used with three types of objects, and
+         its effect varies depending on the object selected:
+         TORCH   -       To USE a TORCH is to light it and mount ir on your
+         backpack
+         FLASK   -       To USE a FLASK is to pour its contents down your
+         throat
+         SCROLL  -       To USE a SCROLL, the SCROLL must be REVEALed.  Tryit!
+
+
+ REVEAL
+  Usage: REVEAL LEFT     -     Attempt to "reveal" the type of object in
+                               your left hand
+         REVEAL RIGHT    -     Attempt to "Reveal" the type of object in
+                               your right hand
+
+ INCANT
+  Usage:INCANT magic word-     Attempt to conjure up the magic power of a
+                               RING by "incanting" its magical name
+
+        Note: WHen you INCANT, type only the single word you are incanting,
+        such as INCANT STEEL.
+
+
+ CASSETTE COMMANDS
+  Usage: ZSAVE filename  -     Save the current state of the game on
+                               cassette with the filename that was typedin
+         ZLOAD filename  -     Load from cassette a game you saved earlier
+                               with the given filename
+
+ Appendix B
+
+ Partial List of Abbreviations
+
+ Commands can be abbreviated to the shortest set of letters that cannot be
+ confused with another command.  Remember that you must still enter the
+ spaces between the abbreviated command words, and always press [enter]after
+ typing the command.  If you try an abbreviation that is too short, ???
+ appears after the command.
+
+
+ Full Command              Shortest Abbreviation
+ ------------              ---------------------
+ MOVE                      M
+ MOVE BACK                 M B
+ MOVE LEFT                 M L
+ MOVE RIGHT                M R
+
+ TURN LEFT                 T L
+ TURN RIGHT                T R
+ TURN AROUND               T A
+
+ CLIMB UP                  C U
+ CLIMB DOWN                C D
+
+ EXAMINE                   E
+ LOOK                      L
+
+ GET LEFT TORCH            G L T
+ GET RIGHT WOODEN SWORD    G R W SW
+
+ DROP LEFT                 D L
+ DROP RIGHT                D R
+
+ PULL LEFT SHIELD          P L SH
+ PULL RIGHT LEATHER SHIELD P R LE SH
+
+ STOW LEFT                 S L
+ STOW RIGHT                S R
+
+ ATTACK LEFT               A L
+ ATTACK RIGHT              A R
+
+ USE LEFT                 U L
+ USE RIGHT                U R
+
+ REVEAL LEFT              R L
+ REVEAL RIGHT             R R
+
+ INCANT STEEL             I S
+
+
+
+  ------------------------------------------------------------------------
+  ------------------------------------------------------------------------
+  ------------------------------------------------------------------------
+  ------------------------------------------------------------------------

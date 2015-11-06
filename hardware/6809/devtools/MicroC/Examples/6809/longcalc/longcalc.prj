@@ -1,0 +1,45 @@
+# BiPOM Electronics Project File - DO NOT EDIT
+#
+# Project file version
+#
+VERSION=1.04
+AUTHOR=BiPOM
+#
+# Toolkit identification and environment
+#
+TOOLKIT DIR={ROOTDIR}\microc
+TOOLKIT NAME=Micro C 6809
+TOOLKIT ENV=MCDIR={TOOLKITDIR}
+TOOLKIT 16BIT=YES
+#
+# Micro-Controller Loader identification
+#
+LOADER NAME=
+#
+# What to do when we do builds
+#
+BUILD ENABLED=YES
+DOWNLOAD ENABLED=NO
+RUN MODE ENABLED=NO
+#
+# Toolkit specific commands
+#
+PREBUILD COMMAND=
+POSTBUILD COMMAND=
+POSTBUILD ALWAYS EXECUTE=NO
+COMPILE COMMAND={TOOLKITDIR}\cc09.com {SOURCEFILE} -A -m -p -Q -L -S
+ASM COMMAND=
+LINK COMMAND={TOOLKITDIR}\slink {OBJFILES} l={TOOLKITDIR}\lib09 -q {TMPFILE}
+LINK EXTENSION=asm
+OUTPUT COMMAND={TOOLKITDIR}\asm09.exe {TMPFILE} -F -S
+ASM EXTENSION=
+OBJ EXTENSION=asm
+OUTPUT FILE=longcalc.hex
+OUTPUT EXTENSION=
+DEBUGGER=
+CHIP_ID=
+MANUFACTURER_ID=
+#
+# Project sources
+#
+SOURCE=.\longcalc.c

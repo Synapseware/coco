@@ -1,0 +1,10 @@
+[DEFAULT]
+BASEURL=http://www.cs.unc.edu/~yakowenk/coco/text/downloading.html
+[InternetShortcut]
+URL=http://www.cs.unc.edu/~yakowenk/coco/text/downloading.html
+Modified=F09F0ECC6206C60198
+IDList=
+IconFile=http://www.cs.unc.edu/favicon.ico
+IconIndex=1
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,2

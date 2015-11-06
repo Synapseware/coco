@@ -1,0 +1,31 @@
+I'm Gene Turnbow, former SYSOP of the Tesseract system on StgNet.
+
+C-Trek was probably the first commercial version of Color Computer
+Star Trek, and was written in 1980 by myself and published by 
+Spectral Associates of Seattle, Washington.
+
+There were two versions of the game.  Fearing reprisal from Paramount
+Pictures regarding trademark issues, they had me remove references to
+the Enterprise and the Klingons.  Shortly thereafter, they went out of 
+business.  Very few copies of version 1.1 of the game were ever distributed.
+
+The was written on a 16K Color Computer 1, and at the time I 
+did not have Extended Color BASIC.  This, of course, meant
+that every time I made a typographical error or had a bug to
+correct, I had to slavishly retype the entire line.
+
+The game was sold between 1980 and 1982.  At some point Spectral
+went out of business, and the rights reverted to me.  Now, I'm giving 
+the game to the world as my gift to the Coco users who are still 
+out there.
+
+Since writing C-TREK, I have had three careers, finally ending up writing
+computer games professionally for Windows95, distributed on CD-ROM.  I still
+have my old Coco, and it still runs great!  If you want to email me, you can
+try reaching me at kalel@inreach.com, or visit my home page at 
+http://home.inreach.com/kalel.
+
+I hope you have as much fun playing C-TREK as I did writing it.
+
+Gene Turnbow
+

@@ -1,0 +1,882 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>G:\MYDOCU~1\RTSIOC~1\OS-9\OS9_6X09\MANUALS\LEVEL2~1\TECHIN~1\HTML\CH1~1\OS-9 L-II Technical Reference Ch 1.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<U>Chapter 1
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<U>System Organization
+</UL>
+</UL>
+</UL>
+</U>
+</FONT>
+</H2>
+</U><FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS-9 is composed of a group of modules, each of which has a spe<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cific function. The following illustration shows the major mod<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ules. Actual module names are capitalized.<BR>
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+I/O System Modules<BR>
+<BR>
+ <UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OS-9 KERNEL
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+INIT (OS9P1. OS9P2) Clock
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="CENTER">
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+Input Output Manager
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+(IOMAN)
+</FONT>
+</P>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+Disk File Pipe File Char. File
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+Manager Manager Manager Printer S10
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+(RBF) (Pipemanl (SCF)
+</UL>
+</UL>
+</UL>
+<BR>
+   <UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+P  T1
+</UL>
+</UL>
+</UL>
+<BR>
+ 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+Ram CC3Disk CC3Hdisk Pipe ACIAPak ModPak CC310<BR>
+ 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+Ram Disk Disk Disk Driver Driver Driver<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+Driver Driver ' Driver (Piper)<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+RO DO DD D1 HO H1 Pipe T1 T2 P1  P2<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+RBF Device Descriptors Pipe Descr SCF Device Descriptors
+</UL>
+<BR>
+<BR>
+ <UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+Vdglnt Grflnt  Windlnt
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+CC310 CC310  CC310
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+Interface Interface  Interface
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+Term Vdg  GrfDrv
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+Desc
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///G:\MYDOCU~1\RTSIOC~1\OS-9\OS9_6X09\MANUALS\LEVEL2~1\TECHIN~1\HTML\CH1~1\GR000000.JPG" WIDTH="101" HEIGHT="25">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial" COLOR="#000000">
+<B>OS-9 COMPONENT MODULE ORGANIZATION<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Arial" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial" COLOR="#000000">
+<B>1-1
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Garamond" COLOR="#000000">
+<I><U>OS-9 Technical Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="4" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Color Computer OS-9 Modules<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IOMAN Input/output management
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+INIT System initialization table
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CLOCK Software routine time management
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RBFMAN Random block file management
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+SCFMAN Sequential character file management
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PIPEMAN Pipe file management
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC3DISK Color Computer disk driver
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC310 Color Computer input/output driver
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The VDG (video display generator) provides both interface func
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tions and low-level routines for Color Computer 2 VDG
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+compatibility.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The GRFINT interface provides high-level graphics code interpre
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tation and interface functions.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The WINDINT interface contains all the functions of GRFINT,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+along with additional support for Multiview functions. If you are
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+using Multiview, exclude GRFINT from the system.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Both WINDINT and GRFINT use the low-level driver GRFDRV
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to perform the actual drawing on bitmap screens.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Term-VDG uses CC310 and VDGINT. TERM-WIN and all
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+window descriptors (W, Wl, W2, and so on) use CC3I0, WIN
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+DINT, GRFINT, and GRFDRV modules.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Kernel, Clock Module, and INIT<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The system's first level contains the 
+</FONT>
+<FONT SIZE="4" FACE="Garamond1" COLOR="#000000">
+<I>kernel, clock module, </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+INIT.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The kernel provides basic system services, such as multitasking
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and memory management. It links all other OS-9 modules into
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the system.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The clock module is a software handler for the real-time clock
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+hardware.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+INIT is an initialization table used by the kernel during system
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+startup. This table loads initial tasks and specifies initial table
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sizes and initial system device names. It is loaded into RAM
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(random access memory) by the OS-9 bootstrap module Boot.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Boot also loads the OS9P2 and INIT modules during system
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+startup.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1-2<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>System O</U>rg<U>a</U>n<U>izatio</U>n <U>/ 1
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+There are two ways to run boot:<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Using the DOS command with Color Disk BASIC, Ver
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sion 1.1, or later.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+e Pressing the reset button after OS-9 is running.
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Input/Output Modules<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The remaining modules make up the OS-9 1/0 system. They are
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+defined briefly here and are discussed in detail in Chapter 4.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>I/O Manager<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The system's second level (the level below the kernel) contains
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the input/output manager, IONIAN. The 1/0 manager provides
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+common processing for all input/output operations. It is required
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+for performing any input/output supported by OS-9.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>File Managers<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The system's third level contains the 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>file managers. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+File man
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+agers perform 1/0 request processing for similar classes of 1/0
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+devices. There are three file managers:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>RBF manager </B>The random block file manager processes<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+all disk 1/0 operations.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>SCF manager </B>The sequential character file manager han<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+dles all non-disk I/0 operations that operate<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+one character at a time. These operations<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+include terminal and printer I/0.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>PIPEMAN </B>The pipe file manager handles 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>pipes. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Pipes<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+are memory buffers that act as files. Pipes<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+are used for data transfers between<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+processes.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Device Drivers<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The system's fourth level contains the 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>deuice drivers. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Device
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+drivers handle basic I/0 functions for specific 1/0 controller hard
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ware. You can use pre-written drivers, or you can write your
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+own.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1-3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Technical Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Device Descriptors<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The system's fifth level contains the 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>device descriptors. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Device
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+descriptors are small tables that define the logical name, device
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+driver, and file manager for each I/O port. They also contain port
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+initialization and port address information. Device descriptors
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+require only one copy of each I/O controller driver used.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Shell<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The shell is the command interpreter. It is a program and not a
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+part of the operating system. The shell is fully described in the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Commands </I>manual.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+1-4<BR>
+</FONT>
+</BODY>
+</HTML>

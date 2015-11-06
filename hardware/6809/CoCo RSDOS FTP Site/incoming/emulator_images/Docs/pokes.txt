@@ -1,0 +1,230 @@
+-----------------------------------------------------------------------------------
+From Stuart Wyss-Gallifent,  swyss@voicenet.com   www.voicenet.com/~swyss
+-----------------------------------------------------------------------------------
+
+*****   SPECIAL!!!!  PATCHES AND BUG-FIXES TO THE COCO 3 ROMS !!!!   *****
+
+POKE 62861,189:POKE 62862,244			fixes the HDRAW bug
+
+POKE &HE649,&H10                                fixes the RGB and BMP commands
+
+POKE 55180,18:POKE 55181,18:POKE 55182,18	turns of disk drive moter faster
+
+POKE 38543,33:POKE 38563,33			fixes PCLEAR 0 error.  Now you can
+                                                PCLEAR 0 and get 28941 bytes of free
+                                                MEM!!
+
+POKE &HF670,18:POKE &HF671,18			prevents a WIDTH command from clearing
+                                                the screen
+
+POKE &HA1C1,&H39:FOR F=&HA1CA to &HA1C1
+STEP -1:READA:POKE F,A:NEXT F:DATA 121,39,
+72,67,0,255,182,2,255,127                       put as the first line of your program
+                                                it will speed up your computer by about
+                                                15%!!  It patches the keyboard scan routine
+
+FOR I=&H8000 to &H8013:READ B$:POKE I,VAL
+("&H"+B$):NEXT I:POKE &H85CB,&HBD:POKE
+&H85CC,&H80:POKE &H85CD,0:DATA 86,21,BD,
+A2,82,A6,84,BD,A2,82,86,21,BD,A2,82,BD,85,
+D1,5A,39                                        patches the D command during EDIT to
+                                                show the character being deleted!
+
+FOR I=&H8014 TO &H8022:READ B$:POKE I,VAL
+("&H"+B$):NEXT I:POKE &HAB85,&H80:POKE
+&HAB86,&H14:DATA 10,27,2D,CC,BD,AF,67,BD,
+AD,01,9E,47,7E,AD,E6				patches the RESTORE command so you can
+                                                restore to any line number.  For example,
+                                                RESTORE 40 restores any DATA from line 40
+                                                on, but no DATA prior to line 40.  A plain
+                                                old RESTORE still restores every DATA
+                                                statement
+
+---------------------------------------------------------------------------------------
+COCO 3 POKES, PEEKS, and EXECS
+
+
+MEMORY MAPPING AND THE 8K BLOCKS
+                                                  DECIMAL VALUES
+MMU Address         Mapped to               Usually is      Hi-Res-Mode
+&HFFA0		&H0000 - &H1FFF			56		56
+&HFFA1		&H2000 - &H3FFF			57		48
+&HFFA2		&H4000 - &H5FFF			58		49
+&HFFA3		&H6000 - &H7FFF			59		50
+&HFFA4		&H8000 - &H9FFF			60		51
+&HFFA5		&HA000 - &HBFFF			61		61
+&HFFA6		&HC000 - &HDFFF			62		53
+&HFFA7		&HE000 - &HFFFF			63		63
+
+Blocks 48 to 63 (&H30 to &H3F) are available on both 128k and 512k CoCos.
+They can also be numbered 112 to 127 (&H70 to &H7F).  Blocks 0 to 47 
+(&H00 to &H2F) are available ONLY on the 512k CoCo.  They can also be
+numbered 64 to 111 (&H40 to &H6F)  The numbers can be used interchangeably
+because the blocks are "shadowed".  Block &H3F is the same block as &H7F.
+On a ONE MEG CoCo, though, the blocks are NOT shadowed, and the numbers
+represent different blocks.  See diagram further down.
+
+WHAT ARE THE BLOCKS USED FOR?
+
+Decimal        Hex             Function
+112		&H70		first quarter of HSCREEN
+113		&H71		second quarter
+114		&H72		third quarter
+115		&H73		fourth quarter
+116		&H74		HGET/HPUT buffer (default)
+117		&H75		The Stack
+118		&H76		Hi-Res Text Screen (40 and 80 column)
+119		&H77		unused
+120		&H78		Program storage
+121		&H79		Program storage
+122		&H7A		Program storage
+123		&H7B		Program storage
+124		&H7C		Extended Color BASIC (in RAM)
+125		&H7D		Color BASIC (in RAM)
+126		&H7E		Cartridge Address
+127		&H7F		CoCo 3 Super Extended BASIC, and I/O
+
+Memory Block Map
+
+&H00 to &H3F		64 8k blocks in 1 MEG CoCos (I think)
+&H40 to &H6F		48 8k blocks in a 512k CoCo  (48x8k=384k)
+&H70 to &H7F		16 8k blocks in all CoCo 3s  (16x8k=128k)
+&H80 to &HFF		128 8k blocks in 2 MEG CoCos (I think)
+
+In summary, ALL CoCo 3s have blocks &H70 to &H7F available.  In a 512k CoCo 3,
+you have &H40 to &H7F available.  In a 1 MEG CoCo 3, you have &H00 to &H7F,
+and in a 2 MEG CoCo 3, you have &H00 to &HFF available.
+
+&HFFB0 to &HFFBF    contain the palette registers.  PEEK and POKE to these to
+                    set the 16 palettes.  Values range from 0 to 63.
+
+POKE 63372,x      controls the cursor blink rate in the 40/80 screen.  The
+                  default is 11.  0=fast, 255=slow
+
+POKE 63381,0 	stops the cursor blinking in 40/80 screens
+POKE 63381,1	starts it blinking again
+
+POKE &HF7A3,x	x is from 0 to 255, it sets the shape of the cursor in 40/80 screens
+
+PEEK(487)*256+PEEK(488)		the start address of an ML program
+PEEK(126)*256+PEEK(127)		the end address of an ML program
+PEEK(157)*256+PEEK(158)		the EXEC address of the program
+
+POKE &HFF21,&H3C	immediately turns on the cassette relay (MOTOR ON)
+POKE &HFF21,&H34	immediately turns off the relay (MOTOR OFF, but no delay)
+
+&HE654 to &HE663	storage of the default CMP palette values
+&HE664 to &HE673	storage of the default RGB palette values
+&HE674 to &HE687	storage of current palette values
+
+POKE 150,x		set printer baud rate.  87=600, 41=1200, 18=2400, 7=4800, 1=9600
+			if running in high speed (1.8mhz) baud is doubled also!
+
+POKE &HFFBC,x           POKE here to set the width 32 foreground color
+POKE &HFFBD,x           POKE here to set the width 32 background color
+
+EXEC 44539		pauses and waits for any key press (except BREAK/SHIFT/ESC)
+
+POKE 65497,0            1.8mhz speed POKE for the CoCo 3 (no effect with emulator)
+POKE 65496,0            normal speed POKE (.89mhz) for CoCo 3
+
+POKE &HE6C6,33          VERY USEFUL - This disables the automatic clearing of the
+			HSCREEN.  Usually, when you do an HSCREEN command, the CoCo
+			automatically clears the HSCREEN.  This POKE prevents that.
+
+POKE 282,255            set keyboard to uppercase
+POKE 282,0		set keyboard to lowercase
+
+&HF09D to &HF39C	location of data for the HPRINT character set (8 bytes per
+			character, 96 characters).  You can modify the HPRINT font
+			by changing these values.  If you're not using HPRINT, this
+			is available space for ML programs. (768 bytes, 3/4K)
+
+POKE 186,msb
+POKE 187,lsb            set the start address for the PMODE 3/4 screen
+
+POKE 113,0:EXEC &H8C1B       \
+POKE 113,0:DLOAD              |--  three different ways to cold-start a CoCo 3
+POKE 113,0 <press RESET>     /
+
+POKE 111,254:DIR	forces a disk directory to be printed on the printer
+
+if you PEEK(&H00E7)     you can tell what the WIDTH is (0=32, 1=40, 2=80)
+
+&HE0D4,&HE3A3, &HE50B           poke these with an 8k block number for HGET/HPUT
+				the default is &H74
+
+PEEK(41)*256+PEEK(42)	the line number to continue after a STOP command
+
+PEEK(49)*256+PEEK(50)	the line number of the next DATA statement to be read
+
+PEEK(135)		the ASCII code of the most recently pressed key
+			can be used with EXEC 44539 instead of INKEY$
+
+POKE 175,0		turn tracer on  (TRON)
+POKE 175,1		turn tracer off (TROFF)
+
+decimal 338 to 345	the keyboard rollover tables - values change based on what keys
+			are being held down
+
+if PEEK(341)=191, then the ALT key is being pressed
+if PEEK(342)=191, then the CTRL key is being pressed
+if PEEK(343)=191, then F1 is being pressed (F11 on the emulator)
+if peek(344)=191, then F2 is being pressed (F12 on the emulator)
+
+PEEKs 474 to 481 contain ASCII values of most recently used FILENAME (8 characters)
+PEEK(482) contains file type (0=BASIC, 1=DATA, 2=BINARY)
+
+POKE &HD7C0,x:POKE &HD816,y	disk drive step rate (not for ADOS)
+	x=3  y=23  for 30ms (default)
+	x=2  y=22  for 20ms
+	x=1  y=21  for 12ms
+ 	x=0  y=20  for 6ms (most drives can do this, it's faster and quieter)
+
+44014 to 44018          ASCII values used for the prompt "OK".  You can change the OK prompt
+POKE 44014,0		no prompt at all, just a cursor
+
+EXEC 43345		makes a click sound
+
+POKE 41598,19:POKE 41591,95	the BREAK key now pauses (same as SHIFT-@) and
+                                SHIFT-BREAK will act as the BREAK key
+
+POKE &HE414,0:POKE &HE42A,0	disables the CoCo 3 BREAK key
+
+A=RND(-TIMER)		use this to get "more-random" numbers from the RND statement
+			similar to RANDOMIZE on other computers
+
+POKE &HE79B,196:POKE &HE79C,x           where x is from 0 to 255.  This changes the HPAINT
+					command to paint a variety of patterns
+POKE &HE79B,212:POKE &HE79C,181         the defaults for the HPAINT command
+
+After POKE &HF6BC,255, you can CLS x	where x is from 0 to 255 to clear the 40/80
+                                        screens with a variety of attributes
+
+&H01DA to &H02D8	the old cassette buffer, which can be used for short ML programs
+			it's 255 bytes long
+
+POKE 41893,0		disables the CLEAR key
+POKE 41893,129          enables the CLEAR key
+
+POKE 41909,0		prevents SHIFT-BACK-ARROW from erasing the entire line
+POKE 41909,21		enables the SHIFT-BACK-ARROW
+
+POKE &HADEB,&H39	prevents SHIFT-@ from pausing programs, speeds up the program!
+
+POKE &HFE04,x		where x is the column spacing you want (20,40,80,etc.)
+
+POKE &HFF94,x		where x is from 0 to 255, controls the "blink" attribute blink rate
+POKE &HFF94,126         the default "blink" attribute blink rate
+
+POKE &HD762,x		where x is 1 to 255.  This controls how many times the disk drive
+			tries to read a "problem" with the disk.  The default is 5, but if
+			you set it to 1 or 2, the computer will try fewer times.  If you have
+			ever accidentally typed, for example, DIR 1, but had no disk in the
+			drive, the computer tries 5 times to read it.  By changing this value,
+			it will return to the OK prompt sooner, or try longer, if you want.
+
+POKE &Hf697,x		where x is from 0 to 255.  Default is 32.  When you CLS on a 40/80
+			screen, this is the ASCII of the character used to clear the screen.
+
+

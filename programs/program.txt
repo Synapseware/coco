@@ -1,0 +1,71 @@
+86		LDA
+22		#x22
+8E		LDX
+26		#x2600
+00		--
+8D		BSR
+0D		x0D, PCR
+FC		LDD
+26		<x2600
+00		--
+10		--		(page 1)
+83		CMPD
+4F		#x4F53
+53		--
+26		BNE
+03		x03, PCR
+7E		JMP
+26		<x2602
+02		--
+39		RTS
+34		PSHS
+20		Y
+10		--		(page 1)
+BE		LDY
+C0		<xC006
+06		--
+A7		STA
+22		,-Y
+86		LDA
+02		#x02
+A7		STA
+A4		4,Y
+6F		CLR
+21		,Y++
+6F		CLR
+23		,--Y
+6C		INC
+23		,--Y
+AF		STX
+24		,Y
+10		--		(page 1)
+BE		LDY
+C0		<xC006
+06		--
+A6		LDA
+23		,--Y
+81		CMPA
+13		#x13
+27		BEQ
+12		x12,PCR
+AD		JSR
+9F		$-15,PCR
+C0		SUBB
+04		#x04
+4D		TSTA
+27		BEQ
+06		x06,PCR
+6C		INC
+23		,--Y
+6C		INC
+24		,Y
+20		BRA
+E9		$-23,PCR
+7F		CLR
+FF		<xFF40
+40		NEGA
+35		PULS
+A0		Y,PC
+4F		CLRA
+20		BRA
+		

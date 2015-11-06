@@ -1,0 +1,61 @@
+Fix the HDRAW bug POKE 62861,189:POKE 62862,244 
+
+Fix the RGB and BMP commands POKE &HE649,&H10 
+
+Prevent a WIDTH command from clearing
+the screen POKE &HF670,18:POKE &HF671,18 
+
+Set the 16 palette registers. Values range from 0 to 63. &HFFB0 to &HFFBF 
+
+Control the cursor blink rate in the 40/80 screen. The
+default is 11. 0=fast, 255=slow POKE 63372,x 
+
+Stop the cursor blinking in 40/80 screens POKE 63381,0 
+
+Start the cursor blinking again POKE 63381,1 
+x is from 0 to 255, it sets the shape of the cursor in 40/80 screens POKE &HF7A3,x 
+
+Storage of the default CMP palette values &HE654 to &HE663 
+
+Storage of the default RGB palette values &HE664 to &HE673 
+
+Storage of current palette values &HE674 to &HE687 
+
+Set the width 32 foreground color POKE &HFFBC,x
+ 
+Set the width 32 background color POKE &HFFBD,x 
+
+1.8mhz speed POKE for the CoCo 3 (no effect with emulator) POKE 65497,0
+ 
+Normal speed POKE (.89mhz) for CoCo 3 POKE 65496,0 
+
+Disable the automatic clearing of the
+HSCREEN. POKE &HE6C6,33
+
+Location of data for the HPRINT character set (8 bytes per
+character, 96 characters). &HF09D to &HF39C 
+
+8k block number for HGET/HPUT
+the default is &H74 &HE0D4,&HE3A3, &HE50B  
+
+Change the HPAINT command to paint a variety of patterns.
+x is from 0 to 255. POKE &HE79B,196:POKE &HE79C,x 
+ 
+Defaults for the HPAINT command POKE &HE79B,212:POKE &HE79C,181 
+x is the column spacing you want (20,40,80,etc.) POKE &HFE04,x 
+x is from 0 to 255, controls the "blink" attribute blink rate
+POKE &HFF94,x 
+
+Default "blink" attribute blink rate POKE &HFF94,126 
+x is from 0 to 255. Default is 32. When you CLS on a 40/80
+screen, this is the ASCII of the character used to clear the screen. POKE &Hf697,x 
+
+End address of an ML program PEEK(126)*256+PEEK(127) 
+
+EXEC address of the program PEEK(157)*256+PEEK(158) 
+
+Start address of an ML program PEEK(487)*256+PEEK(488) 
+x is from 0 to 255. Default is 32. When you CLS on a 40/80
+screen, this is the ASCII of the character used to clear the screen. POKE &Hf697,x 
+
+See what the WIDTH is (0=32, 1=40, 2=80) 

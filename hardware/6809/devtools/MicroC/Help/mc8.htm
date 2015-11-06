@@ -1,0 +1,117 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1254">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>8.</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0">
+    <tr>
+        <td><a name="8. THE MICRO-C OPTIMIZER"><font size="2"
+        face="Arial"><strong>8. THE MICRO-C OPTIMIZER</strong></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>The MICRO-C optimizer is an output
+        code filter which examines<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">               </span>assembly code produced by the compiler,
+        recognizing known patterns of<br>
+<span style="mso-spacerun: yes">               </span>inefficient code (using the
+        &quot;peephole&quot; technique),<span style="mso-spacerun: yes">  </span>and replaces them<br>
+<span style="mso-spacerun: yes">               </span>with more optimal code<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>performs<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes"> 
+</span>        same<span style="mso-spacerun: yes">  </span>function.<span style="mso-spacerun: yes">  </span>It<span style="mso-spacerun: yes">  </span>is<br>
+<span style="mso-spacerun: yes">               </span>entirely table driven,<span style="mso-spacerun: yes">  </span>allowing it to be
+        modified for virtually<span style="mso-spacerun: yes">  </span>any<br>
+<span style="mso-spacerun: yes">               </span>processor.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>Due its many table lookup operations,<span style="mso-spacerun: yes"> 
+</span>        the optimizer<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>perform<br>
+<span style="mso-spacerun: yes">               </span>quite slowly when processing a large<span style="mso-spacerun: yes">  </span>file.<span style="mso-spacerun: yes"> 
+</span>        For<span style="mso-spacerun: yes">  </span>this<span style="mso-spacerun: yes">  </span>reason,<span style="mso-spacerun: yes">  </span>most<br>
+<span style="mso-spacerun:
+yes">               </span>people prefer not to optimize during the
+        debugging of a program,<span style="mso-spacerun: yes">  </span>and<br>
+<span style="mso-spacerun: yes">               </span>utilize the optimizer only when creating the
+        final copy.<br>
+        <br>
+<span style="mso-spacerun: yes">               </span></font><a name="8.1 The MCO command"><font
+        size="2" face="Arial"><em><strong>8.1 The MCO command</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The format of the MICRO-C
+        Optimizer command line is:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                           </span>MCO [input_file]
+        [output_file] [options]<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>[input_file] is the name of the
+        source file containing assembly<br>
+<span style="mso-spacerun: yes">                  </span>statements to read.<span style="mso-spacerun: yes">  </span>If no filenames
+        are given,<span style="mso-spacerun: yes">  </span>MCOwill<span style="mso-spacerun: yes">  </span>read<br>
+<span style="mso-spacerun:
+yes">                  </span>from standard input.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>[output_file]<span style="mso-spacerun: yes">  </span>is the name of
+        the file to which<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>optimized<br>
+<span style="mso-spacerun: yes">                  </span>assembly<span style="mso-spacerun: yes">  </span>code<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>written.<span style="mso-spacerun: yes">  </span>If<span style="mso-spacerun: yes"> 
+</span>        less<span style="mso-spacerun: yes">  </span>than<span style="mso-spacerun: yes">  </span>two<span style="mso-spacerun: yes">  </span>filenames<span style="mso-spacerun: yes">   </span>are<br>
+<span style="mso-spacerun: yes">                  </span>specified, MCO<span style="mso-special-character:footnote-continuation-separator"> will write to standard
+        output.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>8.1.1 Command Line Options</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>MCO</span>accepts the following
+        command<span style="mso-spacerun: yes">  </span>line<span style="mso-spacerun:
+yes">  </span>[options],<span style="mso-spacerun: yes">  </span>which<br>
+<span style="mso-spacerun: yes">                    </span><span style="mso-spacerun:
+yes"> </span>are recognized in lower case
+        only:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>-d<span style="mso-spacerun:
+yes">      </span>- Instructs
+        MCOto produce a 'debug' display on<br>
+<span style="mso-spacerun: yes">                                  </span>standard
+        output showing the<span style="mso-spacerun: yes">  </span>source code<span style="mso-spacerun: yes">  </span>which<br>
+<span style="mso-spacerun: yes">                                  </span>it is
+        removing and replacing in the input file.<br>
+<span style="mso-spacerun:
+yes">                                  </span>NOTE:
+        If you do not specify an explicit<span style="mso-spacerun: yes">  </span>output<br>
+<span style="mso-spacerun: yes">                                       
+</span>        file, you will get the<span style="mso-spacerun: yes">  </span>debug<span style="mso-spacerun:
+yes">  </span>statements<br>
+<span style="mso-spacerun:
+yes">                                       
+</span>        intermixed with<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>optimized<span style="mso-spacerun: yes">  </span>code<span style="mso-spacerun: yes">  </span>on<br>
+<span style="mso-spacerun:
+yes">                                      
+</span><span style="mso-spacerun:
+yes">         </span>standard output.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>-q<span style="mso-spacerun: yes">      </span>- Instructs<span style="mso-spacerun: yes"> 
+</span>        MCO to be quiet,<span style="mso-spacerun: yes">  </span>and not display<br>
+<span style="mso-spacerun: yes">                                  </span>the
+        startup message when it is executed.<br>
+        </font></td>
+    </tr>
+</table>
+<table width="605" border="0">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2">&quot;Converted by 
+        BiPOM Electronics to HTML format from original Micro C documentation by 
+        Dunfield Development Systems. Please see the Micro C documentation that 
+        is included with Micro C for the original forms of these pages.&quot;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

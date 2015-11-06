@@ -1,0 +1,363 @@
+This information was gathered by Kevin K. Darling.
+
+NOTE !!
+ This is a text for you to use to study the capabilities of the CoCo-3.
+ Some minor parts may be in error (??). Insiders should clue us in on these.
+ Purpose of release is to show some of the extra thought in the machine.
+ In NO way should it be construed as an "official map". Now have fun! -- Kevin
+
+ * Many Thanks from All of Us to the Contributors who shall remain UnKnown! *
+
+ -----------------------------------------------------------------------------
+ I        COCO-3 MEMORY, and GIME REGISTER MAP   (1 Sept 86)  KD ver1        I
+ -----------------------------------------------------------------------------
+
+SYSTEM MEMORY MAP:
+ RAM      00000 - 7FFFF (512K bytes)
+ ROM      78000 - 7FEFF when enabled
+ I/O      XFF00 - XFFFF I/O space and GIME regs
+
+64K PROCESS MAP:
+ RAM       0000 -  FEFF (possible vector page FEXX)
+ I/O       FF00 -  FFFF (appears in all pages)
+
+Note: the Vector Page RAM at 7FE00 - 7FEFF (when enabled), will appear instead
+ of the RAM or ROM at XFE00 - XFEFF. (see FF90 Bit 3)
+
+  XFF00-0X  PIA0       (not fully decoded)
+  XFF10-1F  reserved
+  XFF20-2X  PIA1       (not fully decoded)
+  XFF30-3F  reserved
+  XFF40-5F  SCS        see note below
+  XFF60-7F  undecoded  (for current peripherals)
+  XFF80-8F  reserved
+
+Note: IF MC2=0, then XFF50-5F is SCS, and XFF40-4F will be internal to CoCo.
+ -----------------------------------------------------------------------------
+
+ FF90  INITIALIZATION REGISTER 0
+        Bit 7 - CoCo Bit  1= Color Computer 1/2 Compatible
+        Bit 6 - M/P       1= MMU enabled
+        Bit 5 - IEN       1= GIME IRQ output enabled to CPU
+        Bit 4 - FEN       1= GIME FIRQ  "      "
+        Bit 3 - MC3       1= Vector page RAM at FEXX enabled
+        Bit 2 - MC2       1= Standard SCS
+        Bit 1 - MC1       ROM mapping      0 X - 16K internal, 16K external
+        Bit 0 - MC0        "    "          1 0 - 32K internal
+                                           1 1 - 32K external
+
+CoCo bit set = MMU disabled, Video address from SAM, RGB/Comp Palettes => CC2.
+ -----------------------------------------------------------------------------
+
+ FF91  INITIALIZATION REGISTER 1
+        Bit 6 -           0=64K chips, 1 = 256K chips
+        Bit 5 - TINS      Timer INput Clock Select:  0= 70 nsec, 1= 63 usec
+        Bit 0 - TR        MMU Task Register Select (0/1 - see FFA0-AF)
+ -----------------------------------------------------------------------------
+
+ FF92  IRQENR    Interrupt Request Enable Register (IRQ)
+ FF93  FIRQENR   Fast Interrupt Request Enable Reg (FIRQ)
+   (Note that the equivalent interrupt output enable bit must be set in FF90.)
+   Both registers use the following bits to enable/disable device interrupts:
+       Bit 5 - TMR        Timer
+       Bit 4 - HBORD      Horizontal border
+       Bit 3 - VBORD      Vertical border
+       Bit 2 - EI2        Serial data input
+       Bit 1 - EI1        Keyboard
+       Bit 0 - EI0        Cartridge (CART)
+
+   I have no idea if both IRQ & FIRQ can be enabled for a device at same time.
+ -----------------------------------------------------------------------------
+
+ FF94  Timer MSB    Write here to start timer.
+ FF95  Timer LSB
+  Load starts timer countdown. Interrupts at zero, reloads count & continues.
+  Must turn timer interrupt enable off/on again to reset timer IRQ/FIRQ.
+
+ FF96  reserved
+ FF97  reserved
+ -----------------------------------------------------------------------------
+
+ FF98  Alpha/graphics Video modes, and lines per row.
+        Bit 7 = vidmode  0 is alphanumeric, 1= bit plane (graphics)
+        Bit 6 = na       ...
+        Bit 5 = DESCEN   1= extra DESCender ENable
+        Bit 4 = MOCH     MOnoCHrome bit (composite video output) (1=mono)
+        Bit 3 = H50      50hz vs 60hz bit
+        Bit 2 = LPR2     Number of lines/char row:
+        Bit 1 = LPR1      (Bits 2-1-0 below:)
+        Bit 0 = LPR0
+                         000 - 1 line/row         100 - 9
+                         001 - 2                  101 - 10
+                         010 - 3                  110 - 11 (??)
+                         011 - 8                  111 - 12 (??)
+ -----------------------------------------------------------------------------
+
+ FF99  VIDEO RESOLUTION REGISTER
+        Bit 7 - na     ...                            (bits 6-5):
+        Bit 6 - LPF1   Lines Per Field:       00= 192 lines  10= 210 lines
+        Bit 5 - LPF0     "    "    "          01= 200 lines  11= 225 lines
+        Bit 4 - HR2    Horizontal Resolution
+        Bit 3 - HR1         "        "
+        Bit 2 - HR0         "        "        (see below for HR, CRES bits)
+        Bit 1 - CRES1  Color RESolution bits
+        Bit 0 - CRES0     "      "
+ ---------------------------------------------
+ TEXT MODES:
+
+ Text: CoCo Bit= 0 and FF98 bit7=0.  CRES0 = 1 for: attribute bytes are used.
+
+                      HR2 HR1 HR0    (HR1 = don't care for text)
+        80 char/line   1   X   1
+        64     "       1   X   0
+        40     "       0   X   1
+        32     "       0   X   0
+
+ ---------------------------------------------
+ GRAPHICS MODES:
+
+         X   Colors   HR2 HR1 HR0  CRES1 CRES0
+        640    4   -   1   1   1      0   1
+        640    2   -   1   0   1      0   0
+
+        512    4   -   1   1   0      0   1
+        512    2   -   1   0   0      0   0
+
+        320   16   -   1   1   1      1   0         Other combo's are
+        320    4   -   1   0   1      0   1         possible, but not
+        320    2   -   0   1   1      0   0         supported.
+
+        256   16   -   1   1   0      1   0
+        256    4   -   1   0   0      0   1
+        256    2   -   0   1   0      0   0
+
+        160   16   -   1   0   1      1   0
+
+ Old SAM modes work if CC Bit set. HR and CRES are Don't Care in SAM mode.
+ Note the correspondence of HR2 HR0 to the text mode's bytes/line.
+ Also that CRES bits shifted left one = number of colors. --Ke
+ -----------------------------------------------------------------------------
+
+ FF9A  Border Palette Register RGBRGB (XX00 0000 = CoCo 1/2 compatible)
+ FF9B  Reserved
+
+ FF9C  Vertical Fine Scroll
+ FF9D  Screen Start Address Register 1 (bits 18-11)
+ FF9E  Screen Start Address Register 0 (bits 10-3)
+ FF9F  Horizontal Offset Register
+        Bit 7 = horizontal offset enable bit = 128 char width always
+        Bit 6 = X6  ... offset count (0-127)
+        Bit 0 = X0
+
+ If Bit 7 set & in Text mode, then there are 128 chars (only 80 seen)/line.
+ This allows an offset to be specified into a virtual 128 char/line screen,
+  useful for horizontal hardware scrolling on wide text or spreadsheets.
+ -----------------------------------------------------------------------------
+
+ FFA0-AF  MEMORY MANAGEMENT UNIT (MMU)
+  FFA0-A7  Task #0 DAT map   (8K block numbers in the 64K map)
+  FFA8-AF  Task #1 DAT map   (Task map in use chosen by FF91 Bit 0)
+
+
+ Each register has 6 bits into which is stored the block number 0-63 ($00-$3F)
+  of the Physical 8K RAM block (out of 512K) that you wish to appear at the
+  CPU Logical address corresponding to that register.
+ Also can be shown this way: the 6 register bits, when the Logical Address in
+  the range of that register, will become the new Physical RAM address bits:
+         18  17  16   15  14  13
+
+  MMU Register:          CPU:
+  Task0  Task1   Logical Address / Block#
+   FFA0   FFA8    0000 - 1FFF      0
+   FFA1   FFA9    2000 - 3FFF      1
+   FFA2   FFAA    4000 - 5FFF      2
+   FFA3   FFAB    6000 - 7FFF      3
+   FFA4   FFAC    8000 - 9FFF      4
+   FFA5   FFAD    A000 - BFFF      5
+   FFA6   FFAE    C000 - DFFF      6
+   FFA7   FFAF    E000 - FDFF      7
+
+ -------------------------------------------------------------------
+ Ex: You wish to access Physical RAM address $35001. That Address is:
+
+ A- 18  17  16  15  14  13  12  11  10   9   8   7   6   5   4   3   2   1   0
+    .....3....  .......5......  .......0......  .......0......  .......1......
+     0   1   1   0   1   0   1   0   0   0   0   0   0   0   0   0   0   0   1
+
+ Taking address bits 18-13, we have: 0 1 1 0 1 0, or $1A, or 26. This is the
+ physical RAM block number, out of the 64 (0-63) available in a 512K machine.
+
+ Now, let's say you'd like to have that block appear to the CPU at Logical
+  Block 0  (0000-1FFF in the CPU's 64K memory map).
+
+ You would store the Physical Block Number ($1A) in either of the two Task Map
+  registers that are used for Logical Block 0 (FFA0 or FFA8). Unless your pgrm
+  that is doing this is in the Vector RAM at FEXX (set MC3 so ALWAYS there),
+  you would want to use your current Task Map register set. If the TR bit at
+  FF91 was 0, then you'd use MMU register FFA0 for the $1A data byte.
+
+ To find the address within the block, use Address Bits 12-0 plus the Logical
+  base address (which in this case is $0000):
+ Now you could read/write address $1001, which would actually be $35001.
+ -----------------------------------------------------------------------------
+
+ FFB0-BF  Color Palette Registers
+
+  Reg bits- 5  4  3  2  1  0
+  CMP ...  I1 I0 P3 P2 P1 P0    Intensity and Phase (16 colors x 4 shades)
+  RGB ...  R1 G1 B1 R0 G0 B0    Red Green Blue      (64 RGB combo's)
+
+  When CoCo Bit is set, and palette registers preloaded with certain default
+values (ask, if you need these), both the RGB and CMP outputs appear the same
+color, supposedly.
+
+  40/80 Column Text Screen Bytes are Even=char, Odd=attribute, in memory.
+  Characters selected from 128 ASCII.  NO text graphics-chars.
+
+  Char Attributes- 8 bits...  F U T T T B B B
+       Flashing, Underline, Text foregrnd, Backgrnd colors 0-7.
+ -----------------------------------------------------------------------------
+
+ FFC0-DF  SAM : same as before (mostly compatible Write-Only Switches)
+  FFD8 = CPU .895 MHz   (no address-dependent speed)
+  FFD9 =     1.79 MHz
+  FFDE = Map RAM/ROM    (RAM accesses use MMU translations)
+  FFDF =     all RAM
+ -----------------------------------------------------------------------------
+
+
+
+GIME2.TXT                      GIME Update - 21 Nov 86  (plus CoCo-3 misc.)
+
+         This is an addendum to GIME.TXT elsewhere in this Library.
+              Meant for all, but as FREE distribution only.
+      Please address info to Kevin Darling 73117,1375 for next update.
+     Let's keep the info flowing! The SIG purpose is to share knowledge.
+
+     Thanks to Greg Law and his friend Dennis W. for much register info.
+   Thanks to Others and Marsha (for my magnifier) on many of the pin-outs.
+ ============================================================================
+
+ GIME Register Corrections:
+
+ $FF91 - Bit 5, Timer Input Select. Looks like 0=slower speed, instead. Haven't
+had time to put a scope on it to check actual clocks, yet.
+
+ $FF92-3 - Interrupt Request Regs: You can also read these regs to see if there
+is a LOW on an interrupt input pin. If you have both the IRQ and FIRQ for the
+same device enabled, you read a Set bit on both regs if that input is low.
+  For example, if you set $FF02=0 and $FF92=2, then as long as a key is held
+down, you will read back Bit 1 as Set.
+  The keyboard interrupt input is generated by simply AND'ing all the matrix
+pins read back at $FF00. Therefore, you could select the key columns you wished
+to get by setting the appropriate bits at $FF02 to zero. Pressing the key drops
+the associated $FF00 line to zero, causing the AND output to go low to the
+GIME. Setting $FF02 to all Ones would mean only the Joystick Fire buttons would
+generate interrupts.
+
+ $FF94-95 - Storing a $00 at $FF94 seems to stop the timer. Also, apparently
+each time it passes thru zero, the $FF92/93 bit is set without having to
+re-enable that Int Request.
+
+ $FF98 - Bit 5 is the artifact color shift bit. Change it to flip Pmode 4
+colors. A One is what is put there if you hold down the F1 key on reset. POKE
+&HFF98,&H13 from Basic if your colors artifact the wrong way for you.
+
+ $FF9F - Horz Offset Reg. If you set Bit 7 and you're in Gfx mode, you can
+scroll across a 128 byte picture. To use this, of course, you'd have to write
+your own gfx routines. On my machine, tho, an offset of more than about 5
+crashes.
+
+ $FFB0-BF - As I originally had, and we all know by now, FFB0-B7 are used for
+the text mode char background colors, and FFB8-BF for char foreground colors,
+in addition to their other gfx use.
+ ============================================================================
+
+ CoCo-3 Internal Tidbits:
+
+  The 68B09E address lines finally have pullup resistors on them. Probably put
+in for the 2MHz mode, they also help cure a little-known CoCo phantom: since
+during disk access, the Halt line tri-states the address, data, and R/W lines,
+some old CoCo's would float those lines right into writing junk in memory. Now
+$FFFF would be presented to the system bus instead.
+  Since the GIME catches the old VDG mode info formerly written to the PIA at
+$FF22, those four now-unconnected lines (PB4-7 on the 6821) might have some use
+for us.
+  Also, Pin 10 of the RGB connector is tied to PB3 on the same PIA. Shades of
+the Atari ST. Could possibly be used to detect type of monitor attached, if we
+like.
+  Data read back from RAM must go thru a buffer, the GIME, and another buffer.
+Amazing that it works at 2 MHz.
+  In case you didn't catch the hint from GIME.TXT on FF90 Bit 2, the option of
+an internal SCS select opens up the possibility of a CoCo-4 with a built-in
+disk controller.
+
+
+
+ ============================================================================
+ GIME PINS:
+                 .                                        .
+    61 63 65 67 01 03 05 07 09                09 ------- 01 68 ------ 61
+ 60 62 64 66 68 02 04 06 08 11 10          10                            60
+ 58 59                      13 12           l                            l
+ 56 57                      15 14           l                            l
+ 54 55                      17 16           l                            l
+ 52 53        Bottom        19 18           l             Top            l
+ 50 51                      21 20           l                            l
+ 48 49                      23 22           l                            l
+ 46 47                      25 24           l                            l
+ 44 45 42 40 38 36 34 32 30 28 26          26                            44
+    43 41 39 37 35 33 31 29 27                27 -------------------- 43
+
+
+ 01 - GND             18 - D6               35 - +5 Volts        52 - A13
+ 02 - XTAL            19 - D7               36 - Z3              53 - A14
+ 03 - XTAL            20 - FIRQ* ->CPU      37 - Z4              54 - A15
+ 04 - RAS*            21 - IRQ* -->CPU      38 - pullup          55 - VSYNC*
+ 05 - CAS*            22 - CART* Int in     39 - Z5              56 - HSYNC*
+ 06 - E               23 - KeyBd* Int in    40 - Z6              57 - D7 (RAM)
+ 07 - Q               24 - RS232* Int in    41 - Z7              58 - D6
+ 08 - R/W*            25 - A0 (fm CPU)      42 - Z8              59 - D5
+ 09 - RESET*          26 - A1               43 - A4 (fm CPU)     60 - D4
+ 10 - WEn* 0          27 - A2               44 - A5              61 - D3
+ 11 - WEn* 1          28 - A3               45 - A6              62 - D2
+ 12 - D0 (CPU)        29 - S2               46 - A7              63 - D1
+ 13 - D1              30 - S1               47 - A8              64 - D0
+ 14 - D2              31 - S0               48 - A9              65 - Comp Vid
+ 15 - D3              32 - Z0 (RAM)         49 - A10             66 - Blue
+ 16 - D4              33 - Z1               50 - A11             67 - Green
+ 17 - D5              34 - Z2               51 - A12             68 - Red
+
+ Notes: WEnx = Write Enables for Banks 0 and 1 RAM
+        S2-0 = (address select code -> 74LS138) :
+  000 -0- ROM     010 -2- FF0X, FF2X     100 -4- int SCS    110 -6- norm SCS
+  001 -1- CTS     011 -3- FF1X, FF3X     101 -5- n/a        111 -7- ??ram??
+
+ ============================================================================
+ CONNECTORS:  (CN5,6 - top to bottom, CN2 - left to right)
+
+  CN6 - Gnd, +5, D1, D0, D2, D3, D6, D7, D5, D4, WEn1, Gnd
+  CN5 - Gnd, D2, D3, D1, WEn0, D0, CAS, D6, D5, D4, D7, Gnd
+  CN2 - Gnd, RAS, Z0, Z1 , Z2, Z3, Z4, Z5, Z6, Z7, Z8, Gnd
+
+ Note: Since a lot of this is by a QUICK observation, CHECK first if using!
+  Tho as far as the CN's go, even if I have messed up all but the CAS, RAS,
+WEn's, and +5, you could connect the extra RAM Dx and Zx pins in parallel to
+each bank in any order. The RAM's don't care.
+  CN6 and CN5 data lines go to separate 256K banks, of course.
+ ============================================================================
+ General Info:
+  Data is written to the RAM by byte thru IC10 or IC11, selected by WEn 0 or 1.
+     (write enable 0 = even addresses, write enable 1 = odd addresses)
+  Two bank RAM data is read back to the GIME thru IC12 & IC13, byte at a time.
+  The CPU can then get it from the GIME by byte.
+   IC 10, 11, 12 = 74LS244 buffer.   IC13 = 74LS374 latch clocked by CAS* rise.
+     RAM Read --> IC12 --> GIME enabled by CAS low. (read first)
+     RAM Read --> IC13 --> GIME enabled by CAS hi.  (latched & read)
+
+ Test Points:
+   TP 2 = E          TP 4 = RAS        TP 6 = Comp Video      TP 9 = Green
+   TP 3 = Q          TP 5 = CAS        TP 8 = Red             TP10 = Blue
+
+
+

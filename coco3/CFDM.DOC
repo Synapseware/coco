@@ -1,0 +1,49 @@
+ The files CFDM34S1.DSK and CFDM34S2.DSK are free sample copies of Rick's
+ Computer Enterprise's COCO FRIENDS DISK MAGAZINE, in virtual disk format, 
+ provided courtesy of Rick Cooper.  They may be used with the emulator after 
+ you have installed the ROMs by selecting the Virtual Disk Menu (with [F2]), 
+ pressing "0" to select drive 0, and then typing "CFDM34S1" as the disk name.
+
+                                                         - Jeff Vavasour
+
+ *----------------------------------------------------------------------------*
+
+ ABOUT/USING COCO FRIENDS DISK MAGAZINE:
+
+ CoCo Friends Disk Magazine (CFDM) is a monthly disk magazine devoted to those
+ who still enjoy using RSDOS on their CoCo 3's.  The required equipment setup
+ is a CoCo 3 with 128K of memory, RGB monitor, and one disk drive.  CFDM is
+ provided on a flippie diskette.  The two files, CFDM34S1.DSK and CFDM34S2.DSK,
+ contain the entire issue #34.  Just load drive 0 with CFDM34S1 and RUN"C" at
+ the OK prompt.  When the startup screen appears, press ENTER to see the 
+ cover picture or CTRL to jump right into the magazine.  At the MAIN MENU
+ use the arrow keys to select a Section, then press ENTER.  Now choose an entry
+ to view (don't choose Entry Writer) via the arrow keys and the ENTER key.
+ Move from page to page by pressing and releasing CTRL followed by the 1, 2, or 
+ 3 key.  Press ESC to quit the entry.  There's a help screen available most of
+ the time.  Just press the ALT key for help... any other key returns you to
+ the CFDM display.  The programs, graphics, and music described on CFDM34S1
+ can be found on CFDM34S2.  Always do a cold start after leaving CFDM34S1.
+ 
+ CFDM will celebrate it's third year serving over 200 faithful CoCoists!  Our
+ members enjoy sharing their programming, music, and graphics efforts with the
+ group.  We also enjoy helping each other with programming and hardware 
+ problems ("Questions & Answers"), reading about our Friends ("Family Tree"),
+ sharing our knowledge and experience ("Articles", "Forum", "Potpourri"), 
+ participating in various projects and contests, and creating new ways to keep
+ our favourite computer alive!
+ 
+ I hope you will enjoy the enclosed issue and decide to join our group.  [Jeff's
+ note: CFDM was been discontinued in December 2000.  Subscriptions are no
+ longer available.  See the link below to find issues on the web.]  My
+ thanks to Jeff Vavasour for giving the CoCo community a boost with his CoCo 3
+ Emulator project!!
+ 
+                                                         - Rick Cooper
+                                                           Editor of CFDM
+ 
+ *----------------------------------------------------------------------------*
+ 
+ CoCo Friends Disk Magazine was discontinued as of December 2000.  Visit
+ http://www.vavasour.ca/jeff/trs80.html#links to find more issues of CFDM
+ on the web.

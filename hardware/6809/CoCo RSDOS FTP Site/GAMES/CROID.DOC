@@ -1,0 +1,90 @@
+*** Please note that this doc file was re-typed from the original ***
+*** game docs, which had clipart used to show various aspects of  ***
+*** the game. I believe it was originally done on Max-10. Bob D.  ***
+
+CROID
+by Andrew Simpson (andydrew@powerup.com.au)
+
+I  wish to thank ANDREW McGEE author of the joystick and fade routines used
+in  this  program.   NICKOLAS MARENTES for help with graphics and hints and
+tips that made the program possible.
+
+	You  are trapped in a large maze.  You must of course get out.  But
+before you do that you need to plant a bomb.  The bomb that you have has no
+power.  To charge the bomb you must walk over charge plates.
+
+[clipart of a rectangular block with horizontal lines accross it]
+
+    There  is  one  in every room.  So you go from room to room charging up
+the  bomb.  When you walk over a plate some of the energy is used to charge
+your  DEFLECTOR SHIELD, bomb timer, and to increase your PLAST BOLT battery
+capacity.   When  you  have sufficient power then go to the drop off point.
+This  is  displayed  on  the map as a yellow dot.  (you are the white one).
+The power left in the timer is used in the next level.
+	When  you  walk  over the hole in the floor the bomb countdown will
+start.  You then need to get to the pickupup point.  (the orange dot on the
+map)
+
+[clipart of rectangular block with vertical stripes]
+
+	When  you  walk  over  the  transfer plate you are sent to the next
+maze.
+
+	Things you will meet on the way.
+
+		LROIDS
+
+	These are your enemies (well, one of them).  They seem to just walk
+aimlessly,  but they are all looking after a different part of the chamber.
+When  they are in position they will fire at you.  There is nothing you can
+do  to avoid their BOLT but to hide behind a wall.  To get them out of your
+way just shoot them.
+
+		CRUDS
+
+	Not  even the LROIDS like them.  They attach themselves to the side
+of  a wall and crawl around it.  When they get bored they will jump over to
+another  wall.   When  they  get close to you they attach a hose to you and
+suck  the  deflector  shield  power out of you.  To stop them, hit the wall
+just  in  front  of them.  They will stay powerless for five seconds.  Just
+enough  time  to get past.  (The cruds, when powerless will hover whereever
+they  are  hit.   When  they  regain  power,  they  may  not go in the same
+direction.) They can also fire over the wall.
+
+
+    CROID'S CONTROL
+
+    Using  the  right  joystick, button one (black) engages movement in the
+direction  that the joystick is pointing.  Pressing button two (red), fires
+a bolt.  This bolt may then be guided by holding down the button and moving
+the  joystick  in  the  direction  you  want.   How far the bolt will go is
+governed  by  the  amount  of  power  you  have  stored.   When the bolt is
+destroyed,  the  battery  will slowly recharge.  Every time you move over a
+charge plate your battery capacity will be increased.
+
+[clipart of CROID.  Looks a little like a DALEK from Dr.  Who]
+
+	SHIELD
+
+	The  CROID's  shield  level is displayed at the bottom right of the
+display bar.  When you walk over the plate your power will be increased.
+
+[clipart  of  the  display  bar:  Score at top, then map, then bomb timer,]
+[with the charge and power level indicators side-by-side at the bottom]
+
+	ENTERING YOUR NAME IN THE HIGH SCORES
+
+	Using  the  joystick,  move  it  left or right to guide the marker.
+When  it  is under the letter you want, press the red button.  When you are
+finished, press the black button.
+
+	SYSTEM REQUIREMENTS
+
+	128K Color Computer 3, Color TV or RGB monitor.
+	1 disk drive
+	a 2 button joystick
+
+	or
+
+	2 one button joysticks (if you only have one button joysticks, then
+wherever it says "button two (black)" use the button on the left joystick.

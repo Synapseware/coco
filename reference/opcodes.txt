@@ -1,0 +1,6 @@
+			
+
+// all opcodes preceeded by 0x10
+
+
+// all opcodes preceeded by 0x11

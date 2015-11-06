@@ -1,0 +1,1454 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\OS-9 L-II Technical Reference Ch 3.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<U>Chapter 3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<B><U>Memory Modules
+</UL>
+</UL>
+</UL>
+</UL>
+</U></B>
+</FONT>
+</H2>
+</U></B><FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In Chapter 2, you learned that OS-9 is based on the concept that
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+memory is modular. This means that each program is considered
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to be an individually named 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>object.</I>
+</FONT>
+</P>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You also learned that each program loaded into memory must be
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+in the module format. This format lets OS-9 manage the logical
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+contents of memory, as well as the physical contents. Module
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+types and formats are discussed in detail 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>in </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+this chapter.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Module Types<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+There are several types of modules. Each has a different use and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+function. These are the main requirements of a module:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+It cannot modify itself.
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; It must be position-independent so that OS-9 can load or
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+relocate it wherever space is available. In this respect,
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the module format is the OS-9 equivalent of 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>load records
+</UL>
+</UL>
+</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+used in older operating systems.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A module need not be a complete program or even 6809 machine
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+language. It can contain BASIC09 I-code, constants, single sub
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+routines, and subroutine packages.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Module Format<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Each module has three parts: a module 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>header, </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+a 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>module body,</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and a 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>cyclic-redundancy-check value (CRC </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+value).
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000000.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000001.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-1<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Technical Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<U>Module Header
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000002.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+<P ALIGN="CENTER">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Program
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Constants
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CRC Value
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Figure 3.1
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Module Header<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+At the beginning of the module (the lowest address) is the mod
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ule header. Its form depends upon the module's use.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The header contains information about the module and its use.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This information includes the following:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Size
+</UL>
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Type (machine code, BASIC09 compiled code, and so on
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Attributes (executable, re-entrant, and so on)
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Data storage memory requirements
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Execution starting address
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Usually, you do not need to write routines to generate the mod
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ules and headers. All OS-9 programming languages automati
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cally create modules and headers.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Module Body<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The module body contains the program or constants. It usually
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+is pure code. The module name string is included in this area.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Figure 3.2 provides the offset values for calculating the location
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+of a module's name. (See "Offset to Module Name".)
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>CRC Value<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The last three bytes of the module are the Cyclic Redundancy
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Check (CRC) value. The CRC value is used to verify the integ
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+rity of a module.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000003.JPG" WIDTH="22" HEIGHT="4">
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000004.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-2<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Memory Modules / 3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When the system first loads the module into memory, it per
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+forms a 25-bit CRC over the entire module, from the first byte of
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the module header to the byte immediately before the CRC. The
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CRC polynomial used is $800FE3.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+As with the header, you usually don't need to write routines to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+generate the CRC value. Most OS-9 programs do this
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+automatically.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Module Headers: Standard Information<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The first nine bytes of all module headers are defined as follows:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Relative
+</UL>
+<BR>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Address Use
+</UL>
+<BR>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$00,$01 Sync bytes ($87,$CD)
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$02,$03 Module size
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$04,$05 Offset to module name
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$06 Module/Language. type
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$07 Attributes/Revision level
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$08 Header check
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Figure 3.2
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sync Bytes<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The sync bytes specify the location of the module. (The first sync
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+byte is the start of the module.) These two bytes are constant.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Module Size<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The module size specifies the size of the module in bytes
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(includes CRC).
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Offset to Module Name<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The offset to module name specifies the address of the module
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+name string relative to the start of the module. The name string
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+can be located anywhere in the module. It consists of a string of
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ASCII characters with the most significant bit set on the last
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+character.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000005.JPG" WIDTH="18" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Type/Language Byte<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The type/language byte specifies the type and language of the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+module.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The four most significant bits of this byte indicate the type.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Eight types are pre-defined. Some of these are for OS-9's inter
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+nal use only. The type codes are given here (0 is not a legal type
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+code):<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Code Module Type </B>Name<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$ lx Program module Prgrm<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$2x Subroutine module Sbrtn<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$3x Multi-module (for future use) multi<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$4x Data module Data<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$5x-$Bx User-definable module<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$Cx OS-9 system module Systm<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$Dx OS-9 file manager module FlMgr<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$Ex OS-9 device driver module Drivr<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$Fx OS-9 device descriptor module Devic<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Figure 3.3<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The four least significant bits of Byte 6 indicate the language<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(denoted by x in the previous Figure). The language codes are<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+given here:<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Code Language<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$x0 Data (non-executable)<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$x1 6809 object code<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$x2 BASIC09 I-code<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$x3 PASCAL P-code<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$x4-$xF Reserved for future use<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Figure 3.4<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+By checking the language type, high-level language runtime<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+systems can verify that a module is the correct type before<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+attempting execution. BASIC 09, for example, can run either I<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+code or 6809 machine language procedures arbitrarily by check<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ing the language type code.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Attributes/Revision Level Byte<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The attributes/revision level byte defines the attributes and revi
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sion level of the module.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-4<BR>
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000006.JPG" WIDTH="20" HEIGHT="3">
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000007.JPG" WIDTH="20" HEIGHT="4">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Memory Modules / 3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The four most significant bits of this byte are reserved for mod
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ule attributes. Currently, only Bit 7 is defined. When set, it indi
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cates the module is re-entrant and, therefore, 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>shareable.</I>
+</FONT>
+</P>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The four least significant bits of this byte are a revision level in
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the range 0 to 15. If two or more modules have the same name,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+type, language, and so on, OS-9 keeps in the module directory
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+only the module having the highest revision level. Therefore, you
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+can replace or patch a ROM module, simply by loading a new,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+equivalent module that has a higher revision level.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Note: </B>A previously linked module cannot be replaced until<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+its link count goes to zero.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Header Check<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The header check byte contains the one's complement of the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Exclusive-OR of the previous eight bytes.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Module Headers: Type-Dependent<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Information<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+More information usually follows the first nine bytes of a module
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+header. The layout and meaning vary, depending on the module
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+type.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Module types $Cx-$Fx (system module, file manager module,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+device driver module, and device descriptor module) are used
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+only by OS-9. Their formats are given later in the manual.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Module types $lx through $Bx have a general-purpose executa
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ble format. This format is often used in programs called by
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+F$Fork or F$Chain. Here is the format used by these module
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+types:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-5<BR>
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000008.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000009.JPG" WIDTH="262" HEIGHT="2">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000010.JPG" WIDTH="306" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Executable Memory Module Format<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Relative<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Address<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$00<BR>
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000011.JPG" WIDTH="22" HEIGHT="11">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$02<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$03<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$04<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$05<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$06<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$07<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$08<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$09<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$OA<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$OB<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$OC<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$OD<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Use<BR>
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Sync Bytes ($87CD)<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Module Size (bytes)<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Module Name Offset<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Type  Language<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Attributes  Revision<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Header Parity Check<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Execution Offset<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Permanent Storage Size<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+(Additional optional header<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+extensions)<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Module Body<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+object code, constants,<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+and so on<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+CRC Check Value<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Figure 3.5<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Check<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Range<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+header<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+parity<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+module<BR>
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000012.JPG" WIDTH="120" HEIGHT="240">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+3-6<BR>
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000013.JPG" WIDTH="20" HEIGHT="4">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>M<U>e</U>mory Mo<U>d</U>u<U>les </U>/ <U>3<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000014.JPG" WIDTH="200" HEIGHT="2">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+As you can see from the preceding chart, the executable memory
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+has four extra bytes in its header. They are:
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+r<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$09,$OA Execution offset
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$OB,$OC Permanent storage size
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Execution Offset. </B>The program or subroutine's offset starting
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+address, relative to the first byte of the sync code. A module that
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+has multiple entry points (such as cold start and warm start)
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+might have a branch table starting at this address.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Permanent Storage Size. </B>The minimum number of bytes of
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+data storage required to run. Fork and Chain use this number
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to allocate a process's data area.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If the module is not directly executed by a Fork or Chain system
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+call (for instance a subroutine package), this entry is not used by
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS-9. It is commonly used to specify the maximum stack size
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+required by re-entrant subroutine modules. The calling program
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+can check this value to determine if the subroutine has enough
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+stack space.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When OS-9 starts after a single system reset, it searches the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+entire memory space for ROM modules. It finds them by looking
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+for the module header sync code ($87,$CD).
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When OS-9 detects the header sync code, it checks to see if the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+header is correct. If it is, the system obtains the module size
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+from the header and performs a 24-bit CRC over the entire mod
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ule. If the CRC matches, OS-9 considers the module to be valid
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and enters it into the module directory. All ROM modules that
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+are present in the system at startup are automatically included
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+in the system module directory.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+After the module search, OS-9 links to the component modules it
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+found. This is the secret to OS-9's ability to adapt to almost any
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6809 computer. It automatically locates its required and optional
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+component modules and rebuilds the system each time it is
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+started.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///G:\MYDOCU~1\OS-9LE~1\TECHIN~1\HTML\CH3~1\GR000015.JPG" WIDTH="20" HEIGHT="18">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-7<BR>
+</FONT>
+</BODY>
+</HTML>

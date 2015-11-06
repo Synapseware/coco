@@ -1,0 +1,168 @@
+Extended Color Basic Summary
+
+Under construction, more details on the way
+  ------------------------------------------------------------------------
+
+Statements
+   AUDIO ON
+   AUDIO OFF
+   CIRCLE(x,y),r,c,hw,start,end
+   CLEAR n,h               Reserve n bytes for strings, and
+                           use only up to address h for BASIC
+   CLOAD
+   CLOAD name
+   CLOADM
+   CLOADM name
+   CLOADM name,offset
+   CLOSE d
+   CLS c
+   COLOR (fg,bg)
+   CONT
+   CSAVE name
+   CSAVE name,A
+   CSAVEM name,a1,a2,ax
+   DATA
+   DEF FN
+   DEFUSERn = addr
+   DEL
+   DIM
+   DLOAD
+   DRAW string
+   EDIT linenumber
+   END
+   EXEC
+   EXEC address
+   FOR .. TO .. STEP / NEXT
+   GET (start)-(end),dest,G
+   GOSUB linenumber
+   GOTO linenumber
+   IF .. THEN .. ELSE
+   INPUT
+   INPUT #-1
+   LET
+   LIST
+   LLIST
+   LINE (x1,y1)-(x2,y2),PSET,BF
+   LINE (x1,y1)-(x2,y2),PRESET,BF
+   LINE INPUT
+   MOTOR ON
+   MOTOR OFF
+   NEW
+   ON .. GOSUB
+   ON .. GOTO
+   OPEN m,#d,filename
+   PAINT (x,y),c,b
+   PCLEAR n
+   PCLS c
+   PCOPY
+   PLAY string
+   PMODE mode,startpage
+   POKE addr,value         Save value at address addr, where
+                           0 <= addr <= 65535, and 0 <= value <= 255
+   PRESET (x,y)
+   PRINT
+   PRINT #-1
+   PRINT #-2
+   PRINT TAB
+   PRINT USING
+   PRINT @location
+   PSET (x,y,c)
+   PUT (start)-(end),source,action
+   READ
+   REM
+   RENUM newline,startline,increment
+   RESET (x,y)
+   RESTORE
+   RETURN
+   RUN
+   SCREEN screentype,colorset
+   SET (x,y,c)
+   SKIPF
+   SKIPF name
+   SOUND tone,duration
+   STOP
+   TROFF
+   TRON
+
+Functions
+
+   ABS(num)
+   ASC(str)
+   ATN(num)
+   CHR$(charcode)
+   COS(num)
+   EOF(f)
+   EXP(num)
+   FIX(num)
+   HEX$(num)
+   INKEY$
+   INSTR(first,str,substr)
+   INT(num)
+   JOYSTK(j)                Reads joystick value j:
+                                0=left_horiz  1=left_vert
+                                2=right_horiz 3=right_vert
+   LEFT$(str,length)
+   LEN(str)
+   LOG(num)
+   MEM
+   MID$(str,first,len)
+   PEEK(address)
+   POINT(x,y)
+   POS(dev)
+   PPOINT(x,y)
+   RIGHT$(str,length)
+   SGN(num)
+   SIN(num)
+   STRING$(length,charcode)
+   STRING$(length,str)
+   STR$(num)
+   SQR(num)
+   TAN(num)
+   TIMER
+   USRn(num)               Calls the machine-language subroutine whose
+                           address was defined by DEFUSRn, where 0 <= n <= 9
+   VAL(str)
+   VARPTR(var)
+
+Operators
+   ^               Exponentiation
+   -,+             Unary negative, positive
+   *,/             Multiplication, division
+   +,-             Addition and concatenation, subtraction
+   <,>,=,<=,>=,<>  Relational tests
+   NOT, AND, OR    Logical operators
+
+Error messages
+   Abbrev.  Explanation
+     /0     Division by zero
+     AO     File already open
+     BS     Bad subscript - out of range
+     CN     Cannot continue
+     DD     Redimensioned array
+     DN     Device number error
+     DS     Direct statement in file
+     FC     Illegal function call
+     FD     Bad file data
+     FM     Bad file mode
+     ID     Illegal direct
+     IE     Input past end of file
+     I/O    Input/Output error
+     LS     String too long
+     NF     NEXT without FOR
+     NO     File not open
+     OD     Out of data
+     OM     Out of memory
+     OS     Out of string space
+     OV     Overflow
+     RG     RETURN without GOSUB
+     SN     Syntax error
+     ST     String formula too complex
+     TM     Type mismatch
+     UL     Undefined line number
+
+Back to my top-level CoCo page
+
+  ------------------------------------------------------------------------
+7-Jun-98
+yakowenk@csx.unxc.edu
+(remove all "x"s to get a valid address)

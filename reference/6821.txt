@@ -1,0 +1,160 @@
+ The Dragon and Tandy microcomputers have two Motorola 6821 peripheral
+ interface adapters (PIA) mapped into the address space between $FF00 and
+ $FF3F. The first of these, PIA-0, is located $FF00-$FF03, and the second,
+ PIA-1, is located $FF20-$FF23. The Dragon 64 also has a third PIA at
+ $FF04-$FF07 but this is not discussed here.
+
+ Each PIA contains two 8-bit I/O ports, port A and port B, where each port
+ and each of the 16 I/O pins are independently programmable as either input
+ or output pins. Two control/interrupt lines are also associated with each
+ port, allowing one extra input/output pin and one input-only pin per port.
+ These pins can trigger an interrupt upon 0->1 or 1->0 transitions, or
+ 'follow' outputs, and are therefore slightly more sophisticated than simple
+ buffers, but can nevertheless be used simply as additional I/O.
+
+ Each port is accessed and controlled through 3 registers. These are the
+ peripheral data register (PDR), the data direction register (DDR) and the
+ control register (CR). For PIA-0 port A the control register is mapped into
+ the CPU address space at $FF01. However, only two memory addresses are used
+ for each port and therefore both the PDR and DDR cannot be made available
+ simultaneously. Instead bit 2 of the control register must be set or cleared
+ to select whether it is the PDR or DDR which is visible at $FF00. This
+ applies similarly to port B on PIA-0, and both ports of PIA-1.
+
+ The memory map for the four ports of the Dragon/Tandy is as follows:
+
+
+  ++---------+-------------------+----------------------------------------++
+  || Address | PIA & Register Id |   Description of Dragon/Tandy Usage    ||
+  ++---------+-------------------+----------------------------------------++
+  ||  $FF00  |  PIA0-A PDR/DDR   | Keyboard and joystick input.           ||
+  ||  $FF01  |  PIA0-A CR        | MUX selector.                          ||
+  ||         |                   |                                        ||
+  ||  $FF02  |  PIA0-B PDR/DDR   | Keyboard input and printer output.     ||
+  ||  $FF03  |  PIA0-B CR        | MUX selector and timer interrupt.      ||
+  ++---------+-------------------+----------------------------------------++
+  ||  $FF20  |  PIA1-A PDR/DDR   | 6-bit DAC, strobe, cassette input.     ||
+  ||  $FF21  |  PIA1-A CR        | Cassette relay.                        ||
+  ||         |                   |                                        ||
+  ||  $FF22  |  PIA1-B PDR/DDR   | VDG register and ROM/sound/busy bits.  ||
+  ||  $FF23  |  PIA1-B CR        | Sound enable, cartridge interrupt.     ||
+  ++---------+-------------------+----------------------------------------++
+
+ In normal operation the PDR is left visible for each port, with the DDR
+ only made visible when necessary during configuration or reconfiguration.
+
+ The format of the port registers is as follows:
+  PDR - 8 bits of data as currently being input/output on the device pins.
+  DDR - 8 bits, each indicating whether the corresponding PDR bits are for
+        input (0) or output (1).
+
+  CR  - bit 7: control line 1 interrupt status (0 = idle, 1 = request)   RO
+        bit 6: control line 2 interrupt status (0 = idle, 1 = request)   RO
+        bit 5: control line 2 direction (0 = input, 1 = output)          RW
+        bit 4: control line 2 mode (0 = 1->0, 1 = 0->1 or 'follow')      RW
+        bit 3: control line 2 enable (0 = disable, 1 = enable)           RW
+        bit 2: PDR/DDR select (0 = DDR, 1 = PDR)                         RW
+        bit 1: control line 1 mode (0 = 1->0, 1 = 0->1)                  RW
+        bit 0: control line 1 enable (0 = disable, 1 = enable)           RW
+                                                          RO = Read only
+                                                          RW = Read/write
+
+ All registers are initialised to 0 upon hardware reset, although a pull-up
+ resistor selects the 32K compatible ROM in Dragon 64 (see $FF22 below). Here
+ is the complete bit-by-bit description of the Dragon/Tandy PIA connections:
+
+ +---------+------+---------------------------------------------------------+
+ | Address | Bit  |                 PDR / CR  Description                   |
+ +---------+------+---------------------------------------------------------+
+ |  $FF00  |  b7  | Joystick comparator - result of DAC value compared with |
+ |         | 	  |  the wiper selected by MUX.                             |
+ |         |  b6  |                      \                                  |
+ |         |  b5  |                       \                                 |
+ |         |  b4  |                        \   Keyboard                     |
+ |         |  b3  |                         >  row            0 = pressed   |
+ |         |  b2  |                        /   input.         1 = released  |
+ |         |  b1  | Left fire button.     /                                 |
+ |         |  b0  | Right fire button.   /                                  |
+ +---------+------+---------------------------------------------------------+
+ |  $FF01  |  b7  | Interrupt request (unused).                             |
+ |         |  b6  | Interrupt request (unused).                             |
+ |         |  b5  | \                                                       |
+ |         |  b4  |  >  MUX output bit 0 (see below).                       |
+ |         |  b3  | /                                                       |
+ |         |  b2  | DDR/PDR                                                 |
+ |         |  b1  | \                                                       |
+ |         |  b0  |  >  Unused in D32, selects timer rate in D64.           |
+ +---------+------+---------------------------------------------------------+
+ |  $FF02  |  b7  | \                                                       |
+ |         |  b6  |  \                                                      |
+ |         |  b5  |   \                                                     |
+ |         |  b4  |    \  Keyboard column output (0 = enable, 1 = disable). |
+ |         |  b3  |    /  Printer parallel data output (strobe using $FF20  |
+ |         |  b2  |   /      bit 1). Dragon only, as Tandy has serial port. |
+ |         |  b1  |  /                                                      |
+ |         |  b0  | /                                                       |
+ +---------+------+---------------------------------------------------------+
+ |  $FF03  |  b7  | IRQ interrupt request (read from PDR to clear).         |
+ |         |  b6  | Interrupt request (unused).                             |
+ |         |  b5  | \                                                       |
+ |         |  b4  |  >  MUX output bit 1 (see below).                       |
+ |         |  b3  | /                                                       |
+ |         |  b2  | DDR/PDR                                                 |
+ |         |  b1  | \                                                       |
+ |         |  b0  |  >  50Hz timer IRQ enable/disable (60Hz in Tandy).      |
+ +---------+------+---------------------------------------------------------+
+ |  $FF20  |  b7  | \                                                       |
+ |         |  b6  |  \                                                      |
+ |         |  b5  |   \   6-bit DAC (used for sound and joystick reading).  |
+ |         |  b4  |   /                                                     |
+ |         |  b3  |  /                                                      |
+ |         |  b2  | /                                                       |
+ |         |  b1  | Printer strobe output in Dragon (on 0->1 transition).   |
+ |         |      | Printer serial data output in Tandy.                    |
+ |         |  b0  | Cassette data input.                                    |
+ +---------+------+---------------------------------------------------------+
+ |  $FF21  |  b7  | Interrupt request (unused in D32, NMI in D64).          |
+ |         |  b6  | Interrupt request (unused).                             |
+ |         |  b5  | \                                                       |
+ |         |  b4  |  >  Cassette motor relay output (0 = off, 1 = on).      |
+ |         |  b3  | /                                                       |
+ |         |  b2  | DDR/PDR                                                 |
+ |         |  b1  | \                                                       |
+ |         |  b0  |  >  Printer ACK (NMI in D64, usually disabled).         |
+ +---------+------+---------------------------------------------------------+
+ |  $FF22  |  b7  | \                                                       |
+ |         |  b6  |  \                                                      |
+ |         |  b5  |   > VDG video mode selector output.                     |
+ |         |  b4  |  /                                                      |
+ |         |  b3  | /                                                       |
+ |         |  b2  | RAM size input in D32 and Tandy (0 = 16K, 1 = 32K).     |
+ |         |      | ROM select output in D64 (0 = 64K, 1 = 32K compatible). |
+ |         |  b1  | Single bit sound output.                                |
+ |         |  b0  | Printer busy input (0 = available, 1 = busy).           |
+ +---------+------+---------------------------------------------------------+
+ |  $FF23  |  b7  | FIRQ interrupt request (read from PDR to clear).        |
+ |         |  b6  | Interrupt request (unused).                             |
+ |         |  b5  | \                                                       |
+ |         |  b4  |  >  Sound output enable/disable.                        |
+ |         |  b3  | /                                                       |
+ |         |  b2  | DDR/PDR                                                 |
+ |         |  b1  | \                                                       |
+ |         |  b0  |  >  Cartridge FIRQ enable/disable.                      |
+ +---------+------+---------------------------------------------------------+
+
+ The MUX outputs are connected to a 2-bit multiplexer that is used to select
+ which of the analogue joystick wipers are compared against the DAC output
+ value by the comparator. The wipers can be selected as follows:
+
+   00 = right joystick, x wiper
+   01 = right joystick, y wiper
+   10 = left joystick,  x wiper
+   11 = left joystick,  y wiper
+
+
+ The MUX also selects the current sound source as follows:
+
+   00 = 6-bit DAC
+   01 = cassette
+   10 = cartridge?
+   11 = cartridge?

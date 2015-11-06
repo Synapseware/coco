@@ -1,0 +1,42 @@
+ANSI11.BAS   [00] COCO 3 ANSI graphics screen editor
+APPLES.BAS   [00] COCO 3 Apple sampler for mother
+AUTUMN.BAS   [00] COCO 3 Picture of Autumn scene
+BATMAN.BAS   [00] COCO 3 Batman logo
+BJOINK.BIN   [00] COCO 3 Steve Bjork's bouncing head
+CC2GIF.BIN   [00] COCO 2 GIF picture viewer
+CC3DEMO.ARC  [00] COCO 3 Amazing ! graphics and music demo
+CC3GIF.BIN   [01] COCO 3 Gif picture viewer
+COCODEMO.BIN [00] COCO 3 Another good demo (displays banner)
+CUBE.BIN     [00] COCO 2 3D rotating cube
+DOODLE.BAS   [00] COCO 3 Graphics doodling
+EROTICA.BAS  [01] COCO 2 R rated slide show
+FIRESTRM.BIN [00] COCO 3 Firestorm designs
+FISH.ARC     [00] COCO 2 Fish tank
+FISHTANK.ARC [00] COCO 3 Fish tank - This version includes ramdisk
+FRACTAL.BAS  [00] COCO 2 Fractal mountain
+GALLERY.BIN  [00] COCO 3 MGE picture viewer
+GLASDEMO.BIN [00] COCO 2 Breaking glass demo
+HEADROOM.ARC [00] COCO 3 Max Headroom animation
+HIRESJSK.CM3 [00] COCO 3 Hires joystick mod schematic
+IMAGE30.ARC  [00] COCO 3 Graphics sprites image editor
+JEWISH.BAS   [00] COCO 3 Graphics for Hanakkuh
+KALSCOPE.BAS [00] COCO 2 Kaleidoscope
+LOADSAVE.BAS [00] COCO 3 Save and load HSCREEN 2 pictures
+LOVETREK.BAS [00] COCO 2 Love Boat and Star Trek slide show
+MACCC2.BIN   [00] COCO 2 MAC picture viewer
+MACCC3.BIN   [00] COCO 3 MAC picture viewer
+MICKEY.BAS   [00] COCO 3 Picture of Mickey Mouse and Donald Duck
+PAGETURN.BAS [00] COCO 3 Multiple PMODE 4 picture viewer
+PIX2BAS.BAS  [00] COCO 2 Convert PMODE 4 picture to ASCII
+PMODE.BAS    [00] COCO 2 Convert between PMODE's
+RGBHELLO.BAS [00] COCO 3 Modified RGB color table for TP20.ARC
+SAWMILL.BAS  [00] COCO 3 Sawmill picture
+SEASCAPE.ARC [00] COCO 3 Seascape
+SHUTTLE.BIN  [00] COCO 2 Blastoff of the space shuttle
+TP20.ARC     [00] COCO 3 View for many picture formats including GIF
+TRIBALL.ARC  [00] COCO 3 Ray tracing graphics demo
+UNICORN.BAS  [00] COCO 3 Unicorn picture
+VUMASTER.BIN [00] COCO 3 View various picture formats
+WATRFALL.ARC [00] COCO 3 Waterfall animation
+WORLD3D.BAS  [02] COCO 2 View world from any point
+

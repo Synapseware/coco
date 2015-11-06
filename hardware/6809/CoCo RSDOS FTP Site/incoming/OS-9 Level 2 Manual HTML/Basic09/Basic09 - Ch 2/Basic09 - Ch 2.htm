@@ -1,0 +1,395 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~3\Basic09 - Ch 2.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<UL>
+<UL>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<U>Chapter 2
+</UL>
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<B>Sample Session</B>
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+</B><FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~3\GR000000.JPG" WIDTH="18" HEIGHT="3">
+</FONT>
+</H2>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Although BASIC09 has several functions or modes, they all work
+together to make programming as simple as possible. The easiest
+way to learn how BASIC09 and its functions operate is to write
+and run a program. This chapter provides sample statements
+and instructions to help you learn how to use BASIC09.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To create and execute a program:<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1. Load BASIC09 and enter the edit mode.
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+2. Type the BASIC program.
+</UL>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3. Enter the system mode and test the program's execution.
+4. Debug the program. (Correct any programming errors.)
+</UL>
+</FONT>
+</P>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+5. Save the completed program on disk.
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6. Load the program into memory and use it.
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To begin the program, execute BASIC09. To be sure you have
+enough room in which to work, reserve a workspace of 10,000
+bytes by typing:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+basic09 #10K ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The BASIC09 system mode prompt, 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+B:, 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+appears after the copyright message. In the system mode, you can do such things as
+save and load procedures, change workspace size, and rename
+and delete procedures.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Creating a Procedure<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To write procedures, you must be in the edit mode. You get there
+by typing:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+e ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This causes the screen prompt to change to 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+E:, 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and the screen
+displays:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+PROCEDURE Program
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because you didn't give a program name when you entered 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+e,
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 selects the name Program for you. Now, you must
+write the code to make Program do something.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~3\GR000001.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+2-1<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Commands and Program Lines<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+There are two responses you can give at the edit mode prompt.
+You can type an edit command, or you can type a program line.
+If you type a program line, <B>you must type a space as the first
+character in the line. </B>If you type an edit command, do not precede it with a space. To make listings easier to read, this manual uses the symbol 0 to indicate spaces before every line. It also
+uses the 0 symbol in some procedure lines to indicate the correct
+number of spaces needed. Whenever you see either a space or a 0
+symbol in a procedure you are typing, press the space bar.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To type the procedure in this chapter, begin each line at the 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>E
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+prompt. After typing a line, check it for mistakes. If you make a
+mistake, use 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>F&plusmn;:) </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to move the cursor back. Correct the mistake.
+Then, type the remaining portion of the line. If there are no mistakes, press 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER .
+</FONT>
+</P>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 checks each line when you press 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+. If you make a
+mistake in syntax or form, BASIC09 displays an error message.
+An arrow points to the place in the program line where the error
+occurred, and a message number indicates the type of error
+Refer to Appendix A for an explanation of the error codes.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If, after you enter a line, you find that you made a mistake, type
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+d ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to delete the line. Then, retype the line. Later, the manual tells you how to change text in existing lines.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following program helps you do a bit of arithmetic. To get a
+feel for BASIC09, type and execute the program as directed.
+Remember, when you see either a space or 0, press the space bar.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pDIM NUMBER1,NUMBER2:INTEGER
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DINPUT Type "Number...";NUMBER1
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OINPUT "Type another ....";NUMBER2
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "The sum of the numbers </TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+i5... 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"&middot;
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT NUMBER1 + NUMBER2
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OEND
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~3\GR000002.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~3\GR000003.JPG" WIDTH="301" HEIGHT="2">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+2-2<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sample Session / 2
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+Executing a Procedure<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To execute the procedure, quit the edit mode by typing q 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER .
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The compiler further processes your procedure, and the 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+H
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+prompt reappears. To execute the program, type:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+run ENTER
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Type in numbers when asked, and the procedure produces their
+sum. If you want to save the program on disk, the next chapter
+tells you how. Chapter 4 introduces several other edit mode commands to search, display, insert, and change programs lines and
+text.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~3\GR000004.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~3\GR000005.JPG" WIDTH="18" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+2-3<BR>
+</FONT>
+</BODY>
+</HTML>

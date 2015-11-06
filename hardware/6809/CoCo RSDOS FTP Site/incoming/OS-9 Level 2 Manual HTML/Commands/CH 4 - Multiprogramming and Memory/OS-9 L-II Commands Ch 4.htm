@@ -1,0 +1,2077 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>E:\MYDOCU~1\OCR\OS-9CO~1\CH4~1\OS-9 L-II Commands Ch 4.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<U>Chapter 4
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="CENTER">
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+<B>Multiprogramming and</B>
+</FONT>
+</H2>
+<H2 ALIGN="CENTER">
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+<B><U>Memory Management</U></B>
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+One of OS-9's most valuable capabilities is <I>multiprogramming</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sometimes called timesharing or multitasking. This feature lets
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+your computer run more than one process at the same time.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Multiprogramming can be a time saving advantage in many sit
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+uations. For example, you can edit one program while the system
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+prints another. Or you can use your Color Computer to control a
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+household alarm system, lighting, and heating and at the same
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+time use it for routine work or entertainment.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS-9 uses multiprogramming regularly for internal functions.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can use it by putting an ampersand at the end of a com
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mand line. Doing this causes the shell to run your command as
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+a <I>background, </I>or concurrent, task.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To run several processes simultaneously, OS-9 must coordinate
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+its input/output system and CPU time and allocate its memory
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+as needed. This chapter gives you some basic information about
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+how OS-9 manages its resources to optimize system efficiency
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and make efficient multiprogramming a reality.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Processor Time Allocation<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>and Timeslicing<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CPU time is the most precious resource of a computer. If the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CPU is busy with one task it cannot perform another. For exam
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ple, many processes must wait for you to enter information from
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the terminal. While the process is waiting, your computer's CPU
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+must also wait. Your computer is limited by your typing speed.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+On many systems there is no way around such a bottle neck.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+However, OS-9 is more efficient. It assigns CPU time to pro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cesses only as they need it.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To do this, OS-9 uses <I>timeslicing. </I>Timeslicing, as described in
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the following paragraphs, lets all active processes share CPU
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+time.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A real-time clock interrupts the Color Computer's CPU 60 times
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+each second. The interruption points are called <I>ticks, </I>and the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+spaces between ticks are called timeslices.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+4-1
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Commands Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS-9 allocates timeslices to each process. At any tick it can sus
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+pend execution of one process and begin execution of another.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This starting and stopping of processes does not affect their
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+execution.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+How often OS-9 gives a process timeslices depends on the pro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cess's priority relative to the priority of other active processes.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can access priority using a decimal number from 0 through
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+255, where 255 is the highest priority.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS-9 automatically gives the shell a priority of 128. Because
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+child processes inherit their parents' priorities, the shell's child
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+processes also have priorities of 128. You can find a process's
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+priority with the PROCS command, and can change it using the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+SETPR command.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You cannot compute the exact percentage of CPU time assigned
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to any particular process, because there are some dynamic vari
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ables involved, such as the time the process spends waiting for
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1/O devices. But you can approximate the percentage by dividing
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the process's priority by the sum of the priority of all active
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+processes:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+process's CPU share = <U>priority of the process
+</UL>
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sum of the priorities
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+of all active processes.
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Note: </B>Timeslicing happens so quickly that it looks as if all
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+processes execute simultaneously and continuously. If, how
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ever, the computer becomes overloaded with processing, you
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+might notice a delay in response to input from the termi
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+nal. Or, you might notice that a procedure program takes
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+longer than usual to run.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Process States<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The CPU time allocation system automatically assigns each pro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cess one of three states that describes its current status. Process
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+states are important for coordinating process execution. A pro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cess can have only one state at any instant, although state
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+changes can be frequent. The states are:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Active-Applies to processes currently able to work
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+that is, those not waiting for input or for anything else.
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+These are the only processes assigned CPU time.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4-2<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Multip</U>r<U>ogramming and Memo</U>ry <U>Management / 4
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Waiting-Applies to processes that the system suspends
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+until another process terminates. This state allows coor
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+dination of sequential process execution. The shell, for
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+example, is in the waiting state during the execution of a
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+command it has initiated.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sleeping-Applies </B>to a process suspending itself for a
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+specified time, or until receipt of a <I>signal. </I>(Signals are
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+internal messages that coordinate concurrent processes.)
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This is the typical state of processes waiting for input/
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+output operations.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The shell does not assign CPU time to sleeping or wait
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ing processes. It waits until they become active. The
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PROCS command gives information about process states.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Creation of Processes<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If a parent process creates more than one child process, the chil
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+dren are called <I>siblings </I>with respect to each other. If you exam
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ine the parent/child relationship of all processes in the system, a
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+hierarchical lineage becomes evident. In fact, this hierarchy
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+resembles a family tree. (The family concept makes it easy to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+describe relationships between processes.) OS-9 literature uses
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the family concept extensively in describing OS-9's multipro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+gramming functions.)
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS-9's fork function automatically performs the sequence of oper
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ations required to create a new process and initially allocate
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+resources to it.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If for any reason, fork cannot perform any part of the sequence,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the system stops and fork sends its parent an error code. The
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+most frequent reason for failure is the unavailability of required
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+resources (especially memory), or the inability of the system to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+find the specified program.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A process can create many processes, subject only to the availa
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+bility of unassigned memory. When the parent issues a fork
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+request to OS-9, it must specify certain information:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>A primary module-The </B>name of the program to be
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+executed by the new process. The program can already
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+be present in memory, or OS-9 can load it from a disk
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+file with the same name.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4-3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Commands Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters-Data </B>to be passed to and used by the new
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+process. OS-9 copies this data to part of the child pro
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cess's memory area. (Parameters frequently pass file
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+names, initialization values, and other information.)
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The new process 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>inherits </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+some of its parent's properties,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+including:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>A user number </B>For use by the file security system to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+identify all processes belonging to a specific user. (This
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+is not the same as the process ID, which identifies a pro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cess.) OS-9 obtains this number from the system pass
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+word file when a user logs on. The system manager is
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+always User 0.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Standard input and output paths </B>The three paths:
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+input, output, and error, used for routine input and out
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+put. Most paths can be shared simultaneously by two or
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+more processes.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Current directories-The </B>data directory and the execu
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tion directory.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Process priority.<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+As part of the fork operation, OS-9 automatically assigns:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; A process ID, a number in the range 1 to 255 that iden
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tifies the process. Each process has a unique number.
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Enough memory to support the new process. In OS-9, all
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+processes share a memory address. OS-9 allocates a data
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+area for the process's parameters and variables and a
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+stack for each process's use. It needs a second memory
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+area in which to load the process if it does not reside in
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+memory.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\CH4~1\GR000000.JPG" WIDTH="10" HEIGHT="5">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\CH4~1\GR000001.JPG" WIDTH="306" HEIGHT="4">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4-4
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\CH4~1\GR000002.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\CH4~1\GR000003.JPG" WIDTH="22" HEIGHT="6">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\CH4~1\GR000004.JPG" WIDTH="25" HEIGHT="8">
+<UL>
+<I><U>Multiprogramming and Memory </U>M<U>an</U>agement / 4
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In summary, each new process has:<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A primary module<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Parameters<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A user number<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Standard I/O paths<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Current directories<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A priority<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+An ID number<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Memory<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Basic Memory Management Functions<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Memory management is an important OS-9 function. OS-9 auto
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+matically allocates all system memory to itself and to processes,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and also keeps track of the logical contents of memory (the pro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+gram modules that are resident in memory at any given time).
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The result is that you seldom need to bother with the actual
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+memory addresses of programs or data.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The operating system and each process have individual address
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+spaces. Each address space has the potential to contain up to 64
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+kilobytes of RAM memory. Using memory management unit
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(MMU) hardware, OS-9 moves memory into and out of each
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+address space as required for system operations.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Although each unit is subject to the 64K maximum program
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+size, you can run several processes simultaneously and utilize
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+more than 64K overall. The system logically assigns RAM mem
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ory in 256-byte pages, but the MMU's hardware block size is
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8K. Each of these physical blocks has an extended address that
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+is called a 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>block number. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For example, the 8K physical block
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+residing at address $3C000 to $3DFFF is Block Number $3C.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Within an address space, OS-9 assigns memory from higher
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+addresses downward for program modules and from lower
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+addresses upward for data areas. The following chart shows this
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+organization:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4-5
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Commands Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+highest address
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<P ALIGN="CENTER">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+program modules
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(RAM or ROM)
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="CENTER">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+unused space
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(RAM or empty)
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+data areas
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(RAM)
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lowest address
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Loading Program Modules into Memory<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When performing a fork operation, OS-9 first attempts to locate
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the requested program module by searching the 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>module direc</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>tory, </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+which has the address of every module present in memory.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The 6809 instruction set supports a type of program called 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>re</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>entrant code, </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+which means that processes can share the code of a
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+program simultaneously.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Since almost all OS-9 family software is re-entrant, the system
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+can make the most efficient use of memory. For example, suppose
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+that OS-9 receives a request (from a process) to run BASIC09
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(which requires 22 kilobytes of memory), but has already loaded
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+it into memory for another process. Because the software is re
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+entrant, OS-9 does not have to load it again and use another
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+22K of memory. Instead the new process shares the original
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 by including the location of the BASIC09 module in its
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+memory map.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS-9 automatically keeps track of how many processes are using
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+each program module, and deletes the module when all processes
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+using it terminate.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If the requested program does not yet reside in memory, OS-9
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+uses its name as a pathlist (filename) and attempts to load the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+program from disk.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4-6<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Multiprogramming and Memory Management / 4
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Every program module has a module header describing the pro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+gram and its memory requirements. OS-9 uses the header to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+determine how much memory the process needs for variable stor
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+age. The module header includes other information about its pro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+gram, and is an essential part of the OS-9 machine language
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+operation.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+You can also place commands or programs into memory using
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+the LOAD command. Doing so makes the program available to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+OS-9 at any time, without having to be loaded from disk. A pro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+gram is physically loaded into memory only if it does not already
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+reside there.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+LOAD causes OS-9 to copy the requested module from a file into
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+memory, verifying the CRC (Cyclic Redundancy Check). If the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+module is not already in the module directory, OS-9 adds it.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+If the program module is already in memory, the load process
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+still begins in the same way. But, when OS-9 attempts to add
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+the module to the module directory and notices that the module
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+is already there, it merely increments the known module's 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>link</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>count </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+(the number of processes using the module).
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+When OS-9 loads multiple modules in a single file, it associates
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+them logically in the memory management system. You cannot
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+deallocate any of the group modules until all modules have zero
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+link counts. Similarly, linking to one module within a group
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+causes all other modules in the group to be mapped into the pro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+cess's address space.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Deleting Modules From Memory<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+UNLINK is the opposite of LOAD. It decreases a program mod
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+ule's link count by one. When the count becomes zero (presum
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+ing that the module is no longer used by any process), OS-9
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+deletes the module, deallocates its memory, and removes its
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+name from the module directory.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Warning: </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Never use the UNLINK command on a program<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+or a module not previously installed using LOAD. Unlink<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+ing a module you did not LOAD (or LINK) might perma<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+nently delete it when the program terminates. The shell<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+automatically unlinks programs loaded by fork.<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+4-7
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Commands Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Suppose you plan to use the COPY command ten times in a row.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Normally, the shell must load COPY each time you enter the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+command. But if you load the COPY module into memory and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+then enter your string of commands, you don't have to wait for
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+the system to load and unload COPY repeatedly. When you fin
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+ish using COPY, use UNLINK to unlock the module from mem
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+ory. The sequence looks like this:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>load copy </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>copy filel file1a </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>copy filet file2a </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>copy file3 file3a </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>copy file4 file4a </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>copy files file5a </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>copy file6 fileGa </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>copy file? file7a </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTEfi
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>copy file8 file8a </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>copy file9 file9a </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>copy file19 file19a </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+unlink copy ENTER
+</UL>
+</FONT>
+</P>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+It is important to use UNLINK when you no longer need the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+program. Otherwise, the program continues to occupy memory
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+that might be used for other purposes.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Warning: </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Be careful not to unlink modules that are in use,<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+because OS-9 deallocates the memory used by the module<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+and destroys its contents. All programs using the unlinked<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+module crash.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Loading Multiple Programs<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Because all OS-9 program modules are position-independent, you
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+can have more than one program in memory at the same time.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Since position-independent code (PIC) programs don't have to be
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+loaded into specific, predetermined memory addresses to work
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+correctly, you can load them at different memory addresses at
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+different times.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+PIC programs require special types of machine language
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+instructions that few computers have. The ability of the 6809
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+microprocessor to use PIC programs is a powerful feature and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+one of the greatest aids toward multiprogramming. You can load
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+any number of program modules until available system memory
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+is full.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+4-8<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Multiprogramming and Memory Management / 4
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS-9 automatically loads each program module at non-overlap
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ping addresses. (Most operating systems write over the previous
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+program's memory when loading a new program.) OS-9's tech
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+nique means that you do not need to be concerned with absolute
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+memory addresses.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+4-9<BR>
+</FONT>
+</BODY>
+</HTML>

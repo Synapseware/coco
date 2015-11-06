@@ -1,0 +1,1104 @@
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 13
+
+
+
+              R S 2 3 2  P A K    W a r n i n g
+
+The RS232 Pak  always  expects carrier to be present  (from the
+modem) before anything will be sent from it.  Thus, most of you
+should have a switch on your  modems to make the carrier always
+"high";  in other  words,  make  the  carrier signal  always be
+present.   This  is  needed  for  the  RS 232  pak  to  operate
+correctly.  If you wish to use Greg-E-Term to dial with a smart
+modem (ie. using "ATDT"), you MUST have the carrier high before
+you can send anything through the RS232 pak  (such as the phone
+number you wish to dial.)
+
+If you do not have such a switch,  you must first manually call
+the BBS or network with a phone,  and receive  a carrier before
+anything you type in the Communication Mode will be sent to the
+RS232 pak. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 14
+
+
+
+                 Notes on Xmodem File Transfer
+
+Xmodem  protocol was originally  developed by Ward Christensen.
+This protocol provides error-detection,  error-correction which
+ensures an accurate transmission and receipt of files.  GE Term
+follows the standard's  for Xmodem  set  by  Christensen,  with
+modifications to  the timeout routines,  to allow for transfers
+on slow systems such as CompuServe.
+
+After a transfer is  finished,  you will be prompted with "File
+Transfer Complete".   You can  then save the buffer contents to
+disk in the correct format.
+
+Hitting  <BREAK>  during  an  Xmodem  transfer  will  abort the
+process at the end of the current block send.
+
+At the end  of any  Xmodem Transfer,  the  GE Term  buffer will
+automatically close.
+
+Do not try  Marking portions  of your buffer  before saving any
+Binary or Compressed BASIC programs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 15
+
+
+
+              V I E W I N G   T H E   B U F F E R
+
+Select  number  2  from the main menu  to view the buffer.  The
+last line displayed will be:
+
+ ENTER,BREAK,S,N,B,T,ARROWS?
+
+This is to remind you:   hitting <ENTER> will page down through
+the buffer,  one  screen length  (this will differ depending on
+what screen mode you are using) at a time.  <BREAK> will return
+you to  the  main menu.   You  can also  scroll up  or down the
+buffer one line at a  time by using the up and down arrow keys.
+A global  <S>earch has  also been  provided.   When viewing the
+buffer, if you select <S>, you will be prompted with:
+
+ Enter search string:
+
+Just enter a  string that you  wish to search for, which may be
+contained in the  buffer.   If Greg-E-Term  finds a match,  you
+will be  returned to the buffer viewing,  and the first line on
+the screen will  contain the search  string  you asked for.  To
+find the next occurance of that string, just hit <N>. To search
+for a new string, depress <S> again.
+
+There is no way to edit the buffer before saving to disk.  Greg
+feels these functions  are for word processors.   However,  you
+CAN mark  portions of the  buffer  that you  would like  saved,
+rather than saving the entire buffer.
+
+For instance,  if you would  like to  save a list from an ASCII
+saved BASIC program  (a file  that was  not saved in Compressed
+BASIC format) that is in a portion of the buffer, these are the
+steps you would take:
+
+First,  use <2> from the main menu to view your buffer.   Then,
+use the down-arrow key to  page down the buffer until the FIRST
+line of the  BASIC program is on the TOP line  (the first line)
+of your screen.   At this point,  hit <T>.  This will mark that
+portion of the buffer  as being  the Top.   Next, use the arrow
+key  again to page down the  buffer until the LAST  line of the
+BASIC program just scrolls off the top of the screen.  Thus, if
+you were to hit  the up-arrow once,  the LAST line of the BASIC
+program would be displayed at the top of the screen.   But make
+sure the LAST line of the program JUST  scrolls  off the screen
+and is not visible.   Then hit <B> which  marks this portion of
+the buffer as the Bottom.
+
+Steps on  how to  save the  buffer are  explained later.  Note:
+after Marking and saving one portion of the buffer,  you may go
+back to view the buffer,  and  mark a new portion of the buffer
+that you wish to save.
+
+There is a way to type something into the buffer (although this
+is not an official function),  if you have a need to type some-
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 16
+
+
+
+thing in (such as a message) before going online, without using
+a word processor, you can follow these steps.  First, go to the
+Communication mode and use <CTRL><4> to open your buffer.  Then
+use  <CLEAR><D> to set your duplex to half.   After that, what-
+ever you type on the screen will be stored in the buffer.  Keep
+in mind,  there is still no editing provided.   You can use the
+backspace (back-arrow) to erase  something on the  current line
+you are typing,  but after you hit <ENTER>,  you can do nothing
+more  with  that line.   Also remember to close your buffer and
+change the duplex to  the appropriate  settings  before calling
+the host.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 17
+
+
+               S A V I N G   T H E   B U F F E R
+
+The data in the  buffer may be  saved to  disk as any file type
+you choose.   When you wish to save the buffer to disk,  select
+option 3 from the main menu.  You will then be prompted with:
+
+ Buffer Save to Disk
+
+ Filename==>
+
+Enter the  filename here,  as you  would  when  saving  a BASIC
+program to disk while in Disk BASIC.   For example, include the
+filename,  extension,  and the drive number.   If you wanted to
+save the buffer  with the filename  PROGRAM  and  the extension
+BAS, on drive 1, at the above prompt you would enter:
+
+ PROGRAM/BAS:1
+
+If you do not enter a drive number, the default 0 will be used.
+
+After entering the filename,  you will be asked in which format
+you wish it to be saved:
+
+ Save file as:
+ 1. Data File/ASCII BASIC
+ 2. Compressed BASIC
+ 3. Binary File
+ CHOICE==>
+
+If the file to save is a text file, or a BASIC program saved in
+ASCII  format,  choose <1>.   When  receiving a  file  that was
+actually in compressed BASIC form  (this is the format in which
+BASIC programs are  normally saved to disk),  select <2>.   For
+machine language Binary files, choose <3>.   By hitting <BREAK>
+at this prompt, you can abort the save.
+
+Before  the  actual  save  is  begun,  you  may  also be asked:
+
+ Strip Linefeeds? (Y/N)
+
+If you have  received an  ASCII file through Xmodem,  each line
+may have  an extra linefeed,  especially  when downloading from
+CompuServe.   Note: these  linefeeds  will not be  visible when
+viewing the buffer.  If there were extra linefeeds sent, answer
+'Y' at this prompt.  For most situations Stripping of linefeeds
+is not needed, and should not be used.
+
+After   the   above   prompt,   you   will   next   be   asked:
+
+ Partial Save? (Y/N)
+
+If you had previously Marked a portion of the buffer you wished
+to save separately, you should answer 'Y'.  If you answer 'N'o,
+the entire  buffer will  be saved even if you  had a portion of
+the  buffer marked.   If you  had not  Marked  a portion of the
+buffer,  and/or you  WANT the entire buffer saved,  simply  hit
+<N>.
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 18
+
+
+
+              L O A D I N G   T H E   B U F F E R
+
+If you plan to send a text file,  program,  or other data file,
+you must  first load it into  the buffer.   GE Term Version 1.0
+does not support direct disk dumps;  all transfers are from the
+buffer.   Note:  whenever you load the buffer, it will first be
+automatically cleared.
+
+After selecting <4> from the main menu, to load the buffer, you
+will be prompted with:
+
+ Buffer Load from Disk
+
+ Filename==>
+
+At the above prompt,  enter the filename  as it  appears in the
+directory, in the same format as when saving the buffer.  Don't
+forget to include  the extension.   Also be sure to include the
+drive number if it's not on drive 0.
+
+If the  file  loading  was saved  in ASCII format,  you will be
+prompted with:
+
+ File is ASCII
+ Insert LF's? (Y/N)
+
+If you plan to  upload the  ASCII file with  Xmodem  to systems
+such  as  CompuServe,  it  may  be  necessary to answer 'Y' and
+insert linefeeds.  Due to CompuServe's  structure,  if you have
+not inserted an extra linefeed, the file  may  be  useless when
+received at CompuServe.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 19
+
+
+
+                 D I S K   D I R E C T O R Y
+
+By pressing <5> from the main menu,  the directory of any drive
+may be displayed.  You will first be asked:
+
+ Drive number:
+
+Enter the appropriate number (0-3).   If there's a good disk in
+the   specified   drive,   the  free  granules  will  first  be
+displayed, followed by the filename and extension of each file,
+in  column  format.   The wider  your display screen,  the more
+columns will be used when viewing the directory.  The last line
+will ask  you  to hit  enter to continue,  should there be more
+files in the directory, than could be displayed on one screen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 20
+
+
+
+          S E T T I N G   T H E   P A R A M E T E R S
+
+It should  not be necessary  for you to  use selection number 6
+(off the main menu),  for several reasons.   First, Greg-E-Term
+comes preconfigured  with standard parameters that most systems
+use,  as explained in the section,  "Going  online with Greg-E-
+Term".  And you can even change these configurations permanetly
+with the GETC10/BIN  program.   Second,  most of the parameters
+can be easily  changed individually from the Communication Mode
+with the  <CLEAR> and <CTRL> function keys.   However,  you may
+need to enter this section to change the upload prompt.
+
+After  hitting  <6>  from the main menu,  the screen will first
+display:
+
+ Greg-E-Term Parameters
+ ----------------------
+ (Hit <CLEAR> to leave as is)
+
+
+ Baud Rate:
+
+    1: 110 baud
+    2: 300 baud
+    3: 600 baud
+    4: 1200 baud
+
+ Choice==>
+
+All of the selections  will have the option to "leave as is" by
+hitting <CLEAR>.   But if you choose to change a setting,  just
+type the proper key.   After making a choice, you will be asked
+another parameter question,  and so forth,  until all have been
+reset or left as is.
+
+Explanations to the parameter settings can be found in the sec-
+tion, "Greg-E-Term Options Explained".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 21
+
+
+
+            C L E A R I N G   T H E   B U F F E R
+
+The buffer will  automatically be cleared  before you receive a
+file with Xmodem or Xon/Xoff  file transfer protocols.  It will
+also be erased whenever you load a file from disk.   Should you
+want to clear the buffer at any other time, just hit option <7>
+from the main menu.   Before  GE Term  actually gets rid of the
+buffer contents, it will ask:
+
+ Clear the buffer
+
+ Are you sure (Y/N) ?
+
+Answer 'Y' or 'N' as prompted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 22
+
+
+
+             P R I N T I N G   T H E   B U F F E R
+
+When selecting <8> from the main menu, you will be greeted with
+the following menu:
+
+ GETERM Printer dump options
+ ===========================
+
+   1. Lines per page:00066
+   2. Characters per line:00080
+   3. Word wrap:No
+   4. Stop after every page:No
+   5. Left margin:00010
+   6. Right margin:00010
+   7. Upper margin:00010
+   8. Bottom margin:00010
+   9. Baud Rate:00600
+  (BREAK to exit, P to print)
+ Choice==>
+
+This is  pretty  self-explanitory,  but I  will  clarify  a few
+things.   All these parameters can be changed at this menu,  or
+set to another standard  with  the GETC10/BIN  customizer  pro-
+gram.   Many of you will find that you may wish to set all your
+margins to 0 instead  of our  standard  of 10.   Sometimes this
+setting  (10) may mix up  your  received  text  when  printing.
+Other times,  it will make things look  much neater.  Selection
+<4> is useful for those  using single  sheets of paper and need
+time to insert a  new  sheet  after  the  current  is  finished
+printing.   The baud rate is set at 600,  but most printers can
+handle at least 1200, or better yet 9600.
+
+A note to TCBBS Sysops:   If you have the TCBBS CommPak instal-
+led,   hitting  <H>  instead  of  <P>  will  print  through the
+parallel printer  port  of the Commpak,  instead of through the
+serial port.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 23
+
+
+
+         S E T T I N G   T H E   S C R E E N   M O D E
+
+This is  one  of  the  most  useful  features  Greg-E-Term  has
+included.  It allows you to select from numerous different text
+screen widths/modes, depending on which version of the CoCo you
+own.  For CoCo 1 and 2 users, the following menu will appear on
+your screen after choosing <9> from the main menu:
+
+     Set screen mode
+
+  1. 32 X 16 normal
+  2. 51 X 24 HiRes
+  3. 64 X 24 HiRes
+  4. 64 X 24 HiRes
+  5. PBJ WP 2 80 X 24
+  6. 32 X 24 HiRes
+  7. Double 80 + 80 X 24
+
+
+ Choice==>
+
+All of the above modes can be used on either the CoCo 1 or CoCo
+2.   The HiRes  screens use a 1.5K input buffer so you will not
+lose characters when using them.   These screens will appear to
+move much slower than normal when at 1200 baud, due to the buf-
+fering  and graphics  printing involved,  and  this  cannot  be
+helped.
+
+Due  to  the  slow  operation  of the  hi-res screen modes,  we
+recommend you use the 32X16 screen when using 1200 baud, unless
+you have the CoCo 3 or either of the two 80 column boards.
+
+Both the  PBJ Word Pak 2  and  the  Double 80 +, 80 X 24 column
+boards are supported.   However, if either of these is selected
+while using  GE Term with a CoCo 3,  the results will be unpre-
+dictable.   The terminal  will probably crash due to the incom-
+patibility of these boards with the CoCo 3.
+
+For those using a Color Computer 3, these additional menu items
+will appear:
+
+  8. CoCo 3 80 X 24
+  9. CoCo 3 40 X 24
+  0. CoCo 3 32 X 16
+
+The above  use the  CoCo 3's  built-in  hi-res  displays.   The
+regular, "hidden" 32 X 16 screen (with true lowercase) can also
+be choosen.
+
+We also recommend  you DO NOT  use the  HiRes  CoCo 1/2 screens
+when running  GETERM on a CoCo 3  using the Serial port,  since
+the speed  at  which  the  serial port  operates  on  the  3 is
+slightly  different  than the  rate  of  the  CoCo 1 or 2 port.
+Therefore,  the HiRes modes on a CoCo 3 may appear to be slower
+than when using them on a CoCo 1/2.
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 24
+
+
+
+            R E A D I N G   T H E   H E L P F I L E
+
+A short  "helpfile" is included  with  Greg-E-Term distribution
+diskettes.   It is simply a  summary of this document,  and can
+be viewed by typing  <0> from the main menu.   It must be named
+GEHELP.TXT and reside on drive 0, to be viewed with GE Term.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 25
+
+
+
+         M A C R O   S E L E C T I O N / V I E W I N G
+
+Up to 9 predefined text strings, called Macro's, can be defined
+with Greg-E-Term either by using option <M> from the main menu,
+or by defining them in your own  custom  GETERM with  the  cus-
+tomizer  program.   They  can be  30 characters in length each.
+You can view  these or change  them by  selecting  <M> from the
+main menu.  The following sub menu will then appear:
+
+ Greg-E-Term Set Macros
+ ----------------------
+
+   (30 CHARS MAXIMUM PER MACRO)
+ 1:
+ 2:
+ 3:
+ 4:
+ 5:
+ 6:
+ 7:
+ 8:
+ 9:
+
+ Enter # of macro to change, or
+ <BREAK> to exit:
+
+By  hitting  any  of the  above numbers,  you can  change their
+contents.   The cursor will appear next to the number you chose
+and await the new string.   In order  to permanately  save your
+own macro's, it will be necessary for you to run the GETC10/BIN
+program.   After doing this,  the next  time you  EXECute  your
+custom  GE Term,  the  macros will  appear at  this  menu  when
+viewing it.  Hitting <BREAK> will return you to the main menu.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 26
+
+
+                    GETERM Techincal Chapter
+                    ========================
+
+
+Darren asked  me to write  a small section of the GETERM manual
+for him,  about GETERM's technical specifications.  Before I go
+into the techinal specs, I am going to take this opportunity to
+thank Darren  for his  unbelievable help with GETERM.   Without
+Darren's help,  GETERM would never have reached the public,  as
+it was originally  designed  for myself and  friends.   Thanks,
+Darren!
+
+GETERM isn't designed to be a hardware specific terminal.  What
+I mean by this is that you don't HAVE to have an RS232 PAK,  or
+a CoCo 3,  or a PBJ WordPak, etc.   BUT,  there is obviously no
+way that I can allow for every seperate combination of features
+that everyone would want in a terminal.  I do, however, welcome
+suggestions and will consider each and every one of them.   For
+those  people looking for  a CoCo 3 terminal,  sorry,  but this
+isn't it.  Sure, it'll run on a CoCo 3, give you the 80 columns
+and reliable  1200 baud operation,  but it ISN'T a CoCo 3 term-
+inal.  I have my own ideas on a CoCo 3 terminal, and may under-
+take them someday. 
+
+GETERM has many  "indirect pointers"  at the beginning  of it's
+code,  used  by  the  customizer  program  to  find  the  exact
+addresses for specific functions.  They are listed below: 
+ 
+  ADDRESS        NAME
+ =====================================
+    $E03        BUFFER POINTER
+    $E05        CUSTOM POINTER
+    $E07        PBJ PARMS POINTER
+    $E09        TERMINAL PARM POINTER
+    $E0B        SCREEN MODE POINTER
+    $E0D        PRINTER PARM POINTER
+    $E0F        MACROS POINTER
+    $E11        COLOR BOOTUP LIST  
+
+BUFFER POINTER:  This is  a 16 bit value that points to the end
+of GETERM,  and the beginning of GETERM's buffer.   Taking this
+value,  and subtracting  one will give  you the address  of the
+last byte used by GETERM for programming. 
+
+CUSTOM POINTER: This points to a 8 bit value that, when NZ (not
+zero) will force a  "CUSTOMIZED COPY"  message at bootup.  This
+is used  so  that  people  may distinguish  between  customized
+copies and originals.   
+
+PBJ PARMS POINTER:  This  points to a small list of PBJ parame-
+ters used to  boot up the PBJ WordPak II.  Many people use dif-
+ferent values on their WP's,  so this to allow "specialization"
+for those who need it. 
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 27
+
+
+
+TERMINAL PARM POINTER:  This points  to a table,  in  which all
+parameters that are "terminal" parameters are listed.   A table
+follows:
+ 
+     TPP+00: Buffer status: Z=closed, NZ=open
+     TPP+01: Baud byte: 0123 for 110, 300, 600, 1200 bauds
+     TPP+02: Mask lowercase: Z=don't mask, NZ=mask
+     TPP+03: Duplex: 012 for FULL, HALF, ECHO
+     TPP+04: Data Bits: Z=7 data bits w/ parity setting, NZ=8,
+             No Parity
+     TPP+05: Parity: 012345 for None, Even, Odd, Mark, Space
+     TPP+06: Upload prompt: an ASCII character, or a NULL for
+             no prompt
+     TPP+07: VideoTex codes (ESC-value type): Z=don't use,
+             NZ=use them
+     TPP+08: Upload Delay time: 16 bit value of timing
+     TPP+10: BS key value: Z=use an ASCII 8, NZ=use an ASCII
+             127
+
+SCREEN MODE POINTER:  This  points to  a byte that contains the
+bootup screen mode.  A list of possible values follows:
+ 
+     0 - 32 x 16, no lowercase - normal for CoCo 1/2's
+     1 - 51 x 24, software generated
+     2 - 64 x 24, software generated
+     3 - 85 x 24, software generated
+     4 - PBJ Word Pak II (It is for ONLY the Word Pak II!)
+     5 - 32 x 24, software generated
+     6 - Double 80 + 80 column board
+     7 - CoCo 3's 80 x 24 mode
+     8 - CoCo 3's 40 x 24 mode
+     9 - CoCo 3's 32 x 16 text mode, but with lowercase
+         (similar to 0) 
+
+Do NOT,  I repeat, do NOT try and use type's 7-9 unless you own
+a CoCo 3.  They obviously will NOT work! 
+
+PRINTER PARM POINTER:  Points to a table of printer parameters.
+A list follows:
+ 
+     PPT+0: Number of lines per page
+     PPT+1: Left margin
+     PPT+2: Right margin
+     PPT+3: Upper margin
+     PPT+4: Bottom margin
+     PPT+5: Stop after every page (z=no, nz=yes)
+     PPT+6: Word wrap lines (z=no, nz=yes)
+     PPT+7: characters per line
+     PPT+8: 16 bit value used internally by GETERM.  DO NOT
+            CHANGE
+    PPT+10: 16 bit baud rate (eg: 600 for 600 baud- not the
+            232 constant)
+
+MACROS POINTER:  Points to a  table made up of 9 enteries of 32
+characters apiece.   Each  Macro  ends  with a NULL,  and  a CR
+before the null is optional. 
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 28
+
+
+
+COLOR BOOTUP LIST:  This  points  to a  small  table  of  color
+bootup parameters used by GETERM.  A small table follows:
+
+(note: these are for CoCo 3 users ONLY)
+
+     CBL+0: Foreground color (0-63)
+     CBL+1: Background color (0-63)
+     CBL+2: Border color (0-63)
+
+
+
+
+GETERM will  also  respond  to a series  of codes  following an
+ESCape (ASCII 27).   Some of these  codes are used regularly by
+CIS and other host's.   A list of  what GETERM  will respond to
+follows: 
+
+       CODE VALUE                    USE
+       (in ASCII!)
+    
+ ==============================================================
+     (all codes begin with an ESC)
+         A                   Move cursor up one line
+         B                   Move cursor down one line
+         C                   Move cursor right one character
+         D                   Move cursor left one character
+         H                   Home cursor
+         J                   Clear to end of screen
+         j                   Clear screen, home cursor
+         Y (row+32) (col+32) Position cursor at ROW and COLUMN
+         I                   Interrogate.  GETERM responds:
+                             "GETERM 1.0"
+         (next codes all begin with ESC EOT and then the ASCII)
+         (note that an EOT is an ASCII 04)
+         I                   Interrogate: returns current
+                             screen mode
+         P (palette#) (color)Set the a specific palette with a
+                             color
+         A (attribute)       Set the current printing attribute
+         S (mode)            Set's a screen mode (returns an
+                             ACK)
+         R (C or R)          Set's the bootup palettes
+         B (color)           Set's the border color
+         D                   Forces 8 N 1
+         C                   Returns a 0 for Coco 1/2, NZ for
+                             CoCo 3 in use  
+
+     Notes:
+
+ -   ESC-EOT-I Will return 0-9.  The same values are used as in
+     the SCREEN MODE POINTER option.
+ -   ESC-EOT-A (attribute) The Attribute bits are: bit7=blink,
+     bit6=underline, 543=background color, 210=foreground
+     color.
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 29
+
+
+
+ -   ESC-EOT-S (mode) uses the SCREEN MODE POINTER values for
+     setting a screen mode.  When it is done, it will send an
+     ACK (ASCII 06).  Wait for this ACK before sending any
+     data.
+ -   ESC-EOT-R (C or R) Will reset the palette registers to
+     BASIC's defaults.  The C or R stands for COMPOSITE or
+     RGB.  
+ -   ESC-EOT-B (color)  Color is 0-63.
+ -   ESC-Y (row+32) (col+32) The row and column values have
+     ASCII 32 added to them, to keep them within ASCII range. 
+     To set the cursor at, say, column 10, row 5, you'd send:
+     27 89 37 42 (all in ASCII, decimal)
+
+Please, keep in mind that this was not desgined as a comprehen-
+sive  description of these codes,  but rather a list of what it
+will respond to.   If you  require more  information  on  these
+codes, let me know, and I'll provide it.
+
+A few people  have  expressed  the need for  VT100 support.   I
+agree,  and if I can find a  local host  computer that supports
+VT100,  I will gladly  add  it  (for the CoCo 3 ONLY)!   Unfor-
+tunately, I cannot afford to pay the GEnie, CIS or Delphi bills
+for testing of  VT100 support,  so must rely on finding a local
+computer.
+
+I  am  available  for   questions   and   comments   on   GEnie
+(GREG.MILLER),  Delphi (GREGMILLER),  and CIS (72057,1031).   I
+am, however,  most easily reached on TCBBS-HQ at (201)-725-5028
+300/1200 baud.  Leave a message to "GREG MILLER".
+
+Anyone  wishing a copy of the distribution diskette (which con-
+tains all Greg-E-Term files including all documentation)  AND a
+printed copy of the User Manual may send $10.00 to:
+
+ Greg Miller
+ 9575 Roston Road
+ Grandledge, MI 48837
+
+Have fun.
+
+
+                                                                                                                                       

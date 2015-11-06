@@ -1,0 +1,182 @@
+Disk Basic Summary
+
+In addition to the capabilities of Extended Color BASIC, Color Disk BASIC
+adds the following.
+  ------------------------------------------------------------------------
+
+Disk management commands
+   BACKUP n TO m            Copy all files from one disk to another
+   BACKUP n                 BACKUP a disk using only a single disk drive
+   COPY file1 TO file2      Make a duplicate of a file
+   DIR n                    List the files that are on the disk
+   DRIVE n                  Use drive n as the default
+   DSKINIn                  Initialize (format) a disk
+   KILL file                Delete a file from the disk
+   LOAD file,R              Load a program, and optionally start it running
+   LOADM file,offset        Load a machine-code program, shifting by offset
+   MERGE file,R             Load an ASCII program without clearing the old one
+   RENAME file1 TO file2    Change the name of a file
+   RUN file,R               Load a program, and optionally start it running
+   SAVE file,A              Save a program, optionally in ASCII
+   SAVEM file,a1,a2,ax      Save a machine-code program, from a1 to a2, exec at ax
+   VERIFY ON                Double-check all writes to the disk
+   VERIFY OFF               Don't double-check
+
+Programming commands
+   FILES max_f,size         Reserve buffers for open files
+   FREE(n)                  Returns the number of free granules (2304 bytes each)
+   UNLOAD n                 Close all open files on drive n
+   DSKI$ n,t,s,v1$,v2$      Read track t sector s into v1$ and v2$
+   DSKO$ n,t,s,v1$,v2$      Write track t sector s from v1$ and v2$
+   OPEN "I",f,file          Open a file for sequential input (ie: INPUT)
+   OPEN "O",f,file          Open a file for sequential output (ie: PRINT/WRITE)
+   OPEN "D",f,file,len      Open a file for direct access; (ie: GET/PUT);
+                              record length len is optional
+   CLOSE #f                 Close a file
+
+Sequential file commands
+   EOF(f)                   Returns true if file f has been read to the end
+   INPUT #f, var,...        Read variables from a file
+   LINE INPUT #f,var$       Read an entire line from a file into a string variable
+   WRITE #f,values          Write values to file, with commas, strings in quotes,...
+   PRINT #f,values          Write values to file, just as PRINT would display them
+   PRINT #f,USING f$;values Formatted printing; many options for f$
+
+Direct-access file commands
+   FIELD #f, size AS v$,... Give variable names to parts of the file buffer
+   RSET v$ = value$         Fill in a named part of the file buffer, right-justified
+   LSET v$ = value$         Fill in ..., left justified
+   PUT #f,r                 Write the buffer to record r
+   GET #f,r                 Read record r into the buffer
+   CVN(var$)                Make a number out of a binary string
+   MKN$(num)                Make a binary string out of a number
+   LOC(f)                   Return the current record number in the buffer
+   LOF(f)                   Return the highest record number in the file
+
+In all cases, f is a file number, n and m are drive numbers, file is a
+filename, and dollar signs signify variables that must be string-variables.
+Note that filenames must be either string variables or string constants in
+quotes. Upper-case words are keywords, lower-case words are supplied by the
+user.
+
+Special file numbers are -2=printer -1=cassette and 0=screen
+
+  ------------------------------------------------------------------------
+Syntax for a filename, in BNF. (Things in square brackets are optional, the
+vertical bar separates alternatives, angle brackets surround nonterminals,
+and uppercase words denote single-letter constants.)
+
+<filename> ::= <name> [(DOT|SLASH) <extension>] [COLON <drivenum>]
+
+The name can be up to eight characters long, and cannot include a dot,
+slash, colon, or zero. The extension can be up to three characters long,
+and also cannot include those four characters. The drive number is a single
+digit, from zero up to the highest drive on your system.
+
+  ------------------------------------------------------------------------
+There is one documented subroutine in the Disk BASIC ROM that you can use
+to access the disk. Its address is stored at $C004 and $C005, so you jump
+to it using indirection: JSR [$C004] .
+
+Before calling that, you should load the X register with the address of a
+data structure that describes what you want to do. The examples in the
+manual always load this address from locations $C006 and $C007. I have not
+tried using this, so I don't know it will work if you put your structure
+anyplace else. This data structure is seven bytes long:
+
+        1 byte    op code (0 - 3)
+        1 byte    drive number (0 - 3)
+        1 byte    track number (0 - 34)
+        1 byte    sector number (1 - 18)
+        2 bytes   address of 128-byte data buffer
+        1 byte    error code
+
+Op codes are either 0 (restore to track 0), 1 (no op), 2 (read sector), or
+3 (write sector).
+
+Bits in the error code are defined as follows (since the labels match those
+in the 1771 data sheet, I assume it is just the 1771 status code being
+returned, and have taken the much more complete descriptions from that data
+sheet). Note that some of the bits have different meanings based on which
+command caused them to be set.
+
+        7   Not Ready
+                This bit, when set, indicates that the disk drive is
+                not ready to perform a read or write operation.  When
+                reset it indicates that the drive is ready.  Thus,
+                this bit is an inverted copy of the READY input signal
+                to the 1771 from the disk drive, and is logically ORed
+                with the *MR signal
+
+        6   Record Type/Write Protect
+                On a Read command, this bit is used in conjunction with
+                Bit 5 to indicate the type of data address mark that
+                was read.  On a Write command, this bit indicates that
+                the diskette was write protected.
+
+        5   Record Type/Write Fault/Head Loaded
+                On a Read command, this bit in conjunction with Bit 6
+                indicates the type of data address mark that was read.
+                On a Write command, this bit indicates that the write
+                fault input from the disk drive was detected: it is
+                thus an inverted copy of the *WF input signal.
+                On a Restore command, this bit indicates that the
+                read/write head is loaded against the diskette surface.
+                This bit is thus the logical AND of the HLD and HLT
+                signals.
+
+        4   Record Not Found/Seek Error
+                On Read or Write command, this bit indicates that the
+                desired track and sector were not found.
+                On a Restore command, this bit indicates that the
+                designated track could not be verified.  This bit is
+                reset to 0 whenever a new command is loaded.
+
+        3   CRC error
+                On a Read or Write command, if Bit 4 is also set, then
+                this bit indicates that an error was found in one or
+                more ID fields; otherwise, it indicates an error in a
+                data field.
+                On a Restore command, this bit indicates that one or
+                more CRC errors were encountered on a track verification
+                operation.  This bit is reset to 0 whenever a new
+                command is loaded.
+
+        2   Lost Data/Track 00
+                On a Read or Write command, this bit indicates that
+                the microprocessor did not respond to the Data Request
+                (DRQ) within one byte time and that a byte of data was
+                subsequently lost.
+                On a Restore command, this bit indicates that the read/
+                write head is positioned over track 0.  This bit is
+                thus an inverted copy of the *TR00 input to the 1771.
+
+        1   Data Request/Index
+                On a Read or Write command, this bit is a copy of the
+                DRQ output signal.  When set, it indicates that the
+                Data register is full on a read operation or empty on
+                a write operation.
+                On a Restore command, this bit indicates that an index
+                mark was detected on the diskette.  This bit is thus
+                an inverted copy of the *IP input to the 1771.
+
+        0   Busy
+                When set, this bit indicates that a command is currently
+                being executed.  This bit is reset when a command is
+                completed and thus indicates that the 1771 is available
+                to execute another command.
+
+The disk control routine modifies the contents of only the condition code
+register.
+
+Finally, note that you can force the drive motor to turn off by writing a
+zero into address $FF40. This probably also means you could force the motor
+on by writing non-zero there, but the documentation doesn't explain which
+bits to what.
+
+Back to my top-level CoCo page
+
+  ------------------------------------------------------------------------
+26-Mar-96
+yakowenk@csx.unxc.edu
+(remove all "x"s to get a valid address)

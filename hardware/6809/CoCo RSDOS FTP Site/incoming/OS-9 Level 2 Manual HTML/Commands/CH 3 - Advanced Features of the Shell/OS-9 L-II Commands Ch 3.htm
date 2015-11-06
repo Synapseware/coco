@@ -1,0 +1,3278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>E:\MYDOCU~1\OCR\OS-9CO~1\CH3~1\OS-9 L-II Commands Ch 3.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<U>Chapter 3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<B><U>Advanced Features of the Shell</U></B>
+</FONT>
+</H2>
+</U></B><FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This chapter discusses the advanced capabilities of the shell. In
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+addition to basic command line processing, the shell facilitates:
+</FONT>
+</P>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Input/output redirection, including filters
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Memory allocation
+</UL>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Multitasking (concurrent execution)
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Procedure file execution
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Built-in commands
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can use these advanced capabilities in many combinations.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Following are several examples. Study the basic rules, use your
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+imagination, and explore.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>More About Command Line Processing<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The shell is a program that reads and processes command lines,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+one at a time, from the computer's input device (usually your
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+keyboard). It 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>parses </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(scans) each line to identify and process any
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+of the following parts that might be present:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A program, procedure file, or built-in command
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Parameters to be passed to the program
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Execution modifiers to be processed by the shell
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For some commands, only the 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>keyword </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(the program, procedure
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+file, or command name) must be present. Other commands have
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+required or optional parameters. As well, a command line can
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+include 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>modifiers </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+that influence the operation of the command.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS-9 features that affect command execution are:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Execution </B>Let you increase the amount of random access<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Modifiers </B>memory (RAM) available for a command. Also<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lets you redirect input to a process, output from<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+a process, or both.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Command </B>Let you enter more than one command on a line,<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Separators </B>perform concurrent execution of commands, or<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+connect the input or output of one command to<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+another command.<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-1<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Commands Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Command </B>Lets you group all the commands that you want<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Grouping affected </B>by command modifiers or separators.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Note: </B>The next section, "Command Modifiers," provides<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+details on these features.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Once the shell identifies the keyword, it processes any modifiers.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+It then assumes the remaining text consists of parameters,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+which it passes to the program being called.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When the shell receives a built-in command, it immediately exe
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cutes it. If it receives a command that is not built in, it searches
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+for the appropriate program and then runs it as a new process.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The keyword must be the first entry in any line.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+While the program is running, the shell deactivates itself. At the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+termination of the program, the shell reactivates and accepts the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+next input. This cycle continues until the shell detects an end-of
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+file in the input path. It then terminates its own execution. You
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+can input an end of file from the keyboard by pressing
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+SHIFT BREAK .
+</FONT>
+</P>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Following is a sample shell command line that calls the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+assembler.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In this example:<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ASM is the keyword.
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sourcefile, 1, and -o are the
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+parameters passed to
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ASM.
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&gt;/P is a modifier that
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+redirects the output (the
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+listing) to the system's
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+printer.
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+#12k is a modifier that
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+asks the system to assign
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+12K bytes of memory
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+instead of a smaller default
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+amount
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma" COLOR="#000000">
+nF__~
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+asm sourcefile 1 -o &gt;/p x12k<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+3-2<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Advanced Features of the S</U>h<U>ell </U>/ 3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+Command Modifiers<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Add command modifiers to a command line to change the way in
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+which the command functions. Modifiers let you tailor OS-9 com
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mands to your specifications. Type them in a command line after
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the keyword and either before or after other parameters you
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+might be using.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The shell processes command modifiers before it executes a pro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+gram. If it detects an error in any of the modifiers, it stops exe
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cution and reports the error.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The shell strips command modifiers from the part(s) of the com
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mand line passed to the program as parameters. Therefore, you
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cannot use the characters reserved as modifiers ( # ; ! &lt; &gt; &amp; )
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+inside other parameters.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Execution Modifiers<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Execution modifiers alter the amount of memory commands have
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+available, or they redirect command input or output.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Alternate Memory Size Modifier. </B>When the shell invokes a
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+command program, it allocates the minimum amount of working
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RAM (random access memory) specified in the program's module
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+header.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Note: </B>All executable programs include a module header<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+which holds the program's name, size, memory require<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ments, and other information. For information on viewing<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the contents of a module header, see the IDENT command.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You might want to increase a command's default memory size.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can assign memory either in 256-byte pages or in 1024-byte
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+increments. To add memory in pages, use the modifier <I>#n, </I>where
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>n </I>is the number of pages. To add memory in 1024-byte incre
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ments, use the modifier <I>#nK, </I>where <I>n </I>is the number of 1024
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+byte increments.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following two examples have identical results:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+copy s 8 f i 1 e 1 f i 1 e 2 ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(8 x 256 = 2048 bytes)
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+copy #2K f i 1 e 1 f i 1 e 2 ENTER  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(2 x 1024 = 2048 bytes)
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+3-3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Commands Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>I/O Redirection Modifiers. </B>Input/output redirection modifiers
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+reroute a program's I/O from the standard path to alternate files
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or devices.~.~<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+One of OS-9's advantages is that its programs use standard I/O
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+paths rather than individual, specific file, or device names. You
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+can easily redirect the I/O to any file or device without altering
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the program itself.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Programs that normally receive input from a terminal or send
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+output to a terminal use one or more of these three standard I/O
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+paths:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Standard input path-Routes </B>data from the terminal's
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+keyboard to programs. The standard input path is Path
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Number 0.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use the less-than symbol (&lt;) to redirect data to this
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+path.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Standard output path-Routes </B>data from programs to
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the terminal's display. The standard output path is Path
+</UL>
+</UL>
+</FONT>
+</P>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Number 1. --
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use the greater-than symbol (&gt;) to redirect data from
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+this path.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Standard error output path-Routes </B>routine status
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+messages (prompts and errors) to the terminal's display.
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(The name error output path is somewhat misleading,
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+since many kinds of messages in addition to error mes
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sages travel the path.) The standard error path is Path
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Number 2.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use two greater-than symbols (&raquo;) to redirect data
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+from this path.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When you use a redirection modifier in a command line, follow it
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+immediately with a pathlist for the substitute device. For exam
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ple, you can use LIST to redirect the contents of a file called
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Correspondence from the terminal to the printer, by typing:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+list correspondence &gt;/P ENTER -
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The shell automatically creates, opens, and closes files referenced
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+by redirection modifiers as needed. <B>The system immediately</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>restores normal I/O paths at the completion of any com</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>mand using redirection modifiers.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-4<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Advanced Features of t</U>he <U>S</U>hell / 3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In the next example, the shell redirects DIR's output-a list of
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+files in the MEMOS directory-to the file /D1/Savelisting:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>dir /d9/memos &gt;/d1/savelisting ENTER
+</UL>
+<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can now view the contents of Savelisting by typing:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>list /d1/savelistin9 ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS-9 displays the file contents in a format similar to a directory
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+listing.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>Directory of /d9/memos
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>CMDS SYS startup
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>0S9Hoot
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can use one or more redirection modifiers before the pro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+gram's parameters, after the program's parameters, or both.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+However, use each modifier only once in a command.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following example shows how you can use all of the redirec
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tion modifiers together to start BASIC09 on a device window and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+redirect all input and output to it:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>basic99 &lt;&raquo;&gt;/w1 ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When you redirect multiple paths, you must use the redirection
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+symbols in the proper order as shown here:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Legal  Illegal
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&lt;&gt; /wl &gt;&lt; /wl
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&lt;&raquo; /wl  &raquo;&lt; /wl
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&raquo;&gt; /wl &raquo;&lt; /w1
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Command Separators. </B>You can include more than one com
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mand on a command line by using command separators. Com
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mand separators cause multiple commands to execute either
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sequentially or concurrently, depending on the separator you
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+use.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sequential execution </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+means that one program must complete its
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+function and terminate before the shell lets the next program
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+execute. 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Concurrent execution </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+means that two or more programs
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+begin execution and run simultaneously.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-5
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Commands Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sequential Execution Using the Semicolon. </B>Using a semi
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+colon between commands on one line causes them to execute
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sequentially. For instance:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>copy myfile /d1/newfile; dir &gt;/p </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This command causes the shell to: (1) execute the COPY com
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mand, (2) enter a waiting state until COPY terminates, then
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+awake, and (3) execute DIR.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If an error occurs in any program, the shell does not execute
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+subsequent commands, regardless of the state of the SHELL
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+command's X (stop on error) option.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Here are two more examples of commands using the semicolon:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>copy oldfile newfile; del oldfile; list newfile
+</UL>
+<BR>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>dir /d1/myfile; list temp &gt;/p; del temp </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Commands separated by semicolons are in fact separate and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+equal <I>child </I>processes of the shell.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Note: </B>When one process creates another process, OS-9 calls<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the creator the parent process and the created process the<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>child </I>process. The child can become a parent by creating<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+yet another process.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Concurrent Execution Using the Ampersand. </B>You can use
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the ampersand (&amp;) to cause multiple commands to run at the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+same time. Each command you specify runs as a separate <I>child</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+process of the shell. That is, for each process, the shell creates a
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+separate shell to handle the operation. When the process is com
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+plete, the child shell terminates, or <I>dies.</I>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+While more than one process is running, OS-9 divides execution
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+time equally among the processes.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The number of programs that can run at the same time varies.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+It depends on the amount of free memory in the system and the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+memory requirements of the programs being executed.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+An example of a simple command line using the &amp; separator is:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>d i r &gt; / p &amp; ENTER
+</UL>
+<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>3-6<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Advanced Features of the Shell / 3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The shell begins to run DIR, sending output to the printer. At
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the same time it displays both the number of the 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>forked </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+process
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+DIR) and a new prompt, like this:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>&amp;ee7
+</UL>
+<BR>
+<UL>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>os9:
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To fork a process means to create a process as a branch of
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+another process-a subroutine.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+After using the ampersand to fork a background process, you
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+can then enter another command, which the shell executes while
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+output from your original command continues to go to the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+printer. This means you don't waste time waiting for OS-9 to fin
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ish a task. At times, the keyboard might not seem to respond to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+your typing, because characters do not appear on the screen.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+However, OS-9 stores the characters in the keyboard buffer and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+displays them as soon as the shell can accept input again.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you have several processes running simultaneously and want
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+information about them, use the PROCS command.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Combining Sequential and Concurrent Executions. </B>You can,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+if you want, use both the concurrent and sequential command
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+separators in one command line. For example:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>dir &gt;/P&amp; list file1&amp; copy filet filet; del temp
+</UL>
+</TT>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>ENTER
+</UL>
+</TT>
+</FONT>
+</P>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT><BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because the &amp; modifier joins the DIR, LIST, and COPY com
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mands, these commands run concurrently. But, because a semi
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+colon precedes the DEL command, DEL does not run until the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+other commands terminate.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Using Pipes: The Exclamation Mark. </B>You can use the excla
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mation mark (!) to construct 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>pipelines </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+for OS-9 commands. Pipe
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lines consist of two or more concurrently executing programs
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+with standard input paths, and standard output paths or both,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+connected to each other with 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>pipes.</I>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Pipes are the primary means of transferring data from process
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to process. They are vital to interprocess communications. Pipes
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+are first-in, first-out buffers, or 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>holding areas </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+for data.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-7
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Co</U>mm<U>a</U>n<U>ds Refe</U>r<U>ence<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The shell automatically buffers and synchronizes 1/O transfers
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+using pipes. A single pipe can direct data to several destinations
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or <I>readers, </I>and can receive data from several sources, or <I>writers</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+on a first-come, first-serve basis. An end-of-file occurs if a pro
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+gram attempts to read from a pipe when writers are not avail
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+able to send data. Conversely, a write error occurs if a program
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+attempts to write to a pipe when readers are not available.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Pipelines are created by the shell when it processes an input line
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+with one or more pipe separators (!). For each pipe separator, the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+shell directs the standard output of the program on the left of
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the pipe separator to the standard input of the program on the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+right of the separator. The shell creates an individual pipe for
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+each pipe separator in the command line. For example:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>update &lt;master-file ! sort ! write-report
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>&gt; / P ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This command redirects input from a path called Master-file to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+a file named Update. The output of Update becomes the input for
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the program Sort. The output of Sort, in turn, becomes the input
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+for the program Write-report. Finally, the command redirects
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+output from Write-report to the printer. The shell executes all
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+programs in a pipeline concurrently. The pipes synchronize the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+programs so the output of one never <I>gets ahead </I>of the input
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+request of the next program. This synchronization means that
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+data cannot flow through a pipeline any faster than the slowest
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+program can process it.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Raw Disk Input/Output. </B>OS-9 has a special pathlist function
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to perform <I>raw </I>physical input/output operations on a disk. The
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+pathlist consists of the device name, immediately followed by the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+character.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This command causes OS-9 to treat the entire diskette in Drive
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+/DO as one logical file. The operation reads each byte of each sec
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tor, without regard to actual file structure. Commands such as
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+DIR, ATTR, and MFREE use this feature to access sectors of
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+disks that are not part of file data areas, such as header sectors.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Warning: </B>When using this raw access, use extreme cau<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tion. Because you can write on any sector, you can easily<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+damage file or directory structures and lose data. Using C<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+defeats any file security and record locking systems.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-8<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>A<U>dvanced </U>F<U>eatures of the S</U>h<U>ell / 3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To convert a byte address to a logical sector number when using
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+@, multiply the sector number by 256. Conversely, the logical
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sector number of a byte address is the byte address, modulo 256.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Command Grouping<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can enclose sections of command lines in parentheses to per
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mit modifiers and separators to affect an entire set of programs.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The shell processes the material in the parentheses by recur
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sively calling itself to execute the enclosed command list.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For example, if you want to send directory listings of the ROOT
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+directory of Drive /DO and then the ROOT directory of Drive /D1
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to the printer, you can type either:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>dir /d0 &gt;/p; dir /d1 &gt;/p </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>(dir /d9; dir /d1) &gt;/p </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The results are identical except that the system 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>keeps </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the printer
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+continuously in the second example. In the first example, another
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+user could 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>steal </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the printer between DIR commands.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can group commands to cause programs to execute both
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sequentially and concurrently with respect to the shell that ini
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tiated them. For instance:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>(del filet ; del filet; del file3)&amp; </TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Here, the shell does the overall deleting process concurrently
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+with whatever else you tell it to do, because you're using &amp;.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+However, the shell deletes the three specified files sequentially
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+because you're using semicolons within the parentheses.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Suppose you have a program named Makeuppercase that con
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+verts lowercase characters to uppercase and a program named
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Transmit that sends data to another computer, you can use a
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+command line like this:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>(dir cmds; dir sys) ! makeuppercase ! transmit
+</UL>
+<BR>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The shell processes the output of the first DIR command and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+then the second. It sends all the DIR output to Makeuppercase,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and Transmit sends all the output to another computer.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-9
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Commands Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Shell Procedure Files<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The shell is a 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>re-entrant program. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This means it can be simulta
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+neously executed by more than one process. Like most other OS
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+9 programs, the shell uses standard I/O paths for routine input
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and output.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS-9's shell offers you a special feature, a time and effort saver
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+called a 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>procedure file. A </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+procedure file is a related group of
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+commands, and when you run the file, you execute all the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+commands.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Other names for procedure file processing are 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>batch </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>back</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>ground </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+processing. 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>A </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+procedure file becomes new input for the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+shell. By running a procedure file, you're using the shell to cre
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ate a new shell, a 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>subshell </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+that accepts and carries out the com
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mands in the procedure file.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Note: </B>If you plan to use the same command sequences<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+repeatedly, create a procedure file to do the job by using<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BUILD.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When you enter any command line, the shell looks for the speci
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+fied program in memory or in the execution directory. If it can
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+not find the program there, it searches the data directory for a
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+file with the specified name. If it finds the file, the shell auto
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+matically interprets it as a procedure file, and creates the sub
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+shell, which executes the commands listed in the procedure file.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Procedure files can also let the computer execute a lengthy
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+series of programs while it is unattended, or even while it is run
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ning other programs.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+There are two ways to run a procedure file. For instance, to exe
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cute a procedure file called Mailsequence, type either:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>shell mailsequence ENTER
+</UL>
+<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>mailsequence ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Both commands do the same thing: create a subshell to run the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+commands you've built into your Mailsequence procedure file.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To run a procedure file in a concurrent mode, use the ampersand
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(&amp;) modifier. 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>As </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+long as memory is available, you can run any
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+number of files concurrently.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-10<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Advanced Features of the Shell / 3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can even build procedure files to sequentially or concurrently
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+execute other procedure files.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Note: </B>If you use procedure files to run programs you don't<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+intend to monitor closely, you can redirect standard output<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and standard error output to another file. Later you can<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+review the file's contents. Output redirection eliminates the<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+annoying output of shell messages on your terminal at ran<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+dom times.<BR>
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Built-in Shell Commands and Options<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The shell has a number of built-in commands and options.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Whenever you use one of these functions, the shell executes it
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+without loading it or creating a new process to execute it.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can execute built-in functions alone, use them at the begin
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ning of a command line, or use them following any program sep
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+arator. You can separate adjacent built-in commands by spaces
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or commas.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The built-in commands and their functions are:<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CHD 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I>pathlist </I></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Changes the data directory to the directory
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+specified by the pathlist.
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CHX 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I>pathlist </I></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Changes the execution directory to the direc
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tory specified by the pathlist.
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I>EX modname </I></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Directly executes the module named. This
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+function deletes the shell process so that it
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ceases to exist and executes the new module in
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+its place. Use EX to replace the executing
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+shell with the program specified by 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>modname.
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can also use EX without a module name
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to eliminate the current shell, for example, a
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+shell you initialized in a window (see below).
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I>i = devname </I></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Makes a shell an immortal shell. This means<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+that when the shell ends, due to an EOF, OS-9<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+restarts it. Each time the shell restarts, it has<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the same data and execution directories. To<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+kill an immortal shell, use EX to "chain" to a<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+null process, such as:<BR>
+  
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+e x ENTER<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-11<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Commands Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+w Waits for any process to terminate.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+* <B>text </B>Allows you to make a 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>comment. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The shell does<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+not process text following the asterisk. Use<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+this function to label operations in a procedure<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+file.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>kill procID </B>Stops the specified process.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>setpr procID </B>Changes the specified process's priority<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>number </B>number.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+x Causes the shell to cease operation whenever<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+an error occurs (a system default).<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+-x Causes the shell to continue operation when<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+an error occurs. Use this function in procedure<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+files to enable the shell to continue to other<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+commands if one command process fails<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+because of a system error.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+p Turns the shell prompt and messages on (a<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+system default).<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+-p Inhibits the shell prompt and messages. Use<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+this option in procedure files to disable screen<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+display. Be sure to turn the prompt and mes<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sage function back on afterward.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+t Makes the shell copy all input lines to output.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use this function with a procedure file to<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cause command lines to display as they<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+execute.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+-t Sets the system so that it does not copy input<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lines to output (a system default).<BR>
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Running Compiled Intermediate<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Code Programs<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Before the shell executes a program, it checks the program mod<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ule's language type. If it is not 6809 machine language, the shell<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+calls the appropriate run-time system for that module.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-12<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Advanced Features of the Shell / 3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For instance, if you have BASIC09 on your OS-9 system and<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+want to run a BASIC09 I-code module called Adventure, you can<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+type:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>basic09 adventure ENTER
+</UL>
+<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>adventure ENTER
+</UL>
+<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>runb adventure ENTER
+</UL>
+<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In the last example, the shell uses the RUNB module to inter<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+pret the Adventure I-code module.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-13<BR>
+</FONT>
+</BODY>
+</HTML>

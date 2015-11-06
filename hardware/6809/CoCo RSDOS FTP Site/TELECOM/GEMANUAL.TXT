@@ -1,0 +1,845 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    .......................
+                    :                     :
+                    :     Greg-E-Term     :
+                    :     Version 1.0     :
+                    :                     :
+                    :     Written and     :
+                    : Copyright  (c) 1986 :
+                    :    by Greg Miller   :
+                    :.....................:
+                    :                     :
+                    :   GE Term  Manual   :
+                    :     Version 1.0     :
+                    :                     :
+                    :     Written and     :
+                    : Copyright  (c) 1986 :
+                    :    by Darren Nye    :
+                    :.....................:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                            PAGE 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+                T A B L E   O F   C O N T E N T S
+
+
+          2  .  .  .  .  .  .  .  .  .  .  INTRODUCTION
+
+          4  .  .  .  .   GOING ONLINE WITH GREG-E-TERM
+
+          6  .  .  .  .   Greg-E-Term Options Explained
+
+          8  .  .  .  .  .  .  .  .  COMMUNICATION MODE
+                       <CTRL> and <CLEAR> key functions
+         
+         12  .  .  .  .  Additional keyboard characters
+
+         13  .  .  .  .  .  .  .  .   RS232 Pak Warning
+
+         15  .  .  .  .  .  .  .  .  VIEWING THE BUFFER
+
+         17  .  .  .  .  .  .  .  .   SAVING THE BUFFER
+
+         18  .  .  .  .  .  .  .  .  LOADING THE BUFFER
+
+         19  .  .  .  .  .  .  .  .  .   DISK DIRECTORY
+
+         20  .  .  .  .  .  .  . SETTING THE PARAMETERS
+
+         21  .  .  .  .  .  .  .  . CLEARING THE BUFFER
+
+         22  .  .  .  .  .  .  .  . PRINTING THE BUFFER
+
+         23  .  .  .  .  .  .   SETTING THE SCREEN MODE
+
+         24  .  .  .  .  .  .  .   READING THE HELPFILE
+
+         25  .  .  .  .  .  .   MACRO SELECTION/VIEWING
+
+         26  TECHNICAL DATA AND ADDENDUM BY GREG MILLER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                            PAGE 2
+
+
+
+                     I N T R O D U C T I O N
+
+
+Greg-E-Term (GE Term for short) is one of the most advanced and
+flexible  smart  terminal  programs  available  for  the  Color
+Computer's 1, 2, and 3.  It is a  full-featured  terminal  that
+supports  XMODEM  and  ASCII  file  transfers  from/to the ter-
+minal buffer.    Those  using  GE Term  with a  CoCo 3 have the
+added  ability  to  use it's  built in 80X24  or  40X24 display
+modes.  It is important  to note that the  same  Version 1.0 of
+GE Term will work,  without modification, on any of the current
+CoCo's.
+
+All of your  most  wanted features  of a  terminal  package are
+included in Greg-E-Term.  CoCo 1 and 2 users can choose between
+51X24, 64X24, 85X24, or 32X24 hi-res screen modes.   When using
+these screens, GE Term activates an input buffer, so you should
+not loose characters in these modes.   The  normal 32X16 screen
+with Tandy's "hidden" true lowercase mode can also be used with
+the CoCo 3.  1200 baud is supported both  thru the  Tandy RS232
+Pak,  OR  the serial port (bit banger),  on ALL versions of the
+CoCo!   For CoCo  1  &  2 users,  GE Term also supports the PBJ
+WordPack 2 and the Double 80 +, 80 column boards. All these and
+many   additional  features  are  explained  in  the  following
+chapters.
+
+Yes, 1200 baud is supported through the serial port on all CoCo
+machines.  However, due to the nature of the CoCo 1 and 2's bit
+banger,  1200  with the serial port  will not work perfectly on
+those machines.  We recommend you use the Tandy RS232 Pak.
+
+GE Term  requires a  64K Color Computer 1, 2, 64K TDP-100, or a
+128K CoCo 3  with at least one  disk drive and  Radio Shack DOS
+1.0 or 1.1.   JDOS should be compatible, but we have not tested
+it.
+
+
+Greg-E-Term V1.0 is copyright 1986 by Greg Miller,  and this GE
+Term Manual is copyright 1986 by Darren Nye.   The programs and
+documentation associated with Greg-E-Term are NOT public domain
+but are "free ware".   The  three  major networks:  CompuServe,
+Delphi,  and GENIE;  and  Bulletin Board Systems may distribute
+these  files  on  a  non-profit  basis  (excluding  the  online
+charges incurred when downloading),  by posting  them on public
+download sections,  as long as all portions of the programs and
+documentation  are  the  original unchanged  versions,  and the
+copyright notices remain intact.
+
+
+Greg-E-Term  is  distributed  on  an  "as is"  basis,   without
+warranty.   There  shall be  no liability  on  the  part of the
+author or distributor.   This includes,  but is not limited to,
+any loss or damage,  direct or consequetial, arising out of the
+use of this product.
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                            PAGE 3
+
+
+
+Updates and new revisions of Greg-E-Term may be  found on TCBBS
+HeadQuarters  (a 100% machine language BBS also for the CoCo 1,
+2, and 3 authored by Greg Miller)  at  201-725-5028.   300/1200
+baud.    Be  sure  to use  8  bit,  1  stop bit, and no parity.
+
+Updates and revisions can also be found on the General Electric
+National Information Exchange (GENIE), Color Computer SIG, part
+of the Tandy Round Table.
+
+Note: GENIE is a half duplex system.  For information on GENIE,
+call 1-800-638-9636 8am-9pm  EST.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                            PAGE 4
+
+
+
+   G O I N G   O N L I N E   W I T H   G R E G - E - T E R M
+
+
+Greg-E-Term is  already set  for standard  communications right
+after you EXECute the  program.   However,  there  are  several
+functions in GE Term which you might like to permanetly change,
+so  every time  you  use  the terminal,  changing  options  and
+parameters  after  execution will not be  necessary.   This  is
+accomplished  by  using  the  customizer program,   GETC10/BIN,
+standing for GE Term Customize 1.0.  It is written in Assembly,
+and can only be used  to customize GE Term 1.0.   I suggest you
+try  using  the terminal  before  making a  special  customized
+version of GE Term for yourself,  so you find which options you
+use and  like  the  most.   The  options  you  are  allowed  to
+configure/customize are:
+
+    FUNCTIONS                   OPTIONS              STANDARD
+
+ Baud rate               (300/600/1200)                 300
+ Mask incoming lowercase (y/n)                          Y
+ Duplex                  (full/half/echoplex)           full
+ Word Length             (7 or 8 bit-no parity)         7
+ Parity                  (none/even/odd/mark/space)     none
+ Backspace/rubout value  (127 or 8)                     8
+ Upload prompt           (1 character)                  >
+ VidTex Screen Codes     (y/n)                          Y
+ Buffer initially        (open/closed)                  closed
+ ASCII Upload speed      (0-99999)                      100
+ 9 Macro key selections
+ Screen mode defaults:                                  32X16
+    Hi Res or
+    CoCo 3 with set colors                              b/w
+
+ Printer Selections:
+
+ Lines per page                                         66
+ Characters per line                                    80
+ Word Wrap               (y/n)                          N
+ Stop after every page   (y/n)                          N
+ Baud rate                                              600
+ Margins:
+    Left                                                10
+    right                                               10
+    upper                                               10
+    bottom                                              10
+
+All  of  the  above  functions can  be easily modified with the
+customizer program.   It's menu-driven and self explanitory.
+
+Before ever using Greg-E-Term,  be sure to make a backup of the
+original distribution  diskette  (with its support programs and
+documentation).   Use  a copy as  your telecommunications disk.
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                            PAGE 5
+
+
+
+When you're ready to  customize your  own Greg-E-Term,  all you
+have to do is LOADM "GETC10/BIN" from the distribution disk and
+EXEC it.  You will  be prompted  to enter  the  filename of the
+original GE Term,  which should be GETERM/BIN.  After answering
+all  questions,  you  can  save the new custom GETERM.
+
+NEVER give  out  a copy of  your own customized GE Term,  since
+the configurations may not work for other systems,  and you may
+also have  confidential  password  information  stored  in your
+Macro  section!   Give  out  only  the  original files included
+on the distribution diskette.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                            PAGE 6
+
+
+
+                 Greg-E-Term Options Explained
+
+Most functions of the configurable options are explained below.
+They can all be set to your own  standard  with the  customizer
+program:
+
+Baud rate can be set for 300, 600, or 1200 baud.   The selected
+rate will be used for either  the Serial port or the RS232 pak,
+depending  on  which  you  have installed.   GE Term will auto-
+matically use the RS232 pak if  you have one installed  in  the
+multipak.
+
+"Mask incoming lowercase"  is used to either allow lowercase to
+be  displayed or change incoming lowercase  to uppercase.   The
+option 'y'es to mask is useful for those  CoCo 1 users who like
+the speed of  the 32X16 regular  mode but  not the reverse case
+which is used to represent lowercase.  Note: even though lower-
+case is set to be masked, the actual lowercase letters  will be
+stored in the buffer,  not the  uppercase which is displayed on
+the screen while online.
+
+Duplex may be set to full,  half,  or echoplex.  Most BBS's and
+the major  networks,  except GENIE which uses half duplex,  use
+Full duplex.   Half  duplex can  be used if  you are talking to
+another  CoCo terminal running  GE Term.   It  will  allow your
+characters  to echo to  the screen  so you can  see what you're
+typing.
+
+Word length comes set at 7 bit, which is what most systems use.
+An  exception  to this are TCBBS systems (TCBBS requires you to
+use 8 bit-no parity).  8 bits is generally  used on  BBS's that
+feature graphics.
+
+Many systems  support prompted  ASCII uploading.   This  is the
+method of ASCII uploading that GE Term uses.  In general, BBS's
+use the greater than sign,  ">", as their upload prompt.   Just
+enter  the  proper  character as  your upload  prompt.   If you
+select  control-3  from the Communications mode,  GE Term  will
+wait till such character  is received  before it sends the next
+line.
+
+With an original GE Term, the RS 232 pak will be selected auto-
+matically if it is installed in the multipak.   However, if you
+choose,  you may turn it off by hitting <CLEAR><R> while in the
+Communication Mode.
+
+VidTex screen codes are  used for VidTex systems such as Compu-
+Serve.   It is primarily a set of codes  which allows  for fast
+and easy positioning of the cursor.
+
+Your GE Term buffer is  set to initially be closed.  Should you
+want it to be  open upon  execution,  so all  received  text is
+stored when going to the communications mode, you may choose to
+have it open.   When the buffer is full,  it will automatically
+close.
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                            PAGE 7
+
+
+
+The speed at which an ASCII upload takes place  (how fast Greg-
+E-Term will send the lines), can be adjusted.  Most systems can
+receive an ASCII upload  at the rate which GETerm is originally
+set to.   However, should you discover a need to slow down this
+speed,  you can  use  the  customizer  program  to change it in
+your own custom GE Term. 
+
+Space for nine  pre-defined text strings  (macros)  of up to 30
+characters each is provided in Greg-E-Term.   These  macros are
+great for  storing your  most frequently used BBS numbers, your
+name, passwords, and other text.  To send  a macro in  the com-
+munications mode,  hit <CONTROL>-<SHIFT>-<MACRO #>.  Be sure to
+first hit the CONTROL key, not the SHIFT key!
+
+To remind you again:   be sure not to give copies of your cust-
+omized GE Term to others!   Remember your macros are also saved
+in the final custom binary GE Term  file.  It would be easy for
+others to view your confidential info by doing this.
+
+Several screen  modes are  provided  with Greg-E-Term.  You may
+select to  automatically  use any of the  hi res  screens  upon
+execution  rather than the standard 32X16.  Another option CoCo
+3 users may use are the 80X24 or 40X24 displays.  If you choose
+either of  these,  you can also  select the  foreground,  back-
+ground, and text colors!
+
+Several options are provided for printers and how to format the
+printed buffer onto a page.  You can change the lines per page,
+characters per line, word wrap on or off, stop after every page
+(for those using single sheets of paper), baud rate, and upper/
+lower/right/left margins.
+
+Note:  All  customized  Greg-E-Term programs will be labeled as
+"customized", on the booting screen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                            PAGE 8
+
+
+
+             C O M M U N I C A T I O N   M O D E
+
+Option number 1 on the  Main Menu will bring you to the GE Term
+Communication Mode.  It is usually not necessary to change your
+parameters  before going to  this section,  since GE Term comes
+configured with the standard options.  They are:
+
+300 baud,  Mask incoming lowercase-No,  full duplex, 7 bits, no
+parity,  VidTex screen  codes-ON, Buffer-Closed.
+
+A note to TCBBS system users.  TCBBS REQUIRES you to use 8 bit,
+1 stop bit,  and no parity.   An easy way to use these settings
+without going to the Set parameter section  (selection 6 on the
+main menu) is to hit <Clear><W> (or for CoCo 3 users, <ALT><W>)
+while in  the communication mode.   This will cause the prompt:
+
+ Data bits:8
+ Parity:NONE
+
+to appear on your screen.  Hit it again and you will be back in
+7 bits.  GE Term provides  several other Clear-Key functions as
+described below.
+
+
+               <CTRL> and <CLEAR> key functions
+
+Anytime while in the Communication Mode,  you can get a list of
+the Clear-key functions  by hitting <CLEAR> and <?> at the same
+time.   The following list will be displayed:
+
+ GETERM term mode help
+ =====================
+ (use CLEAR with the listed keys)
+   B - Baud rate setting
+   D - Duplex setting
+   L - Lowercase mask toggle
+   P - Parity setting
+   R - RS232 PAK toggle ON/OFF
+   U - Backspace value toggle
+   V - Videotex codes on/off
+   W - Word length toggle
+   Q - Quick color inquiry
+   CNTRL-?: Other Help menu
+
+The above are all the available  functions that can be executed
+with the CLEAR key,  and another character held simultaneously,
+while in the communication mode.  
+
+The <Down-arrow> key  is the  CONTROL (CTRL for short) key used
+with  Greg-E-Term.   To get a  help  list of  the  "Control-key
+functions",  which can be performed in the  Communication Mode,
+hit the  <Down-arrow> and <?>  keys  at  the  same  time.   The
+following will appear:
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                            PAGE 9
+
+
+
+ Control key definitions:
+ ========================
+  1 - Receive XMODEM
+  2 - Transmit XMODEM
+  3 - Transmit ASCII
+  4 - Toggle buffer open/closed
+  5 - Display buffer status
+  6 - Enter conference mode
+  @ - Return to menu
+ For CoCo 3's:
+ CLEAR-F1: toggle foreground
+ CLEAR-F2: toggle background
+ CNTRL-F1: toggle border
+
+ CLEAR-?: other help menu
+
+A note to CoCo 3 users and those with the deluxe keyboards, the
+<CLEAR> key and the <ALT> key function the same.  Likewise, the
+<CTRL> key and the <Down-arrow>  function as the same "control-
+key".  From now on when referencing the Control-key we will use
+<CTRL>  (same as the <down-arrow> key) and when refering to the
+CLEAR key (same as the <ALT> key),  we will use <CLEAR>.
+
+For those with an  HJL keyboard,  F1 and F2 are the same as the
+deluxe keyboard's  <ALT>  and  <CTRL>  keys,  and F3 and F4 are
+equal to F1 and F2 of the deluxe keyboard.
+
+
+While  in the Communication mode,  and hitting  <CLEAR><B>,  GE
+Term will cycle through it's available baud  rates,  listing to
+the screen at which rate it will currently operate.   This rate
+will be  effective  for both the serial port and the RS232 pak.
+
+Hitting <CLEAR><D> will change the duplex to either Full, Half,
+or Echoplex.
+
+Depressing  <CLEAR><L>  will toggle  the Lowercase Mask  on and
+off.   When it's on,  you will not see any lowercase characters
+on the screen display.  However, lowercase will still be stored
+in the buffer (if open),  whenever the host is actually sending
+lowercase.
+
+A <CLEAR><P> will cycle  through the available parity settings.
+Keep in mind that if <CLEAR><W> is hit to switch to 8 bit, this
+parity setting will automatically become NONE.
+
+If you have a  Radio Shack  RS232 pak  or a  TCBBS Host CommPak
+installed  in  the  multipak,  Greg-E-Term  will  automatically
+detect it,  and  use it instead  of the serial port.   However,
+should you decide  to use the serial port,  just hit <CLEAR><R>
+to toggle it off or back on.
+
+Most systems (including CompuServe) consider a decimal value of
+'8' as  a 'backspace' key.   GE Term  comes  configured to send
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 10
+
+
+
+decimal 8 when you hit the <back-arrow> while in the Communica-
+tion Mode.   However, systems such as DELPHI use what is called
+a Rubout,  and is decimal 127.   So if you plan to call DELPHI,
+hit  <CLEAR><U> till  the  BS (BackSpace) is toggled as 'RUBOUT
+(127)'.  This will cause Greg-E-Term to send a decimal 127 when
+you hit the <back-arrow>.
+
+If your  VidTex  codes  were set to off,  and  you plan to call
+CompuServe,   you   may  want   to  activate  them  by  hitting
+<CLEAR><V>.  Press the two keys again to turn the codes off.
+
+<CTRL><1>  will RECEIVE  an XMODEM file, when in the Communica-
+tion mode, and <CTRL><2> will SEND an XMODEM file.   The buffer
+is used to send from and receive to.
+
+<CTRL><3>  sends an  ASCII  file to  a  system that provides an
+upload  prompt.   If you have  not selected  the proper  upload
+prompt  with  the  customizer  program,  or no  prompt  has yet
+been selected,  you  must enter one  in the  parameter  section
+(main menu selection 6).
+
+On the normal 32X16 screens,  a closed buffer is indicated by a
+solid block. When open, it will change to two different colors.
+The top half,  black,  and the bottom,  white.    In the Hi-Res
+modes and  the CoCo 3 80X24 and 40X24 modes, a closed buffer is
+represented  with an  underline.    An  open  buffer is a solid
+block.   To toggle the buffer open and closed while in the Comm
+Mode, hit <CTRL><4>.
+
+Choosing  <CTRL><5>  will give  you  your buffer status.   When
+these keys  are pressed,  you will see something similar to the
+below list:
+
+ Buffer bytes free:40600
+ Buffer bytes used:00000
+ Xmodem blocks:00000
+
+Depending on  whether or not  you have  anything  stored in the
+buffer,  these  numbers  will  change.   This  is  an excellent
+feature  which gives  you the ability to find  how many  Xmodem
+blocks will be needed to send the entire buffer.  After Loading
+a program or data  file you wish to send,  by going to the Comm
+mode and hitting <CTRL><5> you can then tell the receiving user
+how many Xmodem blocks he can expect to receive.
+
+Greg-E-Term also has another excellent mode of operation.   The
+Conference mode can  be entered by selecting <CTRL><6> from the
+Communication mode.   This  is very  useful when talking in the
+famous 'CB Simulator', 'COnference', or 'Party Lines', found on
+the large  national  networks.   After entering this mode,  the
+screen will appear normal,  until you type something.  Whatever
+you type  will appear  on the  last  line of  the  screen,  and
+receiving text  will be  displayed  above this last line.  This
+helps  a great  deal in preventing  confusion  while using such
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 11
+
+
+
+network features like CB.   When finished typing your sentance,
+hitting <ENTER> will send the line to the host, with a Carriage
+Return tagged on at  the end.   If you  wish  to send the  line
+without the C/R, instead of pressing <ENTER> when ready to send
+your line, hit <CLEAR> instead.
+
+Control characters  are an  exception  to the above rule.   For
+example,  if you hit  <CTRL><L>  to clear the  screen  (when in
+CompuServe COnference sections or CB simulators),  that control
+code  (along  with  ANY control  characters)  will be  sent out
+IMMEDIATELY, causing your screen to clear then and there, with-
+out waiting for you to hit <ENTER> or <CLEAR>.
+
+A further note,  the <CTRL><4> option of the Communication Mode
+to open/close the buffer will ALSO work in the CO mode.
+
+There is a drawback to using the Conference Mode.  The line you
+type and want  to send can not be any  longer  than the current
+width of your screen.   For example, if you are using the stan-
+dard 32X16 screens, only 32 characters can be typed and sent at
+a time.   However, if you are in the 80 column CoCo 3 mode,  up
+to 80 characters can be typed in and sent at a time.  Likewise,
+if you are  in the 51 column Hi-Res mode,  51 characters can be
+sent, and so forth.
+
+For CoCo 3 owners,  a function to select the foreground,  back-
+ground,  and border colors,  while in the 40X24 or 80X24 modes,
+has been provided.   Greg-E-Term has these set at the following
+CoCo 3 standards:
+
+ Foreground: White
+ Background: Black
+ Border: Black
+
+These have been  choosen so those using monochrome monitors can
+have a clear  text screen  upon execution.   For  those  of you
+using  RGB  monitors,  you  may want  to  change these  to your
+favorite colors.   <CLEAR><F1>  cycles  the foreground  (actual
+text colors)  through  all 64 colors.   <CLEAR><F2> toggles the
+background,  and <CTRL><F1> the border.   When  you  find  your
+favored colors,   I  recommend  you use  the customizer program
+so these colors will automatically  be choosen when you execute
+your  custom GE Term.   Else  you  will  have  to  page through
+all those colors each time you execute the terminal.
+
+You can find the decimal values of the current screen colors by
+hitting  <CLEAR><Q>  while in the Communication Mode.  You will
+be prompted for these numbers by the customizer program, if you
+choose to redefine the standard color sets.
+
+Note:  even though  two of the  screen  color option  keys  use
+<CLEAR>,  they both appear in the <CTRL> online Help List Menu,
+Under the "CoCo 3's" list.
+
+
+
+
+
+
+
+
+
+GREG-E-TERM USER MANUAL  V1.0                           PAGE 12
+
+
+
+         Additional keyboard text characters available
+
+Still more Control-Key  functions  are available  which are not
+listed in the help menu.   They allow you to send characters to
+the host which  do not appear on the keyboard.   The list below
+shows their functions:
+
+ <DOWNARROW><SHIFT><,> - left brace
+      <CTRL><SHIFT><.> - right brace
+             <CTRL><,> - tilde
+             <CTRL><.> - pointer
+             <CTRL><:> - pipe
+             <CTRL><;> - backslash
+             <CTRL><-> - underline
+      <CTRL><SHIFT><:> - left bracket
+      <CTRL><SHIFT><-> - right bracket
+
+Other special  characters you  can send  without the use of the
+<CTRL> key, not shown on the keyboard, are listed below:
+
+      <SHIFT><UPARROW> - underline
+   <SHIFT><RIGHTARROW> - right bracket
+        <SHIFT><BREAK> - ESCape
+             <UPARROW> - Up arrow
+
+Note:  In  order to send  a left  brace,  you MUST use the DOWN
+ARROW key instead  of the CTRL  key  (for CoCo 3 users),  since
+BASIC will produce a  <?>  (question mark)  when you hit (CTRL)
+(SHIFT)(<).   That  question mark  will  be  interpreted  by GE
+Term as a request to see  the Control Key Help  Menu  (which is
+usually produced by hitting  <CTRL><?>).   And subsequently, if
+you use  the  <CTRL> key  instead of the <DOWNARROW>,  the help
+menu will be displayed.
+
+The above extra characters will appear differently on different
+GE Term text screens.   On the CoCo 3's 80X24,  40X24, or 32X16
+CoCo 3 screen,  the characters will appear as you would expect,
+with the  exception of the underline; while in the CoCo 3 32X16
+mode, it will appear as a back-arrow.  In the normal 32X16 mode
+the braces will appear as reverse character brackets, the tilde
+will show as  a reverse character up-arrow,  the pointer as the
+(@) symbol,  the pipe as a reverse character backslash, and the
+underline as a back-arrow.  Unexpected results are expected for
+any of the Hi-Res or the two 80X24 hardware board screen modes.
+
+
+                                                                                                                                                                                           

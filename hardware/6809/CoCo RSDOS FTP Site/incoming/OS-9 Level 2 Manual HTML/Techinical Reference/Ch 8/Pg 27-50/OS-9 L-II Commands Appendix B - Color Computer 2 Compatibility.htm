@@ -1,0 +1,1882 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>F:\MYDOCU~1\SCHEDU~2\OS-9 L-II Commands Appendix B - Color Computer 2 Compatibility.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<U>Appendix B
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<U>Color Computer 2 </U>Compatibility
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000004.JPG" WIDTH="129" HEIGHT="2">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000005.JPG" WIDTH="18" HEIGHT="3">
+</FONT>
+</H2>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Color Computer 3 OS-9 Level Two provides compatibility with
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the Color Computer 2 and OS-9 Level One by letting you use the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+video display in the Alphanumeric mode (including <I>Semigraphic</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+box graphics) and in the Graphics mode. To control the display,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+it has many built-in functions that you activate using ASCII
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+control characters. Any program written in a language using
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+standard output statements (such as PUT in BASIC) can use
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+these functions. Color Computer BASIC09 has a Graphics Inter
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+face Module that can automatically generate most of these codes
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+using BASIC09 RUN statements.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The Color Computer's display system uses a separate memory
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+area for each Display mode. Therefore, operations on the Alpha
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+display do not affect the Graphics display and vice-versa. You can
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+select either display with software control. (See <I>Getting Started</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>With Extended Color BASIC </I>for more detailed information.)
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The system interprets 8-bit characters sent to the display
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+according to their numerical values, as shown in this chart:
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Character Range (Hex) Mode/Function
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+. 00 - OE Alpha Cursor and screen<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+control.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OF - 1D Graphics Drawing and screen<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+control.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1B - IF Alpha Escape load in charac<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ters for high resolution graph<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ics and text.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+20 - 5F Alpha Uppercase characters.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+60 - 7F Alpha Lowercase characters.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+80 - FF Alpha Semigraphic patterns.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The device driver CC3I0 calls a subroutine module named
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+VDGInt to handle all text and graphics for the Color Com
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+puter 2 compatibility mode.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B-1
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000006.JPG" WIDTH="22" HEIGHT="6">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000007.JPG" WIDTH="18" HEIGHT="23">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Commands Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+Alpha Mode Display<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The Alpha mode is the standard operational mode. Use it to dis
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+play alphanumeric characters and semigraphic box graphics. Use
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+it also to simulate the operation of a typical computer terminal
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+with functions for scrolling, cursor positioning, clearing the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+screen, deleting lines, and so on.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The Alpha mode assumes that each 8-bit code the system sends
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to the display is an ASCII character. If the high-order bit of the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+code is clear, the system displays the appropriate alphanumeric
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+character. If the high-order bit is set, OS-9 generates a Semi
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+graphic 6 graphics box. See 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Getting Started With Extended Color</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC for an explanation of semigraphic functions.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The standard 32-column Alpha mode display is handled by the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+I/O subroutine module VDGInt. CC310 calls this module
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(included in the standard boot file) to process all text and semi
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+graphic output.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following chart provides codes for screen display and cursor
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+control. You can use the functions from the OS-9 system prompt
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+by typing DISPLAY, followed by the appropriate codes. For
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+instance, to clear the screen, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+display 0c ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To position the cursor at column 16, Line 5 and display the word
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+HELLO, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+display 02 30 2S 48 4S 4c 4c 4f ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can also use the following codes in a language, such as
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09. To do so, use decimal numbers with the CHR$ func
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tion, such as:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+print chr$(02);chr$(48);chr$(37);chr$(72)
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+chr$(69);chr$(76);chr$(76);chr$(79)
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Using Alpha Mode Controls with Windows  -<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The control functions in the following chart also function prop
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+erly under the high resolution windowing systems. References to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+"screen" are also references to windows.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B-2<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000008.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000009.JPG" WIDTH="25" HEIGHT="8">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Color Computer 2 Compatibility / B<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000010.JPG" WIDTH="198" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Alpha Mode Command Codes<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000011.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000012.JPG" WIDTH="20" HEIGHT="18">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000013.JPG" WIDTH="10" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Hex Decimal<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Control Control<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Code Code Name/Function<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$01 01 HOME Returns the cursor to the upper left<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+corner of the screen.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$02 02 CURSOR XY Moves the cursor to character
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+X of line Y. To arrive at the values for X and
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Y, add 20 hexadecimal to the location where
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+you want to place the cursor. For example, to
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+position the cursor at Character 5 of Line 10
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(hexadecimal A), do these calculations:
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+5<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
++ 20<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+= 25 hexadecimal<BR>
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OA<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
++ 20<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+= 2A hexadecimal<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The two coordinates are $25 and $2A.
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$03 03 ERASE LINE Erases all characters on the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+line occupied by the cursor.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$04 04 CLEAR TO END OF LINE Erases all<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+characters from the cursor position to the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+end of the line.<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000014.JPG" WIDTH="304" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B-3<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Commands Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Hex Decimal<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Control Control<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Code Code<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Name/Function<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$05 05 CURSOR ON-OFF-Allows alteration of the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cursor based on the value of the next<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+character. Codes are as follow:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Hex Dec Char<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Default<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function Color<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$06<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$08<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$09<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$OA<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+06<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+08<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+09<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+10<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000015.JPG" WIDTH="22" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$20 32 space Cursor OFF<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$21 33 ! Cursor ON Blue<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$22 34 " Cursor ON Black<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$23 35 # Cursor ON Green<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$24 36 $ Cursor ON Yellow<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$25 37 % Cursor ON Blue<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$26 38 &amp; Cursor ON Red<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$27 39 ` Cursor ON Buff<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$28 40 ( Cursor ON Cyan<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$29 41 ) Cursor ON Magenta<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$2A 42 * Cursor ON Orange<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CURSOR RIGHT Moves the cursor to the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+right one character position.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CURSOR LEFT Moves the cursor to the left
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+one character position.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CURSOR UP Moves the cursor up one line.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CURSOR DOWN (linefeed) Moves the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cursor down one line.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$OC 12 CLEAR SCREEN Erases the entire screen,<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and homes the cursor (positions it at the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+upper left corner of the screen).<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$OD 13 RETURN Returns the cursor to the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+leftmost character on the line.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$OE<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+14<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+DISPLAY ALPHA Switches the screen from<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Graphic mode to Alphanumeric mode.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B-4<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000016.JPG" WIDTH="22" HEIGHT="4">
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Color Computer 2 Compatibility / B
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Graphics Mode Display<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="7" FACE="" COLOR="#000000">
+.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use the Graphics mode to display high-resolution 2- or 4-color
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+VDG graphics. The Graphics mode includes commands to set
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+color, plot and erase individual points, draw and erase lines,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+position the graphics cursor, and draw circles.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You must execute the <I>display graphics </I>command before using
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+any other Graphics mode command. This command displays the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+graphics screen and sets a display format and color.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The first time you enter the display graphics command, OS-9
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+allocates a 6144-byte display memory. There must be at least
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+that much contiguous free memory available. (You can use
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+MFREE to check free memory.) The system retains the display
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+memory until you give the <I>end graphics </I>command, even if the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+program that initiated the Graphics mode finishes. Always use
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the end graphics command to release the display memory when
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+you no longer need the Graphics mode.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Graphics mode supports two basic formats. The 2-color format
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+has 256 horizontal by 192 vertical points (G6R mode). The 4
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+color format has 128 horizontal by 192 vertical points (G6C
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mode). Either mode provides both color sets. Regardless of the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+resolution of the selected format, all Graphics mode commands
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+use a 256 by 192 point coordinate system. The X and Y coordi
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+nates are always positive numbers. Point 0,0 is the lower left cor
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ner of screen.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Many commands use an invisible <I>graphics cursor </I>to reduce the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+output required to generate graphics. You can explicitly set this
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cursor to any point by using the <I>set graphics cursor </I>command.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can also use any other commands that include x,y coordi
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+nates (such as <I>set point) </I>to move the graphics cursor to the speci
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+fied position.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Any graphics function that <I>draws </I>on the graphics screen
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+requires that the VDGInt module is loaded into memory during
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the system boot. -<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Graphics Mode Selection Codes<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Code Format
+</UL>
+<BR>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+00 256 x 192 two-color graphics
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+01 128 x 192 four-color graphics
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B-5
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000017.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000018.JPG" WIDTH="20" HEIGHT="5">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Commands Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000019.JPG" WIDTH="306" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Color Set and Foreground Color Selection Codes<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>2-Color Format  4-Color Format
+</UL>
+</UL>
+<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Char Back- Fore- Back- Fore<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+ground ground ground  ground<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+00 Black  Black  Green  Green<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Color  </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+01  Black  Green  Green  Yellow<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Set 1 02   Green Blue<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+03   Green Red<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+04 Black  Black Buff Buff<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Color </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+05 Black  Buff Buff Cyan<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Set 1 06   Buff Magenta<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+07   Buff Orange<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+08   Black Black<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Color </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+09   Black  Dark Green<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Set 1 10   Black Med. Green<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+11   Black Light Green<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+12   Black Black<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Color </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+13   Black Green<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Set 1 14   Black Red<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+15   Black Buff<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Graphics Mode Control Commands<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Hex Decimal<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Control Control<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B><U>Code Code<BR>
+</U></B>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$OF  15<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Name/Function<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000020.JPG" WIDTH="60" HEIGHT="11">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+DISPLAY GRAPHICS-Switches the screen
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+to the Graphics mode. Use this command
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+before any other graphics commands. The
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+first time you use it, the system assigns a 6
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+kilobyte display buffer for graphics. If 6K of
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+contiguous memory isn't available, OS-9 dis
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+plays an error. Follow the display graphics
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+command with two characters specifying the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Graphics mode and color/color set,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+respectively.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+PRESET SCREEN Presets the entire
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+screen to the color code passed by the next
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+character.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+B-6<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000021.JPG" WIDTH="255" HEIGHT="3">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000022.JPG" WIDTH="20" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+Color Computer 2 Compatibility / B<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000023.JPG" WIDTH="24" HEIGHT="7">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000024.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Hex Decimal<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Control Control<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Code Code<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Name/Function<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000025.JPG" WIDTH="60" HEIGHT="11">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000026.JPG" WIDTH="60" HEIGHT="11">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000027.JPG" WIDTH="60" HEIGHT="11">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+$14  20<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000028.JPG" WIDTH="60" HEIGHT="11">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+$16  22<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+$17 23<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000029.JPG" WIDTH="98" HEIGHT="11">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+SET COLOR Sets the foreground color (and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+color set) to the color specified by the next
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+character but does not change the Graphics
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+mode.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+END GRAPHICS Disables the Graphics
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+mode, returns the 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+6K 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+byte graphics memory
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+area to OS-9 for other use, and switches to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Alpha mode.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+ERASE GRAPHICS Erases all points by
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+setting them to the background color, and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+positions the graphics cursor at the desired
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+position.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+HOME GRAPHICS CURSOR Moves the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+graphics cursor to coordinates 0,0 (the lower
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+left corner).
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+SET GRAPHICS CURSOR Moves the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+graphics cursor to the given x,y coordinates.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+For x and y, the system uses the binary
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+value of the two characters that immediately
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+follow.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+DRAW LINE Draws a line in the fore-<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+ground color from the graphics cursor posi-<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+tion to the given x,y coordinates. For x and y,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+the system uses the binary value of the two
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+characters that immediately follow. The
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+graphics cursor moves to the end of the line.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+ERASE LINE-Operates the same as the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>draw line </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+function, except that OS-9 draws
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+the line in the background color, thus erasing
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+the line.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+SET POINT Sets the pixel at point x,y to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+the foreground color. For x and y, the system
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+uses the binary values of the two characters
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+that immediately follow. The graphics cursor
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+moves to the point set.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000030.JPG" WIDTH="12" HEIGHT="3">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000031.JPG" WIDTH="306" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+B-7<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Commands Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Hex Decimal<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Control Control<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Code Code Name/Function<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+$19 25 ERASE POINT Operates the same as the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>set point </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+function, except that OS-9 draws the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+point in the background color, thus erasing<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+the point.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+$ lA 26 DRAW CIRCLE Draws a circle in the fore<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+ground color using the graphics cursor as the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+center point and using the the binary value<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+of the next character as the radius.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+$1C 28 ERASE CIRCLE Operates the same as the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>draw circle </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+function, except that OS-9 draws<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+the circle in the background color, thus eras<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+ing the circle.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+$1D 29 FLOOD FILL 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>paints </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+with the foreground<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+color, starting at the graphics cursor position<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+and extending over adjacent pixels having the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+same color as the pixel under the graphics<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+cursor.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Note: When you call FILL the first time, it requests alloca<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+tion of a 512-byte stack for the fill routine. The system does<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+not return this memory until you terminate graphics with<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+the 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>end graphics </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+command.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Note: The chart uses hexadecimal codes for compatibility<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+with the OS-9 DISPLAY command.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Garamond" COLOR="#000000">
+<B>Display Control Codes Sum-mary<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+1st Byte<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Dec Hex 2nd Byte 3rd Byte Function<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+00 00  Null<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+01 01  Home alpha cursor<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+02 02 Column + 32 Row + 32 Position alpha cursor<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+03 03  Erase line<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+B-8<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000032.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000033.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000034.JPG" WIDTH="20" HEIGHT="4">
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<U>Color Computer 2 Compatibility / B<BR>
+</U>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000035.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+1st Byte<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Dec Hex 2nd Byte </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+3rd Byte <B>Function<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+04 04  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Erase to End of line<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+05 05 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Cursor Code Alter Cursor<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+06 06 Move 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+cursor right<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+07 07 Sound terminal bell<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+08 08 Move cursor left<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+09 09 Move cursor up<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+10 OA Move cursor down<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+11 OB Erase to End of Screen<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+12 OC Clear screen<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+13 OD Carriage return<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+14 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+OE Select Alpha mode<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+15 OF 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Mode Color Code Select Graphics mode<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+16 10 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Color Code  Preset screen<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+17 11 Color Code  Select color<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+18 12   
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+fruit Graphics mode<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+19 13   Erase screen<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+20 14   
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Home Graphics cursor<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+21 15 X Coord Y Coord Move graphics cursor<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+22 16 X 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Coord Y Coord Draw line to x/y<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+23 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+17 X Coord Y Coord Erase line to x/y<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+24 18 X 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Coord Y Coord Set point at x/y<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+25 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+19 X Coord Y Coord Clear point at x/y<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+26 lA 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Radius  Draw circle<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+28 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+1C Radius  Erase circle<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+29 1D Flood Fill<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000036.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+B-9<BR>
+</FONT>
+</BODY>
+</HTML>

@@ -1,0 +1,9 @@
+CoCo Parts List
+
+41464 64Kx4bit dynamic memory, 120ns
+23C256 (8719KX) CMOS 32Kx 8-Bit Mask ROM (150ns)
+LSC81001 -> PIA, similar to 6821
+74LS244 OCTAL BUFFER/LINE DRIVERS WITH 3-STATE OUTPUT(NONINVERTED)
+74LS374 - Octal D F/F Edge-triggered Tri-State
+74LS138 - 3 to 8 Decoder/Demultiplexer
+TCC1014A - GIME CHIP

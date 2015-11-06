@@ -1,0 +1,3257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\Basic09 - Ch 11 Pg 101-126.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Command Refe</U>r<U>ence / 11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure uses MOD to execute repeatedly a sequence of
+GOSUB commands. A loop of index of 80 causes execution to
+jump to each line number in the list 10 times.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+PROCEDURE repeat<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OSHELL "TMODE -PAUSE"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+ODIM T: INTEGER<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OFOR T=1 TO 80<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+DON MODCT,8)+1 GOSUB 10,20,30,40,50,60,70,80<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+ONEXT T<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OSHELL "TMODE PAUSE"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+REND<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+1 00PR I NT USING "S1 0"" , "*" \ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+200PRINT USING "S10^","**" \ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+300PRINT USING 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+<B>"S10^.1711***" </B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma1" COLOR="#000000">
+\ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma1" COLOR="#000000">
+400PRINT USING "S10^","****" \ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma1" COLOR="#000000">
+500PRINT USING 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+<B>"S10^.1711*****" </B>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma1" COLOR="#000000">
+\ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma1" COLOR="#000000">
+600PRINT USING "S10^","****" \ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma1" COLOR="#000000">
+70EPRINT USING "S10^","***" \ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma1" COLOR="#000000">
+80EPRINT USING "S1 0^" , "* *" \ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma1" COLOR="#000000">
+DE ND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000000.JPG" WIDTH="20" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+11-iol<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Garamond" COLOR="#000000">
+ON/GOTO 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Jump to line number on a<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+specified condition
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax: ON 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>pos GOTO linenum [,linenum,...]<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Transfers procedure control to the line number
+located at position pos in the list of line numbers immediately
+following the GOTO command. For example, if pos equals 1,
+BASIC09 branches to the first line number it encounters in
+the list. If pos equals 2, BASIC09 branches to the second line
+number it encounters in the list. If pos is greater than the
+number of items in the list, execution continues with the next
+command line. To use ON/GOTO you must have numbered
+lines to match the line numbers in the list.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+pos An integer value in a range from 1 to the<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+number of items in the list following GOTO.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>linenum </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Any numbered line in the procedure.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT "You can now: C1) End the program C2) Print<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>the re5ult5"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT " C3) Try again C4) Start<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>a new program"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>INPUT "Type the letter of your choice: ",choice<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ON CHOICE GOTO 100, 200, 300, 400<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+This procedure converts decimal numbers to binary. It uses ON
+GOTO to execute the operation you select from a menu: Convert
+a number, display the result of all conversions, or end the
+program.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE bicalc<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM^NUMBER,NUM,X,STORAGE:INTEGER;^BI:STRING;<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>^ARRAYC50,2):STRING<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pCOUNT=0<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-102<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000001.JPG" WIDTH="20" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000002.JPG" WIDTH="20" HEIGHT="5">
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 Command Reference l 11
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>100HI="" \NUMHER=0 \NUM=0 \X=0 \STORAGE=0
+DINPUT "Number to convert to binary ",NUMBER
+DIF NUMBER=0 THEN END
+DENDIF
+ONUM=LOG10CNUMHER)/.3
+ONUM=2^NUM \STORAGE=NUMBER
+OREPEAT
+OX=NUMBER/NUM
+DI F X &gt; 0 THEN H I =H I +"1 "
+ONUMHER=MODCNUMHER,NUM)
+OELSE HI=HI+"0"
+DENDIF
+ONUM=NUM/2
+DUNTIL NUM&lt;=1
+OIF NUMHER&gt;0 THEN
+OH I =H 1 </TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
++111 "
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OELSE^HI=HI+"0"
+REND I F
+OPRINT STORAGE; " _ "; HI; " in binary."
+OPRINT
+OCOUNT=COUNT+1
+OARRAYCCOUNT,1)=STR$CSTORAGE)
+OARRAYCCOUNT,2)=HI
+<U>12FIPRINT </U>"Do you want to: C1) Convert another
+number."
+O P R I N T </TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+"OOOOOOOOOOOOOOOO 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>C 2) D </TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+i 5 p 1 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>a y all c a 1 c u 1 a t i o n </TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+5
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>thus far."
+O P R I N T </TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+"OOOOOOOOOOOOOOOO 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>C 3) End the program."
+DINPUT "Enter 1, 2, or 3...",choice
+DON choice GOTO 10,20,30
+REND
+200FOR T=1 TO COUNT
+OPRINT ARRAYCT,1); " _ "; ARRAYCT,2)
+ONEXT T
+OGOTO 1 2
+300PRINT \ PRINT " Program Terminated"
+REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000003.JPG" WIDTH="16" HEIGHT="2">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000004.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>11-103<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+OPEN 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Opens a path to a device<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000005.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Syntax: OPEN # <B>pa </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I>th, "pa thus t" [access model[+ access
+model[+...]
+</UL>
+</UL>
+</UL>
+<BR>
+</I></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Opens an input/output path to a disk file or to a
+device. When you open a file, you can select one or more of the
+following access modes:<BR>
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B><U>Mode Function<BR>
+ </U></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+READ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Lets you read (receive) data from a file or<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+device but does not allow you to write (send)<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+data.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>WRITE </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Lets you write data to a file or device but does<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+not allow you to read data.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+UPDATE 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Lets you both read from and write to a file or<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+device.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+EXEC 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Specifies that the file you want to access is in<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+the current execution directory.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+DIR Specifies that the file you want to access is a<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+directory-type file.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>path </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+The variable in which BASIC09 stores the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+number of the newly opened path.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>pathlist </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+The route to the file or device to be opened,<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+including the filename if appropriate.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>access mode </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+The type of access the system is to allow for<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+the file or device. Use a plus symbol to specify<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+more than one type of access.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000006.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000007.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+11-104<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Command Reference / 11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Notes:
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9 </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The access mode defines the direction of I/O transfers.
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>0 </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because OS-9 files are byte-addressed and are unformatted, you can set up the filing system you want for a particular application. Your system can read the data contained
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+__ in a file as single bytes or in groups of any size you want.<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>0 </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can expand a file using PRINT, WRITE, or PUT statements to write beyond the current end-of-file.
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Examples:
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPEN #TRANS,"transportation":UPDATE
+</UL>
+<BR>
+ <UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPEN #SPOOL,"/user4/report":WRITE
+</UL>
+<BR>
+ <UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPEN #OUTPATH,name$:UPDATE+EXEC
+</UL>
+<BR>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Sample Program:
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure opens a path to both the SYS directory on Drive
+/DO and the error message file.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE readerr
+ODIM A:STRINGL801
+ODIM PATH:HYTE
+EOPEN #PATH,"/D0/SYS/ERRMSG":READ
+OWHILE EOFC#PATH)&lt;&gt;TRUE DO
+DREAD #PATH,A
+SPRINT A
+EENDWHILE
+OCLOSE #PATH
+REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000008.JPG" WIDTH="19" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000009.JPG" WIDTH="24" HEIGHT="8">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-105<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+OR 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Performs a Boolean OR operation<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax:  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>operand l OR operand2<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Performs an OR operation on two or more values,
+returning a Boolean value of either TRUE or FALSE.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>operandl </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Either numeric or string values.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>opera<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Examples:<BR>
+ 
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>PRINT A&gt;3 OR B&gt;3<BR>
+ </TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>PRINT A$="YES" or B$="YES"<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000010.JPG" WIDTH="22" HEIGHT="6">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>11-106<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Command Reference / 11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure asks you to type a word or phrase, then converts
+all lowercase characters to uppercase. It uses OR to test for a
+character in your word or phrase that is outside of the ASCII
+values for lowercase letters. If it is, the character does not need
+converting.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE uppercase
+ODIM PHRASE,NEWSTRING:STRINGL807; CHARACTER:
+STRINGL1J; T,X:INTEGER
+ONEWSTRING="" PHRASE=""
+OPRINT "Type a phrase in lowercase and I will make
+it uppercase."
+OINPUT PHRASE
+OFOR T=1 TO LENCPHRASE)
+OCHARACTER=MID$CPHRASE,T,1)
+OX=ASCCCHARACTER)
+DIF X&lt;97 OR X&gt;122 THEN
+ONEWSTRING=NEWSTRING+CHARACTER
+OELSE
+OX=X-32
+ONEWSTRING=NEWSTRING+CHR$CX)
+REND I F
+ONEXT T
+OPHRASE=NEWSTRING
+ONEWSTRING=""
+OPRINT PHRASE
+REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000011.JPG" WIDTH="24" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000012.JPG" WIDTH="24" HEIGHT="8">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-107<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>PARAMEstablishes variables to receive from
+another procedure
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>PARAM variable[,...] </B>[: <B>type] [; variable] </B>[,... ] [: type]
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+[...]
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>Defines the parameters that a 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>called </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+procedure
+expects to receive from the procedure that calls it. When
+using PARAM, be sure that the total size of each parameter
+in the calling procedure's RUN statement is the same as the
+defined size in the called procedure's PARAM statement.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+ </B>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>variable A </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+simple variable, an array structure, or a<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+complex data structure.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+type Byte, Integer, Real, Boolean, String, or user<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+defined.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Notes:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; BASIC09 checks the size of each parameter to prevent accidental access to storage other than that assigned to the
+parameter. However, BASIC09 does not check that parameters are of the proper type. In most cases you must be sure
+that types evaluated in RUN statements match the types
+defined in the PARAM statements.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+However, because BASIC09 does not perform type checking,
+it is possible to perform useful but normally illegal type
+conversions of identically-sized data structures. For example,
+you could pass a string of 80 characters to a procedure
+expecting a byte array of 80 elements. Each character in
+the string is assigned a corresponding position in the
+array.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; You declare simple arrays by using the variable name,
+without a subscript, in a PARAM statement.
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000013.JPG" WIDTH="20" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000014.JPG" WIDTH="108" HEIGHT="1">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000015.JPG" WIDTH="193" HEIGHT="1">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-108
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000016.JPG" WIDTH="99" HEIGHT="2">
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>BASIC09 Command Reference l 11<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000017.JPG" WIDTH="24" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000018.JPG" WIDTH="20" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000019.JPG" WIDTH="18" HEIGHT="3">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can declare several variables of the same type by separating them with commas. To separate variables of different types, follow each type group with a colon, the type
+name, and then a semicolon.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you do not include a maximum length for a string variable enclosed in brackets following the type, like this:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DIM name:string[251
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+uses a default length of 32 characters for strings.
+You can declare shorter or longer lengths, to the capacity of
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09's 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+memory.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>0 </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Arrays can have one, two, or three dimensions. The
+PARAM format for dimensioned arrays is the same as for
+simple variables except you must follow each array name
+with a subscript, enclosed in parentheses, to indicate its
+size. The maximum array size is 32767.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Arrays can be either of the standard 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+type, or of a
+user-defined type. To create your own data types for simple
+variables, arrays, and complex data structures, see TYPE.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PARAM NUMBER: INTEGER<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PARAM NAME:STRINGL25];ADDRESS:STRINGL30J;ZIP:
+INTEGER<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PARAM N01,N02,NO3:REAL;NO4,NO5,NOG:INTEGER;NO7:
+BYTE<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The first procedure asks you to enter a decimal number. Then, it
+asks you to choose whether you want to convert the number to
+binary or hexadecimal. Depending on your choice, the procedure
+calls (using RUN) either a procedure named Binary or a procedure named Hex. It passes the number you typed to the appropriate procedure for conversion.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000020.JPG" WIDTH="347" HEIGHT="44">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>11-109<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I><U>Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE convert<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM NUMBER,CHOICE:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT USING "S80^"; "Hexadecimal - Binary<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Conversion Program"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>100INPUT "Number to convert...",NUMBER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF NUMBER=0 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OENDIF<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DINPUT "Choose: C1) Binary or C2) Hex...",CHOICE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DON CHOICE GOTO 20,30<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>200RUN BINARYCNUMBER)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OGOTO 1 0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>300RUN HEXCNUMBER)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OGOTO 1 0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE binary<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM NUM,X,STORAGE:INTEGER; BI :STRING;<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ARRAYC50,2):STRING<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPARAM NUMBER: INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OCOUNT=0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OBI="" \NUM=0 \X=0 \STORAGE=0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONUM=LOG10CNUMBER)/.3<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONUM=2^NUM \STORAGE=NUMBER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OREPEAT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OX=NUMBER/NUM<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF X&gt;0 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OBI =BI +"1 "<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONUMBER=MODCNUMBER,NUM)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OELSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OBI=BI+"0"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DENDIF<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONUM=NUM/2<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUNT I L NUMc =1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF NUMBER&gt;0 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OBI=BI+"1"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OELSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OBI=BI+"0"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DENDIF<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT STORAGE; " _ "; BI; " in binary."<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000021.JPG" WIDTH="24" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000022.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000023.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000024.JPG" WIDTH="275" HEIGHT="2">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>11-110<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Command Reference l </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I><U>11<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000025.JPG" WIDTH="20" HEIGHT="7">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000026.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000027.JPG" WIDTH="10" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000028.JPG" WIDTH="18" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE hex<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pDIM NUM,X,STORAGE:INTEGER; TAHLE,HX:STRING;<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ARRAYC50,2):STRING<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pPARAM NUMBER:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pTAHLE="123456789AHCDEF"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pHX="" \NUM=0 \X=0 \STORAGE=0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pNUM=LOG10CNUMHER)/1.2<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pNUM=16^NUM \STORAGE=NUMBER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pREPEAT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pX=NUMBER/NUM<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pIF X&gt;0 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pHX=HX+MID$CTAHLE,X,1)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pNUMHER=MODCNUMHER,NUM)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pELSE HX=HX+"0"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pEND I F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pNUM=NUM/ 16<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pUNTIL NUM&lt;=1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pIF NUMHER&gt;O THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pHX=HX+MID$CTAHLE,NUMHER,1)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pELSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pHX=HX+"0"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pEND I F<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pPRINT STORAGE;<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pEND<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>HX;<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>" in hexadecimal."<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000029.JPG" WIDTH="35" HEIGHT="8">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+PAU<U>SE </U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<U><B>Suspends execution and enters Debug<BR>
+</U></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000030.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax:  </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PAUSE <B>text<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Suspends the execution of a procedure and causes
+BASIC09 to enter the DEBUG mode. If you include text with
+the PAUSE command, it is displayed on the screen.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Place PAUSE statements in a program temporarily to observe
+the way in which the procedure operates and to track down
+programming errors. When the procedure is operating correctly, remove the PAUSE statement.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+After using DEBUG, you can continue execution of the 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>paused
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+procedure with the CONT command.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+text A message you want PAUSE to display on the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+screen when BASIC09 executes the statement.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+ </B>
+</FONT>
+<FONT SIZE="1" FACE="Arial" COLOR="#000000">
+PAUSE<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial" COLOR="#000000">
+PAUSE The array is now full.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000031.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial" COLOR="#000000">
+11-112<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>B</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I><U>ASIC09 Comma</U>n<U>d Reference l 11<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>PEEKReturns the value in a memory location<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000032.JPG" WIDTH="127" HEIGHT="19">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000033.JPG" WIDTH="17" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax:  PEEK(mem)<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Returns the value of a memory byte as a decimal
+integer. The value returned is in the range 0 to 255. PEEK is
+the complement of the POKE statement.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+See also ADDR.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mem An integer value representing the location of<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the memory byte you want to examine. The<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+memory byte is relative to the current pro<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cess's address space.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+PRINT PEEKC15250)<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+MEMVAL = PEEKC4450)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000034.JPG" WIDTH="20" HEIGHT="6">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+11-113<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure asks you to type a phrase in uppercase characters. It then uses ADDR to locate the area in memory where
+BASIC09 stores the phrase. Next, it reads each character from
+memory with PEEK, converts it to lowercase if necessary, and
+pokes the new value back into the same location. When the procedure displays the contents of the phrase, it is all lowercase.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE lowercase
+ODIM LOC,T:INTEGER; PHRASE:STRINGI80J
+OPRINT "Type a phrase in UPPERCASE and I'll make
+it lowercase."
+OINPUT PHRASE
+OLOC=ADDRCPHRASE)
+OFOR T=LOC TO LOC+LENCPHRASE)
+OX=PEEKCT)
+OIF X&gt;32 AND X&lt;91 THEN
+OX=X+32
+OPOKE T, X
+REND I F
+ONEXT T
+OPRINT PHRASE
+REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000035.JPG" WIDTH="20" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000036.JPG" WIDTH="22" HEIGHT="5">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-114<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Command Reference / 11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+PI 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Returns the value of pi<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax: PI<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Returns the constant value 3.14159265.
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters: None
+Examples:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT "The area of a circle with a radius of 6
+inches ir 11;PI*6A<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Sample Program:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure uses the formula (PI + 2)/15 as a basis for calculating a screen position. Taking the sine of the formula, it prints
+a sine wave of asterisks down the screen.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE picalc<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM FORMULA,CALCULATE,POSITION:REAL<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OSHELL "DISPLAY 0C"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFORMULA=(PI+2)/15<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OCALCULATE=FORMULA<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OSHELL "TMODE -PAUSE"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=0 TO 100<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OCALCULATE=CALCULATE+FORMULA<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPOSITION=INT(SIN(CALCULATE)*10+16)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT TAH(POSITION); "*"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OSHELL "TMODE PAUSE"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-115
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000037.JPG" WIDTH="24" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000038.JPG" WIDTH="17" HEIGHT="18">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+POKE 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Stores a value in a memory location<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000039.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax:  POKE </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>mem, value<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Stores a value at the specified memory address, relative to the current process's address space. <I>Mem is </I>an absolute address at which BASIC09 stores a byte type value.
+POKE is the complement of the PEEK statement.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You should use care when using POKE. Because it changes
+the value in memory, a POKE to the wrong portion of memory
+could cause OS-9, BASIC09, or your procedures to malfunction
+until you reboot the system.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+See also ADDR.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>mem </I>An integer value representing the location of<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the memory byte you want to change.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>value </I>The value to store in the specified memory<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+location.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+POKE 1 5250 , 1 3<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000040.JPG" WIDTH="26" HEIGHT="7">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000041.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+11-116<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Command Reference / 11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure asks you to type a phrase in uppercase characters. It then uses ADDR to locate the area in memory where
+BASIC09 stores the phrase. Next, it reads each character from
+memory, converts it to lowercase if necessary, and uses POKE to
+store the new value back in the same location. When the procedure next displays the contents of the phrase, it is all lowercase.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE lowercase
+ODIM LOC,T:INTEGER; PHRASE:STRINGL80J
+OPRINT "Type a phrase in UPPERCASE and I'll make
+it lowercase."
+DINPUT PHRASE
+OLOC=ADDRCPHRASE)
+OFOR T=LOC TO LOC+LENCPHRASE)
+OX=PEEKCT)
+OIF X32 AND X&lt;91 THEN
+OX=X+32
+OPOKE T, X
+OENDI F
+ONE XT T
+OPRINT PHRASE
+REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000042.JPG" WIDTH="19" HEIGHT="3">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-117<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+POS 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Returns cursor's column position<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000043.JPG" WIDTH="25" HEIGHT="9">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax:  POS<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Returns the current column position of the cursor.
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+None
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Examples:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT POS<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Sample Program:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure is a simple typing program that uses POS to
+make sure that words are not split when you type to the end of
+the screen. After you type 25 characters on a line, the procedure
+breaks the line at the next space character.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE wordwrap<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM CHARACTER:STRINGf1J<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT USING "S32^"; "Word Wrap Program"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT USING "S32^"; "Press LCTRLILCl to Exit"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OSHELL "TMODE -ECHO"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OWHILE CHARACTER&lt;&gt;" " DO<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OGET *1 ,CHARACTER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT CHARACTER;<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF POS&gt;25 AND CHARACTER=" " THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT CHR$C13)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND I F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OENDWHILE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OSHELL "TMODE ECHO"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000044.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-118<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000045.JPG" WIDTH="354" HEIGHT="1">
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I><U>BASIC09 Command Reference l 11
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+PRINT 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>Displays text<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000046.JPG" WIDTH="17" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Syntax: PRINT [#path] [TAB(pos);] </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>data[;data...]<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Prints numeric or string data on the video display
+unless another path is specified.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>path </I>The number corresponding to an opened device<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or file. If you do not specify <I>path, </I>the default<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+is # 1, the video screen (standard output<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+device). To print to another device or file, first<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OPEN a path to that file or device (see<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OPEN).<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+pos A column number that tells TAB where to<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+begin printing. Specify any number from 0 to<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the width of your video display.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+data Any numeric or string constant or variable.<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Enclose string constants within quotation<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+marks. All data items must be separated by a<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+semicolon or comma.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Notes:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; If you specify more than one data item in the statement,
+separate them with commas or semicolons.
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; If you use commas, PRINT automatically advances to the
+next tab 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>zone </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+before printing the next item. In BASIC09,
+tab zones are 16 characters apart.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; If you use semicolons or spaces to separate data items,
+BASIC09 prints the items without any spaces between
+them. BASIC09 begins the next print item immediately following the end of the last print item.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; If you end a print item without any trailing punctuation,
+PRINT begins printing at the beginning of the next line.
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>11-119
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000047.JPG" WIDTH="19" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If the data being printed is longer than the display screen
+width, PRINT moves to the next line and continues printing the data.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+TAB causes BASIC09 to begin displaying the specified data
+at the column position specified by TAB. If the output line
+is already past the specified TAB position, PRINT ignores
+TAB.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can concatenate items for printing using the plus (+
+symbol, for example: 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>print "hello "+name$+"
++lastname$.</TT>
+</FONT>
+</P>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PRINT displays REAL numbers with nine or fewer digits
+in regular format. It displays REAL numbers with more
+than nine digits in exponential format. For example,
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1073741824 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+is displayed as 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>1 . 0 7 3 7 41 8 2 E + 0 9.</TT>
+</FONT>
+</P>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You must enclose string constants within quotation marks.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000048.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>Examples:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT A$<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000049.JPG" WIDTH="24" HEIGHT="8">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT "Menu Items"<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT COUNT<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT VALUE,TEMP+Cn/2.5),LOCATION$<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT #PRINTER-PATH,"The result </TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+i5 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>";NUMBER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT #OUTPATH FMT$,COUNT,VALUE<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT "what<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>i5"+NAME$+`5 age? ";<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT "INDEX:<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>";I;TAHC25);"VALUE<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>";VALUE<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-120<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000050.JPG" WIDTH="306" HEIGHT="4">
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>BASIC09 Command Reference / 11
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure asks you to type a word or phrase, then displays
+it backwards by reading each character from end to beginning
+and using PRINT to display it on the screen.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE reverse
+ODIM PHRASE,TITLE:STRING; T,HEGIN:INTEGER
+ODIM INSTRUCTIONS:STRINGL431
+OTITLE="Word Reversing Program"
+pINSTRUCTIONS="Type a word or phrase you want to
+reverse: "
+OPRINT TITLE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pPRINT " "<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OWHILE PHRASE&lt;),'"' DO<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT INSTRUCTIONS<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OINPUT PHRASE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OHEGIN=LENCPHRASE)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "This is how your phrase looks backwards:"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=BEGIN TO 1 STEP -1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT MID$CPHRASE,T,1);<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPR I NT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DENDWHILE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000051.JPG" WIDTH="19" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000052.JPG" WIDTH="24" HEIGHT="10">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000053.JPG" WIDTH="19" HEIGHT="3">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-121<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I><U>BASIC09 Reference<BR>
+</U></I></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+PRINT USING 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I>Displays formatted text<BR>
+</I></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: PRINT [#path] USING </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I>[format,] data[;data...]<BR>
+</I></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>Prints data using a format you specify. This statement is especially useful for printing report headings,
+accounting reports, checks, or any document requiring a specific format. USING is actually an extension of the PRINT
+statement; therefore, the same rules that apply to the PRINT
+statement also apply to the PRINT USING statement (see
+PRINT).<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I>Parameters:<BR>
+</I></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>path </I>The number corresponding to an opened device<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or file. If you do not specify <I>pith, </I>the default<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+is # 1, the video screen (standard output<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+device). To print to another device or file, first<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OPEN a path to that file or device (see<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OPEN).<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+format An expression specifying the arrangement of<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the displayed data.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+data Any numeric or string constant or variable.<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Always enclose string constants within quota<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tion marks. Each data item must be separated<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+by semicolons or commas.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I>Notes:<BR>
+</I></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Each PRINT USING format specifier begins with a single <I>identifier </I>letter that specifies the type of format, as shown in the following table:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B Boolean format<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+E exponential format<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+H hexadecimal format r~<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+I integer format<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+R real format<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+S string format<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000054.JPG" WIDTH="25" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000055.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-122<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Command Reference / 11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Follow the identifier letter with a constant number that specifies
+the field width. This number indicates the exact number of print
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+,,i-~ columns the output occupies. It must allow for both the data and<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+any 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>overhead </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+characters, such as sign characters, decimal points,
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+exponents, and so on.
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Optionally, you can add a justification indicator to the format
+expression. The indicators are &lt;, &gt;, and ^. The meaning of these
+indicators varies, depending on the format type in which you use
+them. See the format type descriptions for specific information.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Note: </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Do not use any spaces within format expressions.
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The following are the format type descriptions:
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Real
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Use this format for real, integer, or byte type numbers. The total
+field width specification must include two overhead positions for
+the sign and decimal point. The field width has two parts, separated by a period. The first part specifies the integer portion of
+the field. The second part specifies how many fractional digits to
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+,~^ display to the right of the decimal point.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+If a number has more significant digits than the field allows,
+BASIC09 uses the undisplayed digits to round the number
+within the correct field width.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The justification modes are:
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+&lt; Left justify with leading sign and trailing spaces. This is
+the default if you omit a justification indicator.
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+&gt; Right justify with leading spaces and sign.
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Right justify with leading spaces and trailing sign
+(financial format).
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Some examples and their results are:
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+PRINT USING 1IR8.2&lt;11,5678.123 5678.12
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+PRINT USING 1IR8.2&gt;11,5678.123 5678.12
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+PRINT USING "R8.2&gt;",12.3 12.30
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+PRINT USING "R8.2&gt;",-555.9 -555.90
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+PRINT USING "R10.2^",-6722.4599 6722.46-
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+11-123
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Exponential<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use this format to display real, integer, or byte values in the scientific notation format-using a mantissa and decimal exponent.
+The field has two parts: the first part must allow for six overhead
+positions for the mantissa sign, decimal point, and exponent
+characters.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The justification modes are:<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&lt; Left justify with leading sign and trailing spaces. This is
+the default if you omit a justification indicator.
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Right justify with leading spaces and sign.
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Some examples and their results are:<BR>
+<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "E1 2. 3",1 234.567 1.235E+03<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "E13.6&gt;",-.001234 -1.234000E-03<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "E18. 5&gt;",1 23456789  1.23457E+08<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Integer<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use this format to display integer, byte, or real type numbers in<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+an integer or byte format. The field width must allow for one<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+position of overhead for the sign.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The justification modes are:<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&lt; Left justify with leading sign and trailing spaces. This is
+the default if you omit a justification indicator.
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Right justify with leading spaces and sign.
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+" Right justify with leading sign and zeroes.
+Some examples and their results are:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "I4&lt;",10  10<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "I4&lt;",10 10<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "I4^",-10  -010<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Hexadecimal<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use this format to display any data type in hexadecimal notation. The field width specification determines the number of
+hexadecimal characters BASIC09 displays. If the data to display
+is string type, this function displays the ASCII value of each
+character in hexadecimal.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000056.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000057.JPG" WIDTH="22" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000058.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000059.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-124<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Command Reference / 11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The justification modes are:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&lt; Left justify with trailing spaces. This is the default if
+you omit a justification indicator.
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Right justify with leading spaces.
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+^ Center digits.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The number of bytes of memory used to represent data varies
+according to data type. The following chart suggests field widths
+for specific data types:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Memory Field Width<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Type Bytes To Specify<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Boolean and Byte 1 2<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Integer 2 4<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Real 5 10<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+String 1 per 2 times the string<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+character length<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Some examples and their results are:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "H4",100 0064<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "H4",-1 FFFF<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "H81%--,--ABC"  414243<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>String<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use this format to display string data of any length. The field
+width specifies the total field size. If the string to display is
+shorter than the field size, PRINT USING pads it with spaces
+according to the justification mode. If the string to display is
+longer than the specified field width, PRINT USING truncates
+the right portion of the string.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The justification modes are:<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&lt; Left justify with trailing spaces. This is the default if
+you omit a justification indicator.
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Right justify with leading spaces.
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+^ Center characters.<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-125
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000060.JPG" WIDTH="24" HEIGHT="9">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000061.JPG" WIDTH="19" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Some examples and their results are:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "S9&lt;","HELLO"  HELLO<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "S9&gt;","HELLO"  HELLO<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "S9^","HELLO" HELLO<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Boolean<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use this format to display Boolean expression results. BASIC09<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+converts the result of the expression to the strings "True" or<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+"False." The format and results are identical to STRING formats.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The justification modes are:<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&lt; Left justify with trailing spaces. This is the default if
+you omit a justifcation indicator.
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&gt; Right justify with leading spaces.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+" Center characters.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If A = 5 and B = 6, some examples and their results are:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "B9&lt;",A&lt;B True<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "B9&gt;",A&gt;B  Fa15e<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "B9"",A=B  Fa15e<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Control Specifiers
+</B>You can also use 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>control specifiers </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+within PRINT USING formats. The three specifiers are:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Tn Tab. 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>n </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+specifies a tab column at which to display<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the next data.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Xn Spaces. 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>n </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+specifies a number of spaces to insert.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+`text' Constant string. text is a string that is constant to<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the format.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+An example and its result is:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT USING "'Addre55',X1,H4,X4,'Data',X1,H2",<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>1 000 ,1 00<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Address 03E8 Data 64<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000062.JPG" WIDTH="22" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~20\GR000063.JPG" WIDTH="24" HEIGHT="6">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-126<BR>
+</FONT>
+</BODY>
+</HTML>

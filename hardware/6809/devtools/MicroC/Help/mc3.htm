@@ -1,0 +1,1487 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1254">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>3.</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0" cellpadding="0" width="630"
+style="width:472.5pt;mso-cellspacing:
+ 1.5pt">
+    <tr>
+        <td style="padding:.75pt .75pt .75pt .75pt"><a
+        name="3. THE MICRO-C PROGRAMMING LANGUAGE"><font size="2"
+        face="Arial"><strong>3. THE MICRO-C PROGRAMMING LANGUAGE</strong></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+        The following pages contain a brief summary of the
+        features and constructs implemented in MICRO-C</font><p
+        class="MsoPlainText"><a name="3.1 Constants"><font
+        size="2" face="Arial"><em><strong>3.1 Constants</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+        The following forms of constants are supported by the
+        compiler:<br>
+                        &lt;num&gt;      -
+        Decimal number        (0 - 65535)<br>
+                        0&lt;num&gt;    -
+        Octal number          (0 - 0177777)<br>
+                        0x&lt;num&gt;  -
+        Hexidecimal number    (0x0 - 0xffff)<br>
+                        '&lt;char&gt;'    -
+        Character             (1 or 2 chars)<br>
+                        &quot;&lt;string&gt;&quot;
+        - Address of literal string.<br>
+        <br>
+        The following &quot;special&quot; characters may be used
+        within character constants or strings:<br>
+        <br>
+                        \n          -
+        Newline (line-feed)   (0x0a)<br>
+                        \r          -
+        Carriage Return       (0x0d)<br>
+                        \t          -
+        Tab                   (0x09)<br>
+                        \f          -
+        Formfeed              (0x0c)<br>
+                        \b         -
+        Backspace             (0x08)<br>
+                        \&lt;num&gt;      -
+        Octal value &lt;num&gt;     (Max. three digits)<br>
+                        \x&lt;num&gt;    - Hex
+        value &lt;num&gt;       (Max. two digits)<br>
+                        \&lt;char&gt;     -
+        Protect character &lt;char&gt; from input scanner.</font></p>
+        <p class="MsoPlainText"><a name="3.2 Symbols"><font
+        size="2" face="Arial"><em><strong>3.2 Symbols</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+        Symbol names may include the characters 'a'-'z', 'A'-'Z',
+        '0'-'9', and '_'. The characters '0'-'9' may not be used
+        as the first character in the symbol name. Symbol names
+        may be any length, however, only the first 15 characters
+        are significant.<br>
+        <br>
+        The &quot;char&quot; modifier may be used to declare a
+        symbol as an 8 bit value, otherwise it is assumed to be
+        16 bits.<br>
+                                     
+        eg: char input_char;<br>
+        <br>
+        The &quot;int&quot; modifier may be used to declare a
+        symbol as a 16 bit wide value. This is assumed if neither
+        &quot;int&quot; or &quot;char&quot; is given.<br>
+                                         
+        eg: int abc;<br>
+        <br>
+        The &quot;unsigned&quot; modifier may be used to declare
+        a symbol as an unsigned positive only value. Note that
+        unlike some 'C' compilers, this modifier may be applied
+        to a character (8 bit) variable.<br>
+        <br>
+                                   
+        eg: unsigned char count;<br>
+        <br>
+        The &quot;extern&quot; modifier causes the compiler to be
+        aware of he existence and type of a global symbol, but
+        not generate a definition for that symbol. This allows
+        the module being compiled to reference a symbol which is
+        defined in another module. This modifier may not be
+        used with local symbols.<br>
+        <br>
+                                   
+        eg: extern char getch();<br>
+        <br clear="all" style="page-break-before:always">
+           <br>
+        A symbol  declared as external may be re-declared as 
+        a  non-external at a later point in the code, in which
+        case a definition for it will be generated. This allows
+        &quot;extern&quot; to be used to inform the compiler of a
+        function or variable type so that it can be referenced
+        roperly before that symbol is  actually defined.<br>
+        <br>
+                     The &quot;static&quot; modifier
+        causes global symbols to be available<br>
+                  only in the file where they are
+        defined. Variables or functions<br>
+                  declared as &quot;static&quot; will
+        not be  accessible as  &quot;extern&quot;<br>
+                  declarations in other object files,
+        nor will they cause conflicts<br>
+                  with duplicate names in those files.<br>
+        <br>
+                                 eg:
+        static int variable_name;<br>
+        <br>
+        When applied to local symbols, the &quot;static&quot;
+        modifier causes those variables to be allocated in a
+        reserved area of memory, instead of on the processor
+        stack. This has the effect that the contents of the
+        variable will be retained between calls to the function.
+        It also means that the variable may be initialized
+        at        compile time (just like global
+        variables).<br>
+        <br>
+        The &quot;register&quot; modifier indicates to the code
+        generator that this is a high priority variable, and
+        should be kept where it is easy to get at. See
+        &quot;Functions&quot; for a special use of 
+        &quot;register&quot; when defining a function.<br>
+        <br>
+                                  eg:
+        register unsigned count;<br>
+        <br>
+        Some of the Micro-C compilers for embedded systems make
+        special use of the &quot;register&quot; attribute. Please
+        refer to the section entitled &quot;Memory Allocation and
+        Referencing&quot;.<br>
+        <br>
+        The &quot;const&quot; modifier indicates to the compiler
+        that this value should never be modified. In the case of
+        a pointer, it means that he data pointed to should never
+        be modified (but the pointer itself can be). The compiler
+        will attempt to detect any direct modifications and
+        issue an error message. (Note that constant data can
+        still be modified indirectly through a non-const 
+        pointer without an error message).<br>
+        <br>
+        Some of the Micro-C compilers for embedded systems make
+        special use of the &quot;const&quot; attribute. Please
+        refer to the section entitled &quot;Memory Allocation and
+        Referencing&quot;<br>
+        <br>
+        Symbols declared with a preceding '*' are assumed to be
+        16 bit pointers to the declared type.<br>
+        <br>
+                                    
+        eg: int *pointer_name;<br>
+        <br>
+        Symbol names declared followed by square brackets are
+        assumed to be arrays with a number of dimensions equal to
+        the number of '[]' pairs that follow. The size of each
+        dimension is identified by a constant value contained
+        within the orresponding square brackets.<br>
+        <br>
+                                  eg:
+        char array_name[5][10];<br>
+        <br clear="all" style="page-break-before:always">
+        <br>
+        Under certain conditions,  the first (highest)  array
+        dimension may  be  left  unspecified.  Only  the 
+        first  dimension may be unspecified,  because  the 
+        compiler  needs  to know  all other  dimensions to
+        perform indexing calculations. These conditions are:<br>
+        <br>
+        - If the array is initialized in the declaration, the
+        compiler will automatically set the unspecified first
+        dimension to the lowest value which will cause the array
+        to be large enough to hold all of the initial values.<br>
+        <br>
+        - If the array is  a  function  argument, no actual
+        storage  is reserved, and the first dimension in not
+        needed. The compiler willcorrectly calcuate all indexes,
+        but since the actual  first dimension in not known, the
+        sizeof() function will always return zero.<br>
+        <br>
+        - If the array is prototyped with &quot;extern&quot;, the
+        first dimension is also not needed. the compiler will
+        correctly calculate all indexes, but since the actual
+        first dimension is not known, the sizeof() function will
+        always return zero. If the array is subsequently
+        redeclared with a first dimension, the compiler
+        will         update it's internal tables, and
+        sizeof() will return the actual size of the array
+        thereafter. (Note that this is the only case where you
+        may redeclare an array with a dimension which differs
+        from the original prototype).<br>
+        <br>
+        The &quot;void&quot; modifier is a special case which
+        means this symbol should never be used as a value. It is
+        usually used to indicate a function which returns
+        nothing, or a pointer which is never dereferenced.</font></p>
+        <p><font size="2" face="Arial">eg: void *pointer;</font></p>
+        <p><font size="2" face="Arial"><em><strong>3.2.1 Global
+        Symbols</strong></em><br>
+        <br>
+        Symbols declared outside of a function definition are
+        considered to be global and will have memory permanently
+        reserved for them. Global symbols are defined by name in
+        the output file, allowing other modules to access them.<br>
+        <br>
+        Global variables may be initialized with one or more
+        values, which are expressed as a single array of integers
+        REGARDLESS of  the size and shape of the variable. If
+        more than one value is expressed, '{' and '}' must be
+        used.<br>
+        <br>
+                           eg: int i = 10,
+        j[2][2] = { 1, 2, 3, 4 };<br>
+        <br>
+        When arrays are initialized in the declaration, a null
+        dimension may be used as the first dimension size, in
+        which case the size of the array will be determined by
+        the initial values.<br>
+        <br>
+                                 eg: int
+        array[] = { 1, 2, 3 };<br>
+        <br>
+        initialized global variables are automatically saved
+        within the code image, insuring that the initial values
+        will be available at run time. Any non-initialized
+        elements of an array which has been partly initialized
+        will be set to zero.<br>
+        <br>
+        Non-initialized global variables are not preset in any
+        way, and will be undefined at the beginning of program
+        execution.<br>
+        </font></p>
+        <p><font size="2" face="Arial"><em><strong>3.2.2 Local
+        Symbols</strong></em><br>
+        <br>
+        Symbols declared within a function definition are
+        allocated on the stack, and exist only during the
+        execution of the function.<br>
+        <br>
+        To simplify the allocation and de-allocation of stack
+        space, all local symbols must be declared at the
+        beginning of the function before any code producing
+        statements are encountered.<br>
+        <br>
+        MICRO-C does not support initialization of non-static
+        local variables in the declaration statement.Since local
+        variables have to be initialized every time the function
+        is entered, you can get the same effect using assignment
+        statements at the beginning of the function.<br>
+        <br>
+        No type is assumed for arguments to functions. Arguments
+        must be explicitly declared, otherwise they will be
+        undefined within the scope of the function definition.<br>
+        </font></p>
+        <p><font size="2" face="Arial"><em><strong>3.2.3 More
+        Symbol Examples</strong></em><br>
+        <br>
+                    /* Global variables are defined
+        outside of any function */<br>
+                    char
+        a;                     /* 8 bit
+        signed */<br>
+                    unsigned char b;       /* 8
+        bit unsigned */<br>
+                    int
+        c;                      /* 16 bit
+        signed */<br>
+                    unsigned int d;        /*
+        16 bit unsigned */<br>
+                    unsigned
+        e;             /* also 16 bit unsigned */<br>
+                    extern char f();        /*
+        external function returning char */<br>
+                    static int
+        g;              /* 16 bit signed, local to
+        file */<br>
+                    int h[2] = { 1, 2 };   /*
+        initialized array (2 ints) */<br>
+        <br>
+                    main(a,
+        b)                  /* &quot;int&quot;
+        function containing code */<br>
+                    /* Function arguments are defined
+        between function name and body */<br>
+                        int
+        a;                  /* 16 bit signed */<br>
+                        unsigned char
+        *b;       /* pointer to 8 bit unsigned */<br>
+                    {<br>
+                    /* Local variables are defined
+        inside the function body */<br>
+                    /* Note that in MICRO-C, only
+        &quot;static&quot; locals can be initialized */<br>
+                        unsigned
+        c;             /* 16 bit unsigned */<br>
+                        static char
+        d[5];      /* 8 bit signed, reserved in memory */<br>
+                        static int e =
+        1;       /* 16 bit signed, initial value is 1 */<br>
+                    /* Function code goes here ... */<br>
+                        c =
+        0;                  /* Initialize 'c' to
+        zero */<br>
+                        strcpy(d,
+        &quot;Name&quot;);      /* Initialize 'd' to
+        &quot;name&quot; */<br>
+                    }<br>
+        </font></p>
+        <p><a name="3.3 Arrays &amp; Pointers"><font size="2"
+        face="Arial"><em><strong>3.3 Arrays &amp; Pointers</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+        When MICRO-C passes an array to a function, it actually
+        passes a POINTER to the array. References to arrays which
+        are arguments are automatically performed through the
+        pointer.<br>
+        <br>
+        This allows the use of pointers and arrays to be
+        interchangeable through the context of a function call.
+        Ie: An array passed to a function may be declared and
+        used as a pointer,  and a pointer passed to a function
+        may be declared and used as an array.</font></p>
+        <p><a name="3.4 Functions"><font size="2" face="Arial"><em><strong>3.4
+        Functions</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+        Functions are essentially initialized global symbols
+        which contain executable code.<br>
+        <br>
+        MICRO-C accepts any valid value as a function reference,
+        allowing some rather unique (although non-standard)
+        function calls.<br>
+        <br>
+                  For example:<br>
+        <br>
+                        function();     /*
+        call function */<br>
+                        variable();     /*
+        call contents of a variable */<br>
+                        (*var)();       /*
+        call indirect through variable */<br>
+                        (*var[x])();   /* call
+        indirect through indexed array */<br>
+                        0x5000();     /* call
+        address 0x5000 */<br>
+        <br>
+        MICRO-C accepts both the &quot;classic&quot; and
+        &quot;modern&quot; formats of argument definition for a
+        function.<br>
+        <br>
+        In the &quot;classic&quot; format, only the argument
+        names are placed in the brackets following the function
+        name. The closing bracket is followed by formal
+        declarations for the arguments (in any order):<br>
+        <br>
+                      eg: int function(a, b, c) int
+        a, c; char b; { ... }<br>
+        <br>
+        If the &quot;modern&quot; format, complete declarations
+        for EACH argument are enclosed in the brackets following
+        the function name:<br>
+        <br>
+                         eg: int function(int a,
+        char b, int c) { ... }<br>
+        <br>
+        Since this is a single pass compiler, operands to
+        functions are evaluated and pushed on the stack in the
+        order in which they are encountered, leaving the last
+        operand closest to the top of the stack. This is the
+        opposite order from which many other  'C' compilers push
+        operands.<br>
+        <br>
+        For functions with a fixed number of arguments, the order
+        of which operands  are assed is of no importance,
+        because the compiler looks after generating the proper
+        stack addresses to reference variables.HOWEVER, functions
+        which use a variable number of arguments are affected for
+        two reasons:<br>
+        <br>
+                  1)  The location of the LAST
+        arguments are known (as fixed offsets<br>
+                     from the stack pointer) instead
+        of the FIRST.<br>
+        <br>
+                  2)  The symbols defined as arguments
+        in  the function definition<br>
+                     represent the LAST arguments
+        instead of the FIRST.<br>
+        <br>
+        If a function is declared as &quot;register&quot;, it
+        serves a special purpose and causes the accumulator to be
+        loaded with the number of arguments passed whenever the
+        function is called. This allows the       function
+        to know how many arguments were passed and therefore
+        determine the location of the first argument.<br>
+        </font></p>
+        <p><a name="3.5 Structures &amp; Unions"><font size="2"
+        face="Arial"><em><strong>3.5 Structures &amp; Unions</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+        Combinations of other variable types can be organized
+        into STRUCTURES or UNIONS, which allow them to be
+        manipulated as a single entity.<br>
+        <br>
+        In a structure, the individual items occur sequentially
+        in memory, and the total size of the structure is the sum
+        of its elements. Structures are usually used to create
+        &quot;records&quot;, in which related items are grouped
+        together. An array of structures is the common method of
+        implementing an &quot;in-memory&quot; database.<br>
+        <br>
+        A union is similar to a structure, except that the
+        individual items are overlaid in memory, and the total
+        size of the union is the size of its largest element.
+        Unions are usually used to allow a single block of memory
+        to be accessed as different 'C' variable types. An
+        example of this would be in handling a message received
+        in memory, in which a &quot;type&quot; byte indicates how
+        the remainder of the message data should be interpreted.<br>
+        <br>
+        Here are some example of how structures are defined and
+        used (unions are defined and used in an identical manner,
+        except that the word 'union' is substituted for
+        'struct'):<br>
+        <br>
+                    /* Create structure named 'data'
+        with 'a,b,c &amp; d' as members */<br>
+                    struct {<br>
+                        int a;<br>
+                        int b;<br>
+                        char c;<br>
+                        char d; } data;<br>
+        <br>
+                    /* Create structure template named
+        'mystruc'... */<br>
+                    /* No actual structure variable is
+        defined */<br>
+                    struct mystruc {<br>
+                        int a;<br>
+                        int b;<br>
+                        char c;<br>
+                        char d; };<br>
+        <br clear="all" style="page-break-before:always">
+                    /* Create structure named 'data'
+        using above template */<br>
+                    struct mystruc data;<br>
+        <br>
+                    /* Create structure template
+        'mystruc', AND define a */<br>
+                    /* structure variable named 'data'
+        */<br>
+                    struct mystruc {<br>
+                        int a;<br>
+                        int b;<br>
+                        char c;<br>
+                        char d; } data;<br>
+        <br>
+                    /* Create an array of structures,
+        a pointer to a structure */<br>
+                    /* and an array of pointers to a
+        structure *<br>
+                    struct mystruct array[10],
+        *pointer, *parray[10];<br>
+        <br>
+                    /* To set value in structure
+        variable/members */<br>
+                    data.a = 10;           
+        /* Direct access */<br>
+                    array[1].b = 10;        /*
+        Direct array access */<br>
+                    pointer-&gt;c = 'a';      
+        /* Pointer access */<br>
+                    parray[2]-&gt;d = 'b';     /*
+        Pointer array access */<br>
+        <br>
+                    /* To read value in structure
+        variable/members */<br>
+                    value = data.a;         /*
+        Direct access */<br>
+                    value = data[1].b;      /*
+        Direct array access */<br>
+                    value = pointer-&gt;c;     /*
+        Pointer access */<br>
+                    value = parray[2]-&gt;d;   /*
+        Pointer array access */<br>
+        </font></p>
+        <p><font size="2" face="Arial"><em><strong>3.5.1 Notes on
+        MICRO-C structure implementation:</strong></em><br>
+        <br>
+        Structures and Unions as implemented in MICRO-C are
+        similar to the implementation of the original UNIX 'C'
+        compiler, and are bound by similar limitations, as well
+        as a few MICRO-C specific ones. Here is a list of major
+        differences when compared to a modern ANSI compiler:<br>
+        <br>
+        All structure and member names MUST be unique within the
+        scope of the definition. A special case exists, where
+        common member names may be used in multiple structure
+        templates if they have EXACTLY the same type and offset
+        into the structure.This also saves symbol table memory,
+        since only one copy of the member definition is actually
+        kept.<br>
+        <br>
+        MICRO-C does NOT pass entire structures to functions on
+        the stack. Like arrays, MICRO-C passes structures by
+        ADDRESS.Structure variables which are function arguments
+        are accessed through pointers. For source code
+        compatibility with compilers which do pass the entire
+        structure, if you declare the argument as a direct
+        (non-pointer) structure, the direct ('.') operator is
+        used to dereference it, even though it is actually a
+        pointer reference.</font></p>
+        <p><font size="2" face="Arial">If you MUST have a local
+        copy of the structure, use something like:<br>
+        <br>
+                        func(sptr)<br>
+                            struct mystruc
+        *sptr;<br>
+                        {<br>
+                            struct mystruc
+        data;<br>
+                            memcpy(data, sptr,
+        sizeof(data));<br>
+                            ...<br>
+                        }<br>
+        <br>
+        To obtain the size of a structure from its template name,
+        use the 'struct' keyword in conjunction with the
+        'sizeof'operator.  In  the  above example, you could
+        replace 'sizeof(data)' with 'sizeof(struct mystruc)'.<br>
+        <br>
+        To obtain the size of a structure member, you must
+        specify it in the context of a structure reference with
+        another symbol: sizeof(variable.member) or
+        sizeof(variable-&gt;member)<br>
+        <br>
+        NOTE: The current compiler allows almost any symbol to
+        the left of the '.' or '-&gt;' operator in a 'sizeof',
+        owever future versions of the compiler may insist on a
+        structure variable or a pointer to structure variable.<br>
+        <br>
+        MICRO-C is quite limited in its implementation of
+        pointers to structures. Such pointers are internally
+        stored as pointers to 'char', and therefore dereferencing
+        (*), indexing ([]), and all forms of pointer arithmetic
+        (++, --, +, -, ...)  will generally not perform as you
+        would expect them to with structures. The only meaningful
+        things that can be done with a pointer to a structure is
+        assign it to another variable, pass it as a function
+        argument and apply the '-&gt;' operator to access
+        individual members.<br>
+        <br>
+        Use this to &quot;increment&quot; a pointer to a
+        structure to point to the next structure:<br>
+                                 ptr +=
+        sizeof(struct mystruc)<br>
+        <br>
+        Use this to access the 'n'th structure from the pointer:<br>
+                          (ptr + (n *
+        sizeof(struct mystruc)))-&gt;member<br>
+        <br>
+        The 'struct' and 'union' keywords are not accepted in a
+        TYPECAST. This is most commonly used to setup a pointer
+        to a structure. Since MICRO-C stores its pointers to
+        structures as pointers to char, you can use (char*) as
+        the typecast, and get the same functionality.<br>
+        <br>
+        A structure name by itself (without '.member') acts in a
+        manner similar to a character array name. With no
+        operation, the address of the structure is returned. You
+        can also use '[]' to access individual bytes in the
+        structure by indexing, although doing so is highly
+        non-portable.<br>
+        <br clear="all" style="page-break-before:always">
+          <br>
+        MICRO-C allows static or global structures to be
+        initialized in the declaration, however the initial
+        values are read as an array of bytes, and are assigned
+        directly to structure memory without regard for the type
+        or size of its members:<br>
+        <br>
+                        struct mystruc data = { 0,
+        1, 0, 2, 3, 4 };<br>
+                        /* A=0:1, B=0:2, C=3, D=4
+        */<br>
+        <br>
+        You can use INT and CHAR to switch back and forth between
+        word/byte initialization within the value list:<br>
+        <br>
+                        struct mystruct data = {
+        int 0, 1, char 2, 3 };<br>
+                        /* A=0, B=1, C=2, D=3 */<br>
+        <br>
+        Strings encountered during structure initializations will
+        be encoded as a series of bytes if byte initialization
+        (char) is in effect, or as pointers into the literal pool
+        if  word initialization (int) is in effect.<br>
+        <br>
+        MICRO-C does not WORD ALIGN structure elements. When
+        using a processor which requires word alignment, it is
+        the programmers responsibility to maintain alignment,
+        using filler bytes etc.when necessary.</font></p>
+        <p><a name="3.6 Control Statements"><font size="2"
+        face="Arial"><em><strong>3.6 Control Statements</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+                     The following control statements
+        are implemented in MICRO-C:<br>
+        <br>
+                        if(expression)<br>
+                            statement;<br>
+        <br>
+                        if(expression)<br>
+                           statement;<br>
+                        else<br>
+                            statement;<br>
+        <br>
+                        while(expression)<br>
+                            statement;<br>
+        <br>
+                        do<br>
+                            statement;<br>
+                        while expression;<br>
+        <br>
+                        for(expression;
+        expression; expression)<br>
+                            statement;<br>
+        <br>
+                        return;<br>
+        <br>
+                        return expression;<br>
+        <br>
+                        break;<br>
+        <br>
+                        continue;<br>
+        <br>
+                        switch(expression) {<br>
+                            case
+        constant_expression :<br>
+                                statement;<br>
+                                ..<br>
+                                break;<br>
+                            case
+        constant_expression :<br>
+                                statement;<br>
+                                ...<br>
+                                break;<br>
+                                .<br>
+                                .<br>
+                                .<br>
+                            default:<br>
+                                statement;
+        }<br>
+        <br>
+                        label: statement;<br>
+        <br>
+                        goto label;<br>
+        <br>
+                        asm &quot;...&quot;;<br>
+        <br>
+                        asm {<br>
+                            ...<br>
+                            }<br>
+        </font></p>
+        <p><font size="2" face="Arial"><em><strong>3.6.1 Notes on
+        Control Structures</strong></em><br>
+        <br>
+                1)  Any &quot;statement&quot; may be a
+        single statement or a compound statement enclosed within
+        '{' and '}'.<br>
+                2) All three &quot;expression&quot;s in
+        the &quot;for&quot; command are optional.<br>
+        <br>
+                3) If a &quot;case&quot; selection does
+        not end with &quot;break;&quot;, it will &quot;fall
+        through&quot; and execute the following case as well.<br>
+        <br>
+                4) Expressions following 'return' and
+        'do/while' do not have to be contained in brackets
+        (although this is permitted).<br>
+        <br>
+                5) Label names may precede any statement,
+        and must be any valid symbol name, followed IMMEDIATELY
+        by ':' (No spaces are allowed). Labels are considered
+        LOCAL to a function          definition and will
+        only be accessible within the scope of that function.<br>
+        <br>
+                6) The 'asm' statement used to implement
+        the inline assembly language capability of MICRO-C
+        accepts two forms: </font></p>
+        <p><font size="2" face="Arial">asm
+        &quot;...&quot;;     &lt;- Assemble single line.<br>
+        asm {          &lt;- Assemble multiple lines.<br>
+                 ...<br>
+                      }<br>
+        </font></p>
+        <p><a name="3.7 Expression Operators"><font size="2"
+        face="Arial"><em><strong>3.7 Expression Operators</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+        The following expression operators are implemented in
+        MICRO-C:</font></p>
+        <p><font size="2" face="Arial"><em><strong>3.7.1 Unary
+        Operators</strong></em><br>
+        <br>
+                -           - Negate<br>
+                ~          - Bitwise Complement<br>
+                !           - Logical complement<br>
+                ++        - Pre or Post increment<br>
+                --         - Pre or post
+        decrement<br>
+                *          - Indirection<br>
+                &amp;         - Address of<br>
+                sizeof    - Size of a object or type<br>
+                (type)    - Typecast</font></p>
+        <p><font size="2" face="Arial"><em><strong>3.7.2 Binary
+        Operators</strong></em><br>
+        <br>
+                +          - Addition<br>
+                -           - Subtraction<br>
+                *          - Multiplication<br>
+                /           - Division<br>
+                %         - Modulus<br>
+                &amp;         - Bitwise AND<br>
+                |           - Bitwise OR<br>
+                ^          - Bitwise EXCLUSIVE OR<br>
+                &lt;&lt;        - Shift left<br>
+                &gt;&gt;        - Shift right<br>
+                ==        - Test for equality<br>
+                !=         - Test for inequality<br>
+                &gt;          - Test for greater
+        than<br>
+                &lt;          - Test for less
+        than<br>
+                &gt;=        - Test for greater
+        than or equal to<br>
+                &lt;=        - Test for less than
+        or equal to<br>
+                &amp;&amp;       - Logical AND<br>
+                ||           - Logical OR<br>
+                =           - Assignment<br>
+                +=         - Add to self
+        assignment<br>
+                -=         - Subtract from self
+        assignment<br>
+                *=         - Multiply by self
+        assignment<br>
+                /=          - Divide by and
+        reassign assignment<br>
+                %=        - Modular self assignment<br>
+                &amp;=        - AND with self
+        assignment<br>
+                |=          - OR with self
+        assignment<br>
+                ^=         - EXCLUSIVE OR with
+        self assignment<br>
+                &lt;&lt;=       - Shift left self
+        assignment<br>
+                &gt;&gt;=       - Shift right self
+        assignment</font></p>
+        <p><font size="2" face="Arial">NOTES:<br>
+        <br>
+                1) The expression &quot;a &amp;&amp;
+        b&quot; returns 0 if &quot;a&quot; is zero, otherwise the
+        value of &quot;b&quot; is returned. The &quot;b&quot;
+        operand is NOT evaluated if &quot;a&quot; is zero.<br>
+        <br>
+                2) The expression &quot;a || b&quot;
+        returns the value of &quot;a&quot; if it is not 0,
+        otherwise the value of &quot;b&quot; is returned. The
+        &quot;b&quot; operand is NOT evaluated if &quot;a&quot;
+        is non-zero.</font></p>
+        <p><font size="2" face="Arial"><em><strong>3.7.3 Other
+        Operators</strong></em><br>
+        <br>
+                ;           - Ends a statement.<br>
+                ,           - Allows several
+        expressions in one statement.<br>
+                            + Separates symbol
+        names in multiple declarations.<br>
+                            + Separates
+        constants in multi-value initialization.<br>
+                            + Separates
+        operands in function calls.<br>
+                ?           - Conditional
+        expression (ternary operator).<br>
+                :           - Delimits labels,
+        ends CASE and separates conditionals.<br>
+                .           - Access a structure
+        member directly.<br>
+                -&gt;        - Access a structure
+        member through a pointer.<br>
+                { }       - Defines a BLOCK of
+        statements.<br>
+                ( )        - Forces priority in
+        expression, indicates function calls.<br>
+                [ ]        - Indexes arrays. If
+        fewer index values are given than the<br>
+                              number of
+        dimensions which are defined for the array, the value
+        returned will be a pointer to the appropriate address.<br>
+        <br>
+                            Eg:<br>
+                                char
+        a[5][2];<br>
+        <br>
+                                a[3]
+        returns address of forth row of two characters.<br>
+                                (remember
+        index's start from zero)<br>
+        <br>
+                                a[3][0]
+        returns the character at index [3][0];</font></p>
+        <p><a name="3.8 Inline Assembly Language"><font size="2"
+        face="Arial"><em><strong>3.8 Inline Assembly Language</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+        Although 'C' is a powerful and flexible language, there
+        are sometimes instances where a particular operation must
+        be performed at the assembly language level. This most
+        often involves either some processor feature for which
+        there is no corresponding 'C' operation, or a section of
+        very time critical code.<br>
+        <br>
+        MICRO-C provides access to assembly language with the
+        'asm' statement, which has two basic forms. The first is:<br>
+                                         
+        asm &quot;...&quot; ;<br>
+        <br>
+        In this form, the entire text contained between the
+        double quote characters (&quot;) is output as a single
+        line to the assembler.Note that a semicolon is required,
+        just like any other  'C' statement.<br>
+        <br>
+        Since this is a standard 'C' string, you can use any of
+        the &quot;special&quot; characters, and thus you could
+        output multiple lines by using '\n' within the string.
+        Another important characteristic of it being a string is
+        that it will be protected from pre-processor
+        substitution.<br>
+        <br>
+                     The second form of the 'asm'
+        statement is:<br>
+        <br>
+                                            
+        asm {<br>
+                                      
+               ...<br>
+                                              
+        }<br>
+        <br>
+        In this form, all lines between '{' and '}' are output to
+        the assembler. Any text following the opening '{' (on the
+        same line) is ignored. Due to the unknown characteristics
+        of the inline assembly code, the closing '}' will only be
+        recognized when it is the first non-whitespace character
+        on a line.<br>
+        <br>
+        The integral pre-processor will not perform substitution
+        on the inline assembly code, however the external
+        pre-processor (MCP) will substitute in this form. This
+        allows you to create assembly         language
+        &quot;macros&quot; using MCP, and have parameters
+        substituted into them when they are expanded:<br>
+        <br>
+                    /*<br>
+                     * This macro issues a 'SETB'
+        instruction for its parameter<br>
+                     */<br>
+                    #define setbit(bit) asm {\<br>
+                        SETB bit\<br>
+                    }<br>
+        <br>
+                    /*<br>
+                     * This macro WILL NOT WORK,
+        since the 'bit' operand to the SETB<br>
+                     * instruction is contained
+        within a string and is therefore<br>
+                     * protected from substitution by
+        the pre-processor<br>
+                     */<br>
+                    #define setbit(bit) asm &quot;
+        SETB bit&quot;;</font></p>
+        <p><a name="3.9 Preprocessor Commands"><font size="2"
+        face="Arial"><em><strong>3.9 Preprocessor Commands</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+        The MICRO-C compiler supports the following pre-processor
+        commands. These commands are recognized only if they
+        occur at the beginning of the input line.<br>
+        <br>
+        NOTE: This describes the limited pre-processor which is
+        integral to the compiler, see also the section on
+        the more powerful external processor (MCP).</font></p>
+        <p><font size="2" face="Arial"><em><strong>3.9.1 #define
+        &lt;name&gt; &lt;replacement_text&gt;</strong></em><br>
+        <br>
+        The &quot;#define&quot; command allows a global name to
+        be defined, which will be replaced with the indicated
+        text whenever it is encountered in the input file. This
+        occurs prior to processing by the compiler.<br>
+        </font></p>
+        <p><font size="2" face="Arial"><em><strong>3.9.2 #file
+        &lt;filename&gt;</strong></em><br>
+        <br>
+        Sets the filename of the currently processing file to the
+        given string. This command is used by the external
+        pre-processor (MCP)to insure that error messages indicate
+        the original source file.</font></p>
+        <p><font size="2" face="Arial"><em><strong>3.9.3 #include
+        &lt;filename&gt;</strong></em><br>
+        <br>
+        This command causes the indicated file to be opened and
+        read in as the source text. When the end of the  new
+        file is encountered,  processing will continue with the
+        line following&quot;#include&quot; in the original file.</font></p>
+        <p><font size="2" face="Arial"><em><strong>3.9.4 #ifdef
+        &lt;name&gt;</strong></em><br>
+        <br>
+        Processes the following lines (up to #else or #endif)
+        only if the given name is defined</font></p>
+        <p><font size="2" face="Arial"><em><strong>3.9.5 #ifndef
+        &lt;name&gt;</strong></em><br>
+        <br>
+        Processes the following lines (up to #else or #endif)
+        only if the given name is NOT defined.</font></p>
+        <p><font size="2" face="Arial"><em><strong>3.9.6 #else</strong></em><br>
+        <br>
+        Processes the following lines (up to #endif) only if the
+        preceding #ifdef or #ifndef was false.</font></p>
+        <p><font size="2" face="Arial"><em><strong>3.9.7 #endif</strong></em><br>
+        <br>
+        Terminates #ifdef and #ifndef<br>
+        <br>
+        NOTE: The integral pre-processor does not support nesting
+        of the #ifdef and #idndef constructs. If you wish to nest
+        these conditionals, you must use the external
+        pre-processor (MCP).</font></p>
+        <p><a name="3.10 Error Messages"><font size="2"
+        face="Arial"><em><strong>3.10 Error Messages</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+        When MICRO-C detects an error, it outputs  an
+        informational message indicating the type of problem
+        encountered.The error message is preceded by the filename
+        and line number where the error occurred:<br>
+        <br>
+                                  
+        program.c(5): Syntax error<br>
+        <br>
+        In the above example, the error occurred in  the  file
+        &quot;program.c&quot; at line 5. The following error
+        messages are produced by the compiler:<br>
+        <br>
+        <em><strong>3.10.1 Compilation aborted</strong></em><br>
+        <br>
+        The preceding error was so severe than the compiler
+        cannot proceed.<br>
+        <br>
+        <em><strong>3.10.2 Constant expression required</strong></em><br>
+        <br>
+        The compiler requires a constant expression which can be
+        valuated at compile time (ie: no variables).<br>
+        <br>
+        <em><strong>3.10.3 Declaration must precede code.</strong></em><br>
+        <br>
+        All local variables must be defined at the beginning of
+        the function, before any code producing statements are
+        processed.<br>
+        <br>
+        <em><strong>3.10.4 Dimension table exhausted</strong></em><br>
+        <br>
+        The compiler has encountered more active array dimensions
+        than it can handle.<br>
+        <br>
+        <em><strong>3.10.5 Duplicate local: 'name'</strong></em><br>
+        <br>
+        You have declared the named local symbol more than once
+        within the same function definition.<br>
+        <br>
+        <em><strong>3.10.6 Duplicate global: 'name'</strong></em><br>
+        <br>
+        You have declared the named global symbol more than once.<br>
+        <br>
+        <em><strong>3.10.7 Expected '&lt;token&gt;'</strong></em><br>
+        <br>
+        The compiler was expecting the given token, but  found
+        something else.<br>
+        <br>
+        <em><strong>3.10.8 Expression stack overflow</strong></em><br>
+        <br>
+        The compiler has found a more complicated expression than
+        it can handle. Check that it is of correct syntax, and if
+        so,break it up into two simpler expressions.<br
+        clear="all" style="page-break-before:always">
+        <br>
+        <em><strong>3.10.9 Expression stack underflow</strong></em><br>
+        <br>
+        The compiler has made an error in parsing the
+        expression.Check that it is of correct syntax.<br>
+        <br>
+        <em><strong>3.10.10 Illegal indirection</strong></em><br>
+        <br>
+        You have attempted to perform an indirect operation ('*'
+        or '[]') on an entity which is not a pointer or array.
+        This error will also result if you attempt to index an
+        array with more indices than it has dimensions.<br>
+        <br>
+        <em><strong>3.10.11 Illegal initialization</strong></em><br>
+        <br>
+        Local variables may not be initialized in the declaration
+        statement. Use assignments at the beginning of the
+        function code to perform the initialization.<br>
+        <br>
+        <em><strong>3.10.12 Illegal nested function</strong></em><br>
+        <br>
+                        You may not declare a
+        function within the definition of<br>
+                     another function.<br>
+        <br>
+        <em><strong>3.10.13 Illegal null dimension</strong></em><br>
+        <br>
+        You have attempted to declare an array using a null
+        dimension value which is not in the first dimension
+        position.<br>
+        <br>
+        <em><strong>3.10.14 Illegal pointer operation</strong></em><br>
+        <br>
+                        You are attempting to
+        perform an operation which is not<br>
+                     allowed in pointer arithmetic.<br>
+        <br>
+        <em><strong>3.10.15 Improper type of symbol: 'name'</strong></em><br>
+        <br>
+        The named symbol is not of the correct type for the
+        operation that you are attempting. Eg: 'goto' where the
+        symbol is not a label.<br>
+        <br>
+        <em><strong>3.10.16 Improper #else/#endif</strong></em><br>
+        <br>
+        A #else or #endif statement is out of place.<br>
+        <br>
+        <em><strong>3.10.17 Inconsistent member type/offset:
+        'name'</strong></em><br>
+        <br>
+                        The named structure member
+        is multiply defined, and has a<br>
+                     different type, offset or
+        dimension than its first definition.<br>
+        <br>
+        3.10.18 Inconsistent re-declaration: 'name'<br>
+        <br>
+        You have attempted to redefine the named external symbol
+        with a type which does not match its previously declared
+        type.<br>
+        <br clear="all" style="page-break-before:always">
+        <br>
+        <em><strong>3.10.19 Incorrect declaration</strong></em><br>
+        <br>
+                        A statement occurring
+        outside of a function definition is<br>
+                     not a valid declaration for a
+        function or global variable.<br>
+        <br>
+        <em><strong>3.10.20 Invalid '&amp;' operation</strong></em><br>
+        <br>
+        You have attempted to reference the address of something
+        that has no address. This error also occurs when you
+        attempt to take the address of an array without giving it
+        a full set of indices. Since the address is already
+        returned in this case, simply drop the '&amp;'. (The
+        error occurs because you are trying   to take the
+        address of an address).<br>
+        <br>
+        <em><strong>3.10.21 Macro expansion too deep</strong></em><br>
+        <br>
+        The compiler has encountered a nested macro reference
+        which is too deep to be resolved.<br>
+        <br>
+        <em><strong>3.10.22 Macro space exhausted</strong></em><br>
+        <br>
+        The compiler has encountered more macro
+        (&quot;#define&quot;) text than it has room to store. Use
+        the external MCP pre-processor which has much greater
+        macro storage capability.<br>
+        <br>
+        <em><strong>3.10.23 No active loop</strong></em><br>
+        <br>
+        A &quot;continue&quot; or &quot;break&quot; statement
+        was encountered when no loop is active.<br>
+        <br>
+        <em><strong>3.10.24 No active switch</strong></em><br>
+        <br>
+                        A &quot;case&quot; or
+        &quot;default&quot; statement was encountered when  no<br>
+                     &quot;switch&quot; statement is
+        active.<br>
+        <br>
+        <em><strong>3.10.25 Not an argument: 'name'</strong></em><br>
+        <br>
+        You have declared the named variable as an argument, but
+        it does not appear in the argument list.<br>
+        <br>
+        <em><strong>3.10.26 Non-assignable</strong></em><br>
+        <br>
+        You have attempted an operation which results in
+        assignment of a value to an entity which cannot be
+        assigned. (eg: 1 = 2); 8051: In TINY model, non-register
+        globals are &quot;non-assignable&quot;.<br>
+        <br>
+        <em><strong>3.10.27 Numeric constant required</strong></em><br>
+        <br>
+        The compiler requires a constant expression which returns
+        a simple numeric value.<br>
+        <br>
+        <em><strong>3.10.28 String space exhausted</strong></em><br>
+        <br>
+        The compiler has encountered more literal strings than it
+        has room store.<br clear="all"
+        style="page-break-before:always">
+        <br>
+        <em><strong>3.10.29 Symbol table full</strong></em><br>
+        <br>
+        The compiler has encountered more symbol definitions than
+        it can handle.<br>
+        <br>
+        <em><strong>3.10.30 Syntax error</strong></em><br>
+        <br>
+        The statement shown does not follow syntax rules and
+        cannot be parsed.<br>
+        <br>
+        <em><strong>3.10.31 Too many active cases</strong></em><br>
+        <br>
+        The compiler has run out of space for storing
+        switch/case tables. Reduce the number of active
+        &quot;cases&quot;.<br>
+        <em><strong>3.10.32 Too many defines</strong></em><br>
+        <br>
+        The compiler has encountered more '#define'  statements
+        than it can handle. Reduce the number of #defines.<br>
+        <br>
+        <em><strong>3.10.33 Too many errors</strong></em><br>
+        <br>
+        The compiler is aborting because of excessive errors.<br>
+        <br>
+        <em><strong>3.10.34 Too many includes</strong></em><br>
+        <br>
+        The compiler has encountered more nested
+        &quot;#include&quot; files than it can handle.<br>
+        <br>
+        <em><strong>3.10.35 Too many initializers</strong></em><br>
+        <br>
+        You have specified more initialization values than there
+        are locations in the global variable.<br>
+        <br>
+        <em><strong>3.10.36 Too many pointer levels<br>
+        </strong></em><br>
+        You have declared an item with more levels of
+        re-direction ('*'s) than the compiler can handle.<br>
+        <br>
+        <em><strong>3.10.37 Type clash</strong></em><br>
+        <br>
+        You have attempted to use a  value in a manner which is
+        inconsistent with its typing information. Also results
+        from an attempt to declare a non-pointer variable with
+        the &quot;void&quot; type.<br>
+        <br>
+        <em><strong>3.10.38 Unable to open: 'name'</strong></em><br>
+        <br>
+        A &quot;#include&quot; command specified the named file,
+        which could not be opened.<br>
+        <br>
+        <em><strong>3.10.39 Undefined: 'name'</strong></em><br>
+        <br>
+        You have referenced a name which is not defined as a
+        local or global symbol.<br>
+        <br clear="all" style="page-break-before:
+always">
+        <em><strong>3.10.40 Unknown structure/member: 'name'</strong></em><br>
+        <br>
+        You have referenced a structure template or member
+        name which is not defined.<br>
+        <br>
+        <em><strong>3.10.41 Unreferenced: 'name'</strong></em><br>
+        <br>
+        The named symbol was defined as a local  symbol  in  a
+        function, but was never used in that function. This error
+        will occur at the end of the function definition
+        containing the symbol declaration. It is only a warning,
+        and will not cause the compile to abort.<br>
+        <br>
+        <em><strong>3.10.42 Unresolved: 'name'</strong></em><br>
+        <br>
+        The named symbol was forward  referenced  (Such as a
+        GOTO label), and was never defined. This error will occur
+        at the end of the function definition containing the
+        reference.<br>
+        <br>
+        <em><strong>3.10.43 Unterminated conditional</strong></em><br>
+        <br>
+        The end of file was encountered when a &quot;#if&quot; or
+        &quot;#else&quot; conditional block was being processed.<br>
+        <br>
+        <em><strong>3.10.44 Unterminated function</strong></em><br>
+        <br>
+        The end of the file was encountered when a function
+        definition was still open.</font></p>
+        <p><a name="3.11 Quirks"><font size="2" face="Arial"><em><strong>3.11
+        Quirks</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+        Due to its background as a highly compact and portable
+        compiler, and its target application in embedded systems,
+        MICRO-C deviates from standard 'C' in some areas. The
+        following is a       summary of the major
+        infractions and quirks:<br>
+        <br>
+        PLEASE NOTE that this section should not be considered as
+        evidence that the compiler is somehow inferior or buggy!
+        ALL compilers have quirks. Most vendors just keep quiet
+        and hope you won't notice.<br>
+        <br>
+        <em><strong>3.11.1 Preprocessor quirks</strong></em><br>
+        <br>
+        *** NOTE: The quirks in this section apply ONLY to the
+        limited INTERNAL pre-processor. They DO NOT APPLY when
+        the external pre-processor (MCP) is used.<br>
+        <br>
+        When using the INTERNAL pre-processor, the operands to
+        '#' commands are parsed based on separating spaces, and
+        any portion of the line not required is ignored. In
+        particular, the '#define' command only accepts a
+        definition up to the next space or tab character.<br>
+        <br>
+                    eg: #define APLUSONE
+        A+1        &lt;-- uses &quot;A+1&quot;<br>
+                        #define APLUSONE A
+        +1       &lt;-- uses &quot;A&quot;<br>
+        <br>
+        Comments are stripped by the token scanner, which occurs
+        AFTER the '#' commands are processed.<br>
+        <br>
+                    eg: #define NULL    /* comment
+        */   &lt;-- uses &quot;/*&quot;<br>
+        <br>
+                        Note that since comments
+        can therefore be included in<br>
+                     &quot;#define&quot; symbols, you
+        can use &quot;/**/&quot; to simulate spaces<br>
+                     between tokens.<br>
+        <br>
+                    eg: #define BYTE unsigned/**/char<br>
+        <br>
+                        Include filenames are not
+        delimited by '&quot;&quot;' or '&lt;&gt;' and are<br>
+                     passed to the operating system
+        exactly as entered.<br>
+        <br>
+                    eg: #include \MC\{CPU}io.h<br>
+        <br>
+        <em><strong>3.11.2 Function/Variable declaration quirks</strong></em><br>
+        <br>
+        The appearance of a variable name in the argument list
+        for an old style function declaration serves only to
+        identify that variables location on the stack. MICRO-C
+        will not define the variable unless it is explicitly
+        declared (between the argument list and the main function
+        body). In other words, all arguments to a function must
+        be explicitly declared.<br>
+        <br>
+        MICRO-C does not support &quot;complex&quot; declarations
+        which use brackets '()' for other than function
+        parameters. These are most often used in establishing
+        pointers to functions:<br>
+                            int
+        (*a)();     /* Pointer to function returning INT */<br>
+                           
+        (*a)();         /* Call address in 'a' */<br>
+        <br clear="all" style="page-break-before:
+always">
+        Since MICRO-C allows you to call any value by following
+        it with '()', you can get the desired effect in the above
+        case, by declaring 'a' as a simple pointer to int, and
+        calling it with the same syntax:<br>
+                            int
+        *a;         /* Pointer to INT */<br>
+                           
+        (*a)();         /* Call address in 'a' */<br>
+        <br>
+        MICRO-C will not output external declarations to the
+        output file for any variables or functions which are
+        declared as &quot;extern&quot;, unless that symbol is
+        actually referenced in the 'C'source code. This prevents
+        &quot;extern&quot; declarations in system header files
+        (such as &quot;{CPU}io.h&quot;) which are used as
+        prototypes            for some library
+        functions from causing those functions to be loaded into
+        the object file. Therefore, any &quot;extern&quot;
+        symbols which are referenced only by inline assembly code
+        must  be declared in the assembly code, not by the
+        MICRO-C &quot;extern&quot; statement.<br>
+        <br>
+        Read the notes at the end of the  section  entitled
+        &quot;Structures and Unions&quot; for information on
+        limitations or differences from standard 'C' in MICRO-C's
+        implementation of structures and unions.<br>
+        <br>
+        <em><strong>3.11.3 Operator/Expression quirks</strong></em><br>
+        <br>
+        MICRO-C is more strict about its handling of the ADDRESS
+        operator  ('&amp;') than most other compilers. It will
+        produce an error message if you attempt to take the
+        address of a value which is already a fixed address (such
+        as an array name without a full set of indices). Since an
+        address is already produced insuch cases, simply drop the
+        '&amp;'.<br>
+        <br>
+        The INDEXING operator '[]' is not commutative in MICRO-C.
+        In other words 'array[index]' is NOT equivalent to
+        'index[array]'.<br>
+        <br>
+        The 'x' in '0x' and '\x' is accepted in lower case only.<br>
+        <br>
+        When operating on pointers, MICRO-C only scales the
+        increment (++), decrement (--) and index ([]) operations
+        toaccount for the size of the pointer:<br>
+        <br>
+                        eg: char *cptr;     /*
+        pointer to character */<br>
+                            int 
+        *iptr;     /* pointer to integer */<br>
+                           
+        ++cptr;         /* Advance one character */<br>
+                           
+        ++iptr;         /* Advance one integer */<br>
+                           
+        cptr[10];       /* Access the tenth character */<br>
+                           
+        iptr[10];       /* Access the tenth integer */<br>
+                            cptr +=
+        10;     /* Advance 10 characters */<br>
+                            iptr +=
+        10;     /* Advance ONLY FIVE integers */<br>
+        <br>
+                        NOTE: A portable way to
+        advance &quot;iptr&quot; by integers is:<br>
+        <br>
+                            iptr =
+        &amp;iptr[10];  /* Advance 10 integers */<br>
+        <br clear="all" style="page-break-before:always">
+            <br>
+        Since structures are internally represented as arrays
+        of&quot;char&quot;, incrementing a pointer to a structure
+        will advance only one (1) byte in memory. To advance to
+        the &quot;next&quot; instance of the structure, use:<br>
+        <br>
+                                ptr +=
+        sizeof(struct template);<br>
+        <br>
+        Unlike some 'C' compilers, MICRO-C will process character
+        expressions using only BYTE values. Character values are
+        not promoted to INT unless there is an INT value involved
+        in the expression. This results in much more efficient 
+        code  when dealing with characters, particularly on
+        small processors which have limited 16 bit instructions.
+        Consider the statement:<br>
+        <br>
+                                        
+        return c + 1;<br>
+        <br>
+        On some compilers, this will sign extend the character
+        variable 'c' into an integer value, and then ADD an
+        integer 1 and return the result. MICRO-C will ADD the
+        character variable and a character 1, and then promote
+        the result to INT before returning it (results of
+        expressions as operands to 'return'are always promoted to
+        int).<br>
+        <br>
+        Unfortunately, programs have been written which rely on
+        the automatic promotion of characters to INTs to work
+        properly. The most common source of problems is code
+        which attempts to treat           CHAR
+        variables as UNSIGNED values (many older compilers did
+        not support UNSIGNED CHAR). For example:<br>
+        <br>
+                                       
+        return c &amp; 255;<br>
+        <br>
+        In a compiler which always evaluates character
+        expressions as INT, the above statement will extract the
+        value of 'c' as positive integer ranging from 0 to 255.<br>
+        <br>
+        In MICRO-C, ANDing a character with 255 results in the
+        same character, which gets promoted to an integer value
+        ranging from -128 to 127. To force the promotion within
+        the expression, you could CAST the variable to an INT:<br>
+        <br>
+                                     
+        return (int)c &amp; 255;<br>
+        <br>
+        The same objective can be achieved in a more efficient
+        (and correct) manner by declaring the variable 'c' as
+        UNSIGNED CHAR, or by CASTing the variable to an UNSIGNED
+        value:<br>
+        <br>
+                                     
+        return (unsigned)c;<br>
+        <br>
+        Note that this is not only more clearly shows the intent
+        of the programmer, but also results is more efficient
+        generated code.<br>
+        <br clear="all" style="page-break-before:always">
+        A related quirk occurs because MICRO-C automatically
+        casts untyped constants used in binary operations to
+        match the other type used in the operation, again this is
+        done to preserve 8 bit arithmetic wherever possible, but
+        it can surprise you if  you use a number which cannot be
+        expressed in 8 bits in an operation with a character
+        type. The high bits of the number will be dropped as it
+        is truncated to a matching 8 bit type. If such a number
+        is truly needed in an 8 bit expression, simply cast it to
+        the appropriate 16 bit type:<br>
+        <br>
+                        eg: 0x1234 /
+        c;         /* 0x34 / c (8 bit arithmetic) */<br>
+                            (int)0x1234 /
+        c;    /* 0x1234 / c (16 bit arithmetic) */<br>
+        <br>
+        Most processors do not support a simple efficient method
+        for adding or subtracting a SIGNED 8 bit quantity and a
+        16 bit quantity. The code generators supplied with
+        MICRO-C make the assumption that character values being
+        added or subtracted to/from integers will contain only
+        POSITIVE values, and thus use UNSIGNED
+        addition/subtraction. This allows much  more efficient
+        code to be generated, as the carry/borrow from the low
+        order byte of the operation is simply propagated to the 
+        high order byte of the result (an operation supported in
+        hardware by the CPU).<br>
+        <br>
+        For those rare instances where you do wish to
+        add/subtract a potentially negative character value
+        to/from an int, you can force the expression to be
+        performed in less efficient fully 16 bit arithmetic by
+        casting the character to an int.<br>
+        <br>
+                            int i;<br>
+                            char c;<br>
+                            ...<br>
+                            i +=
+        c;         /* Very efficient... C must be
+        positive */<br>
+                            i += (int)c;   
+        /* Less efficient... C can be negative */<br>
+        <br>
+        <br>
+        Some of  the compiler implementations for simpler 
+        8-bit processors may not support signed division. In
+        these cases, unsigned division will be performed in all
+        cases</font></p>
+        </td>
+    </tr>
+</table>
+<p>&nbsp;</p>
+<table width="605" border="0">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2">&quot;Converted by 
+        BiPOM Electronics to HTML format from original Micro C documentation by 
+        Dunfield Development Systems. Please see the Micro C documentation that 
+        is included with Micro C for the original forms of these pages.&quot;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

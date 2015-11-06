@@ -1,0 +1,964 @@
+*#cpu 6809
+*
+* DDS MICRO-C 6809 Runtime Library - Prefix file
+*
+* Copyright 1991-2001 Dave Dunfield
+* All rights reserved.
+*
+	ORG	$2000		Place code in memory here
+?begin	LDS	#$B000		Initial stack goes here
+	CLR	?heap		Zero out the heap
+	JSR	main		Call user module
+* Return to MON09 by calling the EPROM starting address
+* Wait for and pending serial I/O to complete, and then jump.
+exit	CLRA			Large counter
+	CLRB			"" ""
+?exit1	SUBD	#1		Reduce count
+	BNE	?exit1		Wait for expiry
+	JMP	$E082		Re-enter monitor
+* 16 bit Multiply: D = X * D
+?mul	PSHS	D,X		Save parameters
+	LDA	1,S		Get low of parm 1
+	LDB	3,S		And low of parm 2
+	MUL			Multiply to get result
+	PSHS	A,B		Save result
+	LDA	2,S		Get high of parm 1
+	LDB	5,S		And low of parm 2
+	MUL			Multiply to get result
+	ADDB	,S		Add to high of previous result
+	STB	,S		And resave
+	LDA	3,S		Get low of parm 1
+	LDB	4,S		And high of parm 2
+	MUL			Multiply to get result
+	ADDB	,S		Add to result
+	STB	,S		And resave
+	PULS	A,B		Get result from stack
+	LEAS	4,S		Drop saved parameters
+	RTS
+* 16 bit signed division: D = X / D
+?sdiv	PSHS	A,B,X		Save D,X
+	EORA	2,S		Get answer sign
+	TFR	D,Y		Save
+	LDD	,S		Get parm1
+	BPL	?sdiv1		Not negative
+	BSR	?sdiv3		Convert
+	STD	,S		Resave
+?sdiv1	LDD	2,S		Get parm2
+	BPL	?sdiv2		Not negative
+	BSR	?sdiv3		Convert
+	STD	2,S		Resave
+?sdiv2	TFR	Y,D		Get answer sign
+	TSTA			Set flags
+	PULS	A,B,X		Restore parameters
+	BPL	?div		Non-negative answer
+	BSR	?mod		X = X / D
+	TFR	X,D		D = X / D
+?sdiv3	COMA			Ones complment
+	COMB			the 16 bit accumulator
+	ADDD	#1		Two's complement (negate)
+	RTS
+* 16 bit unsigned Division: D = X / D
+?div	BSR	?mod		X = X / D
+	TFR	X,D		D = X / D
+	RTS
+* 16 bit Modulus and Division: (D = X % D, X = X / D)
+?smod	EQU	*		Entry point for signed modulus
+?mod	PSHS	D,X		Save parameters
+	CLRA			Begin with zero
+	CLRB			"" ""
+	LDX	#17		16+1 bit shift
+?mod1	ANDCC	#%11111110	No carry in
+?mod2	ROL	3,S		Parm2 * 2, CF = carry out
+	ROL	2,S		(16 bit shift)
+	LEAX	-1,X		Reduce bit count
+	BEQ	?mod3		All finished, exit
+	ROLB			Shift in bit, result * 2;
+	ROLA			(16 bit shift)
+	CMPD	,S		Result < parm 1?
+	BLO	?mod1		Yes, keep going
+	SUBD	,S		Reduce by count
+	ORCC	#00000001	Set carry in
+	BRA	?mod2		And proceed
+?mod3	LEAS	2,S		Drop saved parameter
+	PULS	X,PC		Restore & return
+* Shift left: D = X << D
+?shl	EXG	D,X		D = value, X = #bits
+	CMPX	#0		Special case (0 bit shift)
+	BEQ	nargs		Yes, early exit
+?shl1	LSLB			Shift one bit
+	ROLA			(16 bit shift)
+	LEAX	-1,X		Reduce count
+	BNE	?shl1		Not finished, continue
+nargs	RTS
+* Shift right: D = X >> D
+?shr	EXG	D,X		D = value, X = #bits
+	CMPX	#0		Special case (0 bit shift)
+	BEQ	nargs		Yes, early exit
+?shr1	LSRA			Shift one bit
+	RORB			(16 bit shift)
+	LEAX	-1,X		Reduce count
+	BNE	?shr1		Not finished, continue
+	RTS
+* Signed >, >=, <, <=
+?gt	PSHS	A,B		D = X > D
+	CMPX	,S++
+	BGT	?ret1
+	BRA	?ret0
+?ge	PSHS	A,B		D = X >= D
+	CMPX	,S++
+	BGE	?ret1
+	BRA	?ret0
+?lt	PSHS	A,B		D = X < D
+	CMPX	,S++
+	BLT	?ret1
+	BRA	?ret0
+?le	PSHS	A,B		D = X <= D
+	CMPX	,S++
+	BLE	?ret1
+	BRA	?ret0
+* = amd !=
+?eq	PSHS	A,B		D = X == D
+	CMPX	,S++
+	BEQ	?ret1
+* FALSE result, D=0, ZF=1
+?ret0	CLRA
+	CLRB
+	RTS
+?ne	PSHS	A,B		D = X != D
+	CMPX	,S++
+	BEQ	?ret0
+* TRUE result, D=1, ZF=0
+?ret1	LDD	#1
+	RTS
+* Unsigned >, >=, <, <=
+?ugt	PSHS	A,B		D = X > D
+	CMPX	,S++
+	BHI	?ret1
+	BRA	?ret0
+?uge	PSHS	A,B		D = X >= D
+	CMPX	,S++
+	BHS	?ret1
+	BRA	?ret0
+?ult	PSHS	A,B		D = X < D
+	CMPX	,S++
+	BLO	?ret1
+	BRA	?ret0
+?ule	PSHS	A,B		D = X <= D
+	CMPX	,S++
+	BLS	?ret1
+	BRA	?ret0
+* Logical negation: D = !D
+?not	CMPD	#0
+	BNE	?ret0
+	BRA	?ret1
+* Switch table handler
+?switch	LDX	,U++		Get label value
+	BEQ	?swit1		End of table, use default
+	CMPD	,U++		Does value match?
+	BNE	?switch		No, try next
+	JMP	,X		Execute this case
+?swit1	JMP	[,U]		Execute default case
+* Temporary storage area...
+*00000
+*#fun ltoa 14 ?AB1
+ltoa LEAS -14,S
+ LDU #temp2
+ TFR U,D
+ PSHS A,B
+ LDD 20,S
+ PSHS A,B
+ JSR longcpy
+ LEAS 4,S
+ LDU #temp1
+ TFR U,D
+ PSHS A,B
+ LDB 19,S
+ CLRA
+ PSHS A,B
+ JSR longset
+ LEAS 4,S
+ LDD #0
+ STD 0,S
+?AB1 EQU *
+ LDU #temp2
+ TFR U,D
+ PSHS A,B
+ LDU #temp1
+ TFR U,D
+ PSHS A,B
+ JSR longdiv
+ LEAS 4,S
+ LDD 0,S
+ ADDD #1
+ STD 0,S
+ SUBD #1
+ LEAU 3,S
+ LEAU D,U
+ PSHS U
+ LDU #Longreg
+ TFR U,D
+ TFR D,U
+ LDB ,U
+ STB 4,S
+ CLRA
+ TFR D,X
+ LDB #9
+ CLRA
+ JSR ?ugt
+ BEQ ?AB5
+ LDB 4,S
+ ADDB #55
+ BRA ?AB4
+?AB5 EQU *
+ LDB 4,S
+ ADDB #48
+?AB4 EQU *
+ STB [,S++]
+?AB2 EQU *
+ LDU #temp2
+ TFR U,D
+ PSHS A,B
+ JSR longtst
+ LEAS 2,S
+ CMPD #0
+ LBNE ?AB1
+?AB3 EQU *
+?AB6 EQU *
+ LDD 20,S
+ ADDD #1
+ STD 20,S
+ SUBD #1
+ TFR D,U
+ PSHS U
+ LDD 2,S
+ SUBD #1
+ STD 2,S
+ LEAU 5,S
+ LEAU D,U
+ LDB ,U
+ STB [,S++]
+?AB7 EQU *
+ LDD 0,S
+ LBNE ?AB6
+?AB8 EQU *
+ LDU 20,S
+ LDB #0
+ STB ,U
+ LDD 20,S
+?AB9 EQU *
+ LEAS 14,S
+ RTS
+*#lcl stack 33160 3 1 11
+*#lcl c 33152 2
+*#lcl sp 33024 0
+*#lcl base 41344 0
+*#lcl n1 41345 2
+*#lcl string 41345 4
+*#end
+*#fun atol 1 ?AB2
+atol LEAS -1,S
+ LDD 5,S
+ PSHS A,B
+ LDD #0
+ PSHS A,B
+ JSR longset
+ LEAS 4,S
+?AB10 EQU *
+ LDD 7,S
+ ADDD #1
+ STD 7,S
+ SUBD #1
+ TFR D,U
+ LDB ,U
+ STB 0,S
+ LBEQ ?AB11
+ LDB 0,S
+ CLRA
+ PSHS A,B
+ JSR isdigit
+ LEAS 2,S
+ CMPD #0
+ LBEQ ?AB12
+ LDB 0,S
+ SUBB #48
+ STB 0,S
+ JMP ?AB13
+?AB12 EQU *
+ LDB 0,S
+ CLRA
+ TFR D,X
+ LDB #97
+ CLRA
+ JSR ?uge
+ LBEQ ?AB14
+ LDB 0,S
+ SUBB #87
+ STB 0,S
+ JMP ?AB15
+?AB14 EQU *
+ LDB 0,S
+ CLRA
+ TFR D,X
+ LDB #65
+ CLRA
+ JSR ?uge
+ LBEQ ?AB16
+ LDB 0,S
+ SUBB #55
+ STB 0,S
+ JMP ?AB17
+?AB16 EQU *
+ JMP ?AB11
+?AB17 EQU *
+?AB15 EQU *
+?AB13 EQU *
+ LDB 0,S
+ CLRA
+ TFR D,X
+ LDB 4,S
+ CLRA
+ JSR ?uge
+ LBEQ ?AB18
+ JMP ?AB11
+?AB18 EQU *
+ LDU #temp1
+ TFR U,D
+ PSHS A,B
+ LDB 6,S
+ CLRA
+ PSHS A,B
+ JSR longset
+ LEAS 4,S
+ LDD 5,S
+ PSHS A,B
+ LDU #temp1
+ TFR U,D
+ PSHS A,B
+ JSR longmul
+ LEAS 4,S
+ LDU #temp1
+ TFR U,D
+ PSHS A,B
+ LDB 2,S
+ CLRA
+ PSHS A,B
+ JSR longset
+ LEAS 4,S
+ LDD 5,S
+ PSHS A,B
+ LDU #temp1
+ TFR U,D
+ PSHS A,B
+ JSR longadd
+ LEAS 4,S
+ JMP ?AB10
+?AB11 EQU *
+ LDB 0,S
+ CLRA
+?AB19 EQU *
+ LEAS 1,S
+ RTS
+*#lcl c 33152 0
+*#lcl base 41344 0
+*#lcl n1 41345 2
+*#lcl string 41345 4
+*#end
+*#fun main 4 ?AB3
+main LEAS -4,S
+?AB20 EQU *
+ LDD #?AB0+0
+ PSHS A,B
+ JSR putstr
+ LEAS 2,S
+ LDB #61
+ STB 1,S
+?AB21 EQU *
+ LDU #buffer
+ TFR U,D
+ STD 2,S
+?AB22 EQU *
+?AB23 EQU *
+ JSR getch
+ STB 0,S
+ PSHS A,B
+ JSR isdigit
+ LEAS 2,S
+ CMPD #0
+ LBEQ ?AB24
+ LDB 0,S
+ CLRA
+ PSHS A,B
+ JSR putch
+ LEAS 2,S
+ LDD 2,S
+ ADDD #1
+ STD 2,S
+ SUBD #1
+ TFR D,U
+ LDB 0,S
+ STB ,U
+ JMP ?AB23
+?AB24 EQU *
+ LDU 2,S
+ LDB #0
+ STB ,U
+ LDU #buffer
+ TFR U,D
+ PSHS A,B
+ LDU #temp2
+ TFR U,D
+ PSHS A,B
+ LDD #10
+ PSHS A,B
+ JSR atol
+ LEAS 6,S
+ LDB 1,S
+ CLRA
+ LDU #?AB26
+ JMP ?switch
+?AB27 EQU *
+ LDU #reg
+ TFR U,D
+ PSHS A,B
+ LDU #temp2
+ TFR U,D
+ PSHS A,B
+ JSR longcpy
+ LEAS 4,S
+ JMP ?AB25
+?AB28 EQU *
+ LDU #reg
+ TFR U,D
+ PSHS A,B
+ LDU #temp2
+ TFR U,D
+ PSHS A,B
+ JSR longadd
+ LEAS 4,S
+ JMP ?AB25
+?AB29 EQU *
+ LDU #reg
+ TFR U,D
+ PSHS A,B
+ LDU #temp2
+ TFR U,D
+ PSHS A,B
+ JSR longsub
+ LEAS 4,S
+ JMP ?AB25
+?AB30 EQU *
+ LDU #reg
+ TFR U,D
+ PSHS A,B
+ LDU #temp2
+ TFR U,D
+ PSHS A,B
+ JSR longmul
+ LEAS 4,S
+ JMP ?AB25
+?AB31 EQU *
+ LDU #reg
+ TFR U,D
+ PSHS A,B
+ LDU #temp2
+ TFR U,D
+ PSHS A,B
+ JSR longdiv
+ LEAS 4,S
+ JMP ?AB25
+?AB32 EQU *
+ LDU #reg
+ TFR U,D
+ PSHS A,B
+ LDU #temp2
+ TFR U,D
+ PSHS A,B
+ JSR longdiv
+ LEAS 4,S
+ LDU #reg
+ TFR U,D
+ PSHS A,B
+ LDU #Longreg
+ TFR U,D
+ PSHS A,B
+ JSR longcpy
+ LEAS 4,S
+ JMP ?AB25
+?AB26 EQU *
+ FDB ?AB32,37,?AB31,47,?AB30,42,?AB29,45,?AB28,43,?AB27,61,0
+ FDB ?AB25
+?AB25 EQU *
+?AB33 EQU *
+ LDB 0,S
+ CLRA
+ PSHS A,B
+ JSR putch
+ LEAS 2,S
+ LDB 0,S
+ CLRA
+ LDU #?AB35
+ JMP ?switch
+?AB36 EQU *
+ LDD #?AB0+8
+ PSHS A,B
+ JSR putstr
+ LEAS 2,S
+?AB37 EQU *
+?AB38 EQU *
+ JMP ?AB20
+?AB39 EQU *
+ LDU #buffer
+ TFR U,D
+ PSHS A,B
+ LDU #reg
+ TFR U,D
+ PSHS A,B
+ LDD #10
+ PSHS A,B
+ JSR ltoa
+ LEAS 6,S
+ LDU #buffer
+ TFR U,D
+ PSHS A,B
+ JSR putstr
+ LEAS 2,S
+ JSR getch
+ STB 0,S
+ PSHS A,B
+ JSR isdigit
+ LEAS 2,S
+ CMPD #0
+ LBEQ ?AB40
+ LDB #61
+ STB 1,S
+ LDD #10
+ PSHS A,B
+ JSR putch
+ LEAS 2,S
+ LDB 0,S
+ CLRA
+ PSHS A,B
+ JSR putch
+ LEAS 2,S
+ LDU #buffer
+ TFR U,D
+ STD 2,S
+ LDD 2,S
+ ADDD #1
+ STD 2,S
+ SUBD #1
+ TFR D,U
+ LDB 0,S
+ STB ,U
+ JMP ?AB22
+?AB40 EQU *
+ JMP ?AB33
+?AB41 EQU *
+?AB42 EQU *
+?AB43 EQU *
+?AB44 EQU *
+?AB45 EQU *
+ LDB 0,S
+ STB 1,S
+ JMP ?AB34
+?AB35 EQU *
+ FDB ?AB45,37,?AB44,47,?AB43,42,?AB42,45,?AB41,43,?AB39,61,?AB38
+ FDB 67,?AB37,99,0,?AB36
+?AB34 EQU *
+ JMP ?AB21
+ LEAS 4,S
+ RTS
+*#lcl operate 32816 33
+*#lcl next1 32816 22
+*#lcl next 32816 21
+*#lcl clear 32816 20
+*#lcl ptr 32897 2
+*#lcl op 33152 1
+*#lcl c 33152 0
+*#end
+?AB0 FCB 10,82,101,97,100,121,10,0,32,85,115,101,58,32,43,32
+ FCB 45,32,42,32,47,32,37,32,61,32,67,0
+*#gbl printf 5168 0
+*#gbl sprintf 5168 0
+*#gbl concat 5168 0
+*#gbl reg 32904 0 1 4
+*#gbl temp1 32904 0 1 4
+*#gbl temp2 32904 0 1 4
+*#gbl buffer 32904 0 1 11
+*#gbl Longreg 37000 0 1 0
+*#gbl ltoa 32945 0
+*#gbl longcpy 36912 0
+*#gbl longset 36912 0
+*#gbl longdiv 36912 0
+*#gbl longtst 36912 0
+*#gbl atol 32944 0
+*#gbl isdigit 36912 0
+*#gbl longmul 36912 0
+*#gbl longadd 36912 0
+*#gbl main 48 0
+*#gbl putstr 36912 0
+*#gbl getch 36912 0
+*#gbl putch 36912 0
+*#gbl longsub 36912 0
+*
+* Functions to perform basic arithmetic operations on arbitrarily
+* large unsigned numbers. Supports: + - * / % <<1 >>1 == != < >
+*
+* To work on other than 32 bits, adjust the following constants:
+?LSIZE	EQU	4		4 bytes (32 bits)
+*
+* Subtract two LONG numbers: longsub(num1, num2)
+*
+longsub	LDX	4,S		Get num1
+	LDU	2,S		Get num2
+?bigsub	LDB	#?LSIZE		Get byte count
+	CLRA			Clear carry in
+?AC1	LDA	,X		Get byte from num1
+	SBCA	,U+		Subtract num2
+	STA	,X+		Resave dest
+	DECB			Reduce count
+	BNE	?AC1		Do them all
+	ROLB			Get carry out
+	CLRA			Zero high
+	RTS
+*
+* Add two LONG numbers: longadd(num1, num2)
+*
+longadd	LDX	4,S		Get num1
+	LDU	2,S		Get num2
+?bigadd	LDB	#?LSIZE		Get byte count
+	CLRA			Clear carry in
+?AC2	LDA	,X		Get byte from num1
+	ADCA	,U+		Add num2
+	STA	,X+		Resave dest
+	DECB			Reduce count
+	BNE	?AC2		Do them all
+	ROLB			Get carry out
+	CLRA			Zero high
+	RTS
+*
+* Shift LONG number right: longshr(num1)
+*
+longshr	LDX	2,S		Get num2
+?bigshr	LDB	#?LSIZE		Get byte count
+	ABX			Adjust to end
+	CLRA			No carry in
+?AC3	ROR	,-X		Shift one byte
+	DECB			Reduce count
+	BNE	?AC3		Do them all
+	ROLB			Get carry out
+	RTS
+*
+* Shift a LONG number left: longshl(num1)
+*
+longshl	LDX	2,S		Get num2
+?bigshl	CLRA			No carry in
+?bigslc	LDB	#?LSIZE		Get byte count
+?AC4	ROL	,X+		Shift one byte
+	DECB			Reduce count
+	BNE	?AC4		Do them all
+	ROLB			Get carry out
+	RTS
+*
+* Divide two LONG numbers: longdiv(num1, num2)
+*
+longdiv	BSR	?AC10		Zero temp location
+	LDY	#(?LSIZE*8)+1	Get bit count
+?AC5	CLRA			No carry in
+?AC6	LDX	4,S		Point to num1
+	BSR	?bigslc		Shift it
+	LEAY	-1,Y		Reduce count
+	BEQ	?AC14		End, exit
+	LDX	#Longreg	Point to temp
+	RORB			Set carry out
+	BSR	?bigslc		Do shift
+	LDU	2,S		Point to num2
+	LDX	#Longreg	Point to temp
+	BSR	?bigcmp		Do compare
+	TSTA			Is it less
+	BNE	?AC5		Yes, carry zero
+	LDU	2,S		Get num2
+	LDX	#Longreg	Point to temp
+	BSR	?bigsub		Do subtract
+	ORCC	#$01		Set carry in
+	BRA	?AC6		And proceed
+*
+* Multiply two LONG numbers: longmul(num1, num2)
+*
+longmul	LEAS	-?LSIZE,S	Reserve space for num3
+	LEAX	,S		Point to it
+	LDU	?LSIZE+2,S	Get num2 pointer
+	BSR	?bigcpy		Copy the number
+	BSR	?AC10		Zero temp location
+?AC7	LDX	?LSIZE+4,S	Point to num1
+	BSR	?bigshr		Do the shift
+	TSTB			Carry out?
+	BEQ	?AC8		No, leave it
+	LDX	#Longreg	Point to temp
+	LEAU	,S		Point to num3
+	BSR	?bigadd		Do the addition
+?AC8	LDX	?LSIZE+4,S	Point to num1
+	BSR	?bigtst		Test it
+	BEQ	?AC9		End, exit
+	LEAX	,S		Point to num3
+	BSR	?bigshl		Do the shift
+	LEAX	,S		Restore pointer
+	BSR	?bigtst		Test it
+	BNE	?AC7		Keep going
+?AC9	LEAS	?LSIZE,S	Restore stack
+	LDX	4,S		Get num1 pointer
+	LDU	#Longreg	Point to temp
+	BRA	?bigcpy		Copy & return
+*
+* Zero the temporary location
+*
+?AC10	LDX	#Longreg	Point to register
+?AC11	LDB	#?LSIZE		Get byte count
+?AC12	CLR	,X+		Zero one byte
+	DECB			Reduce count
+	BNE	?AC12		Do them all
+	RTS
+*
+* Test a LONG number for zero: longtst(num1)
+*
+longtst	LDX	2,S		Get num1
+?bigtst	LDA	#?LSIZE		Get byte count
+?AC13	LDB	,X+		Get byte
+	BNE	?AC14		Not zero - exit
+	DECA			Reduce count
+	BNE	?AC13		Exit
+?AC14	RTS
+*
+* Compare two LONG numbers: longcmp(num1, num2)
+*
+longcmp	LDX	4,S		Get num1
+	LDU	2,S		Get num2
+?bigcmp	LDB	#?LSIZE		Get byte count
+	ABX			Adjust num1 ptr
+	LEAU	B,U		Adjust num2 ptr
+?AC15	LDA	,-X		Get byte from source
+	SUBA	,-U		Does it match?
+	BLO	?AC16		Its lower
+	BHI	?AC17		Its higher
+	DECB			Reduce count
+	BNE	?AC15		Test them all
+	RTS
+?AC16	LDD	#-1		Return -1
+	RTS
+?AC17	LDD	#1		Return 1
+	RTS
+*
+* Copy one LONG number to another: longcpy(num1, num2)
+*
+longcpy	LDX	4,S		Get num1
+	LDU	2,S		Get num2
+?bigcpy	LDB	#?LSIZE		Get byte count
+?AC18	LDA	,U+		Get byte from num2
+	STA	,X+		Copy to num1
+	DECB			Reduce count
+	BNE	?AC18		Do them all
+	RTS
+*
+* Set a long number
+*
+longset	LDX	4,S		Get address
+	BSR	?AC11		Zero it
+	LDX	4,S		Get address back
+	LDD	2,S		Get value
+	STB	,X		Write LOW
+	STA	1,X		Write HIGH
+	RTS
+*00000
+*
+* Test for ASCII character
+*
+isascii	LDD	#$007F		Range to test
+	BRA	?AD3		Perform test
+*
+* Test for alphanumeric character (0-9, A-Z, a-z)
+*
+isalnum	PULS	X		X = ret address
+	BSR	isdigit		Is it a digit?
+	BEQ	?AD2		No, try next
+?AD1	TFR	X,PC		Return to caller
+*
+* Test for alphabetic character (A-Z, a-z)
+*
+isalpha	PULS	X		X = ret address
+?AD2	BSR	isupper		Uppercase?
+	BNE	?AD1		Yes, we have it
+	PSHS	X		X = ret address
+*
+* Test for lowercase alphabetic character (a-z)
+*
+islower	LDD	#'az'		Range to test
+	BRA	?AD3		Perform test
+*
+* Test for uppercase alphabetic character (A-Z)
+*
+isupper	LDD	#'AZ'		Range to test
+	BRA	?AD3		Perform test
+*
+* Test for graphic (printable) character
+*
+isgraph	LDD	#$217E		Range to test
+	BRA	?AD3		And proceed
+*
+* Test for hexidecimal digit
+*
+isxdigit PULS	X		X = ret addrss
+	LDD	#'AF'		Test range
+	BSR	?AD5		Test it
+	BNE	?AD1		Found it
+	LDD	#'af'		Test range
+	BSR	?AD5		Test it
+	BNE	?AD1		Found it
+	PSHS	X		Resave ret addr
+*
+* Test for an ASCII digit (0-9)
+*
+isdigit	LDD	#'09'		Range to test
+* Test argument against range in A:B
+?AD3	CMPA	3,S		Test LOWER limit
+	BHI	?AD5		Failed, return FALSE
+	CMPB	3,S		Test UPPER limit
+	BLO	?AD5		Failed, return FALSE
+* Test that upper byte of argument is zero
+?AD4	LDA	2,S		Get high byte
+	BNE	?AD5		Non-zero, fail
+	LDB	#1		return 1
+	RTS
+* Report failure, return FALSE (0)
+?AD5	CLRA			Zero HIGH
+	CLRB			Zero LOW
+	RTS	
+*
+* Test for CONTROL character
+*
+iscntrl	LDB	3,S		Get argument
+	CMPB	#$7F		Delete?
+	BEQ	?AD4		Yes, test high
+	LDD	#$001F		CTRL-range
+	BRA	?AD3		Complete test
+*
+* Test for a punctuation character
+*
+ispunct	LDD	2,S		Get argument
+	PSHS	A,B		Pass it on
+	BSR	isalnum		Alphanumeric?
+	LEAS	2,S		Clean up
+	BNE	?AD5		Yes, false
+isprint	LDD	#$207E		Printable range
+	BRA	?AD3		And test for it
+*
+* Test for a "space" character
+*
+isspace	LDB	3,S		Get argument
+	CMPB	#' '		Space?
+	BEQ	?AD4		Seems OK
+	CMPB	#9		Tab?
+	BEQ	?AD4		Seems OK
+	CMPB	#10		Newline?
+	BEQ	?AD4		Seems OK
+	BRA	?AD5		Invalid
+*00000
+*
+* DDS MICRO-C 6809 Serial I/O routines
+* These routines are set up to talk to a 6551 UART device.
+*
+?uart	EQU	$0000		Console uart address
+* Write a string to the console: putstr(char *string)
+putstr	LDX	2,S		Get string address
+?putstr	LDB	,X+		Get character
+	BEQ	?AE1		End, exit
+	BSR	?putch		Write the character
+	BRA	?putstr		And proceed
+* Write character to console - Translate newlines: putch(char c)
+putch	LDD	2,S		Get char to write
+?putch	CMPB	#$0A		Newline?
+	BNE	?putchr		No, write it
+	BSR	?putchr		Write it
+	LDB	#$0D		Get return
+	BRA	?putchr		Write & exit
+* Write character to console - Raw format
+putchr	LDD	2,S		Get char to write
+?putchr	LDA	?uart+1		Get status
+	BITA	#%00010000	TX ready?
+	BEQ	?putchr		No, wait for it
+	STB	?uart		Write character
+?AE1	RTS
+* Check for character - Raw format
+chkchr	LDA	?uart+1		Get status
+	BITA	#%00001000	RX ready?
+	BNE	getchr		Yes, get it
+	LDD	#-1		Return -1
+	RTS
+* Check for character
+chkch	LDA	?uart+1		Get status
+	CLRB			Zero high
+	ANDA	#%00001000	RX ready?
+	BEQ	?AE1		No, return with zero
+* Read character from console - Translate Returns
+getch	BSR	getchr		Get character
+	CMPB	#$0D		Return?
+	BNE	?AE1		Its OK
+	LDB	#$0A		Convert to newline
+	RTS
+* Read character from console - Raw format
+getchr	LDA	?uart+1		Get status
+	BITA	#%00001000	RX ready?
+	BEQ	getchr		No, wait for it
+	LDB	?uart		Read the character
+	CLRA			Zero high
+	RTS
+* Read a string (with editing) from the console: getstr(buffer, length)
+getstr	LDU	4,S		Get buffer
+	LDX	#0		Starting length is zero
+?AE2	BSR	getch		Get a character
+	CMPB	#$7F		Delete?
+	BEQ	?AE3		Yes, handle it
+	CMPB	#$08		Backspace?
+	BEQ	?AE3		Yes, handle it
+	CMPB	#$0A		Enter?
+	BEQ	?AE4		Yes, handle it
+	CMPX	2,S		Are we within length?
+	BHS	?AE2		No, ignore
+	STB	,U+		Write to buffer
+	LEAX	1,X		Advance length
+	BSR	?putchr		Echo character to console
+	BRA	?AE2		And proceed
+?AE3	CMPX	#0		Any data in buffer?
+	BEQ	?AE2		No, ignore
+	LDB	#$08		Backspace
+	BSR	?putchr		Echo
+	LDB	#' '		Overwrite with space
+	BSR	?putchr		Echo
+	LDB	#$08		Backspace
+	BSR	?putchr		Echo
+	LEAX	-1,X		Backup count
+	LEAU	-1,U		Backup in buffer
+	BRA	?AE2		And proceed
+?AE4	CLR	,U		Zero end of buffer
+	BSR	?putch		New line on console
+	TFR	X,D		Report # chars received
+	RTS
+*00000
+*#map1 Set address of un-initialized variables
+* If you are compiling for ROM, uncomment the following ORG statement,
+* and adjust its address to the beginning of available RAM.
+*	ORG	$xxxx		RAM begins here
+*00000
+?temp RMB 2
+reg RMB 4
+temp1 RMB 4
+temp2 RMB 4
+buffer RMB 11
+Longreg RMB 4
+*
+* DDS MICRO-C 6809 Runtime library - Suffix file
+*
+?heap	EQU	*		Heap memory goes here
+* For stand-alone ROM system, uncomment the following
+*	ORG	$FFFE		Position to reset vector
+*	FDB	?begin		Set start address
+*00000

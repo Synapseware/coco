@@ -1,0 +1,5 @@
+Project Tasks:
+
+ - Build clock divider
+ - Build input register
+ - Build output register (parallel to serial)

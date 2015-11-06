@@ -1,0 +1,83 @@
+Fourcube is a 3-D tictactoe program for the Color Computer.
+Features include:
+
+* 100% machine language
+* rotating board display
+* 6 selectable strength levels
+* demonstration mode
+* rules mode (see below)
+* human vs. human mode
+* "Faircube" option to reduce first player advantage
+* help screen
+* operate via joystick or keyboard
+* full color display on CoCo 3 RGB output (no artifacting)
+
+Any CoCo with at least 32K of RAM should run the program.
+Joysticks are optional.
+Deluxe joysticks are preferred, centered in both directions.
+To run: LOADM "FOURCUBE"
+If you have a CoCo 3, you might like to invoke the high-speed
+poke: POKE &HFFD9,0 before you EXEC.
+
+Fourcube is played on a 4x4x4 grid of cells. One player has
+red tokens, the other player has yellow tokens. The players
+alternate placing one token of their color in any empty cell.
+Tokens are not captured and do not move from their cells once
+placed. The object is to get four of your color tokens in any
+straight line. If neither side can do this, the game is a
+draw. If you press "R" you will enter "rules mode"
+which shows you these rules on screen. If you press the spacebar
+after reading the rules, you will see examples of winning rows.
+Each example can be rotated with the left or right arrows, or
+with the joystick. Note that when you rotate a winning row, the
+four tokens remain in line as the board rotates. Then you can
+return to "game mode" by pressing some key, possibly Enter. The
+rules screen will tell you what key to press.
+
+Here are the key commands available to you in game mode:
+
+J      will toggle the joysticks on or off.
+H      will show you a help screen, listing these key commands.
+1-6    will select the strength level. 1 is weakest, 6 is strongest.
+R      will enter rules mode as described above. You can enter rules
+       mode at any time without affecting the game position.
+<- ->  left and right arrows (or joystick left and right) will
+       rotate the board.
+dn up  up and down arrows (or joystick up and down) will scroll a
+       cursor through the cells, one level at a time, like reading
+       the pages of a book (forward for down arrow, backward for
+       up arrow.) The cursor will cycle around to the top again
+       after the last cell on the bottom. If you want to make the
+       cursor disappear again, rotate the board. You might find that
+       these operations are a little fussy if you have high speed
+       invoked. If you keep the machine on low speed, the CoCo should
+       never take more than 75 seconds to move, even at strength 6.
+       In fact, it will frequently move instantly.
+Enter  (or black fire button) will make your move in the cell
+       indicated by the cursor. While the computer is thinking about
+       its move, you won't be able to enter any commands.
+       If you press Enter/fire at the start of a game, the computer
+       will move first. (See F below.)
+T      will take back the last move. If you are playing against the
+       computer, its move and your move are both taken back at once.
+       You can take back moves all the way to the beginning (I think.)
+       If the game is over, though, you can't take back moves.
+S      will step forward again through moves which you took back.
+F      If you press F at the start of the game, the computer will
+       move first, but will avoid playing in any of the 8 corner
+       cells or 8 central cells. This is the "Faircube" option. This
+       way, the advantage of the first move is reduced, and the game
+       is more fair. If you wish to move first in Faircube, simply
+       avoid playing in any of the 8 corner cells or 8 central cells
+       on your first move.
+B      enters "Board mode." Two humans can play each other. The
+       computer will recognize when one side has won, or a drawn
+       position is reached (all rows blocked.)
+D      is "Demo mode." The computer will play against itself,
+       game after game. The board will rotate one notch for each new
+       game.
+
+That's about all I could remember. Sorry, I don't have my CoCo working
+right now, and it's been a while. I hope you enjoy the game!
+
+David Bush   twixtplayer@yahoo.com

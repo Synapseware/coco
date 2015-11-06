@@ -1,0 +1,43 @@
+1 REM SEND4 - send a file to COM1
+2 REM WJY 21-SEP-99 initial version
+100 OPEN "COM1:9600,N,8,1,CS,DS,CD" AS #1
+150 REM flush buffer
+160 IF LOC(1)>0 THEN X$=INPUT$(LOC(1)-1,#1)
+200 PRINT "Send a file to COM1 at 9600 baud." : PRINT
+400 REM get file name
+410 INPUT "Filename ";F$
+420 ON ERROR GOTO 550 : OPEN "I", #2, F$ : CLOSE #2 : ON ERROR GOTO 0
+450 INPUT "Binary ";BF$
+460 IF LEN(BF$)<>1 OR INSTR("YyNn",BF$)=0 THEN 450
+470 IF INSTR("Yy",BF$)>0 THEN BF=1 ELSE BF=0
+500 REM send file
+510 ON ERROR GOTO 550 : OPEN "R", #2, F$, 128 : ON ERROR GOTO 0
+530 FIELD #2, 128 AS BD$
+540 GOTO 700
+550 REM error opening file
+560 PRINT "Error #";ERR;"opening file '";F$;"'"
+570 IF ERR=53 THEN PRINT "No such file."
+580 PRINT
+590 RESUME 400
+700 REM send block
+710 L2=LOF(2)
+720 ON ERROR GOTO 800 : GET #2 : ON ERROR GOTO 0
+730 DL = L2 - ((LOC(2)-1)*128) : REM data length
+740 IF DL <= 0 THEN 900
+750 IF DL >= 128 THEN D$=BD$ ELSE D$=LEFT$(BD$,DL)
+760 IF BF=1 THEN 770 : REM binary file; send every byte
+762 IF DL<=128 AND RIGHT$(D$,1)=CHR$(26) THEN D$=LEFT$(D$,DL-1)
+765 LF=INSTR(D$,CHR$(10)) : IF LF=0 THEN 770
+766 D$=LEFT$(D$,LF-1) + RIGHT$(D$,LEN(D$)-LF) : REM strip LF
+767 GOTO 765
+770 PRINT #1, D$;
+771 LOCATE 24,1 : PRINT "Sending block #";LOC(2);"   ";
+780 IF INKEY$=CHR$(3) THEN END
+790 GOTO 720
+800 REM error getting a block
+810 PRINT "Error #";ERR;"getting a data block."
+820 PRINT
+890 RESUME 900
+900 CLOSE #2
+910 PRINT : PRINT "done." : PRINT
+990 GOTO 400

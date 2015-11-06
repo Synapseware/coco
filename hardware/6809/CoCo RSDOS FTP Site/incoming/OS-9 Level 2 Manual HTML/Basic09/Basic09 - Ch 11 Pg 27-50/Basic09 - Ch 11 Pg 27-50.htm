@@ -1,0 +1,2542 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\Basic09 - Ch 11 Pg 27-50.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 Command Reference / <U>11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+DATE$ 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Provide date and time<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax:  DATES<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Returns the date and time. The OS-9 internal date
+is kept in the format:</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>yearlmonthl day hour: minutes:seconds
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>If your OS-9 Startup file contains the SETIME command, the
+system asks you to enter the date and time whenever it boots.
+If it does not contain the SETIME command, the date and
+time start from </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>86/09/01:00:00:00.</I>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>You can use the normal string functions to access the data
+contained in DATES, but you cannot use functions or operations that attempt to change or append to its values. To reset
+the date or time or both, use the SHELL command, such as:</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>SHELL "SETIME"
+</UL>
+</UL>
+<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>None<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Examples:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT DATES<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Sample Program:<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>This program is essentially the same as the sample program for
+the DATA statement, except that it gets the day, month, and
+year from DATE$.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+PROCEDURE date
+ODIM X,DAY,MONTH,YEAR,CALC:INTEGER
+ODIM ANUM,HNUM,CNUM,DNUM,ENUM,FNUM,GNUM,HNUM,INUM:INTEGER
+ODIM WEEKDAY(7):STRINGf91
+[]MONTH=VAL(MID$(DATE$,4,2)) (* get month from DATES.
+[]DAY-VAL(MID:(DATE=,7,2)) (* get day from DATE.
+DYEARzVAL("19"+LEFTS(DATES,2)) (* get year from DATES.<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+[]FOR X=1 TO 7
+DREAD WEEKDAY(X)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000000.JPG" WIDTH="20" HEIGHT="18">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000001.JPG" WIDTH="300" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+11-27<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+ONEXT X<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pANUM= I NT(, 6+1 /MONTH)<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pHNUM=YEAR-ANUM<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pCNUM-MONTH+12*ANUM<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pDNUM=HNUM/188<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DENUM=INT(DNUM/4)<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OFNUM=INT(DNUM)<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pGNUMzINT(S*HNUM/4)<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OHNUM=INT(13*(CNUM+1)/S)<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pINUMzHNUM+GNUM-FNUM+ENUM+DAY-1<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pINUM=INUM-7*INT(INUM/7)+1<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pPR I'K<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pPRINT "Today is "; WEEKDAY(INUM)<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+ODATA "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+ODATA "Saturday"<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OEND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000002.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000003.JPG" WIDTH="26" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000004.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+11-28<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000005.JPG" WIDTH="129" HEIGHT="2">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 Command Reference l 11<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000006.JPG" WIDTH="22" HEIGHT="7">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000007.JPG" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000008.JPG" WIDTH="10" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000009.JPG" WIDTH="24" HEIGHT="7">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+DEG 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Return trigonometric calculations in
+degrees
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax: DE G<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Causes a procedure to calculate trigonometric values in degrees. If you do not include the DEG statement, procedures produce radian values.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+None<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Examples:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DEG<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Sample Program:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure calculates the sine, cosine, and tangent for a
+value you enter. Because it uses the DEG statement, it displays
+the results in degrees.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE degcalc<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DDIM NUM:REAL<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DDEG<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DINPUT "Enter a number<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DPRINT<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DPRINT "Number", "SINE","COSINE","TAN"<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000010.JPG" WIDTH="16" HEIGHT="1">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>",NUM<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000011.JPG" WIDTH="121" HEIGHT="3">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DPRINT NUM,SINCNUM),COSCNUM),TANCNUM)
+DPR I NT
+REND<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>-------------<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-29<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+DEL<U>ETE </U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<U>Erase a disk ale<BR>
+</U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000012.JPG" WIDTH="22" HEIGHT="6">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+tax:  DELETE "pa thname"-
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+DELETE removes a file from disk storage and
+releases the portion of the disk on which it resides. When you
+DELETE a file, it is permanently lost.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>pathname </I>The complete pathlist to the file you want to<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+delete, including the drive and one or more<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+directories, if appropriate. You must surround<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the pathlist with quotation marks.<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Examples:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DELETE "myf i 1 e"<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DELETE "/D1/ACCOUNTS/receivable5"<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Sample Program:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure creates a file named Samplefile, writes data to
+the file, then closes it. It then lists the file before deleting it.<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+PROCEDURE close
+ODIM PATH:HYTE
+OCREATE OPATH,"samplefile":WRITE (* create a file,
+OWRITE OPATH,"This file is for testing purposes only."
+OWRITE OPATH,"It will be destroyed when this procedure ends."
+OCLOSE #PATH (* close the file.
+OSHELL "LIST 5amplefile"
+ODELETE "5amplefile"
+OEND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000013.JPG" WIDTH="22" HEIGHT="6">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+11-30<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 Command Reference / 11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+DIM 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Assi variable storage<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax:  DIM variable[,...] </B>[:<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>type)[, variable][,...][. type)[...)
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>Assigns storage space and declares types for variables, arrays, or complex data structures.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+ </B>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>variable </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A simple variable, an array structure, or a<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+complex data structure.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+type BYTE, INTEGER, REAL, BOOLEAN,<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+STRING, or user defined.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Notes:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; You declare simple arrays with DIM by using the variable
+name, without a subscript. If you do not explicitly declare
+variables, the system makes them type real unless they are
+followed by a dollar sign ($). The system dimensions variables ending with a dollar sign ($) as strings, with a length
+of 32 bytes. You must declare types of all other simple variables as to type.
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; You can declare several variables of the same type by separating them with commas. To separate variables of different types, follow each type group with a colon, the type
+name, and then a semicolon.
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Define a maximum length for a string variable by enclosing
+the length in brackets following the type, like this:
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+DIM name:5tring[251
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+11-31
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000014.JPG" WIDTH="24" HEIGHT="9">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 <U>Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you do not define a maximum length, BASIC09 uses a
+default length of 32 characters. You can declare a shorter
+length or a longer length, up to the capacity of BASIC09's
+memory. If you try to extend a string beyond its declared
+length, or beyond the default length, the system ignores all
+extra characters. Thus the following:
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DIM name:5trin9[101
+name = "Abbernathin5ky"
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+produces the string:
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Abbernathi
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Arrays can have one, two, or three dimensions. The DIM
+format for dimensioned arrays is the same as for simple
+variables, except that you must follow each array name
+with a subscript, enclosed in parentheses, to indicate its
+size. The maximum array size is 32767.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Arrays can be either of the standard BASIC09 type or of a
+user-defined type. For information on creating your own
+types for simple variables, arrays, and complex data structures, see TYPE.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DIM logica1:H00LEAN<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DIM a,b,c:INTEGER<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DIM name,addre55,zip:STRING<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DIM name:STRINGL25l; addre55:STRINGt30J;
+zip: INTEGER<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DIM not,not,no3:REAL;no4,noS,no6:INTEGER;
+no7:BYTE<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000015.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000016.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-32<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Command Reference / 11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure randomly selects letters and vowels to create sixletter words that might look like alien names. It first DIMS nine
+string variables to contain the letters selected for each name. It
+DIMS two integer variables to provide a loop counter and to store
+the number of names you request.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When asked, type the number of names you want to have the
+procedure generate.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE alien<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM H,HEGIN,F,FINISH:STRING<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM VOWELS,VOWEL1,VOWEL2:STRING<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM MID1,MID2:STRING<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM T,RESPONSE:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OVOWELS="aeiouy"<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OINPUT "How many alien names do you want to<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>See?...",RESPONSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OHEGIN="AHCDFGHJKLMNPRSTVWXZ"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFINISH="ehlmnprstvwyz"<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=1 TO RESPONSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OH=MID$CHEGIN,RNDC19)+1 ,1 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OF=MID$CFINISH,RNDC12)+1 ,1 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OMID1=CHR$CRNDC25)+97)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OMID2=CHR$CRNDC25)+97)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OVOWEL1 =MID$CVOWELS,RNDC5)+1 , 1 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OVOWEL2=MID$CVOWELS,RNDCS)+1 ,1 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT H; VOWEL1 ; MID1 ; MID2; VOWEL2; F,<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000017.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000018.JPG" WIDTH="19" HEIGHT="19">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000019.JPG" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000020.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-33<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000021.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+DO 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Execute procedure lines in a loop<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000022.JPG" WIDTH="20" HEIGHT="6">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Syntax: WHILE expression DO<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+proclines<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+ENDWHILE<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>Establishes a loop that executes the procedure lines
+between DO and ENDWHILE as long as the result of the
+expression following WHILE is true. Because the loop is
+tested at the top, the lines within the loop are never executed
+unless expression is true.<BR>
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Parameters:<BR>
+ </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+expression A Boolean expression (produces a result of<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+True or False).<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>proclines </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Are program lines to execute if the expression<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+is true.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+See WHILE/DO/ENDWHILE for more information.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000023.JPG" WIDTH="22" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-34<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Command Reference l 11<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+ELSE 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Execute alternate action<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000024.JPG" WIDTH="24" HEIGHT="7">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000025.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000026.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000027.JPG" WIDTH="10" HEIGHT="6">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Syntax: IF condition THEN<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+action<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ELSE<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>secondary action<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ENDIF<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>ELSE provides access to a secondary action within
+an IF/THEN test. When the condition tested by IF is not
+true, BASIC09 executes the 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>secondary action </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+preceded by
+ELSE.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>Parameters:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>condition<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>action<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>secondary
+action<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A Boolean expression (produces a result of
+True or False).<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A line number to which the procedure is to
+transfer execution, or a program statement. If
+action is a line number, do not include the
+ENDIF statement in the IF test.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+One or more program statements.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For more information, see IF/THEN/ELSE<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-35<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+END 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+T<U>erminate a procedure<BR>
+</U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000028.JPG" WIDTH="22" HEIGHT="6">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax:  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+END ["text"]<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Ends procedure execution and returns to the calling
+procedure, or to the highest level procedure. If you provide
+output text for END, it functions in the same manner as
+PRINT. You can use END several times in the same procedure. END is not required as the last statement in a
+procedure.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+text  A literal string or a string-type variable.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Examples:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>END "Program Terminated"<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LAST="Session over"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>END LAST<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Sample Program:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure calculates a loan's term, using END to terminate routines.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE loaner<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pDIM YOUPAY,PRINCIPLE,INTEREST,NUMPAY,YEARS,<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>MONTHS:REAL<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM RESPONSE:STRINGL1J<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pREPEAT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT USING "S45^","Loan Terms"<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pPRINT  -<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pINPUT " Amount of Regular Payments ",YOUPAY<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OINPUT " Enter the Principle ",PRINCIPLE<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DINPUT " Enter the Annual Interest Rate ",<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>INTEREST<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pINPUT " Enter the Number of Payments<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Yearly",NUMPAY<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-3s<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000029.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000030.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000031.JPG" WIDTH="287" HEIGHT="2">
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Command Reference l 11
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OYEARS=-CLOGC1-PRINCIPLE*CINTEREST/100)/
+CNUMPAY*YOUPAY))/CLOGC1+INTEREST/100/NUMPAY)*
+NUMPAY))
+OMONTH=INTCYEARS*12+.S)
+pYEARS= I NTCMONTH/ 1 2 )
+OMONTH=MONTH-YEARS*12
+pPRINT " The Term of Your Loan is "; YEARS; "
+years and "; MONTH; " months."
+OINPUT "Calculate another or Quit CC/Q)?...",
+RESPONSE
+DUNTIL RESPONSE&lt;&gt;"C" AND RESPONSE&lt;),"c"
+OEND "Goodbye-I hope I helped you."<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000032.JPG" WIDTH="18" HEIGHT="4">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-37<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+END
+</FONT>
+<FONT SIZE="6" FACE="Garamond1" COLOR="#000000">
+<U>E XIT </U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+L<U>ea</U>v<U>e </U>l<U>oo</U>p if a condition is True<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000033.JPG" WIDTH="22" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: </B>E <B>XITIF condition THEN<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>proclines<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>ENDEXIT<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>ENDEXIT terminates an EXITIF test. You always
+use EXITIF/THEN/ENDEXIT inside a procedure loop. If the
+Boolean expression tested by EXITIF is true, BASIC09 executes the program statements between THEN and ENDEXIT
+and then transfers program operation outside the loop. If the
+condition tested by EXITIF is not true, loop execution continues at the statement following ENDEXIT.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>condition </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A comparison operation that returns either<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+True or False, such as A = B, A&lt;B, or<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A=B=C.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>proclines </I>One or more statements to perform if the Boo<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lean expression tested by EXITIF is True.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For more information, see EXITIF/THEN/ENDEXIT<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000034.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000035.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-38<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Command Reference / 11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+ENDIF 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Close IF statement
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IF <B>condition THEN
+</UL>
+<BR>
+ <UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>action
+</UL>
+<BR>
+ <UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+[ELSE
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>secondary action]
+</UL>
+<BR>
+ <UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ENDIF
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ENDIF terminates an IF/THEN condition test. If
+the condition tested by IF is true, BASIC09 executes the
+statements between THEN and ENDIF. If the condition tested
+by IF 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>is not </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+true, BASIC09 transfers execution to the procedure line following ENDIF or (optionally) executes the statements following ELSE.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>,^ condition A </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Boolean expression (produces a result of<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+True or False).<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>action A </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+line number to which the procedure is to<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+transfer execution. 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>Action </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+can also be a pro<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+gram statement. If action is a line number, do<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+not include the ENDIF statement in the IF<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+test.<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>secondary A </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+program statement.<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>action<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For more information, see IF/THEN/ELSE/ENDIF.
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-39
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+ENDLOOP 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Close LOOP statement<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000036.JPG" WIDTH="22" HEIGHT="5">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax: LOOP
+statements)
+ENDLOOP
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ENDLOOP terminates a procedure loop established
+by the LOOP command. BASIC09 endlessly executes all procedure statements between LOOP and ENDLOOP repeatedly
+unless a condition test within the loop (such as EXITIF/
+THEN/ENDEXIT, or IF/THEN) transfers execution outside of
+the loop.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>staternent(s) </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+One or more procedure lines that execute
+within the loop.
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For more information, see LOOP/ENDLOOP.
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000037.JPG" WIDTH="22" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>11-40<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Command Reference l 11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+ENDWHILE 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Close WHILE statement<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000038.JPG" WIDTH="18" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Syntax: WHILE condition DO<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>proclines<BR>
+ </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ENDWHILE<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Forms the bottom of a WHILE loop. WHILE causes
+the procedure lines between DO and ENDWHILE to execute
+as long as the result of the expression following WHILE is
+true. Because the loop is tested at the top, the lines within
+the loop are never executed unless the expression is true.<BR>
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>condition </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A Boolean expression (produces results of True<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or False).<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>proclines </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Are program lines to execute if the expression<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+is true.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For more information, see WHILE/DO/ENDWHILE.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000039.JPG" WIDTH="19" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-41<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+EOF 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Test for end-of-file<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000040.JPG" WIDTH="25" HEIGHT="8">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+E OF <B>(path)<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Tests for the end of a disk file. The function returns
+a value of True when it encounters an end-of-file; otherwise, it
+returns False. Use EOF with a READ or GET statement.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+path The number of the path you are accessing.<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC 09 automatically stores a path number<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+into the variable you specify during a<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CREATE or OPEN operation.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>IF EOF(xPATH) THEN
+CLOSE #PATH
+ENDIF<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure redirects a listing of the current directory into a
+file named Dirfile. It then lists Dirfile to the screen. EOF tells
+the WHILE/ENDWHILE loop when the READ operation reaches
+the end of the file.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE readfile
+ODIM A:STRINGI80J
+ODIM PATH:BYTE
+OSHELL "DIR &gt; dirf ile"
+OOPEN #PATH,"dirfile":READ
+OWHILE NOT EOF(#PATH) DO
+DREAD *PATH,A
+OPRINT A
+OENDWHILE
+OCLOSE #PATH
+[]END<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-42<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000041.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000042.JPG" WIDTH="18" HEIGHT="3">
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Command Reference / 11
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+ERR 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Return error code<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: </B>ERR<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Returns the error code of the most recent error.
+BASIC09 automatically sets the ERR code to zero after you
+reference it. ERR is only useful when used in conjunction with
+BASIC09's ON ERROR error trapping functions.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+See Appendix A for a list of all BASIC09 error codes.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+None<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ERRNUM = ERR<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>IF ERRNUM = 218 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT "File already exists. Please use another<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>`~ filename."<BR>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ENDIF
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure displays the contents of a file you select. If the
+file doesn't exist (Error 216, Pathname not found), the procedure
+uses ERR to tell you. If an error other than Error 216 occurs,
+the procedure displays 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>I can't handle error x x, </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+where xx is
+the code of the error.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000043.JPG" WIDTH="20" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-43'<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+PROCEDURE readfile<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pDIM READFILE:STRING; A:STRINGI80J; PATH:BYTE<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+100INPUT "Type the pathli5t of the file to read...",READFILE<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pON ERROR GOTO 100 (* if an error occurs, skip to line 100.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pOPEN #PATH,READFILE:READ<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OWHILE EOF(#PATH)c)TRUE DO<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pREAD #PATH,A<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pPR I NT A<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DENDWHILE<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OCLOSE #PATH<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pEND<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+100DERRNUM-ERR (* store the error code in ERRNUM.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pIF ERRNUM-216 THEN (* if file doesn't exist say 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+5o.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OPRINT "I can't find the file ...Please try again."<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OON ERROR<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pGOTO 10<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OENDIF<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pPRINT "Sorry, I can't handle error number "; ERRNUM ( other error.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OCLOSE #PATH<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pEND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000044.JPG" WIDTH="26" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000045.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000046.JPG" WIDTH="306" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+11-44<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Commands Reference </U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>/ 11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+ERROR 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Simulate an error<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax:  ERROR code<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Simulates the error specified by 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>code. You would
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mainly use this command to test <B>ON ERROR GOTO </B>routines.
+When BASIC09 encounters an <B>ERROR </B>statement, it proceeds
+as if the error corresponding to the specified code has
+occurred. Refer to Appendix A for a listing of error codes and
+their meanings.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+ </B>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>code  </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The code of the error you want to simulate.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ERROR 207
+ERRNUM = ERR
+IF ERRNUM = 207 THEN
+PRINT "Memory is full. The current data is being
+saved to disk."
+ENDIF<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This program creates a file named Testl. Before creating the
+file, it checks to see if it already exists. If the file exists, the procedure deletes it. An error trap catches any error that might
+occur. To test if the trap works for Error 216, "Pathname not
+found", the statement <B>ERROR </B>216 is inserted as the fourth line.
+After testing the ~ trap to make sure it works, delete this line to
+use the procedure.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-45<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE errortest<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM PATH,ERRNUM:HYTE; RESPONSE:STRINGL11<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OHASE 0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DON ERROR GOTO 10 C* set error trap<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pERROR 216 C* simulate error<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODELETE "te5t1"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OGOTO 1 0 0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>100ERRNUM-ERR<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DI F ERRNUM-216 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OINPUT "File doesn't exi5t...continue?<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>CY/N)",RESPONSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF RESPONSE-"N" THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pEND "Procedure terminated at your request<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OENDIF<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OENDIF<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DON ERROR C* turn off error trap<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>1 0 00CREATE #PATH , "test 1 ":WRITE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000047.JPG" WIDTH="16" HEIGHT="1">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000048.JPG" WIDTH="304" HEIGHT="4">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-46<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000049.JPG" WIDTH="26" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000050.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000051.JPG" WIDTH="24" HEIGHT="6">
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I><U>BASIC09 Commands Reference l 11
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+EXITIF/THEN/ENDEXIT
+</FONT>
+</H2>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Exit from loop if a condition is true<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>EXITIF condition THEN<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>statement<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>ENDEXIT<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use these statements with loop constructions (particularly LOOP and ENDLOOP) to provide an exit for what is
+otherwise an endless loop. EXITIF performs a test of a Boolean expression, such as A&lt;B. The THEN statement precedes
+any operation you want to execute if the expression is true.
+You must always follow EXITIF with an ENDEXIT.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If the Boolean expression following an EXITIF is false, execution of the program transfers to the statement immediately
+following the body of the loop (after the ENDEXIT statement).
+Otherwise, BASIC09 executes the statements) between
+EXITIF and ENDEXIT, then transfers control to the statement following the body of the loop.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can also use EXITIF and ENDEXIT with types of loop
+constructions other than LOOP/ENDLOOP.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>Parameters:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Boolean A </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+comparison operation that returns either<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+expression True or False, such as A=B, A&lt;B, or<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A=B=C.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+statement An operation to be performed if the Boolean<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+expression tested by EXITIF is True, such as:<BR>
+ 
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+PRINT A is less than H.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000052.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+11-47<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I><U>Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LOOP<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>COUNT=COUNT+1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>EXITIF COUNT&gt;100 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DONE = TRUE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ENDEXIT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT COUNT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>X = COUNT/2<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ENDLOOP<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure simulates a gambling machine by randomly
+selecting among several fruit names and displaying them: It
+gives you a starting stake of $25 and, depending on the combination of fruit selected, it adds or subtracts from your stake.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If your stake drops to zero, an EXITIF statement ends the procedure and tells you that you're broke.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE onearm
+ODIM FRUIT1,FRUIT2,FRUIT3,STAKE:INTEGER; FRUITC8):
+STRINGf6J
+pSTAKE=25
+pPRINT \ PRINT "You have $"; STAKE; " to play
+with."
+pFOR T=1 TO 8
+DREAD FRUITCT)
+pNEXT T
+pL00P
+OFRUIT1=RNDC7)+1 \FRUIT2=RNDC7)+1 \FRUIT3=RNDC7)+1
+pPRINT FRUITCFRUIT1); " "; FRUITCFRUIT2); " ";
+FRUITCFRUIT3)
+pIF FRUITCFRUIT1)=FRUITCFRUIT2) AND FRUITCFRUIT1)=
+FRUITCFRUIT3) THEN STAKE=STAKE+10
+DELSE
+pIF FRUITCFRUIT1)=FRUITCFRUIT2) OR FRUITCFRUIT1)=_
+FRUITCFRUIT3) OR
+pFRUITCFRUIT2)=FRUITCFRUIT3) THEN
+OSTAKE=STAKE+ 1
+pELSE
+pSTAKE=STAKE-1
+REND I F
+REND I F<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-4$<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000053.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000054.JPG" WIDTH="24" HEIGHT="7">
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Commands Reference l 11
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OREM exit play loop i5 Stake i5 le55 than $1.<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pEXITIF STAKE&lt;1 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "You're Bu5ted...Hetter go home."<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DENDEXIT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "Your Stake i5 now $"; STAKE; "."<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DINPUT "Pre55 ENTER to pull again...",Z$<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OENDLOOP<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA "ORANGE","APPLE","CHERRY","LEMON","BANANA"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA "PEAR", "PLUM","PEACH"<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000055.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000056.JPG" WIDTH="20" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000057.JPG" WIDTH="18" HEIGHT="3">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-49<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+EXP 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Return natural exponent<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000058.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>E XP(n um ber)<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Function: Returns the natural exponent of 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>number, </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+that is, e
+(2.71828183) to the power of 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>number. Number </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+must be
+positive.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+This function is the inverse of the 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>LOG </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+function. Therefore,
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>number = EXP(LOG(number)).<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>number  A </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+positive value.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Examples:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT EXP(2)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~17\GR000059.JPG" WIDTH="26" HEIGHT="8">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Sample Program:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+This procedure calculates the exponent of values in the range
+0-1.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE exprint
+OFOR T=0 TO 1 STEP .03
+OPRINT EXP(T),EXP(T+.01),EXP(T+.02)
+ONEXT T
+REND<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-50<BR>
+</FONT>
+</BODY>
+</HTML>

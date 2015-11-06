@@ -1,0 +1,505 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\Basic09 - Ch 12.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Chapter 12<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Program Optimization
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000000.JPG" WIDTH="20" HEIGHT="5">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000001.JPG" WIDTH="17" HEIGHT="3">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000002.JPG" WIDTH="19" HEIGHT="3">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000003.JPG" WIDTH="10" HEIGHT="4">
+</FONT>
+</H2>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09's multipass compiler produces a compressed and optimized low-level I-code for execution. Compared to other BASIC languages, BASIC09 greatly decreases both the storage space
+required for program code and the execution speed of programs.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because BASIC09 produces I-code at a powerful level, it can
+handle numerous MPU (micro processor unit) instructions with a
+single interpretation. Therefore, for complex programs, there is
+little performance difference between the execution of I-code and
+pure machine-language instructions.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Most BASIC languages have to compile from text as they run, or
+search tables of 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>tokens </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+in order to execute code. <B>Instead,
+BASIC09 I-code </B>instructions contain direct references to variables, statements, and labels. BASIC09 fully utilizes the power of
+the 6809 instruction set, as well, which is optimized for efficient
+execution of compiler-produced code.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because BASIC09 interprets I-code, you have a variety of entrytime and run-time tests and development aids. The editor reports
+syntax errors immediately when they are entered. The debugger
+lets you debug using original program source statements and
+names. The I-code interpreter performs run-time error checking
+of array structures and BASIC09 functions.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+Optimum Use of Numeric Data Types<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following notes apply to the use of BASIC09 numeric data
+types:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 includes several different numeric representations (real, integer, byte), and performs automatic type
+conversions between them. This means that without
+care, your code might contain expressions or loops that
+take more than ten times longer to execute than is
+necessary.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+12-1<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 Commands Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000004.JPG" WIDTH="10" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000005.JPG" WIDTH="14" HEIGHT="7">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Some <B>BASIC09 </B>numeric operators, such as + ,-,*, and /,
+and some BASIC09 control structures include versions for
+both real and integer values. Integer versions execute
+much faster and can have slightly different properties.
+Fbr instance, integer division discards any remainder.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Integer operations are faster because they use corresponding 6809 instructions. Using integers increases
+speed and decreases storage requirements. Integer operations use the same symbols as real operations, but
+BASIC09 automatically selects the integer operations
+when when all operands of an expression are of byte or
+integer type.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Type conversion takes time. Using expressions with operands and operators of the same kind is most efficient.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09's real (floating point) math provides excellent
+performance. It includes a 40-bit binary floating point
+representation and uses the CORDIC technique to derive
+all transcendental functions. This integer shift-and-add
+technique is faster and more consistent than the common
+series-expansion approximations.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+At times, you can obtain similar or identical results in a
+number of different ways and at different execution
+speeds. Fbr example, if the variable Value is an integer,
+then va 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+1 u e * 2 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+is a fast integer operation. However, if the
+expression is 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>v </I>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+a 1 u e * 2 . 0 , 2
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+.0 is represented as a real
+number and the operation requires real multiplication.
+BASIC09 must transform the integer Value into a real
+value. If the result of the expression is assigned to an
+integer type variable, BASIC09 must transform the
+result back to an integer type. The decimal point can
+slow the operation by about ten times.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+12-2<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000006.JPG" WIDTH="135" HEIGHT="1">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000007.JPG" WIDTH="26" HEIGHT="7">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000008.JPG" WIDTH="25" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000009.JPG" WIDTH="24" HEIGHT="5">
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<U>Program Optimization l 12
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+Arithm<U>etic Functions Ranked by Speed<BR>
+</U>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+ <UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Typical Speed
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Operation in MPU Cycles
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Integer add or subtract  
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+150
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Integer multiply  240
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Real add  440
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Real subtract  
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+540
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Integer divide  960
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Real multiply  990
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Real divide  3870
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Real square root  7360
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Real logarithm or exponential  20400
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Real sine or cosine  
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+32500
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Real power  
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+39200
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Referring to the previous table can help you in your programming. For instance, notice that it is quicker to add a value to
+itself rather than multiplying it by 2. Similarly, multiplying a
+value by itself or using SQ on a value is much faster than raising a value to the power of 2.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Notice that a real divide takes 3870 cycles, while a real multiplication takes only 990 cycles. Multiplying a value by 0.5 is four
+times quicker than dividing the value by 2.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+(quicker Loops<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 has two versions of FOR/NEXT loops, one for integer
+loop counter variables and one for real loop counter variables. It
+automatically uses the appropriate version. Integer FOR/NEXT
+loops are much faster than real FOR/NEXT loops.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Other kinds of loops also run faster if you use integer type variables for the loop counters. When writing program loops, remember that statements inside the loop can execute many times for
+each execution outside the loop. Whenever possible, compute values before entering loops.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000010.JPG" WIDTH="24" HEIGHT="9">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+12-3<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Commands Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Arrays and Data Structures<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The internal workings of BASIC09 use integer numbers to index
+arrays and complex data structures. This means that BASIC09
+must convert real type variable or expression subscripts before it
+can handle them. Using integer expressions for subscripts
+increases execution speed.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Using the assignment statement LET to copy identically sized
+data structures is much faster than copying arrays or structures
+element-by-element inside a loop.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>The PACK Command<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PACK causes a second compilation of a specified procedure.
+Depending on such variables as the number of procedure comments and the inclusion of line numbers, packed procedures execute from 10 to 30 percent faster. Line numbers cause unpacked
+procedures to run slower.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Minimizing Constant Expressions
+and Subexpressions<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For maximum execution speed, precalculate constant expressions. For instance, 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+x = x ; 5 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+produces the same result as 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+x =
+x &middot; s q r t 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+c 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+7 0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+e ) / 2
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+. 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+However, the first expression requires approximately 150 MPU cycles while the second expression requires
+11,650 MPU cycles. If you use such an expression inside a loop,
+the additional execution time is enormous.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Input and Output<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Accessing data one line or record at a time is much faster than
+accessing it one character at a time. Also, the GET and PUT
+statements are much faster than READ and WRITE statements
+when accessing disk files. This is because GET and PUT use the
+same binary format as BASIC09's internal operations. READ,
+WRITE, PRINT, and INPUT must perform binary-to-ASCII or
+ASCII-to-binary conversions, which take more time.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000011.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000012.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000013.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~24\GR000014.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+12-4<BR>
+</FONT>
+</BODY>
+</HTML>

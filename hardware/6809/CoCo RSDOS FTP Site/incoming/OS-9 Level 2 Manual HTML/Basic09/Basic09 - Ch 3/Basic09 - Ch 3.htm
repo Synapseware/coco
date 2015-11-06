@@ -1,0 +1,1475 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\Basic09 - Ch 3.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<P ALIGN="CENTER">
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<U>Chapter 3</U>
+</FONT>
+</P>
+<H2 ALIGN="CENTER">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<U>The System Mode</U>
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The BASIC09 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>command interpreter </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+processes system commands.
+At the 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+H : prompt, 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+you can enter system commands in either
+upper- or lowercase letters. Some commands operate on the procedures in the workspace. Others provide functions independent
+of any procedures. Following is a list of all system commands
+and their purposes.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Command Function<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$  Calls the shell command interpreter to execute<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+an OS-9 command.
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BYE or Returns you to the OS-9 system or to the pro<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+gram that called BASIC09.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CHD Changes the current OS-9 data directory.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CHX Changes the current OS-9 execution directory.<BR>
+ 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Or DIR Displays the name, size, and variable storage<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+requirement of each procedure in the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+workspace.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+EDIT or E Enters the procedure editor-compiler mode.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>KILL </B>Erases one or more procedures from the work<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+space.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>LIST </B>Displays a formatted listing of one or more<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+procedures.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+LOAD Loads all procedures from a disk file into the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+workspace.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+MEM Displays in bytes the current workspace size,<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or reserves a specified amount of memory for<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the workspace.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>PACK </B>Condenses (compiles) one or more procedures.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>RENAME </B>Changes a procedure's name.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RUN Causes a procedure in the workspace to<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+execute.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+SAVE Writes one or more procedures to disk.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000000.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000001.JPG" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000002.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-1<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Renaming Procedures<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09's RENAME function is important for two reasons:
+First, it lets you load into the workspace procedures that have
+the same name. After you rename the workspace procedure you
+can load the second file. Second, if you let BASIC09 use the
+default procedure name, "Program," you can rename the procedure before saving it to disk. By doing this, you avoid writing
+over and destroying an existing procedure file.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To change the name of the procedure you created in the previous
+chapter from Program to Add, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>rename program add </TT></B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Listing Procedure Names<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can use the DIR command to see if RENAME worked properly. DIR displays the names and sizes of all procedures in memory. Because programmers use this command frequently, the
+system recognizes a shorthand call. Instead of typing 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>d i r </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER </B>,
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+you only need to press 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+. This displays a table of the procedures in the following format:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>Name Proc-Size Data-Size
+</UL>
+<BR>
+ <UL>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>*add 182 32
+</UL>
+<BR>
+  <UL>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>add1 21 7 42
+</UL>
+<BR>
+  <UL>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>add2 218 42
+</UL>
+<BR>
+<UL>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>2198 free
+</UL>
+<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Proc-Size refers to the number of memory bytes required for the
+procedure. 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Data-Size </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+refers to the number of memory bytes
+required for the procedure's variables and data structures. The
+asterisk indicates the current procedure. System commands act
+on the current procedure unless you indicate otherwise.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The last line of the DIR display tells you how many free bytes of
+memory remain in the BASIC09 workspace.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Listing Procedures<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can use the LIST command to view procedure lines. To display the current procedure, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>1 i s t ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-2<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000003.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000004.JPG" WIDTH="20" HEIGHT="4">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>The System Mode / 3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For example, this is the listing of a procedure named Alpha.bak:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+PROCEDURE Alpha-bak
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+0000 DIM A:STRING
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+0007 DIM T: INTEGER
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+000E
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+000E PRINT "Here 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+i5 
+</FONT>
+<FONT SIZE="1" FACE="Verdana1" COLOR="#000000">
+the alphabet
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana1" COLOR="#000000">
+backwards:"
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana1" COLOR="#000000">
+0032 PRINT
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+0034 FOR T=90 TO 65 STEP -1
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+004A  PRINT CHR$(T);
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+0051  PRINT " ";
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+0057 NEXT T
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+0062 PRINT
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+0064 PRINT
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Verdana" COLOR="#000000">
+0066 END
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When you list a BASIC09 procedure, the system precedes each
+line with a 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>relative </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+storage address. The relative address of the
+first procedure line is always 0. In the previous example, the
+beginning address of the second procedure line in the workspace
+is 07 units from the beginning. The beginning address of the
+third line is OE hexadecimal (14 decimal) storage units from the
+procedure beginning.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+These I-Code addresses provide a way for the compiler to let you
+know where it finds an error when one occurs.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because BASIC09 compiles programs into I-Code, it must 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>disassemble </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+them before it can display them on the screen. This
+means that the lines might not look exactly as typed. For
+instance, BASIC09 converts lowercase 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>keywords </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(command
+names) to uppercase. BASIC09 also eliminates some spaces. If
+your program uses control statements such as IF/THEN, FOR/
+NEXT, and <B>LOOP/ENDLOOP, </B>the lines in these decision making or looping structures are indented as shown in the
+Alpha.bak example. Regardless of the appearance of your listed
+procedures, they execute correctly if you type their commands
+correctly.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000005.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000006.JPG" WIDTH="20" HEIGHT="4">
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Listing Procedures to a File<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+There might be times when you want to send a formatted procedure listing, including I-Code addresses, directly to a file. You
+can do this using OS-9's redirection symbol, &gt; . To save the
+Alpha.bak procedure on a file named Alphadist in the current
+data directory, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>list alpha.bak &gt;alpha.li5t </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you have several procedures in the workspace and want to list
+more than one to a disk file, separate the procedure names with
+commas, like this:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>list alpha.one,alpha.two,alpha.three &gt;alpha.all
+ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In both of the preceding cases, the system creates the Alpha.list
+file and stores the specified listings in it. If you use a file name
+that already exists, BASIC09 displays the prompt:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Rewrite?:
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you press 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>E], </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the system destroys the original file and overwrites it with the new listing. If you press 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>CK, </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the LIST process
+terminates.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you wish to list a procedure, or group of procedures, to a file
+that is not in the current data directory, be sure to specify the
+complete pathlist, such as:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>list alpha.bak &gt; /d1/programs/alpha.rev </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Listing Procedures to a Printer<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In the same manner as you list procedures to a disk file, you can
+list one or more procedures to your printer. Make certain your
+printer is connected and turned on, then again use the redirection symbol, but this time specify the printer device, like this:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>list alpha.bak &gt;/p </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Or:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>list alpha.one,alpha.two,alpha.three &gt;/p </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>3-4<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000007.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000008.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000009.JPG" WIDTH="283" HEIGHT="2">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The System 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Mode / 3<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Using a Wildcard<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Using the OS-9 wildcard, *, you can list all procedures in the
+workspace. For instance, if the procedures Alpha.one, Alpha.two,
+and Alpha.three exist, list them to the screen by typing:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>1 </TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+i 5 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>t * ENTER
+</UL>
+<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Send the list to a file by typing:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>list* alpha.all </TT></B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Or send the list to your printer by typing:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>li5t* /p
+</UL>
+<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Note: </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+When you use the wildcard, the name of the file or
+device to receive the listing immediately follows the LIST*
+command. Do not use the redirection symbol.<BR>
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Saving Procedures<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+You can save one or more procedures to disk using the SAVE
+command. Unlike LIST, SAVE does not include relative
+addresses. However, the syntaxes for the SAVE and LIST commands are identical. To save the procedure Alpha.bak to the current data directory, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>save a 1 pha . ba k a 1 pha . ba k </TT></B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+If Alpha.bak is the current procedure, you can save it in a file
+named Alpha.bak by typing 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>save </TT></B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER </B>.
+</FONT>
+</P>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+To save all of the procedures in the workspace to a file named
+All.programs in the current data directory, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>save* All . program5 </TT></B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+As with LIST, to save one or more procedures in a file that is<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+not in the current data directory, make sure you specify a com<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+plete pathlist.  -<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+To save all the files in the workspace to a disk file with the
+same name as the current procedure, type 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>5 a v e * ENTER </B></TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+.
+</FONT>
+</P>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+If the disk file you specify does not exist, BASIC09 creates it. If
+it does exist, the system displays the prompt:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>Rewrite?:
+</UL>
+<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>3-5
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000010.JPG" WIDTH="196" HEIGHT="2">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000011.JPG" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000012.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000013.JPG" WIDTH="20" HEIGHT="3">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Press 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>E </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>to write over the old file with the specified file. The old
+file is destroyed.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Press 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+(E 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>to terminate the SAVE operation.`'`<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Loading Procedures<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>To load a saved procedure back into BASIC09's workspace, use
+the LOAD command and specify the appropriate pathlist. For
+instance, if your current directory </B>is <B>still the directory containing Alpha.bak, load the procedure by typing:</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>load alpha. bak </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>To load Alpha.bak from the PROGRAMS directory on Drive /D1,
+type:</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>load /d1 /program5/alpha. rev </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>You can run and edit a loaded procedure in exactly the same
+manner as you would a procedure you created.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>You can load any number of procedures into the workspace as
+long as your computer has sufficient memory. However, be careful that you do not load a procedure with the same name as a
+procedure already existing in the workspace. If you do, the new
+procedure overwrites (destroys) the original procedure. You can
+rename workspace procedures to avoid this problem.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Deleting Procedures from the Workspace<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>You can clear the workspace of one or more procedures using the
+KILL command. For instance, to remove Alpha.bak from the
+workspace, type:</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>kill alpha.bak </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>To remove more than one procedure from the workspace, separate the procedure names with commas. To delete Alpha.one and
+Alpha.two, type:</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>kill alpha.one,alpha.two </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>To clear the entire workspace, regardless of the number of procedures it contains, use the BASIC09 wildcard, *. Type:</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>k i 1 1 * ENTER
+</UL>
+<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>3-6<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000014.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000015.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000016.JPG" WIDTH="275" HEIGHT="2">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000017.JPG" WIDTH="301" HEIGHT="1">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000018.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000019.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000020.JPG" WIDTH="16" HEIGHT="19">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The System <I>Mode / 3<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Garamond" COLOR="#000000">
+<B>Changing Directories<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You change working directories in BASIC09 and OS-9 in the
+same manner, by using the CHD and CHX commands. CHD
+changes the data directory, and CHX changes the execution
+directory.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 saves files in, or loads files from, the data directory,
+unless you specify differently in the command pathlist. It stores
+packed procedures in, or loads PACKed procedures from, the execution directory, unless you specify differently in the command's
+pathlist.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Also, if you want to access OS-9 commands from BASIC09, the
+system first looks for the commands in memory. If they are not
+there, it looks for them in the execution directory, unless you
+specify differently.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If your data directory is the ROOT directory, and you wish to
+change to a directory named PROGRAMS that is a subdirectory
+of the ROOT directory, type the following command from the
+command mode 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>B : prompt</TT>
+</FONT>
+</P>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>chd programs </TT></B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If your current execution directory is the system's CMDS directory, and you want to change to a CMDS directory in the subdirectory BASIC, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>chx basic/cmds </TT></B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Whenever you change to a directory other than an immediate
+subdirectory, specify a complete pathlist.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Garamond" COLOR="#000000">
+<B>Executing OS-9 Commands<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 lets you use OS-9 commands at any time from the system mode. To do so, precede the command with a dollar sign ($).
+For instance, to look at the current data directory, type: _
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000021.JPG" WIDTH="60" HEIGHT="12">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To view the current execution directory, type:<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000022.JPG" WIDTH="72" HEIGHT="11">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000023.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-7<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<U>BASIC09 Reference<BR>
+</U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+All OS-9 commands are available, and you can copy files, format
+diskettes, list files, or use any other functions from the system
+mode. The only restriction is that your computer must have
+enough free memory to handle the command you call. If you find
+that there is not enough memory, try using the MEM command
+to reduce reserved memory. Then, try the command again.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Garamond" COLOR="#000000">
+<B>Auto-Execute Procedures<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The BASIC09 compiler makes two passes through the procedures
+you write. When you enter the command, the compiler performs
+an initial compilation, checking for any syntax errors. When you
+leave the edit mode, the system compiles the procedure a second
+time and checks for any programming errors. With the PACK
+command, you can further compile your procedures so that they
+are smaller and execute even faster.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PACK causes an extra compiler pass that removes names, line
+numbers, and non-executable statements. <B>Before packing a
+procedure, be sure you save it. Unless you do so, you cannot make further changes to the procedure.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Once you pack a file, you cannot list or edit the packed version.
+However, if you save the procedure to disk before packing, you
+can still list and edit the original file, then pack it again.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When you save a packed procedure on disk, BASIC09 does not
+normally store it in the data directory. Because the procedure is
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>now executable, </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the system stores it in the current execution
+directory.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For instance, to convert Alpha.bak to a packed procedure in the
+execution directory, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>pack a 1 pha . ba k </B></TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you want to save a packed procedure under a different filename, use the OS-9 redirection symbol:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>pack alpha.bak &gt; backward5 </B></TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+After packing a procedure, you can delete it from the workspace.
+If you then run it, BASIC09 automatically loads the file from
+disk and executes it.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following is a sequence of commands that demonstrate packing and executing a procedure named Alpha.bak:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-8<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000024.JPG" WIDTH="20" HEIGHT="5">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The Svstem <I>Mo<U>de / 3<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000025.JPG" WIDTH="302" HEIGHT="5">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+pack a 1 p h a . b a k 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+packs the procedure and stores
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+it in the execution directory.
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+kill a 1 p h a . b a k 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+deletes the procedure from the
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+workspace.
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+run a 1 p h a . b a k 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+loads the file into memory
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+outside the workspace and
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+executes it.
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+kill a 1 p h a . b a k 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+deletes the module from
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+memory
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You do not need to kill the file immediately after execution, but
+until you do, the file reduces available memory.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000026.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000027.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~4\GR000028.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3-9<BR>
+</FONT>
+</BODY>
+</HTML>

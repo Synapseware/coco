@@ -1,0 +1,103 @@
+Downloading with the modempak is possible using it's built in
+terminal program. XMODEM is supported, but due to the way the
+modempak saves files to cassette tape, only BASIC files and
+text can be transfered. Machine language programs will not be
+saved correctly.  (Almost all files extended .BIN in
+CompuServe's Color Computer Forum data libraries  are machine
+language.) : Obviously, this limitation makes using the
+terminal program found in the modempak almost useless for file
+transfers. However, with a little work, the hardware of the
+modempak (the ACIA serialport and 300 baud modem) can be used
+with one of the most popular, full featured terminal programs
+available for the Color Computer.... Mikeyterm. 
+
+To use the Tandy Direct Connect Modem Pak with Mikeyterm,
+several files from Data Library 6 will be needed.
+
+ MTERM1.BAS
+ MTERM2.BAS
+ MTERM3.BAS
+ MTERM4.BAS
+ MTPAK.BAS
+
+The first four files are BASIC loaders that will create the
+machine language file MTRM47, which is the stand alone
+Mikeyterm program. Being BASIC files they are downloadable with
+the modempak. If you already have this file (make sure it's
+version 4.7) then all that is required is the patch file,
+MTPAK.BAS.
+
+
+The modempak's default communication parameters are perfect for
+hooking up to CompuServe. From the main menu, make sure you're
+set up for 8 bits, parity none, and 1 stop bit. Select XMODEM
+as the protocol. Log on as usual and proceed to the Color
+Computer Forum's Telecommunications data library (DL6).
+
+( Note: If you're seeing miscellaneous graphic characters after
+your login sequence, see the special note at the end of this
+file)
+
+At the prompt, type DOW MTERM1.BAS  and hit the <Enter> key.
+You will then be prompted for a protocol to use during the
+transfer. Choose item 1, XMODEM, and again hit the <Enter>
+key.  The system will respond " Starting Xmodem transfer..." At
+this point, you must initiate the transfer from your end. 
+
+On the COCO 3, this is done by holding the <ALT> key down while
+pressing the <1> key. On other models of the COCO, substitute
+the <@> key for <ALT>. Your cursor will disappear and you
+should see a staus message " Receiving Xmodem file". In a few
+seconds a series of dots will appear. These dots represent the
+'blocks' of data transfering.
+
+When your cursor reappears the transfer is complete. Hit the
+<Enter> key to return to a data library prompt. To save connect
+charges, log off CompuServe with the BYE command, disconnect
+your modepak from the phone line and get ready to save the file
+to tape.
+
+Hit the <BREAK> key to return to the modempak's main menu.
+Ready your cassette and tape. Press Play and Record. 
+
+Use the arrow keys to move down the menu to 'CASSETTE BUFFER
+SAVE'. Hit the <Enter> key and provide the file name. For our
+example of MTERM1.BAS drop the extension and use MTERM1.
+Complete the command with by hitting the <Enter> key. The
+cassette recorder should begin to record. When the recorder has
+stopped and your cursor has returned, the file save is
+complete.
+
+Hit the <BREAK> key to return to the terminal mode, log back
+into CompuServe's Color Computer Forum, and continue to
+download the remaining files specified above.
+
+With all the files (MTERM1-4 and MTPAK) in hand, Create the
+machine language file MTRM47 by CLOADing and RUNning MTERM1.
+Follow the prompts and soon you will have Mikeyterm saved to
+tape. Be sure to name it MTRM47 for now.
+
+Next, CLOAD "MTPAK" and RUN. Follow the prompts, and your copy
+of Mikeyterm will have been patched for use with the Modempak.
+Save it to tape using the instructions shown on the screen and
+you're all set! CLOADM "MTRM47 and EXEC. Connect to the phone
+line with the modem pak as usual. Typing EXEC 49152 is no
+longer necessary. You're now using Mikeyterm!
+
+If you should have any trouble with these instructions, please
+drop a note to me, Steve Wegert 76703,4255 on the message
+board. I'll be happy to help you get going.
+
+
+***  Special note ****
+
+If you're seeing miscellaneous graphic characters AFTER your
+login sequence and during your communications session, press
+<BREAK> to return to the modempak's main menu. Temporarily
+switch to 7 bits. Hit <BREAK> again to return to terminal mode.
+At any CompuServe prompt type: GO TERMNIAL and press the
+<Enter> key. Select menu item #5 and prepare to change one of
+your terminal parameters. Parity should be zero. If it's not,
+change it. Make the change a 'session only' change and proceed
+to the Color Computer Forum.
+

@@ -1,0 +1,2870 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>F:\MYDOCU~1\SCHEDU~2\OS-9 L-II Technical Reference Ch 8 Pg 77-100.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Privileged System 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Mode Calls / 8<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000000.JPG" WIDTH="306" HEIGHT="3">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Clear Specified
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Block
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS9 F$C1rBlk 103E 50<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = number of blocks<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>U = address of first block<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Exit Conditions: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+None<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Marks blocks in the<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+process DAT image as<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+unallocated<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+After Clear Specified Block deallocates blocks, the blocks
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+are free for the process to use for other data or program
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+areas. If the block address passed to Clear Specified Block
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+is invalid or if the call attempts to clear the stack area, it
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+returns E$IBA.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The support module for the call is OS9p2.<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000001.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000002.JPG" WIDTH="20" HEIGHT="6">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-77<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000003.JPG" WIDTH="198" HEIGHT="3">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+DAT to Logical
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Address
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+OS9 F$DATLog 103E 44<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = DAT image offset<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>X = block offset<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Exit Conditions:<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000004.JPG" WIDTH="37" HEIGHT="9">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Error Output:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>logical address<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = C bit set on error<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = appropriate error code<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Following is a sample conversion:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+2000 - 2FFF<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1000 - 1FFF<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 - FFF<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Converts a DAT image<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+clock number and<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+block offset to its<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+equivalent logical<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+address<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Input: 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = 2<BR>
+ </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+X = $0329<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Output: X = $2329<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The support module for this call is OS9p1.<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000005.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-78<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000006.JPG" WIDTH="20" HEIGHT="3">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000007.JPG" WIDTH="24" HEIGHT="7">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000008.JPG" WIDTH="24" HEIGHT="5">
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Privileged System Mode Calls l 8
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Deallocate Image 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Deallocates image<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+RAM Blocks  
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+RAM blocks<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+OS9 F$DelImg 103E 3B<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>A = number of starting block<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = block count<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>X = process descriptor pointer<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Error Output:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = C bit set on error<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = appropriate error code<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; This system call deallocates memory from a process's
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+address space. It frees the RAM for system use and frees
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the DAT image for the process. Its main use is to let the
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+system clean up after a process death.
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; The support module for this call is OS9p2.<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000009.JPG" WIDTH="306" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-79<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Deallocate
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Process
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Descriptor
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+OS9 F$De1Prc 103E 4C<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Returns a process<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+descriptor's memory to<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+a free memory pool<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000010.JPG" WIDTH="20" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>A = process ID<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Error Output:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = C bit set on error<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = appropriate error code<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Use this call to clear the system scratch memory and stack<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+area associated with the process.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; The support module for this call is OS9p2.<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000011.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000012.JPG" WIDTH="24" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-80<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Privileged System 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Mode Calls / 8<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000013.JPG" WIDTH="306" HEIGHT="3">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Deallocate RAM
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+blocks
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+OS9 F$De1RAM 103E 51<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = number of blocks<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>X = starting block number<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Exit Conditions: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+None<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Clears a block's RAM<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+In Use flag in the<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+system memory block<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+map<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000014.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The Deallocate RAM Blocks call assumes the blocks being<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+deallocated are not associated with any DAT image.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; The support module for this call is OS9p2.<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000015.JPG" WIDTH="22" HEIGHT="7">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000016.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-81<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000017.JPG" WIDTH="51" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Deallocate Task
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Number
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+OS9 F$De1Tsk 103E 40<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>X = process descriptor pointer<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Error Output:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>CC<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>B<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+C bit set on error<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>appropriate error code<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The support module for this call is OS9p1.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Releases the task<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+number that the<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+process specified by<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+the passed descriptor<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+pointer<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>8-82<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000018.JPG" WIDTH="32" HEIGHT="3">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000019.JPG" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000020.JPG" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000021.JPG" WIDTH="22" HEIGHT="4">
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<U>Privileged System Mode Calls l 8
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Link Using 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Performs a link using a
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Module Directory 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+pointer to a module
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+'1<BR>
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Entry 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+directory entry
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+E 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS9 F$ELink 103E 4D
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = module type
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>X = pointer to module directory entry
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Exit Conditions:
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>U = module header address
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>Y = module entry point
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Error Output:
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = C bit set on error
+</UL>
+</UL>
+<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>i B = appropriate error code<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Additional Information:
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; This call differs from Link in that you supply a pointer to
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the module directory entry rather than a pointer to a mod
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ule name.
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The support module for this call is OS9p1.
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000022.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-83<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Find Module
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Directory Entry
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+OS9 F$FModul 103E 4E<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>A = module type<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>X = pointer to the name string<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>Y = DAT image pointer (for </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+name)<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Exit Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+A<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+B<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+X<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000023.JPG" WIDTH="37" HEIGHT="49">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Error Output:<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Returns a pointer to<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+the module directory<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+entry<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>module type<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>module revision number<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>updated name string; (if </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Register A contains 0 on<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+entry)<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>module directory entry pointer<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = C bit set on error<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = appropriate error code<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The Find Module Directory Entry call returns a pointer to<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the module directory entry for the first module that has a<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+name and type matching the specified name and type. If<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+you pass a module type of zero, the system call finds any<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+module.<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The support module for this call is OS9p1.<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000024.JPG" WIDTH="302" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-84<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000025.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000026.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000027.JPG" WIDTH="22" HEIGHT="5">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Privileged System Mode Calls / 8<BR>
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Find 64
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS9 F$Find64 103E 2F<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Returns the address<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+of a 64-byte memory<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+block<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000028.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>A = block number<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<I>X = address of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>the block<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Exit Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+<I>Y = address of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>the block<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set if block not allowed or not in use<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS-9 uses Find 64 to find path descriptors when given
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+their block number. The block number can be any positive
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+integer.
+</UL>
+<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000029.JPG" WIDTH="22" HEIGHT="7">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-85<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000030.JPG" WIDTH="306" HEIGHT="4">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Get Free High
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Block
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+OS9 F$FreeHB 103E 3E<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Searches the DAT<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+image for the<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+highest set of<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+contiguous free<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+blocks of the<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+specified size<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000031.JPG" WIDTH="20" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>= block count<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>Y = DAT image pointer<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Exit Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>A = starting block number<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Error Output:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = C bit set on error<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B = appropriate 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>error code<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The Get Free High Block call returns the block number of<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the beginning memory address of the free blocks.<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The support module for this system call is OS9p 1.<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000032.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-86<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000033.JPG" WIDTH="304" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Privileged System Node Calls / 8<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Get Free Low
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Block
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+OS9 F$FreeLB 103E 3D<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>= block count<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>Y = DAT image pointer<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Exit Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>A = starting block number<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Error Output:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = C bit set on error<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = appropriate error code<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Searches the DAT<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+image for the lowest set<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+of contiguous free<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+blocks of the specified<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+size<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; The Get Free Low Block call returns the block number of<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the beginning memory address of the free blocks.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; The support module for this system call is OS9p1.<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000034.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000035.JPG" WIDTH="18" HEIGHT="2">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000036.JPG" WIDTH="20" HEIGHT="6">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-87<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000037.JPG" WIDTH="304" HEIGHT="3">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Compact Module
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Directory
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+OS9 F$GCMDir 103E 52<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+None<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Exit Conditions: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+None<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Compacts the entries in<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+the module directory<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000038.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This function is only for internal OS-9 system use. You<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+should never call it from a program.<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000039.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000040.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-88<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000041.JPG" WIDTH="304" HEIGHT="3">
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Privileged System Mode Calls l 8
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Get Process 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Gets a pointer to a<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Pointer 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+process<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+F$GProcP 103E 37<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>A = process ID<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Exit Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B = pointer 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>to process descriptor </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(if no error)<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Error Output:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set on error<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>= error </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+code (If an error occurs (E$BPrcID))<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The Get Process Pointer call translates a process ID num
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ber to the address of its process descriptor in the system
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+address space. Process descriptors exist only in the system
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+task address space. Because of this, the address returned
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+only refers to system address space.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The support module for this call is OS9p2.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-89<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<B>1/O Delete  </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Deletes an I/O module<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>OS9 F$IODel 103E 33  that is not being used<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Entry Conditions:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>X = address of an I1O module<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Error Output:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set on error<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>B = error code (if </I>any)<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Additional Information:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; The I/O Delete deletes the specified I/O module from the<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+system, <I>if </I>the module is not in use. This system call is
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+used mainly by the I/O MANAGER, and can be of limited
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or no use for other applications.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; This is the order in which I/O Delete operates:<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1. Register X passes the address <I>of </I>a device descriptor
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+module, device driver module, or file manager module.
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+2. OS-9 searches the device table for the address.
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>3. If </I>OS-9 finds the address, it checks the module's use
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+count. <I>If </I>the count is zero, the module is not being
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+used; OS-9 deletes it. If the count is not zero, the mod
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ule is being used; OS-9 returns an error.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; I/O Delete returns information to the Unlink system call<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+after determining whether a device is busy.
+</UL>
+<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000042.JPG" WIDTH="20" HEIGHT="3">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000043.JPG" WIDTH="300" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-90<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Privileged System Mode Calls / 8<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000044.JPG" WIDTH="306" HEIGHT="4">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+I/O (queue
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>OS9 F$IOQu 103E 2B<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Inserts the calling<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>process into another<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>process's I/O queue,<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>and puts the calling<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>process to sleep<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000045.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Entry Conditions:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A =<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>process number<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Error Output:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set on error<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = error code </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(if any)<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Additional Information:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The I/O Queue call links the calling process into the I/O
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+queue of the specified process and performs an untimed
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sleep. The IO Manager and the file managers are primary
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and extensive users of I/O Queue.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Routines associated with the specified process send a wake<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+up signal to the calling process.<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000046.JPG" WIDTH="12" HEIGHT="6">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000047.JPG" WIDTH="22" HEIGHT="7">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000048.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-91<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000049.JPG" WIDTH="53" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000050.JPG" WIDTH="304" HEIGHT="3">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Set IRQ
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+OS9 F$IRQ 103E 2A<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Adds a device to or<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+removes it from the<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+polling table<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>D = address of the device status register<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+X = 0 (to remove a device) or 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>the address of a packet (to<BR>
+ </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+add a device)<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+&middot; the address at X is the flip byte<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+&middot; the address at X + 1 is the mask byte<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+&middot; the address at X + 2 is the priority byte<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>= address of the device IRQ service routine<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>U = address of the service routine's memory area<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000051.JPG" WIDTH="16" HEIGHT="9">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Error Output:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+CC = carry set on error<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = error code </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+(if any)<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+&middot; Set IRQ is used mainly by device driver routines. (See
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+"Interrupt Processing" in Chapter 2 for a complete discus
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+sion of the interrupt polling system.)
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Packet Definitions:<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>The Flip Byte. </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Determines whether the bits in the device
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+status register indicate active when set or active when
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+cleared. If a bit in the flip byte is set, it indicates that the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+task is active whenever the corresponding bit in the status
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+register is clear (and vice versa).
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>The Mask Byte. </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Selects one or more bits within the device
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+status register that are interrupt request flag(s). One or
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+more set bits identify which task or device is active.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>The Priority Byte. </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Contains the device priority number (0
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+= lowest priority, 255 = highest priority).
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+8-92<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000052.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000053.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000054.JPG" WIDTH="22" HEIGHT="5">
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Privileged System Mode Calls l 8
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Load A From 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Loads A from O,X in<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Task B 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+task B<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+F$LDABX 103E 49<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = task number<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>X = pointer to data<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Exit Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>A = byte at O,X in task address space<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Error Output:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set on error<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B = error code (if any)<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The value in Register X is an offset value from the begin
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ning address of the Task module. The Load A From Task B
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+call returns one byte from this logical address. Use this
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+system call to get one byte from the current process's mem
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ory in a system state routine.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000055.JPG" WIDTH="17" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-93<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Technical Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+Get One 
+</FONT>
+<FONT SIZE="6" FACE="Garamond1" COLOR="#000000">
+Byte 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Loads A from [X, [Y]]<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>F$LDAXY 103E 46<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Entry Conditions:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>X = block offset<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>Y = DAT image pointer<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Exit Conditions:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>A = contents of byte at DAT image (Y) offset by X<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Error Output:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set on error<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = error code (if any)<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Additional Information:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The Get One Byte system call gets the contents 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+one byte
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+in the specified memory block. The block is specified by the
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+DAT image in (Y), offset by (X). The call assumes that the
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+DAT image pointer is to the actual block desired, and that
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+X is only an offset within the DAT block. The value in Reg
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ister X must be less than the size 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the DAT block. OS-9
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+does not check to see if X is out of range.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000056.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000057.JPG" WIDTH="18" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-94<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<U>Privileged System Mode C</U>alls l 8
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Get T<U>wo Bytes </U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<U>Loads </U>D fro<U>m<BR>
+</U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+F$LDDDXY 103E 48  fD + X],[Y]<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>D = Offset to the offset within the DAT </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+image<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>X = Offset within the DAT image<BR>
+ </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Y  = DAT image 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>pointer<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Exit Conditions:<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>D = contents of two bytes at [D+X,YJ<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Error Output:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set on error<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = error code </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(if any)<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Get Two Bytes loads two bytes from the address space
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+described by the DAT image pointer. If the DAT image
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+pointer is to the entire DAT, then make D + X equal to the
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+process address for data. If the DAT image is not the entire
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+image (64K), then you must adjust D + X relative to the
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+beginning of the DAT image. Using D + X lets you keep a
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+local pointer within a block, and also lets you point to an
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+offset within the DAT image that points to a specified block
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+number.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000058.JPG" WIDTH="18" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-95<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000059.JPG" WIDTH="296" HEIGHT="2">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Map Specific
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Block
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+F$MapBlk 103E 4F<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>X = starting block number<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>= number of blocks<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Maps the specified<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+block(s) into<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+unallocated blocks of<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+process space<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000060.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Exit Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>U = address of first block<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Error Output:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = error code (if </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+any)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set on error<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The system maps blocks from the top down. It maps new<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+blocks into the highest available addresses in the address<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+space. See Clear Specified Block for information on<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+unmapping.<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000061.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000062.JPG" WIDTH="22" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-96<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000063.JPG" WIDTH="42" HEIGHT="1">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000064.JPG" WIDTH="11" HEIGHT="4">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000065.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000066.JPG" WIDTH="18" HEIGHT="2">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Privileged System Mode Calls / 8<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000067.JPG" WIDTH="264" HEIGHT="3">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Move Data
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+F$Move 103E 38<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+X<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Y<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+U<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000068.JPG" WIDTH="10" HEIGHT="44">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Error Output:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>source task number<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>destination task number<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>source pointer<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>byte count<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>destination pointer<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+carry set on error<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>error code (if </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+any)<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Moves data bytes from<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+one address space to<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+another<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; You can use the Move Data system call to move data bytes<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+from one address space to another, usually from system to<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+user, or vice versa.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; The support module for this call is OS9p1.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-97<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000069.JPG" WIDTH="27" HEIGHT="2">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Next Process
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+OS9 F$NProc 103E 2D<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Executes the next<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+process in the active<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+process queue<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000070.JPG" WIDTH="20" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+None<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Exit Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Control does not return to caller.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; The Next Process system call takes the next process out of
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the active process queue and initiates its execution. If the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+queue contains no process, OS-9 waits for an interrupt, and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+then checks the queue again.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; The process calling Next Process must already be in one of
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the three process queues. If it is not, it becomes unknown
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to the system even though the process descriptor still exists
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and can be displayed by a PROCS command.
+</FONT>
+</P>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000071.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000072.JPG" WIDTH="277" HEIGHT="14">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Privileged System Mode Calls / 8<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000073.JPG" WIDTH="12" HEIGHT="5">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000074.JPG" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000075.JPG" WIDTH="16" HEIGHT="2">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Release A Task
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+F$Re1Tsk 103E 43<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+B = task 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>number<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Error Output:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set on error<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+B 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>= error code (if </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+any)<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+* The support module for this call OS9p1.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Releases a specified<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+DAT task number from<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+use by a process,<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+making the task's DAT<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+hardware available for<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+use by another task<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>8-99<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Technical Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Reserve Task 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Reserves a Dat task<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Number 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+number<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+F$ResTsk 103E 42<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Entry Conditions: none<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Exit Conditions:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>B = task number (if </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+no error)<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Error Output:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set on error<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = error code if an </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+error occurs<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; The Reserve Task Number call fords a free DAT task num-
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ber, reserves it, and returns the task number to the caller.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The caller often then assigns the task number to a process.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; The support module for this call is OS9p1.<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000076.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000077.JPG" WIDTH="45" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+1-11<BR>
+<IMG SRC="file:///F:\MYDOCU~1\SCHEDU~2\GR000078.JPG" WIDTH="300" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-100<BR>
+</FONT>
+</BODY>
+</HTML>

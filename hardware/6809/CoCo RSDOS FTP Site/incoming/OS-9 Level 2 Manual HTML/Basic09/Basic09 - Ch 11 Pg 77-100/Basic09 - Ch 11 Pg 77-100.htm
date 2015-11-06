@@ -1,0 +1,2989 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\Basic09 - Ch 11 Pg 77-100.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Command Reference l </U>1<U>1
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+LEN 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Returns the length of a string<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000000.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+LEN(string)<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Returns the number of characters in a string.
+Counts blanks or spaces as characters.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+string A literal string or a variable containing string
+characters.
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Examples:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT LEN("AHCDEFGHIJKLM")<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT LEN(NAME$)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>NAME$ = "JOE"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ADDRESS$ _ "2244 LANCASTER"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>TOTALLEN = LEN(NAME$)+LEN(ADDRESS$)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Sample Program:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following procedure uses LEN to determine which name in a
+list is longest.<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+PROCEDURE longname<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+ODIM NAMES,LNAME:STRING; LONGEST,LENGTH:INTEGER<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pNAMES-"" \LNAME="" \LENGTH=8 \LONGEST=0<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pFOR T=1 TO 18<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DREAD NAMES<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pLENGTH-LEN(NAMES)<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OF LONGEST(LENGTH THEN<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OLONGEST=LENGTH _<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pLNAME=NAMES<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DENDIF<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+ONEXT T<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OPRINT "The longest name is "; LNAME; " with "; LONGEST; " characters,"<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pEND<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+ODATA "Joe Blonski","Mike Marvel","Hal Skeemish","Fred Laungly"<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pDATA "Jane Misty","Wendy Paston","Martha Upshong","Jacqueline Rivers"<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pDATA "Susy Reetmore","Wilson Creding"<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+11-77
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000001.JPG" WIDTH="18" HEIGHT="4">
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+LET 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><U>Assigns a variable's value<BR>
+</U></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000002.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax:  </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>[LET] variable = expression<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Assigns a value to a variable. BASIC09 does not
+require the LET statement to assign values but does accept it
+in order to be compatible with versions of BASIC that do
+require it.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+ </B>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>variable </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The variable to which you want to assign a<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+value.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+expression Either a numeric or string constant or a<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+numeric or string expression.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Notes:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; The result of the LET expression must be of the same type
+as, or compatible with, the variable in which it is stored.
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; BASIC09's assignment function accepts either = or : = as
+assignment operators. The : = form helps to distinguish
+assignment operations from comparisons (test for equality)
+and is compatible with Pascal programming.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use BASIC09's assignment function to copy entire arrays or
+complex data structures to another array or complex data
+structure. The data structures do not need to be of the
+same type or 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>shape, </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+but the size of the destination structure must be the same as or larger than the source structure. This means the assignment function can perform
+unusual type conversions. For example, you can copy a
+string variable of 80 characters into a one-dimensional
+array of 80 bytes.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000003.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000004.JPG" WIDTH="10" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000005.JPG" WIDTH="20" HEIGHT="3">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>11-78
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000006.JPG" WIDTH="92" HEIGHT="1">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Command Reference l 11<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Examples:<BR>
+ </I>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LET A = 5<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000007.JPG" WIDTH="24" HEIGHT="7">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LET A := </TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+H<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ANSWER = A * H<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LET NAME$ :_ "JOE"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>NAME $ = FIRSTNAME$ + " " + LASTNAME$<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure uses LET to assign a random value to the variable R.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE getint<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DDIM T: INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=1 TO 1 0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OLET R=RNDC50)-25<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT R,INTCR)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000008.JPG" WIDTH="24" HEIGHT="9">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000009.JPG" WIDTH="18" HEIGHT="4">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-79<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+LNOT 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>Performs a logical NOT on a number<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000010.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Syntax: LNOT(value)<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Performs the logical NOT function on an integer or
+byte type number. The operation involves a bit-by-bit logical
+complement operation of the number you specify. For instance,
+if value is 188, the logic looks like this:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+188 Decimal = 10111100 Binary
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+NOT 10111100
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+= 01000011
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+01000011 Binary = 67 Decimal
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+LNOT changes each bit in a binary number to its complementary binary value all 1 values become 0 and all 0 values
+become 1. LNOT returns an integer result; it is not a Boolean
+operator.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Parameters:<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+value Any decimal or hexadecimal integer or byte<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+number. Precede hexadecimal numbers with 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+$.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT LNOT(88)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>A = LNOT(B)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>A = LNOT($44)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure uses one byte (contained in the variable STORAGE) to indicate the results of eight questions. Each bit in the
+byte indicates a Yes or No answer (Yes =1 and No = 0). The combination logic of LAND and LNOT masks the byte X so that it
+affects only the appropriate bit of STORAGE to set it to 0 if the
+answer is No. LOR sets the appropriate bit to 1 if the answer is
+Yes. The procedure operates in conjunction with the LXOR sample program.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000011.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000012.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-80<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Command Reference l 11<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000013.JPG" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000014.JPG" WIDTH="20" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000015.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>PROCEDURE questions<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>pDIM QUESTION;STRINGf681; T;INTEGER; X,STORAGE;BYTE<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ODIM ANSWER;STRINGt1l<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OX=1<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OFOR T=1 TO 8<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OREAD QUESTION<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OPRINT QUESTION; " (Y/N)? </B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+";<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OGET #O,ANSWER<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OPRINT<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OF ANSWER="y" OR ANSWER="Y" THEN<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OSTORAGEzLOR(STORAGE,X) (* Answer is yes, set bit to 1,<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>DELSE<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OSTORAGEsLAND(STORAGE,LNOT(X)) (* Answer is no, set bit to 0,<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>REND I F<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OX=X*2<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ONEXT T<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OPRINT STORAGE<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ORUN summary(STORAGE)<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>REND<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ODATA "Do you have more than one Color Computer"<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ODATA "Do you use your Color Computer for games"<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ODATA "Do you use your Color Computer for word processing"<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ODATA "Do you use your Color Computer for business applications"<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ODATA "Do you use your Color Computer at home"<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ODATA "Do you use your Color Computer at the office"<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ODATA "Do you use your Color Computer more than two hours a day"<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ODATA "Do you share your Color Computer with others"<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000016.JPG" WIDTH="29" HEIGHT="8">
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+LOG 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Returns natural logarithm<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000017.JPG" WIDTH="22" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>LO G(n um ber)<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Computes the natural logarithm of a number that
+is greater than zero. BASIC09 returns the logarithm as a real
+type result.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>number  </I>Any integer, byte, or real number.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Examples:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT LOG(3 . 1 41 59)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LOGVALUE = LOG(88/PI)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Sample Program:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure calculates the natural log and the log to base 10
+of the values 1-7.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE logs<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM NUM,T:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=1 TO 7<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "The LOG of "; T; " to the natural base =<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"&middot; LOG(T)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPR I NT "The LOG of "; T; " to base 1 0 = ";<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LOG10(T)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000018.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-82<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Command Reference l 11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+LOG10 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Returns base 10 logarithm<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000019.JPG" WIDTH="19" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>LOG 10(n um ber)<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Calculates the base 10 logarithm of a number.
+BASIC09 returns the logarithm as a real number.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>number  Any </I>byte, integer, or real value.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Examples:<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT LOG1 0 ($ 45<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT LOG1 0 (A<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT LOG10(A/12)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000020.JPG" WIDTH="24" HEIGHT="8">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Sample Program:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure calculates the natural log and the log to base 10
+of the values 1-7.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE logs<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM NUM,T:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pFOR T=1 TO 7<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "The LOG of "; T; " to the natural base =<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"&middot; LOG(T)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPR I NT "The LOG of "; T; " t o base 1 0 = ";<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LOG10(T)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OEND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000021.JPG" WIDTH="24" HEIGHT="7">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-83<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+LOOP/ENDLOOP
+</FONT>
+</H2>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Establishes/Closes a loop<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Syntax: LOOP<BR>
+<UL>
+<UL>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>statements)
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ENDLOOP
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Establishes a loop in which you can install EXITIF
+tests at any location. The LOOP and ENDLOOP statements
+define the body of the loop. EXITIF tests for a condition
+which, if TRUE, causes alternate actions, the transfer of procedure execution to another routine, or both.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you do not include an EXITIF statement, the loop cannot<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+terminate.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Parameters:<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>statements) </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+One or more procedure lines to execute within<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the loop.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Examples:<BR>
+ </B>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LOOP<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>COUNT = COUNT+1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>EXITIF COUNT &gt; 100 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DONE = TRUE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ENDEXIT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT COUNT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>X=COUNT/2<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ENDLOOP<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>INPUT X,Y<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LOOP<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>EXITIF X&lt;0 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT "X became 0 first"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>END<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ENDEXIT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>X = X-1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>EXITIF Y=0 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT "Y became 0 first"<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-84<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000022.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000023.JPG" WIDTH="20" HEIGHT="5">
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Command Reference / 11
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>END
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ENDEXIT
+</UL>
+</UL>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>,, Y=Y-1<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ENDLOOP
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>Sample Program:
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure simulates a gambling machine that awards cash
+returns depending on a random selection of kinds of fruits. You
+begin with a stake of $25 and win or lose according to random
+selections of the procedure.
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The program uses LOOP/ENDLOOP to keep operating until you
+run out of cash.
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE bandit
+ODIM FRUIT1,FRUIT2,FRUIT3,STAKE:INTEGER;
+FRUITC10):STRINGLGJ
+pSTAKE=2S
+OPRINT \ PRINT "You have $"; STAKE; " to play
+with."
+</UL>
+</UL>
+<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>,/"` pFOR T=1 TO 10<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DREAD FRUITCT)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>SLOOP<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFRUIT1=RNDC9)+1 \FRUIT2=RNDC9)+1 \FRUIT3=RNDC9)+1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pPRINT FRUITCFRUIT1); " "; FRUITCFRUIT2); " ";<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>FRUITCFRUIT3)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>CIF FRUITCFRUIT1)=FRUITCFRUIT2) AND FRUITCFRUIT1)=<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>FRUITCFRUIT3) THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OSTAKE=STAKE+10<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OELSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>EIF FRUITCFRUIT1)=FRUITCFRUIT2) OR FRUITCFRUIT2)=<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>FRUITCFRUIT3) THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>0STAKE=STAKE+2<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OELSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pIF FRUITCFRUIT1)=FRUITCFRUIT3) THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>0STAKE=STAKE+1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OELSE STAKE=STAKE-1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>[1END I F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND I F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DENDIF<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pEX ITIF STAKE&lt;1 THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pPRINT "You're Busted ...Hetter go home."<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-85
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000024.JPG" WIDTH="19" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000025.JPG" WIDTH="18" HEIGHT="3">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>PROCEDURE questions
+ODIM QUESTION:STRINGC60J; T:INTEGER;
+X,STORAGE:HYTE
+ODIM ANSWER:STRINGf1J
+OX=1
+OFOR T=1 TO 8
+DREAD QUESTION
+OPRINT QUESTION; " (Y/N)? </B>";
+<B>OGET *O,ANSWER
+OPRINT
+OIF ANSWER="y" OR ANSWER="Y" THEN
+OSTORAGE=LORCSTORAGE,X)
+OELSE
+OSTORAGE=LANDCSTORAGE,LNOTCX))
+OEND I F
+OX=X*2
+ONEXT T
+OPRINT STORAGE
+ORUN summaryCSTORAGE)
+REND
+ODATA "Do you have more than one Color Computer"
+ODATA "Do you use your Color Computer for games"
+ODATA "Do you use your Color Computer for word
+processing"
+ODATA "Do you use your Color Computer for business
+applications"
+ODATA "Do you use your Color Computer at home"
+ODATA "Do you use your Color Computer at the
+office"
+ODATA "Do you use your Color Computer more than
+two hours a day"
+ODATA "Do you share your Color Computer with
+others"<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000026.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000027.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000028.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>11-86<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</B></TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Command Reference l 11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+LXOR 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B><U>Returns logical XOR of two numbers<BR>
+</U></B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000029.JPG" WIDTH="18" HEIGHT="6">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Syntax: LXOR(valuel, valueZ<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Performs the logical XOR function on two-byte, or
+integer-type, values. For instance, if you LXOR the numbers 5
+and 6 the logic is like this:
+</FONT>
+</P>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Decimal 5 = Binary 0101
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Decimal 6 = Binary 0110
+0101
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<U>LXOR 0110
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+= 0011 = 3 Decimal
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If one bit or the other bit in the evaluation is 1, but not both,
+LXOR returns a result of 1. Otherwise, LXOR returns a
+</FONT>
+</P>
+ <FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+result of 0.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Parameters:<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+valuel A byte or integer number.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+valw2 A byte or integer number.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT LXOR(11,12)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT LXOR($20,$FF)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following program summarizes the results of the sample
+program for LOR. The LOR program stored the answers to eight
+questions in a single byte. This procedure reads the byte and
+displays appropriate comments. LXOR checks to see if two of the
+answers are "yes" or "no."
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000030.JPG" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000031.JPG" WIDTH="300" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-87<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pENDEXIT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pPRINT "Your Stake </TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+i5 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>now $"; STAKE; "."<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pINPUT "Pre55 ENTER to pull again...",Z$<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OENDLOOP<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pEND<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pDATA "ORANGE","APPLE","CHERRY","LEMON","BANANA"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODATA "PEAR", "PLUM","PEACH","GRAPE","APRICOT"<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000032.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000033.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000034.JPG" WIDTH="20" HEIGHT="21">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-88<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Command Reference l I Z
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+LOR 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>Returns logical OR of two numbers<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000035.JPG" WIDTH="20" HEIGHT="7">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Syntax:  </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>LOR(valuel, valueZ<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Performs the logical OR function on a byte- or
+integer-type value. The operation involves a bit-by-bit logical
+OR operation on two values. For instance, if you LOR the
+numbers 5 and 6, the logic is like this:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Decimal 5 = Binary 0101
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Decimal 6 = Binary 0110
+</UL>
+<BR>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0101
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<U>OR 0110
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+= 0111 = 7 Decimal
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If one bit or the other bit is 1, LOR returns a result of 1.
+Otherwise, LOR returns a result of 0.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+valuel  A byte or integer number.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>value2  A </I>byte or integer number.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT LOR(11,12)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT LORC$20,$FF)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure stores the answers to eight "yes" or "no" questions in one byte, named STORAGE. If you answer "yes" to a
+prompt, the procedure sets a corresponding bit to 1. If you
+answer "no" to a prompt, the procedure sets a corresponding bit
+to 0. The procedure uses LOR to set bits to 1 by <I>masking </I>all bits
+except the one it needs to set. The procedure operates in conjunction with the LXOR sample program.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-89
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>PROCEDURE summary<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM T: <B>INTEGER; A,H,X,TEST,TEST2:HYTE; SUMMARY:<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>STRINGL501<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPARAM STORAGE:HYTE<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>DA=0 \H=0<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT \ PRINT<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT "The following is a summary of the<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>questionnaire answers:"<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT "The surveyee: </B>"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OX=1<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=1 TO 8<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OTEST=LANDCSTORAGE,X)<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>DREAD SUMMARY<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OIF TEST&gt;0 THEN<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPR I NT TAHC 1 0) ; SUMMARY<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>REND I F<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OX=X*2<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>ONEXT T<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OIF LANDCSTORAGE,128)&gt;0 THEN<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>DA =1<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND I F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OIF LANDCSTORAGE,64)&gt;0 THEN<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OB =1<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>REND I F<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OTEST2=LXORCA,H)<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>DI F TEST2=1 THEN<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT "This computer owner either uses the<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>computer"<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT "more than two hours a day or shares it<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>with others."<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT "This is a heavy use situation."<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OENDIF<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OTEST2=LANDCA,H)<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>DI F TEST2=1 THEN<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT "This computer user uses the computer more<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>than two" _<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT "hours per day and shares it with others.<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>This is a"<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT "super heavy use situation."<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>DENDIF<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>REND<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>ODATA "Uses more than one computer"<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>ODATA "Plays games"<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>11-90<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000036.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000037.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000038.JPG" WIDTH="126" HEIGHT="1">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Command Reference l 11<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000039.JPG" WIDTH="22" HEIGHT="8">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+pDATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"Uses the computer for word proce55ing"
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+pDATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"U5e5 the computer for bu5ine55"
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+ODATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"Keeps a Color Computer at home"
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+ODATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"Keeps a Color Computer at the office"
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+ODATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"Uses the computer more than two hours a
+day"
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+ODATA 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"Shares the computer with others"<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000040.JPG" WIDTH="347" HEIGHT="37">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+MID$ 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Returns characters from within a string<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax:  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>MID$(string,begin,length)<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Returns a substring 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>length </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+characters long, beginning at 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>begin. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use MID$ to "take apart" a string consisting
+of a number of elements.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>string </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A sequence of string type characters or a<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+string type variable.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>begin </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The position (an integer value) in 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>string of </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+first character to retrieve.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>length </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The number of characters you want to retrieve.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Examples:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>NAME$ = "JONES, JOHN M."<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LASTNAME$ = MID$(NAME$,8,6)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>FIRSTNAME$ = MID$(NAME$,1,S)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>INITIAL$ = MID$(NAME$,1S,2)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Sample Program:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure reverses a word or phrase you type. MID$ reads
+each character in your phrase from the end to the beginning.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE reverse
+ODIM PHRASE:STRING; T,HEGIN:INTEGER
+OPRINT "Type a word or phrase you want to
+reverse:";
+OPRINT
+DINPUT PHRASE
+OHEGIN=LEN(PHRASE)
+DPRINT "This is how your phrase looks backwards:"
+OFOR T=BEGIN TO 1 STEP -1
+OPRINT MID$(PHRASE,T,1);
+ONEXT T
+OPRINT
+REND<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-92<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000041.JPG" WIDTH="20" HEIGHT="20">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000042.JPG" WIDTH="22" HEIGHT="5">
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I><U>BASIC09 Command Reference l 11
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+MOD 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>Returns modulus of a division<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000043.JPG" WIDTH="18" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Syntax: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><I>MOD(numberl,numberZ<BR>
+</I></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Returns the modulus (remainder) of a division.
+MOD divides 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>numberl </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+by 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>number2 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and calculates the remainder. You can use MOD to put a limit on a numeric variable.
+For instance, regardless of the value of X, MOD(X,3) produces
+numbers only in the range 0 through 2. MOD(X,5) produces
+numbers only in the range of 0 through 4.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can use MOD to cause repeating sequences. For instance,
+in a loop, MOD(X,3) produces a repeating sequence of 0, 1, 2,
+where X increases by 1 in each step of the loop.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>numberl  A </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+byte, integer or real number dividend.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>number2  A </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+byte, integer or real number divisor.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Examples:<BR>
+ </B>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+PRINT MOD(99,S)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000044.JPG" WIDTH="19" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000045.JPG" WIDTH="18" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+r<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+11-93
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 <U>Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure uses MOD to execute repeatedly routines that
+display asterisks on the screen. There are eight subroutines that
+the MOD function selects over and over through 100 passes.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+PROCEDURE 
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+5tardown<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+pDIM T: INTEGER<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OSHELL "TMODE -PAUSE"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+pFOR T=1 TO 1 0 0<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+pON MODCT,8)+1 GOSUB 10,20,30,40,50,60,70,80<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+ONEXT T<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OSHELL "TMODE PAUSE"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+pE N D<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+1 0pPR I NT USING "S1 0"" , "*" RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+20pPRINT USING "S10"","**" \ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+300PRINT USING "S10^","***" \ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+40pPRINT USING "S10^","****" \ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+50pPRINT USING "S10"","*****" \ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+60pPRINT USING "S10^","****" \ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+70pPRINT USING "S10^","***" \ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+800PRINT USING "S10^","**" \ RETURN<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OEND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000046.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+11-94<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000047.JPG" WIDTH="387" HEIGHT="1">
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I><U>BASIC09 Command Reference l 11
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+NEXT 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Causes repetition in a FOR loop<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax: FOR 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>variable = init val TO end val </I>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+[STEP<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>value]<BR>
+ </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>[procedure statements]<BR>
+ </I>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+NEXT variable<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+NEXT forms the bottom end of a FOR/NEXT loop.
+Any program statements between FOR and NEXT are executed once for each repetition of the loop, from the initial
+value to end value.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>variable </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Any legal numeric variable name.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>init val </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Any numeric constant or variable.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+end val Any numeric constant or variable.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>value </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Any numeric constant or variable.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>procedure </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Procedure lines you want to execute within<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+statements the loop.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For more information, see FOR/NEXT/STEP.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000048.JPG" WIDTH="19" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000049.JPG" WIDTH="18" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-95<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+NOT 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>Returns the complement of a value<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000050.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Syntax:  NOT(value)<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Returns the logical complement of a Boolean value
+or expression.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Parameters:<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+value A Boolean value (True or False), or an expres<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sion resulting in a Boolean value.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DIM TEST:HOOLEAN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>WHILE NOT(TEST) DO<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>A=A+1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>TEST=A=H<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ENDWHILE<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure redirects the current directory listing to a file
+named Dirfile. It then opens Dirfile and reads the contents, displaying each line on the screen. It uses NOT in a WHILE/ENDWHILE loop to make sure that the end of the file has not been
+reached before trying to read another entry.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE readfile<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM A:STRINGL80J<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM PATH:HYTE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OSHELL "DIR &gt; dirf ile"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DOPEN #PATH,"dirfile":READ<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>EWHILE NOT EOF(#PATH) DO<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DREAD #PATH,A<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT A<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DENDWHILE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OCLOSE #PATH<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>FEND<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-96<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000051.JPG" WIDTH="22" HEIGHT="5">
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Command Reference l 11
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>ON ERROR/GOTO</B>
+</FONT>
+</H2>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Establishes an error trap<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Syntax:  ON ERROR [GOTO linenum]<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Sets an error trap that transfers control to the specified line number in a procedure. This lets your program
+recover from an error and continue execution. To use these
+commands, your program must have at least one numbered
+line-the line to branch to in the event of an error.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>linenum </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The line to which you want BASIC09 to<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+branch should an error occur.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Notes:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ON ERROR GOTO is effective only with non-fatal, runtime errors. If such an error occurs without a preceding ON
+ERROR GOTO statement, BASIC09 enters the DEBUG
+mode. You must specify ON ERROR GOTO before an error
+occurs.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You turn on error trapping by specifying ON ERROR
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>GOTO linenum. You </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+turn off error trapping by specifying
+ON ERROR without a line number.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+~ Use ON ERROR <U>G</U>OTO with the ERR function (that
+returns the code of the last error) to specify a particular
+action for a particular error. You can also use ERROR to
+simulate an error to test error trapping. For more information on this, see <B>ERROR.
+</UL>
+</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000052.JPG" WIDTH="24" HEIGHT="8">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11-97<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Examples:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM FILENAME:STRING
+ODIM PATH: INTEGER
+100INPUT "Name of file to create? ",FILENAME
+DON ERROR GOTO 100
+OCREATE #PATH,FILENAME:UPDATE
+REND
+1000PRINT "That file already exi5t5...plea5e
+choose another name..."
+OGOTO 1 0
+REND<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you created a directory file with the GET sample program,
+you can use this procedure to delete files from the original directory using key characters. For instance, you might type XX as
+key characters. This means that any filename containing the
+character group XX is deleted. You can select any key characters
+you wish, but <B>be sure they apply only to files you want to
+delete.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you want to delete all the files in the directory, type an asterisk (*) when asked for key characters.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure uses ON ERROR to let the procedure continue,
+even if a directory entry cannot be deleted if an entry is a subdirectory. Without the ON ERROR function, the procedure
+would produce an error and cease execution when it tried to
+delete a subdirectory.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE purge
+OREM Use caution with this procedure
+OREM He Sure to Specify key characters
+OREM that exist only in the files you
+OREM want to delete!<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM PATH: INTEGER -<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM NAMEC100):STRING<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM WILDCARD:STRING<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OX=0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DOPEN #PATH,"dirfile":READ<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OWHILE NOTCEOFC#PATH)) DO<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OX=X+1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DREAD #PATH,NAMECX)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-98<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000053.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000054.JPG" WIDTH="24" HEIGHT="8">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Command Reference l 11<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000055.JPG" WIDTH="18" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000056.JPG" WIDTH="10" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000057.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000058.JPG" WIDTH="22" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000059.JPG" WIDTH="15" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pENDWHILE
+pFOR T=1 TO X
+pPRINT NAMECT),
+pNEXT T
+pINPUT "Wildcard Characters...",WILDCARD
+pFOR T=1 TO X
+pON ERROR GOTO 100
+pIF SUHSTRCWILDCARD,NAMECT))&gt;0 OR WILDCARD="*"
+THEN<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pPRINT "DELETING
+pDELETE NAMECT)
+pEND I F
+10ONEXT T
+pEND<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>1 00pPR I NT "*Q*Q*QERROR,p"; NAMECT) ;<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>deleted ...continuing.
+pGOTO 1 0
+pEND<BR>
+<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>NAMECT); "  "<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000060.JPG" WIDTH="10" HEIGHT="4">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"pcannot be<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000061.JPG" WIDTH="31" HEIGHT="9">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Garamond" COLOR="#000000">
+ON/GOSUB 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>Jumps to subroutine on a<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>specified condition
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Syntax: ON pos GOSUB </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>linenum [,linenum,...]<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Transfers procedure control to the line number
+located at position pos in the list of line numbers immediately
+following the GOSUB command. For example, if pos equals 1,
+BASIC09 branches to the first line number it encounters in
+the list. If pos equals 2, BASIC09 branches to the second line
+number it encounters in the list. If pos is greater than the
+number of items in the list, execution continues with the next
+command line. To use ON/GOSUB you must have numbered
+lines to match the line numbers in your list. End the routines
+accessed by ON/GOSUB with a RETURN statement.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+pos An integer value pointing to a line number in<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+a list of line numbers.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>linenum </I>Any numbered line in the procedure.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT "You can now: C1) End the program C2) Print<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>the re5ult5"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT " C3) Try again C4) Start<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>a new program"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>INPUT "Type the letter of your-choice: ",CHOICE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ON CHOICE GOSUH 100, 200, 300, 400<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000062.JPG" WIDTH="24" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000063.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~19\GR000064.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>11-100<BR>
+</FONT>
+</BODY>
+</HTML>

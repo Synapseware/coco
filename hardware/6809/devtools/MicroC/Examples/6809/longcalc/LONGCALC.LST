@@ -1,0 +1,1034 @@
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 1
+
+0000                         1  *#cpu 6809
+0000                         2  *
+0000                         3  * DDS MICRO-C 6809 Runtime Library - Prefix file
+0000                         4  *
+0000                         5  * Copyright 1991-2001 Dave Dunfield
+0000                         6  * All rights reserved.
+0000                         7  *
+2000                         8  	ORG	$2000		Place code in memory here
+2000  10 CE B0 00            9  ?begin	LDS	#$B000		Initial stack goes here
+2004  7F 26 89              10  	CLR	?heap		Zero out the heap
+2007  BD 22 8A              11  	JSR	main		Call user module
+200A                        12  * Return to MON09 by calling the EPROM starting address
+200A                        13  * Wait for and pending serial I/O to complete, and then jump.
+200A  4F                    14  exit	CLRA			Large counter
+200B  5F                    15  	CLRB			"" ""
+200C  83 00 01              16  ?exit1	SUBD	#1		Reduce count
+200F  26 FB                 17  	BNE	?exit1		Wait for expiry
+2011  7E E0 82              18  	JMP	$E082		Re-enter monitor
+2014                        19  * 16 bit Multiply: D = X * D
+2014  34 16                 20  ?mul	PSHS	D,X		Save parameters
+2016  A6 61                 21  	LDA	1,S		Get low of parm 1
+2018  E6 63                 22  	LDB	3,S		And low of parm 2
+201A  3D                    23  	MUL			Multiply to get result
+201B  34 06                 24  	PSHS	A,B		Save result
+201D  A6 62                 25  	LDA	2,S		Get high of parm 1
+201F  E6 65                 26  	LDB	5,S		And low of parm 2
+2021  3D                    27  	MUL			Multiply to get result
+2022  EB E4                 28  	ADDB	,S		Add to high of previous result
+2024  E7 E4                 29  	STB	,S		And resave
+2026  A6 63                 30  	LDA	3,S		Get low of parm 1
+2028  E6 64                 31  	LDB	4,S		And high of parm 2
+202A  3D                    32  	MUL			Multiply to get result
+202B  EB E4                 33  	ADDB	,S		Add to result
+202D  E7 E4                 34  	STB	,S		And resave
+202F  35 06                 35  	PULS	A,B		Get result from stack
+2031  32 64                 36  	LEAS	4,S		Drop saved parameters
+2033  39                    37  	RTS
+2034                        38  * 16 bit signed division: D = X / D
+2034  34 16                 39  ?sdiv	PSHS	A,B,X		Save D,X
+2036  A8 62                 40  	EORA	2,S		Get answer sign
+2038  1F 02                 41  	TFR	D,Y		Save
+203A  EC E4                 42  	LDD	,S		Get parm1
+203C  2A 04                 43  	BPL	?sdiv1		Not negative
+203E  8D 15                 44  	BSR	?sdiv3		Convert
+2040  ED E4                 45  	STD	,S		Resave
+2042  EC 62                 46  ?sdiv1	LDD	2,S		Get parm2
+2044  2A 04                 47  	BPL	?sdiv2		Not negative
+2046  8D 0D                 48  	BSR	?sdiv3		Convert
+2048  ED 62                 49  	STD	2,S		Resave
+204A  1F 20                 50  ?sdiv2	TFR	Y,D		Get answer sign
+204C  4D                    51  	TSTA			Set flags
+204D  35 16                 52  	PULS	A,B,X		Restore parameters
+204F  2A 0A                 53  	BPL	?div		Non-negative answer
+2051  8D 0D                 54  	BSR	?mod		X = X / D
+2053  1F 10                 55  	TFR	X,D		D = X / D
+2055  43                    56  ?sdiv3	COMA			Ones complment
+2056  53                    57  	COMB			the 16 bit accumulator
+2057  C3 00 01              58  	ADDD	#1		Two's complement (negate)
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 2
+
+205A  39                    59  	RTS
+205B                        60  * 16 bit unsigned Division: D = X / D
+205B  8D 03                 61  ?div	BSR	?mod		X = X / D
+205D  1F 10                 62  	TFR	X,D		D = X / D
+205F  39                    63  	RTS
+2060                        64  * 16 bit Modulus and Division: (D = X % D, X = X / D)
+2060                        65  ?smod	EQU	*		Entry point for signed modulus
+2060  34 16                 66  ?mod	PSHS	D,X		Save parameters
+2062  4F                    67  	CLRA			Begin with zero
+2063  5F                    68  	CLRB			"" ""
+2064  8E 00 11              69  	LDX	#17		16+1 bit shift
+2067  1C FE                 70  ?mod1	ANDCC	#%11111110	No carry in
+2069  69 63                 71  ?mod2	ROL	3,S		Parm2 * 2, CF = carry out
+206B  69 62                 72  	ROL	2,S		(16 bit shift)
+206D  30 1F                 73  	LEAX	-1,X		Reduce bit count
+206F  27 0D                 74  	BEQ	?mod3		All finished, exit
+2071  59                    75  	ROLB			Shift in bit, result * 2;
+2072  49                    76  	ROLA			(16 bit shift)
+2073  10 A3 E4              77  	CMPD	,S		Result < parm 1?
+2076  25 EF                 78  	BLO	?mod1		Yes, keep going
+2078  A3 E4                 79  	SUBD	,S		Reduce by count
+207A  1A 01                 80  	ORCC	#00000001	Set carry in
+207C  20 EB                 81  	BRA	?mod2		And proceed
+207E  32 62                 82  ?mod3	LEAS	2,S		Drop saved parameter
+2080  35 90                 83  	PULS	X,PC		Restore & return
+2082                        84  * Shift left: D = X << D
+2082  1E 01                 85  ?shl	EXG	D,X		D = value, X = #bits
+2084  8C 00 00              86  	CMPX	#0		Special case (0 bit shift)
+2087  27 06                 87  	BEQ	nargs		Yes, early exit
+2089  58                    88  ?shl1	LSLB			Shift one bit
+208A  49                    89  	ROLA			(16 bit shift)
+208B  30 1F                 90  	LEAX	-1,X		Reduce count
+208D  26 FA                 91  	BNE	?shl1		Not finished, continue
+208F  39                    92  nargs	RTS
+2090                        93  * Shift right: D = X >> D
+2090  1E 01                 94  ?shr	EXG	D,X		D = value, X = #bits
+2092  8C 00 00              95  	CMPX	#0		Special case (0 bit shift)
+2095  27 F8                 96  	BEQ	nargs		Yes, early exit
+2097  44                    97  ?shr1	LSRA			Shift one bit
+2098  56                    98  	RORB			(16 bit shift)
+2099  30 1F                 99  	LEAX	-1,X		Reduce count
+209B  26 FA                100  	BNE	?shr1		Not finished, continue
+209D  39                   101  	RTS
+209E                       102  * Signed >, >=, <, <=
+209E  34 06                103  ?gt	PSHS	A,B		D = X > D
+20A0  AC E1                104  	CMPX	,S++
+20A2  2E 29                105  	BGT	?ret1
+20A4  20 1E                106  	BRA	?ret0
+20A6  34 06                107  ?ge	PSHS	A,B		D = X >= D
+20A8  AC E1                108  	CMPX	,S++
+20AA  2C 21                109  	BGE	?ret1
+20AC  20 16                110  	BRA	?ret0
+20AE  34 06                111  ?lt	PSHS	A,B		D = X < D
+20B0  AC E1                112  	CMPX	,S++
+20B2  2D 19                113  	BLT	?ret1
+20B4  20 0E                114  	BRA	?ret0
+20B6  34 06                115  ?le	PSHS	A,B		D = X <= D
+20B8  AC E1                116  	CMPX	,S++
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 3
+
+20BA  2F 11                117  	BLE	?ret1
+20BC  20 06                118  	BRA	?ret0
+20BE                       119  * = amd !=
+20BE  34 06                120  ?eq	PSHS	A,B		D = X == D
+20C0  AC E1                121  	CMPX	,S++
+20C2  27 09                122  	BEQ	?ret1
+20C4                       123  * FALSE result, D=0, ZF=1
+20C4  4F                   124  ?ret0	CLRA
+20C5  5F                   125  	CLRB
+20C6  39                   126  	RTS
+20C7  34 06                127  ?ne	PSHS	A,B		D = X != D
+20C9  AC E1                128  	CMPX	,S++
+20CB  27 F7                129  	BEQ	?ret0
+20CD                       130  * TRUE result, D=1, ZF=0
+20CD  CC 00 01             131  ?ret1	LDD	#1
+20D0  39                   132  	RTS
+20D1                       133  * Unsigned >, >=, <, <=
+20D1  34 06                134  ?ugt	PSHS	A,B		D = X > D
+20D3  AC E1                135  	CMPX	,S++
+20D5  22 F6                136  	BHI	?ret1
+20D7  20 EB                137  	BRA	?ret0
+20D9  34 06                138  ?uge	PSHS	A,B		D = X >= D
+20DB  AC E1                139  	CMPX	,S++
+20DD  24 EE                140  	BHS	?ret1
+20DF  20 E3                141  	BRA	?ret0
+20E1  34 06                142  ?ult	PSHS	A,B		D = X < D
+20E3  AC E1                143  	CMPX	,S++
+20E5  25 E6                144  	BLO	?ret1
+20E7  20 DB                145  	BRA	?ret0
+20E9  34 06                146  ?ule	PSHS	A,B		D = X <= D
+20EB  AC E1                147  	CMPX	,S++
+20ED  23 DE                148  	BLS	?ret1
+20EF  20 D3                149  	BRA	?ret0
+20F1                       150  * Logical negation: D = !D
+20F1  10 83 00 00          151  ?not	CMPD	#0
+20F5  26 CD                152  	BNE	?ret0
+20F7  20 D4                153  	BRA	?ret1
+20F9                       154  * Switch table handler
+20F9  AE C1                155  ?switch	LDX	,U++		Get label value
+20FB  27 07                156  	BEQ	?swit1		End of table, use default
+20FD  10 A3 C1             157  	CMPD	,U++		Does value match?
+2100  26 F7                158  	BNE	?switch		No, try next
+2102  6E 84                159  	JMP	,X		Execute this case
+2104  6E D4                160  ?swit1	JMP	[,U]		Execute default case
+2106                       161  * Temporary storage area...
+2106                       162  *00000
+2106                       163  *#fun ltoa 14 ?AB1
+2106  32 72                164  ltoa LEAS -14,S
+2108  CE 26 76             165   LDU #temp2
+210B  1F 30                166   TFR U,D
+210D  34 06                167   PSHS A,B
+210F  EC E8 14             168   LDD 20,S
+2112  34 06                169   PSHS A,B
+2114  BD 25 54             170   JSR longcpy
+2117  32 64                171   LEAS 4,S
+2119  CE 26 72             172   LDU #temp1
+211C  1F 30                173   TFR U,D
+211E  34 06                174   PSHS A,B
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 4
+
+2120  E6 E8 13             175   LDB 19,S
+2123  4F                   176   CLRA
+2124  34 06                177   PSHS A,B
+2126  BD 25 62             178   JSR longset
+2129  32 64                179   LEAS 4,S
+212B  CC 00 00             180   LDD #0
+212E  ED 60                181   STD 0,S
+2130                       182  ?AB1 EQU *
+2130  CE 26 76             183   LDU #temp2
+2133  1F 30                184   TFR U,D
+2135  34 06                185   PSHS A,B
+2137  CE 26 72             186   LDU #temp1
+213A  1F 30                187   TFR U,D
+213C  34 06                188   PSHS A,B
+213E  BD 24 C5             189   JSR longdiv
+2141  32 64                190   LEAS 4,S
+2143  EC 60                191   LDD 0,S
+2145  C3 00 01             192   ADDD #1
+2148  ED 60                193   STD 0,S
+214A  83 00 01             194   SUBD #1
+214D  33 63                195   LEAU 3,S
+214F  33 CB                196   LEAU D,U
+2151  34 40                197   PSHS U
+2153  CE 26 85             198   LDU #Longreg
+2156  1F 30                199   TFR U,D
+2158  1F 03                200   TFR D,U
+215A  E6 C4                201   LDB ,U
+215C  E7 64                202   STB 4,S
+215E  4F                   203   CLRA
+215F  1F 01                204   TFR D,X
+2161  C6 09                205   LDB #9
+2163  4F                   206   CLRA
+2164  BD 20 D1             207   JSR ?ugt
+2167  27 06                208   BEQ ?AB5
+2169  E6 64                209   LDB 4,S
+216B  CB 37                210   ADDB #55
+216D  20 04                211   BRA ?AB4
+216F                       212  ?AB5 EQU *
+216F  E6 64                213   LDB 4,S
+2171  CB 30                214   ADDB #48
+2173                       215  ?AB4 EQU *
+2173  E7 F1                216   STB [,S++]
+2175                       217  ?AB2 EQU *
+2175  CE 26 76             218   LDU #temp2
+2178  1F 30                219   TFR U,D
+217A  34 06                220   PSHS A,B
+217C  BD 25 2B             221   JSR longtst
+217F  32 62                222   LEAS 2,S
+2181  10 83 00 00          223   CMPD #0
+2185  10 26 FF A7          224   LBNE ?AB1
+2189                       225  ?AB3 EQU *
+2189                       226  ?AB6 EQU *
+2189  EC E8 14             227   LDD 20,S
+218C  C3 00 01             228   ADDD #1
+218F  ED E8 14             229   STD 20,S
+2192  83 00 01             230   SUBD #1
+2195  1F 03                231   TFR D,U
+2197  34 40                232   PSHS U
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 5
+
+2199  EC 62                233   LDD 2,S
+219B  83 00 01             234   SUBD #1
+219E  ED 62                235   STD 2,S
+21A0  33 65                236   LEAU 5,S
+21A2  33 CB                237   LEAU D,U
+21A4  E6 C4                238   LDB ,U
+21A6  E7 F1                239   STB [,S++]
+21A8                       240  ?AB7 EQU *
+21A8  EC 60                241   LDD 0,S
+21AA  10 26 FF DB          242   LBNE ?AB6
+21AE                       243  ?AB8 EQU *
+21AE  EE E8 14             244   LDU 20,S
+21B1  C6 00                245   LDB #0
+21B3  E7 C4                246   STB ,U
+21B5  EC E8 14             247   LDD 20,S
+21B8                       248  ?AB9 EQU *
+21B8  32 6E                249   LEAS 14,S
+21BA  39                   250   RTS
+21BB                       251  *#lcl stack 33160 3 1 11
+21BB                       252  *#lcl c 33152 2
+21BB                       253  *#lcl sp 33024 0
+21BB                       254  *#lcl base 41344 0
+21BB                       255  *#lcl n1 41345 2
+21BB                       256  *#lcl string 41345 4
+21BB                       257  *#end
+21BB                       258  *#fun atol 1 ?AB2
+21BB  32 7F                259  atol LEAS -1,S
+21BD  EC 65                260   LDD 5,S
+21BF  34 06                261   PSHS A,B
+21C1  CC 00 00             262   LDD #0
+21C4  34 06                263   PSHS A,B
+21C6  BD 25 62             264   JSR longset
+21C9  32 64                265   LEAS 4,S
+21CB                       266  ?AB10 EQU *
+21CB  EC 67                267   LDD 7,S
+21CD  C3 00 01             268   ADDD #1
+21D0  ED 67                269   STD 7,S
+21D2  83 00 01             270   SUBD #1
+21D5  1F 03                271   TFR D,U
+21D7  E6 C4                272   LDB ,U
+21D9  E7 60                273   STB 0,S
+21DB  10 27 00 A5          274   LBEQ ?AB11
+21DF  E6 60                275   LDB 0,S
+21E1  4F                   276   CLRA
+21E2  34 06                277   PSHS A,B
+21E4  BD 25 A5             278   JSR isdigit
+21E7  32 62                279   LEAS 2,S
+21E9  10 83 00 00          280   CMPD #0
+21ED  10 27 00 09          281   LBEQ ?AB12
+21F1  E6 60                282   LDB 0,S
+21F3  C0 30                283   SUBB #48
+21F5  E7 60                284   STB 0,S
+21F7  7E 22 2D             285   JMP ?AB13
+21FA                       286  ?AB12 EQU *
+21FA  E6 60                287   LDB 0,S
+21FC  4F                   288   CLRA
+21FD  1F 01                289   TFR D,X
+21FF  C6 61                290   LDB #97
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 6
+
+2201  4F                   291   CLRA
+2202  BD 20 D9             292   JSR ?uge
+2205  10 27 00 09          293   LBEQ ?AB14
+2209  E6 60                294   LDB 0,S
+220B  C0 57                295   SUBB #87
+220D  E7 60                296   STB 0,S
+220F  7E 22 2D             297   JMP ?AB15
+2212                       298  ?AB14 EQU *
+2212  E6 60                299   LDB 0,S
+2214  4F                   300   CLRA
+2215  1F 01                301   TFR D,X
+2217  C6 41                302   LDB #65
+2219  4F                   303   CLRA
+221A  BD 20 D9             304   JSR ?uge
+221D  10 27 00 09          305   LBEQ ?AB16
+2221  E6 60                306   LDB 0,S
+2223  C0 37                307   SUBB #55
+2225  E7 60                308   STB 0,S
+2227  7E 22 2D             309   JMP ?AB17
+222A                       310  ?AB16 EQU *
+222A  7E 22 84             311   JMP ?AB11
+222D                       312  ?AB17 EQU *
+222D                       313  ?AB15 EQU *
+222D                       314  ?AB13 EQU *
+222D  E6 60                315   LDB 0,S
+222F  4F                   316   CLRA
+2230  1F 01                317   TFR D,X
+2232  E6 64                318   LDB 4,S
+2234  4F                   319   CLRA
+2235  BD 20 D9             320   JSR ?uge
+2238  10 27 00 03          321   LBEQ ?AB18
+223C  7E 22 84             322   JMP ?AB11
+223F                       323  ?AB18 EQU *
+223F  CE 26 72             324   LDU #temp1
+2242  1F 30                325   TFR U,D
+2244  34 06                326   PSHS A,B
+2246  E6 66                327   LDB 6,S
+2248  4F                   328   CLRA
+2249  34 06                329   PSHS A,B
+224B  BD 25 62             330   JSR longset
+224E  32 64                331   LEAS 4,S
+2250  EC 65                332   LDD 5,S
+2252  34 06                333   PSHS A,B
+2254  CE 26 72             334   LDU #temp1
+2257  1F 30                335   TFR U,D
+2259  34 06                336   PSHS A,B
+225B  BD 24 EF             337   JSR longmul
+225E  32 64                338   LEAS 4,S
+2260  CE 26 72             339   LDU #temp1
+2263  1F 30                340   TFR U,D
+2265  34 06                341   PSHS A,B
+2267  E6 62                342   LDB 2,S
+2269  4F                   343   CLRA
+226A  34 06                344   PSHS A,B
+226C  BD 25 62             345   JSR longset
+226F  32 64                346   LEAS 4,S
+2271  EC 65                347   LDD 5,S
+2273  34 06                348   PSHS A,B
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 7
+
+2275  CE 26 72             349   LDU #temp1
+2278  1F 30                350   TFR U,D
+227A  34 06                351   PSHS A,B
+227C  BD 24 99             352   JSR longadd
+227F  32 64                353   LEAS 4,S
+2281  7E 21 CB             354   JMP ?AB10
+2284                       355  ?AB11 EQU *
+2284  E6 60                356   LDB 0,S
+2286  4F                   357   CLRA
+2287                       358  ?AB19 EQU *
+2287  32 61                359   LEAS 1,S
+2289  39                   360   RTS
+228A                       361  *#lcl c 33152 0
+228A                       362  *#lcl base 41344 0
+228A                       363  *#lcl n1 41345 2
+228A                       364  *#lcl string 41345 4
+228A                       365  *#end
+228A                       366  *#fun main 4 ?AB3
+228A  32 7C                367  main LEAS -4,S
+228C                       368  ?AB20 EQU *
+228C  CC 24 6A             369   LDD #?AB0+0
+228F  34 06                370   PSHS A,B
+2291  BD 25 E4             371   JSR putstr
+2294  32 62                372   LEAS 2,S
+2296  C6 3D                373   LDB #61
+2298  E7 61                374   STB 1,S
+229A                       375  ?AB21 EQU *
+229A  CE 26 7A             376   LDU #buffer
+229D  1F 30                377   TFR U,D
+229F  ED 62                378   STD 2,S
+22A1                       379  ?AB22 EQU *
+22A1                       380  ?AB23 EQU *
+22A1  BD 26 1A             381   JSR getch
+22A4  E7 60                382   STB 0,S
+22A6  34 06                383   PSHS A,B
+22A8  BD 25 A5             384   JSR isdigit
+22AB  32 62                385   LEAS 2,S
+22AD  10 83 00 00          386   CMPD #0
+22B1  10 27 00 1D          387   LBEQ ?AB24
+22B5  E6 60                388   LDB 0,S
+22B7  4F                   389   CLRA
+22B8  34 06                390   PSHS A,B
+22BA  BD 25 EE             391   JSR putch
+22BD  32 62                392   LEAS 2,S
+22BF  EC 62                393   LDD 2,S
+22C1  C3 00 01             394   ADDD #1
+22C4  ED 62                395   STD 2,S
+22C6  83 00 01             396   SUBD #1
+22C9  1F 03                397   TFR D,U
+22CB  E6 60                398   LDB 0,S
+22CD  E7 C4                399   STB ,U
+22CF  7E 22 A1             400   JMP ?AB23
+22D2                       401  ?AB24 EQU *
+22D2  EE 62                402   LDU 2,S
+22D4  C6 00                403   LDB #0
+22D6  E7 C4                404   STB ,U
+22D8  CE 26 7A             405   LDU #buffer
+22DB  1F 30                406   TFR U,D
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 8
+
+22DD  34 06                407   PSHS A,B
+22DF  CE 26 76             408   LDU #temp2
+22E2  1F 30                409   TFR U,D
+22E4  34 06                410   PSHS A,B
+22E6  CC 00 0A             411   LDD #10
+22E9  34 06                412   PSHS A,B
+22EB  BD 21 BB             413   JSR atol
+22EE  32 66                414   LEAS 6,S
+22F0  E6 61                415   LDB 1,S
+22F2  4F                   416   CLRA
+22F3  CE 23 90             417   LDU #?AB26
+22F6  7E 20 F9             418   JMP ?switch
+22F9                       419  ?AB27 EQU *
+22F9  CE 26 6E             420   LDU #reg
+22FC  1F 30                421   TFR U,D
+22FE  34 06                422   PSHS A,B
+2300  CE 26 76             423   LDU #temp2
+2303  1F 30                424   TFR U,D
+2305  34 06                425   PSHS A,B
+2307  BD 25 54             426   JSR longcpy
+230A  32 64                427   LEAS 4,S
+230C  7E 23 AC             428   JMP ?AB25
+230F                       429  ?AB28 EQU *
+230F  CE 26 6E             430   LDU #reg
+2312  1F 30                431   TFR U,D
+2314  34 06                432   PSHS A,B
+2316  CE 26 76             433   LDU #temp2
+2319  1F 30                434   TFR U,D
+231B  34 06                435   PSHS A,B
+231D  BD 24 99             436   JSR longadd
+2320  32 64                437   LEAS 4,S
+2322  7E 23 AC             438   JMP ?AB25
+2325                       439  ?AB29 EQU *
+2325  CE 26 6E             440   LDU #reg
+2328  1F 30                441   TFR U,D
+232A  34 06                442   PSHS A,B
+232C  CE 26 76             443   LDU #temp2
+232F  1F 30                444   TFR U,D
+2331  34 06                445   PSHS A,B
+2333  BD 24 86             446   JSR longsub
+2336  32 64                447   LEAS 4,S
+2338  7E 23 AC             448   JMP ?AB25
+233B                       449  ?AB30 EQU *
+233B  CE 26 6E             450   LDU #reg
+233E  1F 30                451   TFR U,D
+2340  34 06                452   PSHS A,B
+2342  CE 26 76             453   LDU #temp2
+2345  1F 30                454   TFR U,D
+2347  34 06                455   PSHS A,B
+2349  BD 24 EF             456   JSR longmul
+234C  32 64                457   LEAS 4,S
+234E  7E 23 AC             458   JMP ?AB25
+2351                       459  ?AB31 EQU *
+2351  CE 26 6E             460   LDU #reg
+2354  1F 30                461   TFR U,D
+2356  34 06                462   PSHS A,B
+2358  CE 26 76             463   LDU #temp2
+235B  1F 30                464   TFR U,D
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 9
+
+235D  34 06                465   PSHS A,B
+235F  BD 24 C5             466   JSR longdiv
+2362  32 64                467   LEAS 4,S
+2364  7E 23 AC             468   JMP ?AB25
+2367                       469  ?AB32 EQU *
+2367  CE 26 6E             470   LDU #reg
+236A  1F 30                471   TFR U,D
+236C  34 06                472   PSHS A,B
+236E  CE 26 76             473   LDU #temp2
+2371  1F 30                474   TFR U,D
+2373  34 06                475   PSHS A,B
+2375  BD 24 C5             476   JSR longdiv
+2378  32 64                477   LEAS 4,S
+237A  CE 26 6E             478   LDU #reg
+237D  1F 30                479   TFR U,D
+237F  34 06                480   PSHS A,B
+2381  CE 26 85             481   LDU #Longreg
+2384  1F 30                482   TFR U,D
+2386  34 06                483   PSHS A,B
+2388  BD 25 54             484   JSR longcpy
+238B  32 64                485   LEAS 4,S
+238D  7E 23 AC             486   JMP ?AB25
+2390                       487  ?AB26 EQU *
+2390  23 67 00 25 23 51 +  488   FDB ?AB32,37,?AB31,47,?AB30,42,?AB29,45,?AB28,43,?AB27,61,0
+23AA  23 AC                489   FDB ?AB25
+23AC                       490  ?AB25 EQU *
+23AC                       491  ?AB33 EQU *
+23AC  E6 60                492   LDB 0,S
+23AE  4F                   493   CLRA
+23AF  34 06                494   PSHS A,B
+23B1  BD 25 EE             495   JSR putch
+23B4  32 62                496   LEAS 2,S
+23B6  E6 60                497   LDB 0,S
+23B8  4F                   498   CLRA
+23B9  CE 24 40             499   LDU #?AB35
+23BC  7E 20 F9             500   JMP ?switch
+23BF                       501  ?AB36 EQU *
+23BF  CC 24 72             502   LDD #?AB0+8
+23C2  34 06                503   PSHS A,B
+23C4  BD 25 E4             504   JSR putstr
+23C7  32 62                505   LEAS 2,S
+23C9                       506  ?AB37 EQU *
+23C9                       507  ?AB38 EQU *
+23C9  7E 22 8C             508   JMP ?AB20
+23CC                       509  ?AB39 EQU *
+23CC  CE 26 7A             510   LDU #buffer
+23CF  1F 30                511   TFR U,D
+23D1  34 06                512   PSHS A,B
+23D3  CE 26 6E             513   LDU #reg
+23D6  1F 30                514   TFR U,D
+23D8  34 06                515   PSHS A,B
+23DA  CC 00 0A             516   LDD #10
+23DD  34 06                517   PSHS A,B
+23DF  BD 21 06             518   JSR ltoa
+23E2  32 66                519   LEAS 6,S
+23E4  CE 26 7A             520   LDU #buffer
+23E7  1F 30                521   TFR U,D
+23E9  34 06                522   PSHS A,B
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 10
+
+23EB  BD 25 E4             523   JSR putstr
+23EE  32 62                524   LEAS 2,S
+23F0  BD 26 1A             525   JSR getch
+23F3  E7 60                526   STB 0,S
+23F5  34 06                527   PSHS A,B
+23F7  BD 25 A5             528   JSR isdigit
+23FA  32 62                529   LEAS 2,S
+23FC  10 83 00 00          530   CMPD #0
+2400  10 27 00 32          531   LBEQ ?AB40
+2404  C6 3D                532   LDB #61
+2406  E7 61                533   STB 1,S
+2408  CC 00 0A             534   LDD #10
+240B  34 06                535   PSHS A,B
+240D  BD 25 EE             536   JSR putch
+2410  32 62                537   LEAS 2,S
+2412  E6 60                538   LDB 0,S
+2414  4F                   539   CLRA
+2415  34 06                540   PSHS A,B
+2417  BD 25 EE             541   JSR putch
+241A  32 62                542   LEAS 2,S
+241C  CE 26 7A             543   LDU #buffer
+241F  1F 30                544   TFR U,D
+2421  ED 62                545   STD 2,S
+2423  EC 62                546   LDD 2,S
+2425  C3 00 01             547   ADDD #1
+2428  ED 62                548   STD 2,S
+242A  83 00 01             549   SUBD #1
+242D  1F 03                550   TFR D,U
+242F  E6 60                551   LDB 0,S
+2431  E7 C4                552   STB ,U
+2433  7E 22 A1             553   JMP ?AB22
+2436                       554  ?AB40 EQU *
+2436  7E 23 AC             555   JMP ?AB33
+2439                       556  ?AB41 EQU *
+2439                       557  ?AB42 EQU *
+2439                       558  ?AB43 EQU *
+2439                       559  ?AB44 EQU *
+2439                       560  ?AB45 EQU *
+2439  E6 60                561   LDB 0,S
+243B  E7 61                562   STB 1,S
+243D  7E 24 64             563   JMP ?AB34
+2440                       564  ?AB35 EQU *
+2440  24 39 00 25 24 39 +  565   FDB ?AB45,37,?AB44,47,?AB43,42,?AB42,45,?AB41,43,?AB39,61,?AB38
+245A  00 43 23 C9 00 63 +  566   FDB 67,?AB37,99,0,?AB36
+2464                       567  ?AB34 EQU *
+2464  7E 22 9A             568   JMP ?AB21
+2467  32 64                569   LEAS 4,S
+2469  39                   570   RTS
+246A                       571  *#lcl operate 32816 33
+246A                       572  *#lcl next1 32816 22
+246A                       573  *#lcl next 32816 21
+246A                       574  *#lcl clear 32816 20
+246A                       575  *#lcl ptr 32897 2
+246A                       576  *#lcl op 33152 1
+246A                       577  *#lcl c 33152 0
+246A                       578  *#end
+246A  0A 52 65 61 64 79 +  579  ?AB0 FCB 10,82,101,97,100,121,10,0,32,85,115,101,58,32,43,32
+247A  2D 20 2A 20 2F 20 +  580   FCB 45,32,42,32,47,32,37,32,61,32,67,0
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 11
+
+2486                       581  *#gbl printf 5168 0
+2486                       582  *#gbl sprintf 5168 0
+2486                       583  *#gbl concat 5168 0
+2486                       584  *#gbl reg 32904 0 1 4
+2486                       585  *#gbl temp1 32904 0 1 4
+2486                       586  *#gbl temp2 32904 0 1 4
+2486                       587  *#gbl buffer 32904 0 1 11
+2486                       588  *#gbl Longreg 37000 0 1 0
+2486                       589  *#gbl ltoa 32945 0
+2486                       590  *#gbl longcpy 36912 0
+2486                       591  *#gbl longset 36912 0
+2486                       592  *#gbl longdiv 36912 0
+2486                       593  *#gbl longtst 36912 0
+2486                       594  *#gbl atol 32944 0
+2486                       595  *#gbl isdigit 36912 0
+2486                       596  *#gbl longmul 36912 0
+2486                       597  *#gbl longadd 36912 0
+2486                       598  *#gbl main 48 0
+2486                       599  *#gbl putstr 36912 0
+2486                       600  *#gbl getch 36912 0
+2486                       601  *#gbl putch 36912 0
+2486                       602  *#gbl longsub 36912 0
+2486                       603  *
+2486                       604  * Functions to perform basic arithmetic operations on arbitrarily
+2486                       605  * large unsigned numbers. Supports: + - * / % <<1 >>1 == != < >
+2486                       606  *
+2486                       607  * To work on other than 32 bits, adjust the following constants:
+0004                       608  ?LSIZE	EQU	4		4 bytes (32 bits)
+2486                       609  *
+2486                       610  * Subtract two LONG numbers: longsub(num1, num2)
+2486                       611  *
+2486  AE 64                612  longsub	LDX	4,S		Get num1
+2488  EE 62                613  	LDU	2,S		Get num2
+248A  C6 04                614  ?bigsub	LDB	#?LSIZE		Get byte count
+248C  4F                   615  	CLRA			Clear carry in
+248D  A6 84                616  ?AC1	LDA	,X		Get byte from num1
+248F  A2 C0                617  	SBCA	,U+		Subtract num2
+2491  A7 80                618  	STA	,X+		Resave dest
+2493  5A                   619  	DECB			Reduce count
+2494  26 F7                620  	BNE	?AC1		Do them all
+2496  59                   621  	ROLB			Get carry out
+2497  4F                   622  	CLRA			Zero high
+2498  39                   623  	RTS
+2499                       624  *
+2499                       625  * Add two LONG numbers: longadd(num1, num2)
+2499                       626  *
+2499  AE 64                627  longadd	LDX	4,S		Get num1
+249B  EE 62                628  	LDU	2,S		Get num2
+249D  C6 04                629  ?bigadd	LDB	#?LSIZE		Get byte count
+249F  4F                   630  	CLRA			Clear carry in
+24A0  A6 84                631  ?AC2	LDA	,X		Get byte from num1
+24A2  A9 C0                632  	ADCA	,U+		Add num2
+24A4  A7 80                633  	STA	,X+		Resave dest
+24A6  5A                   634  	DECB			Reduce count
+24A7  26 F7                635  	BNE	?AC2		Do them all
+24A9  59                   636  	ROLB			Get carry out
+24AA  4F                   637  	CLRA			Zero high
+24AB  39                   638  	RTS
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 12
+
+24AC                       639  *
+24AC                       640  * Shift LONG number right: longshr(num1)
+24AC                       641  *
+24AC  AE 62                642  longshr	LDX	2,S		Get num2
+24AE  C6 04                643  ?bigshr	LDB	#?LSIZE		Get byte count
+24B0  3A                   644  	ABX			Adjust to end
+24B1  4F                   645  	CLRA			No carry in
+24B2  66 82                646  ?AC3	ROR	,-X		Shift one byte
+24B4  5A                   647  	DECB			Reduce count
+24B5  26 FB                648  	BNE	?AC3		Do them all
+24B7  59                   649  	ROLB			Get carry out
+24B8  39                   650  	RTS
+24B9                       651  *
+24B9                       652  * Shift a LONG number left: longshl(num1)
+24B9                       653  *
+24B9  AE 62                654  longshl	LDX	2,S		Get num2
+24BB  4F                   655  ?bigshl	CLRA			No carry in
+24BC  C6 04                656  ?bigslc	LDB	#?LSIZE		Get byte count
+24BE  69 80                657  ?AC4	ROL	,X+		Shift one byte
+24C0  5A                   658  	DECB			Reduce count
+24C1  26 FB                659  	BNE	?AC4		Do them all
+24C3  59                   660  	ROLB			Get carry out
+24C4  39                   661  	RTS
+24C5                       662  *
+24C5                       663  * Divide two LONG numbers: longdiv(num1, num2)
+24C5                       664  *
+24C5  8D 59                665  longdiv	BSR	?AC10		Zero temp location
+24C7  10 8E 00 21          666  	LDY	#(?LSIZE*8)+1	Get bit count
+24CB  4F                   667  ?AC5	CLRA			No carry in
+24CC  AE 64                668  ?AC6	LDX	4,S		Point to num1
+24CE  8D EC                669  	BSR	?bigslc		Shift it
+24D0  31 3F                670  	LEAY	-1,Y		Reduce count
+24D2  27 62                671  	BEQ	?AC14		End, exit
+24D4  8E 26 85             672  	LDX	#Longreg	Point to temp
+24D7  56                   673  	RORB			Set carry out
+24D8  8D E2                674  	BSR	?bigslc		Do shift
+24DA  EE 62                675  	LDU	2,S		Point to num2
+24DC  8E 26 85             676  	LDX	#Longreg	Point to temp
+24DF  8D 5A                677  	BSR	?bigcmp		Do compare
+24E1  4D                   678  	TSTA			Is it less
+24E2  26 E7                679  	BNE	?AC5		Yes, carry zero
+24E4  EE 62                680  	LDU	2,S		Get num2
+24E6  8E 26 85             681  	LDX	#Longreg	Point to temp
+24E9  8D 9F                682  	BSR	?bigsub		Do subtract
+24EB  1A 01                683  	ORCC	#$01		Set carry in
+24ED  20 DD                684  	BRA	?AC6		And proceed
+24EF                       685  *
+24EF                       686  * Multiply two LONG numbers: longmul(num1, num2)
+24EF                       687  *
+24EF  32 7C                688  longmul	LEAS	-?LSIZE,S	Reserve space for num3
+24F1  30 E4                689  	LEAX	,S		Point to it
+24F3  EE 66                690  	LDU	?LSIZE+2,S	Get num2 pointer
+24F5  8D 61                691  	BSR	?bigcpy		Copy the number
+24F7  8D 27                692  	BSR	?AC10		Zero temp location
+24F9  AE 68                693  ?AC7	LDX	?LSIZE+4,S	Point to num1
+24FB  8D B1                694  	BSR	?bigshr		Do the shift
+24FD  5D                   695  	TSTB			Carry out?
+24FE  27 07                696  	BEQ	?AC8		No, leave it
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 13
+
+2500  8E 26 85             697  	LDX	#Longreg	Point to temp
+2503  33 E4                698  	LEAU	,S		Point to num3
+2505  8D 96                699  	BSR	?bigadd		Do the addition
+2507  AE 68                700  ?AC8	LDX	?LSIZE+4,S	Point to num1
+2509  8D 22                701  	BSR	?bigtst		Test it
+250B  27 0A                702  	BEQ	?AC9		End, exit
+250D  30 E4                703  	LEAX	,S		Point to num3
+250F  8D AA                704  	BSR	?bigshl		Do the shift
+2511  30 E4                705  	LEAX	,S		Restore pointer
+2513  8D 18                706  	BSR	?bigtst		Test it
+2515  26 E2                707  	BNE	?AC7		Keep going
+2517  32 64                708  ?AC9	LEAS	?LSIZE,S	Restore stack
+2519  AE 64                709  	LDX	4,S		Get num1 pointer
+251B  CE 26 85             710  	LDU	#Longreg	Point to temp
+251E  20 38                711  	BRA	?bigcpy		Copy & return
+2520                       712  *
+2520                       713  * Zero the temporary location
+2520                       714  *
+2520  8E 26 85             715  ?AC10	LDX	#Longreg	Point to register
+2523  C6 04                716  ?AC11	LDB	#?LSIZE		Get byte count
+2525  6F 80                717  ?AC12	CLR	,X+		Zero one byte
+2527  5A                   718  	DECB			Reduce count
+2528  26 FB                719  	BNE	?AC12		Do them all
+252A  39                   720  	RTS
+252B                       721  *
+252B                       722  * Test a LONG number for zero: longtst(num1)
+252B                       723  *
+252B  AE 62                724  longtst	LDX	2,S		Get num1
+252D  86 04                725  ?bigtst	LDA	#?LSIZE		Get byte count
+252F  E6 80                726  ?AC13	LDB	,X+		Get byte
+2531  26 03                727  	BNE	?AC14		Not zero - exit
+2533  4A                   728  	DECA			Reduce count
+2534  26 F9                729  	BNE	?AC13		Exit
+2536  39                   730  ?AC14	RTS
+2537                       731  *
+2537                       732  * Compare two LONG numbers: longcmp(num1, num2)
+2537                       733  *
+2537  AE 64                734  longcmp	LDX	4,S		Get num1
+2539  EE 62                735  	LDU	2,S		Get num2
+253B  C6 04                736  ?bigcmp	LDB	#?LSIZE		Get byte count
+253D  3A                   737  	ABX			Adjust num1 ptr
+253E  33 C5                738  	LEAU	B,U		Adjust num2 ptr
+2540  A6 82                739  ?AC15	LDA	,-X		Get byte from source
+2542  A0 C2                740  	SUBA	,-U		Does it match?
+2544  25 06                741  	BLO	?AC16		Its lower
+2546  22 08                742  	BHI	?AC17		Its higher
+2548  5A                   743  	DECB			Reduce count
+2549  26 F5                744  	BNE	?AC15		Test them all
+254B  39                   745  	RTS
+254C  CC FF FF             746  ?AC16	LDD	#-1		Return -1
+254F  39                   747  	RTS
+2550  CC 00 01             748  ?AC17	LDD	#1		Return 1
+2553  39                   749  	RTS
+2554                       750  *
+2554                       751  * Copy one LONG number to another: longcpy(num1, num2)
+2554                       752  *
+2554  AE 64                753  longcpy	LDX	4,S		Get num1
+2556  EE 62                754  	LDU	2,S		Get num2
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 14
+
+2558  C6 04                755  ?bigcpy	LDB	#?LSIZE		Get byte count
+255A  A6 C0                756  ?AC18	LDA	,U+		Get byte from num2
+255C  A7 80                757  	STA	,X+		Copy to num1
+255E  5A                   758  	DECB			Reduce count
+255F  26 F9                759  	BNE	?AC18		Do them all
+2561  39                   760  	RTS
+2562                       761  *
+2562                       762  * Set a long number
+2562                       763  *
+2562  AE 64                764  longset	LDX	4,S		Get address
+2564  8D BD                765  	BSR	?AC11		Zero it
+2566  AE 64                766  	LDX	4,S		Get address back
+2568  EC 62                767  	LDD	2,S		Get value
+256A  E7 84                768  	STB	,X		Write LOW
+256C  A7 01                769  	STA	1,X		Write HIGH
+256E  39                   770  	RTS
+256F                       771  *00000
+256F                       772  *
+256F                       773  * Test for ASCII character
+256F                       774  *
+256F  CC 00 7F             775  isascii	LDD	#$007F		Range to test
+2572  20 34                776  	BRA	?AD3		Perform test
+2574                       777  *
+2574                       778  * Test for alphanumeric character (0-9, A-Z, a-z)
+2574                       779  *
+2574  35 10                780  isalnum	PULS	X		X = ret address
+2576  8D 2D                781  	BSR	isdigit		Is it a digit?
+2578  27 04                782  	BEQ	?AD2		No, try next
+257A  1F 15                783  ?AD1	TFR	X,PC		Return to caller
+257C                       784  *
+257C                       785  * Test for alphabetic character (A-Z, a-z)
+257C                       786  *
+257C  35 10                787  isalpha	PULS	X		X = ret address
+257E  8D 09                788  ?AD2	BSR	isupper		Uppercase?
+2580  26 F8                789  	BNE	?AD1		Yes, we have it
+2582  34 10                790  	PSHS	X		X = ret address
+2584                       791  *
+2584                       792  * Test for lowercase alphabetic character (a-z)
+2584                       793  *
+2584  CC 61 7A             794  islower	LDD	#'az'		Range to test
+2587  20 1F                795  	BRA	?AD3		Perform test
+2589                       796  *
+2589                       797  * Test for uppercase alphabetic character (A-Z)
+2589                       798  *
+2589  CC 41 5A             799  isupper	LDD	#'AZ'		Range to test
+258C  20 1A                800  	BRA	?AD3		Perform test
+258E                       801  *
+258E                       802  * Test for graphic (printable) character
+258E                       803  *
+258E  CC 21 7E             804  isgraph	LDD	#$217E		Range to test
+2591  20 15                805  	BRA	?AD3		And proceed
+2593                       806  *
+2593                       807  * Test for hexidecimal digit
+2593                       808  *
+2593  35 10                809  isxdigit PULS	X		X = ret addrss
+2595  CC 41 46             810  	LDD	#'AF'		Test range
+2598  8D 1D                811  	BSR	?AD5		Test it
+259A  26 DE                812  	BNE	?AD1		Found it
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 15
+
+259C  CC 61 66             813  	LDD	#'af'		Test range
+259F  8D 16                814  	BSR	?AD5		Test it
+25A1  26 D7                815  	BNE	?AD1		Found it
+25A3  34 10                816  	PSHS	X		Resave ret addr
+25A5                       817  *
+25A5                       818  * Test for an ASCII digit (0-9)
+25A5                       819  *
+25A5  CC 30 39             820  isdigit	LDD	#'09'		Range to test
+25A8                       821  * Test argument against range in A:B
+25A8  A1 63                822  ?AD3	CMPA	3,S		Test LOWER limit
+25AA  22 0B                823  	BHI	?AD5		Failed, return FALSE
+25AC  E1 63                824  	CMPB	3,S		Test UPPER limit
+25AE  25 07                825  	BLO	?AD5		Failed, return FALSE
+25B0                       826  * Test that upper byte of argument is zero
+25B0  A6 62                827  ?AD4	LDA	2,S		Get high byte
+25B2  26 03                828  	BNE	?AD5		Non-zero, fail
+25B4  C6 01                829  	LDB	#1		return 1
+25B6  39                   830  	RTS
+25B7                       831  * Report failure, return FALSE (0)
+25B7  4F                   832  ?AD5	CLRA			Zero HIGH
+25B8  5F                   833  	CLRB			Zero LOW
+25B9  39                   834  	RTS	
+25BA                       835  *
+25BA                       836  * Test for CONTROL character
+25BA                       837  *
+25BA  E6 63                838  iscntrl	LDB	3,S		Get argument
+25BC  C1 7F                839  	CMPB	#$7F		Delete?
+25BE  27 F0                840  	BEQ	?AD4		Yes, test high
+25C0  CC 00 1F             841  	LDD	#$001F		CTRL-range
+25C3  20 E3                842  	BRA	?AD3		Complete test
+25C5                       843  *
+25C5                       844  * Test for a punctuation character
+25C5                       845  *
+25C5  EC 62                846  ispunct	LDD	2,S		Get argument
+25C7  34 06                847  	PSHS	A,B		Pass it on
+25C9  8D A9                848  	BSR	isalnum		Alphanumeric?
+25CB  32 62                849  	LEAS	2,S		Clean up
+25CD  26 E8                850  	BNE	?AD5		Yes, false
+25CF  CC 20 7E             851  isprint	LDD	#$207E		Printable range
+25D2  20 D4                852  	BRA	?AD3		And test for it
+25D4                       853  *
+25D4                       854  * Test for a "space" character
+25D4                       855  *
+25D4  E6 63                856  isspace	LDB	3,S		Get argument
+25D6  C1 20                857  	CMPB	#' '		Space?
+25D8  27 D6                858  	BEQ	?AD4		Seems OK
+25DA  C1 09                859  	CMPB	#9		Tab?
+25DC  27 D2                860  	BEQ	?AD4		Seems OK
+25DE  C1 0A                861  	CMPB	#10		Newline?
+25E0  27 CE                862  	BEQ	?AD4		Seems OK
+25E2  20 D3                863  	BRA	?AD5		Invalid
+25E4                       864  *00000
+25E4                       865  *
+25E4                       866  * DDS MICRO-C 6809 Serial I/O routines
+25E4                       867  * These routines are set up to talk to a 6551 UART device.
+25E4                       868  *
+0000                       869  ?uart	EQU	$0000		Console uart address
+25E4                       870  * Write a string to the console: putstr(char *string)
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 16
+
+25E4  AE 62                871  putstr	LDX	2,S		Get string address
+25E6  E6 80                872  ?putstr	LDB	,X+		Get character
+25E8  27 1C                873  	BEQ	?AE1		End, exit
+25EA  8D 04                874  	BSR	?putch		Write the character
+25EC  20 F8                875  	BRA	?putstr		And proceed
+25EE                       876  * Write character to console - Translate newlines: putch(char c)
+25EE  EC 62                877  putch	LDD	2,S		Get char to write
+25F0  C1 0A                878  ?putch	CMPB	#$0A		Newline?
+25F2  26 08                879  	BNE	?putchr		No, write it
+25F4  8D 06                880  	BSR	?putchr		Write it
+25F6  C6 0D                881  	LDB	#$0D		Get return
+25F8  20 02                882  	BRA	?putchr		Write & exit
+25FA                       883  * Write character to console - Raw format
+25FA  EC 62                884  putchr	LDD	2,S		Get char to write
+25FC  B6 00 01             885  ?putchr	LDA	?uart+1		Get status
+25FF  85 10                886  	BITA	#%00010000	TX ready?
+2601  27 F9                887  	BEQ	?putchr		No, wait for it
+2603  F7 00 00             888  	STB	?uart		Write character
+2606  39                   889  ?AE1	RTS
+2607                       890  * Check for character - Raw format
+2607  B6 00 01             891  chkchr	LDA	?uart+1		Get status
+260A  85 08                892  	BITA	#%00001000	RX ready?
+260C  26 15                893  	BNE	getchr		Yes, get it
+260E  CC FF FF             894  	LDD	#-1		Return -1
+2611  39                   895  	RTS
+2612                       896  * Check for character
+2612  B6 00 01             897  chkch	LDA	?uart+1		Get status
+2615  5F                   898  	CLRB			Zero high
+2616  84 08                899  	ANDA	#%00001000	RX ready?
+2618  27 EC                900  	BEQ	?AE1		No, return with zero
+261A                       901  * Read character from console - Translate Returns
+261A  8D 07                902  getch	BSR	getchr		Get character
+261C  C1 0D                903  	CMPB	#$0D		Return?
+261E  26 E6                904  	BNE	?AE1		Its OK
+2620  C6 0A                905  	LDB	#$0A		Convert to newline
+2622  39                   906  	RTS
+2623                       907  * Read character from console - Raw format
+2623  B6 00 01             908  getchr	LDA	?uart+1		Get status
+2626  85 08                909  	BITA	#%00001000	RX ready?
+2628  27 F9                910  	BEQ	getchr		No, wait for it
+262A  F6 00 00             911  	LDB	?uart		Read the character
+262D  4F                   912  	CLRA			Zero high
+262E  39                   913  	RTS
+262F                       914  * Read a string (with editing) from the console: getstr(buffer, length)
+262F  EE 64                915  getstr	LDU	4,S		Get buffer
+2631  8E 00 00             916  	LDX	#0		Starting length is zero
+2634  8D E4                917  ?AE2	BSR	getch		Get a character
+2636  C1 7F                918  	CMPB	#$7F		Delete?
+2638  27 14                919  	BEQ	?AE3		Yes, handle it
+263A  C1 08                920  	CMPB	#$08		Backspace?
+263C  27 10                921  	BEQ	?AE3		Yes, handle it
+263E  C1 0A                922  	CMPB	#$0A		Enter?
+2640  27 23                923  	BEQ	?AE4		Yes, handle it
+2642  AC 62                924  	CMPX	2,S		Are we within length?
+2644  24 EE                925  	BHS	?AE2		No, ignore
+2646  E7 C0                926  	STB	,U+		Write to buffer
+2648  30 01                927  	LEAX	1,X		Advance length
+264A  8D B0                928  	BSR	?putchr		Echo character to console
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 17
+
+264C  20 E6                929  	BRA	?AE2		And proceed
+264E  8C 00 00             930  ?AE3	CMPX	#0		Any data in buffer?
+2651  27 E1                931  	BEQ	?AE2		No, ignore
+2653  C6 08                932  	LDB	#$08		Backspace
+2655  8D A5                933  	BSR	?putchr		Echo
+2657  C6 20                934  	LDB	#' '		Overwrite with space
+2659  8D A1                935  	BSR	?putchr		Echo
+265B  C6 08                936  	LDB	#$08		Backspace
+265D  8D 9D                937  	BSR	?putchr		Echo
+265F  30 1F                938  	LEAX	-1,X		Backup count
+2661  33 5F                939  	LEAU	-1,U		Backup in buffer
+2663  20 CF                940  	BRA	?AE2		And proceed
+2665  6F C4                941  ?AE4	CLR	,U		Zero end of buffer
+2667  8D 87                942  	BSR	?putch		New line on console
+2669  1F 10                943  	TFR	X,D		Report # chars received
+266B  39                   944  	RTS
+266C                       945  *00000
+266C                       946  *#map1 Set address of un-initialized variables
+266C                       947  * If you are compiling for ROM, uncomment the following ORG statement,
+266C                       948  * and adjust its address to the beginning of available RAM.
+266C                       949  *	ORG	$xxxx		RAM begins here
+266C                       950  *00000
+266C                       951  ?temp RMB 2
+266E                       952  reg RMB 4
+2672                       953  temp1 RMB 4
+2676                       954  temp2 RMB 4
+267A                       955  buffer RMB 11
+2685                       956  Longreg RMB 4
+2689                       957  *
+2689                       958  * DDS MICRO-C 6809 Runtime library - Suffix file
+2689                       959  *
+2689                       960  ?heap	EQU	*		Heap memory goes here
+2689                       961  * For stand-alone ROM system, uncomment the following
+2689                       962  *	ORG	$FFFE		Position to reset vector
+2689                       963  *	FDB	?begin		Set start address
+2689                       964  *00000
+DUNFIELD 6809 ASSEMBLER: longcalc                                     PAGE: 18
+
+SYMBOL TABLE:
+
+?AB0    -246A   ?AB1    -2130   ?AB10   -21CB   ?AB11   -2284   ?AB12   -21FA
+?AB13   -222D   ?AB14   -2212   ?AB15   -222D   ?AB16   -222A   ?AB17   -222D
+?AB18   -223F   ?AB19   -2287   ?AB2    -2175   ?AB20   -228C   ?AB21   -229A
+?AB22   -22A1   ?AB23   -22A1   ?AB24   -22D2   ?AB25   -23AC   ?AB26   -2390
+?AB27   -22F9   ?AB28   -230F   ?AB29   -2325   ?AB3    -2189   ?AB30   -233B
+?AB31   -2351   ?AB32   -2367   ?AB33   -23AC   ?AB34   -2464   ?AB35   -2440
+?AB36   -23BF   ?AB37   -23C9   ?AB38   -23C9   ?AB39   -23CC   ?AB4    -2173
+?AB40   -2436   ?AB41   -2439   ?AB42   -2439   ?AB43   -2439   ?AB44   -2439
+?AB45   -2439   ?AB5    -216F   ?AB6    -2189   ?AB7    -21A8   ?AB8    -21AE
+?AB9    -21B8   ?AC1    -248D   ?AC10   -2520   ?AC11   -2523   ?AC12   -2525
+?AC13   -252F   ?AC14   -2536   ?AC15   -2540   ?AC16   -254C   ?AC17   -2550
+?AC18   -255A   ?AC2    -24A0   ?AC3    -24B2   ?AC4    -24BE   ?AC5    -24CB
+?AC6    -24CC   ?AC7    -24F9   ?AC8    -2507   ?AC9    -2517   ?AD1    -257A
+?AD2    -257E   ?AD3    -25A8   ?AD4    -25B0   ?AD5    -25B7   ?AE1    -2606
+?AE2    -2634   ?AE3    -264E   ?AE4    -2665   ?BEGIN  -2000   ?BIGADD -249D
+?BIGCMP -253B   ?BIGCPY -2558   ?BIGSHL -24BB   ?BIGSHR -24AE   ?BIGSLC -24BC
+?BIGSUB -248A   ?BIGTST -252D   ?DIV    -205B   ?EQ     -20BE   ?EXIT1  -200C
+?GE     -20A6   ?GT     -209E   ?HEAP   -2689   ?LE     -20B6   ?LSIZE  -0004
+?LT     -20AE   ?MOD    -2060   ?MOD1   -2067   ?MOD2   -2069   ?MOD3   -207E
+?MUL    -2014   ?NE     -20C7   ?NOT    -20F1   ?PUTCH  -25F0   ?PUTCHR -25FC
+?PUTSTR -25E6   ?RET0   -20C4   ?RET1   -20CD   ?SDIV   -2034   ?SDIV1  -2042
+?SDIV2  -204A   ?SDIV3  -2055   ?SHL    -2082   ?SHL1   -2089   ?SHR    -2090
+?SHR1   -2097   ?SMOD   -2060   ?SWIT1  -2104   ?SWITCH -20F9   ?TEMP   -266C
+?UART   -0000   ?UGE    -20D9   ?UGT    -20D1   ?ULE    -20E9   ?ULT    -20E1
+ATOL    -21BB   BUFFER  -267A   CHKCH   -2612   CHKCHR  -2607   EXIT    -200A
+GETCH   -261A   GETCHR  -2623   GETSTR  -262F   ISALNUM -2574   ISALPHA -257C
+ISASCII -256F   ISCNTRL -25BA   ISDIGIT -25A5   ISGRAPH -258E   ISLOWER -2584
+ISPRINT -25CF   ISPUNCT -25C5   ISSPACE -25D4   ISUPPER -2589   ISXDIGIT-2593
+LONGADD -2499   LONGCMP -2537   LONGCPY -2554   LONGDIV -24C5   LONGMUL -24EF
+LONGREG -2685   LONGSET -2562   LONGSHL -24B9   LONGSHR -24AC   LONGSUB -2486
+LONGTST -252B   LTOA    -2106   MAIN    -228A   NARGS   -208F   PUTCH   -25EE
+PUTCHR  -25FA   PUTSTR  -25E4   REG     -266E   TEMP1   -2672   TEMP2   -2676

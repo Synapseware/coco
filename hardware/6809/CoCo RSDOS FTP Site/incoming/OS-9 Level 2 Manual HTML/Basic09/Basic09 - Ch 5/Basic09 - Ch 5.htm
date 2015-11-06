@@ -1,0 +1,952 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\Basic09 - Ch 5.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Chapter 5<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<B>The Debug Mode</B>
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+</B><FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000000.JPG" WIDTH="22" HEIGHT="5">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000001.JPG" WIDTH="20" HEIGHT="5">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000002.JPG" WIDTH="22" HEIGHT="5">
+</FONT>
+</H2>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The term 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>debug </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+refers to the process of finding programming
+errors and correcting them. BASIC09's debugging features
+include 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>symbolic </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+debugging capabilities that let you examine
+variable values and test and manipulate procedures.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+With Debug, you can:<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Examine and change variables.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Trace procedure execution. Debug lets you execute procedures and watch them run in slow motion.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Pause procedure execution.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Resume procedure execution.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Set procedure 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>breakpoints </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+that automatically switch to
+the debug mode.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Select the use of degrees or radians for trigonometric
+functions.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Perform calculations.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+e Call OS-9 system commands.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Entering the Debug Mode<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You enter Debug:<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+9 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Automatically, whenever an error occurs during the execution of a procedure (unless you have included an <B>ON
+ERROR GOTO </B>statement to handle the error).
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Automatically, when a procedure executes a PAUSE
+statement.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When you press 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+cTRyc 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+during the execution of a
+procedure.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can tell when BASIC09 enters the Debug mode by the
+appearance of the 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+D : prompt
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+. When you see 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+D:, 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+followed by the
+cursor, Debug is waiting for your command.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following is a reference of all the Debug commands and what
+they accomplish:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000003.JPG" WIDTH="10" HEIGHT="34">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000004.JPG" WIDTH="304" HEIGHT="13">
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Command Function<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+$  Calls OS-9's command shell interpreter to run<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+a program or an OS-9 command. From the
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Debug prompt, type $ , followed by the name of
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the program or command you want to execute.
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Example: 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>s </I>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+1 i s t procedure-one ENTER
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>BREAK </B>Sets a breakpoint immediately before the spec<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ified procedure. Use this command to re-enter<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Debug when one procedure calls another.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you have three procedures that call each<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+other Procl, Proc2, and Proc3 and Proc3<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+does not seem to pass the correct values to<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Proc2 when it returns, set a breakpoint at<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Proc2. This causes BASIC09 to enter Debug<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+before re-entering Proc2. You can then check<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+your variable values.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can use one breakpoint for each active pro<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cedure. Debug removes breakpoints immedi<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ately after encountering them.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A procedure must run before you can set a<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+breakpoint in it. Use BREAK to stop execution<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+when a called procedure returns to a proce<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+dure previously executed.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Example: 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+BREAK p r o c 2 ENTER<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>CONT </B>Causes procedure execution to continue.<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Example: 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+c o n t ENTER
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>DEG/RAD </B>Selects either degrees or radians as the unit of<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+measurement for trigonometric functions. DEG<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and RAD affect only the current procedure.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Examples: 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+d e 9 ENTER<BR>
+  
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+r a d ENTER<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000005.JPG" WIDTH="26" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000006.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+5-2<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>The Debug Mode / 5<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+DIR<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000007.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\Basic09 - Ch 58.gif" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000009.JPG" WIDTH="22" HEIGHT="6">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Displays the name, size, and variable storage
+requirements of each procedure in the workspace. The current working procedure has an
+asterisk before its name. Ail packed procedures have a dash before their names. DIR
+also shows the available memory in the
+workspace.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you provide a pathlist, DIR sends its data to
+the specified file.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Example: 
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>d i r </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>dir procedures
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000010.JPG" WIDTH="16" HEIGHT="11">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>LET<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>LIST<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>PRINT<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>STATE<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Terminates execution of the procedure, closes
+any open paths, and exits to the System mode.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Example: 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+q ENTER<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Assigns a new value to a variable. You must
+specify variable names that are already initialized by your program. In the Debug mode,
+you cannot use LET to copy one array to
+another array as you can in BASIC
+procedures.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Example: 
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>1 e t a : = 0 </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER<BR>
+ 
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>1 et fruit : = "oranqe5" </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Displays a source listing of the suspended procedure. The display is formatted and includes
+I-code addresses. An asterisk appears to the
+left of the last executed statement.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Example: 
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>1 i s t </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Displays the values of variables used in the
+suspended procedure. You cannot introduce
+new variable names in the Debug mode, and
+you cannot display array structures. -
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Example: 
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>print fruit </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Lists the 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>nesting </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+order of active procedures.
+STATE displays the highest-level procedure at
+the bottom of the calling list. The lowest-level
+procedure is the suspended procedure.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Example: 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+5 
+</FONT>
+<FONT SIZE="1" FACE="Courier" COLOR="#000000">
+<TT>t a t e </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000011.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+5-3<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>STEP </B>Causes execution of the suspended procedure<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+in specified increments. For example, typing<BR>
+ 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+STEP 5 ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+executes the equivalent of the<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+next five statements. If you enter STEP with<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+out an increment value, the step rate is 1.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Using STEP with the trace function lets you<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+observe the source lines as they execute.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because compiled I-code contains actual state<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ment memory addresses, the top or bottom<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+statements of loop structures execute only<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+once. For example, in FOR/NEXT loops, FOR<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+executes once, and the statement following<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+FOR appears to be the top of the loop.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>TRON/TROFF </B>Turns on or turns off the trace function. Trace
+on (TRON) causes the system to reconstruct
+the compiled code of each statement line into
+source code. Debug displays the source code
+before the statement is executed. If the statement causes the evaluation of one or more
+expressions, Debug displays each result following the statement. The result is preceded by
+an equal sign.
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The trace function is local to the current procedure. If the suspended procedure calls
+another procedure, Debug suspends the trace
+function until control returns to the original
+procedure. However, once you turn on trace for
+a procedure, it continues in effect until you
+turn it off. This means that if you turn trace
+on in a called procedure, and another procedure subsequently calls it, trace continues to
+display the called procedure's operations.
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Example: t 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+r o n ENTER
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+t 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+r o f f ENTER
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+When Things Go Wrong<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Programming errors show up in two ways. Either your procedure
+produces incorrect results, or it terminates prematurely.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000012.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000013.JPG" WIDTH="22" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000014.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+5-4<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>The Debug Mode / 5
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In the first instance, you can stop your procedure and enter
+Debug by pressing 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+CTRL 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>ff).</I>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+However, sometimes your program executes too quickly to allow
+you to stop it at the appropriate place. In this case, you can use
+the Edit mode to insert a PAUSE command where you wish the
+procedure to stop. PAUSE causes the procedure to halt execution
+and enter the Debug mode.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Once in Debug, you can use the PRINT command to examine
+the procedure variables. You can use LET to manipulate the
+variable values to determine where the error or errors occur. Perhaps you forgot to initialize a variable or forgot to increase a loop
+counter.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Using the Trace Function<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Sometimes, errors are more difficult to discover. If so, the next
+step is to use the trace function. To do this, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+t r o n ENTER
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Now press 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+. Each time you press 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER , Debug 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+executes
+one line of the procedure. You can see the original source statement, and if an expression is evaluated, Debug prints the result
+of the expression, preceded by an equal sign.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In this manner, you can step through the entire procedure, or
+any part of it, examining variable values as you go.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>What About Loops?<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The STEP command is helpful if you find yourself tracing the
+operation of a loop. Once you determine that the loop works correctly, you can avoid tedious, step-by-step repetitions by turning
+trace off and using STEP to quickly run through the loop. Then,
+turn trace back on and resume single-step debugging. For
+instance, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+t r o f f ENTER
+step 2 0 0 ENTER
+t r o n ENTER
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+5-5
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000015.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000016.JPG" WIDTH="20" HEIGHT="4">
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>In Multiple Procedures<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Although the trace function is local to a procedure, you can
+pause and turn on the trace function in as many procedures as
+you wish. Trace continues to operate in each procedure until you
+turn it off using TROFF.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To cause a procedure to halt execution when it is called by
+another procedure, use the BREAK command.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~6\GR000017.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+5-6<BR>
+</FONT>
+</BODY>
+</HTML>

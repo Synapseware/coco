@@ -1,0 +1,3151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>C:\CH6~1\CH 6.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Chapter 6<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///C:\CH6~1\GR000000.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+<H2 ALIGN="CENTER">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<B>Sequential Character</B>
+</FONT>
+</H2>
+<H2 ALIGN="CENTER">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<B><U>File Manager</U></B>
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The Sequential Character File Manager (SCFMAN) supports
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+devices that operate on a character-by-character basis. These
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+include terminals, printers, and modems.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+SCF is a re-entrant subroutine package. The I/O manager calls
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the SCF manager for I/0 system handling of sequential, charac
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ter-oriented devices. The SCF manager includes the extensive I/O
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+editing functions typical of line-oriented operation, such as:
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+backspace
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+line delete
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+line repeat
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+auto line feed
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+screen pause
+</UL>
+</UL>
+</FONT>
+</P>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+return delay padding
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The SCF-type device driver modules are CC310, PRINTER, and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RS-232. They run the video display, printer, and serial ports
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+respectively. See the OS-9 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Commands </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+manual for additional
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Color Computer I/O devices.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>SCF Line Editing Functions<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The SCF manager supports two sets of read and write functions.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+I$Read and I$Write pass data with no modification. I$ReadLn
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and I$WritLn provide full line editing of device functions.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Read and Write<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The Read and Write system calls to SCF-type devices correspond
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to the BASIC09 GET and PUT statements. While they perform
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+little modification to the data they pass, they do filter out key
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+board interrupt, keyboard terminate, and pause character. (Edit
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>ing is </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+disabled if the corresponding character in the path
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+descriptor contains a zero.)
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-1
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Technical Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Carriage returns are not followed by line feeds or nulls automat
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ically, and the high order bits are passed as sent/received.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///C:\CH6~1\GR000001.JPG" WIDTH="18" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Read Line and Write Line<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The Read Line and Write Line system calls to SCF-type devices
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+correspond to the BASIC09 INPUT, PRINT, READ, and WRITE
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+statements. They provide full line editing of all functions enabled
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+for a particular device.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The system initializes I$ReadLn and I$WritLn functions when
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+you first use a particular device. (OS-9 copies the option table
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+from the device descriptor table associated with the specific
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+device.)
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Later, you can alter the calls-either from assembly-language
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+programs (using the Get Status system call), or from the key
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+board (using the TMODE command). All bytes transferred by
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Readln and Writln have the high order bit cleared.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>SCF Definitions of the Path Descriptor<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The <B>PDYST and PD.OPT </B>sections of the path descriptor are
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+reserved for and used by the SCF file manager.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following table describes the SCF manager's use of <B>PDYST</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>and PD.OPT. </B>For your convenience, the table also includes the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+other sections of the PD.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The PD.OPT section contains the values that determine the line
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+editing functions. It contains many device operating parameters
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+that can be read or written by the Set Status or Get Status sys
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tem call. Any values not set by this table default to zero.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Note: </B>You can disable most of the editing functions by set
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ting the corresponding control character in the path
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+descriptor to zero. You can use the Set Status system call
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+or the TMODE command to do this. Or, you can go a step
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+further by setting the corresponding control character value
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+in the device descriptor module to zero.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To determine the default settings for a specific device, you can
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+inspect the device descriptor.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-2<BR>
+<IMG SRC="file:///C:\CH6~1\GR000002.JPG" WIDTH="20" HEIGHT="4">
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Sequential Character File Manager / 6
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Relative Size
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Name Address (Bytes) Use<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Universal Section (Same for all file managers)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.PD $00 1 Path number<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.MOD $01 1 Access mode:<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1 = read<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+2 = write<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3 = update<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.CNT $02 1 Number of open images (paths<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+using this PD)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.DEV $03 2 Address of the associated<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+device table entry<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.CPR $05 1 Current process ID<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.RGS $06 2 Address of the caller's 6809<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+register stack<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.BUF $08 2 Address of the 256-byte data<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+buffer (if used)<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Relative Size<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Name Address (Bytes) Use<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+SCF Path Descriptor Definitions (PD.FST Section)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.DV2 $OA 2 Device table address of the sec<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ond (echo) device<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.RAW $OC 1 Edit flag:<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = raw mode<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1 = edit mode<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.MAX $OD 2 Read Line maximum character<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+count<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.MIN $OF 1 Devices are 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>mine </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+if cleared<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD .STS $10 2 Status routine module address<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.STM $12 2 Reserved for status routine<BR>
+<IMG SRC="file:///C:\CH6~1\GR000003.JPG" WIDTH="18" HEIGHT="5">
+<IMG SRC="file:///C:\CH6~1\GR000004.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-3<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Technical Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Relative Size <B>Use<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Name Address (Bytes)<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+SCF Option Section Definition (PD.OPT Section)<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(Copied from the device descriptor)<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.DTP $20 1 Device class:<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0=SCF<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1 = RBF<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+2 = PIPE<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3 = SBF<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.UPC $21 1 Case:<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = upper and lower<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1 = upper only<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.BSO $22 1 Backspace:<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = backspace<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1 = backspace, space and<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+backspace<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.DLO $23 1 Delete:<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = backspace over line<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1 = carriage return, line<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+feed<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.EKO $24 1 Echo:<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = no echo<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.ALF $25 1 Auto line feed:<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = no auto line feed<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.NUL $26 1 End-of-line null count:<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>n </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+= number of nulls ($00)<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sent after each carriage<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+return or carriage return<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and line feed 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>(n = $00</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+-$FF)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.PAU $27 1 End of page pause:<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = no pause<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.PAG $28 1 Number of lines per page<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.BSP $29 1 Backspace character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.DEL $2A 1 Delete-line character<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-4<BR>
+<IMG SRC="file:///C:\CH6~1\GR000005.JPG" WIDTH="20" HEIGHT="3">
+<IMG SRC="file:///C:\CH6~1\GR000006.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///C:\CH6~1\GR000007.JPG" WIDTH="18" HEIGHT="2">
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sequential Character File Manager l 6
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Relative Size<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Name Address (Bytes) Use<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+SCF Option Section Definition continued (PD.OPT Section)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.EOR $2B 1 End-of-record character (End<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+of-line character) Read only.<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Normally set to $OD:<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = Terminate read-line<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+only at the end of the<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+file<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.EOF $2C 1 End-of-file character (read<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+only)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.RPR $2D 1 Reprint-line character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.DUP $2E 1 Duplicate-last-line character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.PSC $2F 1 Pause character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.INT $30 1 Keyboard-interrupt character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.QUT $31 1 Keyboard-terminate character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.BSE $32 1 Backspace-echo character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.OVF $33 1 Line-overflow character (bell<BR>
+   
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+CTRL 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+GO)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.PAR $34 1 Device-initialization value<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(parity)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.BAU $35 1 Software setable baud rate<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.D2P $36 2 Offset to second device name<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+string<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PP.XON $38 1 ACIA XON char<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.XOFF $39 1 ACIA XOFF char<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.ERR $3A 1 Most recent I/O error status<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.TBL $38 2 Copy of device table address<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.PLP $38 2 Path descriptor list pointer<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.PST $3F 1 Current path status<BR>
+<IMG SRC="file:///C:\CH6~1\GR000008.JPG" WIDTH="17" HEIGHT="2">
+<IMG SRC="file:///C:\CH6~1\GR000009.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-5<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>PD.EOF specifies </B>the end-of-file character. If this is the first
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and only character that is input to the SCF device, SCF returns
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+an end-of-file error on Read or Readln.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>PD.PSC </B>specifies the pause character, which suspends output to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the device before the next end-of-record character. The pause
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+character also deletes any type-ahead input for Readln.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>PD.INT </B>specifies the keyboard-interrupt character. When the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+character is received, the system sends a keyboard terminate
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+signal to the last user of a path. The character also terminates
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the current I/O request (if any) with an error identical to the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+keyboard interrupt signal code.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>PD.QUT </B>specifies the keyboard-terminate character. When this
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+character is received, the system sends a keyboard terminate
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+signal to the last user of a path. The system also cancels the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+current I/O request (if any) by sending error code identical to the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+keyboard interrupt signal code.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>PD.PAR </B>specifies the parity information for external serial
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+devices.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///C:\CH6~1\GR000010.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///C:\CH6~1\GR000011.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>PD.BAU specifies </B>baud rate, word length and stop bit informa
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tion for serial devices.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>PD.XON </B>contains either the character used to enable transmis
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sion of characters or a null character that disables the use of
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+XON.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>PD.XOFF </B>contains either the character used to disable trans
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mission of characters or a null character that disables the use of
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+XOFF.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+SCF-Type Device Descriptor Modules<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following chart shows how the initialization table in the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+device descriptors is used for SCF-type devices. The values are
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+those the I/O manager copies from the device descriptor to the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+path descriptor.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+An SCF editing function is turned off if its corresponding value
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+is set to zero. For example, if IT.EOF is set to zero, there is no
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+end-of-file character.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-6<BR>
+<IMG SRC="file:///C:\CH6~1\GR000012.JPG" WIDTH="42" HEIGHT="1">
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sequential Character File Manager / 6
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Relative Size
+</UL>
+<BR>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Name Address (Bytes) Use
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(header) $00-  Standard device descriptor<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+11  module header<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.DVC $12 1 Device class:<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0=SCF<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1 = RBF<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+2 = PIPE<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3=SBF<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT. UPC $13 1 Case:<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = upper- and lowercase<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1 = uppercase only<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.BSO $14 1 Backspace:<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = backspace<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1 = backspace, then space<BR>
+      
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and backspace<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+'' IT.DLO $15 1 Delete:<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = backspace over line<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1 = carriage return<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.EKO $16 1 Echo:<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = echo off<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT. ALF $17 1 Auto. line feed:<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = auto line feed disabled<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.NUL $18 1 End-of-line null count<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ITTAU $19 1 Pause:<BR>
+     
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = end-of-page pause<BR>
+      
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+disabled<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ITTAG $lA 1 Number of lines per page<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT. BSP $1 B 1 Backspace character<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT. DE L $1 C 1 Delete-line character<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.EOR $1D 1 End-of-record character<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT. E OF $1 E 1 End-of-file character<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.RPR $1F 1 Reprint-line character<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-7
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///C:\CH6~1\GR000013.JPG" WIDTH="17" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Relative Size<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Name Address (Bytes) Use<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.DUP $20 1 Duplicate-last-line character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.PSC $21 1 Pause character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+MINT $22 1 Interrupt character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT. QUT $23 1 (quit character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.BSE $24 1 Backspace echo character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.OVF $25 1 Line-overflow character (bell)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ITTAR $26 1 Initialization value used to<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+initialize a device control reg<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ister when a path is opened to<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+it (parity)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.BAU $27 1 Baud rate<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.D2P $28 2 Attached device name string<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+offset<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT. XON $2A 1 X-ON character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.XOFF $2B 1 X-OFF character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.COL $2C 1 Number of columns for display<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.ROW $2D 1 Number of rows for display<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.WND $2E 1 Window number<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT. VAL $2F 1 Data in rest of descriptor is<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+valid<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.STY $30 1 Window type<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.CPX $31 1 X cursor position<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.CPY $32 1 Y cursor position<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.FGC $33 1 Foreground color<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.BGC $34 1 Background color<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+IT.BDC $35 1 Border color<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-8<BR>
+<IMG SRC="file:///C:\CH6~1\GR000014.JPG" WIDTH="22" HEIGHT="4">
+<IMG SRC="file:///C:\CH6~1\GR000015.JPG" WIDTH="20" HEIGHT="4">
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Sequential Cha</U>r<U>acter File Manager l 6
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>SCF-Ty<U>pe Device Driver Modules<BR>
+</U></B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+An SCF-type device driver module contains a package of subrou
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tines that perform raw (unformatted) data I/O transfers to or
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+from a specific hardware controller. Such a module is usually re
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+entrant so that one copy of the module can simultaneously run
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+several devices that use identical I/O controllers. The
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+I/O manager allocates a permanent memory area for each con
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+troller sharing the driver.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The size of the memory area is defined in the device driver mod
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ule header. The I/O manager and SCF use some of the memory
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+area. The device driver can use the rest in any way (typically as
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+variables and buffers). Typically, the driver uses the area as
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+follows:<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Relative Size<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B><U>Name Address (Bytes) Use<BR>
+</U></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.PAGE $00 1 Port extended 24 bit address<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.PORT $01 2 Device base address (defined<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+by the I/O manager)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.LPRC $03 1 ID of the last active process<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.BUSY $04 1 ID of the active process<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(defined by RBF):<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = no active process<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.WAKE $05 1 ID of the process to reawaken<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+after the device completes I/O<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(defined by the device driver):<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = no waiting process<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.USER $06 0 Beginning of file manager<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+specific storage<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.TYPE $06 1 Device type or parity<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.LINE $07 1 Lines left until the end of the<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+page<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.PAUS $08 1 Pause request:<BR>
+    
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 = no pause requested<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.DEV2 $09 2 Attached device memory area<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.INTR $OB 1 Interrupt character<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-9
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///C:\CH6~1\GR000016.JPG" WIDTH="18" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Relative Size<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Name Address (Bytes) Use<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>V.QUIT </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+$OC 1 Quit character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+V.PCHR $OD 1 Pause character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+V.ERR $OE 1 Error accumulator<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+V.XON $OF 1 XON character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+V.XOFF $10 1 XOFF character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+V. KANJI $11 1 Reserved<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+V.KBUF $12 2 Reserved<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+V . MODADR $14 2 Reserved<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+V.PDLHD $16 2 Path descriptor list header<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+V.RSV $18 5 Reserved<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+V.SCF $1D 0 End of SCF memory<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+requirements<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+FREE $1 D 0 Free for the device driver to<BR>
+   
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+use<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>V.LPRC </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+contains the process ID of the last process to use the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+device. The IRQ service routine sends this process the proper sig
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+nal if it receives a quit character or an interrupt character.
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+V.LPRC is defined by SCF.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>V.BUSY </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+contains the process ID of the process that is using the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+device. (If the device is not being used, V.BUSY contains a zero.)
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+The process ID is used by SCF to prevent more than one process
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+from using the device at the same time. V.BUSY is defined by
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+SCF.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>SCF Device Driver Subroutines<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Like all device drivers, SCF device drivers use a standard exe
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+cutable memory module format.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The execution offset address in the module header points to a
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+branch table that has six 3-byte entries. Each entry is typically
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+an LBRA to the corresponding subroutine. The branch table is
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+defined as follows:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<IMG SRC="file:///C:\CH6~1\GR000017.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///C:\CH6~1\GR000018.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///C:\CH6~1\GR000019.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+6-10<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sequential Character File Manager / 6
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ENTRY LBRA INIT Initialize driver<BR>
+  </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LBRA READ Read character<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>r--  LBRA WRITE Write character<BR>
+  </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LBRA GETSTA Get 5tatu5<BR>
+  </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LBRA SETSTA Set 5tatu5<BR>
+  </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LBRA TERM Terminate device<BR>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If no error occurs, each subroutine exits with the C bit in the
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Condition Code Register cleared. If an error occurred, each sub
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+routine sets the C bit and returns an appropriate error code in
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Register B.
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The rest of this chapter describes these subroutines and their
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+entry and exit conditions.
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>6-11<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<B>Init </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>Initializes device control registers, and
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>enables interrupts if necessary.
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Entry Conditions:
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>Y = address of the device descriptor<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>U  = address o f the device memory area<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Exit Conditions:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set on error<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = error code (if </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+any)<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Additional Information:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Prior to being called, the device memory area is cleared (set
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to zero), except for V.PAGE and V.PORT. (V.PAGE and
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.PORT contain the device address.) There is no need to
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+initialize the part of the memory area used by the I/0
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+manager and SCR
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Follow these steps to use Init:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1. Initialize the device memory area.
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+2. Place the IRQ service routine on the IRQ polling list,
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+using the Set IRQ system call (F$IRQ).
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3. Initialize the device control registers.
+</UL>
+<BR>
+<IMG SRC="file:///C:\CH6~1\GR000020.JPG" WIDTH="24" HEIGHT="6">
+<IMG SRC="file:///C:\CH6~1\GR000021.JPG" WIDTH="18" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-12<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Sequential Character File Manager l 6
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<B>Read </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>Reads the next character from the input
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>buffer.
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Entry Conditions:
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>Y = address of the path descriptor<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>U = address of the device memory area<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Exit Conditions:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>A = character read<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set on error<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B = error 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>code (if </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+any)<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Additional Information:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This is a step by step description of a Read operation:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1. Read gets the next character from the input buffer.
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+2. If no data is ready, Read copies its process ID from
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.BUSY into V.WAKE. It then uses the Sleep system
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+call to put itself to sleep.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3. Later, when Read receives data, the IRQ service rou
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tine leaves the data in a buffer. Then, the routine
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+checks V. WAKE to see if any process is waiting for the
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+device to complete I/O. If so, the IRQ service routine
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sends a wakeup signal to the waiting process.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Data buffers are not automatically allocated. 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>If </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+a buffer is
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+used, it defines it in the device memory area.
+</UL>
+<BR>
+<IMG SRC="file:///C:\CH6~1\GR000022.JPG" WIDTH="18" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-13<BR>
+<IMG SRC="file:///C:\CH6~1\GR000023.JPG" WIDTH="289" HEIGHT="2">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Write 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>Sends a character (places a data byte in
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>an output buffer) and enables the device
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>output interrupts.
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Entry Conditions:
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A = character to write<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>Y = address of the path descriptor<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>U = address of the device memory area<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Exit Conditions:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set on error<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B = error 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>code (if </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+any)<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Additional Information:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If the data buffer is full, Write copies its process ID from<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.BUSY into VMAKE. Write then puts itself to sleep.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Later, when the IRQ service routine transmits a character
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and makes room for more data, it checks VMAKE to see 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>if</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+there is a process waiting for the device to complete I/O. If
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+there is, the routine sends a wakeup signal to that process.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Write must ensure that the IRQ service routine that starts
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+it begins to place data in the buffer. After an interrupt is
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+generated, the IRQ service routine continues to transmit
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+data until the data buffer is empty. Then, it disables the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+device's ready-to-transmit interrupts.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Data buffers are not allocated automatically. If a buffer is<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+used, define it in the device memory area.<BR>
+<IMG SRC="file:///C:\CH6~1\GR000024.JPG" WIDTH="14" HEIGHT="7">
+<IMG SRC="file:///C:\CH6~1\GR000025.JPG" WIDTH="300" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-14<BR>
+<IMG SRC="file:///C:\CH6~1\GR000026.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///C:\CH6~1\GR000027.JPG" WIDTH="22" HEIGHT="5">
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Sequential Character File Manager l 6
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<B>Getst<U>a and Setsta</U></B>
+</FONT>
+</H2>
+</U></B><FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Gets/sets device operating parameters (status) as<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>specified for the Get Status and Set Status system<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>calls. Getsta and Setsta are wildcard calls.<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Entry Conditions:<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A = depends on the function code<BR>
+</FONT>
+<FONT SIZE="3" FACE="Arial Narrow" COLOR="#000000">
+<I>Y = address of the pith </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>descriptor<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>U = address of </I>
+</FONT>
+<FONT SIZE="3" FACE="Arial Narrow1" COLOR="#000000">
+<I>the </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>device memory area<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Other registers depend on the function code.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Exit Conditions:<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>B = error code (if any)<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set on error<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Other registers depend on the function code<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Additional Information:<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Any codes not defined by the I/O manager or SCF are<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+passed to the device driver.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You might need to examine or change the register stack<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+that contains the values of the 6809 registers at the time of<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the call. The address of the register stack can be found in<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PD.RGS, which is located in the path descriptor.<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can use the following offsets to access any value in the
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+register packet:
+</UL>
+<BR>
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Relative Size<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Name Address </B>(Bytes) <B>6809 Register<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+R$CC $00 1 Condition Codes Register<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+R$D $01 0 Register D<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+R$A $01 1 Register A<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+R$B $02 1 Register B<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+R$DP $03 1 Register DP<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+R$X $04 2 Register X<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+R$Y $06 2 Register Y<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+R$U $08 2 Register U<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+R$PC $OA 2 Program Counter<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<U>The function code is retrieved from the R$B on the user stack.<BR>
+</U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+6-15<BR>
+<IMG SRC="file:///C:\CH6~1\GR000028.JPG" WIDTH="14" HEIGHT="6">
+<IMG SRC="file:///C:\CH6~1\GR000029.JPG" WIDTH="291" HEIGHT="2">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Term 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>Terminates a device. Term is called when a
+</UL>
+</UL>
+</UL>
+</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>device is no longer in use (when the link
+</UL>
+</UL>
+</UL>
+</UL>
+</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>count of the device descriptor module
+</UL>
+</UL>
+</UL>
+</UL>
+</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>becomes zero).
+</UL>
+</UL>
+</UL>
+</UL>
+</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Entry Conditions:
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>U = pointer to the device memory area<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Exit Conditions:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CC = carry set on error<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+B = error 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>code (if </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+any)<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Additional Information:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; To use Term:<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1. Wait until the IRQ service routine empties the output
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+buffer.
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+2. Disable the device interrupts.
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3. Remove the device from the IRQ polling list.
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; When Term closes the last path to a device, OS-9 returns
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to the memory pool the memory that the device used. 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>If </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+device has been attached to the system using the I$Attach
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+system call, OS-9 does not return the static storage for the
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+driver until an I$Detach call is made to the device. Mod
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ules contained in the Boot file are never terminated, even 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>if
+</UL>
+</I>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+their link counts reach 0.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///C:\CH6~1\GR000030.JPG" WIDTH="24" HEIGHT="6">
+<IMG SRC="file:///C:\CH6~1\GR000031.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-16
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Sequential Character File Ma</U>n<U>age</U>r <U>/ 6
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+<UL>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+IRQ Service Routine
+</UL>
+</FONT>
+</H2>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+-- Receives device interrupts. When I/O is complete, the<BR>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+routine sends a wakeup signal to the process identi
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+fied by the process ID in VMAKE. The routine also
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+clears VMAKE as a flag to indicate to the main pro
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+gram that the IR Q has occurred.
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Additional Information:
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The IRfa Service Routine is not included in device driver
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+branch tables, and is not called directly by SCF. However, it
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+is a key routine in device drivers.
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When the IRQ Service routine finishes servicing an inter-<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+rupt, the routine must clear the carry and exit with an<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RTS instruction.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+- Here is a typical sequence of events that the IRQ Service<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Routine performs:<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1. Service the device interrupts (receive data from the
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+device or send data to it). Ensure this routine puts its
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+data into and get its data from buffers that are defined
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+in the device memory area.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+2. Wake up any process that is waiting for I/O to complete.
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To do this, the routine checks to see if there is a pro
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+cess ID in VMAKE (a value. other than zero); if so, it
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sends a wakeup signal to that process.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3. If the device is ready to send more data, and the output
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+buffer is empty, disable the device's ready-to-transmit
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+interrupts.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4. If a pause character is received, set V.PAUS in the
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+attached device storage area to a value other than zero.
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The address of the attached device memory area is in
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.DEV2.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V.PAUS in the attached device storage area to non-zero
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+'~ value. The address of the attached device memory area<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+- is in V.DEV2.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+5. If a keyboard terminate or interrupt character is
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+received, signal the process in V.LPRC (last known
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+process) if any.
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-17
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///C:\CH6~1\GR000032.JPG" WIDTH="10" HEIGHT="44">
+</FONT>
+</BODY>
+</HTML>

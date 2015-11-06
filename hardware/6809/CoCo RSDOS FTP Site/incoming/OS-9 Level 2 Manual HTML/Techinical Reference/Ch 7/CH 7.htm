@@ -1,0 +1,789 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>C:\CH7~1\CH 7.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<U>Chapter 7<BR>
+</U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="CENTER">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+The Pipe File Manager
+</FONT>
+</H2>
+<H2 ALIGN="CENTER">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+(PIPEMAN)
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///C:\CH7~1\GR000000.JPG" WIDTH="122" HEIGHT="1">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///C:\CH7~1\GR000001.JPG" WIDTH="302" HEIGHT="1">
+</FONT>
+</H2>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The Pipe file manager handles control of processes that use
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+paths to pipes. Pipes allow concurrently executing processes to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+send each other data by using the output of one process (the
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+writer) as input to a second process (the reader). The reader gets
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+input from the standard input. The exclamation point (!) opera
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tor specifies that the input or output is from or to a pipe. The
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Pipe file manager allocates a 256-byte block and a path descrip
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tor for data transfer. The Pipe file manager also determines
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+which process has control of the pipe. The Pipe file manager has
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the standard file manager branch table at its entry point:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PipeEnt lbra Create
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lbra Open
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lbra MakDir
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lbra ChgDir
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lbra Delete
+</UL>
+</UL>
+</FONT>
+</P>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lbra Seek
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+' lbra PRead<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lbra PWrite
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lbra PRdLn
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lbra PWrLn
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lbra Getstat
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lbra Putstat
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lbra Close
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You cannot use MakDir, ChgDir, Delete, and Seek with pipes. If
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+you try to do so, the system returns E$UNKSVC (unknown ser
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+vice request). Getstat and Putstat are also no-action service rou
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tines. They return without error.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Create and Open perform the same functions. They set up the
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+256-byte data exchange buffer, and save several addresses in the
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+path descriptor.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The Close request checks to see if any process is reading or writ
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ing through the pipe. If not, OS-9 returns the buffer.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PRead, PWrite, PRdLn, and PWrLn read data from the buffer
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and write data to it.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+7-1
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///C:\CH7~1\GR000002.JPG" WIDTH="18" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>OS-9 Technical Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The ! operator tells the Shell that processes wish to communicate<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+through a pipe. For example:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>proc1 ! Proc2 </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In this example, shell forks Procl with the standard output path<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to a pipe, and forks Proc2 with the Standard input path from a<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+pipe.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Shell can also handle a series of processes using pipes. Example:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>proc1 ! Proc2 ! proc3 ! proc4 </TT>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+ENTER
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following outline shows how to set up pipes between<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+processes:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Open /Pipe save path in variable x
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Dup 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>path #1 save 5tdout in variable y
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Dup x 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>make path available
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Fork proc1 put pipe in stdout.
+</UL>
+<BR>
+ <UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+CDup 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>uses lowest available)
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Close #1 make path available
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Dup 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>y restore stdout
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Close y make path available
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Dup 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>path #0 save stdin in Y
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Close #0 make path available
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Dup x 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>put pipe in stdin
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Fork 2 fork process 2
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Close #0 make path available
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Dup 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>y restore 5tdin
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Close x no longer needed
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Close y no longer needed
+</UL>
+<BR>
+<IMG SRC="file:///C:\CH7~1\GR000003.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///C:\CH7~1\GR000004.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///C:\CH7~1\GR000005.JPG" WIDTH="20" HEIGHT="3">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>7-2<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>The Pipe File Manager (PIPEMAN) / 7
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Example: The following example shows how an application can<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+initiate another process with the stdin and stdout routed<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+through a pipe.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Open /pipe1 save path in variable a<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Open /pipe2 save path in variable b<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Dup 0 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>save stdin in variable x<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Dup 1 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>save stdout in variable y<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Close 0 make path available<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Close 1 make path available<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Dup 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>a make pipe1 stdin<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Dup 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>b make pipe2 5tdout<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Fork new process<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Close 0 make path available<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Close 1 make path available<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Dup x 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>restore stdin<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Dup 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>y restore stdout<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Return a&amp;b return pipe path numbers to caller<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<I>5 FF E
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<I>RATJV Bow
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</I>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<I>p F- </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>G </I>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<I>c-iw$ aR 1 a8 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>-7
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<I>PA 6.Fs
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+<UL>
+<UL>
+</I>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<I>-o x </I>jjt- 1-71
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+F-ott A )qF"+L
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+  <UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>1: K&amp; f xAAro1,E
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Arial" COLOR="#000000">
+<I>rN-r </I>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+s
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///C:\CH7~1\GR000006.JPG" WIDTH="18" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+7-3<BR>
+</FONT>
+</BODY>
+</HTML>

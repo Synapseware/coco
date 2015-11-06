@@ -1,0 +1,4 @@
+Gloom2.bin is a new version of Gloom that runs significantly faster, has improved
+3D perspective, and can now run on a stock 128K CoCo3.   This file should be placed
+alongside the old version in the GLOOM3D directory.
+

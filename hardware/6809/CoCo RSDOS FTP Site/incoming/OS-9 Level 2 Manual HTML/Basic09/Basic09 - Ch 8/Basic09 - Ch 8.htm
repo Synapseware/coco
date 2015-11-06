@@ -1,0 +1,2218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\Basic09 - Ch 8.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Chapter 8<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Disk Files
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000000.JPG" WIDTH="302" HEIGHT="2">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000001.JPG" WIDTH="20" HEIGHT="5">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000002.JPG" WIDTH="20" HEIGHT="5">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000003.JPG" WIDTH="8" HEIGHT="5">
+</FONT>
+</H2>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+When you tell OS-9 or BASIC09 to store (save) data on a disk, it
+stores the data in a logical block called a 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>file. </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+The term logical
+means that, although the system might store portions of a file's
+data in several different disk locations, it keeps track of every
+location and treats the scattered data as though it occupied a
+single block. It does this automatically and you never need to
+worry about how the data is stored. File data can be binary
+data, textual data (ASCII characters), or any other useful
+information.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Because OS-9 handles all hardware input/output devices (disk
+drives, printers, terminals, and so on) in the same manner, you
+can send data to any of these devices in the same way. This
+means you can send the same information to several devices by
+changing the path the data follows. Fbr example, you can test a
+procedure that communicates with a terminal by transferring
+data to and from a disk drive.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+BASIC09 normally works with two types of files-sequential
+files and random access files. The following chart shows fileaccess options, their purposes, and the keywords with which to
+use them:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+Types of Access for Files<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Access Function Use with<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Type<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+DIR Opens a directory file for reading. OPEN<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Use only with READ.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>EXEC </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Specifies that the file to open or OPEN<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+create is in the execution directory, CREATE<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+rather than the data directory.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>READ </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Lets you read data from the OPEN<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+specified file or device. CREATE<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>WRITE </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Lets you write data to the specified OPEN<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+file or device. CREATE<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>UPDATE </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Lets you read data from and write
+<U>data to the specified </U>file or device.
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+OPEN<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+CREATE<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000004.JPG" WIDTH="302" HEIGHT="26">
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Sequential Files<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Sequential files send or receive (WRITE or READ) textual data
+in order, the second item following the first, and so on. You can
+access sequential data only in the same order as you originally
+stored it. To read from or write to a particular section of a file,
+you must first read through all the preceding data in the file,
+starting from the beginning.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+BASIC09 stores sequential file data as ASCII characters. Each
+block of data is separated by a 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>delimiter </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+consisting of a carriagereturn character (ASCII Character 13). Because BASIC09 uses
+this delimiter to determine the end of a 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>record, </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+sequential files
+can contain records of varying length.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Use the WRITE and READ commands to store and retrieve data
+in sequential files. A WRITE command causes BASIC09 to
+transfer specified data to a specified file, ending the data with a
+carriage return. A READ command causes BASIC09 to load
+from the specified file the next block of data, stopping when it
+reaches a carriage return.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000005.JPG" WIDTH="22" HEIGHT="6">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Sequential File Creation, Storage, and Retrieval<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+BASIC09 uses the CREATE command to establish both sequential and random access files. A CREATE statement contains:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The keyword CREATE.
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+&middot; A path number variable in which BASIC09 stores the
+number of the path it opens to the new file.
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+&middot; A comma, followed by the name of the file to create.
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+An optional colon, followed by the access mode. If you do
+not specify an access mode, BASIC09 automatically
+opens the created file in the UPDATE mode.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000006.JPG" WIDTH="10" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000007.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000008.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+8-2<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Disk Files / 8
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following procedure shows how to create a file and write
+data into it:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000009.JPG" WIDTH="18" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+PROCEDURE makefile<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODIM PATH;BYTE 0 establishes a variable<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OREM  for the path number to the file<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OCREATE #PATH,"test";WRITE 0 creates the file TEST<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OWRITE #PATH,"This 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+i5 
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow1" COLOR="#000000">
+a test" 0 writes data to the file<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow1" COLOR="#000000">
+pWRITE #PATH,"of sequential files."(* writes another line of data<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow1" COLOR="#000000">
+pCLOSE #PATH 0 closes the path to the file<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow1" COLOR="#000000">
+OSHELL "LIST TEST" (* displays the file contents<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow1" COLOR="#000000">
+pEND<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The first line of the procedure dimensions a variable (Path) to
+hold the number of the path that CREATE opens. This variable
+should be of byte or integer type.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When you establish a new file with CREATE, you automatically
+open a path to the file. You do not need to use the OPEN
+command.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The preceding procedure writes two lines into a file named Test.
+It then closes the path and uses the OS-9 LIST command to display the contents of the newly created file. You see that the data
+is successfully stored on disk.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The next procedure shows how to reopen an existing file for
+sequential access, read the contents of the file, and append data
+to the end of the file.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The only way to move the 
+</FONT>
+<FONT SIZE="4" FACE="Garamond1" COLOR="#000000">
+<I>file </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+pointer to the end of a sequential
+file is to read all the data already in the file. Once the pointer is
+at the end of the file, you can add data.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+PROCEDURE append<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODIM PATH;BYTE 0 dimension variable to hold the number of the<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OREM  path to the opened file.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+DOPEN #PATH,"test";UPDATE (* open file for reading and writing,<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+DREAD #PATH,line$ 0 read the first element of the file.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+DREAD #PATH,line$ 0 read the next (the last) element.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OWRITE #PATH,"This is a test" 0 write one new line to the file.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OWRITE #PATH,"of appending to a sequential file." 0 write another.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OCLOSE #PATH 0 close the path<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OSHELL "LIST TEST" 0 display the file with the new lines.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+REND<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+8-3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000010.JPG" WIDTH="20" HEIGHT="4">
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because the Test file already exists, this procedure uses OPEN
+to establish a path to the file. It uses the UPDATE mode of file
+access because it needs to both read from and write to the file.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The two READ statements read the file's contents and, as a
+result, move the file pointer to the end of the file. The WRITE
+statements then append two new lines. After closing the path,
+the procedure calls on the OS-9 LIST command to display the
+contents of the file, with its appended lines.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Changing Data in a Sequential File<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can also change data anywhere in a sequential file. However, if your changes are longer than the original data, the operation destroys part of the file. To change data in a sequential
+file, read the data preceding what you want to change, and write
+the new data to the file in this manner:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+PROCEDURE replace<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+ODIM PATH:BYTE<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OOPEN #PATH,"test";UPDATE<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DREAD #PATH,line=<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DREAD #PATH,lines<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OWRITE #PATH,"Let's put new" (* write over existing 3rd and<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OWRITE #PATH,"words into the old sequential file." (* 4th lines.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OCLOSE #PATH<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OSHELL "LIST TEST"<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+REND<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Notice that the total amount of data in the two new lines is
+exactly the same as in the two old lines. You can replace an
+existing line with fewer characters by padding the new data
+with spaces. However, if you try to replace existing lines with
+longer lines, the new lines write over and destroy other data in
+the file.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000011.JPG" WIDTH="26" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000012.JPG" WIDTH="22" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-4<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Disk Files / 8
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>INPUT and Sequential Files
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Although you can also use the INPUT command with sequential
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+`' files, doing so might put unwanted data into them. When a pro<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+- cedure encounters INPUT, it suspends execution and sends a<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+question mark (?) to the screen. This feature makes INPUT both
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+an input and output statement. Therefore, if you open a file
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+using the UPDATE mode, INPUT writes its prompts to the file,
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+destroying data. If you specify text to be displayed with the
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+INPUT command, INPUT writes this text to the file also.
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Random Access Files
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Random access files store data in fixed- or equal-length blocks.
+Because each record in a specific file is the same size, you can
+easily calculate the position of a record.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For instance, suppose you have a file with a record length of 50bytes (or characters). To access Record 10, multiply the record
+number (10) by the record length (50) and move the file pointer
+to the calculated position (500).
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A random access file sends and receives data (using PUT and
+GET) in a binary form, exactly as BASIC09 stores it internally.
+This feature minimizes the time involved in converting the data
+to and from ASCII representation, as well as reducing the file
+space required to store numeric data. You position the random
+access file pointer using SEEK. Compared to sequential file
+access, random file access using GET and PUT is very fast.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Using random access commands, you can store and retrieve individual bytes, strings of bytes, individual elements of arrays or
+total arrays with one PUT or GET command. When you GET a
+structure, you recover the number of bytes associated with that
+type of structure.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This means when you GET one element of byte type data, you
+read one byte. When you GET one element of real type data, you
+read five bytes. If you GET an array, you read all the elements of
+the array. This potential for reading entire arrays at once can
+greatly speed disk access.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+As well as moving the file pointer to the beginning of individual
+records, you can also move it to any position within a record and
+begin reading or writing one or more bytes from that point.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-5
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Creating Random Access Files<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You create and open random access files in the same way you<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+create and open sequential files. The only differences are in the<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+commands you use to store and retrieve the data and in the<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+manner you keep track of where elements, or records, of a file<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+begin and end.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Before you can write data to a random access file, you must<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+either CREATE it or open it in the WRITE or UPDATE mode.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Once you have a path open to an existing file, use PUT to write<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+data into the file. If you open the file in the READ or UPDATE<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mode, you can then use the GET command to retrieve data from<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the file.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The PUT command can use only one parameter, the name of the<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+data element to store. The parameter can be a string, a variable,<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+an array, or a complex data structure.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Before storing data, you must devise a method to store it in<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+blocks of equal size. Knowing the unit size lets you later retrieve<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the data in its original form. The following procedure shows one<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+way to do this: 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+w<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+PROCEDURE putget
+OREM This procedure creates a file named Test1, reads 10 data lines,
+OREM PUTS them into the file, then closes the file. Next it
+OREM opens the file in the READ mode, GETS stored lines and lists
+OREM them on the display screen.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODIM LENGTH:BYTE<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODIM NULL:STRINGf253<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODIM LINE:STRINGI25l<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODIM PATH:BYTE<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OLENGTH=25<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ONULL-""<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OBASE 0<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+DON ERROR GOTO 10<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODELETE "test1" ( if the file exists, delete it.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+1000N ERROR<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OCREATE #PATH,"te5t1":WRITE ( create a file named test1.<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OFOR T=0 TO 9<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OSEEK #PATH,LENGTH*T ( find beginning of each file.<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+DREAD LINE: (* read a line of data.<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OPUT #PATH,LINES ( store the line in the file.<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ONEXT T<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+s-s<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000013.JPG" WIDTH="20" HEIGHT="5">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Disk Files / 8<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000014.JPG" WIDTH="304" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OCLOSE #PATH ( close the file.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+pOPEN #PATH,"test1";READ ( open the file for reading.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OFOR T=0 TO 9<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OSEEK #PATH,LENGTH*T ( find the beginning of each file.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OGET #PATH,LINE ( get a line from the file.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OPRINT LINE t display the line.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ONEXT T<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OCLOSE #PATH ( close the file.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+REND<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line #1"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line #2"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line x3"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line x4"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line #5"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line x6"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line x7"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line x8"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line x9"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line x10"<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure creates a file named Testl. The variable named
+Length stores the length of each line in the file (25 characters).
+The string variable Null, is a string of 25 space characters. The
+variable Line contains the data to store in each element (record)
+in the file. The variable Path stores the path number of the file.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Next, the procedure contains an <B>ON ERROR </B>routine that deletes
+the file Testl, if it already exists. Without this routine, the procedure produces an error if you execute it more than once.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Next, the routine uses CREATE to open the file Testl. The line
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow1" COLOR="#000000">
+SEEK # P A T H , LENGTH * T 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sets the file pointer to the proper location to store the next line. Because Length is established as 25,
+the file lines are stored at 0, 25, 50, 75, and so on.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+After the routine initializes storage space, it begins to store
+data by reading the procedure data lines one at a time, seeking
+the proper file location, and putting the data into the file. After
+storing all 10 lines, it closes the file.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-7
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000015.JPG" WIDTH="22" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000016.JPG" WIDTH="20" HEIGHT="5">
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The last part of the routine opens the new file, uses the same
+SEEK routine to position the file pointer, and reads the lines
+back, one at a time, to confirm that the store routine is
+successful.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The next short routine shows how you can use a procedure to
+read any line you select in the file, without reading any preceding lines:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+PROCEDURE randomread<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+ODIM LENGTH:BYTE<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pDIM LINE;STRING(251<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pDIM SEEKLINE;HYTE<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+ODIM PATH;HYTE<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pLENGTH=25<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pOPEN #PATH,"test1":READ ( open the file for reading.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DINPUT "Line number to display",SEEKLINE (* type a line to get.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pEXITIF SEEKLINE)10 OR SEEKLINE&lt;1 THEN (* test if record 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+i5 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+valid.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DENDEXIT ( exit loop if not.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pSEEK #PATH,(SEEKLINE-1)*LENGTH ( find the requested record.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pGET #PATH,LINE ( read the record.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pPRINT LINE ( display the record.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DPRINT<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pENDL00P<BR>
+ 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pPRINT "That's all  " ( end session.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pCLOSE #PATH ( close path.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pEND<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The procedure asks for the record number of the line to display.
+When you type the number (1-10) and press 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>ENTER </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+, SEEK moves
+the file pointer to the beginning of the record you want, GET
+reads it into the variable Line, and PRINT displays it. The calculation 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+( S E E K L I N E -1 ) * L E N G T H 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+determines the beginning of
+the line you want. If you type a number outside the range of
+lines contained in the file (1-10), the procedure drops down to
+Line 100 and ends.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+By changing this procedure slightly, you can replace any line in
+the procedure with another line. The altered procedure below
+demonstrates this:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+8-8<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000017.JPG" WIDTH="20" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000018.JPG" WIDTH="22" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000019.JPG" WIDTH="22" HEIGHT="4">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Disk Files l 8
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>PROCEDURE random-replace<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ODIM LENGTH:BYTE<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ODIM LINE:STRINGf251<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ODIM SEEKLINE:BYTE<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>ODIM PATH:BYTE<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OLENGTH=25<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OOPEN #PATH,"test1":UPDATE(* open the file.<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OLOOP<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>DINPUT "Line number to display ...",SEEKLINE (* type record to find.<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>DEXITIF SEEKLINE)10 OR SEEKLINE&lt;1 THEN (* test if valid number.<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OENDEXIT ( exit loop if not<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OSEEK #PATH,(SEEKLINE-1)*LENGTH ( find the requested record.<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OGET #PATH,LINE </B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+(* <B>get the data.<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>OPRINT LINE </B>(* <B>print the record.<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OPR I NT<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OINPUT "Type new line... ",LINE (* type a new line.<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OSEEK #PATH,(SEEKLINE-1)*LENGTH (* find beginning of the record.<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OPUT #PATH,LINE </B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+(* <B>store the new line.<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>OENDLOOP (* do it all again.<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OPRINT "That's all  </B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+" (* <B>terminate procedure.<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+<B>OCLOSE #PATH </B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+(* <B>close path.<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<B>REND<BR>
+</B>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This time, the file is opened in the UPDATE mode to allow both
+reading and writing. You type the line you want to display. A
+prompt then asks you to type a new line. The procedure
+exchanges the new line for the original line, and stores it back in
+the file.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Using Arrays With Random Access Files<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09's random access filing system is even more impressive
+when used with data structures, such as arrays. Instead of using
+a loop to store the 10 lines of the Random-replace procedure,
+you could store them all at once, into one record, using an array.
+The following procedure illustrates this:<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-9
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000020.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000021.JPG" WIDTH="20" HEIGHT="5">
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+PROCEDURE arraywrite
+ODIM LENGTH:HYTE
+ODIM LINE:STRINGt25l
+ODIM RECORD(10):STRINGf25l
+ODIM PATH:BYTE
+OLENGTH=25<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+DON ERROR GOTO 10
+DELETE "testl"
+1000N ERROR<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+(* delete Testl if it exists,<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OCREATE #PATH,"testl":WRITE ( create Test1,<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OHASE 0<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OFOR T=0 TO 9<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+DREAD RECORD(T)<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ONEXT T<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OSEEK #PATH,O<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OPUT #PATH,RECORD<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OCLOSE #PATH<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+DOPEN xPATH,"testl":READ<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OFOR T=0 TO 9<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OSEEK xPATH,LENGTH*T<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OGET xPATH,LINE<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OPRINT LINE<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ONEXT T<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OCLOSE PATH<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+REND<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line 01"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line x2"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line x3"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line x4"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line 6"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line x6"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+01<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line x8"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line #9"<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODATA "This is test line x10"<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+Read data lines into RECORD array,<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+set pointer to beginning of file,
+Store the entire array into file,
+close path to file,<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+open the file to read,<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+find each element,
+read an element,
+print the element,<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+8-10<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000022.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000023.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000024.JPG" WIDTH="24" HEIGHT="5">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Disk </U>F<U>iles / 8<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000025.JPG" WIDTH="277" HEIGHT="1">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure reads the 10 lines into an array named Records.
+Then it places the entire array in the Testl file, using one PUT
+statement. To show that the structure of the file is still the
+same, the original FOR/NEXT loop reads the lines, one at a
+time, and displays them.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Notice that, because you need to write only one element, you can
+set the file pointer to 0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>( s </I>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+E E K # P A T H , 0). 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can <I>rewind </I>a file
+pointer (set it to 0) at any time in this manner.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You could save additional programming space by also reading the
+10 lines back into memory as an array. The following procedure
+uses a new array, Readlines, to call the file back into memory,
+and displays the lines.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+PROCEDURE arrayread<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DHASE 1<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DDIM READLiNES(10);STRINGL25l<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DDIM PATH;HYTE<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DOPEN xPRTH,"te5t1";READ (~ open file,<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DGET xPATH,READLINES (~ read file into array,<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+` DCLOSE #PATH<BR>
+ 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DFOR T=1 TO 9<BR>
+ 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DPRINT READLINES(T) (~ print each element of the array,<BR>
+ 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DNEXT T<BR>
+ 
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+[]END<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Using Complex Data Structures
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In the previous section, you stored and retrieved elements of an
+array that were all the same size, 25 characters. Often you need
+to store elements of varying sizes, such as when you create a
+data base program with several fields in one record.
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following examples create a simple inventory system that
+requires a random access file having 100 records. Each record
+includes the name of the item (a 25-byte string), the item's list
+price and cost (both real numbers), and the quantity on hand (an
+integer).
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000026.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000027.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000028.JPG" WIDTH="266" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-11<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+First, you use the TYPE command to define a new data type
+that describes such a record. For example:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>TYPE INV-ITEM= NAME: STRINGf25J;LIST,COST:REAL;<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>QTY: INTEGER<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Although this statement describes a new record type called
+Inv-item, it does not assign variable storage for the record. The
+next step is to create two data structures: an array of 100 records of type Inv-item named Inv-array and a working record
+named
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Work-rec. The following lines do this:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DIM INV_ARRAY(1 00): INV-ITEM<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DIM WORK-REC : I NV-ITEM<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To determine the number of bytes assigned for each type, you
+can use BASIC09's SIZE command. SIZE returns the number of
+bytes assigned to any variable, array, or complex data structure.
+For example, the command line 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>SIZE (W 0 R K I -R E C) </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+returns the
+number 37. The command 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>S I Z E ( I N V-A R R A Y ) returns </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the number 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>3700.</TT>
+</FONT>
+</P>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can use SIZE with SEEK to position a file pointer to a specific record's address.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following procedure creates a file called Inventory and
+immediately initializes it with zeroes and nulls strings. Five
+INPUT lines then ask you for a record number and the data to
+store in each field of the record. You can fill any record you
+choose, from 1 through 100.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When one record is complete, the procedure uses PUT to store
+the record. Then, it asks you for a new record number. If you
+wish to quit, enter a number either larger than 100 or smaller
+than 1.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+PROCEDURE inventory
+OREM Create a data type consisting of a 25-character name field,
+OREM a real list price field, a real cost field, and an integer
+OREM quantity field.<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OTYPE INV-ITEM=NAME:STRINGt25l; LIST,COST:REAL; QTY:INTEGER.<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pDIM INV-ARRAY(100):INV_ITEM (* dimension an array using new type,<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000029.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000030.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+8-12<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Disk Files l 8
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+pDIM WORK-REC; INV-ITEM
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OREM (* dimension a working variable of the new type.
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+,,,~-~ pDIM PATH;HYTE<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+DON ERROR GOTO 1e
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+pDELETE "inventory"
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ICON ERROR
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+pCREATE OPATH,"inventory" ( create a file named Inventory,
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OWORK-REC.NAME=" ( set all data elements to null or 8.
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OWORK-REC,LIST=0
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OWORK-REC. COST=0
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OWORK-REC.QTY=8
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OFOR N=1 TO 188
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OPUT #PATH,WORK-REC
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ONEXT N
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+pL00P
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OINPUT "Record number? ",RNUM ( enter number of record to write.
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OF RNUM&lt;1 OR RNUM&gt;188 THEN ( check if number is valid.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+pPRINT<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OPRINT "End of Session" ( if not, end session.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OPRINT<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OCLOSE #PATH<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OEND<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+DENDIF<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OINPUT "Item name? ",WORK-REC.NAME ( type data for record.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OINPUT "List price? ",WORK-REC.LIST<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OINPUT "Cost price? " WORK-REC. COST<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OINPUT "Quantity? ",WORK-REC.QTY<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OSEEK #PATH,(RNUM-1)*SIZE(WORK-REC) (* find record.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+pPUT #PATH,WORK-REC ( write record to file.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OENDLOOP<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Notice that the INPUT statements reference each field separately, but the PUT statement references the record as a whole.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The next procedure lets you read any record in your Inventory
+file, and displays that record. If you ask for a record you have not
+yet filled with meaningful data, the display consists of a null
+string and zeroes.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+PROCEDURE readinv<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+OTYPE INV-ITEMzNAME;STRING(25I; LIST,COST;REAL; QTY;INTEGER<BR>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+ODIM WORK-REC; INV-ITEM<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Arial Narrow" COLOR="#000000">
+8-13
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000031.JPG" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000032.JPG" WIDTH="18" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+[]DIM PATH:BYTE<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+[]OPEN OPATH,"INVENTORY";READ<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DLOOP ,,<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+[]INPUT "Record number to display? ",RNUM<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OF RNUM&lt;1 OR RNUM&gt;180 THEN<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OPRINT "End of Session"<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+[]PRINT<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OCLOSE #PATH<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+[]END<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+DENDIF<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+[]SEEK #PATH, (RNUM-1)*SIZE(WORK-REC)<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+[]GET #PATH,WORK-REC<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+[]PRINT "x","Item","List Price","Cost Price","Quantity"<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pPRINT &middot;'--____--______-___________-____________________________________________<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+[]PRINT RNUM,WORK-REC.NAME,WORK-REC.LIST,WORK-REC.COST,WORK-REC.QTY<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pPR I NT<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+pENDLOOP<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+OEND<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure accesses the file one record at a time. It is not
+necessary to do so. You can read the entire file into memory at
+once by dimensioning an inventory array and getting the whole
+file into it:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+[]TYPE INV-ITEM-NAME;STRINGf251; LIST,COST:REAL; QTY:INTEGER<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+ODIM INV-ARRAY(108);INV-ITEM<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+[]SEEK #PATH, 6 (rewind the file*)<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+[]GET #PATH, INV-.ARRAY<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The examples in this section are simple, yet they illustrate the
+combined power of BASIC09 complex data structures and the
+random access file statements. They show that a single GET or
+PUT statement can move any amount of data, organized in any
+way you want. Other advantages are of using complex data structures are:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The procedures are self-documenting. You can see easily
+what a procedure does because its structures can have
+descriptive names.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Execution is extremely fast.
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Procedures are simple and usually require fewer statements to perform I/O functions than other BASICS.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-14
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000033.JPG" WIDTH="26" HEIGHT="8">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Disk Files / 8
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The procedures are versatile. By creating appropriate
+data structures, you can read or write almost any kind
+of data from any file, including files created by other programs or languages.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000034.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~9\GR000035.JPG" WIDTH="18" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8-15<BR>
+</FONT>
+</BODY>
+</HTML>

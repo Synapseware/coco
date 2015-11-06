@@ -1,0 +1,3920 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\Basic09 - Ch 9 Pg 1-26.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<U>Chapter 9
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<U>Displaying Text and Graphics</U>
+</FONT>
+</H2>
+</U><FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 has three levels of graphics capabilities. The first and
+third levels can include both graphics designs and text. The second level can display only graphics designs.<BR>
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+ASCII Codes<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For low-resolution text screens and high-resolution text and
+graphic screens, BASIC09 uses ASCII (American Standard Code
+for Information Interchange) codes to represent the common
+alphanumeric characters. ASCII is the same code that most
+small computers use.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A table of the standard codes follows:<BR>
+<BR>
+<P ALIGN="CENTER">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Table 9.1</B>
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>BASIC09 ASCII Codes 0-127</B>
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Low- and High-Resolution Screens</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Character Decimal Code  Hexadecimal Code
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+BREAK 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+03 03
+</UL>
+<BR>
+  <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8 08
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Q 9 09
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Q 10 OA
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+CLEAR 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1`Z OC
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+13 OD
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Space 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+32 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+20
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+! 33 21
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+" 34 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+22
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+# 35 23
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+$ 36 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+24
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+% 37 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+25
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&amp; 38 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+26
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+' 39 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+27
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+( 40 28
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+41 29
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+* 42 2A
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
++ 43 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+2B
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+44 2C
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+- 45 2D
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+46 2E
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+/ 47 2F
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0 48 30
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+9-1
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<U>BASIC09 Reference<BR>
+</U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Character Decimal Code  Hexadecimal Code
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+1 49 31 ~,
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+2 50 32
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+3 51 33
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+4 52 34
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+5 53 35
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+6 54 36
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+7 55 37
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+8 56 38
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+9 57 39
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+'  58 3A
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+'  59 3B
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+&lt; 60 3C
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+= 61 3D
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+&gt; 62 3E
+</UL>
+<BR>
+  <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+63 3F
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+@ 64 40
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+A 65 41
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+B 66 42
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+C 67 43
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+D 68 44
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+E 69 45
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+F 70 46
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+G 71 47
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+H 72 48
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+I 73 49
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+74 4A
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+K 75 4B
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+L 76 4C
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+M 77 4D
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+N 78 4E
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+O 79 4F
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+P 80 50
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Q 81 51
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+R 82 52
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+S 83 53
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+T 84 54
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+U 85 55
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+V 86 56
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+W 87 57
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+X 88 58
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Y 89 59
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Z 90 5A
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+C ( s
+</FONT>
+<FONT SIZE="1" FACE="Tahoma1" COLOR="#000000">
+Hi~ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0) 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+91 5B
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+9-2<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000000.JPG" WIDTH="22" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000001.JPG" WIDTH="20" HEIGHT="4">
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I><U>Displaying Text and Graphics l 9
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Character Decimal Code  Hexadecimal Code
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+\ ( SHIFf CLEAR ) 92 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+5C
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>( sHm 0) </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+93 5D
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+94 5E
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+-~ ( sHm 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>CED </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+95 5F
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+96 60
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+a 97 61
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+b 98 62
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+c 99 63
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+d 100 64
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+e 101 65
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+f 102 66
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+g 103 67
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+h 104 68
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+i 105 69
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+j 106 6A
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+k 107 6B
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+1 108 6C
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+m 109 6D
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+n 110 6E
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+111 6F
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+p 112 70
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+q 113 71
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+r 114 72
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+s 115 73
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+t 116 74
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+u 117 75
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+v 118 76
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+w 119 77
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+x 120 78
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+y 121 79
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+z 122 7A
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+{ 123 7B
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+124 7C
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+} 125 7D
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+126 7E
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+127 7F
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+You can generate the characters in this chart by pressing the
+appropriate key, or you can generate them from BASIC09 using
+the CHR$ function.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000002.JPG" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000003.JPG" WIDTH="16" HEIGHT="21">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000004.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+9-3<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000005.JPG" WIDTH="306" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Low-Resolution Graphic Characters<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In addition to alphanumeric characters, low-resolution graphics
+also offers graphic characters. Generate these characters by
+pressing 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+ACT 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+at the same time you press a keyboard character.
+The graphics character codes are in the range 128-255.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Pressing 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+ACT 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+while pressing another key, causes OS-9 to add
+128 to the ASCII value of the second key. (For the technically
+minded, OS-9 sets the high bit of the character code.) Therefore,
+if you press 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+ACT 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>0, </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+you produce graphics character 193. You can
+also generate graphics characters from BASIC09 using the
+CHR$ function, and you can PRINT them in the same manner
+as other characters.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Low-level graphics characters follow a pattern that repeats every
+16 characters. Table 9.2 shows the first set of graphic characters,
+128-143. Subsequent characters produce the same series of configurations but display in different colors, as shown in Table 9.3.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="CENTER">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Table 9.2</B>
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Low-Resolution Graphic Character Set</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Character Code Character Code Character Code Character Code<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+128 132 136 140
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000006.JPG" WIDTH="33" HEIGHT="29">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+129<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000007.JPG" WIDTH="104" HEIGHT="82">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+133<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+134<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+135<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000008.JPG" WIDTH="33" HEIGHT="29">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000009.JPG" WIDTH="337" HEIGHT="85">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+137<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+138<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000010.JPG" WIDTH="60" HEIGHT="29">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000011.JPG" WIDTH="31" HEIGHT="27">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+142<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+9-4<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000012.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000013.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000014.JPG" WIDTH="387" HEIGHT="1">
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I><U>Displaying Text and Graphics l 9<BR>
+</U></I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+ <UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Table 9.3
+</UL>
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Low-Resolution Graphics Color Set
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>ASCII Code  Graphics Block Color
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>128 - 143 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Black and Green
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>144 - 159 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Black and Yellow
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>160 - 175 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Black and Blue
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>176 - 191 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Black and Red
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>192 - 207 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Black and Buff
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>208 - 223 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Black and Light Blue
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>224 - 239 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Black and Cyan
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>240 - 254 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Black and Orange
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>255 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Green
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Within each color set, you can easily calculate the number for a
+particular character. For instance, suppose you want to print a
+character that has orange upper left and lower right corners. Picture the character divided into four sections, numbered as
+follows:<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Garamond" COLOR="#000000">
+d 11<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To calculate a character that has orange at Sections 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>8 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and 1, add
+the section values to the first value in the orange group, 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>240,
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+like this:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>240 + 8 + 1 = 249<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Character 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>249 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+is what you want.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following diagram shows how you might block out a large
+letter O on the screen. The shaded portions of the characters are
+colored. The unshaded portions are black. In this case we want
+the colored portions to be green (the same color as the screen).
+You can do this using the color set 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>1,28 - 143.</I>
+</FONT>
+</P>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000015.JPG" WIDTH="133" HEIGHT="2">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000016.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000017.JPG" WIDTH="56" HEIGHT="24">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000018.JPG" WIDTH="18" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+9-5<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Commands Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<B><I>8141181411814<BR>
+</I></B>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<B><I>2<BR>
+</I></B>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+<I>R<BR>
+</I>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+. :a:<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>8  4<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>2<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+   
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+<I>!.~'S,~' : ^ ~~./ y ',ids. </I>.~!`,., .4:~.<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>8 </I>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+<I>a  , M</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>:.M~4<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>2<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+.'y~ ' &lt;oc6: , n<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>8 4<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>4<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000019.JPG" WIDTH="85" HEIGHT="151">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>8<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>2 I 1 ll 2 I 1 II 2<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because Section 1 in the upper left character is to be colored,
+add 1 to the initial character value of 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>128. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The first character
+value is 129. Moving right, Sections 2 and 1 are colored in the
+second character. Add 3 to 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>128 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to get a second character value of
+131. Calculate all 15 characters in this manner.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You could create a letter O in a BASIC09 procedure by 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<B><I>printing
+</I></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+each of the five rows of three characters. You could use DATA
+lines to store the ASCII codes for each character, then use loops
+to read and display the characters they represent.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Although low-level graphics is very rough, it can be useful, and
+it lets you mix graphics with text.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following procedure not only creates the letter O, it adds the
+letter S and the number 9 to display the name of your operating
+system.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000020.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+9-6<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000021.JPG" WIDTH="25" HEIGHT="7">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000022.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000023.JPG" WIDTH="24" HEIGHT="6">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Displaying Text and G</U>r<U>aphics l 9<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+PROCEDURE os9prog<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+pDIM DAT:INTEGER<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OPR I NT CHR $ C 1 2 )<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OPR I NT<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OPR I NT<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OPRINT<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OFOR Z=1 TO 5<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OPRINT TAHC10);<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OFOR T=1 TO 1 2<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+DREAD DAT<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OPRINT CHR$CDAT);<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+ONEXT T<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+OPR I NT<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+ONEXT Z<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+DEN D<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+ODATA 129,131 ,130,143,129,131 ,131 ,143,129,131 ,130,<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+143<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+ODATA 133,143,138,143,133,143,143,143,132,140,136,<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+143<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+ODATA 133,143,138,143,132,140,140,143,131 ,131 ,130,<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+143<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+ODATA 133,143,138,143,131 ,131 ,130,143,143,143,138,<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+143<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+ODATA 132,140,136,143,140,140,136,143,143,143,138,<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+143<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000024.JPG" WIDTH="137" HEIGHT="2">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000025.JPG" WIDTH="16" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000026.JPG" WIDTH="22" HEIGHT="8">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+9-7<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Special Characters in High-Resolution<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+High-resolution graphics does not have graphic characters but it
+does have other international and special characters. These characters are represented by ASCII codes 128 through 159 as shown
+in the following table:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="CENTER">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Table 9.4</B>
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>High-Resolution Special Characters</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Hex Decimal </B>Hex Decimal<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Character Code Code Character Code Code<BR>
+<BR>
+  <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+80 128 0 90 144
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+u 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+81 129 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+Be 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+91 145
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+e 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+82 130 AE 92 146
+</UL>
+<BR>
+  <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+83 131 0 93 147
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+a 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+84 132 6 94 148
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+a 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+85 133 0 95 149
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+a 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+86 134 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+a 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+96 150
+</UL>
+<BR>
+  <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+87 135 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+a 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+97 151
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+e 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+88 136 0 98 152
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+e 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+89 137 O 99 153 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+,,  ,,
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+e 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8A 138 0 9A 154
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+i 8B 139 &sect; 9B 155
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+i 8C 140 &pound; 9C 156
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+13 8D 141 &plusmn; 9D 157
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A 8E 142  9E 158
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+A 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+8F 143 f 9F 159
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Medium-Resolution Graphics<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For more sophisticated graphics operations, OS-9 has built-in
+graphics interface modules that provide a convenient way to
+access the graphics and joystick functions of the Color Computer
+3. The required module for medium-resolution graphics is named
+GFX. It must be in your execution directory or resident in memory when called by BASIC09.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can either install GFX in memory using the LOAD command, or wait until BASIC09 calls it for a graphics function.
+Once loaded, GFX resides in memory until you remove it using
+the OS-9 UNLINK command or the BASIC09 KILL command.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000027.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000028.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000029.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+9-8<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics / 9<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000030.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000031.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+GFX has a number of functions that you pass to it as parameters with the RUN statement. For instance, the following statement clears the current graphics screen:<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+RUN GFXt"CLEAR")<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Other tasks need such parameters as position, color, and size.
+The following is a quick reference to all of the GFX functions.
+Each is explained in detail later:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function Purpose<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>ALPHA<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>CIRCLE<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>CLEAR<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>COLOR<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>GC OLR<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>GLOC<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Sets the screen to the
+alphanumeric mode.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Draws a circle.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Clears the screen to a
+color.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Changes the foreground
+and background colors.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Reads a pixel's color.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Returns a video display
+address.<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>JOYSTK </B>Returns the joystick
+button and X- and Ycoordinate status.
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>LINE<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>MODE<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000032.JPG" WIDTH="22" HEIGHT="7">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>MOVE<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+None.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Radius, optional X- and
+Y-coordinates, and color.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Optional color for screen.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Foreground and
+background colors.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Names of variables in
+which to store optional
+X- and Y-coordinates.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+None.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Names of variables in
+which to return the
+values.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Ending X- and Ycoordinates, optional
+beginning coordinates,
+optional color.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Draws a line.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Switches the screen
+between alphanumeric
+and graphics, sets the
+graphics screen color.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Positions the invisible
+graphics cursor.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Format, Color.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+X- and Y-coordinates.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000033.JPG" WIDTH="306" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+9-9<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000034.JPG" WIDTH="380" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function Purpose Parameters<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>POINT </B>Moves graphics cursor X- and Y-coordinates<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and sets a point. and optional pixel color.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+QUIT Returns screen to None.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+alphanumeric mode.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Deallocates graphics<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+memory.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Formats and Colors<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In medium-resolution graphics, you have a choice of two formats.
+Format 0 provides 256 horizontal points by 192 vertical points. In
+this format, you can have only two colors on the screen at a time.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Format 1 provides a 128 by 192 point screen and a maximum of
+four colors on the screen at a time. OS-9 medium-resolution
+graphics treats the screen as if it were a grid, with coordinate
+0,0 at the lower left corner as shown in the following illustration.
+All points on the grid are positive.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000035.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000036.JPG" WIDTH="10" HEIGHT="88">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Y-coordinate,0 - <U>I
+</UL>
+<BR>
+ <UL>
+</U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+I I I I I I I I I I I I I I I I I
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+0, X-coordinate
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 defines colors with numbers or color codes. Many GFX
+functions allow or require color codes as parameters. BASIC09
+also divides the color codes into color sets. Specifying a color code
+outside the current color set automatically initializes the new
+set.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+9-10<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Displaying Text a</U>n<U>d G</U>r<U>a</U>ph<U>ics / 9<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="CENTER">
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Color
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Set
+</FONT>
+</P>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+1<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+2<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+3<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+4<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<B>Format 0
+</UL>
+</UL>
+</UL>
+<BR>
+ </B>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<B>Color  Back- </B>Fore-<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Code  ground ground<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+00 Black  Black<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+01 Black  Green<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+02<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+03<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+04 Black  Black<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+05 Black  Buff<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+06<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+07<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<B>Format 1
+</UL>
+</UL>
+</UL>
+<BR>
+ </B>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<B>Color  Back- </B>Fore-<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+Code  ground ground<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+00 Green Green<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+01 Green Yellow<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+02 Green Blue<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+03 Green Red<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+04 Buff Buff<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+05 Buff Cyan<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+06 Buff Magenta<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+07 Buff Orange<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+08 Black Black<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+09 Black Dk Green<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+10 Black Md Green<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+11 Black Lt Green<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+12 Black Black<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+13 Black Green<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+14 Black Red<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+15 Black Buff<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000037.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000038.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Table 9.5
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Use the preceding charts to chose colors for those functions that
+let you specify foreground or background colors. For instance, to
+initialize a Format 1 graphics screen with a green background
+and a red foreground, you type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Tahoma" COLOR="#000000">
+run gfxC"mode",1,3)<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following reference section describes all the medium-resolution graphics functions, and provides examples and sample programs. To understand the organization of the commands
+reference, see "The Syntax Line" in Chapter 11.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+9-11
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+The Draw Pointer<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Medium-resolution graphics uses a draw pointer, or invisible
+graphics cursor, to determine what area of the screen is affected
+by graphics operations. When you establish a graphics screen,
+the draw pointer is located at coordinates 0,0. Some graphic
+functions automatically change the pointer location on the
+screen. Fbr instance, the LINE function moves the draw pointer
+from the beginning coordinates to the end coordinates.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because some functions begin at the draw pointer, you need to
+keep track of its location and make certain it is placed properly.
+Use the MOVE function to set the draw pointer to new locations.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000039.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000040.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000041.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000042.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+9-12<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000043.JPG" WIDTH="161" HEIGHT="1">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics / 9<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+ALPHA 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Select alphanumeric screen<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000044.JPG" WIDTH="24" HEIGHT="9">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+tax: RUN GFX("ALPHA")<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Function: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Switches from the graphics screen to the alphanumeric (text) screen. The current graphics screen remains
+intact.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+None<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000045.JPG" WIDTH="64" HEIGHT="13">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX("ALPHA")<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Sample Program:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure lets you choose to draw a circle or rectangle of<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the size you select. Once you choose the shape and size, it uses
+the MODE function to select a graphics screen. When the shape
+is complete, you press 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ENTER </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to return to a text screen. The procedure uses the ALPHA function to return to the original menu.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE alpha<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM XCOR,YCOR,SIDE1,SIDE2,RADIUS,T,X,Y,Z:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM RESPONSE:STRINGL1J<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>10 REPEAT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OSHELL "DISPLAY 0C"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "Do you want to draw"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "1) A rectangle"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "2) A circle"<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT " -Press 1 or 2..."<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OGET #O,RESPONSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OI F RESPONSE="1 " THEN<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OINPUT "Length of Side 1...",SIDE1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OINPUT "Length of Side 2...",SIDE2<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX("MODE",0,0)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFXC"CLEAR")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OXCOR-10<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DYCOR=10<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX("LINE",XCOR,YCOR,XCOR+SIDE1,YCOR,1)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000046.JPG" WIDTH="240" HEIGHT="315">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000047.JPG" WIDTH="22" HEIGHT="7">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000048.JPG" WIDTH="8" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000049.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-13<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pRUN GFXC"LINE",XCOR+SIDE1,YCOR,XCOR+SIDE1,YCOR+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>SIDE2,1 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFXC"LINE",XCOR+SIDE1,YCOR+SIDE2,XCOR,YCOR+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>SIDE2,1 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFXC"LINE",XCOR,YCOR+SIDE2,XCOR,YCOR,1)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DINPUT RESPONSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pELSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF RESPONSE="2" THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OINPUT "What radius?...",RADIUS<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GF X C "MODE" , 0 , 1 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFXC"CLEAR")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ERUN GFXC"CIRCLE",128,90,RADIUS)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DINPUT RESPONSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pEND I F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pENDIF<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OUNTIL RESPONSE&lt;&gt;"1" AND RESPONSEc&gt;"2"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pRUN GFXC"ALPHA")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OGOTO 1 0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OEND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000050.JPG" WIDTH="25" HEIGHT="9">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000051.JPG" WIDTH="22" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000052.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-14<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Displaying Text and Graphics l 9
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+CIRC<U>LE </U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<U><B>Draw a circle<BR>
+</U></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000053.JPG" WIDTH="18" HEIGHT="3">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax:  </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>RUN GFX("CIRCLE"[,xcorycor],radius [,color])<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Draws a circle of a given radius. If you do not specify a color, BASIC09 uses the current foreground color. If you
+do not specify X- and Y-coordinates, CIRCLE uses the current
+graphics cursor position as the circle's center.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+radius The radius of the circle you want to draw.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+color The code of the color you want the circle to be.<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+See the chart earlier in this section for color<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+information.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+xcor,ycor The X- and Y-coordinates for the center of the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+circle. Specifying coordinates outside the X<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+coordinate range of 0-255 or outside the Y<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+coordinate range of 0-191 causes an error.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX("CIRCLE",100)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX("CIRCLE",100,3)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX("CIRCLE",125,100,100)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFXC"CIRCLE", 1 25, 1 00, 1 00,2)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure uses CIRCLE to draw and erase a circle. The
+location of the circle changes before each draw/erase operation,
+causing the circle to move. When it hits the edge of the screen,
+it reverses its direction at a random angle and 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>bounces.<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE circles<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM RADIUS,XCOR,YCOR:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM XTEMP,YTEMP:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM PATH1,PATH2:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM FLAG:INTEGER<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-15
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000054.JPG" WIDTH="18" HEIGHT="4">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OFLAG=1<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OXCOR=5<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OYCOR=5<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OPATH1 =RNDC1 5)+2<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OPATH2=RNDC10)+2<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OXTEMP-249<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OYTEMP =185<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+ORUN GF X C "MODE" , 0 ,1 )<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+ORUN GFXC"CLEAR")<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OFOR T=1 TO 200<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OWHILE XCOR&lt;250 AND XCOR&gt;4 AND YCOR&lt;186 AND YCOR&gt;4<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+DO<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+ORUN GFXC"CIRCLE",XTEMP,YTEMP,3,0)<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+ORUN GFXC"CIRCLE",XCOR,YCOR,3,1)<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OXTEMP=XCOR<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OYTEMP=YCOR<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OXCOR=XCOR+PATH1<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OYCOR=YCOR+PATH2<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OENDWHILE<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+pPATH1 =RNDC 1 5)+2<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OPATH2=RNDC 1 0)+2<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OIF XCOR&gt;249 THEN<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OXCOR=249<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OEND I F<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OIF XCOR&lt;5 THEN<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OXCOR=5<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OEND I F<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OI F YCOR&gt; 185 THEN<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+EIYCOR-185<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OENDIF<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OIF YCOR&lt;5 THEN<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OYCOR=5<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OEND I F<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OFLAG=FLAG*-1<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OIF FLAG&lt;0 THEN<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OPATH1 =PATH1 *-1<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OPATH2=PATH2*-1<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OENDI F<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+ONEXT T<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+OEND<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+9-16<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000055.JPG" WIDTH="22" HEIGHT="6">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000056.JPG" WIDTH="22" HEIGHT="6">
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Displaying Text and Graphics l 9
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+CLEAR 
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Clear the screen<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000057.JPG" WIDTH="22" HEIGHT="7">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Syntax: RUN GFX("CLEAR"[,color])<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Function: Clears the current graphics screen. If you do not
+specify a color, CLEAR sets the entire screen to the current
+background color. CLEAR also sets the graphics cursor at
+coordinates 0,0, the lower left corner of the screen.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Parameters:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+color  A code indicating the color to set the screen.<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Examples:<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFXC"CLEAR")
+RUN GFXC"CLEAR",14)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000058.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000059.JPG" WIDTH="18" HEIGHT="3">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-17<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+COLOR 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Change the foreground color<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000060.JPG" WIDTH="22" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+RUN GFX("COLOR", <B>color)<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Changes the foreground color (and possibly the color
+set). COLOR does not change the graphics format or the cursor position.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+color A code indicating the color you want for the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+foreground. See the chart earlier in this chap<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+ter for color information.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX("COLOR",10)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000061.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+This procedure connects a series of differently colored circles to
+produce a necklace effect.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE necklace<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pDIM COLOR,T,U,J,R,FLAG,XCOR,YCOR:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX("MODE",1,0)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pRUN GFX("CLEAR"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>0COLOR=1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OX COR=1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OYCOR=1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OR=2<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=1 TO 6<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pFOR J=1 TO 40<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OXCOR=XCOR+1 _<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OYCOR=YCOR+.8<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF FLAG&lt;O THEN<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>[]R=R-1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>FlELSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>[]R=R+1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>EIENDIF<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>0COLOR=COLOR+1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DIF COLOR&gt;3 THEN COLOR=1<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-18<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics / 9
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OEND I F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFXC"CIRCLE",XCOR,YCOR,R,COLOR)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT J<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFLAG=FLAG -1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR U=1 TO 10000<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT U<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000062.JPG" WIDTH="18" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000063.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-19<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+GLOC 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Find the graphics screen location<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000064.JPG" WIDTH="26" HEIGHT="7">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax:  RUN GFX("GLOC",storage)<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>Determines the location of the graphics screen in
+memory and returns the address in the specified variable.
+When you know the graphic screen address, you can use
+PEEK and POKE to perform special functions not available in
+the GFX module, such as filling a portion of the screen with a
+color or saving a graphics screen to disk.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS-9 Level Two maps display screens into a program's
+address space before PEEK and POKE can operate on a display screen. This means that you must have at least eight
+kilobytes of free memory in the user's address space. Program
+and data memory requirements must not exceed 56 kilobytes.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+storage An integer or byte type variable in which<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+GLOC stores the memory address of the<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+graphics screen.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Examples:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX("GLOC",location)<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Sample Program:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure uses the GLOC function to locate the current
+graphics screen, then uses POKE to paint a series of boxes on
+the screen.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE boxin<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM LOCATION,PLACE,COLOR,HEGIN,QUIT,X,TERMINATE,<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LINE,T,J:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GF X ("MODE" , 1 , 0 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFX("CLEAR")<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFX("GLOC",LOCATION)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pLOCATION=LOCATION+100 \ PLACE=LOCATION<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>CHEGIN=1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pQUIT=80<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-20<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000065.JPG" WIDTH="20" HEIGHT="4">
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics l 9
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>oCOLOR=255
+OTERM I NATE=1 0
+OLINE=32
+OFOR X=1 TO 4
+OFOR Tml TO QUIT
+OFOR J=BEGIN TO TERMINATE
+OPOKE PLACE+J,COLOR
+ONEXT J
+OPLACE=PLACE+LINE
+ONEXT T
+OLOCATION=LOCATION+160
+OBEGIN=BEGIN+1
+OPLACE=LOCATION
+OQUIT=QUIT-1 0
+OTERMINATE=TERMINATE-1
+OCOLOR=COLOR-85
+ONEXT X
+DI NPUT Z$
+REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000066.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000067.JPG" WIDTH="20" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000068.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-21<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+JOYSTK 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Get joystick status<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000069.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax:  </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>RUN GFX ("JOYST K", stick,fire,xcor, ycor)<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>Determines the status of the specified joystick fire
+button and the X,Y position of the specified joystick handle.
+Use this function only with a standard joystick or mouse, not
+with the high-resolution mouse adapter.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+stick The joystick (0 or 1) for which you want to<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+determine the status. 0 indicates the right joy<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+stick, 1 indicates the left joystick.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>fire A </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+variable in which JOYSTK returns the sta<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+tus of the specified fire button. 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Fire </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+can be<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+byte, integer, or Boolean type. A value other<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+than 0 or TRUE indicates the button is<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+pressed.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+xcor,ycor Byte or integer type variables in which<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+JOYSTK stores the X- and Y-coordinates of<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the joystick handle position. The coordinate<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+range is 0-63.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+RUN GFXC"JOYSTK",0,5hoot,x,y)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000070.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000071.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+9-22<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics / 9
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure uses the JOYSTK function to draw on the screen
+with the right joystick.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE joydraw<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM STICK,FIRE,XCOR,YCOR,XTEMP,YTEMP:INTEGER<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GF X C "MODE" , 0 ,1 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFXC"CLEAR")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OJOY=0 \XCOR=0 \YCOR=0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OREPEAT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OXTEMP=XCOR<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OYTEMP=YCOR<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFXC"JOYSTK",O,FIRE,XCOR,YCOR)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OXCOR=XCOR*4<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OYCOR=YCOR*4<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFXC"LINE",XTEMP,YTEMP,XCOR,YCOR)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OUNTIL FIRE&lt;&gt;0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000072.JPG" WIDTH="18" HEIGHT="4">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+w<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+LINE 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Draw a line<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000073.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+RUN GFX <B>("LINE"[,xcorl, ycorl],xcor2, ycor2<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>[,color] </B>)<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Draws a line in the current or specified foreground
+color in one of the following ways:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; From the current draw position to the specified X,Ycoordinates.
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; From the specified beginning X- and Y-coordinates to the
+specified ending X,Y-coordinates.
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+ </B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+xcorl,ycorl Are LINE's beginning X- and Y-coordinates.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+xcor2,ycor2 Are LINE's ending X- and Y-coordinates.<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+color A code indicating the color you want the line<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+to be. See the chart earlier in this section for<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+color information.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFXC"LINE",192,128)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFXC"LINE",0,0,192,128)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN GFXC"LINE",0,0,192,128,2)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000074.JPG" WIDTH="22" HEIGHT="5">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+9-24<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Displaying Text and Graphics / 9
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Sample Program:<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This procedure draws a sine wave of vertical lines across the
+screen.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE waves<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM A,H,C,D,X,Y,Z:INTEGER<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pCALC=0 \ A=100<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pRUN GFXC"mode", 0, 1 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFXC"CLEAR")<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFXC"COLOR",2)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR X=0 TO 255 STEP 1<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pCALC=CALC+.05<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DY=A-SINCCALC)*15<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pZ=Y+25<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ORUN GFXC"LINE",X,Y,X,Z)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT X<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>SEND<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000075.JPG" WIDTH="24" HEIGHT="7">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000076.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000077.JPG" WIDTH="18" HEIGHT="3">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>9-25<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+MOD<U>E </U>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<U><B>Switch to graphics screen<BR>
+</U></B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000078.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Syntax: </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+RUN <B>GFX("MODE",forma t, color)<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Function: </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Switches the screen from alphanumeric (text) to
+graphics, selecting the screen format and color code. You must
+run MODE before you can use any other graphics function.
+When you do, BASIC09 allocates a six-kilobyte block of memory for graphics. If your system does not have this amount of
+memory available, OS-9 returns an error message.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Parameters:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+format Either 0 (a two-color 256 by 192 pixel screen)<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+or 1 (a four-color, 128 by 192 pixel screen).<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+color A code indicating the color to set the screen.<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+See the chart earlier in this chapter for infor<BR>
+  
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+mation on color sets.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Examples:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+RUN GFXC"MODE",1,2)<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC~10\GR000079.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Tahoma" COLOR="#000000">
+9-26<BR>
+</FONT>
+</BODY>
+</HTML>

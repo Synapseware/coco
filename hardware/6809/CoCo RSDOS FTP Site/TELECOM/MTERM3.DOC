@@ -1,0 +1,515 @@
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page 22
+
+
+
+                            B U F F E R   E N T R Y
+    
+                               Main Menu Option 7
+    
+    
+    
+
+    Selecting this option will present you with a blank screen.  Simply type
+    in any desired data or messages that you wish to send, a screenful at  a
+    time.  To edit, just use the arrow keys to move the blue, nondestructive
+    cursor anywhere that you wish on the screen.
+
+    The  orange  blocks  that you'll see when you hit <ENTER> indicate where
+    you have  "carriage  return"  characters  on  the  screen.   This  is  a
+    convenience feature of MIKEYTERM, since it allows you to enter your text
+    in lines of a certain length.
+
+    The  Color  Computer displays lines 32 characters long, so you may enter
+    lines up to 64 characters long, for example, by simply entering the data
+    until  two  screen  lines  are almost full on your screen.  Pressing the
+    <ENTER> at this point will terminate the line with  a  carriage  return,
+    and  ensure  that  the  length of the line doesn't exceed 64 characters.
+    Similarly, 80-character lines can be entered  by  pressing  the  <ENTER>
+    after two and one-half lines or less have been entered.
+
+    Some editors that are used on BBS's or CompuServe (in  particular)  will
+    not  allow  lines  longer  than  a  certain  preset  limit, say 64 or 80
+    characters.  MIKEYTERM, by displaying the carriage return  characters on
+    the  screen  as  orange  blocks,  allows you to avoid the frustration of
+    having to edit the contents of the buffer in order  to  deal  with  this
+    problem.
+
+    To put the screen in the buffer, just press the  <BREAK>.   Your  screen
+    data  will  be appended to any existing data in the buffer, and then you
+    will be returned to the Main Menu.
+    
+       NOTE:  Once the screen data has been moved to the buffer, it
+              CANNOT be edited further by MIKEYTERM.  It is advisable
+              to edit the text carefully BEFORE pressing the <BREAK>.
+
+    If  you  desire,  you may enter more data into the buffer by re-entering
+    BUFFER ENTRY mode.  The DISPLAY mode may be used to  view  or  print the
+    buffer contents or portion thereof.
+
+    If you wish to abort and return to the  Main  Menu  without  moving  any
+    screen data to the buffer, then use <SHIFT>+<CLEAR>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page 23
+
+
+
+                       C H A N G E   P A R A M E T E R S
+    
+                               Main Menu Option 8
+    
+    
+    
+
+    This  menu  option will allow you to view or change some of the internal
+    parameters used by MIKEYTERM.   Use  the  up  and  down  arrow  keys  to
+    position  the  "->" marker on the line that contains the parameter to be
+    changed.  Use the <ENTER> key to toggle the selected option  through its
+    allowable  parameters.  When  the  parameter  reads  as desired, nothing
+    further is required.  The options are then set as they are displayed.
+
+    The  baud  rate for the printer may be set from this menu also.  Instead
+    of entering a phone number, type an  "*"  followed  by  the  hexadecimal
+    value  that  you would normally POKE into locations &H95 & &H96 (149 and
+    150 in decimal).  Leading zeroes are not required but you many  use them
+    if  you  choose.   If  more than 4 hexadecimal characacters are entered,
+    only the last 4 are used.  To use MIKEYTERM with  a  1200  baud printer,
+    for  example,  you  would  enter  "*0029" or just "*29".  (Don't use the
+    quotes, of course.)  Naturally, the printer and  the  modem  may  not be
+    used simultaneously, due to current hardware and software limitations of
+    the Color Computer.
+
+    The  <spacebar> will return you to Communications, while the <BREAK> key
+    will return you to the Main Menu.
+    
+    
+
+    Miscellaneous Notes:
+
+    When 8-bit word length is  selected,  parity  is  automatically  set  to
+    "NONE".  This is a requirement and may not be modified.
+
+    When  half  duplex  is  selected,  "Linefeed  on  carriage  return"   is
+    automatically  set  to  "YES".   This  is  the usual case for successful
+    operation by your Color Computer, but may be changed to "no" if desired.
+    Note  also  that  in half-duplex mode, the characters that you send from
+    the keyboard will NOT be  stored  in  the  buffer  since  they  are  not
+    received  from the serial interface.  (A half-duplex host doesn't "echo"
+    the characters you send back to you, as a full-duplex host would.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page 24
+
+
+
+                                    E X I T
+    
+                               Main Menu Option *
+    
+    
+    
+
+    Typing an "*" (asterisk) at the Main Menu will produce the prompt:
+    
+                              ARE YOU SURE ?  (Y)
+
+    Any reply other than a 'Y' will return you to the Main Menu.  A 'Y' will
+    reset all disk drive heads to track zero (if a disk system  is  in  use)
+    and then initialize BASIC.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page A-1
+
+
+
+                              Going Online F-A-S-T
+    
+    
+    
+
+    Since MIKEYTERM is supplied pre-configured for successful operation with
+    most BBS's and information services, there  really  isn't  a  reason  to
+    avoid going online NOW!  It's EASY!
+
+    First, just type in LOADM "<filename>": EXEC.   The  <filename>  is  the
+    name  you've given to your customized version of MIKEYTERM if you've run
+   the "CNFG47" program, or use "MTRM47" if you're  running  from  a  BACKUP
+    copy of the distribution disk.
+
+    After the program is loaded into your computer, you'll  see  MIKEYTERM's
+    distinctive title screen displayed.  At this point, you'll probably just
+    want to push the "1" to enter communications mode, unless  you  need  to
+    alter some of the default settings.
+
+    Don't worry about pressing the wrong keys.   If  you  happen  to  make a
+    mistake,  the  <BREAK>  key  will  exit all modes except Communications,
+    where you'll have to use either control-5 or -7.  If you  press  any key
+    other  than  those  between  1-8  or  the  <*>  key,  you'll receive the
+    "*-INVALID OPTION-*" message from MIKEYTERM.  In any  case,  you haven't
+    harmed anything.
+
+    Next, dial your favorite BBS or information service, (use the directions
+    supplied  by  that  service)  and  await  the high-pitched tone from the
+    distant modem.   When  you  hear  it,  just  put  your  modem  into  the
+    "ORIGINATE"  position,  (see  your modem instructions for information if
+    you need it) and you're ONLINE with the host!
+
+    At  this point, you'll need to transmit either a control-C or an <ENTER>
+    to get the ball rolling.  After that,  you've  successfully  entered the
+    fascinating world of TELECOMPUTING!
+
+    Have FUN!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page B-1
+
+
+
+                           Q U I C K   S U M M A R Y
+    
+    
+    
+
+    I.  COMMUNICATIONS Mode:
+    
+
+    A.  Special Characters
+            
+            
+                To Send                 Press these keys
+
+            Control characters:     <down-arrow> + control key
+
+            Horizontal tab:         <control> + <right-arrow>
+
+            [                       <CLEAR>
+
+            ]                       <SHIFT> + <right-arrow>
+
+            Escape                  <control> + <CLEAR>
+
+            Rubout                  <control> + <->
+
+            True line break         <control> + <?>
+    
+    
+    
+
+    B.    Control Key Designations:
+            
+            
+             1    Open/close the buffer
+            
+             2    Adjust RS232 pack baud rate between 110 and 9600 baud
+            
+             3    XMODEM transmit from the buffer
+            
+             4    XMODEM receive into the buffer
+            
+             5    Exit Communication into Display mode
+            
+             6    Send predefined text string
+            
+             7    Exit Communication and go to the Main Menu
+            
+             8    Send predefined text string
+            
+             9    Transmit the buffer
+            
+             0    Send predefined text string
+
+
+
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page B-2
+
+
+
+    II.  DISPLAY Mode:
+    
+
+    <T>op                 Move to the top of the buffer
+
+    <B>ottom              Move to the bottom of the buffer
+
+    <Down-arrow>          Move down one line
+
+    <Up-arrow>            Move up one line
+
+    <SHIFT>+<down-arrow>  Move down a full screen
+
+    <SHIFT>+<up-arrow>    Move up 12 lines
+
+    <P>rint               Print the contents of the buffer
+
+    <BREAK>               Return to MIKEYTERM's Main Menu
+
+    <spacebar>            Return to Communication mode
+
+    <F>ind                Find a character string in the buffer
+
+    <N>ext                Find next occurrence of search string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page C-1
+
+
+
+                   A Brief Description of the XMODEM Protocol
+    
+    
+    
+
+    The  following  description of XMODEM protocol is included as background
+    information for the  technically  interested,  and  may  be  omitted  by
+    others.
+
+    XMODEM is an asynchronous, "receiver driven" file transfer protocol that
+    is  configured  for  8  data  bits,  no  parity,  and one stop bit.  The
+    protocol imposes no restrictions on  the  contents  of  the  data  being
+    transmitted.   No  checks  are  performed  for control characters in the
+    128-byte data blocks.  Absolutely any kind of data may be sent - binary,
+    ASCII,  "compressed" BASIC, etc.  The protocol has not yet been formally
+    adapted to a 7-bit environment for the transmission  of  ASCII-only  (or
+    unpacked hex) data.
+
+    XMODEM's popularity is due to the fact that it is an  "Error  Detecting,
+    Error Correcting" protocol.  Transmission errors due to phone line noise
+    or  other  electrical  disturbances  will  be  detected  and  the  block
+    containing  the  error  will  be  retried  up  to  10  times.   After 10
+    consecutive errors or "timeouts" the  transmission  is  aborted  with  a
+    message indicating the reason.
+
+    MIKEYTERM transmits only from the buffer.  By using a  buffer, MIKEYTERM
+    eliminates  the  time-consuming  disk  access  time that's found in some
+    other terminal programs.
+
+    Once  the  protocol  is  put  into effect, the transmitter waits for the
+    receiver to send an NAK character (ASCII 21).   Meanwhile,  the receiver
+    sends  NAK  signals  every ten seconds.  Once the transmitter detects an
+    NAK, it starts to send the file in sections of 128 bytes.
+
+    Actually, more than 128 bytes are sent for each block.  At the beginning
+    of the block is an SOH character  (ASCII  01),  followed  by  the  ASCII
+    character representing the block number, followed by the ASCII character
+    of the "one's complement" of the block number.  Then  the  128  bytes of
+    the  file  are  sent.  Finally, the block concludes with a hex byte that
+    represents the sum of the ASCII  values  of  the  128  bytes  sent  (the
+    "checksum" character).
+
+    A typical data block looks like this:
+    
+                 1-byte SOH ("Start of Header", or hex 1)
+                 1-byte block number, starting with 1
+                 1-byte complement of the block number (255-block #)
+                 1 block of 128 bytes of data
+                 1-byte checksum: The sum of the data bytes only,
+                                  discarding any carry
+
+    The  way  that file transfer proceeds is something like this:  since the
+    protocol is "receiver driven", the sender waits for the receiver to send
+    him  an  initial NAK ("negative acknowledgement", which is a hexadecimal
+    15).  Then a block is sent and the sender waits for the receiver to send
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page C-2
+
+
+
+    either  a  NAK  or  an  ACK  ("positive  acknowledgement",  which  is  a
+    hexadecimal 6).  The receiver checks the block to verify that everything
+    is in order.  First it makes sure that the block  started  with  an SOH.
+    Then  it  makes sure that the block number is correct.  Then it performs
+    its own calculations on the 128 data bytes and compares its own checksum
+    with the one received from the transmitter.
+
+    If everything is in order, the receiver sends an  ACK  character  (ASCII
+    06)  to  the  transmitter, indicating that the next block is to be sent.
+    If the receiver can't verify, it sends an NAK, requesting that the block
+    be  sent  again.   This continues, block by block, until the entire file
+    has been sent and verified.
+
+    At  the  end  of the file, the transmitter sends an EOT character (ASCII
+    04).  The receiver acknowledges the EOT with an  ACK,  and  the transfer
+    terminates.
+
+    MIKEYTERM uses a few deviations from the XMODEM standard that permit the
+    user  to transmit ASCII files freely.  This deviation, while not part of
+    the original specification, is consistent with the recommendation of the
+    author  of  the  XMODEM  protocol for purposes of adapting it to a 7-bit
+    environment. 
+
+    The differences are listed here in brief:
+
+    1.  A  linefeed/carriage-return pair is inserted at the end of the data
+        to be transmitted.  This ensures that the last data line ends with
+        a carriage-return.
+
+    2.  A  linefeed is inserted after each carriage-return if one does not
+        already follow it in the buffer.
+
+    3.  Blocks are padded with 127 blanks with a carriage return in
+        the 128th position.  This ensures that the last block, if shorter
+        than 128 bytes, will be terminated with a carriage-return.
+
+    4.  The user will be prompted as to whether the file is in ASCII format
+        when XMODEM TRANSMIT is selected.  (Control-3 while in
+        Communications.)  Answer [Y] or [ENTER] if so, and Mikeyterm will
+        handle the rest for you.  Binary files will be sent "as-is".
+    
+    
+    
+    
+    
+                                    The End
+

@@ -1,0 +1,1194 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1254">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>2.</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0" width="630">
+    <tr>
+        <td><a name="2. ASSEMBLERs"></a><font size="2" face="Arial"><strong><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">2.
+        ASSEMBLERs</span></strong></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><font size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>XASM cross assemblers read a source
+        file<span style="mso-spacerun: yes">  </span>(.ASM),<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>produce<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun: yes">               </span>code file (.HEX) containing either MOTOROLA
+        or INTEL format ASCII-HEX<br>
+<span style="mso-spacerun: yes">               </span>download<span style="mso-spacerun:
+yes">  </span>records.<span style="mso-spacerun: yes">  </span>A<span style="mso-spacerun: yes">  </span>optional<span style="mso-spacerun: yes">  </span>listing<span style="mso-spacerun: yes"> 
+</span>        file<span style="mso-spacerun: yes">  </span>(.LST)<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>also<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun:
+yes">               </span>produced.<br>
+        <br>
+        <em><strong><span style="mso-spacerun: yes">       </span> </strong></em></font><a
+        name="2.1 Using the assemblers"><font size="2"
+        face="Arial"><em><strong>2.1 Using the assemblers</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>An assembler is invoked by
+        entering its<span style="mso-spacerun: yes">  </span>name<span style="mso-spacerun: yes">  </span>at<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun:
+yes">  </span>command<br>
+<span style="mso-spacerun: yes">                  </span>prompt, in the following format:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                   </span>ASMxx
+        &lt;filename&gt; [options]<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The &lt;filename&gt; operand is
+        the name of the file to be assembled,<br>
+<span style="mso-spacerun:
+yes">                  </span>it is assumed to have the extension
+        &quot;.ASM&quot; if none is supplied.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Unless otherwise specified,<span style="mso-spacerun: yes">  </span>the
+        code produced by the assembler<br>
+<span style="mso-spacerun: yes">                  </span>is written to a file<span style="mso-spacerun: yes">  </span>with<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>name<span style="mso-spacerun: yes"> 
+</span>        '&lt;filename&gt;.HEX',<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>listing is written to a file with the
+        name '&lt;filename&gt;.LST'.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>2.1.1 Command line options</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                    </span><span style="mso-spacerun:
+yes">    </span>The following options may
+        be specified on the command<span style="mso-spacerun: yes">  </span>line,<br>
+<span style="mso-spacerun:
+yes">                     </span>following the &lt;filename&gt;
+        operand:<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>-A - [A]lternate jumps/calls<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>Causes<span style="mso-spacerun: yes">  </span>8051<span style="mso-spacerun: yes">  </span>family<span style="mso-spacerun: yes"> 
+</span>        assemblers<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">   </span>use<span style="mso-spacerun: yes">   </span>AJMP/ACALL<br>
+<span style="mso-spacerun: yes">                          </span>instructions in place
+        of LJMP/LCALL.<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>Causes the AVR
+        assembler to use RJMP/RCALL in place<span style="mso-spacerun: yes">  </span>of<br>
+<span style="mso-spacerun: yes">                          </span>JMP/CALL when an
+        explicit page number is not supplied.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>-C - [C]ase sensitive<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>Causes the
+        assembler<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>make<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun:
+yes">  </span>distinction<span style="mso-spacerun: yes">  </span>between<br>
+<span style="mso-spacerun: yes">                          </span>upper and lower case
+        characters in symbol names.<span style="mso-spacerun: yes">  </span>If<span style="mso-spacerun: yes">  </span>this<br>
+<span style="mso-spacerun:
+yes">                          </span>option<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>not<span style="mso-spacerun:
+yes">  </span>used,<span style="mso-spacerun: yes"> 
+</span>        the<span style="mso-spacerun: yes">  </span>assembler<span style="mso-spacerun: yes">  </span>will<span style="mso-spacerun: yes">  </span>ignore<span style="mso-spacerun: yes">  </span>case<br>
+<span style="mso-spacerun:
+yes">                          </span>differences,<span style="mso-spacerun: yes">  </span>and
+        assume that the symbols<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>same.<br>
+<span style="mso-spacerun:
+yes">                          </span>NOTE: When using this
+        option,<span style="mso-spacerun: yes">  </span>you must enter any register<br>
+<span style="mso-spacerun: yes">                          </span>names in UPPER case.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>C=&lt;filename&gt; - Specify
+        [C]ode file<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>This option
+        allows you to specify the file to which the<br>
+<span style="mso-spacerun: yes">                          </span>output code is
+        written.<span style="mso-spacerun: yes">  </span>If no extension<span style="mso-spacerun:
+yes">  </span>is<span style="mso-spacerun: yes">  </span>supplied<span style="mso-spacerun: yes">  </span>as<br>
+<span style="mso-spacerun:
+yes">                          </span>part of
+        &lt;filename&gt;, it defaults to &quot;.HEX&quot;.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>-F - Generate [F]ull listing<br>
+        <br>
+<span style="mso-spacerun:
+yes">                             </span>Causes the
+        assembler to output a full source listing to<br>
+<span style="mso-spacerun: yes">                          </span>the '.LST' file.<span style="mso-spacerun: yes">  </span>By
+        default, only lines containing errors<br>
+<span style="mso-spacerun: yes">                          </span>are written to the
+        listing file.<br>
+        <br clear="all" style="page-break-before:
+always">
+<span style="mso-spacerun: yes">                     </span>-I - Generate [I]ntel format HEX
+        file<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>Causes the
+        assembler to output the code to<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>'.HEX'<br>
+<span style="mso-spacerun:
+yes">                          </span>file in INTEL hex
+        format.<span style="mso-spacerun: yes">  </span>By default the code is<span style="mso-spacerun: yes">  </span>written<br>
+<span style="mso-spacerun:
+yes">                          </span>to the file in
+        MOTOROLA hex format.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>L=&lt;filename&gt; - Specify
+        [L]isting file<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>This option
+        allows you to specify the file to which the<br>
+<span style="mso-spacerun: yes">                          </span>listing is written. If
+        no extension is supplied as part of<br>
+<span style="mso-spacerun:
+yes">                          </span>&lt;filename&gt;, it
+        defaults to &quot;.LST&quot;.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>O=&lt;value&gt; - [O]ptimization
+        (ASM00,01,02,05,08,09,11,12,16,96)<br>
+        <br>
+<span style="mso-spacerun:
+yes">                             </span>This option
+        allows you to set a limit<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>maximum<br>
+<span style="mso-spacerun: yes">                          </span>number of optimization
+        passes<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun:
+yes">  </span>the<span style="mso-spacerun: yes">  </span>assembler<span style="mso-spacerun: yes">  </span>will<br>
+<span style="mso-spacerun:
+yes">                          </span>perform while
+        attempting to minimize code size and resolve<br>
+<span style="mso-spacerun: yes">                          </span>forward<span style="mso-spacerun: yes">  </span>referenced<span style="mso-spacerun: yes"> 
+</span>        symbols.<span style="mso-spacerun: yes">  </span>If<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun:
+yes">  </span>symbol<span style="mso-spacerun: yes">  </span>can<span style="mso-spacerun: yes">  </span>not<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                          </span>resolved within<span style="mso-spacerun: yes">  </span>this<span style="mso-spacerun: yes"> 
+</span>        many<span style="mso-spacerun: yes">  </span>passes,<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>assembler<span style="mso-spacerun: yes">  </span>will<br>
+<span style="mso-spacerun: yes">                          </span>terminate with an
+        error message.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                             </span>You may specify
+        between 0 and 127<span style="mso-spacerun: yes">  </span>optimization<span style="mso-spacerun:
+yes">  </span>passes<br>
+<span style="mso-spacerun: yes">                          </span>to be run,<span style="mso-spacerun: yes">  </span>with 0<span style="mso-spacerun: yes">  </span>being<span style="mso-spacerun: yes"> 
+</span>        a<span style="mso-spacerun: yes">  </span>special<span style="mso-spacerun: yes">  </span>case<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>no<br>
+<span style="mso-spacerun:
+yes">                          </span>optimization<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>performed.<span style="mso-spacerun: yes"> 
+</span>        Without<span style="mso-spacerun: yes">  </span>optimization,<span style="mso-spacerun: yes">   </span>all<br>
+<span style="mso-spacerun: yes">                          </span>non-specified memory
+        references<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>offsets<span style="mso-spacerun: yes">  </span>default<span style="mso-spacerun: yes">  </span>to<br>
+<span style="mso-spacerun: yes">                          </span>their largest form,
+        and forward references in EQU, ORG, or<br>
+<span style="mso-spacerun:
+yes">                          </span>RMB statements will
+        not work.<span style="mso-spacerun: yes">  </span>The code generated will not<br>
+<span style="mso-spacerun: yes">                          </span>be optimal, but
+        assembly time is reduced.<span style="mso-spacerun: yes">  </span>This feature is<br>
+<span style="mso-spacerun: yes">             </span><span style="mso-spacerun:
+yes">             </span>most useful when
+        initialy testing and debugging a program.<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>The default
+        maximum number of optimization passes is 3.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>P=&lt;length&gt; - Set page
+        length<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>This option
+        specifies the number of lines which will be<br>
+<span style="mso-spacerun: yes">                          </span>printed on each page.
+        The default number of lines per page<br>
+<span style="mso-spacerun:
+yes">                          </span>is 60.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>-Q - [Q]uiet mode<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>Causes<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>assembler<span style="mso-spacerun: yes"> 
+</span>        to<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>quiet,<span style="mso-spacerun: yes">  </span>inhibiting<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                          </span>display of the
+        progress messages.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>-S - Generate [S]ymbol table<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>Causes the
+        assembler to sort<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>display<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>symbol<br>
+<span style="mso-spacerun: yes">                          </span>table at the end of
+        the<span style="mso-spacerun: yes">  </span>listing<span style="mso-spacerun: yes">  </span>file.<span style="mso-spacerun: yes">  </span>By<span style="mso-spacerun: yes">  </span>default,<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                          </span>symbol table is not
+        displayed.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>-T - Output to [T]erminal<br>
+        <br>
+<span style="mso-spacerun:
+yes">                             </span>Causes the
+        assembler<span style="mso-spacerun:
+yes">  </span>to<span style="mso-spacerun: yes">  </span>output<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>listing<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                          </span>terminal, (via stdout)
+        instead of the usual '.LST' file.<br>
+        <br clear="all" style="page-break-before:always">
+        <br>
+<span style="mso-spacerun: yes">                     </span>-W - Wrap relative addresses<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>Causes the AVR
+        assembler to allow RJMP/RCALL to &quot;wrap&quot;,<br>
+<span style="mso-spacerun: yes">                          </span>making the entire 1st
+        8K<span style="mso-spacerun: yes">  </span>available.<span style="mso-spacerun:
+yes">  </span>This<span style="mso-spacerun: yes">  </span>option<span style="mso-spacerun: yes">  </span>should<br>
+<span style="mso-spacerun:
+yes">                          </span>only be used with
+        CPU's that perform<span style="mso-spacerun: yes">  </span>this<span style="mso-spacerun: yes">  </span>wrapping<span style="mso-spacerun: yes">  </span>(ie:<br>
+<span style="mso-spacerun: yes">                          </span>those with only 8K<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes"> 
+</span>        code<span style="mso-spacerun: yes">  </span>memory,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>do<span style="mso-spacerun: yes">  </span>not<br>
+<span style="mso-spacerun:
+yes">                          </span>support JMP/CALL).<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>W=&lt;width&gt; - Set page width<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>This option
+        control the number of columns which will be<br>
+<span style="mso-spacerun: yes">                          </span>used for the printing
+        of page titles and the symbol<span style="mso-spacerun: yes">  </span>table<br>
+<span style="mso-spacerun: yes">                          </span>listing. Default page
+        width is 80 columns.<br>
+        <br>
+</font></span>        </td>
+    </tr>
+</table>
+
+<table border="0" width="630">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="2.2 Redirecting the listing file"><font size="2"
+        face="Arial"><em><strong>2.2 Redirecting the listing file</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>When the listing file is
+        directed to the terminal with the '-t'<br>
+<span style="mso-spacerun: yes">                  </span>option on the command line,<span style="mso-spacerun: yes">  </span>it is
+        displayed through the<span style="mso-spacerun: yes">  </span>standard<br>
+<span style="mso-spacerun: yes">                  </span>output file,<span style="mso-spacerun: yes">  </span>allowing it to be
+        redirected to a printer<span style="mso-spacerun: yes">  </span>etc.<span style="mso-spacerun:
+yes">  </span>via<br>
+<span style="mso-spacerun: yes">                  </span>the shell<span style="mso-spacerun: yes">  </span>'&gt;'<span style="mso-spacerun:
+yes">  </span>redirection
+        operator<span style="mso-spacerun: yes">  </span>(EG:<span style="mso-spacerun: yes">  </span>ASMxx filename<span style="mso-spacerun: yes">  </span>-f<span style="mso-spacerun: yes">  </span>-t<br>
+<span style="mso-spacerun: yes">                  </span>&gt;LPT1:).<span style="mso-spacerun: yes">  </span>The progress messages<span style="mso-spacerun: yes">  </span>('First
+        pass...' etc)<span style="mso-spacerun: yes">  </span>are output<br>
+<span style="mso-spacerun:
+yes">                  </span>through stderr,<span style="mso-spacerun: yes">  </span>and will therefore
+        not<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>redirected<span style="mso-spacerun: yes">  </span>with<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>listing.<br>
+</font></span>        </td>
+    </tr>
+</table>
+
+<table border="0" width="630">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="2.3 Source file format"><font size="2" face="Arial"><em><strong>2.3
+        Source file format</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>NOTE:<span style="mso-spacerun: yes">  </span>All XASM assemblers follow<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun:
+yes"> 
+</span>        consistent<span style="mso-spacerun: yes">  </span>generic<span style="mso-spacerun: yes">  </span>syntax,<br>
+<span style="mso-spacerun:
+yes">                  </span>which is as close as possible to that
+        published by the majority of<br>
+<span style="mso-spacerun: yes">                  </span>CPU makers.<span style="mso-spacerun: yes">  </span>In a few cases,<span style="mso-spacerun: yes">  </span>this
+        differs<span style="mso-spacerun:
+yes">  </span>significantly<span style="mso-spacerun: yes">  </span>from<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun:
+yes">                  </span>unique syntax published for a specific
+        CPU or vendor.<span style="mso-spacerun: yes">  </span>Please read<br>
+<span style="mso-spacerun: yes">                  </span>this section carefully,<span style="mso-spacerun: yes">  </span>and refer<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes"> 
+</span>        the<span style="mso-spacerun:
+yes">  </span>example<span style="mso-spacerun: yes">  </span>programs<span style="mso-spacerun: yes">  </span>to<br>
+<span style="mso-spacerun:
+yes">                  </span>become familier with the XASM syntax.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The assembly source input lines
+        are in the following format:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>'&lt;label&gt;[:]<span style="mso-spacerun: yes">  </span>&lt;instruction&gt;<span style="mso-spacerun: yes"> 
+</span>        &lt;operands&gt;<span style="mso-spacerun: yes">  </span>[;]&lt;comment&gt;'<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>Labels must begin in column one,
+        and must be separated from the<br>
+<span style="mso-spacerun: yes">                  </span>instruction field by at least one
+        blank or tab<span style="mso-spacerun: yes">  </span>character.<span style="mso-spacerun: yes">  </span>Labels<br>
+<span style="mso-spacerun: yes">                  </span>may be followed by a ':' if desired,<span style="mso-spacerun: yes"> 
+</span>        however this is not required<br>
+<span style="mso-spacerun: yes">                 </span><span style="mso-spacerun: yes"> </span>by the assembler.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>If the an instruction or
+        directive requires operands,<span style="mso-spacerun: yes">  </span>then the<br>
+<span style="mso-spacerun: yes">                  </span>operand field is required,<span style="mso-spacerun: yes">  </span>and is
+        separated from the<span style="mso-spacerun: yes">  </span>instruction<br>
+<span style="mso-spacerun: yes">                  </span>by at least one blank or tab.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The optional comment field is
+        delimited from the operand<span style="mso-spacerun: yes">  </span>field<br>
+<span style="mso-spacerun: yes">                  </span>by at least one blank or tab,<span style="mso-spacerun: yes">  </span>and is
+        ignored<span style="mso-spacerun:
+yes">  </span>by<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>assembler.<br>
+<span style="mso-spacerun:
+yes">                  </span>Blanks or tabs within<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>operand<span style="mso-spacerun: yes"> 
+</span>        field<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>allowed<span style="mso-spacerun: yes">  </span>only<span style="mso-spacerun: yes">  </span>if<br>
+<span style="mso-spacerun: yes">                  </span>contained within the delimiters of a
+        character<span style="mso-spacerun: yes">  </span>string, <span style="mso-spacerun: yes"> </span>otherwise<br>
+<span style="mso-spacerun: yes">                  </span>they will be interpreted as the end of
+        the operand field.<span style="mso-spacerun: yes">  </span>The Z80<br>
+<span style="mso-spacerun: yes">                  </span>assembler requires a leading<span style="mso-spacerun: yes">  </span>';'<span style="mso-spacerun: yes">  </span>comment
+        delimiter on<span style="mso-spacerun: yes">  </span>all<span style="mso-spacerun: yes">  </span>line<br>
+<span style="mso-spacerun:
+yes">                  </span>comments.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>Any lines beginning with a '*'<span style="mso-spacerun: yes"> 
+</span>        or ';'<span style="mso-spacerun: yes">  </span>character in column one<br>
+<span style="mso-spacerun: yes">                  </span>are considered to be<span style="mso-spacerun: yes">  </span>comments,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes"> 
+</span>        are<span style="mso-spacerun: yes">  </span>not<span style="mso-spacerun: yes">  </span>processed<span style="mso-spacerun: yes">  </span>by<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>assembler.<br>
+</font></span>        </td>
+    </tr>
+</table>
+
+<table border="0" width="630">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><span style="mso-spacerun: yes">       </span></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="2.4 Expressions"><font size="2" face="Arial"><em><strong>2.4
+        Expressions</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>When an 8 or 16 bit value is<span style="mso-spacerun: yes">  </span>required<span style="mso-spacerun: yes"> 
+</span>        as<span style="mso-spacerun: yes">  </span>an<span style="mso-spacerun:
+yes">  </span>operand<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>an<br>
+<span style="mso-spacerun:
+yes">                  </span>assembler directive or an instruction,<span style="mso-spacerun: yes"> 
+</span>        either a simple value,<span style="mso-spacerun: yes">  </span>or<br>
+<span style="mso-spacerun:
+yes">                  </span>an expression consisting of simple
+        values<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>operators<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun:
+yes">                  </span>used.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>All expressions are evaluated
+        using<span style="mso-spacerun: yes">  </span>16<span style="mso-spacerun: yes">  </span>bit<span style="mso-spacerun: yes">  </span>values.<span style="mso-spacerun: yes">  </span>When<span style="mso-spacerun: yes">  </span>an<br>
+<span style="mso-spacerun: yes">                  </span>expression is evaluated in an
+        instruction requiring an<span style="mso-spacerun: yes">  </span>eight<span style="mso-spacerun: yes">  </span>bit<br>
+<span style="mso-spacerun: yes">                  </span>value,<span style="mso-spacerun:
+yes">  </span>the lower eight bits are
+        used.<span style="mso-spacerun: yes">  </span>Expressions are<span style="mso-spacerun: yes">  </span>evaluated<br>
+<span style="mso-spacerun: yes">                  </span>from left to right,<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>each<span style="mso-spacerun: yes">  </span>operator<span style="mso-spacerun: yes"> 
+</span>        is<span style="mso-spacerun: yes">  </span>encountered,<span style="mso-spacerun: yes">  </span>without<br>
+<span style="mso-spacerun: yes">           </span><span style="mso-spacerun:
+yes">       </span>precedence.<span style="mso-spacerun: yes">  </span>Precedence can be forced
+        with the<span style="mso-spacerun: yes">  </span>use<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun:
+yes">  </span>brackets.<br>
+<span style="mso-spacerun: yes">                  </span>Spaces or tabs are not allowed within
+        an expression,<span style="mso-spacerun: yes">  </span>unless<span style="mso-spacerun: yes">  </span>they<br>
+<span style="mso-spacerun: yes">                  </span>are contained within a character
+        string.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>The following operators may be
+        used in an expression:<br>
+        <br>
+<span style="mso-spacerun: yes">               </span>2.4.1 Unary (one operand) operators:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                       </span>-<span style="mso-spacerun: yes">   </span>- Negation, returns
+        the negative of the next value.<br>
+<span style="mso-spacerun: yes">                       </span>~<span style="mso-spacerun:
+yes">   </span>- Complement, returns
+        one's complement of the value.<br>
+<span style="mso-spacerun: yes">                       </span>=<span style="mso-spacerun:
+yes">   </span>- Swaps the high and
+        low bytes of the next value.<br>
+        <br>
+<span style="mso-spacerun: yes">               </span>2.4.2 Binary (two operand) operators:<br>
+        <br>
+<span style="mso-spacerun: yes">                       </span>+<span style="mso-spacerun: yes">   </span>- Addition.<br>
+<span style="mso-spacerun: yes">                       </span>-<span style="mso-spacerun:
+yes">   </span>- Subtraction.<br>
+<span style="mso-spacerun:
+yes">                       </span>*<span style="mso-spacerun: yes">   </span>- Multiplication.<br>
+<span style="mso-spacerun: yes">                       </span>/<span style="mso-spacerun: yes">   </span>- Division (unsigned).<br>
+<span style="mso-spacerun: yes">                       </span>\<span style="mso-spacerun:
+yes">   </span>- Modulus, returns
+        remainder after division.<br>
+<span style="mso-spacerun: yes">                       </span>&amp;<span style="mso-spacerun:
+yes">   </span>- Bitwise AND.<br>
+<span style="mso-spacerun:
+yes">                       </span>|<span style="mso-spacerun: yes">   </span>- Bitwise OR.<br>
+<span style="mso-spacerun: yes">                       </span>^<span style="mso-spacerun: yes">   </span>- Bitwise EXCLUSIVE
+        OR.<br>
+<span style="mso-spacerun: yes">                       </span>&lt;<span style="mso-spacerun:
+yes">   </span>- Shift left<br>
+<span style="mso-spacerun: yes">                       </span>&gt;<span style="mso-spacerun: yes">   </span>- Shift right<br>
+        <br>
+        <br>
+<span style="mso-spacerun: yes">               </span>2.4.3 Values in expressions<br>
+        <br>
+<span style="mso-spacerun: yes">                       </span>The following forms of
+        simple values may be used.<br>
+        <br>
+<span style="mso-spacerun: yes">                       </span>nnn<span style="mso-spacerun: yes">     </span>- Decimal
+        number, eg: 21<br>
+<span style="mso-spacerun: yes">                       </span>nnnD<span style="mso-spacerun: yes">    </span>- &quot;&quot;
+        &quot;&quot;: 21d<br>
+<span style="mso-spacerun: yes">                       </span>nnnT<span style="mso-spacerun:
+yes">    </span>- &quot;&quot;
+        &quot;&quot;: 21t<br>
+<span style="mso-spacerun: yes">                       </span>$nnn<span style="mso-spacerun:
+yes">    </span>- Hexidecimal
+        number, eg: $15<br>
+<span style="mso-spacerun:
+yes">                       </span>nnnH<span style="mso-spacerun: yes">    </span>- &quot;&quot;
+        &quot;&quot;: 15h<span style="mso-spacerun: yes">  </span>(Must begin with 0-9, eg: 0FFh)<br>
+<span style="mso-spacerun: yes">                       </span>%nnn<span style="mso-spacerun: yes">    </span>- Binary number,
+        eg: %10101<br>
+<span style="mso-spacerun: yes">                       </span>nnnB<span style="mso-spacerun: yes">    </span>- &quot;&quot;
+        &quot;&quot;: 10101b<br>
+<span style="mso-spacerun: yes">                       </span>@nnn<span style="mso-spacerun:
+yes">    </span>- Octal number,
+        eg: @177<br>
+<span style="mso-spacerun:
+yes">                       </span>nnnO<span style="mso-spacerun: yes">    </span>- &quot;&quot;
+        &quot;&quot;: 177o<br>
+<span style="mso-spacerun:
+yes">                       </span>nnnQ<span style="mso-spacerun: yes">    </span>- &quot;&quot;
+        &quot;&quot;: 177q<br>
+<span style="mso-spacerun:
+yes">                       </span>'cc' <span style="mso-spacerun: yes">   </span>- ASCII
+        characters, eg: 'A'<br>
+<span style="mso-spacerun: yes">                       </span>&lt;label&gt; - Value of a
+        label from symbol table.<br>
+<span style="mso-spacerun: yes">                       </span>*<span style="mso-spacerun:
+yes">       </span>- Value of
+        current program counter.<br>
+<span style="mso-spacerun: yes">                       </span>$<span style="mso-spacerun:
+yes">       </span>- &quot;&quot;
+        &quot;&quot;<br>
+</font></span>        </td>
+    </tr>
+</table>
+
+<table border="0" width="630">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><span style="mso-spacerun: yes">       </span></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="2.5 Addressing Modes"><font size="2" face="Arial"><em><strong>2.5
+        Addressing Modes</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>XASM<span style="mso-spacerun:
+yes">  </span>assemblers<span style="mso-spacerun: yes">  </span>support<span style="mso-spacerun: yes">  </span>all<span style="mso-spacerun: yes"> 
+</span>        addressing<span style="mso-spacerun: yes">  </span>modes<span style="mso-spacerun: yes">   </span>for<span style="mso-spacerun: yes">   </span>their<br>
+<span style="mso-spacerun: yes">                  </span>respective processors and will
+        determine the type of addressing to<br>
+<span style="mso-spacerun: yes">                  </span>use from the instruction and/or its
+        operands.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><span style="mso-spacerun: yes">   </span>For cases where different<span style="mso-spacerun: yes">  </span>sized<span style="mso-spacerun: yes"> 
+</span>        offsets<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>available,<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>assembler will always use the smallest
+        (most efficent) form of the<br>
+<span style="mso-spacerun: yes">                  </span>offset unless assembling with no
+        optimization in<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>case<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>largest offset will be used.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>2.5.1 Immediate addressing<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>For all assemblers except
+        ASM85,<span style="mso-spacerun: yes">  </span>the operand is<span style="mso-spacerun: yes">  </span>determined<br>
+<span style="mso-spacerun: yes">                     </span>to be an immediate value if it
+        is preceeded<span style="mso-spacerun: yes">  </span>by<span style="mso-spacerun:
+yes">  </span>a<span style="mso-spacerun: yes">  </span>pound<span style="mso-spacerun: yes">  </span>sign<br>
+<span style="mso-spacerun:
+yes">                     </span>('#').<span style="mso-spacerun: yes">  </span>For instructions
+        requiring only<span style="mso-spacerun: yes">  </span>8<span style="mso-spacerun: yes">  </span>bits<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>immediate<br>
+<span style="mso-spacerun: yes">                     </span>data,<span style="mso-spacerun:
+yes">  </span>the lower eight bits of
+        the<span style="mso-spacerun: yes">  </span>value<span style="mso-spacerun: yes">  </span>will<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>used.<span style="mso-spacerun: yes">  </span>The<br>
+<span style="mso-spacerun: yes">                     </span>higher 8 bits of a value can be
+        accessed by preceeding it<span style="mso-spacerun: yes">  </span>with<br>
+<span style="mso-spacerun: yes">                     </span>'=' (swapping high and low
+        bytes).<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>The<span style="mso-spacerun: yes">  </span>'#'<span style="mso-spacerun: yes">  </span>character is
+        NOT used<span style="mso-spacerun: yes">  </span>with<span style="mso-spacerun: yes">  </span>immediate<span style="mso-spacerun: yes">  </span>values<span style="mso-spacerun: yes">  </span>in<br>
+<span style="mso-spacerun:
+yes">                     </span>ASM85,<span style="mso-spacerun: yes">  </span>because the immediate
+        addressing context is inherent in<br>
+<span style="mso-spacerun:
+yes">                     </span>the instruction.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>2.5.2 Direct/Extended addressing<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>For assemblers supporting
+        direct addressing (ASM00, 01,<span style="mso-spacerun: yes">  </span>02,<br>
+<span style="mso-spacerun: yes">                     </span>05, 08, 09 11 and 12), the
+        operand is determined to be a DIRECT<br>
+<span style="mso-spacerun:
+yes">                     </span>(8 bit)<span style="mso-spacerun: yes">  </span>address if it is
+        preceeded by<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>left<span style="mso-spacerun:
+yes">  </span>angle<span style="mso-spacerun: yes">  </span>bracket<br>
+<span style="mso-spacerun: yes">                     </span>('&lt;').<span style="mso-spacerun: yes">  </span>For ASM00, 01, 02,
+        05,<span style="mso-spacerun: yes">  </span>11 and 12 this will reference a<br>
+<span style="mso-spacerun: yes">                     </span>value in the &quot;zero&quot;<span style="mso-spacerun: yes">  </span>page
+        of memory<span style="mso-spacerun: yes">  </span>($0000-$00FF).<span style="mso-spacerun:
+yes">  </span>For ASM09,<br>
+<span style="mso-spacerun: yes">                     </span>this will reference a value in
+        the memory page indicated by the<br>
+<span style="mso-spacerun: yes">                     </span>Direct Page (DP) register.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>An operand is determined
+        to be an ABSOLUTE or<span style="mso-spacerun: yes">  </span>EXTENDED<span style="mso-spacerun: yes">  </span>(16<br>
+<span style="mso-spacerun:
+yes">                     </span>bit) address if it is preceeded
+        by a right angle bracket ('&gt;').<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>If no addressing mode is
+        explicitly specified,<span style="mso-spacerun:
+yes">  </span>the assmbler<br>
+<span style="mso-spacerun: yes">                     </span>will use DIRECT addressing if
+        (ASM00, 01, 02, 05, 08,<span style="mso-spacerun: yes">  </span>11,<span style="mso-spacerun: yes">  </span>12:<br>
+<span style="mso-spacerun: yes">                     </span>the value is less than $0100)<span style="mso-spacerun: yes">  </span>or
+        (ASM09:<span style="mso-spacerun: yes">  </span>The high byte of the<br>
+<span style="mso-spacerun: yes">                     </span>values matches the last SETDP)<span style="mso-spacerun: yes"> 
+</span>        otherwise<span style="mso-spacerun: yes">  </span>ABSOLUTE<span style="mso-spacerun: yes">  </span>addressing<br>
+<span style="mso-spacerun: yes">                     </span>will be used.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>2.5.3 Indirect addressing<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>For processors supporting
+        indirection<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>other<span style="mso-spacerun: yes">  </span>addressing<br>
+<span style="mso-spacerun:
+yes">                     </span>modes, this is indicated by
+        placing the addressing reference in<br>
+<span style="mso-spacerun: yes">                     </span>square braces ('[]').
+        Additionally, ASM51/320 supports the 8051<br>
+<span style="mso-spacerun: yes">                     </span>notation of a leading '@'.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>In ASM02,<span style="mso-spacerun: yes">  </span>indexed
+        indirect addressing off of<span style="mso-spacerun: yes">  </span>'X'<span style="mso-spacerun: yes">  </span>must<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                     </span>specified using square braces
+        around the<span style="mso-spacerun: yes">  </span>entire<span style="mso-spacerun: yes">  </span>operand<span style="mso-spacerun: yes">  </span>(Eg:<br>
+<span style="mso-spacerun: yes">                     </span>'[10,X]').<span style="mso-spacerun: yes">  </span>Indirect indexed
+        addressing off of 'Y' is specified<br>
+<span style="mso-spacerun:
+yes">                     </span>by enclosing the offset value in
+        square braces (Eg: '[10],Y').<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                  </span>2.5.4 ASM11/12 use of ';'<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>The 68HC11 and 68HC12
+        instruction<span style="mso-spacerun: yes">  </span>sets<span style="mso-spacerun: yes">  </span>have<span style="mso-spacerun: yes">  </span>an<span style="mso-spacerun: yes">  </span>ambiguity<br>
+<span style="mso-spacerun:
+yes">                     </span>with regard to the use of ',' in
+        certain instructions. This has<br>
+<span style="mso-spacerun: yes">                     </span>to do with the fact that<span style="mso-spacerun: yes">  </span>','<span style="mso-spacerun: yes"> 
+</span>        can be used to indicate indirect<br>
+<span style="mso-spacerun: yes">                     </span>addressing from a register<span style="mso-spacerun: yes">  </span>(with
+        offset),<span style="mso-spacerun:
+yes">  </span>and is also used to<br>
+<span style="mso-spacerun:
+yes">                     </span>separate operands to some
+        instructions.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>To resolve this issue, the
+        assembles allow the use of ';' in<br>
+<span style="mso-spacerun:
+yes">                     </span>the following cases:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>For the BCLR,<span style="mso-spacerun: yes">  </span>BSET,<span style="mso-spacerun: yes">  </span>BRCLR
+        and BRSET instructions,<span style="mso-spacerun: yes">  </span>the bit<br>
+<span style="mso-spacerun: yes">                     </span>mask is separated from the
+        address by a ';':<br>
+        <br>
+<span style="mso-spacerun:
+yes">                            </span>eg:<span style="mso-spacerun: yes">     </span>BCLR<span style="mso-spacerun: yes">   
+</span>        MEMLOC;$01<br>
+<span style="mso-spacerun: yes">                                    </span>BSET<span style="mso-spacerun: yes">   
+</span>        1,X;$02<br>
+<span style="mso-spacerun:
+yes">                                    </span>BRCLR<span style="mso-spacerun: yes">  
+</span>        MEMLOC;$01,LABEL<br>
+<span style="mso-spacerun:
+yes">                                    </span>BRSET<span style="mso-spacerun: yes">  
+</span>        2,Y;$02,LABEL<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>For ASM12's MOV, CALL,
+        DBxx, IBxx and TBxx instructions, ';'<br>
+<span style="mso-spacerun: yes">                     </span>is used to separate the
+        operands:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                    </span>MOV<span style="mso-spacerun: yes">    
+</span>        #10;MEMLOC<br>
+<span style="mso-spacerun:
+yes">                                    </span>MOV<span style="mso-spacerun: yes">    
+</span>        1,X;2,Y<br>
+<span style="mso-spacerun: yes">                                    </span>CALL<span style="mso-spacerun: yes">   
+</span>        LABEL;1<br>
+<span style="mso-spacerun: yes">                                    </span>CALL<span style="mso-spacerun: yes">   
+</span>        1,X;2<br>
+<span style="mso-spacerun:
+yes">                                    </span>DBEQ<span style="mso-spacerun: yes">   
+</span>        A;LABEL<br>
+</font></span>        </td>
+    </tr>
+</table>
+
+<table border="0" width="630">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="2.6 Assembler directives"><font size="2"
+        face="Arial"><em><strong>2.6 Assembler directives</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The following directives (pseudo
+        instructions) are supported by<br>
+<span style="mso-spacerun: yes">                  </span>all of the assemblers:<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>&lt;label&gt; EQU &lt;expression&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>This directive sets the label on
+        it's line to have the value of<br>
+<span style="mso-spacerun: yes">                  </span>the operand expression.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>ORG &lt;expression&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>This directive sets the internal
+        program counter to<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>value<br>
+<span style="mso-spacerun:
+yes">                  </span>of the operand expression,<span style="mso-spacerun:
+yes">  </span>such<span style="mso-spacerun: yes">  </span>that<span style="mso-spacerun: yes"> 
+</span>        subsequent<span style="mso-spacerun: yes">  </span>code<span style="mso-spacerun: yes">  </span>will<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun:
+yes">                  </span>generated at that address.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>TITLE &lt;string value&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>This directive sets the title of
+        the program to the text on the<br>
+<span style="mso-spacerun: yes">                  </span>remainder of the line.<span style="mso-spacerun: yes">  </span>The title is
+        displayed at the top of<span style="mso-spacerun: yes">  </span>each<br>
+<span style="mso-spacerun: yes">                  </span>page in the listing, and by default is
+        set to the name of the file<br>
+<span style="mso-spacerun: yes">                  </span>being assembled.<span style="mso-spacerun: yes">  </span>Lines containing
+        this directive will not<span style="mso-spacerun: yes">  </span>appear<br>
+<span style="mso-spacerun: yes">                  </span>in the listing.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>PAGE<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>This directive forces<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>page<span style="mso-spacerun: yes"> 
+</span>        eject<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>listing.<span style="mso-spacerun: yes">  </span>Lines<br>
+<span style="mso-spacerun:
+yes">                  </span>containing this directive will not
+        appear in the listing.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>SPACE<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>This directive causes a blank
+        line to appear<span style="mso-spacerun:
+yes">  </span>in<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>listing.<br>
+<span style="mso-spacerun:
+yes">                  </span>Lines containing this directive will
+        not appear in the listing.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>NOLIST<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>This directive turns off the<span style="mso-spacerun: yes">  </span>source<span style="mso-spacerun: yes"> 
+</span>        listing,<span style="mso-spacerun: yes">  </span>preventing<span style="mso-spacerun: yes">  </span>any<br>
+<span style="mso-spacerun:
+yes">                  </span>further lines from being displayed,<span style="mso-spacerun: yes">  </span>until<span style="mso-spacerun: yes"> 
+</span>        a<span style="mso-spacerun: yes">  </span>LIST<span style="mso-spacerun:
+yes">  </span>directive<span style="mso-spacerun: yes">  </span>in<br>
+<span style="mso-spacerun: yes">                  </span>encountered.<span style="mso-spacerun: yes">  </span>NOLIST and LIST may be
+        nested,<span style="mso-spacerun: yes">  </span>listing<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>resumed<br>
+<span style="mso-spacerun: yes">                  </span>only when all levels of NOLIST have<span style="mso-spacerun: yes">  </span>been<span style="mso-spacerun:
+yes"> 
+</span>        turned<span style="mso-spacerun: yes">  </span>off.<span style="mso-spacerun: yes">  </span>Lines<span style="mso-spacerun: yes">  </span>in<br>
+<span style="mso-spacerun: yes">                  </span>which errors occur are listed
+        regardless of the NOLIST directive.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>LIST<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Re-enables output listing,
+        following a NOLIST directive.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>END<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>Causes<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>assembler<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>stop<span style="mso-spacerun: yes"> 
+</span>        processing,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>ignore<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>remainder of the source file.<span style="mso-spacerun: yes">  </span>Note
+        that an END directive<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>NOT<br>
+<span style="mso-spacerun: yes">                  </span>required.<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                  </span>DB
+        &lt;expr1&gt;[,&lt;expr2&gt;,&lt;expr3&gt;,...]<br>
+<span style="mso-spacerun: yes">                  </span>FCB
+        &lt;expr1&gt;[,&lt;expr2&gt;,&lt;expr3&gt;,...]<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>These directives code the values<span style="mso-spacerun: yes"> 
+</span>        of<span style="mso-spacerun:
+yes">  </span>the<span style="mso-spacerun: yes">  </span>operand<span style="mso-spacerun: yes">  </span>expressions<br>
+<span style="mso-spacerun:
+yes">                  </span>into memory as single byte constants.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>DW
+        &lt;expr1&gt;[,&lt;expr2&gt;,&lt;expr3&gt;,...]<br>
+<span style="mso-spacerun:
+yes">                  </span>FDB
+        &lt;expr1&gt;[,&lt;expr2&gt;,&lt;expr3&gt;,...]<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>These directives code the values<span style="mso-spacerun: yes"> 
+</span>        of<span style="mso-spacerun:
+yes">  </span>the<span style="mso-spacerun: yes">  </span>operand<span style="mso-spacerun: yes">  </span>expressions<br>
+<span style="mso-spacerun:
+yes">                  </span>into memory as double byte constants.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>DRW
+        &lt;expr1&gt;[,&lt;expr2&gt;,&lt;expr3&gt;,...]<br>
+<span style="mso-spacerun:
+yes">                  </span>RDB
+        &lt;expr1&gt;[,&lt;expr2&gt;,&lt;expr2&gt;,...]<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>These directives are similar to
+        DW/FDB,<span style="mso-spacerun: yes">  </span>except that<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>high<br>
+<span style="mso-spacerun: yes">                  </span>and low bytes of the coded values are
+        exchanged.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>DS &lt;expression&gt;<br>
+<span style="mso-spacerun:
+yes">                  </span>RMB &lt;expression&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>These directives reserve a
+        number of bytes of memory<span style="mso-spacerun: yes">  </span>equal<span style="mso-spacerun: yes">  </span>to<br>
+<span style="mso-spacerun:
+yes">                  </span>the value of the operand expression.<span style="mso-spacerun: yes"> 
+</span>        The contents of the reserved<br>
+<span style="mso-spacerun: yes">                  </span>storage is undefined.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>STR 'text string'<br>
+<span style="mso-spacerun: yes">                  </span>FCC 'text string'<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>These directive code the<span style="mso-spacerun: yes">  </span>string<span style="mso-spacerun: yes"> 
+</span>        into<span style="mso-spacerun: yes">  </span>memory<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>ASCII<span style="mso-spacerun: yes">  </span>byte<br>
+<span style="mso-spacerun: yes">                  </span>values.<span style="mso-spacerun:
+yes">  </span>The string may be delimited
+        by any character which is not<br>
+<span style="mso-spacerun: yes">                  </span>part of the string text.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>STRH 'text string'<br>
+<span style="mso-spacerun: yes">                  </span>FCCH 'text string'<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>These directives perform exactly<span style="mso-spacerun: yes"> 
+</span>        as<span style="mso-spacerun:
+yes">  </span>the<span style="mso-spacerun: yes">  </span>STR/FCC<span style="mso-spacerun: yes">  </span>directives,<br>
+<span style="mso-spacerun:
+yes">         </span><span style="mso-spacerun: yes">         </span>except that the high bit is set<span style="mso-spacerun: yes">  </span>on<span style="mso-spacerun: yes"> 
+</span>        the<span style="mso-spacerun: yes">  </span>last<span style="mso-spacerun: yes">  </span>character<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>string.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>STRZ 'text string'<br>
+<span style="mso-spacerun: yes">                  </span>FCCZ 'text string'<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>These directives perform exactly<span style="mso-spacerun: yes"> 
+</span>        as<span style="mso-spacerun:
+yes">  </span>the<span style="mso-spacerun: yes">  </span>STR/FCC<span style="mso-spacerun: yes">  </span>directives,<br>
+<span style="mso-spacerun:
+yes">                  </span>except that the string has a zero byte
+        ($00) appended.<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                  </span>2.6.1 Directives supported by ASM09
+        Only<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>SETDP &lt;expression&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>This<span style="mso-spacerun:
+yes">  </span>directive<span style="mso-spacerun: yes">  </span>sets<span style="mso-spacerun: yes">  </span>ASM09's<span style="mso-spacerun: yes"> 
+</span>        default<span style="mso-spacerun: yes">  </span>direct<span style="mso-spacerun: yes">  </span>page<span style="mso-spacerun: yes">   </span>(DP)<br>
+<span style="mso-spacerun: yes">                     </span>register to the eight bit value<span style="mso-spacerun: yes"> 
+</span>        of<span style="mso-spacerun: yes">  </span>&lt;expression&gt;.<span style="mso-spacerun: yes">  </span>Whenever<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun: yes">                     </span>reference is made to a memory
+        location by<span style="mso-spacerun: yes">  </span>address,<span style="mso-spacerun: yes">  </span>without<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun:
+yes">                     </span>specific addressing mode,<span style="mso-spacerun:
+yes">  </span>the
+        assembler will use<span style="mso-spacerun: yes">  </span>direct<span style="mso-spacerun: yes">  </span>page<br>
+<span style="mso-spacerun: yes">                     </span>addrssing if the high byte of
+        the memory<span style="mso-spacerun: yes">  </span>address<span style="mso-spacerun: yes">  </span>matches<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                     </span>default DP register, otherwise
+        entended addressing is used.<span style="mso-spacerun:
+yes">  </span>It<br>
+<span style="mso-spacerun: yes">                     </span>is the responsibility of the<span style="mso-spacerun: yes">  </span>programmer<span style="mso-spacerun: yes"> 
+</span>        to<span style="mso-spacerun: yes">  </span>insure<span style="mso-spacerun: yes">  </span>that<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                     </span>6809's DP register will contain
+        the proper high<span style="mso-spacerun: yes">  </span>address<span style="mso-spacerun: yes">  </span>value<br>
+<span style="mso-spacerun:
+yes">                     </span>during memory references
+        subsequent to a 'SETDP' directive. The<br>
+<span style="mso-spacerun: yes">                     </span>default DP register can be
+        disabled by setting it<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun:
+yes">  </span>value<br>
+<span style="mso-spacerun: yes">                     </span>greater than 255<span style="mso-spacerun: yes">  </span>(or less than
+        0),<span style="mso-spacerun: yes">  </span>which causes the assembler<br>
+<span style="mso-spacerun: yes">                     </span>to always use extended
+        addressing<span style="mso-spacerun: yes">  </span>(this is the default at<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                     </span>beginning of an assembly).<span style="mso-spacerun:
+yes">  </span>NOTE:<span style="mso-spacerun: yes"> 
+</span>        To access the high byte of a<br>
+<span style="mso-spacerun: yes">                     </span>symbol, use: SETDP
+        255&amp;=SYMBOL<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>2.6.2 Directives supported by
+        ASM16/ASMAVR only<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>CPAGE &lt;expression&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>This directive sets the
+        default code page that is assumed by<br>
+<span style="mso-spacerun:
+yes">                     </span>JMP and JSR/CALL instructions
+        that do not contain<span style="mso-spacerun: yes">  </span>an<span style="mso-spacerun: yes">  </span>explicit<br>
+<span style="mso-spacerun: yes">                     </span>code page.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>2.6.3 Directives supported by
+        ASM51/320 Only<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>&lt;label&gt; BIT
+        &lt;expression&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Similar to<span style="mso-spacerun: yes">  </span>&quot;EQU&quot;,<span style="mso-spacerun:
+yes"> 
+</span>        except that the label is forced to<span style="mso-spacerun:
+yes">  </span>have<br>
+<span style="mso-spacerun: yes">                     </span>the &quot;bit&quot; type,
+        regardless of the type of expression used.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>&lt;label&gt; DATA
+        &lt;expression&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Similar to<span style="mso-spacerun: yes">  </span>&quot;EQU&quot;,<span style="mso-spacerun: yes"> 
+</span>        except that the label is forced to<span style="mso-spacerun: yes">  </span>have<br>
+<span style="mso-spacerun:
+yes">                     </span>the &quot;direct non-bit&quot;
+        type, regardless of the type of expression<br>
+<span style="mso-spacerun: yes">                     </span>used.<br>
+</font></span>        </td>
+    </tr>
+</table>
+
+<table border="0" width="630">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="2.7 Error Messages"><font size="2" face="Arial"><em><strong>2.7
+        Error Messages</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>When the assembler detects an
+        error<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun:
+yes">  </span>source<span style="mso-spacerun: yes">  </span>code,<span style="mso-spacerun: yes">  </span>it<br>
+<span style="mso-spacerun:
+yes">                  </span>displays a message indicating a
+        possible cause of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>error,<span style="mso-spacerun: yes">  </span>in<br>
+<span style="mso-spacerun: yes">                  </span>the source listing on the<span style="mso-spacerun: yes">  </span>line<span style="mso-spacerun: yes">  </span>immediately<span style="mso-spacerun: yes"> 
+</span>        following<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>line<br>
+<span style="mso-spacerun: yes">                  </span>containing the error.<span style="mso-spacerun: yes">  </span>Errors which
+        are encountered in<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>first<br>
+<span style="mso-spacerun: yes">                  </span>pass,<span style="mso-spacerun: yes">  </span>are displayed at the top of
+        the<span style="mso-spacerun: yes">  </span>listing,<span style="mso-spacerun: yes">  </span>along<span style="mso-spacerun: yes">  </span>with<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>number of the line in which the error
+        was detected.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Forward<span style="mso-spacerun:
+yes">  </span>references<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>any<span style="mso-spacerun: yes"> 
+</span>        of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun:
+yes">  </span>(EQU,<span style="mso-spacerun: yes">  </span>ORG,<span style="mso-spacerun: yes">  </span>or<span style="mso-spacerun: yes">  </span>RMB/DS)<br>
+<span style="mso-spacerun: yes">                  </span>directives are not allowed,<span style="mso-spacerun: yes">  </span>and will
+        cause an<span style="mso-spacerun: yes">  </span>'Undefined symbol'<br>
+<span style="mso-spacerun: yes">                  </span>error in the first pass only,
+        displayed at the top of the listing.<br>
+</font></span>        </td>
+    </tr>
+</table>
+
+<table border="0" width="630">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="2.8 Error message summary"><font size="2"
+        face="Arial"><em><strong>2.8 Error message summary</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">            </span>Message#<span style="mso-spacerun: yes">                      
+</span>        Message and description.<br>
+<span style="mso-spacerun: yes">            </span>--------+--------------------------------------------------------------<br>
+<span style="mso-spacerun: yes">              </span>N/A<span style="mso-spacerun: yes">   </span>|<span style="mso-spacerun: yes">               </span>Duplicate
+        symbol: &lt;symbol name&gt;<br>
+<span style="mso-spacerun: yes">                    </span>|<span style="mso-spacerun: yes">   </span>The indicated symbol is
+        defined more that once within<span style="mso-spacerun: yes">  </span>this<br>
+<span style="mso-spacerun: yes">                    </span>| assembly.<br>
+<span style="mso-spacerun: yes">            </span>--------+--------------------------------------------------------------<br>
+<span style="mso-spacerun: yes">              </span>N/A<span style="mso-spacerun: yes">   </span>|<span style="mso-spacerun: yes">                   </span>Symbol
+        table overflow.<br>
+<span style="mso-spacerun: yes">                    </span>|<span style="mso-spacerun: yes">   </span>There are too many symbols
+        (labels) in the program, and the<br>
+<span style="mso-spacerun: yes">                    </span>| assemblers symbol table has
+        become full.<br>
+<span style="mso-spacerun:
+yes">            </span>--------+--------------------------------------------------------------<br>
+<span style="mso-spacerun: yes">              </span>N/A<span style="mso-spacerun: yes">   </span>|<span style="mso-spacerun: yes">               </span>Unable
+        to resolve: &lt;symbol name&gt;<br>
+<span style="mso-spacerun: yes">                    </span>|<span style="mso-spacerun: yes">   </span>The assembler is unable to
+        determine a consistent value for<br>
+<span style="mso-spacerun:
+yes">                    </span>| the indicated symbol. This is
+        most likely<span style="mso-spacerun: yes">  </span>due<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>excessive<br>
+<span style="mso-spacerun: yes">                    </span>| forward referencing, or a self
+        referencing loop.<br>
+<span style="mso-spacerun: yes">            </span>--------+--------------------------------------------------------------<br>
+<span style="mso-spacerun: yes">                </span>1<span style="mso-spacerun: yes">   </span>|<span style="mso-spacerun: yes">                  
+</span>        Unknown instruction<br>
+<span style="mso-spacerun: yes">                    </span>|<span style="mso-spacerun: yes">   </span>The instruction<span style="mso-spacerun:
+yes">  </span>field<span style="mso-spacerun: yes">  </span>on<span style="mso-spacerun: yes"> 
+</span>        the<span style="mso-spacerun: yes">  </span>indicated<span style="mso-spacerun: yes">  </span>line<span style="mso-spacerun: yes">  </span>does<span style="mso-spacerun: yes">  </span>not<br>
+<span style="mso-spacerun: yes">                    </span>| contain a valid instruction or
+        assembler directive.<br>
+<span style="mso-spacerun:
+yes">            </span>--------+--------------------------------------------------------------<br>
+<span style="mso-spacerun: yes">                </span>2<span style="mso-spacerun: yes">   </span>|<span style="mso-spacerun: yes">                      
+</span>        Out of range<br>
+<span style="mso-spacerun: yes">                    </span>|<span style="mso-spacerun: yes">   </span>The operand is not the range
+        of values which<span style="mso-spacerun: yes">  </span>can<span style="mso-spacerun:
+yes">  </span>be<span style="mso-spacerun: yes">  </span>used<br>
+<span style="mso-spacerun: yes">                    </span>| with the instruction. eg: A
+        short branch to an address<span style="mso-spacerun: yes">  </span>which<br>
+<span style="mso-spacerun: yes">                    </span>| is farther than +127 or -128
+        bytes from the program counter.<br>
+<span style="mso-spacerun: yes">            </span>--------+--------------------------------------------------------------<br>
+<span style="mso-spacerun: yes">                </span>3<span style="mso-spacerun: yes">   </span>|<span style="mso-spacerun: yes">                  
+</span>        Invalid addressing mode<br>
+<span style="mso-spacerun: yes">                    </span>|<span style="mso-spacerun: yes">   </span>The addressing mode
+        indicated by the operand field<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                    </span>| indicated line does not apply to
+        the instruction on that line.<br>
+<span style="mso-spacerun: yes">            </span>--------+--------------------------------------------------------------<br>
+<span style="mso-spacerun: yes">                </span>4<span style="mso-spacerun: yes">   </span>|<span style="mso-spacerun: yes">                </span>Invalid
+        register specification<br>
+<span style="mso-spacerun: yes">                    </span>|<span style="mso-spacerun: yes">   </span>The instruction on the
+        indicated line specifies a<span style="mso-spacerun: yes">  </span>register<br>
+<span style="mso-spacerun: yes">                    </span>| which is not a recognized
+        register,<span style="mso-spacerun: yes">  </span>or cannot be used in the<br>
+<span style="mso-spacerun: yes">                    </span>| context specified by the
+        instruction.<br>
+<span style="mso-spacerun: yes">            </span>--------+--------------------------------------------------------------<br>
+<span style="mso-spacerun: yes">                </span>5<span style="mso-spacerun: yes">   </span>|<span style="mso-spacerun: yes">                     
+</span>        Undefined symbol<br>
+<span style="mso-spacerun: yes">                    </span>|<span style="mso-spacerun: yes">   </span>A symbol referenced in the
+        indicated line<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun:
+yes">  </span>not<span style="mso-spacerun: yes">  </span>defined<br>
+<span style="mso-spacerun: yes">                    </span>| anywhere within this assembly,
+        and has no value.<br>
+<span style="mso-spacerun: yes">            </span>--------+--------------------------------------------------------------<br>
+<span style="mso-spacerun: yes">                </span>6<span style="mso-spacerun: yes">   </span>|<span style="mso-spacerun: yes">                </span>Invalid
+        expression syntax<br>
+<span style="mso-spacerun: yes">                    </span>|<span style="mso-spacerun: yes">   </span>The expression on the
+        indicated line contains<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>character<br>
+<span style="mso-spacerun:
+yes">                    </span>| which is not recognized as a
+        valid operator.<br>
+<span style="mso-spacerun: yes">            </span>--------+--------------------------------------------------------------<br>
+<span style="mso-spacerun: yes">                </span>7<span style="mso-spacerun: yes">   </span>|<span style="mso-spacerun: yes">                  </span>Invalid
+        argument format<br>
+<span style="mso-spacerun: yes">                    </span>|<span style="mso-spacerun: yes">   </span>The indicated line has an
+        operand which is<span style="mso-spacerun: yes">  </span>not<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>proper<br>
+<span style="mso-spacerun: yes">                    </span>| format.<br>
+<span style="mso-spacerun: yes">            </span>--------+--------------------------------------------------------------<br>
+<span style="mso-spacerun: yes">                </span>8 <span style="mso-spacerun:
+yes">  </span>|<span style="mso-spacerun: yes">                 </span>Improperly
+        delimited string<br>
+<span style="mso-spacerun:
+yes">                    </span>|<span style="mso-spacerun: yes">   </span>A character string constant
+        on the indicated line does<span style="mso-spacerun: yes">  </span>not<br>
+<span style="mso-spacerun: yes">                    </span>| have a proper closing delimiter.
+        This is normally the<span style="mso-spacerun: yes">  </span>single<br>
+<span style="mso-spacerun: yes">                    </span>| quote character, but may be
+        another character in<span style="mso-spacerun: yes">  </span>conjunction<br>
+<span style="mso-spacerun: yes">                    </span>| with the FCC, FCCH, FCCZ, STR,
+        STRH or STRZ directives.<br>
+<span style="mso-spacerun: yes">            </span>--------+--------------------------------------------------------------<br>
+<span style="mso-spacerun: yes">                </span>9<span style="mso-spacerun: yes">   </span>|<span style="mso-spacerun: yes">                    
+</span>        Improper alignment<br>
+<span style="mso-spacerun: yes">                    </span>|<span style="mso-spacerun: yes">   </span>The instruction on this line
+        either references,<span style="mso-spacerun: yes">  </span>or resides<br>
+<span style="mso-spacerun: yes">                    </span>| at an odd location, when an even
+        location is required.<br>
+<span style="mso-spacerun: yes">            </span>-----------------------------------------------------------------------<br>
+</font></span>        </td>
+    </tr>
+</table>
+
+<table border="0" width="630">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><span style="mso-spacerun: yes"> </span></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="2.9 Additional notes on ASM86"><span style="mso-spacerun: yes"><font size="2"
+        face="Arial"><em><strong></strong></em></font></span><font size="2"
+        face="Arial"><em><strong>2.9 Additional notes on ASM86</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The 8086 assembly language was
+        the most difficult to<span style="mso-spacerun: yes">  </span>adapt<span style="mso-spacerun: yes">  </span>to<br>
+<span style="mso-spacerun:
+yes">                  </span>the generic syntax used throughout the
+        XASM package. To accomodate<br>
+<span style="mso-spacerun: yes">                  </span>doing this, a few extensions and
+        changes were made:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>The RETF instruction is unique
+        in that its operand is optional,<br>
+<span style="mso-spacerun: yes">                  </span>and thus you must use<span style="mso-spacerun: yes">  </span>';'<span style="mso-spacerun:
+yes">  </span>to
+        indicate any comment following RETF<br>
+<span style="mso-spacerun: yes">                  </span>without operands. No special comment
+        delimiter is required for any<br>
+<span style="mso-spacerun: yes">                  </span>other instruction.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>Symbols are used only to
+        reference addresses, no information is<br>
+<span style="mso-spacerun: yes">                  </span>recorded as to the size<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>symbol.<span style="mso-spacerun: yes"> 
+</span>        At<span style="mso-spacerun: yes">  </span>least<span style="mso-spacerun: yes">  </span>one<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun:
+yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>operands to an instruction must
+        contain an explicit size<span style="mso-spacerun: yes">  </span>(8 or 16<br>
+<span style="mso-spacerun:
+yes">                  </span>bits). The assembler knows the the
+        size of the registers, and thus<br>
+<span style="mso-spacerun: yes">                  </span>any instructions involving registers
+        will<span style="mso-spacerun: yes">  </span>automatically<span style="mso-spacerun: yes">  </span>use<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>correct size.<span style="mso-spacerun: yes">  </span>For instructions which
+        do not reference<span style="mso-spacerun: yes">  </span>registers,<br>
+<span style="mso-spacerun: yes">                  </span>you can force one of the arguments to
+        be recognized as an 8 or<span style="mso-spacerun: yes">  </span>16<br>
+<span style="mso-spacerun:
+yes">                  </span>bit value by using the '&lt;' or
+        '&gt;' character as a prefix:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>MOV<span style="mso-spacerun: yes">     </span>AL,DATA<span style="mso-spacerun: yes">    
+</span>        Moves 8 bits<br>
+<span style="mso-spacerun: yes">                        </span>MOV<span style="mso-spacerun:
+yes">     </span>AX,DATA<span style="mso-spacerun: yes">    
+</span>        Moves 16 bits<br>
+<span style="mso-spacerun: yes">                        </span>MOV<span style="mso-spacerun: yes">     </span>DATA,#12<span style="mso-spacerun:
+yes">   
+</span>        ERROR: &quot;Size not known&quot;<br>
+<span style="mso-spacerun: yes">                        </span>MOV<span style="mso-spacerun:
+yes">     </span>&lt;DATA,#12<span style="mso-spacerun: yes">  
+</span>        Moves 8 bits<br>
+<span style="mso-spacerun: yes">                        </span>MOV<span style="mso-spacerun: yes">     </span>DATA,#&lt;12<span style="mso-spacerun:
+yes">  
+</span>        Equivalent to above<br>
+<span style="mso-spacerun:
+yes">                        </span>MOV<span style="mso-spacerun: yes">     </span>&gt;DATA,#12<span style="mso-spacerun: yes">  
+</span>        Moves 16 bits<br>
+<span style="mso-spacerun: yes">                        </span>MOV<span style="mso-spacerun: yes">     </span>DATA,#&gt;12<span style="mso-spacerun:
+yes">  
+</span>        Equivalent to above<br>
+<span style="mso-spacerun:
+yes">                        </span>MOV<span style="mso-spacerun: yes">     </span>&lt;DATA,#&gt;12<span style="mso-spacerun: yes"> 
+</span>        ERROR: &quot;Incompatible sizes&quot;<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>The '&gt;'<span style="mso-spacerun: yes">  </span>and '&lt;'<span style="mso-spacerun: yes">  </span>prefix's
+        also have special meaning in JMP and<br>
+<span style="mso-spacerun: yes">                  </span>CALL instructions:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>JMP<span style="mso-spacerun: yes">     </span>label<span style="mso-spacerun: yes">      
+</span>        NEAR 16 bit RELATIVE jump<br>
+<span style="mso-spacerun: yes">                        </span>JMP<span style="mso-spacerun:
+yes">     </span>&lt;label<span style="mso-spacerun: yes">     
+</span>        NEAR 8 bit RELATIVE jump<br>
+<span style="mso-spacerun: yes">                        </span>JMP<span style="mso-spacerun: yes">     </span>&gt;LABEL<span style="mso-spacerun: yes">     
+</span>        NEAR INDIRECT jump through LABEL<br>
+<span style="mso-spacerun: yes">                        </span>JMP<span style="mso-spacerun:
+yes">     </span>BX<span style="mso-spacerun: yes">         
+</span>        NEAR Jump to address in BX<br>
+<span style="mso-spacerun: yes">                        </span>JMP<span style="mso-spacerun: yes">     </span>[BX]<span style="mso-spacerun: yes">       
+</span>        NEAR INDIRECT Jump through BX<br>
+<span style="mso-spacerun: yes">                        </span>JMP<span style="mso-spacerun:
+yes">     </span>SEG:LABEL<span style="mso-spacerun: yes">   </span>FAR
+        DIRECT jump<br>
+<span style="mso-spacerun: yes">                        </span>JMP<span style="mso-spacerun: yes">     </span>SEG:&gt;LABEL<span style="mso-spacerun:
+yes"> 
+</span>        FAR INDIRECT jump *<br>
+<span style="mso-spacerun:
+yes">                        </span>JMP<span style="mso-spacerun: yes">     </span>SEG:[BX]<span style="mso-spacerun: yes">   
+</span>        FAR INDIRECT jump *<br>
+<span style="mso-spacerun: yes">                    </span>* In the last two examples, the
+        SEG value is ignored, and<br>
+<span style="mso-spacerun:
+yes">                      </span>the SEGMENT:OFFSET is taken
+        from the operand address.<br>
+        <br>
+<span style="mso-spacerun: yes">              </span><span style="mso-spacerun: yes">       </span>Offsets<span style="mso-spacerun:
+yes">  </span>to<span style="mso-spacerun: yes">  </span>indirect<span style="mso-spacerun: yes">  </span>accesses<span style="mso-spacerun: yes"> 
+</span>        are<span style="mso-spacerun: yes">  </span>specified<span style="mso-spacerun: yes">  </span>by<span style="mso-spacerun: yes">  </span>placing<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun: yes">                  </span>constant value immediatly before the
+        opening '['. When both a BASE<br>
+<span style="mso-spacerun: yes">                  </span>and an INDEX register are involved,
+        use '+' to indicate them:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>MOV<span style="mso-spacerun:
+yes">     </span>AX,[BX]<span style="mso-spacerun: yes">    
+</span>        Indirect through BX, no offset<br>
+<span style="mso-spacerun: yes">                        </span>MOV<span style="mso-spacerun: yes">     </span>AX,[SI]<span style="mso-spacerun: yes">    
+</span>        Indirect through SI, no offset<br>
+<span style="mso-spacerun: yes">                        </span>MOV<span style="mso-spacerun:
+yes">     </span>AX,10[DI]<span style="mso-spacerun: yes">   </span>Indirect
+        to DI with 10 byte offset<br>
+<span style="mso-spacerun: yes">                        </span>MOV<span style="mso-spacerun: yes">     </span>AX,[BP+SI]<span style="mso-spacerun: yes">  </span>Indirect
+        through BP+SI, no offset<br>
+<span style="mso-spacerun: yes">                        </span>MOV<span style="mso-spacerun:
+yes">     </span>AX,5[BP+SI]
+        Indirect thought BP+SI, 5 byte offset<br>
+<span style="mso-spacerun: yes">                        </span>MOV<span style="mso-spacerun:
+yes">     </span>AX,[BX+10]<span style="mso-spacerun: yes">  </span>This
+        MASM syntax NOT supported!!!<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The REPEAT and LOCK prefix's are
+        implemented<span style="mso-spacerun:
+yes">  </span>as<span style="mso-spacerun: yes">  </span>instructions,<br>
+<span style="mso-spacerun: yes">                  </span>which must preceed the target
+        instruction on a separate line.<br>
+</font></span>        </td>
+    </tr>
+</table>
+<table width="605" border="0">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2">&quot;Converted by 
+        BiPOM Electronics to HTML format from original Micro C documentation by 
+        Dunfield Development Systems. Please see the Micro C documentation that 
+        is included with Micro C for the original forms of these pages.&quot;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

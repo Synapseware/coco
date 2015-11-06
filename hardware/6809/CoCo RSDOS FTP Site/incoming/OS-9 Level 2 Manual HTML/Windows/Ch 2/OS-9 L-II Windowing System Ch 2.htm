@@ -1,0 +1,547 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>D:\MYDOCU~1\SCHEDU~2\OS-9 L-II Windowing System Ch 2.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Ch<U>apter 2<BR>
+</U>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///D:\MYDOCU~1\SCHEDU~2\GR000000.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+<H2 ALIGN="CENTER">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Overview of Commands and
+</FONT>
+</H2>
+<H2 ALIGN="CENTER">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Parameters
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///D:\MYDOCU~1\SCHEDU~2\GR000001.JPG" WIDTH="16" HEIGHT="3">
+</FONT>
+</H2>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The windowing commands are divided among three chapters,
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+based on their functions.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Chapter 3 describes the 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>general commands. </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+These commands let
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+you create windows and buffers, access buffers, set switches, and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+maintain the window environment.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Chapter 4 describes the 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>drawing commands. </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Besides letting you
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+draw all kinds of images (circles, ellipses, arcs, and boxes, to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+name a few), these commands also enable you to color areas or to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+fill them with patterns.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Chapter 5 describes the 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>text commands. </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Use these commands to
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+manipulate the text cursor and the text attributes. Text com
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+mands operate on hardware text screens (Screen Types 1 and 2)
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+and graphics windows if a font is selected.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Each command description lists the command's name, code, and
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+parameters. To call a Windowing System command using 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>OS-9's</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>display </B>command, type 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+display, 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+followed by the command code
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+and the values you want to supply for the parameters.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Parameters<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The following is a complete list of the parameter abbreviations
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+used in Chapters 3, 4, and 5. X111 parameters represent a single
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+byte of information.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Parameter Description<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>HBX </B>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>high order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of x </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>value<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+LBX 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>low order byte of x value<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+HBY 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>high order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>y value<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+LBX 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>low order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>y value<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+HBXo 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>high order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>x-offset value (relative)<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+LBXo 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>low order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>x-offset value (relative)<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+HBYo 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>high order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>y-offset value (relative)<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+LBYo 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>low order byte of y-offset value (relative)<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+HBR 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>high order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>radius<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+LBR 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>low order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>radius<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///D:\MYDOCU~1\SCHEDU~2\GR000002.JPG" WIDTH="19" HEIGHT="19">
+<IMG SRC="file:///D:\MYDOCU~1\SCHEDU~2\GR000003.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+2-1<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I><U>OS-9 Wi</U>ndowing System<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<U>Parameter Description<BR>
+</U>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+HBL 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>high order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>length<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+LBL 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>low order byte of length<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+HSX 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>high order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>size in x direction<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+LSX low 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>size in x direction<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+HSY 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>high order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>size in y direction<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+LSY low 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>size in y direction<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+HBRx 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>high order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>radius in x direction<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+LBRx low 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>order byte </I>
+</FONT>
+<FONT SIZE="3" FACE="Tahoma1" COLOR="#000000">
+<I>of </I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>radius in x direction<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>GRP GET/PUT buffer group number </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+(1-254)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+BFN 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>GET/PUT buffer number </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+(1-255)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+LCD logic 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>code number<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+PRN 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>palette register number </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+(0-15, wraps mod 15)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+CTN 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>color table number </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+(0-63, wraps mod 64)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+FNM 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>font number<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>CPX character position x </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+(0-xmax)<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>CPY character position y (0</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+-ymax)<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>STY screen type<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>SVS save switch (0 </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+= nosave, 1= save area under<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+overlay)<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>SZX size in x (columns)<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>SZY size in y (rows)<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+XDR 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>dimension ratio x used with </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+YDR 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>as </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+YDRl<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+XDR<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+YDR 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>dimension ratio y<BR>
+</I>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>BSW binary switch (0 = off, 1= </I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+on)<BR>
+<IMG SRC="file:///D:\MYDOCU~1\SCHEDU~2\GR000004.JPG" WIDTH="254" HEIGHT="2">
+<IMG SRC="file:///D:\MYDOCU~1\SCHEDU~2\GR000005.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///D:\MYDOCU~1\SCHEDU~2\GR000006.JPG" WIDTH="304" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+2-2<BR>
+<IMG SRC="file:///D:\MYDOCU~1\SCHEDU~2\GR000007.JPG" WIDTH="42" HEIGHT="1">
+</FONT>
+</BODY>
+</HTML>

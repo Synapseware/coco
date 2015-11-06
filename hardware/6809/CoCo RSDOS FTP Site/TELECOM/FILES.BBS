@@ -1,0 +1,36 @@
+ALLRAM.BAS   [00] COCO 2 All Ram BBS (see EDITOR.BAS)
+ALLRAM.DOC   [00] COCO 2 Documentation for All Ram BBS
+CODETYPE.BAS [00] COCO 2 Makes Morse code practice tapes
+EDITOR.BAS   [00] COCO 2 All Ram BBS editor
+FILE.BAS     [00] COCO 2 Downloaded text file processor
+FILE.DOC     [00] COCO 2 Documentation for FILE.BAS
+GEC11.BIN    [00] COCO 2 GREG-E-TERM Customizer
+GEMANUAL.TXT [00] COCO 2 Manual for GREG-E-TERM Part 1
+GEMANUL2.TXT [00] COCO 2 Manual for GREG-E-TERM Part 2
+GETERM.BIN   [00] COCO 2 GREG-E-TERM Xmodem terminal
+HAM.BAS      [01] COCO 2 Amateur radio calling log
+MABEL2.BAS   [00] COCO 2 Basic loader for MABEL2.BIN
+MABEL2.BIN   [00] COCO 2 Transfer a disk by modem
+MASTERM.BIN  [01] COCO 2 Simple terminal
+MTERM1.BAS   [01] COCO 2 Creates MTERM47.BIN Part 1
+MTERM1.DOC   [01] COCO 2 Documentation for Mikeyterm Part 1
+MTERM2.BAS   [01] COCO 2 Creates MTERM47.BIN Part 2
+MTERM2.DOC   [01] COCO 2 Documentation for Mikeyterm Part 2
+MTERM3.BAS   [01] COCO 2 Creates MTERM47.BIN Part 3
+MTERM3.DOC   [01] COCO 2 Documentation for Mikeyterm Part 3
+MTERM4.BAS   [02] COCO 2 Creates MTERM47.BIN Part 4
+MTPAK.BAS    [00] COCO 2 Configure Mikeyterm for other paks
+MTPAK.HLP    [00] COCO 2 Using modem pak with Mikeyterm
+MTRM47.BIN   [01] COCO 2 Mikeyterm XMODEM tape or disk term
+MTTAPE.BAS   [00] COCO 2 Converts downloaded file for tape
+RTERM.ARC    [01] COCO 3 Rickeyterm XMODEM terminal
+TAPETERM.BIN [01] COCO 2 Simple tape terminal
+TDD43.ARC    [00] COCO 2 Communicate with TDD for the deaf
+TELETERM.BIN [00] COCO 2 Simple VIDTEX terminal
+TMSTERM.BIN  [00] COCO 2 Simple tape terminal
+ULTCLOCK.BIN [00] COCO 3 Clock for Ultimaterm
+ULTDOC1.TXT  [00] COCO 3 Documentation for Ultimaterm Part 1
+ULTDOC2.TXT  [00] COCO 3 Documentation for Ultimaterm Part 2
+ULTDOC3.TXT  [00] COCO 3 Documentation for Ultimaterm Part 3
+ULTITERM.BIN [00] COCO 3 Best terminal program with ANSI
+

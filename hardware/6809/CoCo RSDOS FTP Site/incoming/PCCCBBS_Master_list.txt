@@ -1,0 +1,2142 @@
+
+
+
+
+
+
+                 _________    _________    _________    _________
+                / _____  /l  / _____  /l  / _____  /l  / _____  /l
+               / /l___/ / / / /l___/_/ / / /l___/_/ / / /l___/_/ /
+              / /_/__/ / / / / /   l_l/ / / /   l_l/ / / /   l_l/
+             / _______/ / / / /        / / /        / / /
+            / /l______l/ / / /  __    / / /  __    / / /  __
+           / / /        / /_/__/ /l  / /_/__/ /l  / /_/__/ /l
+          /_/ /        /________/ / /________/ / /________/ /
+          l_l/         l________l/  l________l/  l________l/   (Inc)
+                       
+          Peninsula Colour Computer Club (Inc) Bulletin Board System
+            _________    _________    _________
+           / _____  /l  / _____  /l  / _____  /l   Operating :-
+          / /l___/ / / / /l___/ / / / /l___/_/ /
+         / /_/__/ / / / /_/__/ / / / /_/___l_l/    V21, V22, V22bis & V23
+        / _____ /ll/ / _____ /ll/ /______  /l   300, 1200, 2400 & 1200/75 baud
+       / /l___/ /l  / /l___/ /l  _l_____/ / /        2130 - 0700 hours
+      / /_/__/ / / / /_/__/ / / / /____/ / /         (9:30pm - 7:00am)
+     /________/ / /________/ / /________/ /               daily
+     l________l/  l________l/  l________l/             03-9580-4605
+
+
+         +-------------------------------------------------------+
+         |                 Running RiBBS v2.10                   |
+         |            under the OS-9 opperating system           |
+         |                                                       |
+         |              SysOp  -  Stan Blazejewski               |
+         |   Please send requests to stanblaz@netspace.net.au    |
+         +-------------------------------------------------------+
+         |                                                       |
+         |                Complete File Listing                  |
+         |                                                       |
+         +-------------------------------------------------------+
+
+
+
+ 
+ List of FReq'able files in system as of Monday, August 31, 1998 at 21:50
+ 
+===============================================================================
+ 
+                    
+ASCII & text files information                    
+-------------------------------------------------------------------------------
+Files in this area are a mixture of straight ASCII, RSDOS & OS9 archives.
+RSDOS archives (.ARC & .ARK) can be unarchived with TC40 & EZARC respectively.
+OS9 archives (.PAK, .AR, .LZH, .ZIP, .ARJ, .ARC) can be unarchived with their
+respective UNarchivers.
+
+All the archive/unarchive utilities are available on this BBS.
+
+As you can see .ARC is used in both OS9 and RSDOS archives, the 2 types are
+NOT compatable but there will be a note in the OS9 file description.
+ 
+                          
+ASCII & text files                          
+-------------------------------------------------------------------------------
+ANSICODES.TXT         18,985 Full description of all the ANSI codes.
+ANSMACH.ZIP           18,201 A collection of telephone answering machine msgs.
+AUSTPAC1.ARJ           4,864 Info on the Austpac system.
+AUSTPAC2.ARJ           7,424 More info on Austpac (some specific to TAB)
+BELLDIFS.TXT           1,930 Tonal differences between BELL and CCITT.
+BIGDUMMY.LZH         147,313 The Big Dummy's guide the the Internet (130 pages)
+BLOB.AR                7,680 (OS9) Files explaining the boot list order bug.
+BLONDE.TXT             3,200 Blonde jokes.
+BLOOPERS.TXT          11,264 Student essay blunders from a teacher.
+BORGFUN.TXT            4,709 Funny text about Windows, the Borg & Star Trek.
+CALIX.TXT              4,339 Solution to the game Calixto Island.
+CCKERMIT.DOC          23,936 Docs for CoCo Kermit terminal program.
+CC_XT.TXT             19,712 Run a hard drive on your CoCo.
+CHESTNUT.LST          65,071 A list of files on chestnut file server (OS9/68k)
+CHI94FEST.TXT         33,455 Chicago 'last' CoCoFest 94 report by Allen Huffman
+CLASSFUN.TXT           8,960 A list of things to do in class.
+CM8FIX.TXT             2,474 Hardware fix for the CM8 rolling problem (simple)
+CMDCARD.AR             6,272 (OS9) Command/Help referance files.
+COCO3PAT.TXT           5,373 Info on patching old programs to work on CoCo 3.
+COCOFAQ.TXT           17,764 CoCo / RSDOS ferquently asked questions answered!
+COCOFEST.TXT          33,792 CoCo Fest #4 report by Allen Huffman, from USA.
+COCOFST6.TXT          22,302 6th annual Atlanta CoCoFest report by A. Huffman.
+COCOLIST.ARC          40,088 US listserver files.
+COCOPACH.TXT           7,578 Patches for OS9P1 and CoCo 3 emulator (255 tracks)
+COCOSOURCE.TXT         5,506 Where to get all sorts of CoCo periodicals.
+COURSES.TXT            2,048 Mount Isa College courses (are they serious?)
+C_FAQ.AR              65,121 Frequently asked questions about 'C', answered.
+DEBES.DOC             26,380 DEBES.BIN, disk environment documentation.
+DEC_WAR.TXT           27,041 Starwars set in a mainframe.
+DIALDOC.TXT            2,560 Documentation for AUTODIAL.BAS
+DMPCODES.TXT           9,380 A group of quick referance cards for DMP printers
+DOS35.TXT                896 Disk drive setup to suit yourself.
+DOSOR9.DOC               640 Documentation for DOSOR9.BAS
+DRIVERS.AR             9,600 A list of OS9 drivers/patches & uses.
+DSKON.TXT              3,435 Access DSKON in your disk controller.
+DUMBAE.DOC            11,776 Documentation for DUMBAE.BIN (dumb ASCII Express)
+EGGPLANT.REC          22,528 Eggplant recipes (ASCII text file).
+ERRMSG.AR              2,304 Info file to use a ramdisk with ERRMSG or PRINTERR
+EXAM.TXT               7,168 50 things to do in an exam you're going to fail.
+FASTBB.LZH             1,686 Info to speed up B&B hard drive setups.
+FASTCOCO.TXT          13,837 How to speed up the CoCo 3 (6809 or 6309) by 30%.
+FIDORIBBS.TXT         41,216 How to get into FIDONET & start getting echo's.
+FLOPPYMOD.AR           6,784 (OS9) How to modify a controller for high density.
+FTPFILE1.TXT           9,856 OS9 files at Internet site WUARCHIVE.WUSTL.EDU
+GETERM25.DOC          65,021 Full documantation for GETERM25.ARC comms program
+GETEVEN.ZIP          102,419 How to 'get even' with people you dont like.
+GIMESPEC.TXT          17,538 Specifications & information on the GIME chip.
+GRFDRV.FIX             2,760 A patch for GRFDRV so it won't crash.
+H6309.TXT             31,947 Hidden features of the Hitachi 6309 CPU.
+H6309ADD.TXT           5,501 Addendum to H6309.TXT.
+HARLEYS.TXT            1,920 Thirty reasons why a Harley is better than a woman
+HAYES.LZH            105,406 Over 130 pages of official Hayes commands info.
+KQ3SOLUTION.AR        16,001 Help and hints for Kings Quest III.
+L2BUGSFIX.AR           6,144 A list of OS9 level 2 bugs & fixes.
+LS138FIX.TXT          34,944 Fix the timing problem in the CoCo 3's 'E' clock.
+LZW.TXT               16,343 Info on Lempel-Ziv & GIF file compression formats
+MAG_CARD.ZIP          22,498 Info about the magnetic strip on credit cards.
+MASTER.LST           133,520 Master files list of all downloadable files.
+MCDOC.DOC             23,323 Docs for MCPAINT.BAS/BIN graphics program.
+MFCVPL.DOC               523 Short info about MIDI utils found in OS9 Music.
+MFF10.DOC                442 Short info about MIDI utils found in OS9 Music.
+MFFCP.DOC                421 Short info about MIDI utils found in OS9 Music.
+MOOSE01.TXT           24,192 Moose text file magazine, issue #1.
+MOOSE10.TXT           24,192 Moose text file magazine, issue #10.
+MOOSE13.TXT           24,576 Moose text file magazine, issue #13.
+MOOSE15.TXT           22,016 Moose text file magazine, issue #15.
+MOOSE16.TXT           24,320 Moose text file magazine, issue #16
+MPI_GAL.NFO            6,524 Programming info for the Multipak PAL upgrade.
+MT32CMF.DOC              484 Short info about MIDI utils found in OS9 Music.
+MUSHROOM.REC          39,936 Mushroom recipes (ASCII text file).
+NEWLEV2.PAK           20,352 Description of all new modules & commands.
+ONELINERS.ZIP         20,981 A collection of funny one liners.
+ORCHMAST.DOC           6,272 Documentation for ORCHMAST.BIN
+OS9BEEP.TXT            5,383 Info on Motorola's OS9 based Pager/Browser.
+OS9BOOTROM.AR          2,048 Describes patch to DECB to autoboot OS9.
+OS9CNNET.ZIP           3,648 A List of RiBBS BBS's in the USA.
+OS9FAQ.TXT            21,504 Frequently asked questions (via Internet USA)
+OS9INFO.TXT           28,544 Info on lots of modules found on commercial disks
+OS9LIST.AR            37,248 List of OS9 files from Princton U.S.A.
+OS9TIPS.AR             9,216 OS9 Information & programming tips.
+OS9WEARA.TXT           7,955 Info about a OS9 based wearable computer.
+PAFEST97.TXT          26,903 1997 PA CoCoFest by Allen Huffman.
+PAKDOCS.TXT            9,472 OS9 PAK archiver instructions.
+PAYTVCH.TXT            3,072 A list of Sydney pay TV channels.
+PENIX.ARJ             16,512 UNIX related humour. (you'd have to 'into' UNIX!).
+PENTIUM.JOKES          4,556 Jokes about the 'flaws' in the Pentium processor.
+PHONECODES.TXT         7,767 Melbourne metro  area phone prefix codes.
+PIN_CABL.TXT          24,192 Details cable pinouts for various hard drives.
+PIXFORMAT.AR          18,664 Information on various OS9 picture file formats.
+POKES.TXT              9,984 Pokes for games & general.
+PROGRAM.TXT            2,048 Interesting reading, do you fit the description?
+PUCC_OS9.LST          57,636 OS9 files available from Princeton file server.
+PUCC_RS.LST           23,178 RSDOS files available from Princeton file server.
+QUEST.TXT              1,536 Solution to the game Sea Quest.
+RIBBS.LST              8,377 Alist of known RiBBS boards in the United States.
+RZSZ_DOC.ARC          15,619 Info on Zmodem standards & use.
+SCRNSRC.AR            38,656 OS9 Source listings for all files in SCRNBIN.AR
+SEAGATE1.ZIP         427,264 Specs for Seagate hard drives.
+SHENAN.TXT             2,048 Solution to the game Shenanigan.
+SILVER_BOX.TXT         3,072 How to make the silver box phone dialer mod.
+SMILEY.TXT             7,479 Smiley codes explained.
+STARTREK.NEW           4,096 Star Trek - The new generation drinking game.
+STEVEN_W.TXT          34,234 A series of jokes/short scripts.
+SWATCHINST.AR          1,704 How to install a smartwatch in a 24 pin socket.
+SYDNEY.TXT             4,386 Hints for foriegn travellers in Sydeny.
+TAO.TXT               27,264 Funny file about programmers.
+TC.DOC                 2,304 Docs for 'The Compressor' (RSDOS file archiver).
+TWOMEG.TXT             7,949 How to make & install 2 meg of memory in the CoCo3
+ULTERMAN.TXT          31,745 Mini instructions for Ultimaterm(RSDOS comms prog)
+UMANUAL.TXT           89,853 Unabridged manual for ULTIMATERM, RSDOS comms prog
+UMEFORMAT.AR           6,784 Ultimuse UME file format explained.
+UNIXMAN.TXT            1,664 Funny poem set to music.
+VIRUSFUN.TXT           4,572 A list of 'strange' viruses.  Could they be real?
+WHATSNEW.TXT           8,773 CoCo3 emulatror v1.6 additions, lotsa new stuff.
+WIN95.JOK              3,712 Some jokes about Windows 95 (96?)
+WRITEINC.TXT           2,560 A funny poem set to music.
+WUARCHIVE.LST         10,312 Files available from Wuarchive file server.
+WWRULES.PAK            8,576 Various poker game rules to go with WWPOKER.PAK
+X3DO_INF.TXT           7,680 Info on the new games standard, 3DO.
+ZEN1.LZH              80,254 An excellent guide to commands & utils on Internet
+ 
+ > Total of 119 files in this Area
+ > Total of 2,746,021 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                         
+AMIGA Assorted files                         
+-------------------------------------------------------------------------------
+AA_30.LHA            371,418 Dammed if I can remember - from the Internet
+ALYNX129.EXE         284,147 Still can't remember - from the Internet
+ASSIGNZ.LHA           16,113 Workbench auto assigns program.
+BURSTNIBBLER.LHA      25,286 Disk copy program.
+CABOOM.LHA             9,155 Exploding windows.
+DB_WIZ.LHA            14,397 Address database, very good
+DCOPY31.LHA           36,105 Copy program, very good.
+DISKMATT.LHA          32,557 New disk formatter for Amiga 1.3 and 2.0+
+DISKX20.LHA           25,045 Hex editor.
+DPU.LHA              181,930 DPU is a disk peeker, tells info about disks.
+EXWINDOWS.LHA          6,253 Real exploding windows.
+HYPER117E.LHA         53,897 Hypercat database.
+KCON                 130,816 Alternative/replacement for CON handler
+KNACK108              53,248 GUI for most archivers, needs WB2.1
+LOCKPICK.LHA         259,941 Copy protected file/removes password.
+MENUMASTER10.LHA       5,628 Menu Launcher, make your own menus.
+MPEGA.LHA            264,565 MP3 (MPEG Layer 3) music player.
+MUCHMO36.LHA          65,267 Replacement for muchmore.
+NCOMM.LHA             77,716 Comms program v2.02, very good.
+NLLTST10.LHA           4,524 Null modem tester.
+PDIAL.LHA             14,999 Phone dialer program.
+PD_LIST.LHA          182,524 Amiga public domain list (my 1997 list).
+PHONEW               203,498 No Description
+PROANSI.LHA           31,256 ANSI editor.
+PRTMAN39.LHA          59,720 Print manager
+SD3.LHA                1,779 SuperDuper v3.0 copier.
+SOFTLOCK.LHA          11,629 Password security lock out.
+SOFTMEM.LHA            5,984 Increases memory.
+TERMINUS.LZH         519,317 Comms program (30day trial version)
+TEXTED.LHA            25,057 Text editor, very good.
+TROPICPY.LHA          31,153 Diskcopy program like XCOPY.
+TWINEXP.LHA          109,937 Allows file transfer PC to Amiga via null modem.
+VCHCK633.LHA          73,207 Virus checker v6.33
+WB_BROWSER.LHA        27,128 Workbench browser.
+ZTETRIS.LHA           17,222 Tetris type game.
+ 
+ > Total of 35 files in this Area
+ > Total of 3,232,418 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                         
+ATARI Assorted files                         
+-------------------------------------------------------------------------------
+ARC.TTP               66,432 ARC arc/dearc for the Atari ARCSHELL (part 3 of 5)
+ARCSHELL.TXT          64,512 Documents/instructions for ARCSHELL (part 1 of 5)
+ARCSHL31.PRG          49,536 Main program for ARCSHELL (part 2 of 5).
+CHEETAH.PRG           30,720 Very fast file copier, requires 2 floppies or HD.
+GEMINI_2.ZIP         475,136 Shareware desktop replacement, ALL Atari. Great!!!
+KILLTIME.TOS         169,600 Kill time game, kill anything that moves.
+LHARC.DOC              8,192 Documents/instructions for LHARC.TTP (part 5 of 5)
+LHARC2.TTP            46,080 LHZ arc/dearc for the Atari ARCSHELL (part 4 of 5)
+LLAMAZAP.LZH         519,296 From Jeff Minter of Tempest 200 fame, classic!
+MARCEL23.TOS         103,424 Freeware Word processor, very flexible.
+MEGA_DPK.LZH          31,744 Will depack (unarc) a number of different archives
+MODS1.ZIP            132,681 Tracker files (2) for Atari, Amiga.
+MODS2.ZIP            349,327 Two tracker files for Atari, Amiga.
+MODS3.ZIP            113,124 2 Mod tracker files for Atari, Amiga.
+MODS4.ZIP             90,699 2 mod tracker files for Atari, Amiga.
+MODS5.ZIP             79,638 2 music tracker files for Atari, Amiga.
+NEOLOV42.ZIP          84,096 Neodesk icons in (upto) 256 color mode.
+STZIP.PRG            156,324 ZIP file manager.
+ 
+ > Total of 18 files in this Area
+ > Total of 2,570,561 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                     
+PCCC (inc) club information                     
+-------------------------------------------------------------------------------
+These files are Peninsula Colour Computer Club (inc) related.
+
+There are club info files but the majority are/were articles
+for the club newsletter.
+
+Feel free to download any old articles or ....
+UPLOAD a NEW article of your own.  Any submittions are welcome.
+(I'm sure the editor won't mind).
+ 
+              
+PCCC (inc) Club info & newsletter articles              
+-------------------------------------------------------------------------------
+AMIGA_HINTS1.TXT       9,952 Article for PCCC newsletter.
+APR98MINS.TXT            606 Article for PCCC newsletter.
+APRIL98NEWS.TXT        1,385 Article for PCCC newsletter.
+APRILMNS98.TXT           634 April 98 minutes for newsletter.
+CDROMFAQ.TXT          11,113 Questions about the CoCpo CDROM, answered.
+CLUBINFO.TXT           2,168 Info about the PCCC, (meeting dates etc)
+COCOART.TXT            6,570 Magazine article about the CoCo.
+COCOMAY.TXT            2,176 More winging for the VP.
+COCOSIMM.TXT           2,933 Build your own CoCo RAM upgrade information.
+COCOSIMM.ZIP             854 How to do the 512k memory upgrade using 2 SIMMS.
+DAHLGREN.TXT          11,257 Glen Dehlgren interview (CoCo software author)
+FEB98MINS.TXT            533 Minutes from Febuary meeting.
+FEBPCC98.LTR           1,639 Article for PCCC newsletter.
+FREDS.LTR              1,927 A message from Fred of REMCOMS about orphanware.
+HINTS2.TXT             8,775 More hints on how to config some Amiga proggies.
+HINTS3                 7,117 Third edition of how to files for the Amiga.
+HINTS6                 8,678 More hints for the Amiga user.
+JULY98NEWS.TXT         1,498 Article for PCCC Ausust newsletter.
+JULYMAC.TXT            2,816 Part one of computer history.
+JUNEPCCNWS.TXT         1,932 Atricle for this months newsletter.
+KOWALSKI.TXT          12,365 John Kowalski interview (CoCo software author)
+LIBRARY.DOC            2,547 The new librarian's say for 1996.
+MAC9808A.TXT           1,792 VP report from macgully
+MAC9808B.TXT           3,200 Part 2 of computer story from macgully.
+MACGULLY.TXT           1,024 MacGully test transmission.
+MAY98LETR.TXT          1,953 Minutes for PCCC newsletter.
+MAYPCCC.TXT            1,955 Article for PCCC news letter, May 1997.
+MICC.LTR               4,066 Internet message from Terry Simons of MI&CC.
+MINSJULY98.DAT         1,522 Minutes for PCCC newsletter August 98.
+MINSPCCC.SEPT            883 Minutes of Sept '97 meeting for Oct newsletter.
+MODEMS.TXT             7,003 Modem article for club newsletter.
+MRUPGRADE.TXT          4,492 A cuple of messages in reply to UPGRADE message.
+MULTIBOOT.TXT          2,000 Allen Huffman's info on MULTIBOOT.
+NEXTNEWS.DAT           3,328 Nov news item for Pccc newsletter.
+NOVPCCC.LTR            3,565 Article for Nov '97 PCCC newsletter.
+OCTPCCC.LTR            1,735 Newsletter article for Oct, '97.
+PCCCMAR98.TXT          1,882 Article for PCCC newsletter.
+PCCCMIN.DAT              747 Minutes of Oct '97 meeting for Nov newsletter.
+PCCCNEWS.TXT           2,304 This is for Bob Charleston for the newsletter.
+PCCCNOV98.MINS           665 Copy of Nov minutes for PCCC newsletter.
+PCCC_CONST.TXT        24,134 The Peninsula Color Computer Club constitution.
+PCCC_MAR.TXT           3,712 Newsletter article for Bob.
+PRES9303.CLB           2,161 President's Bit for March '93 newsletter..
+PRES9304.CLB           2,325 President's Bit for April '93 newsletter.
+PRES9305.CLB           2,801 President's bit for May '93 newsletter.
+PRES9306.CLB           2,558 President's bit for June '93 newsletter.
+PRES9307.CLB           3,062 President's bit for July '93 newsletter.
+PRES9308.CLB           3,491 President's bit for August '93 newsletter.
+PRES9309.CLB           3,934 President's bit for September '93 newsletter.
+PRES9310.CLB           1,823 President's bit for October '93 newsletter.
+PRES9311.CLB           5,448 President's bit for November '93 newsletter.
+PRES9401.CLB           3,542 President's bit for January '94 newsletter.
+PRES9402.CLB           3,157 President's bit for February '94 newsletter.
+PRES9403.CLB           3,250 President's bit for March '94 newsletter.
+PRES9404.CLB           7,242 President's bit for April '94 Newsletter.
+PRES9405.CLB           2,910 President's bit for May '94 newsletter.
+PRES9406.CLB           3,243 President's bit for June '94 newsletter.
+PRES9407.CLB           4,250 President's bit for July '94 Newsletter.
+PRES9408.CLB           8,537 President's bit for August '94 newsletter.
+PRES9409.CLB           3,890 President's bit for September '94 newsletter.
+PRES9410.CLB           7,337 President's bit for October '94 newsletter.
+PRES9411.CLB           1,979 President's bit for November '94 newsletter.
+PRES9501.CLB           3,471 President's bit for January '95 newsletter.
+PRES9502.CLB           3,193 President's bit for February '95 newsletter.
+PRES9503.CLB           2,887 President'e bit for March '95 newsletter.
+PRES9504.CLB          12,707 President's bit for April '95 newsletter.
+PRES9505.CLB          40,215 President's bit for May '95 newsletter.
+PRES9506.CLB           1,935 Presidents bit for June '95 newsletter.
+PRES9507.CLB           1,236 President's bit for July '95 newsletter.
+PRES9508.CLB           7,910 President's bit for August '95 newsletter.
+PRES9509.CLB           1,732 President's bit for September '95 newsletter.
+PRES9510.CLB           2,021 President's bit for October '95 newsletter.
+PRES9511.CLB           1,638 President's bit for November '95 newsletter.
+PRES9601.CLB           3,305 Presidents's bit for January 1996 newsletter.
+PRES9602.CLB           3,759 President's bit for Febuary 1996 newsletter.
+PRES9603.CLB           4,053 President's bit for March 1996 newsletter.
+PRES9604.CLB             975 President's bit for April 1996 newsletter.
+PRES9605.CLB           3,553 President's bit for May 1996 newsletter.
+PRES9606.CLB           3,731 President's bit for June 1996 newsletter.
+PRES9607.CLB           2,397 President's bit for July 1996 newsletter.
+PRES9608.CLB           3,074 President's bit for August 1996 newsletter.
+PRES9609.CLB           2,570 President's bit for September 1996 newsletter.
+PRES9610.CLB           1,288 President's bit for October 1996 newsletter.
+PRES9611.CLB           1,686 President's bit for November 1996 newsletter.
+PRES9701.CLB           2,987 President's bit for January 1997 newsletter.
+PRES9702.CLB           1,333 President's bit for February 1997 newsletter.
+SEPTNEWS.TXT           1,538 News letter article artice for Bob Charleston.
+VPJUNE.TXT             2,560 More winging from the VP
+XPCCCNEWS.TXT          1,759 Article for PCCC newsletter.
+Z_89.TXT               2,388 CoCo 3 Zaxxon game review for club newsletter.
+ 
+ > Total of 89 files in this Area
+ > Total of 370,278 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                         
+MSDOS Assorted files                         
+-------------------------------------------------------------------------------
+BANANA.ZIP           247,395 A small DOS comms program - X/Ymodem.
+C64_IBM.ZIP           52,416 COMMODORE C64 emulator for MSDOS machines.
+CFDM52.ZIP           147,646 CoCo Friends Disk Magazine.  Needs CoCo emulator.
+COCO2_15.ZIP          65,052 MSDOS CoCo 2 emulator & CoCo 3 ordering info.
+COMIT.LZH            285,966 Great comms program & modem test.
+CON_IDE2.ZIP         148,945 Conner hard drive stats.
+CORETEST.EXE          68,736 Hard drive test & utils.
+DIGICONV.ARJ          78,848 Displays CoCo RASCAN images on MSDOS machines.
+DIRECTOR.EXE         350,217 Directory of H/drive, catalogue files, etc.
+DOG320.ZIP            51,420 Hard disk organiser/defragment program.
+D_C4INFO.ZIP         195,678 Hard drive & controller jumper settings & stats.
+FSP70.ZIP            117338k MS Windows font manager, un/install on the fly!
+ICON3K.ZIP           588,785 3000 icons for Windows 3.x
+INIT_200.ZIP          47,626 Modem 'AT' comds, list of 400 cmds for most modems
+LHA213.EXE            44,058 MSDOS file compress/expand util for *.LZH files.
+LYNC20.ZIP            58,368 Small MSDOS Comms prog, ideal for laptops
+LYNC30.ZIP            67,620 Small yet very functional comms program.
+MEMSIM32.ZIP          30,828 Memsim uses hard disk to simulate memory.
+MODEMD60.EXE         154,749 Modem doctor, Tests serial/UART etc.
+MODWKS20.ZIP         100,064 Modem tutorial textfiles, 'AT' commands.
+PCDGN101.ZIP         303,488 Dragon (CoCo ??) emulator for IBM machines.
+PITALK26.ZIP         299,094 Voice files for PLUGIN, MS Windows enhancement.
+PKZ204G.EXE          202,574 File compress/expand util for *.ZIP files.
+PLUG260.ZIP          479,828 MS Windows enhancement. Don't leave DOS without it
+PRLINK20.ZIP          26,577 Join 2 PC's via printer ports, transfer files fast
+RCC25.ZIP            360,286 Calculate resistor values by color bars & equasion
+SCOPE140.LZH          88,192 Test RS232 serial ports.
+SHOMESAV.ZIP         286,853 Screensaver, dozens of grafix, configurable.
+SIMPSON3.ZIP         122,257 Windows Simpsons Icons.
+SPEAKR.LZH             6,400 Play WAV sounds on internal speaker.
+TRS80.ZIP             43,654 TRS80 model 1/2/3 etc emulator for MSDOS machines.
+TWIN0944.ZIP         160,726 Util to receive phone, FAX & vioce calls.
+VIDEOCAT.LZH         257,658 Video catalogue - library.
+WASTE.ZIP                770 Slow down your PC to run XT programs, waste time.
+WINMIDI.ZIP          291,595 Windows 3.x MIDI music, Bach, Beethoven, Jazz etc
+Z80MU52B.ZIP          88,141 CPM Z80 chip emulator.
+ZIP161.LZH            28,672 Swap file, PC to PC with null modem cable.
+ 
+ > Total of 37 files in this Area
+ > Total of 6,948,520 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                       
+Orchestra 90 information                       
+-------------------------------------------------------------------------------
+All music/sound files in this area have players in both RSDOS & OS9 operating
+systems so these files are not 'really' specific to RSDOS, although the
+program that built them is.
+ 
+                          
+RSDOS Orch90 files                          
+-------------------------------------------------------------------------------
+ABADABA.O90            2,432 Abadaba Honeymoon from 'Junglebook'.
+AMAZING.O90            1,280 Amazing Grace.
+ANGELSFR.O90           1,024 Angels from the relms of glory.
+ARIA.O90                 896 Aria by Bach.
+AXEL_F.O90             3,456 Theme from Beverly Hill cop.
+BADBAD.O90             4,224 Bad by Michael Jackson.
+BALLGAME.O90           1,792 Take me out to the ballgame.
+BATTSTAR.O90           3,840 Theme from Battlesta Galactica.
+BELLXMAS.O90             896 I heard the bell on Xmas day.
+BETHLEHM.O90           1,280 Oh little town of Bethlehem (Xmas)
+BLAKBIRD.O90           1,920 Bye bye blackbird.
+BOND1.O90              2,816 Jame Bond theme.
+BOND2.O90              3,072 007 theme.
+BOND3.O90              3,072 James Bond theme.
+BYEBIRDY.O90           2,816 Bye bye birdy.
+CHACONNE.O90           4,736 Chaconne by Johanne Pachelbel.
+CHIMCHIM.O90           2,560 Chim chim cheree (from Mary Popins).
+CLOSENCT.O90           3,840 Theme from Close encounters of the third kind.
+CRAZYDIA.O90          10,880 Shine on you crazy diamond (by Pink Floyd).
+DECKTHE.O90              896 Deck the halls (Xmas).
+ELMO.O90               3,840 From St Elmo's fire.
+ENDLESS.O90            5,760 Theme from Endless Love.
+FIVE_O.O90             1,664 Hawaii Five-O theme (5 voices)
+FUGUE.O90              5,504 Fugue in G minor (by Bach).
+FUGUEINC.O90           1,664 Fuge in C minor (by Bach).
+FUNKYTOW.O90           2,944 Funkytown by INXS.
+GHOSBUST.O90           4,736 Theme from Ghost busters.
+GODREST.O90            1,408 God rest ye merry gentlemen (Xmas).
+HALUJAH.O90            3,840 Halelujah chorus by Handel.
+HARK.O90               1,536 Hark the herald angels sing (Xmas).
+HOLLYIVY.O90           1,536 The holly and the ivy (Xmas).
+INDIANA.O90            4,096 Indiana Jones theme.
+INVENT1.O90            1,024 Invention by Bach.
+ITCAME.O90             1,536 It came upon a midnight clear (Xmas).
+JESSICA.O90            1,792 Jessica's theme from 'Man from snowy river'.
+JESUJOY.O90            1,920 Jesus joy of mans desiring from Canata.
+JINGLEBL.O90           1,920 Jingle bells (Xmas).
+JOYFLDAY.O90           1,024 Oh joyfull day (Xmas).
+JOYTOTHE.O90           1,152 Joy to the world (Xmas).
+LONGTIME.O90           2,944 For the longest time by Billy Joel.
+MANGER.O90             1,152 Away in the manger (Xmas).
+MASH.O90               2,432 Mash theme.
+MINUET.O90             1,536 Munuet in G by Beethoven.
+MISSION.O90            1,280 Theme from Mission Impossible.
+NACHTMUS.O90           3,072 Eine Kline Nachtmusik by Mozart.
+NOELL.O90              1,536 The first Noell (Xmas).
+OCOME.O90              1,408 Oh come all ye faithfull (Xmas).
+OLEOAKTR.O90           3,072 Tie a yellow ribbon round the old oak tree.
+ORCH90_1.ARC          12,032 Volume 1 in TC30 archive.
+ORCH90_2.ARC           6,784 Volume 2 in TC30 archive.
+ORCH90_3.ARC           9,600 Volume 3 in TC30 archive.
+ORCH90_4.ARC           7,552 Volume 4 in TC30 archive.
+ORCH90_5.ARC           6,912 Volume 5 in TC30 archive.
+ORCH90_6.ARC           4,352 Volume 6 in TC30 archive.
+OXMSTRE.O90            1,408 Oh christmas tree (Xmas).
+PEACHRAG.O90           5,248 Peach rag by Scott Joplin.
+PGUNN.O90              3,328 Peter Gunn by Henry Mancini.
+RAIDERS.O90            4,096 Theme from Raider of the lost ark.
+RAINDROP.O90           3,200 Raindrops keep falling on my head.
+RDUCKIE.O90            1,664 Rubber duckie.
+RIDERS.O90             2,048 Riders in the sky.
+ROCKY3.O90             3,840 Eye of the tiger from Rocky 3.
+SCARBORO.O90           1,664 Scarboro fair by Simon & Garfunkel.
+SHINEONH.O90           1,792 Shine on harvest moon.
+SILENTNI.O90           1,152 Silent night (Xmas).
+SOUND.O90              3,584 Sound of silence by Simon & Garfunkel .
+STARWARS.O90           1,920 Theme from Starwars.
+STELMO.O90             3,456 St Elmo's fire.
+SUPERMAN.O90           6,016 Theme from Superman.
+THETWELV.O90           2,176 The twelve days of christmas (Xmas).
+TOCCATA.O90            7,424 Toccata & fugue in D minor by Bach.
+TRYTOREM.O90           2,048 Try to remember (the king of September).
+WATCHILD.O90           1,536 What child is this (Xmas).
+WATERMUS.O90           4,864 Water music by Handel.
+WE3KINGS.O90           1,664 Kings of Orient (Xmas).
+WENCESLA.O90           1,024 Good king wenceslas (Xmas).
+WE_ARE.O90             4,224 We are the world theme.
+WMATILDA.O90           1,408 Waltzing Matilda.
+X20001.O90             3,328 Theme from 2001 (another version).
+X2001.O90              3,072 Theme from 2001.
+X76TROMBO.O90          3,328 76 trombones (a classic).
+XMOSSONG.O90           2,048 Chestnuts roasting on an open fire (Xmas).
+ZONE.O90               1,408 Theme from twilight zone.
+ 
+ > Total of 82 files in this Area
+ > Total of 256,256 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                        
+OS9 Application files                        
+-------------------------------------------------------------------------------
+AD9.AR                18,176 A simple address and phone number database
+AREACODE.AR           13,440 Find that area code
+ASTRON1.AR            18,688 Astronomy program
+ATARIJOY.AR           13,312 Info & pictures to fit Atari joysticks to CoCo.
+AUSTRAL.SCP.AR        77,952 Demo Sculptor files.
+CAL2.AR               29,411 Prints a calendar for any month or year
+CALC.AR               12,082 Multi function calculator.
+CALC13.PAK             7,296 Full Function Pop-up Calculator
+CALENDAR.AR           10,097 Prints a calendar to STD out.
+CCLOCK.ARC             3,511 Digital clock
+CHECKBOOK.AR           3,297 Simple checkbook balancing program.
+CHECKS.PAK            10,112 DYNACALC template for checkbook accounting
+CHOOSE.AR             20,736 Mouse operated menu system.
+CKFILE.AR             25,344 No frill cheque book balancing program.
+CLOCK.AR               3,456 A graphics screen clock.
+COLUMN.AR             13,398 Reformats ASCII text into 2 columns.
+COSTRIP.AR             4,362 Strip excess leading characters from text files.
+DBASE.AR              13,056 A simple effective database manager
+DBF.AR                24,192 Will display & list dBase III+ & FoxBase+ files.
+DCMESSAG.ARC          13,999 Full featured phone message handler
+DCPATCH.AR             1,024 A series of patches for Dynacalc.
+DISK_CATALOG.AR        9,022 Disk cataloging system that also prints labels.
+DOOR.AR               16,118 A system to control command usage via menu's.
+DYNAFIX.AR             1,353 Patch for using DYNACALC with printer
+DYNAPATC.AR            2,304 100 columns with DYNACALC
+ED.AR                 21,376 A simple text editor
+EXFIND.AR             25,600 Find PC Pursuit exchanges
+EXTRACT.AR            16,512 Archive file manager, makes dearcing a breeze.
+F1040.AR              33,747 Income tax spreadsheet template (good tutorial)
+FILER.AR              19,840 An information filing program
+FINANCE.AR            12,353 Does a number of fifnantial caalculations.
+FPX.AR                 9,756 Simple preset format database.
+HDLINE.AR             21,120 Random National Enquirer headlines
+HISTOGRAM.AR           4,913 Displays the occurance & length of words in a file
+INVENTOR.AR           13,702 Inventory control program, what more can I say!
+JTDICT14.AR           38,784 User friendly spelling checker
+LABEL201.PAK           7,936 Address and mailing label program
+LEDGEPAT.PAK           2,146 Patch for LEDGER45
+LEDGER45.PAK          14,336 Check ledger program
+LOANS.AR               4,608 Calculate loan information
+MAIL.AR               14,592 Electronic mail for time sharing system
+MAN.AR                21,760 Program help database
+MBANDEMO.LZH          11,338 Banner printer demo from Allen Huffman of SubEtha.
+MEMMAP2.AR            10,368 Dynacalc template to produce linear memory maps.
+MURPHY.AR             12,416 Murphys law ramdom quotes program.
+NBS303.AR             38,784 Get the world standard time for your computer.
+NUMBER.AR             31,104 Program that counts in many languages
+OS9MAIL.PAK            4,608 Simple mailing list program
+OS9MPG.AR             11,717 Build a history of fuel usage of your car.
+PAYMSTER.AR           35,200 Payroll program for the COCO 3 in Basic09
+PFV2.AR               16,128 Phone file database.
+PUTFIND.AR             6,786 Simple and convenient database
+QSIM.AR               26,751 Supermarket checkout 'customer flow' simulator.
+QTIME.AR               7,168 Display time in english with chimes
+QUIZ.PAK               8,192 Create quizzes - sample quizzes included
+REGISTER.AR           12,929 Calculate sales tax
+RUSTY.AR               8,576 (Demo) Run an RSDOS program from OS9.
+SC.PAK                58,845 Scientific calculator
+SCULPTOR.AR           78,848 Sculptor application
+SLED.AR               35,200 Full screen text editor
+SPEW.AR               27,959 Generates random headings with text.
+SSPLIT.AR              6,784 Displays 2 files on one 80 column screen.
+ST.AR                 79,542 Stylograph wordprocessor / text editor.
+SWISE.PAK              7,142 Print DYNACALC spreadsheets sideways
+TAX90.AR              10,752 Dynacalc templates for Federal tax forms (1990)
+THEO.AR              122,112 An online thesaurus (finds word synonyms)
+TODAY.AR              13,899 What happened this day in history. Needs TODAYDAT.
+TODAYDAT.PAK          80,128 Today data files for TODAY.AR and RTODAY33.PAK
+TOWELDEMO102.LZH      17,889 Mouse driven disk util from Allen Huffman/SubEtha
+VI.AR                  8,476 Patch to use TSEDIT with Level 2
+VU11.PAK              28,348 Text file viewer and searcher
+WP31.AR               33,710 OS-9 Word processor
+X10OS9.AR             38,912 Docs & driver for the plug-n-power control unit.
+XLED22.PAK            21,233 Full screen text editor
+ 
+ > Total of 74 files in this Area
+ > Total of 1,560,663 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                       
+OS9 Communications files                       
+-------------------------------------------------------------------------------
+ACCESS2.AR            12,288 Modem database and assistant for XCOM9
+ACIAFIX.AR             3,328 ACAIpak hardware interupt fix.
+ACIAPAK.AR             2,583 Patch to increase ACIAPAK buffer
+ADXQ101.ARC           29,184 QWK Off-line mail reader.
+BBTERM.PAK            24,576 A simple XMODEM terminal program
+BIN.AR                 7,168 Removes CCBIN xmodem header
+BITBANG.PAK           13,118 Device driver/descriptor for serial port
+CBIN.AR                1,266 Strips xmodem padding from binary file
+CHOPTHRD.AR            9,216 Chops message thread files into small files
+DOOR.PAK              15,360 BBS door menu program
+DOPPLE.AR              2,688 Calculates doppler shift of satellite link
+DO_9600_3.AR          77,397 Everything needed for 9600 baud communications.
+FIXAR.AR               2,649 Fixes AR files that have XMODEM padding
+HAWK_FTS.AR           37,402 Mini BBS for OS9 level 2.
+HI_SPEED.AR            6,955 Get the most from your hi speed modem.
+JTDIR.AR               4,608 Calculates XMODEM/YMODEM blocks of files
+JTERM.PAK             44,288 Older XMODEM/YMODEM terminal program
+KBCOM.AR              71,808 Terminal that features VT52/VT100 and more
+KERMDOC.PAK           93,056 Documentation for Kermit protocol
+KERMIT.PAK            13,568 Kermit protocol for file transfers
+MORSE.AR               4,096 Converts text to audible morse code.
+MYBBS.AR              69,888 Somebodys BBS software, no docs, you figure it out
+OST208IP.ARC           1,429 Corrects autodial problems with Osterm & SACIA.
+OSTERM142.AR          53,464 Old version of OSTerm, smaller but faster!
+OSTERM208.PAK         57,344 Terminal that features ANSI and autodial
+OSTERMWP.PAT              70 Patch OSTERM to use /MWP
+PDCOM.AR              12,800 Small telecom terminal program.
+RS232FIX.AR           42,496 Collection of RS232 Pak information and fixes
+RUNNER.PAK             9,127 Use with WIZPRO's FMENU to run applications
+RZSZ.ARC              69,391 ZMODEM for OS-9 Level 2
+RZSZ_3_24_COCO.LZH    56,534 Latest ZMODEM file transfer protocol for OS9 L2.
+RZSZ_ACIAPAK.AR       56,445 Zmodem send/receive for use with ACIAPAK driver.
+RZSZ_SACIA.ARC        56,271 Receive/send Zmodem for SACIA/ACIADRV drivers.
+SACIA.ARC             11,736 Replacement for ACIAPAK and T2 from Bruce Isted
+SCOPT.AR               1,536 Optimiser to go with SCRIBE31.AR
+SCPATCH.AR             2,176 Supercom xmodem bug patch.
+SCREX.AR              17,564 Use to automate online sessions
+SCRIBE31.AR           64,512 QMAIL offline mail reader
+SCRIBE40.PAK          77,768 QWK / REP (Qmail) offline mail reader.
+SEALINK.AR            16,171 SEAlink file transfer protocol.
+SEDITOR2.PAK           4,992 Autodial editor for Supercomm
+SPRCM21A.PAK          24,330 Excellent XMODEM/BATCH YMODEM ANSI terminal
+STERM1_5.AR          124,973 Terminal program for both 68XX and 68XXX computers
+SUPER.AR              14,592 Another terminal package.
+SZ.AR                 22,784 Zmodem send & receive protocols.
+TELSTAR3.PAK          49,024 XMODEM/YMODEM terminal program
+TSMON.AR               3,072 Use to monitor modem and set baud rate
+TSUTILS.AR            21,888 Time sharing utilities (TSMON TSRUN)
+ULTACIAC.AR            9,344 Patch for improved ACIAPAK (use with RiBBS)
+ULTRAACIA.AR          20,224 RS232 pack info & driver patches.
+UUCODE.PAK            12,850 Encode/decode files for sending as mail messages.
+VIEW.AR               10,369 View CIS messages offline
+VT100.PAK             31,428 Simple VT100 & VT52 terminal emulator.
+WIZPRO1.AR            32,768 User definable communications environment
+WIZPRO2.AR            32,768 Part 2 of Wizpro
+WIZPRO3.AR            28,416 Part 3 of Wizpro
+WIZPRODOC.AR          55,936 Full documentation for the Wizpro comms package.
+WIZZERO.AR             1,650 A module for WizPro to zero the download buffer.
+XCOM9.AR              30,675 XMODEM terminal for Level 1
+XDIAL.AR               3,840 Auto dialer for Xcom9 termianl package.
+XMAC.AR               26,112 Fileserver program
+XYMODEM2.PAK           5,376 XMODEM and YMODEM file transfer protocl
+ 
+ > Total of 62 files in this Area
+ > Total of 1,720,735 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                           
+OS9 Games files                           
+-------------------------------------------------------------------------------
+ADVENT.AR             47,232 Text adventure game.
+ADVENTUR.PAK          53,888 Classic OS-9 adventure game
+ASTROL.AR             28,928 Astrological calculator
+BATLSHIP.AR           16,978 Game of Battleship - can be played from terminals
+BLACKJAC.PAK          20,224 Game of Blackjack in BASIC09
+CARDS.AR              18,048 Two solitaire card games (will work with MultiVue)
+CHESS.AR               6,012 Basic09 source code for a 'flakey' chess game.
+CHESS_C.AR            19,328 Another chess game but written in 'C'.
+CRIBGE.AR             24,576 Cribbage
+DDPATC.PAK            10,752 Gemquest, Stones, Tank game patches.
+DEPTHS.AR             14,848 Depths game patches & modules.
+DUNGEONS.AR           23,680 The Dungeon Depths arcade game
+ELIZA.AR              16,795 Psyco therapy game, guaranteed to drive you nuts.
+GAMES.AR               3,200 Patches for Koronis Rift and other games
+GAMESHOW.PAK          10,112 Game show statistics random number generator
+GEMQUEST.PAK          29,952 The quest for the Gem of Knowledge
+GLIFE.AR              11,264 Classic simulation game of life
+HORDES.AR             16,384 Hordes and Holes arcade game
+INSULTER.AR            6,448 Makes OS9 become verbaly abusive.
+JETPAK15A.AR          13,696 Jetpack flying game, multiple levels & screen edit
+KQ3.PAT                  384 Kings Quest III patch
+LANDER.AR             11,392 Lunar Lander arcade game
+LOTTO.AR              21,248 Choose lottery numbers
+LSL2SOL.PAK            4,480 Solution to Leisure Suit Larry
+MASMIND.AR            20,507 Adaptation of the Parker Brothers game Mastermind
+MASTMIND.AR           23,680 Like the board game MASTERMIND
+MIXUP.AR              29,696 Mixup Concentration game
+MVSOL2.1.AR           33,664 Mouse driven solitaire game for Multi-Vue.
+NFLSCHD.AR            17,303 NFL football schedule printer
+NIM.AR                 3,200 Ancient Chinese game
+NOLUCK.AR              3,328 Basic09 game.
+NUTSB09.AR             9,555 Basic09 game.
+PACOS9.AR             21,888 PAC MAN for OS-9
+PSYCHIC.AR            20,224 Fortune teller
+QBERT.AR               9,216 Adaptataion of the Qbert arcade game.
+RAT.AR                27,136 Laboratory rat maze game.
+RESCUE.PAK            23,680 RESCUE arcade game
+RESCUED.PAK            5,120 Game screen editor for Rescue.
+SHANGHAI12.LZH        20,224 Shanghai game for OS9 level 2 (nice graphics).
+SHANGHAIED.LZH         4,096 SHANGHAI12 graphics tile editor.
+SNAKEBYTE.AR          38,760 You're a egg eating snake (but watch the bugs)
+SOKFONT.AR             2,688 Alternate font set for Sokoban.
+SOKOBAN.AR            27,136 Game of SOKOBAN
+SPACEZ.PAK            10,112 Take control of your lazerbase with Spacezap.
+SPELL.AR               7,424 Spelling teacher, uses speech/sound pack.
+SPY.PAK               63,744 Master Spy
+STARWARS.ZIP          16,170 Starwars game by Christian Miller.
+STONES.PAK            10,368 Magic Stones strategy game
+STRAND1.ARC           36,703 Excellent text adventure game
+TETRIS.AR             13,312 Game of TETRIS
+TREK.AR               46,976 Classic game of Star Trek
+TTT.AR                11,648 Tic Tac Toe
+VALSPEAK.AR           25,600 Translate text files to Valley Girl speak
+WDPZLKIT.AR           20,992 Makes and/or solves word search puzzles.
+WREVENGE.PAK           6,784 A text adventure game
+WWPOKER.LZH           34,951 Elaborate package of different poker games.
+WWPOKER.PAK           61,440 Elaborate package of poker games(see WWRULES also)
+YAHTZEE.AR             6,170 Yahtzee dice game
+ZAP.PAK               10,112 Space Zap arcade game
+ 
+ > Total of 59 files in this Area
+ > Total of 1,153,456 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                          
+OS9 Graphics files                          
+-------------------------------------------------------------------------------
+ALTFONT.BIN            3,200 Alternative font
+ANSISHOW.AR           20,992 ANSI graphics filter
+ART2VEF.AR             3,465 Converts CoCo Artist dump to VEF format.
+BANNER.AR             30,848 Print huge banners to the printer.
+BANNER.PAK            32,671 Banner printing program
+BLANK.B09                384 A utility to blank the screen (screen saver).
+BLOCK.AR              21,549 Prints large block letters like BANNER
+BLOCKS.AR              1,630 Demo of how to get extra 'artifact' colours.
+BOUNCER.AR            12,288 Kevin Darling's Bounce demo
+BROT.AR                3,968 Mandelbrot graphics
+CARTOG.AR             62,464 World mapping
+CGFX7.AR              86,804 Docs & 'C' source for buffered graphics driver.
+CGP220.PAK             4,992 Dump Level 2 graphics to CGP-220 printer
+CGPDUMP.AR            17,673 Color Graphics Printer VEF screen dump
+CLYDE2.AR              4,698 Colourfull kalidascope, suitable as a screen saver
+COCO.AR                2,504 The COCO in OS-9 color
+COLORDMP.PAK           9,506 Print OS-9 graphics on Star NX 1000 printer
+CURSIVE.AR            22,803 Translates text into ASCII script
+CVIEWGF2.PAK          45,953 Best GIF picture viewing program
+DRAGFONT.AR            1,488 Dragon font
+FEDIT.AR               9,109 Font editor for graphics screens.
+FERN.AR               16,384 Fractal graphics
+FIXPIX.B09             4,736 Atari to CoCo picture convertor.
+FONTED.AR              8,064 Font editor
+FONTS.AR              23,296 Collection of fonts
+FRACTA.AR             59,392 Powerfull fractal plotter with samples.
+FSTGRF.AR              7,168 GRFDRV patch for improved speed
+GCOMP.AR              17,280 Converts coded text file into color
+GFX2.AR                9,472 Kevin Darling's new GFX2
+GFX2FIX.AR             1,152 Enhanced GFX2 patch
+GFXCMDS.PAK           11,008 BASIC09 graphics subroutines
+GIF.OS9               10,240 GIF picture file viewer.
+GIF2VEF.AR            10,858 Converts GIF format pictures to VEF format.
+GRAB.AR               19,456 GRAB portion of VEF picture
+GRED.AR               19,381 Graphics editor for type 8 screen (24x24 pixel)
+HGRAPH.AR             17,024 Bar graph program.
+IBM.FNT                1,152 IBM style font
+IMGSHO.AR             12,800 Viewer for RASCAN pictures.
+LANDSCAPE.AR           2,131 Fractal geometry landscape generator.
+MACSHOW.AR            10,999 View Macintosh picture files.
+MACVIEW.AR             2,944 View MAC pictures from VDG window
+MANDELBR.AR           19,355 Mandelbrot fractal generating program.
+MANDELBR.OS9           3,840 Mandelbrot fractal generating program.
+MAX9.AR               14,720 VEF graphics editor
+MAZE.AR               20,224 Maze builder/solver, use as screen saver.
+MBROT.AR               5,376 Program to generate mandelbrot fractals.
+MGE2VEF.AR             1,408 Convert RS-DOS MGE pictures to VEF format
+MOREWIN.AR             5,888 Shell scripts for changing windows
+NCOLOR.PAK             1,920 Simple utility to change palettes and color
+ORB.PAK               12,672 Orbit algorithm graphical display
+PALETTE.AR             4,224 Change palette assignments
+PCI.PAK                1,792 Change printer fonts while printing
+PICWIN09.AR           24,448 Picture drawing program.
+PIX_MISC.AR           34,712 Picture handing & conversion utilities.
+PRF.AR                30,352 Print formatter for variety of printers
+QUADRIC.AR             5,449 3-D representation of quadratic equasions.
+RAYBOUN2.ARC           6,528 Update to RAYBOUNC.AR
+RAYBOUNC.AR           63,488 RAYBOUNCE graphics demo
+RGB.AR                 3,072 See PMODE artifact colors with RGB monitor
+RLEPIC.PAK             4,070 RLE picture viewer
+RLESHOW.AR            25,215 RLE graphics picture viewer for Multi-Vue.
+S.AR                   6,656 Combination of DISPLAY and ECHO and MONTYPE
+SEA3D.PAK              6,469 Creates fractal image of mountainous shore
+SHAPES.AR              4,480 Generate and rotate shapes
+SHOW.AR               47,616 View PMODE VEF and MAC pictures
+SHOWPIC.AR             4,990 Display PIX files under OS9.
+SPIRO.AR              30,208 Draws hypnotizing lines
+SPIRO640.AR           31,744 Patch SPIRO to work on a 640 * 192 screen.
+SPIROPAT.AR            1,032 Patch SPIRO for colours.
+STRINGS.AR            10,752 Display of bouncing coloured line on the screen.
+SVIEW.PAK             15,484 Front end for VIEW
+VEF105.AR              3,584 DMP105 VEF picture printer.
+VEF2GIF.AR            14,336 Converts VEF format pictures to GIF format.
+VEFPRT.AR             30,856 Prints VEF format pictures
+VIEW44.AR             33,536 Views most picture formats
+VIEWFONT.AR            1,145 View different fonts under OS9 L2.
+VIEWGIF.PAT.AR        26,240 VIEWGIF and GRFDRV patch for 200 lines (25 text)
+VIEWPATS.AR            1,209 View patterns in/DD/SYS/stdpats-xx
+WALK_12.LZH           11,448 Graphics screen saver (guy walks around screen)
+WATERFAL.AR           30,336 Flowing VEF waterfall picture
+WATRFALL.AR           31,744 Viewer for animated VEF pictures.
+WINDOW.AR             10,880 32 sample window device descriptors
+WLABEL_COLOR.AR       12,032 A couple of window 'dressup' commands.
+WLOAD.AR               6,400 Loads VEF picture into type 8 window
+WORMS.AR              15,232 Watch worms invade your screen
+WREATH.AR             20,608 Christmas present for the COCO Community
+ 
+ > Total of 86 files in this Area
+ > Total of 1,361,696 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                          
+OS9 Multivue files                          
+-------------------------------------------------------------------------------
+AIFBNC.AR                384 AIF and icon for BOUNCER
+AIF_MGR.AR             2,944 AIF file manager
+BONK.PAK              49,920 Futuristic arcade game
+CARD17A.AR            20,864 Keep track of football and baseball cards
+CARMEN.AR              5,120 Icon and AIF for running Carmen Sandiego
+CUBIST.AR             27,648 Two dimensional Rubik's cube puzzle
+DEADIC.AR                640 Grateful Dead icons
+ED30.AR               29,748 Text editor for Multivue
+EDCON.AR              11,776 Icon editor
+EDFONT.AR             19,200 Font editor
+EDPAT30A.AR           10,240 Patch for ED30.AR
+EDPTR.AR              36,480 Graphics pointer editor
+ENVELOPE.PAK          26,401 Envelope printing application
+FNTMAN.PAK            11,648 Graphics font manager
+FS2MV.AR               5,120 Run Flight Simulator under Multivue
+GFRMAT.AR             11,264 A graphical mouse driven front end for Format
+GLABEL.AR             23,680 Label printing application
+GSHELL.AR             67,456 Gshell patches
+GSHELL2.AR             2,176 More Gshell patches (see GSHELL.AR first)
+GSHELL32.AR           16,384 Automatic upgrade of stock Gshell to latest ver.
+GSHPAT.AR              3,079 Gshell patch and font
+GUIB.AR               12,288 A better Graphical User Interface for programmers
+GUIB11.PAK            30,720 Update to GUIB that inludes icon manager
+GUIB21A.AR            40,320 Latest ver of Graphical User Interface, see Browse
+GUIB21B.AR            40,086 Latest ver of Graphical User Interface, see Browse
+HELV.AR                1,664 Opens a shell from Multi-Vue with a better font.
+ICON.PAK              17,280 Icon editor with sample icons
+ICONEDIT.AR           19,188 Icon editor with 16 more icons
+ICONPACK.AR           10,526 Lots of icons and AIF's for use with Multivue.
+JBUDGET.PAK           38,627 A home finance application
+KQ3.AR                 2,816 Run King's Quest III under Multivue
+LARRYMV.AR             7,168 Run Leasure suit Larry from Multivue.
+MANAGER2.PAK          13,312 File management utility
+MULTEDIT.AR           12,288 Edit and create icons and AIF files
+MULTII.IPC               512 MULTII.PAK patch
+MULTII.PAK            17,792 MultiIcon icon editor
+MULTIV.AR              5,376 Build or edit Multivue icons.
+MV2PAT.AR              4,992 Necessary patches for Multivue
+MVAIFS.AR              7,189 More AIF files and icons
+MVDEMO.AR              8,320 Demo of Multivue.
+MVSKEL.AR             11,264 Skeleton program to help C programmers
+MVTEST.AR              8,960 Demo on using BASIC09 with Multivue
+NEWDIR.AR             23,936 Graphics window file selection subroutine
+NEWPOINT.AR            1,408 Two & four colour pointers for use with Multivue.
+PACAIF.AR                384 AIF and icon for use with PACOS9
+PHONBASE.PAK          13,056 Phone number and address database
+PICWIN09.AR           24,448 Simple picture drawing/editing program.
+POINTERS.PAK           1,176 Pointers for Multivue
+RATMAZE.AR            27,648 Travel around a maze like a laboratory rat
+SCRAMBLE.AR           22,528 Multi-Vue sliding tile puzzle, nice graphics.
+SHELICON.PAK             768 AIF and icon to start a shell
+SHELLMATE.AR          23,595 Multi-Vue disk utility.
+SMATE.AR              23,936 File manipulation application
+SMENU.AR              39,552 Menuing program
+SOLITARE.AR           21,504 Pyramid Solitaire game
+STARLANES.AR          28,800 A space adventure game.
+STEREOVU.AR           26,752 Stereoscope graphics
+SUBMV.AR               4,608 Run Sub Battle Simulator under Multivue
+SUPERIKE.AR           37,760 Super icon editor
+TFLICONS.AR            4,376 Ready made icon & AIF files.
+VICON.PAK              4,224 Icon viewer
+WINDFIX.AR             3,636 Fix for faster switching of MV windows
+WIZPROICONS.AR         2,688 Icon & aif files to run Wizpro under Multivue.
+YAICON.AR              2,100 Yet more icons for use with your programs
+YATZEE.AR             27,904 Game of Yahtzee
+ 
+ > Total of 65 files in this Area
+ > Total of 1,059,647 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                      
+OS9 Music & support files                      
+-------------------------------------------------------------------------------
+BEE.AR                 9,728 Bumble Bee Ultimuse music file.
+CLASSCOR.AR           25,728 Classical music files for use with Ultimuse.
+DIGITIZE.AR            2,432 Sound digitizer
+DIGITZ.AR             15,872 Latest v3.01 of the OS9 sound digitizer.
+IMPTUS.AR             85,636 MIDI music files & a batch file to play them.
+KEYBOARD.AR           94,464 A collection of Ultimuse music files.
+LYRA.PAK              37,248 Demo version of the Lyra MIDI music editor.
+LYRA3.AR              49,152 Graphical music editor/play for MIDI use.
+MFCVPL.AR             60,800 Convert and play standard MIDI files
+MFF10.AR               9,428 MIDI 'SMF' file converter for large files.
+MFFCP.AR              82,072 Original MIDI 'SMF' file converter, player & docs
+MT32CMF.AR            63,741 MIDI music & batch file to play it.
+MUSEV3.AR             90,496 Ultimuse version 3 for midi equipment.
+PERIOD.AR             17,536 Music files for use with Ultimuse.
+PLAY.AR               12,928 Listen to MACintosh or Amiga sound files
+PLAY3.AR               1,024 Easier MAC and Amiga sound player
+PLAY4.AR              21,248 Interactive sound file player
+PLAY5                  1,594 Play Macintosh & Amiga sound files. V4 bug fixes.
+PLAYCOMP.AR            4,608 Compresses large sound files.
+PLAYLYRA.AR           13,568 Plays CoCo RSDOS 'Lyra' files under OS9.
+PLAYMUS.PAK            8,064 Play MUSICA compatible files
+PLAYUTIL.PAK           9,600 PLAY utilities
+POPSCORE.AR           20,736 Music files for use with Ultimuse.
+SAY.RNB                  256 Command to 'say' words with the speech & sound pak
+SOFTROCK.AR           87,936 Music files for use with Ultimuse.
+SSPAK.AR               8,320 Driver/descriptor for Speech Cartridge
+UBOX3.AR              17,536 Ultimuse jukebox music file sequencer.
+UBOX3_450B.AR         18,816 Jukebox Ultimuse music file sequencer.
+ULTIBOX.AR            14,592 Play ULTIMUSE files
+ULTISONGS.AR          72,672 Ultimuse music files & large file driver.
+UMUSE.AR              87,358 Music editor for MIDI interface
+UMUSEV3.AR            91,134 Latest shareware version of UltiMusE music program
+UMUSIC.AR             84,886 Ultimuse music files.
+UMUSMV.AR              5,376 Patch Ultimuse to work from Multivue.
+ 
+ > Total of 34 files in this Area
+ > Total of 1,226,585 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                        
+OS9 Programmers files                        
+-------------------------------------------------------------------------------
+ALIB.PAK              22,569 Library subroutines for your RMA assembler
+ANSIFR06.LZH          25,050 ANSI front end for the C compiler.
+ANSIFRONT010.LZH      27,753 New 'front end' for the Microware 'C' compiler.
+ARGB.AR                7,571 BASIC09 enhancement for string handling.
+AVRG_STDEV.AR          1,908 Maths subroutine for BASIC09.
+B09UTIL.PAK            2,861 BASIC09 subroutines - LOF SEARCH REPLACE
+BSUBS.LZH              7,061 Small subroutines, with BASIC09 source code.
+BSUBS2.LZH             4,613 More small subroutines, with BASIC09 source code.
+CARRAY.AR              3,456 C bug fix for multidimensional arrays
+CB.AR                 10,775 'C' program listing reformatter.
+CC2.PAK               10,344 Use for better C compiling
+CC5.AR                37,888 A program to make writing & compiling 'C' a breaze
+CDEFS.AR              31,902 DEFS files for 'C' programming.
+CENV.AR               45,559 Mouse driven front end for Microware 'C' compiler.
+CLIB.AR               25,759 Improved CLIB.L for your C compiler
+CLIBT.AR              75,310 New 'C' library with better math functions.
+COPT2_12.LZH          27,491 'C' source file 'peephole' optimiser.
+CPATCH.AR              1,280 Patches for using C compiler with Level 2
+CPP.AR               142,336 Replacement C.PREP for Microware 'C' compiler.
+CSTART.AR              6,196 Replacement module for the Microware compiler.
+CTUTOR.AR            122,294 A course on how to program in 'C'.
+CTUTOR_SRC.AR         64,894 'C' programming source code to go with CTUTOR.AR
+CUTSSRC.AR            17,408 Source code for CUTS.
+DEVSYS.PAK             6,704 A user friendly interface for C compiler
+DISASM.AR             36,737 OS-9 dissassembler
+FORTH09.AR            34,944 Forth language, requires BASIC09.
+FP09.AR               32,597 Motorola's ROMable floating point math routines.
+FRAME.AR               2,506 'C' ssource for a text framer (headings etc)
+GUILIB.AR             60,416 'C' library for graphics user interface.
+GUI_DEMO.AR           10,220 Demo of the graphics user interface 'C' library.
+HDC.AR                 6,144 Text file on how to install & use the 'C' compiler
+HDMAKE.AR              4,992 A helpfull tool for use with the RMA compiler.
+HDTOOL.AR             45,952 Source listings for all the programs in HDKIT
+HEADER.AR             18,943 Collection of C header files
+MAPGPB.AR              2,176 'C' source MAP command for MultiVue programming
+MIXSRC.AR             38,400 'C' source code for the game MIXUP.
+MODASM.AR             41,770 Assembly source for a number of command modules.
+OS9P4.AR               7,040 Adds system call to dump registers
+PASCAL.AR                458 Full english error reporting for PASCAL compiler
+PASCAL2C.AR           20,480 Converts PASCAL source to 'C' source.
+PILOT1.AR             40,064 A computer aided intruction language
+PILOT2.AR             37,248 Files for PILOT1.AR
+RANDOM.AR              2,560 Random number routine for BASIC09.
+RMA                   16,384 Alternate assembler for OS9 source.
+RMA.ALIB.AR           17,536 Assembler libraries for use with RMA.
+SIMON.AR              13,320 Simulator to debug, time & improve ML code.
+SMALLC.AR             34,630 Small 'C' compiler, does have limitations.
+SMALLC.INFO            3,402 Info about the 'small c' compiler (smallc.ar)
+SORTS_09.AR           26,112 Several FAST sorts for Basic09 - plus demo
+SSCRIP.AR              6,912 A collection of shell scripts for use with shell+
+STRIP.AR               8,353 Removes control characters fron forien 'C' code.
+WFNC.AR                5,760 'C' programming aid for window management.
+XC.AR                 19,968 Cross referance utility for 'C' source code.
+ 
+ > Total of 53 files in this Area
+ > Total of 1,325,006 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                          
+OS9 Systems files                          
+-------------------------------------------------------------------------------
+ABOUT_HELP.TXT         1,793 Info about new help (help.ar) command.
+ACIADRV.AR            12,485 Ryszards's ACIADRV modem port driver.
+ALTSTART.AR            2,138 An alternate way to boot OS9.
+BASICHELP.AR          62,336 General help text files to go with HELP.AR
+BBCLOCK1.AR            4,992 IPATCH file to improve B&B hardware clock module
+BLANK.LZH              3,910 Command to blank the screen, good screen saver.
+BLOBSTOP_V10.AR       49,648 Patch files and docs for the BLOB remidy.
+BONG.PAK               1,024 A cute new sound, better than display 07.
+BTLINK.AR             11,008 Marks any file as the OS9Boot file.
+CACHE.AR               7,439 Modify CC3DISK to cache
+CC3DIS.AR              9,216 How to use high density drives under OS-9
+CC3DISK.6309.AR        1,780 6309 Ipatch file for the Disto SCCI cc3disk driver
+CC3DISK.AR             5,632 CC3DISK patch to read foreign disks
+CC3GO.AR               6,912 Eliminates memory wasting sign-on message
+CC3GO1.AR              4,334 Adds password protection at bootup.
+CC3GO2.AR              9,546 Allows system parameters to be set up at bootup.
+CHDISK.AR              5,582 A no-halt replacement for Disto's CCHDISK
+CLOCKBB.AR             3,968 Clock module for Burke and Burke RTC
+CLOCK_ED9.AR          11,648 Various replacement IRQ fix clock modules.
+CMDGEN.AR              3,765 Create your own 'custom' commands.
+COPYPATC.AR            1,280 Patch COPY to allow writing over file
+CPPRINT.AR             2,816 Parallel printer driver with J&M controller
+DEVPAKHP.AR           30,464 Development Pak help files to got with help.ar
+DIROSK.AR              3,072 Replacement OSK type DIR
+DISTSASI.AR           15,792 An improved CCHDISK for DISTO HD interface
+DISTSCSI.AR           14,080 Improved CCHDISK for Disto SCSI HD systems
+EPROM.AR               1,792 Instructions on how to make your own OS9 boot ROM
+ESW110.AR             93,056 Drivers/Descriptors for Frank Hogg's Eliminator
+FILESPECSHELP.AR      79,260 File specs help file to go with HELP.AR
+FLINK.AR               3,493 File linking utility, saves disk space.
+FLOPPY35.AR           13,696 Installing 3.5" drives on OS-9 system
+FORKSH.AR              4,425 Forks a shell if a key is pressed within 5 seconds
+FORMAT.PAT             1,080 Patch format for rolling number display.
+GENCOPY.AR            21,376 Extract/install OS9 boot kernal on floppies.
+GFX2NEW.AR             9,600 New versin of GFX2, supports Multivue windowing.
+GFX3NEW.AR            15,872 Gives easy use of syscall get/getstat calls.
+GRFDRV25.AR              896 Patch GRFDRV for 25 lines on your text screen.
+HELP.AR               18,946 Menu driven help system, VERY descriptive.
+HELPSRC.AR            12,083 Source code of the files in HELP.AR
+INSTALL.AR             4,096 Use to install OS9Boot onto a disk.
+INSTALLING_HELP.TXT    1,537 Info on how to install HELP.AR (menued help)
+KFUTIL.AR             10,624 Window utilities
+KMODE.AR               6,818 Command to set up keyboard characteristics.
+LOAD.AR                1,923 Load command replacement.  Error trap & more.
+LOGIN3.LZH             7,124 Replacement remote login for OS9 level 2.
+LOGINFIX.AR            4,163 Patch for LOGIN3.LZH
+MVHELP.AR              6,047 MultiVue help text files to go with HELP.AR
+NRD.AR                 2,560 Frees up ram disk memory
+NUBBCLK.AR             1,536 New clock for Burke and Burke real time clock
+OS9P2.AR               3,840 Patch for F$Sleep and INIT
+OS9P3.AR               8,064 Patch for more elaborate error messages
+PARALLEL.AR            3,508 Driver/descriptor 'Rainbow' parallel printer port.
+PARTGEN.AR            16,908 Partitions Burke & Burke hard disk systems
+PATCHES.AR             2,816 Variety of patches for OS-9 programs
+RAMDISK.PAK            1,408 Driver and descriptors for OS-9 Ram disk
+RAM_736K.ASM           5,120 Source code for 736k Ramdisk with 1 meg
+RBF30.AR              28,672 Bob Santy's Ipatch for RBF to allow undeleteing
+REMINDER16.AR          7,477 Prog.  to remind you of important events at booup.
+RUTILS.AR             11,136 Numerous enhanced command replacements.
+SC2_512.AR             3,595 Patch & info for Disto SC2 buffer increase.
+SCFED2.AR              1,664 Patch for SCF for enhanced editing capabilities
+SCREEN.AR             24,311 Command line ultils for windows control help.
+SDIR.AR               31,488 'Super' dir command replacement.
+SHELL29.LZH           11,534 Version 2.9 of shell.  (minimal docs though).
+SIGNON.PAK             1,920 Replacement CC3GO module for custom signon message
+SMARTWATCH.AR         11,525 Drivers & patches for the smartwatch.
+SMOUSE.AR             35,200 Use serial mice with COCO
+SPEDUPL2.AR            5,120 OS-9 Level 2 patches
+STARTUP.AR             3,968 A startup file to snaz up you bootup sequence.
+TRANSTIM.RNB             256 Calculates transmit time of files.
+TSGO.ASM               1,408 Autobaud program for TSMON, new version.
+TSMON.ASM              7,424 New autobaud TSMON for OS9 L2.
+TSMONS.PAK             2,944 Time share monitor with heaps of features.
+TUNEUP.LZH            47,910 6809 patches & modules to speed up OS9.
+VDD.AR                   616 Bug patch for the original ramdisk driver.
+VDGDESC.AR               896 VDG 32 column window descriptors
+VRN.AR                21,884 VRN and NULL drivers for use with FS and KQ
+WAIT.AR                2,176 Screen blanker, restores at any keypress.
+WHO.RNB                  640 Command to tell who's online with TSMON.
+WIDEDIRS.AR            1,024 Patch for wider MDIR
+WINDOWS_HELP.AR        6,016 Windows help text files to go with HELP.AR
+WMAKER.AR              1,623 A couple of scripts to set up windows from menus.
+WX.AR                    793 NIL window device descriptor
+XTBOOTFX.PAK           2,816 Patch for Burke and Burke XT-Rom boot
+ 
+ > Total of 84 files in this Area
+ > Total of 926,363 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                            
+OS9 Utilities                            
+-------------------------------------------------------------------------------
+ACU10.ARC              4,608 Archive Comparison Utility v1.0
+ALIAS.AR               5,504 Create an alias name for a module
+ANSI.AR                4,063 Filter for files containing ANSI codes.
+ANSI_DEMO.AR          77,678 Some ANSI files to demo ANSI.AR
+AR                    12,916 AR version 1.3
+AR13.AR               14,592 C source code for AR version 1.3
+AR14.ARC              18,304 New version of AR
+ARCHIVEUTL.AR          3,456 Archive whole directories to another drive.
+ASCII.AR              13,312 Display an ASCII table to your specs.
+ASCIISORT.AR           2,688 Alphabetically sort text in ASCII files.
+ASCIITBL.AR              824 Display an ASCII table in an overlay window
+ATTRCHG.PAK            2,048 Change attributes of all files in directory
+BASE.AR                6,272 Convert numbers between decimal and hex +
+BAWK.AR               52,736 Text processor/filter.
+BOOK.AR               12,927 Prints files in book format (both sides of paper)
+BOOTLI.AR              1,664 Marks an OS9Boot file for a boot disk
+BOOTSPLI.AR            1,536 Split an OS9Boot or other module files
+BRU.AR                18,098 A Unix like hard disk backup and restore utility
+CALL.AR                7,792 A wildcarding filter
+CATTR.AR              15,744 ATTR command that supports wildcards.
+CCTOOLS.PAK           54,711 Windowing environment manager
+CDIR.AR                1,792 Get a complete directory of a device
+CDIR11.AR              7,688 Another DIR utility
+CHECK.PAK              2,944 Compares files and reports differences
+CHWT.AR                2,444 Interactively choose your window type.
+CLEAR.AR               2,688 Clears directory of files
+CMDCRD.AR              5,760 Quick reference cards for OS-9 Level 2
+COL.PAK                4,096 A columnating filter
+COLOR.AR              11,337 Command to plain english to change screen colours.
+COMPRESS.AR           36,518 UNIX compatable '.Z' archive file handler.
+CONVERT.PAK           13,312 Converts between different number systems
+CP                     5,632 Alternate copy command for OS9.
+CP.AR                 13,283 New copy command, has functions of MV/Dupfile/copy
+CRC.AR                 5,888 Turn module CRC checking feature on and off
+CRC32.ARC              6,144 Calculates CRC32 value of a file
+CRON2.AR              17,408 Job scheduling executive
+CRYPT.PAK              2,499 Simple file encryption utility
+CUTS.AR               17,683 Archive utility for BBS file transfers.
+CVOL.PAK               5,760 Change volume name of a disk
+DATABASE.AR           66,411 CoCo club database, ideal for user groups.
+DATAMOD.AR             8,448 Convert shell scripts to data modules
+DED3.PAK              49,556 Disk editor utility
+DEDPATCH.AR            6,144 DED patch to read Bit Allocation Map
+DEDPLUS2.AR            3,623 Update to DEDPATCH to fix bug & add new option.
+DELF.PAK               4,224 Delete linefeeds from a text file
+DELW.PAK               3,840 A DEL command that allows use of wildcards
+DEVICE.AR              1,024 Returns device a user is in
+DIFF.AR                2,031 Support files to go with OS9 disk cataloger.
+DIGIVU11.AR           23,808 Viewer for DS96 16 level 256*256 digitised pics.
+DIRPAK.PAK             2,816 Supply filenames for PAK from stdin
+DIRSORT.AR             8,576 Sorts a directory with uppercase first
+DIRUTL.AR             12,544 Makes file manipulation user friendly
+DISKSAVE.AR            2,816 Use DSAVE to backup hard drive to floppies
+DLIST.AR               1,411 Like dump but for whole disk (start at any sector)
+DLS.AR                20,480 List directory to STDOUT with wildcarding
+DMODE.AR               8,704 Change disk drive descriptor information
+DSCAN.AR              13,312 Checks integrity of hard or floppy disk
+DSCAN31A.AR           17,920 Latest & fastest disk scan for bad sectors.
+DSKOPTM.PAK            5,248 Shows disk information and FAT
+DUPFILE.PAK            3,308 Duplicate file without taking more space
+DXTYPE.AR              3,072 Fork a process on a windo of your choosing.
+EASY.AR               39,808 Editors to patch modules directly on disk.
+EASYBK41.PAK           6,893 User friendly hard disk backup with HDKIT.AR
+EASYEDIT.AR           29,440 Easy editing of OS9Boot file
+ECO.AR                 3,328 A command that combines list & echo functions.
+EMD.AR                 7,936 Memory dump utility
+ENCODER.AR             4,265 File protection by encrypting to make unreadable.
+ERROR.AR               7,424 Prints an English error message.
+EXEC4.AR               3,712 Run a command repeatedly on a list of file names.
+EZDIR.AR              16,384 Point and click without Multivue
+FASTBACK.PAK           3,968 Fast backup by turning of verify
+FASTPRNT.PAK           2,048 Filter to take advantage of repeated print
+FATDSP.AR              2,816 Graphically displays file allocation table
+FCOPY.PAK              4,864 Copy file without specifying file name
+FF2.AR                 8,490 File finder
+FFIX.AR                7,424 Strips text file of control characters
+FHF.AR                 5,632 Backup from floppy to hard disk to floppy
+FILEDATA.AR            6,054 Supplies all disk file information.
+FIX.AR                 2,048 Strip beginning of a file
+FIXTXT.AR              3,456 Strips linefeeds and other control codes
+FORMATTER.AR           4,686 Simple text formatter.
+FPARK3.AR              3,456 Park floppy drive
+FREE.AR               12,159 Probably the most powerfull replacement FREE cmd.
+FREE2.AR               3,456 Another replacement FREE command (in colour).
+FSEDIT.AR             35,840 A simple disk editor
+FSIZE.AR               6,400 Get file size in decimal
+FSTAT.AR               8,960 Get detailed information on file
+FSTATS.ARC             6,146 Shows all file info & optional segment list.
+FUDGE.AR               3,584 Periodically bump time forward or backward
+FUT.PAK               30,976 A point and mark file copy/kill/view utility.
+FUT13.PAK             15,360 A bug fix and upgrade to FUT.PAK
+GDMAP.ARC              6,581 Best graphical FAT display yet
+GETNW.PAK              3,072 Puts name of next window in SHELL+ variable
+GREP.PAK              10,752 Filter to search for expressions in file
+HACKERS_KIT.AR         4,979 A bunch of 'special' utilities, (no docs).
+HDKIT.AR              40,064 Hard disk backup kit
+HDO.AR                21,248 Hard disk organizer
+HELPMSG.AR            31,744 Replacement HELPMSG for your SYS directory.
+IBACK.AR               9,344 Make image backup of hard drive
+IDCPY.AR              11,264 Copy file from OS-9 to RS-DOS
+IF.AR                  1,152 IF/THEN/ELSE control for SHELL+ script
+ILEAVE.AR              2,432 Find most efficient disk interleave for formatting
+INFIX.AR               4,480 Fix shell's standard input
+INKEY.AR               5,504 Keyboard filter/subroutine, returns keystrokes.
+IPATCH.AR             20,992 Used to apply IPC patches to program module
+JTFM15.AR             25,728 File and directory manager
+JTREE.AR               6,144 Display directory trees and fragmentation count
+KDUTILS.AR             8,448 Kevin Darling's OS-9 utilities
+KFORMAT.PAK           21,504 Mutiple disk format utility
+KRAUT.AR              17,654 Filters text into 'pseudo-german'.
+KRNL2.AR              16,778 Patch OS9 level 2 for IBM compatable file names.
+KUTIL.AR              17,280 Kernel boot track editor
+KUTIL12.LZH           21,240 Kernal boot track editor.  You specify track num.
+LABEL.AR               2,944 Change the name of a disk
+LFSTRIP.AR             3,456 Use as pipe to strip linefeeds
+LHA211B.LZH           92,160 LHA file archiver, version 2.11b.
+LISTER.AR             11,136 Filter to paginate a text file
+LMERGE.AR              2,944 Line oriented merge utility - use as filter
+LS.AR                 16,256 Alternate 'dir' command, great for hard drives.
+LZH10.AR              30,828 Compress/decompress files in LZH format(very good)
+MAC2EP.PAK            49,024 Screen dump for MAC pictures & Epson printers.
+MAKDIR.AR              2,056 Replacement MAKDIR command.
+MCOPY.AR              26,112 Enhanced COPY command with Multivue version
+MD.AR                  8,064 Module directory enhanced with colors
+MEGAREAD.AR            1,920 Use this to test your hard drive read times.
+MENU.AR                8,704 Simple menu setup program.
+MENU1.AR               6,435 Command to make script menu systems.
+MENUS.AR               3,840 Generate menu-driven applications
+MENU_STUFF.AR          9,708 Another command to make script menu systems.
+MODBUSTER.AR           8,647 Split file of modules such as OS9Boot
+MODE.PAK               3,252 Like MS-DOS mode - set 40 or 80 columns etc
+MODUTIL.PAK           49,877 OS-9 utilities modified
+MORE.AR               17,920 Text file viewer
+MOVE.AR                1,536 Move a file from one directory to another
+MROFF.PAK             35,200 Format printed text
+MV.AR                  4,864 Move file pointers without moving file
+OKI_RTC.AR             5,760 Set and get date in Disto real time clock
+OPTSTART.AR            3,584 Optional ways to start your system from a menu
+OS9ARC.ARC            10,752 IBM compatible ARCer
+PAGER.AR               1,367 Use this to paginate your text files.
+PAK.AR                33,664 PAK file compressor/decompressor
+PARK.AR                3,840 Parks hard drive heads for shipping
+PATCH.AR              20,798 The full IPatch/MakPatch & docs package.
+PCDOS.AR              24,960 Transfer files between OS-9 and PC-DOS
+PCDOS4.AR             25,088 PCDOS/Atari ST file import/export utility.
+PCMENU12.LZH           1,684 PCMenu v1.2 - PCDOS menu interface.
+PFONTS.AR              1,920 Change printer font styles
+PIRATE.AR              3,200 Copy odd format OS9 disks with eze ...
+POWER.B09              3,200 Predicts performance of DC power supplies.
+PPC.AR                 2,625 Paginates, dates & titles text files.
+PRINT.AR               2,816 Use this to background print multiple files.
+PRINTER.AR             6,777 Allows you to build custon printer commands.
+PS.AR                 22,912 Point and Shoot Menu System
+PSHELL.AR             17,024 Point and click text based shell
+PURGE.AR               1,159 Self prompting file delete utility
+QMEGREAD.ARC             512 MegaRead patch (reads 256k for disk drives)
+QTIP41.AR             40,064 QTIP disk editor - upgrade to YAZ.AR
+R3DEMO.PAK            30,080 R3 SYSTEMS program demos
+RAMDISKU.AR            2,816 Utilities for ramdrives. One pass backups etc.
+RCOPY_2.LZH            1,785 RSDOS menu interface.
+REBACK.AR              6,528 Menu driven front end for HDKIT backup utils.
+REBOOT.PAK             3,712 Does a warm reboot of OS-9
+RECOVER2.AR            5,256 Attempts recover of deleted file
+RELAY.AR               4,096 Lets you control the cassette relay.
+REMOVE.AR              1,792 Removes specified modules from boot file
+RESTORE.PAK            2,176 Pipe this utility with PAK to compress disk
+REWRITE.PAK            2,048 Use to recreate PAK'ed or AR'ed disk
+RSDOS7.AR             20,736 Transfer files between RS-DOS and OS-9
+RSDOSP.AR             17,536 RSDOS transfer and formatter (needs SDISK)
+RSSAVE.PAK            12,288 DSAVE to RS-DOS disk
+SCREEN_STUFF.AR        3,883 A couple of screen info utilities.
+SCRIPT1.AR             7,808 Sample shell scripts
+SCRIPT2.AR             6,912 More sample shell scripts
+SCRNBIN.AR            23,552 A bunch of small quick usefull screen cntrl utils
+SD012A.PAK            39,552 Rearrange fragmented disks for more efficient use
+SDUMPV11.AR            5,120 Neat 'hot key' screen dump utility.
+SELECT16.AR            2,522 Help for selecting you screen colours.
+SETCOLOR.AR            4,235 Menu driven window colour selection.
+SETDK1.AR             82,304 Mouse driven menu program PART 1
+SETDK2.AR             69,248 Mouse driven menu program PART 2
+SETJR.AR              15,360 Mouse driven time and date set
+SHELHIST.LZH           5,060 Shell v2.2 upgrade, up to 10 command recall.
+SHELL21.PAK           26,624 New and improved SHELL +
+SHELLPAT.PAK           3,968 Patch for Shellplus to fix data area size bug
+SIZEFIX.AR             3,200 Trim garbage off end of file
+SMODE.AR               1,152 Screen setup/configure utility.
+SORTDIR.AR             9,472 Sort a directory
+SPACE.AR               4,254 Gives a praphical display of disk space.
+SPANNER.AR            28,544 Fast hard disk backup utility
+SPINT.PAK              6,272 Filter to match expressions
+SPLITFIL.AR            4,096 Splits text file into digestable pieces
+SPOOL.PAK             11,904 Helps with printer multitasking
+SPRINT.AR             12,416 Print a text window or VDG screen
+SPUNLINK.PAK           1,732 Super module unlinker
+STEST.AR               6,016 Excercise a hard or floppy drive
+STREAM.AR             32,490 Best backup program for hard drives yet!
+SUM.AR                 8,064 Calculates files' CRC & repairs if nessecary.
+SUN.AR                 1,600 Calculates solar elivation angle from info given.
+SYSPARAM.AR            2,304 Returns parameters for current windwo
+TAP.AR                 7,168 Updates 'last modified' date on files.
+TAR.AR                34,176 Another archive utility, mainly for UNIX files.
+TDUMP.AR               3,825 Shareware version of the DUMP utility.
+TRANSFER.AR            2,304 Transfer a disk for timing purposes
+TREE.AR                8,967 View a directory tree
+TSHEDEMO.AR           11,948 Demo of file management and menuing program
+TYPE.AR                2,176 Create new window types easily
+UEDIT.RNB              4,480 A userlog editor for TSMON & /DD/SYS/password.
+UEMACS2.PAK           23,296 Fancy editor
+ULTRADIR.PAK           5,504 Fancy DIR command
+UNARJ09.LZH           10,485 Version 2.30 of the IBM compatable ARJ unarchiver.
+UNARJ2.LZH            85,358 Dearchive IBM style .ARJ files, version 2.21
+UNFRAG.AR              6,912 Defragment files or directory
+UNIXUTILS.AR          16,792 UNIX like collection of utilities.
+UNLZH5.AR             24,494 LZH unarchiver version 5. Update handles large
+UNLZH7.ARC            19,483 Dearchives IBM style LZH files. Version 7.
+UNTC.AR               12,032 Decompress TC compressed .ARC files
+UNZ45B2C.ZIP           1,242 Upgrade patch for UNZIP45B to 4.5c.
+UNZIP21.ARC            6,912 IBM compatible unzipper
+UNZIP3.AR             16,384 Extract single files with this unZIP
+UNZIP45B.LZH          41,943 IBM ZIP file exrtactor, handles inflate.
+UN_REDOG.LZH           8,520 Two programs to strip/add IBM codes from/to files.
+UPD1OSP3.AR            1,876 New COPY/DEL for IBM type file names (new kernal)
+UPTIME.AR              7,296 Reports how long system has been up
+UTILITY.AR            13,042 Collection of text and other utilities
+UTILS.AR              11,136 More enhance OS-9 utilities
+VDG.PAK                1,714 Make type VDG window
+VIRUS.PAK             11,776 Checks module CRC to see if changed
+WATCH.AR               1,280 Watch activity of online devices
+WDIR.AR                4,906 Supplies all info about a window.
+WHERES.PAK            11,008 Find files lost on a hard drive
+WIDTH.PAK                475 Change between 40 and 80 columns
+WILD.AR               12,288 List dir's with wildcard option.
+WINDOWS.AR             1,607 Creates two or three windows on a screen.
+WMODE77.AR            17,024 Display or change window attributes.
+WRAP.AR                6,656 Text word wrap filter
+WTYPE.AR               1,920 Easy way to change window type
+XARCV26.AR             8,832 Checks archive type & calls correct dearchiver.
+XEQ5.AR                4,438 Used to repeatedly run a command.
+XLD15E.PAK            34,816 Powerfull disk/file manipulation utility.
+XTRACTOR.AR           21,632 Decompress archives in menu driven environment
+YAZ.AR                42,880 Yet another disk zapper
+ZAP.AR                26,872 Disk editor / zapper.
+ 
+ > Total of 242 files in this Area
+ > Total of 3,138,039 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                       
+Picture file information                       
+-------------------------------------------------------------------------------
+The picture files in this area are compatable with viewers in both the
+RSDOS and OS9 operating systems.
+ 
+                       
+Graphic arts (pictures)                       
+-------------------------------------------------------------------------------
+B52.PIX                6,154 A B52 bomber.
+BABYM.PIX              6,272 A newborn baby.
+BABYRUTH.MAC          11,264 Lady in a chocolate bar.
+BAMBI.PIX              6,154 Here are Bambi & thumper.
+BARBARIA.MAC          29,312 Don't mess with this lady.
+BEATLES.MAC           13,312 John, Paul, George & Ringo.
+BEES.PIX               6,154 Some bee at a hive.
+BRAIN.MAC             17,536 Picture of a human brain.
+BROOKE.MAC            16,512 Brooke Shields (digitised).
+BUILDING.MAC          17,536 Buildings clip art.
+CAROL.MAC             21,504 Carol (digitised)
+CARS.MAC              21,376 What it says!
+CASTLE.PIX             6,154 A castle on the hill.
+CHAIRI.MAC            36,992 Chairi (digitised).
+CHESSMEN.MAC          26,880 Don't play chess with this lady.
+CHIC.MAC              25,088 Another girl (digitised)
+CHRISTIE.MAC          33,792 Christie Brinkley (digitised)
+CLIP.MAC              33,792 Clip art.
+COMPUTER.PIX           6,154 Foul things up with a computer
+DEBBIE.MAC            33,792 Nice portrate of Debbie (digitised)
+DEESFRON.MAC          27,264 A girl in a bikini (hubba hubba)
+DEWDROP.MAC           24,576 Just that. (digitised)
+DISNEY1.MAC           29,952 Various Disney clippings.
+DONDUCK.MAC           11,264 Donald Duck.
+DRAGON.MAC            33,792 A dragon and a slayer.
+DREAM.MAC             21,632 The girl of your dreams?
+EAGLE.PIX              6,154 A eagle in flight.
+ELLENUD.MAC          159,488 A nude picture of Elle!. (AO of corse)
+FACE.MAC              11,648 A nice looking face.
+FLIES.MAC             18,560 Fruit fliy clip art.
+GARDEN.PIX             6,154 A mission garden.
+GEISHA.MAC            11,264 A Geisha.
+GREATWAV.PIX           6,155 A wave that surfers can dream about.
+HEATHER.MAC           17,408 Heather Thomas (digitised).
+HIGHNOON.MAC          17,152 Cartoon pic of Ronny Raygun.
+HIRESJSK.CM3          13,824 Hires joystick mod schematic.
+HORSE.PIX              6,154 A prize winning hourse.
+HOTSTUFF.MAC          12,032 Yet another girl!
+INGRID2.MAC           31,744 Another pic of Ingrid (AO)
+JOYCE.MAC             33,920 A nice topless portrait of Joyce.
+KATHY.MAC             41,600 Nude portrait of Kathy (AO)
+KILLER.MAC            18,048 Don't run into this guy!
+KIM.MAC               38,528 Kim Alexis.  Miss May, MAC pinup collection.
+LENNON.PIX             6,154 John Lennon.
+MACPIC.MAC            16,640 A picture of a Macintosh.
+MADONNA.MAC           20,096 Madonna (Sean's missus, digitised)
+MADONNA2.MAC          20,864 Madonna, from the True Blue album cover.
+MAX.MAC               24,192 It's the fling, the zing, the real thing!
+MIC_MIN.MAC           13,056 Mickey and Minnie mouse.
+MISC11.MAC            22,196 Miscellaneous clip art.
+MISSION.PIX            6,154 Mission Santa Barbara.
+MODEM.PIX              6,154 A typical telecommunications setup.
+MOLECULE.PIX           7,168 A very complex molecule.
+NOSMOKE.MAC            5,376 Anti smokers logo.
+OUTPOST.PIX            6,154 An outpost by the ocean.
+PANDA.PIX              7,168 A panda bear.
+PLAY04.MAC            21,120 A playboy centerfold (no staple!)
+RAIN.PIX               6,154 A child in the rain hiding under an umbrella.
+RANDI.MAC             18,432 Is that her name . . . or . . . ?
+REAGAN.PIX             6,272 Ex USA president.
+RELIGION.MAC          30,208 All of the different in the world.
+RONNIE.MAC            15,360 B grade movie star.
+ROSANNAH.MAC          22,144 The Rosannah Hughes Presbyterian home.
+SFIELD.PIX             6,154 The actress Sally Fields.
+SPACE.PIX              6,154 A spaceship among the planets.
+STARTREK.PIX           6,154 The captain and Spock.
+STING.MAC             13,824 Stibg (lead singer for the Police)
+TENPLUS.MAC           20,480 An eleven for sure (digitised).
+TIGER.PIX              6,155 A realistic looking tiger.
+TRUCK.PIX              6,154 A four wheel drive truck.
+VANITY.MAC            17,408 Vanity (of vanity 6, and movies)
+VOLTRON.PIX            7,168 A picture of TRON.
+WABBIT.PIX             7,168 "What's up Doc?"
+WATCH.PIX              6,272 A Timex watch.
+WETJANNA.MAC          26,624 Janna, looking very wet (digitised).
+ZORRO.PIX              6,272 Zorro.
+ 
+ > Total of 75 files in this Area
+ > Total of 1,391,092 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                      
+OS9 RiBBS & support files                      
+-------------------------------------------------------------------------------
+ACEYDUCY.PAK           4,096 Acey-Ducey door game for RiBBS.
+AFRLV21.PAK           27,068 Use to automate updating files list and more
+ANNUNC.PAK             2,769 Echo's typing to speech/sound pack.
+ANSIEDITV111.AR        9,216 ANSI colour screen editor.
+APP.PAK                1,729 Sample RiBBS user application
+APPLYH.AR              9,600 Application with editing features
+APPNEW01.PAK           2,421 Sample application file.
+APPREAD.AR             3,584 Simple program to read application files.
+ARCUTL.PAK             8,960 Allows user to view archived files
+ASCANV12.PAK           3,666 Fidonet mail packets scanner.
+ASTROLOG.PAK           4,096 Astrology door game for RiBBS.
+BBSLST31.PAK           8,192 Lets RiBBS users build, edit & rate a BBS listing.
+BETA3.AR              24,042 Replacement RiBBS modules for beta testers.
+BIORTM20.PAK           3,287 Biorythm for RiBBS v2.0
+BJBYCX2.PAK           39,450 This is a fancier game of Blackjack
+BLACKJ20.PAK           5,120 RiBBS Blackjack
+BLIST.PAK              3,320 RiBBS Bulletin lister
+BOXING.PAK             5,263 Boxing game
+BULBUILD.LZH           2,020 Build thoughts into bulletin files.
+BULLET.PAK             3,999 RiBBS bulletin file builder.
+BULLETIN.PAK           3,320 Auto bulletin listing menu.
+BUMPIT.PAK             3,036 Online game.
+BUND22.AR             32,000 Improved mail bundler.
+BUNDLES.ARC           23,296 Bundle script makes mail archives.
+C3DTIC.PAK             5,888 3D tic-tac-toe online game for RiBBS.
+CAMEL20.PAK            4,864 Camel game
+CFGV2.ARC              1,920 Updated cunfig for RiBBS v2.02
+CHGINF.PAK             2,048 Allows user to change city and state
+CHOMP.AR               8,192 A game for use with any ANSI supporting terminal.
+CKARC11.AR             2,944 Check mail packets for type of archive
+CKLOG.ARC              1,408 Keeps log file from getting too big
+CKTIME20.PAK           1,920 Display user's time online
+COLOR22.PAK            5,888 Colorize RiBBS menus and text files
+CONVERT.AR             3,401 Convert files between PAK and AR
+CPARSL12.AR           11,548 Latest - fastest NODEDIFF processor.
+CRESET.AR                256 File to merge for setting windows to RiBBS colours
+CWORD20.PAK            5,697 Educational word game
+DEARC.AR              12,288 IBM compatible deARC for FIDONET mail
+DEARC.PAK             10,368 View dir or extract single files with this one
+DLM_V101.ARC          24,448 Downloads desc & files manager.
+DOCADD.PAK             1,536 Addendum to RiBBS documentation
+DOMIN191.AR           79,708 Online game similar to IBM version.
+ECHECK12.ARC           6,010 Scans HDR file for garbage & deletes same.
+ERBW133.AR            11,136 Extended info wait screen for RiBBS v2.1
+ERBW135.LZH           11,296 ERBwait v1.35, enhanced wait screen for RiBBS v2.1
+FE_116A.ARC           12,288 Modified FILEDIT to edit files.bbs
+FE_116B.ARC           13,056 Improved version of FILEDIT.
+FE_RLIST.ARC           9,784 Allows using RList and DLManager.
+FIDOUTIL.PAK          28,800 Assorted FIDO utilities for RiBBS v2.0
+FILEDI.AR             15,299 Replacement Files & Desc editors, version 1.1.6
+FILEUP.PAK             5,248 Like FILEDIT - but run from EVENTS file
+FILSCH.PAK             2,176 Improved version of NEWFILE, choose which area.
+FLEDIT23.AR           18,688 FILES.BBS and DESC.BBS editor
+FREQV25A.PAK          12,928 Creates files needed to request files from FIDONET
+FREQV25B.ARC          12,672 Request files from other systems and more
+FREQV26C.LZH           6,912 File request/attach program for RiBBS v2.1
+GALA23UP.PAK           1,536 Replacement modules for Galactic Conflict v2.3
+GALACT23.PAK          45,568 Galactic Conflict game
+GALCMP.PAK               640 Updated GALACOMP for Galactic Conflict
+GAMES.PAK              5,120 Various door games for RiBBS.
+GETMSG13.ARC          14,464 Sysop offline message reader for RiBBS v2.1
+HANGMAN.PAK           10,112 Hangman door game for RiBBS.
+HELPER.PAK             1,664 Purge FILES.BBS and DESC.BBS
+INSRB210.LZH          17,401 A full description of RiBBS v2.10 file formats.
+INSRIBBS.AR           19,456 Describes RiBBS 2.02 formats.
+JOKES.PAK              7,169 User edited jokes
+JOT.PAK                9,344 You and computer guess each other's word
+KNOCK31.1.2.PAK        6,144 Online card game that keeps high scores.
+KNOCK31.PAK            5,799 Online card game.
+KRNL.AR                4,608 File to patch kernal for OSK compat filenames.
+LGLOOK12.PAK           5,162 Used to maintain log from OS-9 Shell
+LGPRNT.PAK             2,688 System log lister/printer/purger
+LISTER.PAK             4,841 BLIST modified for game & help instructions.
+LOGOFF.PAK             2,560 Add thought for day to LOGOFF (need THOUGHTS.AR)
+LOGPRC10.AR           10,880 Splits Ribbs log file.
+LOGUPDT.AR             3,799 Temporary 'XRBWait' log renamer for RiBBS v2.10
+LOG_UPD.AR            12,416 Improved LOGOUT.
+LOOK122.AR            38,656 Archive viewer for RiBBS.
+LOOKND11.PAK           5,303 Search nodelist for name or net/node.
+LOTTO.PAK              8,448 LOTTO game for RiBBS
+MAKDES56.PAK          12,409 Use to set up, edit, and sort your DESC.BBS
+MATCH.PAK              3,782 An online game similar to concentration.
+MDBSTR.PAK             4,608 A mind busting game
+MDMSTR.PAK               768 Sample modem strings
+MEDIT19.PAK           37,596 An alternative menu editor for RiBBS.
+MEDIT22.PAK           24,064 Menu editor for RiBBS v2.1 from Craig Cross.
+MNFB.PAK               3,723 Pick Monday Night Football winners
+MOD_V102.ARC          14,494 Moderate - Auto echo moderator for RiBBS v2.02
+MVRIBBS.PAK            3,200 Scripts, AIF & icon to run RiBBS from Multivue.
+NEWFILE3.ARC           4,636 New version of NEWFILE, shows description & size.
+NEWGAM.PAK            36,169 Gollection of games
+NEWNAM10.PAK           2,774 A proposal to have compatability with MODEM7.
+NEWQUOTE.PAK          23,729 A collection of 'quotes of the day'.
+NEWSAM.AR             19,456 Sample RiBBS files
+NEW_LOG.ARC            1,997 Log initialization utility (logMMDD format)
+OFREQV20.PAK           5,150 Online version of FREQ
+OS9ARC.ARC            10,752 IBM compatible RiBBS ARC for FIDONET mail
+OTHELL4.PAK            5,375 Othello game
+PAK_PK2.LZH            1,408 Fixed patch for PAK to PK (PAK-PK.AR), RiBBSv2.1
+PARLST02.PAK          11,648 Processes nodediff files for RiBBS
+PCKWHN11.AR            6,528 Packs message base when too large
+PKMSG253.AR           22,144 Latest PACKMSG for Ribbs v 2.02.
+POINTS.PAK             2,432 Show users available download blocks
+POKER.PAK              5,248 Poker card game
+POLLER11.PAK           3,840 Take a user poll (better than VOTER)
+PREQ_23.ARC            8,576 Update PREQ file for RiBBS v 2.02.
+PRSLCK.PAK             6,303 Press your luck & win cash & prizes with this game
+PURITY.PAK            29,663 The Official Omnisexual Purity Test (R rated)
+R2IBBS.TXT             1,961 Instructions for running a second copy of RiBBS.
+RACIA.AR               1,152 A patch for /T2 to run with RiBBS.
+RAIDER.PAK            14,046 Star Raider Game
+RAMAX15.PAK            8,832 Amax for File requesting and much more
+RAMAXV16.PAK          15,616 Automatics file attach/request for RiBBS v2.10
+RATRAP.PAK             3,456 Simple but tricky cat & mouse game.
+RB21INFO.LZH          42,209 Snapshots of RiBBS v2.10 .ctl and .cfg files.
+RCHESS18.PAK          22,144 Play chess against other users
+RDOC20.AR             66,432 RiBBS v 2.0 documentation
+REVENG11.AR           13,528 Dangerous adventure game for RiBBS.
+REVIEW.PAK             4,736 User movie and software reviews
+RIAD114.PAK            6,272 Allows users to check who was on over last week.
+RIB2GO.PAK               857 Info on how to order RiBBS for yourself.
+RIBB202S.ARC         267,520 RiBBS version 2.02 BBS for CoCo 3's.
+RIBBARC.AR            12,239 Sea (c) Archive utility, optimised for RiBBS.
+RIBBS4N1.ARC          10,624 Instructions to get RiBBS running on DISTO 4 in 1.
+RIBBSFL.AR            12,928 RiBBS v 1.0 files for OS-9 Level 1 users
+RIBBSMN1.AR           34,816 RiBBS v 1.0 for OS-9 Level 1 users - part 1
+RIBBSMN2.AR           31,104 RiBBS v 1.0 for OS-9 Level 1 users - part 2
+RIBBSSHE.AR            1,536 Info on how to get real online remote with SACIA.
+RIBSTUFF.PAK          36,224 RiBBS games programs sample source code
+RIHD12.PAK            16,640 RiBBS Help door
+RISK143.PAK           25,856 Game of RISK for RiBBS (Requires v 2.02)
+RISKED.PAK             1,817 Allows sysops to delete annoying Risk games.
+RISKSTAT.LZH           1,957 Risk statistics menu program.
+RISKTXT.PAK            2,176 Describes the record format used with Risk 1.04.02
+RLERBS.PAK             3,200 RLE picture online viewer for RiBBS
+RLIST13C.LZH           7,060 Creates a master download listing, lotsa options.
+RLISTV13.ARC           8,448 Make FILES list of available downloads
+RMIND131.PAK           1,950 Game of Mastermind
+RMURPH20.PAK           9,472 Murphy's law for your users
+RSKSCR12.PAK           1,792 Display routine for Risk game scores.
+RTICK22G.LZH          33,757 Utility to import .TIC files.  RiBBS v2.10
+RTICKV21.ARC          21,120 Utility to handle .TIC files.
+RTODAY33.PAK           1,408 Show users what happened today in history
+RTREK20.PAK           13,568 RiBBS Star Trek
+RUNCHS.PAK               801 Use to run latest chess in ANSI or no ANSI
+SAFE_MPT.AR           11,264 Shell scripts to import damaged Echomail.
+SCORES.AR              3,712 Game score modules for use with Denny's games.
+SENDHELL.AR              277 Fixed sendhello module, works with SACIA/DACIA
+SLOTS.PAK              4,480 Play the slots
+SOLITR.PAK             6,986 Solitaire card game
+SOLOPOK2.PAK           5,077 This is a variant on poker.
+SRBWAIT1.LZH           4,747 Enhanced wait screen for RiBBS v2.10
+SRHANG11.PAK           7,680 RiBBS Hangman game
+STORYBRD.PAK           7,936 Never ending story board door for RiBBS.
+SUPRHANG1.1.PAK        7,680 Super hangman online game for RiBBS.
+SURVEY.PAK             4,608 Survey your users
+SURVEY2.PAK            9,728 Survey voting system for RiBBS v2.0
+TAIL.AR                8,576 Show tail end of file - used with RAMAXV15
+TDWARS.PAK            33,152 Tradewars space adventure game
+THGHTS.AR             89,216 Displays a random 'thought for the day'.
+THT_BLD3.ARC          16,384 Thought for today.  (requires thghs.ar).
+TICNO12I.LZH           5,820 Util to announce incoming .TIC files.  Ribbs v2.10
+TICNOT11.ARC           6,272 Program to notify users of newly arrived files.
+TKOGAMES.PAK          10,624 A number of games for RiBBS v1.01/2.0
+TOWERS.PAK             7,168 Online game of Towers of Hanoi.
+TWFIX.PAK                624 Fix for Tradewars
+UEDIT23.PAK           51,200 Fancy Userlog editor with macros
+UEDIT24UP.PAK         13,312 Updated version of userlog editor (& lister).
+UGRAPH.PAK             4,352 System usage graph
+UKADD.PAK              2,474 Used to add names to your UKEEPER.CFG file.
+UKEEP.PAK              3,727 Purges inactive callers from userlog
+ULIST23.PAK            4,059 Sorted userlog listing for your users
+ULIST24.PAK            4,386 Latest online user lister/sysop editor.
+UNBUND14.ARC           7,168 New unbundle program for RiBBS v2.02.
+UNBUND_204.LZH         8,122 Fixed UnBundle for RiBBS v2.1
+UNZIP.ARC              6,912 IBM compatible unZIP for FIDONET mail
+UPRINT22.PAK           5,527 Sorts & prints userlog without changing the file.
+USEENV11.PAK           2,944 Strips the seen by line at the end of a message.
+USORT25.PAK            6,580 Userlog sorter and purger
+USTATS23.PAK           6,490 User statistics
+USTATS24.LZH           5,219 Latest user stats display, Sysop selects colours.
+USTATSFX.ARC           1,280 Change colours in USTATS2.3.
+UTOP22.PAK             5,553 Provides users with a multi-sorted userlog listing
+V20UP1.AR             15,872 Modules to upgrade RiBBS to version 2.01.
+V210FIX3.AR           70,982 Latest patches for RiBBS version 2.10
+V2DRIVER.AR            2,816 Proacia/MWP driver/descriptor for RiBBS
+VALDAT12.AR           10,240 Callback verification for RiBBS
+VOTER15.AR             9,984 Voting booth
+WCHCD214.AR           14,848 Watchdog monitors carrier with outside programs.
+WHEEL.PAK             14,336 Wheel of fortune game
+WHOPLS.PAK             6,782 This will keep a list of last 10 users
+WHO_ZERO.LZH             788 Updates who.dat to 0 callers for a new day.
+WOFWRD.PAK            20,207 MOre words to use with RiBBSWheel (in WHEEL.PAK)
+XMBL211.LZH            1,855 Latest file transfer routine for RiBBS v2.10
+XMO_0218.AR            4,992 Another Xmout update - fixes Error 055 lockup.
+XRBWAT12.PAK          11,626 Enhanced version of RBWait for RiBBS v2.02.
+YAHTZEE3.PAK           5,475 Yahtzee game
+ZERO11.ARC             2,059 Checks FIDOIN for zero length files & deletes them
+ZERO21.LZH               955 Zaps zero lenght files (RiBBS v2.10)
+ 
+ > Total of 199 files in this Area
+ > Total of 2,484,802 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                      
+RSDOS Miscellaneous files                      
+-------------------------------------------------------------------------------
+BJOINK.BIN            11,392 CoCo 3, Steve Bjork's bouncing head.
+BOINKS.ARC            18,004 Excelent bouncing ball demo, very colourfull.
+BUGSY.ARK             42,368 Bugs Bunny animation demo (CoCo3 & RSDOS only)
+CC3DEMO.ARC           24,064 CoCo 3 demo, facinating!!
+CC3SRC.ARC            17,603 Commented source code for CC3DEMO.
+CC3TEXT.BAS            2,816 Text editor to put your own message in CC3DEMO.
+COCO3DEM.BAS             930 Yet another CoCo 3 demo!
+COCODEMO.BIN          27,776 CoCo 3, Another good demo, displays banner.
+COCOEM.TXT             1,072 Text file to go with S24 file
+DEMO2.ARC             38,042 Starwars style scrolling text demo, excellent.
+DIGICONV.ARJ          78,848 PC viewer for RASCAN & HSCREEN CoCo pictures.
+GLASDEMO.BIN          12,928 CoCo 2, Breaking glass demo.
+HEADROOM.ARC          26,624 CoCo 3, Max Headroom animation.
+ISSUE_52.ZIP         149,819 Disk based magazine for the CoCo.
+PACDEMO.ZIP           33,123 Demo version of a 'new' CoCo pacman game.
+RGBCOLRS.BAS           7,197 Helps to choose colours for your screens.
+S24.DSK              161,280 File for the CoCo 3 emulator.
+SHUTTLE.BIN           28,416 CoCo 2, Blastoff of the space shuttle.
+SOCKLIFE.ARC           1,536 Jumbo vers'n of life game, done on graphics screen
+SOCKSMDM.ARC           3,284 A collection of demos, all under BASIC.
+TRIBALL.ARC           24,576 CoCo 3, Ray tracing graphics demo.
+TUWAYSCL.ARC           1,095 Two way scroll demo.
+WATRFALL.ARC          30,464 Palette switching demo for the CoCo 3.
+ 
+ > Total of 23 files in this Area
+ > Total of 743,257 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                      
+RSDOS Communications files                      
+-------------------------------------------------------------------------------
+ALLRAM.ARC            15,596 CoCo 2, All RAM BBS (see EDITOR.BAS)
+ASCIEXPR.BIN           7,169 Run your 'personal' BBS.
+AUTODIAL.BAS           4,352 Lets you auto dial using the cassette port.
+CCKERM12.ARC          86,344 Official package of Kermit for the CoCo. (TC arc)
+CCKERMIT.BIN           3,968 Kermit protocol for the CoCo.
+CHECKERS.BIN           9,483 Play checkers over the phone or local network.
+CODETYPE.BAS           7,338 CoCo 2, Makes morse code practice tapes.
+CONBIT.BIN            10,752 CoCo 3 terminal program.
+CONN4PAK.BIN          11,136 CoCo 3 terminal program.
+CUTS.BAS              10,983 Encode/decode files to send by mail.
+DTERM.ARC             12,850 Delphi term for the CoCo 3.
+EDITOR.BAS             5,278 CoCo 2, All RAM BBS editor.
+FILE.ARC               3,824 CoCo 2, Downloaded text file editor.
+GETERM25.ARC          35,561 Greg-E-Term v2.5 comms package for ALL CoCo's.
+HAM.BAS                8,193 CoCo 2, Amature radio calling log.
+MABEL2.ARC             5,278 CoCo 2, Transfer a disk by modem.
+MTTAPE.BAS             2,923 CoCo 2, Converts downloaded disk file for tape.
+PART1.ARC             34,560 Pheonix BBS - Part 1 (TC archive).
+PART2.ARC             28,032 Pheonix BBS - Part 2 (TC archive).
+PART3.ARC             14,592 Pheonix BBS - Part 3 (TC archive).
+PART4.ARC             12,928 Pheonix BBS - Part 4 (TC archive).
+PART5.ARC             29,568 Pheonix BBS - Part 5 (TC archive).
+PCLON512.BIN           6,912 Transfer whole disks by phone. (needs 512k)
+RITERM.ARC             9,031 Rickey Term for the CoCo 3.
+RLETERM.ARC           11,423 RLE graphics terminal program.
+TAPETERM.BIN           6,144 CoCo 2, Simple tape terminal.
+TDD43.ARC             23,552 CoCo 2, Communicate with TDD for the deaf.
+TERMCAS1.BAS          13,440 Part one of the cassette version of Teleterm.
+TERMCAS2.BAS          13,056 Part two of the cassette version of Teleterm.
+TERMGEN1.BAS          13,312 Part one of disk (DECB 1.0) version of Teleterm.
+TERMGEN2.BAS          13,312 Part two of disk (DECB 1.0) version of Teleterm.
+TERMHELP.DAT           8,704 Help file for Teleterm (cassette or disk).
+TERMPAT.BAS              512 Patch disk Teleterm to work on DECB 1.1
+TMSTERM.BIN            4,736 CoCo 2, Simple tape terminal.
+TTERM212.BIN          19,786 CoCo 3, Terminal, supports extended IBM characters
+TWITERM.BIN           19,786 Twilight terminal program, excellent.
+TWITERM.TXT           15,012 Twilight terminal program instructions.
+TWITERM2.ARC          20,216 CoCo3, Twilight Term, supports extended IBM chr's.
+ULTERM41.ARC          39,119 RSDOS terminal program for CoCo 3's.
+WEFAX.BAS              5,376 Decode & view weather map FAX radio transmissions.
+XMODEM.ARK            22,673 Use Xmodem protocol in your BASIC programs.
+ 
+ > Total of 41 files in this Area
+ > Total of 626,810 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                      
+RSDOS Educational programs                      
+-------------------------------------------------------------------------------
+BASICMAP.BAS           7,792 CoCo 2, Produces map of GOTO's and GOSUB's.
+BOBO.BAS               7,897 CoCo 2, Even/odd guessing game.
+COILCALC.BAS           3,112 CoCo 2, Calculate coil inductance/reactance.
+FRACTION.BAS             984 Teaches the relationships of fractions.
+GRAPHICS.BAS          11,402 CoCo 2, Block graphics tutorial.
+GUESSFR.BAS            3,830 CoCo 2, Fractions tutorial.
+HANGMAN3.ARC          22,912 CoCo 3, Game of hangman.
+HEART.BAS              6,227 Teaches the various parts of the heart.
+HPASSFIL.BAS           5,858 CoCo 2, Electronics high pass filter design.
+HURKLE.BAS             4,078 CoCo 2, Learn to use grids.
+IC555.BAS              8,349 CoCo 2, Calculate values for the 555 timer IC.
+JAPAN12.ARC           43,356 WYSYWIG Japanese word processor & printout.
+LIFE.BAS               7,151 CoCo 2, Simulation of life.
+MATHDRIL.BAS           1,481 Supplies endless maths problems & keeps score.
+MULTIPLY.BAS           3,789 CoCo 2, Multiplication table drills.
+PIZZA.BAS              5,000 CoCo 2, Grid learning game.
+PWRDES.BAS             8,832 CoCo 2, Power supply designer.
+RCPHASE.BAS            4,260 CoCo 2, RC phase shift network circuits.
+REVERSE.BAS            3,729 CoCo 2, Number logic.
+SATTRK.BAS             8,658 CoCo 2, Satellite tracker simulation.
+SCRAMBLE.BAS           6,154 CoCo 2, Scrambled word game.
+SHAPES.BAS            11,520 CoCo 2, Learn about shapes.
+TASKTT.BAS             7,424 CoCo 3, Tutorial on manipulating memory.
+TYCOON.BAS             4,992 CoCo 2, Learn business strategy.
+ULTRAGRP.ARC          20,480 CoCo 3, Graphs algebra & trigonometric equations.
+ 
+ > Total of 25 files in this Area
+ > Total of 219,267 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                          
+RSDOS Games files                          
+-------------------------------------------------------------------------------
+AMBUSH.ARC           117,975 Ausy shareware shoot'em game with Digiscan demo.
+ARENA.ARC             22,656 CoCo 3, Arena of skill arcade game.
+AUCTION.ARC            9,250 CoCo 3, auction game.
+BACKGAMN.BIN           4,480 CoCo 2, Backgammon.
+BCBILL.BIN            23,040 CoCo 2, Caveman arcade game.
+BLAKJACK.BAS           1,693 Blackjack card game for one player & computer.
+BLUEVOID.BAS           5,837 3D version of shuffle for CoCo 3,'s.
+BUSJUMP.BAS            2,193 CoCo 2, motorcycle jump simulation.
+CAVE.BAS               9,056 CoCo 2, Text adevnture in a cave.
+CCTRATE.BAS            6,929 Concentrate for CoCo 3,'s.  Keyboard or joystick.
+CHESS.BIN              6,272 CoCo 2, Play chess against the computer.
+CHESS3.BAS             6,272 CoCo 3, Game of chess.
+CHUTE.BAS              4,910 CoCo 2, Parachute landing simulation.
+CIVILWAR.BAS           9,335 CoCo 2, Civil war text simulation.
+COCOQ.BAS              6,244 Chinese checkers for CoCo 3's. Demo & learn modes
+COCOZONE.ARC          30,821 CoCozone for all versions of CoCo.
+CRDINATE.BAS           2,341 Choose colours to paint a picture of a person.
+DEEDYORK.BAS          14,330 Deed of the York (Hotel) text adventure game.
+DEFENDER.BAS           5,760 CoCo 2, Protect cities from alien invasion.
+ELIZA.BAS              9,344 CoCo 2, Classic phsycologist simulation.
+FOGHORN.BAS            5,265 CoCo 3, educational game for kids.
+GARGOYLE.BAS          15,925 CoCo 2, Gargoyle text adevnture.
+GENERATE.BAS           8,960 Generate your own adevnture games.
+GERM.BIN               2,304 CoCo 2, Similar to space invaders.
+GILIGAN1.ARC          15,360 CoCo 3, Graphics adventure on Gilligans Isle(1of2)
+GILIGAN2.ARC          16,384 CoCo 3, Part 2 of Gilligan's Island adventure.
+GREMLIN.BIN            3,072 CoCo 2, Gremlin maze game.
+GRID.BIN               3,328 CoCo 2, Grid game.
+GUESSWRD.BAS           2,455 Guess computers' 3 letter word from clues.
+GUNNER.BAS             4,266 CoCo 2, Gun your opponents tank.
+HAUNTEDH.ARC          22,272 CoCo 2, Haunted house graphics adventure.
+HAWKS.BIN              4,096 Shoot'em arcade game for all CoCo's
+HOPBOP.BIN            10,880 CoCo 2, Donkey Kong type game.
+HORSES.BAS             3,584 Horse racing game for the CoCo 3.
+HOW.BAS                5,869 CoCo 2, Have the computer guess your number.
+INSTRFLT.BAS          10,368 Instrument only flight simulator.
+KALRR.BAS             14,720 CoCo 2, Railroad track switching simulation.
+LANDER.BAS             6,613 CoCo 2, Lunar landing text simulation.
+LANDLORD.ARC          24,664 You're a landlord that tries to collect the rent.
+MASTMIND.BAS           5,777 Guess the order & colours of the code.
+MATHGEN2.BAS           3,078 Generates percent and fraction problems to solve.
+MOTOX.BAS              6,144 Motor cross game, try to make the jump(all CoCo's)
+NEWORBIT.ARC           9,778 CoCo 3, game of orbit, choose modes of play.
+OREGON.BAS            19,015 CoCo 2, Oregon trail text simulation.
+OTHELLO.BAS            8,125 CoCo 2, Game of Othello.
+PACDUDE.ARC           26,624 Hi-res pacman for the CoCo 3,.
+PHOTOTAN.BAS           5,514 Try to shoot your apponents tank (all CoCo's)
+POKER.BAS              7,839 CoCo 2, Play some poker.
+POKER2.ARC            18,944 CoCo 3, poker machine game.
+PONK.BIN               8,832 CoCo 3, Ping pong game (2 player).
+REDGREEN.BAS           1,763 Fast reaction game.  Try to beat the computer.
+RESTRANT.BAS          13,825 CoCo 2, Restaurant simulation.
+ROACH.BAS              6,528 Get your roach past obsticles, don't get squashed.
+SEQUENCE.BAS           3,590 A number sequence game of deduction.
+SHIPHUNT.BIN          11,776 CoCo 2, Battleship type game.
+SNAKES.BAS             6,400 Classic game of snakes & latters (all CoCo's)
+SPACELAB.BAS           9,344 Text adventure game.
+SPACEPAK.ARK          93,568 10 Orphanware programs from Spectral Associates.
+SQUASH.BIN             3,328 CoCo 2, Squash ball.
+STAR.BAS              22,624 CoCo 3, Classic game of Star Trek.
+STRATA.BAS             6,074 Game of pong for CoCo 3,'s.  Configurable.
+TAIPAN3.BAS           19,840 CoCo 3, Trader adventure in the Orient.
+TALKHANG.BAS           6,842 Talking version of hangman.  Requires speech pak.
+TANK.BAS               1,937 2 player game to out manouver your apponent.
+TAROT.BAS             14,720 Computer tell your fortune with Tarot cards.
+TETRA.BIN             15,360 CoCo 3, Game of tetris.
+TRENCH.BAS             4,498 Star trench (like starwars battle) for all CoCo's
+WARGAME.ARC           20,600 Use tactics to battle with apponents (all CoCo's)
+WARI.BAS               2,736 Ancient game of Wari, one player against computer.
+WIGWORM.BIN            4,096 CoCo 2, Centipede type game.
+WIZARDS.ARC           26,752 CoCo 3, Wizard competion game.
+WORMINVD.BAS           4,868 Destroy attacking worm that eats your shields.
+ZEROG.BIN              2,816 CoCo 2, Space arcade game.
+ 
+ > Total of 73 files in this Area
+ > Total of 902,678 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                         
+RSDOS Graphics utils                         
+-------------------------------------------------------------------------------
+AMIGA.BIN              8,576 Amiga to CoCo 3 picture viewer.
+ANSI11.BAS             3,933 CoCo 3, ANSI graphics screen editor.
+APPLES.BAS             7,567 Apple sampler for mother.
+AUSTMAP.BAS            4,096 Draws the boxing kangaroo.
+AUTUMN.BAS            20,592 Picture of Autumn scene.
+BATMAN.BAS             1,008 Batman logo.
+BLOON.SET              1,024 Balloon type set for the MCPAINT program.
+BOLD.SET               1,280 Bold type set for the MCPAINT program.
+CC2GIF.BIN             6,400 CoCo 2, GIF picture viewer.
+CC3GIF.BIN             8,192 CoCo 3, GIF picture viewer.
+COCOMAC2.BIN           2,048 CoCo 1 & 2 MAC picture viewer & converter.
+COCOMAC3.BIN           3,072 CoCo 3 MAC picture viewer & converter.
+CUBE.BIN               6,016 CoCo 2, 3D rotating cube.
+DEKOALA.ARC           20,353 Atari picture viewer (with samples)
+DEMO.BAS               1,519 Demo showing arcade speed under BASIC.
+DOODLE.BAS             3,342 CoCo 3, Graphics doodling.
+DS96VIEW.ARC           1,730 A set of DS96 picture viewers.
+FANCY.SET              1,024 Fancy type set for the MCPAINT program.
+FAST80.ARC             5,239 Graphics screen enhancement for fast text updates.
+FGRAPHIC.BAS           1,200 Bouncing coloured lines over your screen.
+FIGURE.SET             1,024 Fancy type set for the MCPAINT program.
+FIRESTRM.BIN          18,560 CoCo 3, Firestorm designs.
+FISH.ARC               8,704 CoCo 2, Fish tank.
+FISHTANK.ARC           9,344 CoCo 3, Fish tank (with ramdisk)
+FNTMANIA.ARC          20,233 A collection of fonts & demo on how to use them.
+FRACTAL.BAS            2,630 CoCo 2, Fractal mountain.
+FUTURE.SET             1,280 Future type set for the MCPAINT program.
+GALLERY.BIN            1,536 CoCo 3, MGE picture viewer.
+GALLERY2.ARC           5,328 MGE viewer, uses WIMMP interface.
+GIF.BIN                8,064 GIF picture file converter.
+GRAPH_0.BAS            2,304 Draws graphs to your specs.
+GT1.BAS                2,688 Graphics treasure one.
+GT2.BAS                2,816 Graphics treasuer two.
+ICONS.SYS              6,528 Icons needed for the MCPAINT program.
+IMAGE30.ARC           34,816 CoCo 3, Graphics sprites image editor.
+JEWISH.BAS             8,129 CoCo 3, Graphics for Hanakkuh.
+KALSCOPE.BAS           3,259 CoCo 2, Kalidascope.
+LOADSAVE.BAS             671 CoCo 3, Save and load HSCREEN 2 pictures.
+LOVETREK.BAS          13,445 CoCo 2, Love boat & Star Trek slide show.
+MACCC2.BIN             2,048 CoCo 2, MAC picture viewer.
+MACCC3.BIN             3,328 CoCo 3, MAC picture viewer.
+MCPAINT.ARC            5,888 MCPAINT type sets (TC archive).
+MCPAINT.BAS            1,280 Prints out the MacPaint documantation.
+MCPAINT.BIN           24,832 Public domain graphics editor.
+MCPAINT3.BIN          24,448 McPaint patched to work on the CoCo 3.
+MICKEY.BAS             4,480 CoCo 3, Picture of Mickey Mouse & Donald Duck.
+OLDENG.SET             1,280 Old English type set for the MCPAINT program.
+PAGETURN.BAS           1,664 CoCo 3, Multiple PMODE4 picture viewer.
+PIX2BAS.BAS            4,835 CoCo 2, Convert PMODE4 picture to ACSII
+PMODE.BAS              2,184 CoCo 2, Covert between PMODE's.
+REMAC105.BIN           2,048 MAC picture viewer, prints to DMP105 printer.
+RGBHELLO.BAS           2,048 CoCo 3, Modified RGB color table for TP20.ARC
+RLEVIEW.BAS            1,920 Viewer for RLE format pictures.
+SAWMILL.BAS           12,866 CoCo 3, Sawmill picture.
+SCRIPT.SET             1,280 Script type set for the MCPAINT program.
+SEASCAPE.ARC          16,000 CoCo 3, Seascape.
+SUPERVU.BAS            3,968 Slide show / animataion viewer.
+TP20.ARC              47,104 Multi format picture viewer.  Supports 4096 colors
+TP21.ARC              54,096 Latest multi-format picture viewer, 4096 colours.
+TYPING.SET             1,024 Typewriter type set for the MCPAINT program.
+UNICORN.BAS            7,402 CoCo 3, Unicorn picture.
+VUMASTER.BIN          16,256 All format picture file viewer.
+WORLD3D.BAS            8,560 CoCo 2, View the world from any point.
+X1940S.SET             1,024 1940's type set for the MCPAINT program.
+X32EMUL.ARC           12,868 Emulates 32 column screen on graphics screen.
+ 
+ > Total of 65 files in this Area
+ > Total of 524,301 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                        
+Music file information                        
+-------------------------------------------------------------------------------
+All music/sound files in this area have players in both RSDOS & OS9 operating
+systems so these files are not 'really' specific to RSDOS, although the
+program that built them is.
+ 
+                      
+RSDOS Music files & utils                      
+-------------------------------------------------------------------------------
+ADDPLAY.BAS            2,176 Add player routine to Musica files.
+ATEAM.BIN              3,328 The theme from the TV show.
+AXEL_F.MOD           116,076 Beverley Hill Cop MOD file.
+AXEL_F.MUS             8,064 Axel-F (Beverly Hills Cop), musica format.
+BABYFACE.MUS           5,120 Baby face, musica format.
+BACH1.MUS              6,577 Classical Bach.
+BACH2.MUS              8,620 Classical Bach.
+BACH3.MUS              5,191 Classical Bach.
+BACH4.MUS             16,369 Classical Bach.
+BACKDIG2.ARC           3,287 Background sound player, BASIC still runs.
+BEATIT.MUS             7,552 Michael Jackson's Beat It.
+BIGSHOT.MUS            7,424 Billy Joel's Big Shot.
+BILLIE_J.MUS           6,912 Billie Jean, musica format.
+CANNON.BIN             4,993 A nice classical piece.
+CANON.MUS              5,120 Canon in D major by Johannes Pachelbel.
+CANTINA.MUS           12,765 Cantine theme from Starwars, musica format.
+CHARIOT.MUS            8,710 Chariots of fire.
+CLASSGAS.BIN           3,328 A nice classical piece.
+CLASSIC.BIN            5,120 A Medley of classical music.
+CMAUDIO.ARC           12,656 Digitize sound through the joystick port.
+COCO_MOD.ARC          39,904 MOD player for the CoCo (6309 & 6809 versions)
+DEPLAY.BAS             1,280 Removes player routine form musica files.
+DIGI512.ARC            9,389 Sound digitizer for use with BACKDIG and KSYNTHER
+DIGIML.BIN               256 CoCo 2, Sound digitizer (see also DIGITIZE.BAS)
+DUSTWIND.BIN           3,584 Dust in the wind by Kansas.
+EDOML.BIN              2,304 A nice classical piece.
+ELITE.MUS              9,878 A fast moving old time piece.
+EMILY.MUS              6,016 ?????, musica format.
+FINCOUNT.MUS           8,458 Europe's final countdown.
+FLASHDAN.MUS          10,368 Music from the movie Flashdance.
+FUGUE.BIN              5,888 A nice classical piece.
+GREMLINS.MUS           9,984 Music from the Gremlins.
+GRENGRAS.MUS           8,960 Green Grass fo home.
+HILL.BIN               2,176 The theme from Hill Street Blues.
+HYM.LYR                2,048 Hymm in Lyra format.
+IMONFI.MUS             6,802 Bruce Springsteen's I'm on fire.
+IMPERIAL.MUS           7,424 The Imperial march from Starwars.
+INMOOD.MUS             7,296 Good old Andrew sisters, musica format.
+JBGOOD.MUS             8,960 Chuck Berry's Johny B Goode.
+JUKEBOX.BAS            2,367 CoCo 2, Allows juke box selection of music files.
+JUMP.BIN               9,984 Rock music.
+KAHN.BIN              12,544 Music from the Wrath fo Kahn.
+KARMA.MUS              6,784 Karma Khamelion, musica format.
+KSYNTHER.ARC          61,640 Keyboard digitized sound player, lotsa sounds.
+KYRIE.MUS             10,240 Another musica file.
+LINUS.MUS              6,080 Linus.
+LUCY.BIN               6,084 Lucy in the sky with diamonds.
+LYRABOX.BIN            9,472 Lyra juke box player.
+MASH.MUS               1,792 Mash theme. musica format.
+MAXSOUND.ARC          51,968 Record & playback audio digitizer for CoCo 3's.
+MESSIAH.MUS           11,136 Handel's Messiah Halleujah chorus.
+MOD13.BIN              4,350 MOD player for RSDOS & 6309 fitted.
+MOD6809.BIN            4,554 MOD player for the COCO with 6809 fitted.
+MOULIN.MUS             4,795 Moulin rouge.
+MUSBOX.BIN             9,344 CoCo 2, MUSICA compatable 4 voice music editor.
+MUSBOX.DOC            20,158 CoCo 2, Documentation for MUSBOX.BIN
+MUSFIX.BAS             1,280 CoCo 2, Fixes bad MUSICA files.
+MUSIC.ARC             33,537 Early collection of four voice music.
+MUSIC3.BAS            13,184 Create/play/edit music.
+NINE25.MUS            13,056 Dolly Parton's nine to five.
+NUTCRACK.BIN           3,457 The famous Nutcracker classical piece.
+OCNVRT.BIN             2,432 Converts Orchestra 90 files to another format.
+ORCHMAST.BIN          17,792 Play Orchestra 90 files without the pak.
+ORCHPLAY.ARC          23,583 Edit & play Orch 90 files, with or without pak.
+PGUNN.BIN              8,320 Henry Mancini's Peter Gunn.
+PIANOMAN.MUS           9,984 Billy Joel's Piano Man.
+POLONA.BIN             3,584 A nice classical piece.
+POPCORN.MUS            7,552 Popcorn theme, musica format.
+POPCORN1.MOD          71,282 MOD music file.
+POPCORN2.MOD          87,388 MOD music file.
+PRESTO.MUS            13,453 Beethoven's piano sonata number 6.
+PUTTINON.MUS           6,528 Putting on the Ritz, musica format.
+RIDERSON.MUS           8,064 Riders on the storm, musica format.
+ROXANNE.MUS            9,984 Roxanne by the Police.
+SILENCE.MUS            6,016 The Sound of Silence by Paul Simon.
+SPRING.LYR             5,376 Lyra music file.
+STAIRWAY.MUS          13,896 Led Zeplin's stairway to heaven.
+STARWARS.MUS           3,840 Starwars theme, musica format.
+SUPER.MUS              7,425 Love theme from Superman.
+SUPERMAN.MUS           6,016 Superman theme, musica format.
+SURFER.MUS             6,528 Beach Boy's surfer girl.
+TAKEONME.MUS           6,784 Ahaa's take on me, musica format.
+TAXMAN.MUS             6,016 Tax Man.
+TELEFONE.MUS          13,312 Another catchy tume, musica format.
+THATSALL.LYR          10,496 Another Lyra music file.
+THEHEAT.MUS           13,440 The haet is on (Beverly Hills Cop), musica format.
+THEME.MUS              4,883 A nice classical piece.
+THRILLER.MUS           7,424 Thriller, musica format.
+TIMETIME.MUS          10,368 Time after time, musica format.
+TOPGUN.LYR             3,584 Danger zone, lyra format.
+TOYOTA.MUS             5,889 Oh what a feeling!
+VIVALDI.MUS           13,568 Classical music, musica format.
+WASHPOST.MUS           6,901 Washington post march.
+WAYUARE.MUS            6,016 Billy Joel's the way you are.
+WEARE.MUS             10,112 We are the world.
+WIZARD.MUS            10,681 Pinball wizard.
+ 
+ > Total of 95 files in this Area
+ > Total of 1,146,686 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+                           
+RSDOS Utilities                           
+-------------------------------------------------------------------------------
+ADDFIND.BAS            1,090 Machine language file address finder.
+ALARM.BAS                528 Alarm clock.
+BACKPACK.ARC           6,787 Disk copy/packing utility.
+BACKUPEZ.ARC           5,078 Disk backup utility. You select start & end tracks
+BANNER.BIN             5,632 Moveing message display. Great eye catcher.
+BINTOBAS.BAS           2,816 Converts binary program to basic.
+BSCTOOL.BIN            1,152 MGE format load & save utility. Quick & easy.
+BSEARCH.ARC            1,462 Search & edit enhancement to the EDIT command.
+BUDGET.BAS             5,551 Home finance and budget program.
+BURNER.ARC             5,847 Disk version of Denis Kitz's EPROM burner progs.
+CAL.BAS                3,554 Calander printer.
+CALCPRNT.BAS           1,312 Printing calculator.
+CAT3.BIN               4,608 Disk cataloging system, with search & edit.
+CC3DATER.BAS          11,388 Appointment calendar.
+CDM31S.ARC            41,564 Directory/file manager.  Copy, dlete, password etc
+CHECKS3.BAS           16,640 Checkbook register.
+CHEKANA.BAS            9,728 A check book managing program.
+CHEKDEMO.ARK          78,604 Checkbook plus demo.
+CHEXT.BAS              1,793 Auto filename extension changer.
+CKEY3.ARC             47,488 CoCo 3 enhancement. Full screen editor & more.
+CLOCK.BAS                760 Give a corner clock under basic.
+COCODOC.BAS            5,263 File management utility.
+COCOWORD.BAS           7,133 Word processor.
+COCOZAP.BIN            4,480 I think it's a disk zapper (editor).
+COLORMEN.BAS           3,072 Disk colour menu to make file selection easy.
+COLORZAP.BAS           3,840 Another disk editor (zapper).
+CONVERT.BAS            2,304 Converts ML programs to ASCII BAS files.
+COPY9.BAS              2,592 Copy OS9 files to RSDOS disks (under RSDOS)
+CROSSREF.BAS           6,837 Cross referance variables & calls in BASIC progs.
+CUSTOM1.ARC           15,435 Disk BASIC enhancer.
+DATAGE.BAS             1,243 Convert ML program to basic data.
+DB.ARC                36,352 Database
+DEBES.BIN              8,704 A different disk envoronment.
+DECIDE.BAS             6,016 CoCo 2, Decision maker
+DIGICORD.BAS           1,792 Record & play digital audio via CoComax 1/2 intfc.
+DISASSEM.BIN           8,448 Dissembler for 6809 machine language programs.
+DISKBLTZ.ARC           7,552 Disk zapper / editor.
+DISKCOMP.BIN             995 CoCo 2, Disk comparer.
+DISKDATA.BAS           2,580 Prints out all the info about a disks files.
+DISKTEST.BIN           6,277 CoCo 2, Disk drive tester.
+DISKUTIL.ARC          10,864 Do everything disk organizer. Copy, kill, sort etc
+DISKWASH.BAS           2,304 Kill, copy, rename & print files on a disk system.
+DOSOR9.BAS             3,969 Makes RSDOS disk readable by OS9.
+DSD2.BAS                 494 CoCo 2, Allows access to other side of disk.
+DSDD.BAS                 384 Another double sided disk utility.
+DSHRINK.BIN            2,560 CoCo 2, Dsik shrinker.
+DSKDMP.BAS             1,003 CoCo 2, Disk printer.
+DUMPSTOR.BAS           1,536 Dump disks to tape for backups.
+EASYLIST.BAS           1,921 CoCo 2, Scroll through BASIC programs.
+ENVELOPE.BAS           4,358 CoCo 2, Envelope addresser and printer.
+EPROM.BIN              1,536 New BIN code for Dennis Kitsz's eprom burner.
+EPROM.DOC              5,041 Instruction file to go with EPROM.BIN
+ERNO.ASC               2,432 English description when errors occur.
+EZARC.BIN             18,432 Another archiver, supports TC3 also. (RSDOS only)
+FDOS.ARC               8,079 CoCo 3, Disk BASIC enhancer.
+FILER.ARC              7,296 CoCo 2, Disk file cataloger.
+FONTEXT.BAS            6,612 Print with different fonts on a DMP105.
+FT40.BAS               5,914 Disk filea allocation table editor.
+GENEAL.BAS             5,249 CoCo 2, Keep track of your family tree.
+HANDYMAN.BAS          14,679 CoCo 2, Handyman construction calculations.
+HOMEPAC.DSK          135,667 CoCo 3, Home finance/accounting. Needs DSHRINK.BIN
+KDISK.ARC             54,185 Multi format disk utility.
+LABEL.BAS              8,457 CoCo 2, Prints mailing labels.
+MAGICMU.ARC           17,408 CoCo 2, Mouse and menu program.
+MAILING.BAS            7,424 Mail merge program for the CoCo 3.
+MAKECASS.BAS           3,688 CoCo 2, Transfer binary disk files to tape.
+MDOS.BAS               4,962 CoCo 3, Disk BASIC modification utility.
+MENUMKR.BAS            4,992 Creates single/multiple choice menu's.
+MOVIES.BAS            12,012 CoCo 3, Keeps inventory of video movies.
+MULTBACK.ARC           2,534 CoCo 2, Multiple disk backup utility.
+NEWCMDS.ARC            4,111 CoCo 3, New commands for the CoCo 3.
+NEWDOS.ARC            41,472 CoCo 2, New DOS and commands for the CoCo 2.
+P80X28.BAS               768 CoCo 3, Change text screen to 80 x 28.
+PCLEAR0.BAS              663 CoCo 2, Use all memory reserved for graphics.
+PIRASS.ARC            29,917 Info & utilities to copy protect your own ML progs
+PRINT.BIN              4,768 CoCo 2, Ascii file print utility.
+RAMDISKS.ARC           4,736 CoCo 3, RAMdisk and memory test utilities.
+RAMDSK.ARC             1,227 Ramdisk loader & driver for the CoCo 3.
+RAMT512K.BIN             128 A program to test the 512k of memory.
+RBCALC.ARC            25,949 CoCo 2, Spreadsheet.
+REGIS.BAS                736 CoCo 2, Hide notes or information on disk.
+REGISTER.BAS           6,784 CoCo 2, Checkbook register.
+REMS.ARC              32,128 CoCo 2, Real Estate Management System.
+REVDEMO.ARC           11,392 CoCo 3, Revelation demo.
+ROM.BAS                  224 CoCo 2, Move BASIC ROM to RAM.
+ROMBACK.ARC              738 CoCo 2, Backup ROMPaks to disk.
+ROMCOPY.BAS            2,304 Copy ROM packs to disk, requires Multipak.
+RSUUCODE.BAS           1,413 Simple Unix-Unix file decoder.  No error checks.
+SBU.ARC               14,784 Utils to copy (prot'd) disk/tape etc & test system
+SCOREBRD.BAS           3,073 CoCo 2, Scoreboard.
+SCRAM.BIN              7,808 Password protect your disks.
+SCRN51.ARC             4,237 CoCo 2, 51 Column text screen driver.
+SETSW.BAS              2,304 Program to set the time in a smartwatch.
+SET_2.BAS              8,960 All round utility for all CoCo's.
+SNAP.ARC               4,226 Raw disk editor/zapper, very good!
+SPLITTER.BAS           2,944 CoCo 2, Text file splitter.
+SPOOLER.ARC            2,858 Print spooler for CoCo 3's.
+STARWORD.BAS           5,527 CoCo 2, Word processor for the Star NX1000.
+STOCK.BAS              6,785 CoCo 2, Keep track of inventory and costs.
+SU3.BAS               11,164 CoCo 3, Super file management utility.
+TAPECNTL.BAS           1,575 CoCo 2, ML program for easy control of tape.
+TC10.BIN               3,584 Archive/unarchive utility for CoCo 1 & 2.
+TC12.BIN               4,097 CoCo 2, TC ARC/unARC utility.
+TC40.BIN               3,712 Archive/unarchive for CoCo 3 disk systems.
+TIMER.BIN              2,432 CoCo 2, Graphical disk drive timer.
+TVTESTER.BAS           7,341 CoCo 2, Graphics for TV adjustment.
+UNARC.BIN              7,040 Unarchive various formats including 'some' IBM.
+UNCNDIR2.ARC          14,500 CoCo 3, Disk label printer.
+UNLOCK.BIN             1,894 CoCo 2, Attempts to fix a bad disk.
+VCRMANGR.BAS          10,240 CoCo 2, Video rental management program.
+VIRTUAL.ARC           27,648 CoCo 3, Create several virtual CoCo's.
+VUDISK.BAS             3,328 Interesting disk program for the CoCo 3.
+WEATHER.BAS            8,258 CoCo 2, Weather analysis program.
+ZIPCODE.BAS           13,850 CoCo 3, Compress/decompress entire disk.
+ 
+ > Total of 114 files in this Area
+ > Total of 1,093,916 bytes in this Area 
+-------------------------------------------------------------------------------
+ 
+ > Total number of FReq'able files in system: 1849
+ > Total number of bytes in system: 38,729,053
+ 
+Compiled using RList v1.03c - Copyright (C) 1993 by Gene Clifton

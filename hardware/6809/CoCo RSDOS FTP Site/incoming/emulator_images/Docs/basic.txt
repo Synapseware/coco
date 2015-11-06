@@ -1,0 +1,169 @@
+Color Basic (non-Extended) Summary
+
+Under construction, more details on the way
+  ------------------------------------------------------------------------
+
+Statements
+   AUDIO ON
+   AUDIO OFF
+   CLEAR n,h               Reserve n bytes for strings, and
+                           use only up to address h for BASIC
+   CLOAD
+   CLOAD name
+   CLOSE d
+   CLS c
+   CONT
+   CSAVE name
+   CSAVE name,A
+   DATA
+   DIM
+   END
+   EXEC
+   EXEC address
+   FOR .. TO .. STEP .. / NEXT
+   GOSUB linenumber
+   GOTO linenumber
+   IF .. THEN .. ELSE ..
+   INPUT
+   INPUT #-1
+   LIST
+   LLIST
+   MOTOR ON
+   MOTOR OFF
+   NEW
+   ON .. GOSUB ..
+   ON .. GOTO ..
+   OPEN m,#d,filename
+   POKE addr,value         Save value at address addr, where
+                           0 <= addr <= 65535, and 0 <= value <= 255
+   PRINT
+   PRINT #-1
+   PRINT #-2
+   PRINT TAB
+   PRINT @location
+   READ
+   REM
+   RESET (x,y)
+   RESTORE
+   RETURN
+   RUN
+   SET (x,y,c)
+   SKIPF
+   SKIPF name
+   SOUND tone,duration
+   STOP
+
+Functions
+   ABS(num)
+   ASC(str)
+   CHR$(charcode)
+   EOF(f)
+   INKEY$
+   INSTR(first,str,substr)
+   INT(num)
+   JOYSTK(j)                Reads joystick value j:
+                                0=left_horiz  1=left_vert
+                                2=right_horiz 3=right_vert
+   LEFT$(str,length)
+   LEN(str)
+   MEM
+   MID$(str,first,len)
+   POINT(x,y)
+   RIGHT$(str,length)
+   SGN(num)
+   SIN(num)
+   STR$(num)
+   USR(num)                 Calls the machine-language subroutine whose
+                            address is stored at addresses 275 and 276
+   VAL(str)
+   VARPTR(var)
+
+Operators
+   ^               Exponentiation
+   -,+             Unary negative, positive
+   *,/             Multiplication, division
+   +,-             Addition and concatenation, subtraction
+   <,>,=,<=,>=,<>  Relational tests
+   NOT, AND, OR    Logical operators
+
+Error messages
+   Abbrev.  Explanation
+     /0     Division by zero
+     AO     File already open
+     BS     Bad subscript - out of range
+     CN     Cannot continue
+     DD     Redimensioned array
+     DN     Device number error
+     DS     Direct statement in file
+     FC     Illegal function call
+     FD     Bad file data
+     FM     Bad file mode
+     ID     Illegal direct
+     IE     Input past end of file
+     I/O    Input/Output error
+     LS     String too long
+     NF     NEXT without FOR
+     NO     File not open
+     OD     Out of data
+     OM     Out of memory
+     OS     Out of string space
+     OV     Overflow
+     RG     RETURN without GOSUB
+     SN     Syntax error
+     ST     String formula too complex
+     TM     Type mismatch
+     UL     Undefined line number
+
+ROM subroutines
+   NAME   Addr Description
+   CSRDON A004 Gets the cassette going and reads the leader
+   BLKIN  A006 Reads a block from the cassette
+               Must immediately follow CSRDON
+               Uses CBUFAD
+               returns BLKTYP and BLKLEN, cc.z=1 <-> okay
+   WRTLDR A00C Gets the cassette going and writes the leader
+   BLKOUT A008 Writes a block to the cassette
+               Must immediately follow WRTLDR
+               Uses CBUFAD, BLKTYP, and BLKLEN
+   CHROUT A002 Output a character to screen or printer
+               Uses DEVNUM, character to output in acca
+   POLCAT A000 Polls the keyboard for a character
+               returns cc.z=1 <-> no key, or acca=key code
+   JOYIN  A00A Reads and saves all four joystick values
+               returns POTVAL through POTVAL+3
+
+Memory map
+   Decimal     Hex       Description
+   0-105       0-69      Direct page RAM, OK for use by user ML programs
+   106-255     6A-FF     Direct page RAM, used by BASIC
+   111         6F        DEVNUM: 0=screen, FE=printer
+   125         7D        BLKLEN: number of bytes in a block (0-255)
+   126         7C        BLKTYP: block type: 0=header, 1=data, FF=end
+   127         7E        CBUFAD: buffer address (two bytes?)
+   129         81        CSRERR: cassette error code
+   256-273     100-111   Internal use (jump vectors)
+   274-276     112-114   Address of USR routine
+   277-281     115-119   OK for use by user ML programs
+   282         11A       Keyboard alpha-lock: FF=locked, 0=not
+   283-284     11B-11C   Keyboard delay constant
+   285-337     11D-151   OK for use by user ML programs
+   338-345     152-159   Keyboard rollover table
+   346-349     15A-15D   POTVAL: Joystick values
+   346         15A               Right joystick, left/right value
+   347         15B                               up/down value
+   348         15C               Left joystick,  left/right value
+   349         15D                               up/down value
+   350-1023    15E-3FF   Internal use
+   1024-1535   400-5FF   Video memory
+   1536-32767  600-7FFF  User's BASIC program
+   32768-40959 8000-9FFF [Extended Color BASIC]
+   40960-49151 A000-BFFF Color BASIC
+   49152-65279 C000-FEFF [Program pak memory]
+   65280-65535 FF00-FFFF I/O, machine configuration, reset vectors
+
+Back to my top-level CoCo page
+
+  ------------------------------------------------------------------------
+12-Jun-98
+yakowenk@csx.unxc.edu
+(remove all "x"s to get a valid address)

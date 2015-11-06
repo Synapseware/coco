@@ -1,0 +1,221 @@
+                EDTASM+ & EDTASM6309 Commands
+                  **  means Edtasm6309 only
+                              
+A brief summary of commands for Tandy's EDTASM+ and the
+EDTASM6309 patch by Robert Gault.
+
+EDITOR
+
+     Print - to screen & move cursor to indicated line
+     
+          P[m,[n]] no modifiers prints a screen of lines
+          P# first line
+          P. current line
+          P* last line
+          P100
+          P100:300
+          P#:*
+     
+     Print to printer
+     
+     H print with line numbers using modifiers as above
+     T print without line number
+     
+     E edit line
+          Works the same as in Basic ROMs.
+     
+     D delete using modifiers as above
+     
+     I - insert line; default increments are 10, start 100
+     
+          I - insert after current line
+          I100  insert at line 100
+          I152,2  insert at line 152 & increment by 2
+     
+     N renumber lines
+     
+          Nstartline[,increment]
+     
+     R replace
+     
+          R[m,[n]] variation on Insert
+     
+     C copy; dupplicates lines
+          
+          Cstartline,range,increment
+          C500,100:300,10
+          
+     M move line(s); same syntax as Copy
+     
+     Z enter Zbug
+     
+     Q return to Basic; you don't get a second chance!
+     
+     K return to DOS loader; you don't get a second chance!
+     
+     W write source code
+     
+          W[D/T] filename[.ext]   default extension is .ASM
+               D - disk, T - tape  These modifiers removed
+               in EDTASM6309; disk is forced.
+     **   W# filename    save source without line numbers
+     
+     L load source code
+     
+          L[D/T][A] filename[.ext] A - will append to
+     current contents, default extension is .ASM
+               D - disk, T - tape  These modifiers removed
+               in EDTASM6309; disk is forced.
+
+**   V display any disk drive directory from within Editor
+or Zbug
+
+ASSEMBLER
+
+     Switch
+     /AO  absolute origin     used with ORG psuedo op
+     /IM  in memory
+     /LP  assemble list to printer
+     /MO  manual origin
+     /NL  no listing
+     /NS  no symbol table
+     /NO  no object in memory or on disk
+     /SR  single record
+     /SS  short screen listing
+     /WE  wait on error
+     /WS  with symbol table
+          This object file when loaded into Zbug will
+          include symbolic listing. Needed for standalone
+          ZBug.
+     
+     A /IM/WE
+     A filename[.ext] /NL/NS       saves to disk and cannot
+     have /IM; default  is .BIN
+
+Controlling the Assembler  listing
+
+     S    reports and prompts for 1) lines per page, 2) page
+     length, 3) page width, 4) wordwrap      required 0=NO
+     1=YES
+     
+Controlling Manual origin
+
+     O    reports and prompts for
+          FIRST     first available address
+          LAST last available address
+          USRORG    must be between first and last; default
+          top of RAM
+
+ZBUG
+
+     B    byte mode
+     W    word mode
+     A    ascii mode
+     M    memnonic mode
+     H    address symbols; operands numeric
+     uparrow/downarrow   move in memory
+     T [start]  [end]    display a block of memory
+     TH [start]  [end]   print a block of memory
+     ####/     go to memory
+     symbol/   go to memory
+     ;    momentary numeric operands
+     Xaddress  set break point
+     C[number] continue from break point; [halt at break
+     point on count]
+     D    display all break points
+     Y[number] yank break point
+     R    display registers
+          EDTASM6309 displays the extra 6309 registers
+     register_name/ examine and/or change register content
+          EDTASM6309 includes extra 6309 registers
+     [address],     step at address or current address
+     Go[address]    run starting at address or current
+     address
+     U new start count        move memory contents from to
+     P[D/T[S]] filename start end execute    save binary
+     code to disk or tape (disk is default)
+                              [with symbol table];     disk
+     only EDTASM6309
+     L[D/T[S]] filename  load binary file from disk or tape
+     (disk is default) [with symbol table]
+                    disk only EDTASM6309
+     O(8/10/16)     select octal, decimal, or hexadecimal
+     for output
+     I(8/10/16)     select octal, decimal, or hexadecimal
+     for input
+               When modifying memory numbers can be entered
+     as:
+     **   base 2    %binary number
+          base 8    @octal number  octal numberQ
+          base 10   &decimal number          deciaml numberT
+          base 16   @hexadecimal   hexadecimalH
+     
+     modify memory with expressions:
+          + - * .DIV. .MOD. .EQU. .NEQ.
+          < shift
+          .AND. .OR. .XOR. .NOT.
+     
+PSEUDO OPS     distinctive to EDTASM[6309]
+
+     INCLUDE filename[:drive_number]    read source code
+     from disk a include it with current     source code
+     [drive number]
+     ZBug  algebraic/logical expressions as given above
+     END [excute]             marks last line for assembler
+     [execution address for   binary file]
+     EQU                      define a constant value
+     SET                      define the current value of a
+     variable; ** repaired and     works correctly
+     FCB/FDB                  accepts a single value
+                              ** accepts many values, ex.
+                              fcb 1,2,3,4,'X,'A or fdb
+     $1234, $5678, $9abc
+**   FCS                      same as fcc /is anyone out
+ther/
+                                            fcb $80+'e
+     PAGE                     new page if being printed
+     COND                     conditional assembly  +,-,/,*,
+     .EQU.
+     ENDC                     terminates conditional
+     expression
+     OPT
+          MC   list macro calls
+          NOMC do not list macro calls
+          MD   list macro definitions
+          NOMD don't list
+          MEX  list macro expansions
+          NOMEX  don't list
+          L    turn on listing
+          NOL  turn off listing
+     
+          syntax    OPT (option)
+
+MACROS
+
+     MACRO     indicates start of macro
+     ENDM      indicates end of macro
+     \.letter       symbol for use within a macro; letter
+     must be A-Z
+     \number        value that must be loaded from macro
+     call; 0-9-A-Z
+     
+     ex. if GRAPH is the name of a macro
+     GRAPH #$F8,ABC where \0 is loaded with the numerical
+     value $F8 and \1 is loaded with the     string "ABC"
+**   special symbol in EDTASM6309
+     letter@        a local symbol which is used outside
+macros as \.letter is used inside macros.
+               These are reset by an empty line of source
+code, ex.
+
+start     clra
+a@   deca
+     bne  a@
+
+     clrb
+a@   decb
+     bne  a@
+
+EDTASM6309 permits the use of lowercase text. In the case of
+symbols, lowercase is distinct from uppercase; a@ does not
+equal A@.

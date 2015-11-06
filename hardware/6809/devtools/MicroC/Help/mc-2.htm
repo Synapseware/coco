@@ -1,0 +1,573 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1254">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Adsýz Normal Sayfa</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0" width="630">
+    <tr>
+        <td><a name="       6.1 The MCP command"><font
+        size="2" face="Arial"><em><strong>        6.1 The
+        MCP command</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The format of the MICRO-C
+        Preprocessor command line is:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                            </span>MCP [input_file]
+        [output_file] [options]<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>[input_file]<span style="mso-spacerun: yes">  </span>is the name of
+        the<span style="mso-spacerun:
+yes">  </span>source<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun: yes">  </span>containing<span style="mso-spacerun: yes">  </span>'C'<br>
+<span style="mso-spacerun: yes">                  </span>statements to read.<span style="mso-spacerun: yes">  </span>If no filenames
+        are given, MCP will read from<br>
+<span style="mso-spacerun: yes">                  </span>standard input.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>[output_file]<span style="mso-spacerun: yes">  </span>is the name of
+        the file to which<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>processed<br>
+<span style="mso-spacerun:
+yes">                  </span>source code is written.<span style="mso-spacerun: yes">  </span>If less than
+        two filenames are specified,<br>
+<span style="mso-spacerun: yes">                  </span>MCP will write to standard output.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>6.1.1 Command Line Options<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>MCP accepts the following
+        command line [options],<span style="mso-spacerun: yes">  </span>which are<br>
+<span style="mso-spacerun:
+yes">                     </span>recognized in lower case only:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>-c<span style="mso-spacerun:
+yes">      </span>- Instructs
+        MCP to keep comments from<span style="mso-spacerun: yes">  </span>the input<br>
+<span style="mso-spacerun:
+yes">                                  </span>file
+        (except for those in '#' statements which<br>
+<span style="mso-spacerun: yes">                                  </span>are
+        always removed). Normally, MCP will remove<br>
+<span style="mso-spacerun:
+yes">                                  </span>all
+        comments.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>-l<span style="mso-spacerun:
+yes">      </span>- Causes the
+        output file to contain line numbers.<br>
+<span style="mso-spacerun: yes">                                  </span>Each
+        line in the output file will be<span style="mso-spacerun: yes">  </span>prefixed<br>
+<span style="mso-spacerun: yes">                                  </span>with
+        the line number of the<span style="mso-spacerun: yes">  </span>originating<span style="mso-spacerun: yes">  </span>line<br>
+<span style="mso-spacerun:
+yes">                                  </span>from
+        the input file.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>l=path<span style="mso-spacerun: yes">  </span>- Defines the
+        directory path which will be taken<br>
+<span style="mso-spacerun: yes">                                  </span>to
+        reference<span style="mso-spacerun: yes">  </span>&quot;library&quot;<span style="mso-spacerun: yes">  </span>files when<span style="mso-spacerun: yes">  </span>'&lt;&gt;'<span style="mso-spacerun: yes"> 
+</span>        are<br>
+<span style="mso-spacerun: yes">                                  </span>used
+        around an<span style="mso-spacerun: yes">  </span>'#include'<span style="mso-spacerun: yes">  </span>file name.<span style="mso-spacerun: yes">  </span>Unless<br>
+<span style="mso-spacerun: yes">                                  </span>otherwise
+        specified, the path defaults to:<br>
+<span style="mso-spacerun:
+yes">                                               
+</span>        '\MC'<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>-q<span style="mso-spacerun:
+yes">      </span>- Instructs
+        MCP to be quiet, and not display the<br>
+<span style="mso-spacerun: yes">                                  </span>startup
+        message when it is executed.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>&lt;name&gt;=&lt;text&gt; -
+        Pre-defines a non-parameterized macro<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<br>
+<span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;
+mso-fareast-font-family:&quot;MS Mincho&quot;"><span style="mso-spacerun:
+yes">                                  </span>specified
+        &lt;name&gt; with the string value &lt;text&gt;.</span></font><p><font
+        size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="6.2 Preprocessor Commands"><font size="2"
+        face="Arial"><em><strong>6.2 Preprocessor Commands</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The following commands are
+        recognized by the MCP utility,<span style="mso-spacerun: yes">  </span>only<br>
+<span style="mso-spacerun:
+yes">                  </span>if they occur at the beginning of the
+        source file line:<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>6.2.1 #define
+        &lt;name&gt;(parameters) &lt;replacement text&gt;</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Defines a global macro
+        name which will be replaced with<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                     </span>indicated<span style="mso-spacerun: yes">  </span>&lt;replacement
+        text&gt;<span style="mso-spacerun: yes">  </span>wherever it occurs in the source<br>
+<span style="mso-spacerun: yes">                     </span>file.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Macro<span style="mso-spacerun: yes">  </span>names<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun:
+yes"> 
+</span>        any<span style="mso-spacerun: yes">  </span>length,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>contain<span style="mso-spacerun: yes">   </span>the<br>
+<span style="mso-spacerun:
+yes">                     </span>characters 'a'-'z',<span style="mso-spacerun: yes">  </span>'A'-'Z',<span style="mso-spacerun: yes"> 
+</span>        '0'-'9' and '_'.<span style="mso-spacerun: yes">  </span>Names must not<br>
+<span style="mso-spacerun: yes">                     </span>begin with the characters
+        '0'-'9'.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>If the macro name is
+        IMMEDIATELY followed by a list of up to<br>
+<span style="mso-spacerun: yes">                     </span>10 parameter names contained in
+        brackets, those parameter names<br>
+<span style="mso-spacerun:
+yes">                     </span>will be substituted with
+        parameters passed to the macro when it<br>
+<span style="mso-spacerun: yes">                     </span>is referenced.<span style="mso-spacerun: yes">  </span>Parameter names
+        follow the same rules as<span style="mso-spacerun: yes">  </span>macro<br>
+<span style="mso-spacerun: yes">                     </span>names.<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>eg: #define
+        min(a, b) (a &lt; b ? a : b)<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>If any spaces exist
+        between the macro name and<span style="mso-spacerun:
+yes">  </span>the<span style="mso-spacerun: yes">  </span>opening<br>
+<span style="mso-spacerun: yes">                     </span>'(',<span style="mso-spacerun:
+yes">  </span>the macro will not be
+        parameterized,<span style="mso-spacerun:
+yes">  </span>and<span style="mso-spacerun: yes">  </span>all<span style="mso-spacerun: yes">  </span>following<br>
+<span style="mso-spacerun:
+yes">                     </span>text<span style="mso-spacerun: yes">  </span>(including '('<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>')')<span style="mso-spacerun: yes"> 
+</span>        will be entered into the macro<br>
+<span style="mso-spacerun:
+yes">                     </span>definition.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>If the very last character
+        of a<span style="mso-spacerun: yes">  </span>macro<span style="mso-spacerun: yes">  </span>definition<span style="mso-spacerun: yes">  </span>line<span style="mso-spacerun: yes">  </span>is<br>
+<span style="mso-spacerun:
+yes">                     </span>'\',<span style="mso-spacerun: yes">  </span>MCP will continue the
+        definition with the next line<span style="mso-spacerun: yes">  </span>(The<br>
+<span style="mso-spacerun: yes">                     </span>'\' is not included).
+        Pre-processor statements included as part<br>
+<span style="mso-spacerun: yes">                     </span>of a macro definition will not
+        be processed by MCP, but will be<br>
+<span style="mso-spacerun: yes">                     </span>passed on and handled by the
+        integral MICRO-C preprocessor.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>6.2.2 #undef
+        &lt;symbol&gt;</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Undefines the named macro
+        symbol. further references to this<br>
+<span style="mso-spacerun:
+yes">                     </span>symbol will not be replaced.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>NOTE: With MCP, macro
+        definitions operate on a STACK. IE: If<br>
+<span style="mso-spacerun:
+yes">                     </span>you define a macro<span style="mso-spacerun: yes">  </span>symbol,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes"> 
+</span>        then<span style="mso-spacerun: yes">  </span>re-define<span style="mso-spacerun: yes">  </span>it<span style="mso-spacerun: yes">  </span>(without<br>
+<span style="mso-spacerun:
+yes">                     </span>'#undef'ing it first),<span style="mso-spacerun:
+yes">  </span>subsequently<span style="mso-spacerun: yes"> 
+</span>        '#undef'ing it will cause<br>
+<span style="mso-spacerun: yes">                     </span>it to revert to its<span style="mso-spacerun: yes">  </span>previous<span style="mso-spacerun: yes"> 
+</span>        definition.<span style="mso-spacerun: yes">  </span>A<span style="mso-spacerun: yes">  </span>second<span style="mso-spacerun: yes">  </span>'#undef'<br>
+<span style="mso-spacerun:
+yes">                     </span>would then cause it to be
+        completely undefined.<br>
+        </font></span></p><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">
+        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><em><strong>6.2.3 #forget
+        &lt;symbol&gt;</strong></em><br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>Similar<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>'#undef',<span style="mso-spacerun: yes"> 
+</span>        except<span style="mso-spacerun: yes">  </span>that<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>symbol<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">   </span>ALL<br>
+<span style="mso-spacerun: yes">                     </span>SUBSEQUENTLY DEFINED SYMBOLS
+        will be undefined.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Useful for releasing any
+        local symbols<span style="mso-spacerun: yes">  </span>(used only within<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun: yes">                     </span>single include file).<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>For example:<br>
+        <br>
+<span style="mso-spacerun: yes">                                </span>#define
+        GLOBAL &quot;xxx&quot;<span style="mso-spacerun: yes">    </span>/* first global symbol */<br>
+<span style="mso-spacerun: yes">             </span><span style="mso-spacerun: yes">                       </span>...<span style="mso-spacerun: yes">                
+</span>        /* more globals */<br>
+<span style="mso-spacerun: yes">                                </span>#define
+        LOCAL<span style="mso-spacerun: yes">   </span>&quot;xxx&quot;<span style="mso-spacerun:
+yes">   </span>/* first local symbol */<br>
+<span style="mso-spacerun:
+yes">                                    </span>...<span style="mso-spacerun:
+yes">                
+</span>        /* more locals */<br>
+<span style="mso-spacerun:
+yes">                                </span>/* body of
+        include file goes here */<br>
+<span style="mso-spacerun: yes">                                </span>#forget
+        LOCAL<span style="mso-spacerun: yes">           </span>/* release locals */<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>6.2.4 #if
+        &lt;expression&gt;</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Evaluates an expression,<span style="mso-spacerun: yes"> 
+</span>        and causes the following lines (up<br>
+<span style="mso-spacerun: yes">                     </span>to<span style="mso-spacerun:
+yes">  </span>'#else'<span style="mso-spacerun: yes">  </span>or<span style="mso-spacerun: yes">  </span>'#endif')<span style="mso-spacerun: yes">  </span>to
+        be processed and included in the<br>
+<span style="mso-spacerun:
+yes">                     </span>output file only if the<span style="mso-spacerun:
+yes">  </span>result<span style="mso-spacerun: yes"> 
+</span>        of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>expression<span style="mso-spacerun: yes">  </span>was<span style="mso-spacerun: yes">  </span>TRUE<br>
+<span style="mso-spacerun:
+yes">                     </span>(non-zero).<span style="mso-spacerun: yes">  </span>The expression may
+        contain only numeric constants,<br>
+<span style="mso-spacerun: yes">                     </span>and the following operators:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>+<span style="mso-spacerun: yes">  </span>Addition<span style="mso-spacerun: yes">                    
+</span>        &lt;&lt; Shift Left<br>
+<span style="mso-spacerun: yes">                        </span>-<span style="mso-spacerun:
+yes">  </span>Subtract &amp; Unary
+        negate<span style="mso-spacerun: yes">      </span>&gt;&gt; Shift Right<br>
+<span style="mso-spacerun:
+yes">                        </span>*<span style="mso-spacerun: yes">  </span>Multiplication<span style="mso-spacerun: yes">              
+</span>        == Test equal to<br>
+<span style="mso-spacerun: yes">                        </span>/<span style="mso-spacerun: yes">  </span>Division<span style="mso-spacerun: yes">                    
+</span>        != Test not equal to<br>
+<span style="mso-spacerun: yes">                        </span>%<span style="mso-spacerun: yes">  </span>Modulus<span style="mso-spacerun:
+yes">                     
+</span>        &gt;<span style="mso-spacerun: yes">  </span>Test greater than<br>
+<span style="mso-spacerun: yes">                        </span>&amp;<span style="mso-spacerun: yes">  </span>Bitwise AND<span style="mso-spacerun: yes">                 
+</span>        &gt;= Test greater or equal<br>
+<span style="mso-spacerun: yes">                        </span>|<span style="mso-spacerun: yes">  </span>Bitwise OR<span style="mso-spacerun:
+yes">                  
+</span>        &lt;<span style="mso-spacerun: yes">  </span>Test less than<br>
+<span style="mso-spacerun: yes">                        </span>^<span style="mso-spacerun: yes">  </span>Bitwise XOR<span style="mso-spacerun: yes">                 
+</span>        &lt;= Test less or equal<br>
+<span style="mso-spacerun: yes">                        </span>&amp;&amp; Logical AND<span style="mso-spacerun: yes">                 
+</span>        ~<span style="mso-spacerun: yes">  </span>Unary bitwise complement<br>
+<span style="mso-spacerun: yes">                        </span>|| Logical OR<span style="mso-spacerun: yes">                  
+</span>        !<span style="mso-spacerun:
+yes">  </span>Unary logical complement<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>Note that the simplified
+        expression parser in MCP<span style="mso-spacerun: yes">  </span>does<span style="mso-spacerun:
+yes">  </span>NOT<br>
+<span style="mso-spacerun: yes">                     </span>follow standard rules of
+        operator<span style="mso-spacerun: yes">  </span>precedence.<span style="mso-spacerun: yes">  </span>Operations<span style="mso-spacerun: yes">  </span>are<br>
+<span style="mso-spacerun:
+yes">                     </span>performed from left<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>right<span style="mso-spacerun: yes"> 
+</span>        in<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>order<span style="mso-spacerun: yes">  </span>that<span style="mso-spacerun: yes">  </span>they<span style="mso-spacerun: yes">  </span>are<br>
+<span style="mso-spacerun: yes">                     </span>encountered.<span style="mso-spacerun: yes">  </span>Brackets<span style="mso-spacerun: yes">  </span>'()'<span style="mso-spacerun: yes"> 
+</span>        can be used to force<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>specific<br>
+<span style="mso-spacerun: yes">                     </span>order of evaluation.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Macro substitution will
+        occur on the expression before it is<br>
+<span style="mso-spacerun: yes">                     </span>evaluated,<span style="mso-spacerun: yes">  </span>and any symbol
+        names which<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>not<span style="mso-spacerun: yes">  </span>resolved<span style="mso-spacerun: yes">  </span>are<br>
+<span style="mso-spacerun:
+yes">                     </span>assumed to have a value of 0
+        (FALSE).<br>
+        <br>
+<span style="mso-spacerun: yes">                  <em><strong></strong></em></span><em><strong>6.2.5 #ifdef
+        &lt;symbol&gt;</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Causes the following lines
+        (up to '#else' of '#endif') to be<br>
+<span style="mso-spacerun: yes">                     </span>processed and included in the
+        output file<span style="mso-spacerun:
+yes">  </span>only<span style="mso-spacerun: yes">  </span>if<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>named<br>
+<span style="mso-spacerun: yes">                     </span>symbol is defined as a macro.<br>
+        </span></font></p><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">
+        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><em><strong>6.2.6 #ifndef
+        &lt;symbol&gt;</strong></em><br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>Causes the following lines
+        (up to '#else' of '#endif') to be<br>
+<span style="mso-spacerun: yes">                     </span>processed and included in the
+        output file<span style="mso-spacerun:
+yes">  </span>only<span style="mso-spacerun: yes">  </span>if<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>named<br>
+<span style="mso-spacerun: yes">                     </span>symbol is NOT defined as a
+        macro.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>NOTE:
+        '#if/#ifdef/#ifndef#else/#endif' may be nested.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>6.2.7 #else</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Toggles the state of the
+        &quot;if_flag&quot;,<span style="mso-spacerun: yes">  </span>controlling conditional<br>
+<span style="mso-spacerun:
+yes">                     </span>processing.<span style="mso-spacerun: yes">  </span>Only has effect in
+        the highest level of<span style="mso-spacerun: yes">  </span>suspended<br>
+<span style="mso-spacerun: yes">                     </span>processing. IE: Nested
+        conditionals will work properly.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>If the previous
+        '#if/#ifdef/#ifndef' failed, processing will<br>
+<span style="mso-spacerun:
+yes">                     </span>begin again following the
+        '#else'.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>If the previous
+        '#if/#ifdef/#ifndef' passed, processing will<br>
+<span style="mso-spacerun:
+yes">                     </span>be suspended until the '#endif'
+        is encountered.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>NOTE: Since '#else' acts
+        as a toggle, it may be used outside<br>
+<span style="mso-spacerun:
+yes">                     </span>of<span style="mso-spacerun: yes">  </span>any<span style="mso-spacerun: yes">   </span>'#if/#ifdef/#ifndef'<span style="mso-spacerun: yes">  
+</span>        to<span style="mso-spacerun: yes">   </span>unconditionally<span style="mso-spacerun: yes">   </span>suspend<br>
+<span style="mso-spacerun: yes">                     </span>processing up to '#endif'.<span style="mso-spacerun: yes">  </span>You
+        can also use multiple<span style="mso-spacerun: yes">  </span>'#else's<br>
+<span style="mso-spacerun:
+yes">                     </span>in a<span style="mso-spacerun: yes">  </span>single<span style="mso-spacerun: yes">  </span>conditional,<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes"> 
+</span>        swap<span style="mso-spacerun: yes">  </span>back<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>forth<span style="mso-spacerun: yes">  </span>between<br>
+<span style="mso-spacerun: yes">                     </span>true/false processing without
+        re-testing the condition.<br>
+        <br>
+<span style="mso-spacerun: yes">                  <em><strong></strong></em></span><em><strong>6.2.8 #endif</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Resets<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>&quot;if_flag&quot;<span style="mso-spacerun: yes"> 
+</span>        controlling<span style="mso-spacerun: yes">  </span>conditionals,<span style="mso-spacerun: yes">   </span>causing<br>
+<span style="mso-spacerun: yes">                     </span>processing to resume.<span style="mso-spacerun: yes">  </span>Only has
+        effect in the highest level<span style="mso-spacerun: yes">  </span>of<br>
+<span style="mso-spacerun:
+yes">                     </span>suspended<span style="mso-spacerun: yes">  </span>processing.<span style="mso-spacerun: yes">  </span>IE:<span style="mso-spacerun: yes">  </span>Nested<span style="mso-spacerun: yes"> 
+</span>        conditionals<span style="mso-spacerun: yes">   </span>will<span style="mso-spacerun: yes">   </span>work<br>
+<span style="mso-spacerun:
+yes">                     </span>properly.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span><em><strong>6.2.9 #include
+        &lt;filename&gt;</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Causes MCP to open the
+        named file and include<span style="mso-spacerun: yes">  </span>its<span style="mso-spacerun: yes">  </span>contents<br>
+<span style="mso-spacerun:
+yes">                     </span>as part of the input source.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>If the filename is
+        contained within '&quot;' characters,<span style="mso-spacerun: yes">  </span>it will<br>
+<span style="mso-spacerun: yes">                     </span>be opened exactly as<span style="mso-spacerun: yes">  </span>specified,<span style="mso-spacerun:
+yes"> 
+</span>        and<span style="mso-spacerun: yes">  </span>(unless<span style="mso-spacerun: yes">  </span>it<span style="mso-spacerun: yes">  </span>contains<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun: yes">                     </span>directory path) will reference a
+        file in the current directory.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>If the filename is
+        contained within the characters<span style="mso-spacerun: yes">  </span>'&lt;'<span style="mso-spacerun: yes">  </span>and<br>
+<span style="mso-spacerun:
+yes">                     </span>'&gt;',<span style="mso-spacerun: yes">  </span>it will be prefixed<span style="mso-spacerun: yes">  </span>with<span style="mso-spacerun: yes"> 
+</span>        the<span style="mso-spacerun: yes">  </span>library<span style="mso-spacerun: yes">  </span>path<span style="mso-spacerun: yes">  </span>(See<span style="mso-spacerun: yes">  </span>'l='<br>
+<span style="mso-spacerun: yes">                     </span>option),<span style="mso-spacerun: yes">  </span>and will therefore
+        reference a file in<span style="mso-spacerun: yes">  </span>that<span style="mso-spacerun: yes">  </span>library<br>
+<span style="mso-spacerun:
+yes">                     </span>directory.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>For example:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                </span>#include
+        &quot;header.h&quot; /* from current directory */<br>
+<span style="mso-spacerun:
+yes">                                </span>#include
+        &lt;{CPU}io.h&gt;<span style="mso-spacerun: yes">    </span>/* from library directory */<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>6.2.10 #error &lt;text&gt;</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">               </span><span style="mso-spacerun:
+yes">         </span>Causes<span style="mso-spacerun: yes">  </span>MCP<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>issue<span style="mso-spacerun: yes"> 
+</span>        an<span style="mso-spacerun: yes">  </span>error<span style="mso-spacerun: yes">  </span>message<span style="mso-spacerun: yes">  </span>containing<span style="mso-spacerun: yes">   </span>the<br>
+<span style="mso-spacerun:
+yes">                     </span>specified text, and then
+        terminate.<br>
+        </span></font></p><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">
+        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="6.3 Error messages"><font size="2" face="Arial"><em><strong>6.3
+        Error messages</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>When MCP detects an error during
+        processing of an include file,<br>
+<span style="mso-spacerun: yes">                  </span>it displays an error message,<span style="mso-spacerun: yes">  </span>which
+        is preceded by<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>filename<br>
+<span style="mso-spacerun: yes">                  </span>and line number where the error
+        occurs. If more than 10 errors are<br>
+<span style="mso-spacerun: yes">                  </span>encountered, MCP will terminate.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><span style="mso-spacerun: yes">   </span>The following error messages are
+        reported by MCP:<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>6.3.1 Cannot open include
+        file</strong></em><br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>A<span style="mso-spacerun: yes">  </span>'#include'<span style="mso-spacerun: yes">  </span>statement
+        on the indicated line<span style="mso-spacerun: yes">  </span>specified<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun:
+yes">                     </span>file which could not be opened
+        for reading.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>6.3.2 Invalid constant in
+        expression</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>An expression on the
+        indicated line does not contain a valid<br>
+<span style="mso-spacerun: yes">                     </span>numeric constant at a point
+        where one was expected.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>6.3.3 Invalid include file
+        name</strong></em><br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>A<span style="mso-spacerun: yes">  </span>'#include'<span style="mso-spacerun: yes">  </span>statement
+        on the indicated line<span style="mso-spacerun: yes">  </span>specified<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun:
+yes">                     </span>file<span style="mso-spacerun: yes">  </span>name<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>was<span style="mso-spacerun: yes">  </span>not<span style="mso-spacerun: yes"> 
+</span>        contained<span style="mso-spacerun: yes">  </span>within<span style="mso-spacerun: yes">  </span>'&quot;'<span style="mso-spacerun: yes">   </span>or<span style="mso-spacerun: yes">   </span>'&lt;&gt;'<br>
+<span style="mso-spacerun: yes">                     </span>characters.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>6.3.4 Invalid macro name</strong></em><br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>A '#define' statement on
+        the indicated line contains a macro<br>
+<span style="mso-spacerun: yes">                     </span>name which does not follow the
+        name rules.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span><em><strong>6.3.5 Invalid macro
+        parameter<br>
+        </strong></em><br>
+<span style="mso-spacerun: yes">                        </span>A '#define' statement on
+        the indicated line contains a macro<br>
+<span style="mso-spacerun:
+yes">                     </span>parameter name which does not
+        follow the name rules.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>A reference to a macro
+        does not have a proper ')'<span style="mso-spacerun:
+yes">  </span>character<br>
+<span style="mso-spacerun: yes">                     </span>to terminate the parameter list.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span><em><strong>6.3.6 Invalid operator in
+        expression<br>
+        </strong></em><br>
+<span style="mso-spacerun: yes">                        </span>An expression on the<span style="mso-spacerun: yes">  </span>indicated<span style="mso-spacerun: yes"> 
+</span>        line<span style="mso-spacerun: yes">  </span>does<span style="mso-spacerun: yes">  </span>not<span style="mso-spacerun: yes">  </span>contain<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun: yes">                     </span>supported operator (See #if) at
+        a point where one was expected.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span><em><strong>6.3.7 Too many errors</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>More<span style="mso-spacerun:
+yes">  </span>than<span style="mso-spacerun: yes">  </span>10<span style="mso-spacerun: yes">  </span>errors<span style="mso-spacerun: yes"> 
+</span>        has<span style="mso-spacerun: yes">  </span>been<span style="mso-spacerun: yes">  </span>encountered<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>MCP<span style="mso-spacerun: yes">  </span>is<br>
+<span style="mso-spacerun:
+yes">                     </span>terminating.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span><em><strong>6.3.8 Too many macro
+        definitions</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>MCP has encountered more<span style="mso-spacerun: yes"> 
+</span>        '#define'<span style="mso-spacerun: yes">  </span>statements than it<span style="mso-spacerun: yes">  </span>can<br>
+<span style="mso-spacerun: yes">                     </span>handle.<br>
+        <br clear="all" style="page-break-before:always">
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>6.3.9 Too many macro
+        parameters</strong></em><br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>A<span style="mso-spacerun: yes">  </span>'#define'<span style="mso-spacerun: yes">  </span>statement
+        on the indicated line specifies more<br>
+<span style="mso-spacerun: yes">                     </span>parameters to the macro than MCP
+        can handle.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>6.3.10 Too many include
+        files</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>MCP has encountered more
+        nested<span style="mso-spacerun: yes">  </span>'#include'<span style="mso-spacerun: yes">  </span>statements than<br>
+<span style="mso-spacerun: yes">                     </span>it can handle.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>6.3.11 Undefined macro</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">         </span><span style="mso-spacerun:
+yes">               </span>A<span style="mso-spacerun: yes">  </span>'#undef'<span style="mso-spacerun: yes">  </span>or<span style="mso-spacerun: yes">  </span>'#forget'<span style="mso-spacerun: yes"> 
+</span>        statement on the indicated<span style="mso-spacerun: yes">  </span>line<br>
+<span style="mso-spacerun: yes">                     </span>references a macro name which
+        has not been defined.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span><em><strong>6.3.12 Unterminated
+        comment</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>The END OF FILE has<span style="mso-spacerun: yes">  </span>been<span style="mso-spacerun: yes"> 
+</span>        encountered<span style="mso-spacerun: yes">  </span>while<span style="mso-spacerun: yes">  </span>processing<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun: yes">                     </span>comment.<br>
+        <br>
+        <em><strong><span style="mso-spacerun: yes">          </span>6.3.13 Unterminated string</strong></em><br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>A quoted string<span style="mso-spacerun: yes">  </span>on<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun:
+yes"> 
+</span>        indicated<span style="mso-spacerun: yes">  </span>line<span style="mso-spacerun: yes">  </span>has<span style="mso-spacerun: yes">  </span>no<span style="mso-spacerun: yes">  </span>end.<span style="mso-spacerun: yes">  </span>To<br>
+<span style="mso-spacerun:
+yes">                     </span>continue a string to<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>next<span style="mso-spacerun: yes"> 
+</span>        line,<span style="mso-spacerun: yes">  </span>use<span style="mso-spacerun: yes">  </span>'\'<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>last<br>
+<span style="mso-spacerun: yes">                     </span>character on the line.<span style="mso-spacerun: yes">  </span>The<span style="mso-spacerun: yes">  </span>'\'<span style="mso-spacerun: yes"> 
+</span>        will not be included<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                     </span>string.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>NOTE:<span style="mso-spacerun: yes">  </span>MCP is not aware<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>inline<span style="mso-spacerun: yes"> 
+</span>        assembly<span style="mso-spacerun: yes">  </span>code,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>will<br>
+<span style="mso-spacerun: yes">                     </span>therefore<span style="mso-spacerun: yes">  </span>generate<span style="mso-spacerun: yes">  </span>an<span style="mso-spacerun: yes">  </span>&quot;Unterminated<span style="mso-spacerun: yes"> 
+</span>        string&quot;<span style="mso-spacerun:
+yes">  </span>error<span style="mso-spacerun: yes">  </span>if<span style="mso-spacerun: yes">   </span>it<br>
+<span style="mso-spacerun:
+yes">                     </span>encounters unbalanced single or
+        double quotes in<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>assembly<br>
+<span style="mso-spacerun: yes">                     </span>comments. To prevent this,
+        either avoid using unbalanced quotes<br>
+<span style="mso-spacerun: yes">                     </span>in assembly comments,<span style="mso-spacerun: yes">  </span>or use
+        the<span style="mso-spacerun: yes">  </span>'C'<span style="mso-spacerun: yes">  </span>form<span style="mso-spacerun: yes">  </span>(/* ...<span style="mso-spacerun: yes">  </span>*/)<span style="mso-spacerun: yes">  </span>for<br>
+<span style="mso-spacerun: yes">                     </span>comments within the assembly
+        blocks.</font></span></p>
+        </span></span></span></td>
+    </tr>
+</table>
+<table width="605" border="0">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2">&quot;Converted by 
+        BiPOM Electronics to HTML format from original Micro C documentation by 
+        Dunfield Development Systems. Please see the Micro C documentation that 
+        is included with Micro C for the original forms of these pages.&quot;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

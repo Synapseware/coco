@@ -1,0 +1,2375 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\Basic09 - Ch 6.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Chapter 6<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<B>Data and Variables</B>
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+</B><FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000034.JPG" WIDTH="304" HEIGHT="3">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000035.JPG" WIDTH="18" HEIGHT="3">
+</FONT>
+</H2>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+Data Types<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>Data is </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+information on which a computer performs its operations.
+Data is always numeric but, depending on your computer application, it can represent values, symbols, or alphabetic characters.
+This means that the same items of 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>physical </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+data can have very
+different 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>logical </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+meanings, depending on how a program interprets it.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For instance, 65 can represent:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A numeric value to be used in a calculation.
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The location of a memory address.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000036.JPG" WIDTH="10" HEIGHT="23">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>offset </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+of a memory location.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The two character symbols 6 and 5.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+0 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The character A in the ASCII table. ASCII is the abbreviation for the American Standard Code for Information
+Interchange.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because of the differences in how BASIC09 uses data, the system lets you define five types of data. For instance, there are
+three ways to represent numbers. Each has its own advantages
+and disadvantages. The decision to use one way or another
+depends on the specific program you are developing. The five
+BASIC09 data types are byte, integer, real, string, and Boolean.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In addition to the preceding data types, there are complex 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>data
+types you </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+can define. The manual discusses complex data structures at the end of this chapter.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>byte, integer, </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>real </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+data types represent numbers.<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>string </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+data type represents character data (alphabet, punctuation, numeric characters, and other symbols). The default
+length of strings is 32 characters. Using the DIM statement, you
+can specify strings of both longer and shorter lengths.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>Boolean </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+data type represents the logical value, TRUE or
+FALSE.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000037.JPG" WIDTH="306" HEIGHT="14">
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000038.JPG" WIDTH="306" HEIGHT="3">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can create arrays (lists) of any of these data types with one,
+two, or three dimensions. The following table shows the data
+types and their characteristics:
+</FONT>
+</P>
+  <FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Memory<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Type Allowable Values Requirements<BR>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+BYTE Whole numbers (0 to 255) One byte<BR>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+INTEGER whole numbers (-32768 Two bytes<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+to 32767)<BR>
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+REAL Floating point 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Five bytes<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+(&plusmn; 1*10" 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+&plusmn;38)<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+STRING Letters, digits, One byte per<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+punctuation character<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BOOLEAN True or false One byte<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Real numbers appear to be the most versatile. They have the
+greatest range and are floating point. However, arithmetic operations involving real numbers execute much more slowly than
+those involving integer or byte values. Real numbers also take
+up considerably more memory storage space than the other two
+numeric data types.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Arithmetic involving byte values is not appreciably faster than
+arithmetic involving integers, but byte data conserves memory.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>If you do not specify the type of variable (a symbolic name
+for a value) in a DIM statement, BASIC09 assumes the variable is real.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+The Byte Data Type<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Byte variables hold unsigned eight-bit data (integers in the
+range 0 through 255). Using byte values in computations,
+BASIC 09 converts the byte values to 16-bit integer values. If you
+store an integer value that is too large for the byte range,
+BASIC09 stores only the least-significant eight bits (a value of
+255 or less), and does not return an error.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000039.JPG" WIDTH="22" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-2<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Data and variables / 6
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>The Integer Data Type<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Integer variables require two bytes (16 bits) of storage. They can
+fall in the range -32768 to 32767. If a calculation involves both
+integer values and real values, BASIC09 presents the result of
+the calculation as a real number.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can also use hexadecimal values in integer data. To do so,
+precede the value with the dollar sign ($). For instance, to represent the decimal value 199 as hexadecimal, type 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+$ C 7 . The 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+hexadecimal value range is $0000 through $FFFF.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you give an integer variable a value that is outside the integer
+range (greater than 32767 or less than -32768), BASIC09 does
+not produce an error. Instead it wraps <I>around </I>the value range.
+For instance, the calculation 32767 + 1 produces a result of
+-32768.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This means that numeric comparisons made on values in the
+range 32768 through 65535 deal with negative numbers. You
+should limit such comparisons to tests for equality or nonequality. Functions such as LAND, LNOT, LOR, and LXOR use
+integer values but produce results on a non-numeric, bit-by-bit,
+basis.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Division of an integer by another integer yields an integer.
+BASIC09 discards any remainder.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>The Real Data Type<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you do not assign a data type to a variable, BASIC09 assumes
+the variable is real. However, programs are easier to understand
+if you define all variable types.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 stores as real values any constants that have decimal
+points. If a constant does not have a decimal point, BASIC09
+stores it as an integer.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 requires five consecutive memory bytes to store real
+numbers. The first byte is the exponent, in binary two's complement. The next four bytes are the binary sign and magnitude of
+the mantissa. The mantissa is in the first 31 bits; the sign of
+the mantissa is in the last (least-significant) bit of the last byte.
+The following illustration shows the memory storage of a real
+number:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000040.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000041.JPG" WIDTH="20" HEIGHT="4">
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 <U>Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Internal Representation of Real Numbers
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000042.JPG" WIDTH="179" HEIGHT="1">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+exponent mantissa  S
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+byte: 0 1 2 3  4
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The exponent covers the range 2.938735877x10 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+-3g 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+(2 -128)
+through 1.701411835x1038 (2127) as powers of 2. Operations that
+result in values out of the representation range cause an overflow or underflow error. You can handle such errors using the <B>ON
+ERROR </B>command.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The mantissa covers the range 0.5 through .9999999995 in steps
+of 2-31. This means that real numbers can represent values
+.0000000005 apart. BASIC09 rounds operation values that fall
+between these points to the nearest point.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because floating point arithmetic is inherently inexact, a
+sequence of operations can produce a cumulative error. Proper
+rounding, as implemented in BASIC09, reduces the effect of this
+problem, but cannot eliminate it. When using real quantities in
+comparisons, be sure your computations can produce the exact
+value you desire.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>String Variables<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A string is a variable-length sequence of ASCII values. The
+length can vary from 0, a null string, to the capacity of the
+memory available to BASIC09.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can define a string variable either explicitly, using the DIM
+statement, or implicitly by appending the dollar sign ($) to the
+variable identifier (variable name). For example, title$ implicitly
+identifies a string variable.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Unless you specify otherwise, BASIC09 assigns a maximum
+string length of 32 characters. Using the DIM statement, you
+can specify a maximum length either less than or greater than
+32. To conserve memory, use DIM to assign only the maximum
+length you need for any string variable.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The beginning of a string is always Character 1. The BASE
+statement, which sets numeric variable base numbers as either 0
+or 1, does not affect string variables.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000043.JPG" WIDTH="21" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000044.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000045.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-4<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Data and variables / 6
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If an operation results in a string too long to fit in the assigned
+maximum storage space, the system truncates the string on the
+right. It does not produce an error.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+String storage is fixed at the dimensioned length. The sequence
+of actual string byte values is terminated by the value of zero, or
+by the maximum length allotted to the string. Any unused storage after the zero byte allows the stored string to expand and
+contract within its assigned length.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following example shows the internal storage of a variable
+dimensioned as 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+5 t 
+</FONT>
+<FONT SIZE="1" FACE="Verdana1" COLOR="#000000">
+r i n 9 161 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and assigned the value "SAM".
+Note that Byte 3 contains the string terminator 00. The string
+does not use bytes following 00.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+S A M 00
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+byte: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>1 2 3 4 5  6
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you assign the value "ROBERT" to the variable, BASIC09 does
+not need to terminate the string with 00 because the string is
+full:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+,<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+R O B E R  T
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+byte: 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>1 2 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+3 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>4 5  6
+</UL>
+<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The way BASIC09 handles string storage is important when you
+write programs. If you do not specify a length for strings you
+define, the system uses the default length 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>32. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+As you can see,
+this wastes computer memory if you store strings of only four or
+five characters.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>The Boolean Type<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A Boolean operation always returns either the character string
+"TRUE" or "FALSE". You cannot use the Boolean data type for
+numeric computation only for comparison logic.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Do not confuse the Boolean operations AND, OR, XOR, and NOT
+(which operate on the Boolean values TRUE and FALSE) with
+the logical functions LAND, LOR, LXOR, and LNOT (which use
+integer values to produce numeric results on a bit-by-bit basis).
+An attempt to store a non-Boolean value in a Boolean variable,
+causes an error.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000046.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000047.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000048.JPG" WIDTH="304" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-5<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+Automatic Type Conversion<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When an operation mixes numeric data types (byte, integer, or
+real values), <B>BASIC09 </B>automatically and temporarily converts
+the values to the type necessary to retain accuracy. This conversion lets you use numeric quantities of mixed types in most
+calculations.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The system returns a type-mismatch error when an expression
+includes types that cannot legally mix. These errors are reported
+by the second compiler pass, which occurs automatically when
+you exit the edit mode.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because type conversion takes additional execution time, you can
+speed calculations by using values of a single type.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+Constants<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Constants </I>are values in a program that do not change. They can
+use any of the five data types. The following are examples of constants in a procedure:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>HOMES="Fort Worth"
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>VALUES="$25,000
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>VALUE=25
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PAYMENT=99.99
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ANSWER="TRUE"
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>MEMORY=$OCFF
+</UL>
+<BR>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT "The End"
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Numeric constants are either integers or real numbers. If a
+numeric constant includes a decimal point or uses the "E format"
+exponential form, it causes BASIC09 to store the number in the
+real format, even if it could store the number in integer or byte
+format.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can use this feature to force a real format. For instance, to
+make the number 12 a real number, type it as 12.0. You might
+want to force real values in this way when all other values in an
+expression are real so that BASIC09 does not have to do a timeconsuming type conversion at run time.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-6<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000049.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000050.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000051.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000052.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000053.JPG" WIDTH="24" HEIGHT="8">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Data and variables / 6<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000054.JPG" WIDTH="306" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>BASIC09 also stores as real numbers any numbers that do not
+have decimal points but that are too large to store as integers.
+Here are some examples of legal real constants:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+1.0<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>-999.000099 100000000<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>1.95E + 12<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>9.8433218 -.01<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>5644.34532<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>-99999.9E-33<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>BASIC09 treats numbers that do not have a decimal point and
+are in the range -32768 through + 32767 as integers. You must
+always precede hexadecimal numbers with a dollar sign.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Following are examples of legal integer constants:<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>12 -3000 55
+</UL>
+<BR>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>$20 $FF $09
+</UL>
+<BR>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>0 -12  -32768
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>String Constants<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>A string constant consists of a sequence of characters enclosed in
+double quotation marks, such as:</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"The End"<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>To place a string constant in a string type variable, use the
+equal symbol in this manner:</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>TITLES _ "Masters Of Magic"<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>To include double quotation marks within a string, use two sets
+of double quotation marks, like this:</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>"An ""older man"" </TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+i5 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>wiser."<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>A string can contain characters that have ASCII values in the
+range 0 through 255.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Variables<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>In BASIC09, a variable is local to the procedure in which it is
+defined. A variable defined in one procedure has no meaning in
+another procedure unless you use the RUN and PARAM statements to pass the variable when you call the other procedure.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>The local nature of variables lets you use the same variable
+name in more than one procedure and, unless you specify otherwise, have the variables operate independently of each other.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000055.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-7<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can assign variables using either the LET statement with<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+the assign symbol (= ), or by using the assign symbol alone. For
+instance, both the following command lines are legal:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>LET PAYMENT=44.50
+PAYMENT=44.50
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When you call a procedure, BASIC09 allocates storage for the
+procedure's variables. It is not possible to force a variable to
+occupy an absolute address in memory. When you exit a procedure, the system returns the storage allotted for variables, and
+you lose the stored values.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+If you write a procedure to call itself (a recursive procedure), the
+call creates separate storage space for variables.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Note: </B>Unlike other BASICS, BASIC09 does not automatically initialize variables by setting them to zero. When you
+execute a procedure, all variables, arrays, and structures
+have random values. Your procedure must initialize the
+variables you specify to the values you require.<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000056.JPG" WIDTH="20" HEIGHT="5">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Passing Variables<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When one procedure passes variable values to another procedure,
+BASIC09 refers to the passed variables as parameters. You can
+pass variables either by reference or by value.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+BASIC09 does not protect variables passed by reference. Therefore, the called procedure can change the values and return the
+new values. <B>BASIC09 does </B>protect variables passed by value, so,
+the called program cannot change them.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To pass a parameter by reference, enclose the name of the variable in parentheses as part of the RUN statement in this
+manner:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN RANDOM (1 0) </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+passes the value 10 to a procedure
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+called Random  _
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The system evaluates the storage address of each passed variable, and sends the variable to the called procedure. The called
+procedure associates the storage addresses with the names in its
+local PARAM statement. It then uses the storage area as though
+it had created it locally. This means it can change the value of
+the parameter before returning it to the calling procedure.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-8<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000057.JPG" WIDTH="20" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Data and <U>va</U>riables <U>/ 6<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000058.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To pass parameters by value, write the value to be passed as an
+expression. BASIC09 evaluates the expression at the time of the
+call. To use a variable in an expression without changing its
+value, use null constants, such as 0 for a number or 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+I'll 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+for a
+string, in this manner:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN ADDCOLUMNCx+O) </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+passes the value of x by
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+value
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>RUN TRANSLATEtw$+"") </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+passes the contents of w$ by
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+value
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To pass parameters by value, BASIC09 creates a temporary variable. It places the result of the expression in the temporary variable and sends the address to the called procedure. This means
+that the value given to the called procedure is a copy of the
+result of the expression, and the called procedure cannot change
+the original value.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The results of expressions containing numeric constants are
+either integer or real values; there are no byte constants. To
+send byte-type variables to a procedure, pass the values by reference. Therefore, if a RUN statement evaluates an integer as a
+parameter and sends it to a byte-type variable, the byte variable
+uses only the high-order byte of the two-byte integer.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Arrays<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+An array is a group of related data values stored consecutively
+in memory. The system knows the entire group by a variable
+name. Each data value is an 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>element. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You use a subscript to refer
+to any element of the array. For example, an array named Graf
+might contain five elements referred to as:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial" COLOR="#000000">
+GRAFM GRAFC2) GRAFC3) GRAFM  GRAFC5)
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can use each of these elements to store a different value,
+such as:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial" COLOR="#000000">
+GRAFC1) = 25
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial" COLOR="#000000">
+GRAFM = 47
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial" COLOR="#000000">
+GRAFC3) = 39
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial" COLOR="#000000">
+GRAFM = 18
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial" COLOR="#000000">
+GRAFCS) = 50
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000059.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000060.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="1" FACE="Arial" COLOR="#000000">
+6-9<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Note: </B>Normally, array elements start with 1 in BASIC09.
+However, you can use the BASE command to cause array
+elements to begin at 0.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The previous example illustrates a single-dimensioned array. The
+elements are arranged in one row and only one subscript is used
+for each element.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following procedure lets you type values for a GRAF array,
+and displays the results in a simple graph.<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE GRAF<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM GRAFCS):REAL<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pSHELL "DISPLAY 0C"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=1 TO 5<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "Value for Item *"; T; "O";<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>pINPUT GRAFCt)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "This </TT>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+15 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>how your graph Stacks up..."<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=1 TO 5<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "Item *"; T; "O";<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR U=1 TO GRAFCT)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT CHR$C79);<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT U<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This program uses a single dimension array in effect, a list.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can also create arrays with more than one dimension<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+more than one element for each row. You might use a two-dimen<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+sioned array in a program to store names and addresses. Instead<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+of creating separate arrays for the name, address, and zip code,<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+you could set up one array with two dimensions.  -<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-10<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000061.JPG" WIDTH="20" HEIGHT="4">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Data and variables / 6<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000062.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>The following program, used to enter the names of a company's
+employees, shows how this might be done. See the second line for
+the DIM syntax. When you run the procedure, it asks you for a
+name, address, and zip code for each of 10 employees. After you
+type the information for all the entries, the procedure displays
+the information on the screen.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PROCEDURE Names<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ODIM NAMEC10,3):STRING<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OSHELL "DISPLAY 0C"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OHASE 0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=0 TO 9<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "Type Employee Name No."; T; ": ";<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OINPUT NAMECT,O)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "Type Employee Addre55 No."; T; ": ";<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DI NPUT NAMECT,1 )<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "Type Employee Zip Code No."; T; ": ";<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DINPUT NAMECT,2)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OSHELL "DISPLAY 0C"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "And the names are..."<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=0 TO 9<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT NAMECT,O); "O"; NAMECT,1 ); "O"; NAMECT,2)<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>FIEND<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>The DIM statement reserves space in memory for a string array
+named Name, with two dimensions. As you enter data, the Name
+field is stored in </B>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Name C 0 , 0 ), Name C 1 , 0 ), Name C 2 , 0 ), </TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+and so on.
+<B>The Address field is stored in </B>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>N a m e </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>c </I>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>0 , 1 ) , N a m e </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>c </I>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>1 , 1 ) ,
+N a m e </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>c </I>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>2 ,1 </TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+) , and so on. <B>The Zip field is stored in </B>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>N a m e </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>c </I>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>0 , 2) ,
+N a m e </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>c </I>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>1 , 2) , N a m e </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>c </I>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>2 , 2) , and </TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+so on. <B>This continues until you fill
+the grid, 10 entries with three items each.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>You can also create arrays with three dimensions. The following
+program adds one more dimension that keeps track of each
+employee's company. </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+It <B>dimensions </B>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>Names </TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+as 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>N a m e $ C 2 ,1 0 ; 3) .
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<B>The first dimension contains either 0 or 1 to indicate to which
+company the employee belongs.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000063.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000064.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000065.JPG" WIDTH="22" HEIGHT="6">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+6-11<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>PROCEDURE name52
+ODIM NAME$C2,10,3):STRING
+OSHELL "DISPLAY 0C"
+OHASE 0
+OFOR X=0 TO 1
+OPRINT
+pPRINT
+OFOR T=0 TO 9
+OPRINT
+OIF X=0 THEN
+OPRINT "Type a Wiggleworth Company employee
+name..."
+DELSE
+OPRINT "Type a Putforth Company employee name..."
+OENDIF
+OPRINT "Type Name No."; T; </B>": ";
+<B>OINPUT NAME$CX,T,O)
+OPRINT "Type Addre55 No."; T; </B>": ";
+<B>DINPUT NAME$CX,T,1 </B>)
+<B>OPRINT "Type Zip Code No."; T; </B>": ";
+<B>DINPUT NAME$CX,T,2)
+ONEXT T
+ONEXT X
+OSHELL "DISPLAY 0C"
+OPRINT "The Wiggleworth employees are..."
+OPRINT
+OX=0
+</B>OFOR T=0 TO 9
+<B>OPRINT NAME$ CX,T,0); "O"; NAME $CX,T,1 ); "O";
+NAME$CX,T,2)
+ONEXT T
+OPRINT
+OPRINT "The Putforth Company employees are..."
+OPR I NT
+OX=1
+</B>OFOR T=0 TO 9<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT NAME$CX,T,O); "O"; NAME$CX,T,1 </B>); "O"; -<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>NAME$CX,T,2)<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>ONEXT T<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>REND<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000066.JPG" WIDTH="26" HEIGHT="7">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000067.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>s-12<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>D<U>ata and va</U>r<U>iables / 6<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000068.JPG" WIDTH="189" HEIGHT="2">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000069.JPG" WIDTH="116" HEIGHT="1">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The easiest way to understand three dimensional arrays is to
+consider the first dimension as a page. In other words, if the first
+dimension in the string is 0, the employee is on the Wiggleworth
+Company's page. If the first dimension in the string is 1, the
+employee is on the Putforth Company's page.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<B>Complex Data Types<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In addition to the five standard data types, you can create your
+own data types. Using the TYPE command, you can define a
+new data type as a vector (a single-dimensioned array) of any
+previously defined type.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+For example, in the previous program, the Name variable can
+contain only one type of data, the string type. However, using
+the TYPE command you can create a variable that accepts several data types.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Suppose you create an employee list procedure that uses the following variables, of the following size and types:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Name Length Contents Type<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Name 25 employee name string<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Street 20 street address string<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+city 10 city of address string<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Zip  address zip code integer<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Sex false = male, true = female Boolean<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Age employee age  byte<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can combine all these variables into one complex data type.
+To do so, dimension the variables within a TYPE command line,
+like this:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>TYPE EMPLOYEE=NAME:STRING[25J; STREET:STRINGL20J;
+CITY:STRINGL10J; ZIP:REAL; SEX :BOOLEAN; AGE:HYTE<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This creates a new BASIC09 type, called Employee. Employee
+requires its variables to have six fields of the name, size, and
+type shown in the previous chart.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Once you create the new data type, you can define variables to
+use it. For instance, the following program line defines Worker as
+type employee, with 10 elements in the array:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>DIM WORKERC10):EMPLOYEE<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>6-13
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000070.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000071.JPG" WIDTH="17" HEIGHT="3">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<I>BASIC09 Reference<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond11" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To put the employee data type to work, collect your data with
+INPUT commands. Then, store the data into the new Worker
+array. The following program demonstrates how you might do
+this:<BR>
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>PROCEDURE worker<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OREM  Dimension variables for input<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>pDIM NM:STRINGI251<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>ODIM ST:STRINGI20J<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OD I M CTY </B>: <B>STR I NG L 1 0 J<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>pDIM ZP:REAL<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>ODIM SX:BOOLEAN<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>ODIM AG:BYTE<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OREM Create new type and array using new<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>type<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OTYPE EMPLOYEE=NAME:STRINGL25J; STREET:STRINGL20J;<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>CITY:STRINGL10 l; ZIP:REAL; SEX:BOOLEAN; AGE:BYTE<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>ODIM WORKERC10):EMPLOYEE<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OREM<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OFOR T=1 TO 1 0<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>DI NPUT "Name :O" , NM<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>DINPUT "Street :O",ST<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>DINPUT "City:O",CTY<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>DINPUT "Zip:O",ZP<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>DI NPUT "Sex :O" , S X<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>DI NPUT "Age :O" , AG<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OREM Store input in the Worker array using<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>field names<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OWORKERCT).NAME=NM<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OWORKERCT).STREET=ST<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OWORKERCT).CITY=CTY<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OWORKERCT).ZIP=ZP<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OWORKERCT).SEX=SX<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OWORKERCT).AGE-AG<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>ONEXT T<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OSHELL "DISPLAY COC)"<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT "The names in your filer. now are..."<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OFOR T=1 TO 1 0<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT WORKERCT).NAME<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT WORKERCT).STREET<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>OPRINT WORKERCT).CITY<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000072.JPG" WIDTH="25" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000073.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000074.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><B>6-14<BR>
+</B></TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Data and variables / 6<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000075.JPG" WIDTH="300" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT WORKER(T).ZIP<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OIF WORKER(T).SEX=TRUE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OTHEN PRINT "Female"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OELSE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT "Male"<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>REND I F<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT WORKER(T).AGE<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPR I NT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>OPRINT<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ONEXT T<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Note that the Sex field is defined as Boolean. This means that
+you can respond only in two ways, TRUE or FALSE. The method
+of input requires only one byte of storage. To use this data you
+need to handle it so TRUE and FALSE indicate female and male.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Complex data types can contain more than one field. Each field
+can be of any data type. You reference the fields of a complex
+data type by typing the variable name, its array index, a period
+(.), and the field name. The following lines, from the Worker procedure, show how BASIC09 stores the data from the input lines
+into the Worker variable:</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>WORKER(T).NAME=NM<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>WORKER(T).STREET=ST<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>WORKER(T).CITY=CTY<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>WORKER(T).ZIP=ZP<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>WORKER(T).SEX=SX<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>WORKER(T).AGE=AG<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>These lines store the values in the variables NM, ST, CTY, ZP,
+SX, and AG into the NAME, STREET, CITY, ZIP, SEX, and
+AGE fields of the Worker variable. This operation is within a
+FOR/NEXT loop that uses T as a counter. In the procedure, T
+can refer to a value in the range 1 to 10.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>The procedure uses the same type of operation to extract the
+data from the complex data type variable:</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000076.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000077.JPG" WIDTH="20" HEIGHT="4">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+6-15<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<I><U>BASIC09 Reference<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT WORKERCT).NAME<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT WORKERCT).STREET<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT WORKERCT).CITY<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT WORKERCT).ZIP<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>IF WORKERCT).SEX=TRUE THEN PRINT "Female"<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ELSE PRINT "Male"<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>ENDIF<BR>
+ </TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PRINT WORKERCT)AGE<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Using the same methods, you can create complex data types that<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+combine other complex data types and standard data types.<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The elements of a complex structure can be copied to another<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+similar structure. Using a single assignment operator, you can<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+write an entire structure to, or read an entire structure from,<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mass storage as a single entity. Fbr example:<BR>
+ 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>PUT #2, WORKERCT)<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because the system defines the elements of complex-type storage<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+during compilation, it need not do so during 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>runtime. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+This<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+means that BASIC09 can reference complex structure faster than<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+it can reference arrays. 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+t<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000078.JPG" WIDTH="204" HEIGHT="2">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000079.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\BASIC09\BASIC0~7\GR000080.JPG" WIDTH="271" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+6-16<BR>
+</FONT>
+</BODY>
+</HTML>

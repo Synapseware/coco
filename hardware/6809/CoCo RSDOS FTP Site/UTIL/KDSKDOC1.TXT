@@ -1,0 +1,471 @@
+READ
+Name: KDSK VERSION 2.6
+Type: PROGRAM
+Date: 23-JAN-1988 23:14 by WUELZERKEN
+
+Latest version of KDSK for COCO models I, II, and III. The only disk utility you'll need. Features include sector dumps and sector editing, fast backups, copying, formatting, directory sorts, analyzes directory and file structures, file
+encryption/decryption, easy recovery from directory crashes, uploads files from tape, examines tracks (including controls characters, address marks, etc), a library system to keep track of files, prints disk labels and much more.
+
+Keywords: DIAGNOSTIC, KDSK, DISK, UTILITY, C3, SHAREWARE
+
+Contents:
+
+   1  KDSK.BIN (Size: 24704 Count: 44)
+   2  KDSKDOC1.TXT (Size: 20258 Count: 43)
+   3  KDSKDOC2.TXT (Size: 11332 Count: 39)
+
+ACTION> (Next, Down, Xm, List) LIST 2
+This file must be called "KDSKDOC1.TXT" on your computer.
+
+ 
+                         K-DISK UTILITY V2.6 (C) 1988
+ 
+                           by KENNETH L WUELZER
+ 
+ 
+ 
+                               INTRODUCTION
+ 
+     K-DISK  Utility  is a 32K machine language menu driven  collection  of
+useful disk routines.   It gives you, the user, complete and easy access to
+the disk,  including  a  simple  procedure  for  quick  and  easy  recovery
+of  a crashed directory.   Features include an easy method  of   cataloging
+and   updating   a  master   list  of all  your  files  and  the  important
+information relating to each one.
+ 
+     KDSK  version  2.6 is distributed free of charge.   Feel free to  pass
+along unmodified copies to your friends,  users group, or favorite bulletin
+board.
+ 
+     Each  copy  of  KDSK  that is registered insures the  owner  will   be
+notified of  corrections,  the next new release/version,  and a copy of the
+complete manual on disk.  Note that while KDSK 2.6 runs on all versions  of
+the  COCO,  I have a version (KDSK3) written especially for the COCO 3 that
+makes use of the 80 column display and additional memory.  Unlike KDSK  2.6
+and  earlier  versions,  KDSK3 is not shareware and can only  be  purchased
+($15). However, registered owners of any version of KDSK will get a copy of
+KDSK3  in  keeping  with their entitlement to the  next  release.  Software
+support is restricted to registered owners only.   Copies can be registered
+in your name with a donation of $15 or more. Send your donation to:
+ 
+                            KENNETH L. WUELZER
+                             113 Arrowhead Dr
+                           Montgomery, AL  36117
+                              (205)-277-9880
+ 
+ 
+                            SYSTEM REQUIREMENTS
+ 
+     KDSK   requires  a  TRS-80  (tm) Color Computer with 64K of  available
+RAM, Disk Extended Color Basic, and at least one disk drive.
+ 
+     KDSK  was written using Color Basic 1.1,  Color Extended Basic 1.0 and
+Disk Extended Color Basic 1.0.  KDSK currently runs on all versions of  the
+Color  Computer  that I'm aware of,  however newer ROM versions may not  be
+compatible.
+ 
+ 
+                               LOADING KDSK
+ 
+     The KDSK utility program has a filename of KDSK.BIN and is loaded with
+the  'LOADM' command.   The program has been modified to autostart and will
+ask  if  you want to modify the initial parameters.  The program will  then
+display the  title page and then,  after you press enter,  the main menu of
+KDSK.
+ 
+     Initial   parameters   that   can be modified are default  drives  and
+printer control characters. KDSK is set up for Star printers initially.
+ 
+ 
+                             PROGRAM FEATURES
+ 
+ 
+1.  <A>SCII DUMP - This option will dump the contents of a specified sector
+to the screen in ASCII.   It blanks out the  characters  in  the  non-ASCII
+range   for   easier  reading.   Uses  the arrow keys (See  special  keys).
+Display shows 256 bytes per screen.   ASCII DUMP can be used in either  the
+absolute  or  file  disk access modes (See OPTIONS) with RS  (Radio  Shack)
+formatted disks. Other formats must use absolute disk access.
+ 
+    ASCII  DUMP  can be used to find key words,  commands,   and  hints  in
+machine language adventure games (when you get stuck & need a little help).
+ 
+   To use:
+ 
+      a.  Make  sure  you have selected the disk access mode  desired  (See
+          OPTIONS).
+ 
+      b.  Select option <A>.
+ 
+      c.  Answer  prompts to select Drive,  Track & Sector or  select  file
+          depending on access mode.
+ 
+      d.  Uses  special keys (defined later) to move to the next  track  or
+          sector.
+ 
+ 
+2.   <B>ACKUP   -  Does   a  complete  disk  backup  and allows for  single
+drive  backups.   If an I/O ERROR is encountered during  the  backup,   the
+program  will stop  so  the  bad track and sector can be noted,   and  then
+continue  with  the backup when any key is pressed  (BREAK  aborts).   This
+feature   is  an   important   part   of   the  disk   recovery   procedure
+(explained  later).  Backups  can  be  made  to  a formatted or unformatted
+disk (RS format only).
+ 
+    The  Backup  option  can  also be used  to  test   a   disk   for   bad
+sectors. Simply select the same drive as source and destination drive,  but
+instead of swapping disks when prompted,   press enter.  Backup  will  stop
+at  all  bad sectors.
+ 
+     Another  feature  of BACKUP  allows partial backups in a  given  range
+specified  by track and sector.   Can be used when a backup fails at  given
+sector  or  track.  Sometimes a sector can be read on subsequent  attempts.
+PARTIAL  BACKUP allows you to keep trying without starting over  with  each
+attempt.   The  PARTIAL  BACKUP also allows you to relocate a  sector.  For
+example,  you could relocate (copy) the granule table (Track 17,  Sector 2)
+from one disk to anywhere else on another disk for safe keeping.  Can  also
+be used  to copy directory from another disk for repair.
+ 
+    To use:
+ 
+      a.  Select option <B>.
+ 
+      b.  Answer <C> for Complete backup and <P> for partial backup.
+ 
+      c.  Select  source and destination drives when prompted.   If  source
+          and  destination drive are the same,  BACKUP will prompt you when
+          to swap disks.
+ 
+      d.  If  two  drives are used and backup is in standard  Radio   Shack
+          (RS) format,   the  destination  disk  can  be  unformatted.   By
+          selecting <U>nformatted,  the destination disk will be  formatted
+          first.
+ 
+      e.  Partial  Backup prompts for the source sector first and then  the
+          desired destination.
+ 
+ 
+3.   <C>OPY  - A  fast copy routine to transfer RS files from one  disk  to
+another.  COPY   option   copies  files  to  contiguous  granules  whenever
+possible.   If file is copied to an empty disk for example,   first granule
+would be 00.   This can be  very  helpful  when  searching  through a file.
+COPY  makes a copy of the directory (See SAVE option below) after each use.
+ 
+    To use:
+ 
+      a.  Select option <C>.
+ 
+      b.  Answer  prompts  for selecting source  and  destination   drives.
+          Each  file   on   the  source  drive  will be  displayed  on  the
+          screen  with a letter prefix.   Select the files to be copied  by
+          the  prefix  letter.  Select  as  many  as  you  want  and  press
+          ENTER when ready.  If file exists on destination disk,  that file
+          will not be  copied  and  you will notified that the file was not
+          copied.
+ 
+      c.  COPY  supports  single drive copies and will prompt you  to  swap
+          disks.
+ 
+      d.  COPY   will   abort  if  there's not enough  disk  space  on  the
+          destination disk.
+ 
+      e.  COPY  will  stop for all bad sectors so you can note the  problem
+          areas.  Pressing the space bar will continue COPY.  The directory
+          on  the  target  disk is updated before  the  files  are  copied.
+          Therefore,  if  you abort COPY before its finished (due to a  bad
+          sector), you will need to KILL the files you tried to copy on the
+          target disk to cleanup its directory.
+ 
+ 
+4.   <D>UMP SECTOR - Dumps the contents of a specified sector to the screen
+in   Hex   and   ASCII.   Non-ASCII  characters are blanked  out  for  easy
+reading.   Uses  arrow keys (See Special keys) &  can be used with   NUMBER
+FIND option  below.   Display shows 64 bytes per screen. DUMP SECTOR can be
+used in either the absolute or file disk access modes (See OPTIONS) with RS
+formatted disks. Other formats must use absolute disk access.
+ 
+    To use:
+ 
+      a.  Make  sure  you have selected the disk access mode  desired  (See
+          OPTIONS).
+ 
+      b.  Select option <D>.
+ 
+      c.  Answer prompts for Source drive, Track and Sector.
+ 
+      d.  Uses  special keys (defined later) to move to the next  track  or
+          sector.
+ 
+ 
+5.   <E>DIT  SECTOR  - Just  like the DUMP SECTOR option  but  allows  easy
+editing of  the sector by placement of the cursor (an up arrow) and  typing
+in the new data.   Changes are written to the disk at the end of the sector
+or  by  hitting enter.   Uses the arrow keys (See special keys) and can  be
+used  with NUMBER FIND option.   Display shows 64 bytes per  screen.   Move
+prompt  off  top or bottom of screen to advance to  next  screen.  The  hex
+number  in  the upper right corner of the screen is the byte  or  character
+counter. EDIT SECTOR can be used in either the absolute or file disk access
+modes  (See  OPTIONS)  with  RS formatted disks.  Other  formats  must  use
+absolute disk access.
+ 
+     To use:
+ 
+      a.  Make  sure  you have selected the disk access mode  desired  (See
+          OPTIONS).
+ 
+      b.  Select option <E>:
+ 
+      c.  Answer  prompts for Source drive,  Track & Sector or select  file
+          depending on access mode.
+ 
+      d.  Display  will be in hex with ASCII character  above  hex  number.
+          Up  arrow is the edit prompt.   Use arrow keys to move prompt  on
+          the screen.   Type changes  at the prompt in hex digits (0-9  and
+          A-F).  New ASCII character will be displayed at each change.
+ 
+      e.  When editing is complete,   press ENTER or <Q> to  save  changes.
+          Use BREAK key to abort.
+ 
+      f.  Uses  special keys (defined later) to move to the next  track  or
+          sector.  Previous sector is written to disk before moving to next
+          sector.
+ 
+Notes:   Entering  a '+' while editing a sector will toggle  the  automatic
+cursor  advance and a '+' will appear before the byte counter in the  upper
+right corner of the screen to reflect cursor advance is on.
+ 
+ 
+6.   <F>ILE SORT - This option will read the directory from the disk,  sort
+it into alphabetical order and then write it back to the disk.   FILE  sort
+moves  deleted   entries   to   the   back of the  directory  so  that  new
+additions to the disk will be at the back of the directory instead of mixed
+in the middle.  FILE SORT supports RS format only.
+ 
+     To use:
+ 
+      a.  Select option <F>.
+ 
+      b.  Answer prompt for Source disk.
+ 
+ 
+7.  <G>RANULE  TABLE - Displays the granule allocation table (RS format) in
+an easy to read format.  The allocation table consists of 68  granules  (0-
+67).   Beside  each granule  number  is  the  number  of  the next  granule
+in that file.   If next granule is C0-C9 , then no more granules are linked
+and the last digit is the number of sectors used in that granule.   If  the
+granule  if  FF  then  that granule  is  not  currently  being  used.  FREE
+= ** gives the number of free granules on the disk.
+ 
+     For  Flex  format disks,  KDSK displays the disk volume  name,  volume
+number,  date  disk was formatted,  first and last sector in the  available
+chain, total sectors on disk, number of sectors in use, and how the disk is
+formatted  (sectors/track,   number  of  tracks).   MS-DOS  format  is  not
+supported.
+ 
+     The granule allocation table (RS format) can also be display in tracks
+by   pressing <T>.   Normally  display  track  numbers  are   sectors   1-9
+and  track numbers displayed in inverse video  are  sectors  10-18.   Table
+display  returns  to granules by pressing <G>.
+ 
+     To use:
+ 
+      a.  Select option <G>.
+ 
+      b.  Answer prompt for Source Drive.
+ 
+      c.  Use   keys   <G>  or  <T>  to toggle display between granule  and
+          track formats.
+ 
+Note: This option supports 40 track RS formats when <T>RACKS is set to 40.
+ 
+ 
+8.   <H>EX  DUMP - Dumps the contents of a specified sector to  the  screen
+in  Hex format.   Uses arrow keys (See special keys) and can be  used  with
+NUMBER  FIND.  Display  is 128 bytes per screen.  HEX DUMP can be  used  in
+either  the  absolute  or  file disk access modes  (See  OPTIONS)  with  RS
+formatted disks. Other formats must use absolute disk access.
+ 
+ 
+      To Use:
+ 
+      a.  Make  sure  you have selected the disk access mode  desired  (See
+          OPTIONS).
+ 
+      b.  Select option <H>.
+ 
+      c.  Answer  prompts for Source drive,  Track & Sector or select  file
+          depending on access mode.
+ 
+      d.  Uses  special keys (defined later) to move to the next  track  or
+          sector.
+ 
+ 
+9.  <I>NITIALIZE - Allows for initialization & formatting of an entire disk
+or  a  single  sector (RS format only).   Select  the  fill  character  for
+single  track or sector initialization.   Extremely useful in repairing   a
+single  sector  (as  in  a directory recovery) without rebuilding the  rest
+of the disk.
+ 
+    Any   number  of tracks can be initialized (formatted).   The limit  is
+what  your   drive  can  handle.   Set  maximum  tracks  (TRACKS   option),
+prior  to formatting.
+ 
+      To use:
+ 
+      a.  Select option <I>.
+ 
+      b.  Select either <D>isk, <T>rack or <S>ector to format.
+ 
+      c.  <D>isk   -  answer  prompt  for  source  drive.   Choose  desired
+          fill character (FF is recommended).
+ 
+      d.  When  asked  to verify drive selection (Initialize Disk  ?),  you
+          must answer 'Y' for yes to continue. Any other key returns you to
+          the main menu.
+ 
+      e.  <T>rack  - answer  prompt for source drive &  track  to   format.
+          Choose desired fill character.
+ 
+      f.  <S>ector  - answer  prompts for source drive,  Track and  sector.
+          Choose  desired fill character.   This routine tries to read  the
+          track chosen, formats the track,  then writes the track back, and
+          fills the desired sector will the fill character.   If ENTER   is
+          used  for  fill  character,  all  sectors  are rewritten as read.
+          This  can  be used to repair sectors,  especially  successful  if
+          error is a CRC error.
+ 
+ 
+  10.   <J>OB  = SS RS - Toggles between RS (Radio Shack) or FLEX,  MS (512
+Byte  sectors) and SD (single sided) or DD (double sided).  FLEX format  is
+assumed  to  be  double density except for  track  zero,  which  is  single
+density.
+ 
+    To  access second side of double sided disk using RS,   add 4 to  drive
+number. For example,  to hit the second side of drive 2,  enter 6 to prompt
+for drive number.
+ 
+     To use:
+ 
+      a.  Select option <J>. Current selection toggles on main menu.
+ 
+ 
+11.   <K>ILL - Kills files in the same manner as disk basic,   only  easier
+to  use.   All  files on selected disk are displayed with a letter  prefix.
+Select files to kill by letter prefix and press ENTER when ready.  KILL can
+be used with either RS or Flex formats.
+ 
+     To use:
+ 
+      a.  Select option <K>.
+ 
+      b.  Answer prompt for source drive.
+ 
+      c.   Select files to kill by letter prefix.  Select as many at a time
+           as needed. Press ENTER to KILL. Use BREAK to abort.
+ 
+NOTE:  KILL  and  COPY  can  be used to quickly display  the  directory  on
+selected  disk.  If no entries are selected (just hit  ENTER),  nothing  is
+done to disk and complete message is displayed.
+ 
+ 
+12.  <L>IBRARY  - KDSKs master file record keeping features. Keeps track of
+all your files and information about those files in a master file for  easy
+recording keeping. Will display another menu as follows:
+ 
+ 
+            <A>GGREGATE  LIST  - Lists  all  programs in  specified  master
+                                 file to screen or printer.  If list is  to
+                                 printer, options are:
+ 
+                <L>ONG list - Lists all information about each file.
+ 
+                <C>ONDENSED list - Lists only file names in 6 or 9 across.
+ 
+ 
+            <C>ATALOG   A   DISK  -  Lists  filenames  on disk and  updates
+                                     master  file.  Cataloging keys on  the
+                                     disk  ID  you  provide.  For  example,
+                                     Cataloging  Disk  1  will  delete  all
+                                     references  to  that disk  ID  in  the
+                                     master  file  and add the  information
+                                     from   the   disk   currently    being
+                                     catalogued   as  disk 1.  Master  file
+                                     should  be  sorted  by  filename   for
+                                     proper results.
+ 
+            <D>ATE  - Date  that  will be put in master file   when   Radio
+                      Shack  format  disk  is  catalogued.  Files  on  Flex
+                      formatted disks  are already dated.
+ 
+            <F>ILE  - Filename  and  drive of master file  containing  your
+                      library.
+ 
+ 
+            <I>NPUT DRIVE - Drive number of disk to be catalogued.
+ 
+            <L>ABEL  - Prints  labels  for disks.  Can be  in  RS  or  Flex
+                       formats. Output must be set to printer.
+ 
+            <M>ERGE   -  Merge  two master files into a third master  file.
+                         Two  original files remain  intact.  Master  files
+                         should  be sorted by filename or results will  not
+                         be in order.
+ 
+            <O>UTPUT  = SCREEN/PRINTER - Changes the list device for  other
+                                         options in the LIBRARY menu.
+ 
+            <Q>UICK FIND =  Allows  you to display only a selected  portion
+                            of the master file.  Select <D>isk ID <E>xt  or
+                            <F>ilename  for restricted search.  Then  enter
+                            the  match string desired.  Only the characters
+                            entered  are  compared.  For  example,  if  you
+                            selected  <F>ilenames and entered 'CH'  as  the
+                            string,  all  records in the master file with a
+                            filename   beginning   with   'CH'   would   be
+                            displayed.
+ 
+            <S>ORT    -  Sorts Master library file by filename,  extension,
+                         or Disk ID.  I recommend only copies of the master
+                         library  file should be sorted because CATALOG and
+                         MERGE require the master library file be sorted by
+                         filename in order to work properly.  Sorting large
+                         master  files will take several passes and can  be
+                         time consuming.
+ 
+ 
+    Disks  in  RS or Flex formats can  be  catalogued.  However,  the  disk
+containing the master file must be in RS format.
+ 
+NOTE:   <F>  key  changes  format  of  the  screen  display   of   CATALOG,
+AGGREGATE and QUICK FIND.
+ 
+ 
+13.   <M>APPED  DIRECTORY =G - Use of this option will display each file on
+the  disk directory and the granule information for each file (RS  format),
+beginning  with  the  starting granule and  continuing  with  each   linked
+granule.   The   last  digit displayed is the number of sectors use in  the
+last granule.
+ 
+    Option   <G> of <T> can be used to display mapped directory in granules
+or by track and  sector.   Current  status  is  displayed  on  the   master
+menu. Normally  displayed  track numbers are sectors 1-9.  Track numbers in
+inverse video are sectors 10-18.
+ 
+     For Flex format, KDSK displays the first and last sector of each file,
+the file size and date of the file.
+ 
+ 
+     To use:
+ 
+      a.  Select option <M>.
+ 
+      b.  Answer prompt for source drive.
+ 
+      c.  Toggle display between granules or tracks as desired.
+ 
+
+ACTION> (Next, Down, Xm, List) 
+                                                                                           
+
+
+                                         

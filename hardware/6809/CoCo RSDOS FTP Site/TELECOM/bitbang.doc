@@ -1,0 +1,129 @@
+This file should be called "BITBANG.DOC" on your computer.
+
+                      B I T B A N G    H E L P
+ 
+ 
+    This file will attempt to show you how to get an OS-9 telecommunications
+setup going.  First get the "BITBANG.BAS" program.  This is an RS-DOS program
+that will make an OS-9 disk with bitbang and supercomm.  To use it, format an
+OS-9 disk (35 tracks or 40 tracks single sided.)  Get out of OS-9 and load
+BITBANG.BAS (you need to PCLEAR 1 first.)  Insert the blank OS-9 disk and run
+the program.  When its done, you will have an OS-9 disk with all you need to
+telecommunicate.
+ 
+    The next step is the minor hardware modification to your serial cable.
+If the thought of soldering gives you the shakes, get a hold of someone else
+who can do it for you, because you've GOT to do this mod to make bitbang work.
+First unplug the serial cable from the back of your computer.  Get a
+screwdriver, pry up the little plastic latch and slide back the plastic cover
+of the DIN connector.  Take apart the metal shell and look where the wires
+are soldered to the connector.  If you look at the back of the connector, near
+the pins, you should see the pin numbers molded into the plastic.  If you
+don't, here's what it looks like, when you're looking at the back of the
+connector where the wires are soldered:
+ 
+                                u
+                            4       1
+ 
+                              3   2
+ 
+ 
+Now get a wire cutter and clip off the wire leading to pin 1.  This is the CD
+line coming from the modem.  No known software ever uses it.  It goes into the
+computer and causes a FIRQ which we need.  Get your soldering iron heated up
+and solder a short jumper wire between pins 1 and 2.  Don't let the wire
+that's already on pin 2 come off, pin 2 is the RD line - the serial data
+coming in from the modem.  By connecting pin 2 to pin 1 we can get an
+interrupt at the start of a serial byte so OS-9 can jump to the device
+driver to read the data in.  Put the cable connector back together; we're
+done with the hardware part.
+ 
+    Now to get the software running:
+ 1) Boot OS-9
+ 2) make an 80 column window.  If you don't know how, here's one way:
+    a) montype r (if you have an RGB monitor)
+    b) iniz /w7
+    c) ex shell i=/w7
+    d) hit <clear> to go to W7.  It should be blue with white letters.
+ 3) insert the disk with bitbang and supercomm into drive 0
+ 4) load /d0/bitbangt2
+ 5) iniz /t2
+ 6) load /d0/supercomm
+ 7) put your OS-9 disk back into drive 0
+ 8) run supercomm (just type "supercomm")
+ 9) supercomm should start up.  Type <Alt>-H to see supercomm's help menu.
+ 
+    This all should be enough to get you started.  A few phone calls to your
+local BBS and you can download AR, then you can download bitbang.ar and
+supercomm.ar and use AR to unarchive them and get the docs for all this
+stuff and so on and so on.
+ 
+    To make bitbang part of your bootfile, you need to get the bitbang.ar and
+follow the instructions in the docs there.
+ 
+    To set up OS-9 to boot in 80 columns, make a boot disk with the grfint
+version of term; this can be done using the config disk.  Then put the
+following into a text file:
+ 
+L term
+C 002c 28 50
+C 0030 01 02
+C 0033 02 00
+C 0034 03 02
+C 0035 03 02
+V
+ 
+Boot up on your new disk.  Apply the patch like this:
+modpatch patchfile
+ 
+Now use cobbler to make the patch permanent like this:
+cobbler /d0
+ 
+From now on when you boot from this disk it should come up in 80 columns.
+ 
+    If you have problems, you can send me mail on the 1-800-USHAYES BBS.  My
+username is Richard Kottke.  Good luck!
+ 
+ 
+The following is shareware info from the author of supercomm, Dave Philipsen
+-----------------------------------------------------------------------------
+ 
+SUPERCOMM SHAREWARE INFORMATION
+ 
+ 
+SuperComm is a shareware program. Many hours of work have gone into this
+program and I intend to support it and upgrade it provided I am reimbursed
+for my work. If you intend to keep and use SuperComm, I request that you send
+a minimum donation of $8. For a donation of $15, I will send you an operating
+manual and a disk containing SuperComm and sample autodialer files. The
+registered version of SuperComm contains more features than the public
+shareware version and registered users will be eligible for updates to the
+original program.
+version.
+ 
+Please send donations to:
+ 
+      Dave Philipsen
+c/o   R.D. Philipsen
+      2218 Mackinac Ct.
+      Peoria, IL   61614
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

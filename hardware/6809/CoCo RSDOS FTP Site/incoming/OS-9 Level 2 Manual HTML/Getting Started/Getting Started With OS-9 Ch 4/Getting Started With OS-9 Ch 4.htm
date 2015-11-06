@@ -1,0 +1,961 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\Getting Started With OS-9 Ch 4.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000000.JPG" WIDTH="125" HEIGHT="4">
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+Chapter 4<BR>
+</FONT>
+<FONT SIZE="4" FACE="Times Roman" COLOR="#000000">
+<BR>
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<B>Files and Directories</B>
+</FONT>
+</H2>
+<H2 ALIGN="LEFT">
+</B><FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000001.JPG" WIDTH="302" HEIGHT="2">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000002.JPG" WIDTH="24" HEIGHT="9">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000003.JPG" WIDTH="16" HEIGHT="2">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000004.JPG" WIDTH="8" HEIGHT="4">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000005.JPG" WIDTH="20" HEIGHT="5">
+</FONT>
+</H2>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Before you can use OS-9 extensively, you need to know how the
+system organizes and stores data on disk. The information in this
+section is true for both floppy diskettes and hard disks. However,
+because of the greater storage capacity of a hard disk, it is of
+particular importance to hard disk users.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+About Files<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Consider the information stored on disks to be of two basic types,
+programs and data. A program is 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>code </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+that causes your computer to execute a task. Data is information that a program uses
+or that a program creates.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+All the information that OS-9 stores on disks, whether program or
+data, is stored in units called 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>files. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Whenever a program creates
+a file, OS-9 defines a portion of your disk to store it. It keeps the
+location of the file in a special list (called a 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>directory), </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+also located
+on the disk, so that it knows where to find your program or data
+the next time you want it.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+About Directories<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A directory is a storage space for filenames, other directory
+names, or both.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+After you format a disk, it contains ~ one directory called the
+ROOT directory. However, a disk can have many directories. For
+instance, besides the ROOT directory, your System Master
+diskette contains the CMDS and SYS directories. The ROOT and
+CMDS directories are especially important to you.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+When you boot OS-9, you automatically begin operation from
+these two directories. The ROOT directory becomes your current
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>data directory </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+and the CMDS directory becomes your current
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>execution directory.</I>
+</FONT>
+</P>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Whenever you ask OS-9 to store a file on a diskette, it automatically stores it in the current data directory (the ROOT directory), unless you tell it otherwise. If you ask OS-9 to execute a
+command or program, it automatically looks for that command or
+program in the execution directory (the CMDS directory), unless
+you tell it otherwise.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000006.JPG" WIDTH="22" HEIGHT="8">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Getting Started With OS-9<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Every OS-9 directory can also contain other directories, called
+<I>subdirectories. </I>For instance, SYS, and CMDS are established as
+subdirectories of the ROOT directory. Put in chart form, your
+ROOT directory with its subdirectories looks like this:<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ROOT DIRECTORY
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CMDS  SYS
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<B>Figure 4.1
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+But there are also files in the ROOT directory, OS9Boot and
+Startup are two. The full ROOT directory might look like this:<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ROOT DIRECTORY
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="CENTER">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS9Boot
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Startup
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CMDS SYS
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<B>Figure 4.2
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can create another subdirectory of the ROOT directory if you
+want. Fbr instance, if you created a directory named FAMILY, the
+chart of the ROOT directory looks like this:<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ROOT DIRECTORY
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="CENTER">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS9Boot
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Startup
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CMDS FAMILY SYS
+</UL>
+<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<B>Figure 4.3
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000007.JPG" WIDTH="24" HEIGHT="7">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000008.JPG" WIDTH="20" HEIGHT="4">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000009.JPG" WIDTH="302" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<B>4-2<BR>
+</B>
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000010.JPG" WIDTH="389" HEIGHT="1">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Files and Directories / 4<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000011.JPG" WIDTH="18" HEIGHT="3">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000012.JPG" WIDTH="20" HEIGHT="17">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000013.JPG" WIDTH="22" HEIGHT="6">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+After you create the FAMILY directory, you can also create other
+directories in it. Suppose you create two subdirectories named
+PLEASURE and WORK. The chart organization is as follows:<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000014.JPG" WIDTH="41" HEIGHT="84">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ROOT DIRECTORY<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS9Boot<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Startup<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000015.JPG" WIDTH="112" HEIGHT="72">
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+FAMILY ~ SYS
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PLEASURE  WORK<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Figure 4.4<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The directories you create also can hold files. If you created three
+files each in the PLEASURE and WORK directories, the chart
+might look like this:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+ROOT DIRECTORY<BR>
+<BR>
+<P ALIGN="CENTER">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+OS9Boot
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Startup
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000016.JPG" WIDTH="14" HEIGHT="70">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+CMDS<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000017.JPG" WIDTH="68" HEIGHT="73">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+--
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+i FAMILY -~ SYS
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+V~
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+PLEASURE WORK<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+y<BR>
+<P ALIGN="CENTER">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mom
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+dad
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+joe
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mom
+dad
+joe<BR>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Figure 4.5
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can continue to create files and subdirectories in any or all of
+your disk's directories until you fill the disk's storage space.<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4-3<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I><U>Getting Started With OS-9<BR>
+</U></I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Multiple Directories<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+There is <U>n</U>ot<U>hing wrong with storing all your files in the ROOT
+</U>directory. Doing so makes it easy to access them because they are
+always in your data directory.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+However, creating multiple directories makes it easy to keep your
+data organized when you have many files, or if more than one
+person is using the same disk. Such a multiple-directory organization is especially helpful when using hard disks, which can
+store hundreds of individual files.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Also, when you have multiple directories, you can store files having the same name in different directories without conflict, such
+as in the PLEASURE and the WORK directories of Figure <B>4.5.</B>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>About File and Directory Names<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The file and directory names shown so far consist only of letters
+of the alphabet, but you can use other characters and symbols in
+a file or directory name as long as each name begins with a letter. The following is a complete list of acceptable characters:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Uppercase letters: (A-Z)
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Lowercase letters: (a-z)
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Decimal digits: (0-9)
+</UL>
+<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The underscore character (-) and the period (.)
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can include as many as 29 characters in a file or directory
+name.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<B>Examples of Filenames<BR>
+</B>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+The following are samples of filenames that OS-9 can recognize:<BR>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mydata samfile
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+mydatal Dollar-gifts
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+records.srt help.file
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+XXX.xx file#l.txt
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+progl.bas program. sourcecode
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+prog2.bas program.opcode
+</UL>
+<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000018.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000019.JPG" WIDTH="22" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000020.JPG" WIDTH="302" HEIGHT="2">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4-4<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000021.JPG" WIDTH="24" HEIGHT="8">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000022.JPG" WIDTH="20" HEIGHT="5">
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000023.JPG" WIDTH="19" HEIGHT="3">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Files and Directories / 4<BR>
+</I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Examples of invalid filenames are:<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+his*hers ..<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+.DATA ........<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000024.JPG" WIDTH="35" HEIGHT="1">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+COST + INT . . .<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+100-dollar-gifts<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000025.JPG" WIDTH="14" HEIGHT="45">
+<BR>
+</FONT>
+<FONT SIZE="5" FACE="Times Roman" COLOR="#000000">
+About Pathlists<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+.because * is not a valid character for
+names
+. because the name does not begin with
+a letter
+.because + is not a valid character for
+names
+. because names cannot begin with a
+digit<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because you can organize OS-9 disks into multiple levels, you
+need a way to tell the system where to find directories and files.
+The directions you give are called pathlists.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+A pathlist is exactly what its name implies-a path (or route) to
+the device, directory, or file you want to access. For instance, if
+you are in the ROOT directory (see Figure 4.5) and want to look
+at the contents of a file in the WORK directory, you must tell
+OS-9 how to get there. The pathlist from the ROOT directory to
+the Dad file is 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>f a m i 1 y / w o r k / d a d . OS-9 </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+expects you to separate
+the junctions of pathlists with slashes. To look at the contents of
+Dad, you type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>list family/work/dad<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Because you are accessing a file on the current disk, you do not
+need to specify a drive name. Because every disk contains a
+ROOT directory, and all other directories and files branch from it,
+ROOT is always implied in a pathlist. If Figure 4.5 represented
+the diskette in Drive /D 1, the pathname to the Dad file would be
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>/dl/family/work/dad.</TT>
+</FONT>
+</P>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT><BR>
+<P ALIGN="JUSTIFY">
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Depending on the location of the directory or file you want to
+access, a full pathlist need not contain any more than the name
+of a drive, the name of a directory, or the name of a file. For
+instance, the complete pathlist from the ROOT directory of Figure 4.5 to the Startup file is 
+</FONT>
+<FONT SIZE="1" FACE="Times Roman" COLOR="#000000">
+5 
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>t a r t u </TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+p . To look at the contents of
+Startup, type:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>list startup<BR>
+<BR>
+</TT>
+</FONT>
+<FONT SIZE="2" FACE="Courier" COLOR="#000000">
+<TT>4-5<BR>
+</TT>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<I>Getting Started With </I>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow1" COLOR="#000000">
+OS-9<BR>
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Garamond" COLOR="#000000">
+<B>Anonymous Directory Names<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To save time, or if you do not know a full pathlist, you can refer
+to the current directory, or to a higher-level directory, using an
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>anonymous </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+name, or name substitute, as follows:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; One period (.) refers to the current directory
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Two periods (..) refer to the 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>parent </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+of the current directory (the next highest-level directory).
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+&middot; Three periods (...) refer to the directory two levels up, and
+so on.
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+You can use an anonymous directory name in place of a pathlist
+or as the first name in a pathlist. Some examples are:
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+d i r . . ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+lists names in the current data directory's parent directory.
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="1" FACE="Arial Narrow" COLOR="#000000">
+del . . /temp ENTER 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+deletes the file called Temp from the
+current data directory's parent
+directory.
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Anonymous names can refer to either execution or data directories, depending on the context in which you use them.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="4" FACE="Garamond" COLOR="#000000">
+<B>About Device Names<BR>
+</B>
+</FONT>
+<FONT SIZE="4" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+In the same manner that OS-9 has names for its commands, it
+also has names for its devices. These names are abbreviations of
+actual device names. Fbr instance, instead of typing Disk Drive 0
+to refer to your first disk drive, you only need to type 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>/ DO. </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+To
+refer to your printer, type 
+</FONT>
+<FONT SIZE="2" FACE="Times Roman" COLOR="#000000">
+<I>/ P . OS-9 </I>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+windows are named /W
+through /W 7 .
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+All of OS-9's device names are preceded by a slash this is how
+OS-9 can tell you are referring to a device rather than a directory or file. When you purchase your System ester diskette, OS9 is configured to recognize two disk drives, a printer, and one
+terminal port. Fbr information on how to configure your system to
+recognize other devices, see Chapter 7.
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+4-6<BR>
+<IMG SRC="file:///H:\NANIOS~2\OS-9LE~3\GETTIN~1\GETTIN~5\GR000026.JPG" WIDTH="20" HEIGHT="5">
+</FONT>
+</BODY>
+</HTML>

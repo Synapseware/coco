@@ -1,0 +1,3 @@
+text-file lister in the tradition of more
+Please put in /rsdos/utilities directory
+

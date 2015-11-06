@@ -1,0 +1,364 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1254">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>3.</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0" width="630">
+    <tr>
+        <td><a name="3. MACRO PREPROCESSOR"></a><font size="2"
+        face="Arial"><strong><span style="mso-fareast-font-family:&quot;MS Mincho&quot;">3. MACRO PREPROCESSOR</span></strong></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>MACRO is an assembly<span style="mso-spacerun: yes">  </span>source<span style="mso-spacerun: yes">  </span>code<span style="mso-spacerun: yes"> 
+</span>        pre-processor<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>provides<br>
+<span style="mso-spacerun:
+yes">               </span>macro substitution and conditional assembly
+        facilities at the<span style="mso-spacerun: yes">  </span>source<br>
+<span style="mso-spacerun: yes">               </span>code level to virtually any assembler or
+        cross assembler.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>MACRO reads the raw<span style="mso-spacerun: yes">  </span>assembler<span style="mso-spacerun: yes">  </span>source<span style="mso-spacerun: yes"> 
+</span>        from<span style="mso-spacerun: yes">  </span>one<span style="mso-spacerun: yes">  </span>or<span style="mso-spacerun:
+yes">  </span>more<span style="mso-spacerun: yes">  </span>files<br>
+<span style="mso-spacerun: yes">               </span>specified as its arguments,<span style="mso-spacerun: yes">  </span>and the
+        processed assembler source<span style="mso-spacerun: yes">  </span>file<br>
+<span style="mso-spacerun:
+yes">               </span>is written to standard output where it<span style="mso-spacerun: yes">  </span>can<span style="mso-spacerun: yes"> 
+</span>        be<span style="mso-spacerun: yes">  </span>re-directed<span style="mso-spacerun: yes">  </span>into<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun: yes">               </span>temporary file for later assembly.<span style="mso-spacerun: yes">  </span>All
+        files specified as<span style="mso-spacerun: yes">  </span>arguments<br>
+<span style="mso-spacerun: yes">               </span>are<span style="mso-spacerun: yes">  </span>effectivly<span style="mso-spacerun: yes">  </span>concatinated<span style="mso-spacerun: yes">  </span>into<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes"> 
+</span>        output<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>they<span style="mso-spacerun: yes">  </span>are<br>
+<span style="mso-spacerun:
+yes">               </span>processed,<span style="mso-spacerun: yes">  </span>providing a conveinent way of<span style="mso-spacerun: yes"> 
+</span>        maintaining<span style="mso-spacerun: yes">  </span>large<span style="mso-spacerun: yes">  </span>single<br>
+<span style="mso-spacerun: yes">               </span>source programs as more managable separate
+        files.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>MACRO provides two types of macro
+        definitions,<span style="mso-spacerun: yes">  </span>substitution,<span style="mso-spacerun: yes">  </span>and<br>
+<span style="mso-spacerun:
+yes">               </span>instruction.<br>
+        <br>
+</font></span>        </td>
+    </tr>
+</table>
+
+<table border="0" width="630">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="3.1 Substitution macros"><font size="2"
+        face="Arial"><em><strong>3.1 Substitution macros<br>
+        </strong></em></font></a><font size="2" face="Arial"><br>
+<span style="mso-spacerun: yes">                     </span>Substitution macros may be used<span style="mso-spacerun: yes"> 
+</span>        anywhere<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>any<span style="mso-spacerun: yes">  </span>non-comment<br>
+<span style="mso-spacerun: yes">                  </span>line of the source file<span style="mso-spacerun: yes">  </span>(lines not
+        beginning with '*'),<span style="mso-spacerun: yes">  </span>and when<br>
+<span style="mso-spacerun: yes">                  </span>encountered,<span style="mso-spacerun: yes">  </span>are simply replaced by
+        the<span style="mso-spacerun: yes">  </span>text<span style="mso-spacerun: yes">  </span>specified<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>macro definition.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>Substitution macro's are defined
+        using the 'SET' directive.<span style="mso-spacerun: yes">  </span>If<br>
+<span style="mso-spacerun: yes">                  </span>the macro definition text contains
+        spaces,<span style="mso-spacerun: yes">  </span>tabs,<span style="mso-spacerun:
+yes">  </span>or<span style="mso-spacerun: yes">  </span>commas,<span style="mso-spacerun: yes">  </span>it<br>
+<span style="mso-spacerun:
+yes">                  </span>must be enclosed in double quote's.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The following are examples of
+        substitution macro definitions:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>sub1 set this_gets_substituted<br>
+<span style="mso-spacerun: yes">                     </span>sub2 set &quot;this gets
+        substituted&quot;<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Substitution macros are only
+        recognized of they are<span style="mso-spacerun: yes">  </span>surrounded<br>
+<span style="mso-spacerun:
+yes">                  </span>by non-alphanumeric characters.<span style="mso-spacerun:
+yes">  </span>This
+        prevents substitutions<span style="mso-spacerun: yes">  </span>from<br>
+<span style="mso-spacerun: yes">                  </span>occuring within other words which may
+        contain the pattern. It does<br>
+<span style="mso-spacerun: yes">                  </span>however require the restriction that
+        the macro names contain<span style="mso-spacerun: yes">  </span>only<br>
+<span style="mso-spacerun: yes">                  </span>alphanumeric characters.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>3.1.1 Command line substitutions<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Substitution macros may
+        also be defined on the command<span style="mso-spacerun: yes">  </span>line<br>
+<span style="mso-spacerun:
+yes">                     </span>with arguments of the form
+        &quot;&lt;symbol&gt;=&lt;string&gt;&quot;.<br>
+        <br>
+<span style="mso-spacerun: yes">                 </span>eg: 'macro source_file1 source_file2
+        mode=debug &gt;output_file'<br>
+</font></span>        </td>
+    </tr>
+</table>
+
+<table border="0" width="630">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="3.2 Instruction macros"><font size="2" face="Arial"><em><strong>3.2
+        Instruction macros</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Instruction macros may only be
+        used in the instruction field of<br>
+<span style="mso-spacerun: yes">                  </span>the source file, and when encountered,
+        are replaced by one or more<br>
+<span style="mso-spacerun:
+yes">                  </span>lines of assembly source code.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Instruction macros may be passed
+        operands in the operand<span style="mso-spacerun: yes">  </span>field<br>
+<span style="mso-spacerun: yes">                  </span>of the assembly source<span style="mso-spacerun: yes">  </span>code.<span style="mso-spacerun: yes">  </span>If<span style="mso-spacerun: yes">  </span>multiple<span style="mso-spacerun: yes"> 
+</span>        operands<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun:
+yes">  </span>be<br>
+<span style="mso-spacerun: yes">                  </span>passed, they should be separated from
+        one another by commas.<span style="mso-spacerun:
+yes">  </span>If a<br>
+<span style="mso-spacerun: yes">                  </span>single operand must contain spaces,
+        tabs, or commas,<span style="mso-spacerun: yes">  </span>it should be<br>
+<span style="mso-spacerun: yes">                  </span>enclosed in double quotes.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>3.2.1 Backslash commands<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>The backslash character<span style="mso-spacerun: yes">  </span>'\'<span style="mso-spacerun: yes"> 
+</span>        has special meaning within<span style="mso-spacerun: yes">  </span>an<br>
+<span style="mso-spacerun: yes">                     </span>instruction macro definition as
+        follows:<br>
+        <br>
+<span style="mso-spacerun: yes">                </span>\n<span style="mso-spacerun: yes">  </span>- Substitute the &lt;n&gt;'th
+        parameter from<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>macro<span style="mso-spacerun: yes">  </span>invocation<br>
+<span style="mso-spacerun: yes">                      </span>line. &lt;n&gt; may range from
+        zero to<span style="mso-spacerun: yes">  </span>nine,<span style="mso-spacerun: yes">  </span>parameter<span style="mso-spacerun: yes">  </span>zero<span style="mso-spacerun: yes">  </span>is<br>
+<span style="mso-spacerun: yes">                      </span>considered to be the LABEL
+        from that line, actual parameters<br>
+<span style="mso-spacerun: yes">                      </span>from the operand field begin
+        with parameter one.<br>
+        <br>
+<span style="mso-spacerun: yes">                </span>\#<span style="mso-spacerun: yes">  </span>- Substitute the number of parameters
+        passed.<br>
+        <br>
+<span style="mso-spacerun: yes">                </span>\$<span style="mso-spacerun: yes">  </span>- Substitute a unique number which
+        the total number<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>macro<br>
+<span style="mso-spacerun:
+yes">                      </span>invocations to occur in this
+        assembly so far. This is<span style="mso-spacerun: yes">  </span>often<br>
+<span style="mso-spacerun: yes">                      </span>used to create unique labels
+        within the macro.<br>
+        <br>
+<span style="mso-spacerun: yes">                </span>\@n - Substitute a portion of the current
+        date based on the digit<br>
+<span style="mso-spacerun: yes">                      </span>'n', as follows:<br>
+        <br>
+<span style="mso-spacerun: yes">                      </span>\@1 - Day of month, 1 or 2
+        digits.<br>
+<span style="mso-spacerun: yes">                      </span>\@2 - Day of month, 2 digits.<br>
+<span style="mso-spacerun: yes">                      </span>\@3 - Month of year, 2 digits.<br>
+<span style="mso-spacerun: yes">                      </span>\@4 - Month of year in string
+        form.<br>
+<span style="mso-spacerun:
+yes">                      </span>\@5 - Month of year in three
+        character string form.<br>
+<span style="mso-spacerun: yes">                      </span>\@6 - Current year, 2 digits.<br>
+<span style="mso-spacerun: yes">                      </span>\@7 - Current hour, 2 digits.<br>
+<span style="mso-spacerun: yes">                      </span>\@8 - Current minite, 2
+        digits.<br>
+<span style="mso-spacerun:
+yes">                      </span>\@9 - Current second, 2
+        digits.<br>
+        <br>
+<span style="mso-spacerun: yes">                </span>NOTE: The time is recorded when MACRO is
+        first invoked.<br>
+        <br>
+<span style="mso-spacerun: yes">                </span>\\<span style="mso-spacerun: yes">  </span>- Place a backslash character in the
+        macro definition.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>Instruction macros are
+        defined with the MACRO directive, and<br>
+<span style="mso-spacerun: yes">                     </span>are ended with the ENDMAC
+        directive.<br>
+        <br clear="all" style="page-break-before:
+always">
+<span style="mso-spacerun: yes">                  </span>3.2.2 Example instruction macro<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>The following is an
+        example<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>instruction<span style="mso-spacerun: yes">  </span>type<span style="mso-spacerun: yes">  </span>macro<br>
+<span style="mso-spacerun: yes">                     </span>using 6809 assembly language:<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>* MACRO TO PRINT A CHARACTER
+        STRING<br>
+<span style="mso-spacerun:
+yes">                    </span>PRINT<span style="mso-spacerun: yes">   </span>MACRO<br>
+<span style="mso-spacerun: yes">                    </span>\0<span style="mso-spacerun: yes">      </span>PSHS<span style="mso-spacerun: yes">    </span>A,X<span style="mso-spacerun: yes">        
+</span>        SAVE REGISTERS<br>
+<span style="mso-spacerun: yes">                            </span>LDX<span style="mso-spacerun: yes">     </span>#LAB2\$<span style="mso-spacerun:
+yes">    
+</span>        STRING TO PRINT<br>
+<span style="mso-spacerun:
+yes">                     </span>LAB1\$ LDA<span style="mso-spacerun: yes">  </span><span style="mso-spacerun: yes">   </span>,X+<span style="mso-spacerun: yes">        
+</span>        GET CHAR FROM STRING<br>
+<span style="mso-spacerun:
+yes">                            </span>BEQ<span style="mso-spacerun: yes">     </span>LAB3\$<span style="mso-spacerun: yes">     
+</span>        END, QUIT<br>
+<span style="mso-spacerun: yes">                            </span>JSR<span style="mso-spacerun: yes">     </span>PRINTCHR<span style="mso-spacerun:
+yes">   
+</span>        DISPLAY THE CHARACTER<br>
+<span style="mso-spacerun:
+yes">                            </span>BRA<span style="mso-spacerun: yes">     </span>LAB1\$<span style="mso-spacerun: yes">     
+</span>        GO BACK FOR NEXT<br>
+<span style="mso-spacerun: yes">                     </span>LAB2\$ FCCZ<span style="mso-spacerun: yes">    </span>&quot;\1&quot;<span style="mso-spacerun:
+yes">       
+</span>        STRING TO PRINT<br>
+<span style="mso-spacerun:
+yes">                     </span>LAB3\$ PULS<span style="mso-spacerun: yes">    </span>A,X<span style="mso-spacerun: yes">        
+</span>        RESTORE REGISTERS<br>
+<span style="mso-spacerun: yes">                            </span>ENDMAC<br>
+</font></span>        </td>
+    </tr>
+</table>
+
+<table border="0" width="630">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="3.3 Macro directives"><font size="2" face="Arial"><em><strong>3.3
+        Macro directives<br>
+        </strong></em></font></a><font size="2" face="Arial"><br>
+<span style="mso-spacerun: yes">                     </span>MACRO suports the following
+        directives,<span style="mso-spacerun: yes">  </span>which may be placed in<br>
+<span style="mso-spacerun: yes">                  </span>the assembler source file. Note that
+        only substitution type macros<br>
+<span style="mso-spacerun: yes">                  </span>may be used as values in operands to
+        MACRO<span style="mso-spacerun: yes">  </span>directives,<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>MACRO<br>
+<span style="mso-spacerun: yes">                  </span>has no knowlege of the labels and
+        symbols used by the assembler.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>&lt;name&gt; SET &lt;string&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>The SET defines the
+        substitution type macro<span style="mso-spacerun:
+yes">  </span>with<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>name<br>
+<span style="mso-spacerun:
+yes">                     </span>specified by<span style="mso-spacerun: yes">  </span>&lt;name&gt;<span style="mso-spacerun: yes">  </span>to
+        have the text specified<span style="mso-spacerun: yes">  </span>by<span style="mso-spacerun:
+yes">  </span>&lt;string&gt;.<br>
+<span style="mso-spacerun: yes">                     </span>Double quotes may be used<span style="mso-spacerun: yes">  </span>if<span style="mso-spacerun: yes"> 
+</span>        &lt;string&gt;<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>contain<span style="mso-spacerun: yes">  </span>tabs,<br>
+<span style="mso-spacerun:
+yes">                     </span>spaces,<span style="mso-spacerun: yes">  </span>or commas.<span style="mso-spacerun: yes">  </span>If the
+        macro being defined already exists,<br>
+<span style="mso-spacerun: yes">                     </span>it is re-defined with the new
+        value.<span style="mso-spacerun: yes">  </span>&lt;name&gt;<span style="mso-spacerun: yes">  </span>should<span style="mso-spacerun: yes">  </span>begin<span style="mso-spacerun: yes">  </span>in<br>
+<span style="mso-spacerun: yes">                     </span>column one.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>&lt;name&gt; MACRO<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>The MACRO directive begins
+        the definition of<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>instruction<br>
+<span style="mso-spacerun: yes">                     </span>type macro.<span style="mso-spacerun: yes">  </span>All subsequent
+        lines up to a ENDMAC directive<span style="mso-spacerun: yes">  </span>are<br>
+<span style="mso-spacerun: yes">                     </span>included in the macro
+        definition.<span style="mso-spacerun: yes">  </span>These lines are not<span style="mso-spacerun: yes">  </span>written<br>
+<span style="mso-spacerun:
+yes">                     </span>to the output file.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>ENDMAC<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>This<span style="mso-spacerun:
+yes">  </span>directive<span style="mso-spacerun: yes">  </span>terminates<span style="mso-spacerun: yes"> 
+</span>        an<span style="mso-spacerun: yes">   </span>instruction<span style="mso-spacerun: yes">   </span>type<span style="mso-spacerun: yes">   </span>macro<br>
+<span style="mso-spacerun:
+yes">                     </span>definition.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>IFEQ
+        &lt;string&gt;,&lt;string&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>The IFEQ directive causes
+        MACRO to process<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>output<span style="mso-spacerun: yes">  </span>all<br>
+<span style="mso-spacerun: yes">                     </span>subsequent lines up to an ELSE
+        or ENDIF directive,<span style="mso-spacerun: yes">  </span>only if the<br>
+<span style="mso-spacerun: yes">                     </span>two argument strings match.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>IFNE
+        &lt;string&gt;,&lt;string&gt;<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>The IFNE directive causes
+        MACRO to process<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>output<span style="mso-spacerun: yes">  </span>all<br>
+<span style="mso-spacerun: yes">                     </span>subsequent lines up to an ELSE
+        or ENDIF directive only<span style="mso-spacerun: yes">  </span>if<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                     </span>two argument strings do not
+        match.<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                     </span>ELSE<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>The ELSE directive causes
+        MACRO to process<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>output<span style="mso-spacerun: yes">  </span>all<br>
+<span style="mso-spacerun: yes">                     </span>subsequent lines up to an ENDIF
+        directive only of the preceding<br>
+<span style="mso-spacerun: yes">                     </span>IFEQ or IFNE directive failed.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>ENDIF<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>This directive marks the
+        end of<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>section<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>conditional<br>
+<span style="mso-spacerun: yes">                     </span>assembly statements following a
+        IFEQ, IFNE, or ELSE directive.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>INCLUDE
+        &quot;&lt;filename&gt;&quot;<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>The contents of the <span style="mso-spacerun:
+yes"> </span>specified<span style="mso-spacerun: yes"> 
+</span>        file<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>included<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                     </span>output file at the point where
+        the<span style="mso-spacerun: yes">  </span>INCLUDE<span style="mso-spacerun: yes">  </span>directive<span style="mso-spacerun: yes">  </span>occurs.<br>
+<span style="mso-spacerun: yes">                     </span>Macro processing is performed on
+        the included file.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>ABORT &quot;&lt;text&gt;&quot;<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>Causes MACRO<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>terminate,<span style="mso-spacerun: yes"> 
+</span>        displaying<span style="mso-spacerun: yes">  </span>an<span style="mso-spacerun: yes">  </span>error<span style="mso-spacerun: yes">  </span>message<br>
+<span style="mso-spacerun:
+yes">                     </span>containing the specified text.<br>
+</font></span>        </td>
+    </tr>
+</table>
+<table width="605" border="0">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2">&quot;Converted by 
+        BiPOM Electronics to HTML format from original Micro C documentation by 
+        Dunfield Development Systems. Please see the Micro C documentation that 
+        is included with Micro C for the original forms of these pages.&quot;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

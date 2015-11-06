@@ -1,0 +1,920 @@
+TRS-80 COLOUR COMPUTER 2 EMULATOR Ver. 1.40 (C) 1993,94 Jeff Vavasour
+=====================================================================
+
+(Internet e-mail to jeffv@physics.ubc.ca)
+
+1. DESCRIPTION
+--------------
+
+This package is a complete* emulator designed to make your PC imitate a 
+genuine CoCo 2 with 64K and four disk drives.  It has also been tested
+successfully with the Dragon 32's 16K ROM, though you must use the Options
+Menu (F6 in the emulator) to select the Dragon keyboard.
+
+It requires EGA graphics and 256K RAM.  Also, a 286 with at least 16 MHz 
+is recommended, though you'll need a faster processor to get operating 
+speed that matches the real machine.  (A 33 MHz 486, on the other hand, 
+is drastic overkill.  A slowdown option is provided for users fortunate 
+enough to posess such a beast.)
+
+Version 1.40 is the third release of this package, and includes many
+enhancements and a few corrections.  The file NEWSTUFF.DOC summarises all
+changes since version 1.30 for those who've seen the earlier releases.  Also,
+MANY things in this COCO.DOC file have changed.  Please read it thoroughly.
+
+This program is freeware, though copyright remains with the author.  You
+are permitted to distribute the UNALTERED .ZIP package, as long as all  
+programs listed in section 2 are included.  Also, this package may not be
+sold or distributed commercially or for profit, though a reasonable media 
+charge for distribution is acceptable.  
+
+The .ZIP package contains the following 12 files:
+
+- The emulator itself: 
+        COCO.EXE
+- Documentation:
+        README - a brief overview
+        COCO.DOC - this file
+        NEWSTUFF.DOC - outlines upgrades since version 1.30
+- CoCo disk programs:  
+        DSKINI.EXE - formats CoCo disks on your PC.  Also can write the
+                     emulator's "virtual disks" to a real CoCo disk.
+        RETRIEVE.EXE - reads a CoCo disk and makes a "virtual disk" on your
+                       hard drive.
+        PORT.EXE - moves files between CoCo disks and your MS-DOS directory,
+                   or between virtual disks and your MS-DOS directory.
+- CoCo cassette programs:
+        CASIN.EXE - a program to read CoCo cassettes on your PC through a
+                    SoundBlaster or from a .WAV file sample.
+        CASOUT.EXE - a program to make CoCo-compatible cassettes using a
+                     SoundBlaster.
+- Other programs:
+        CAS2ROM.EXE - PC program to retrieve your CoCo's ROM by cassette.
+        COCOUTIL.DSK - CoCo program to retrieve your CoCo's ROM by disk.
+        VGACHECK.EXE - a program to test your VGA board for compatibility
+                       with the shareware CoCo 3 emulator.
+
+Please feel free to forward any comments to me at the email address above,
+or the postal address given in the Section 8 below.  (Alternate email 
+addresses are given there as well, but they should only be used if my 
+primary email address fails.)
+
+
+* Footnote: For those technically inclined, all features and hardware of the
+  standard equipped CoCo have been reproduced with the exception of the
+  cassette port and the 63.5us horizontal sync interrupt.  The standard 60Hz
+  clock interrupt *is* reproduced.  The "bit-banger" serial output has also
+  been rerouted to the PC's printer port, allowing for its use as a printer
+  port.  The DSKINI command will also not work within the emulator, but all
+  disks are automatically formatted when first used anyway.
+
+
+2. GETTING STARTED
+------------------
+
+The only thing that you will need that is not provided with the emulator
+is the ROM of a genuine CoCo.  Naturally, this could not be included here
+for copyright reasons.  If you own a CoCo 1 or 2, however, this section
+will describe how to copy it to your PC for use with the emulator.  
+
+There are three methods to copy the ROM to your PC:
+- by disk;  (You'll need a disk drive on your CoCo and a 5 1/4" drive on your
+  PC.  Section 2.1 describes this method.)
+- by cassette;  (You'll need a SoundBlaster on your PC.  See Section 2.2.)
+- or, by serial port.  (You'll need to build a simple cable.  You'll also
+  need a serial port in your PC.  See Section 2.3.)
+
+CoCo 3 ROMs can also be used, but extra steps are required.  See Section 2.4
+on using a CoCo 3 to obtain the ROMs.
+
+As another alternative, users of Paul Burgin's Dragon emulator (found at the
+SimTel mirrors in the directory "pub/msdos/emulator" as PCDGN101.ZIP) can
+use the steps in Section 2.5 to convert that emulator's ROMs for use with
+my program.
+
+
+2.1 OBTAINING THE ROM VIA DISK
+------------------------------
+
+In MS-DOS, place a blank 5 1/4" disk in your drive and type:
+
+DSKINI d: COCOUTIL
+
+where "d:" identifies the drive containing the disk (e.g. "A:", "B:", etc.).  
+Place this disk in drive 0 of your CoCo and type (on the CoCo):
+
+RUN"GETROM"
+
+Next, place the disk back into your PC and type:
+
+RETRIEVE /R d: COCO.ROM
+
+Again, "d:" identifies the drive containing the disk.  (Note that in both
+cases, "A:" is the default if this parameter is omitted.)
+
+You are now ready to run the emulator.  (See section 3.)
+
+   
+2.2 OBTAINING THE ROM VIA CASSETTE
+----------------------------------
+
+This will require the use of the CASIN.EXE program to read CoCo cassette
+files via the SoundBlaster (see Section 5.3) or from a .WAV recording (Section
+5.4).  On your CoCo, save the ROM to cassette using the CoCo command:
+
+CSAVEM"COCO",&H8000,&HBFFF,0
+
+Make a virtual cassette file of this on your PC by following the steps in 
+Section 5.3 or 5.4.  Once the file has been completely read into your PC, 
+type the command:
+
+CAS2ROM filename[.CAS]
+
+at the MS-DOS prompt, where "filename" is the name you gave to the virtual 
+cassette containing the ROM.  This will create the COCO.ROM file used by the 
+emulator.  The .CAS file can then be deleted.  You are now ready to run the 
+emulator.  (See section 3.)
+
+
+2.3 OBTAINING THE ROM VIA THE SERIAL PORT
+-----------------------------------------
+
+This method requires at least version 1.1 of the CoCo BASIC ROM, a PC with a
+serial port, and the cable described in the Appendix.
+
+Once the cable is built and tested, connect your PC and CoCo together and 
+load your favourite terminal program on your PC, setting it to 2400 baud,
+no parity, 1 stop bit, 8 bit word length.  Select the file capture option 
+and record all data received to the file "COCO.ROM".  Then, run the 
+following program on your CoCo:
+
+10 POKE 150,18
+20 PRINT#-2,CHR$(0);CHR$(128);
+30 FOR X=&H8000 TO &HBFFF
+40 PRINT#-2,CHR$(PEEK(X));
+50 NEXT
+
+Pay particular attention to the semicolons in this program.  Once the CoCo
+is done and the "OK" prompt returns, close the captured file.  Check that
+it should be 16386 bytes long in your MS-DOS directory.  You may now run
+the emulator.  (See section 3.)
+
+If the file is too long or too short, there may be a problem with your terminal 
+program and you should try another.  (The file is being transmitted as a binary
+file so no filters should be used in your terminal program.)
+
+
+2.4 SPECIAL INSTRUCTIONS FOR USING THE COCO 3 ROMS
+--------------------------------------------------
+
+The CoCo 3 operates differently than the CoCo 1 and 2.  Before beginning
+one of the methods in Sections 2.1 through 2.3, you must issue the CoCo
+BASIC command:
+
+POKE &HFFDE,0
+
+Then, after you have completed all the steps for the method you choose, you
+must enter the following commands at the MS-DOS prompt:
+
+DEBUG COCO.ROM
+A 40F4
+DB 1,0,1,3,1,F,1,C,1,6,1,9,A0,27
+{press ENTER an extra time here to get the "-" prompt back.}
+W
+Q
+
+This will patch the ROM so it may be used with the CoCo 2 emulator.
+
+
+2.5 USING PCDGN101.ZIP'S ROM FILES (DISKLESS SYSTEMS)
+-----------------------------------------------------
+
+Follow the instructions with Paul Burgin's emulator to generate the *.DGN
+ROM file.  Then, type the following commands in MS-DOS:
+
+DEBUG filename.DGN
+M 110 L 4000 102
+A 100
+DW 8000
+{press ENTER an extra time here to get the "-" prompt back.}
+N COCO.ROM
+W
+Q
+
+You have now generated the file "COCO.ROM" which COCO.EXE can use.
+
+
+3. RUNNING THE EMULATOR
+-----------------------
+
+With COCO.ROM in the default directory, type "COCO" at the MS-DOS prompt and
+press ENTER.  The emulator will start, with a title banner and list of 
+function keys appearing.  Pressing any key will begin the operation of the
+emulator.  This screen may be redisplayed at any time by pressing [F10].
+
+To exit the emulator either press [F1] or [F6] followed by "Q" and then "Y" to
+confirm.
+
+The special function keys are summarised as follows:
+
+[F1] Activates the 6809 debugger.  See Section 7 for details on its use.  If 
+     you enter this option accidentally, press "C" to return to the emulator.
+     Pressing "Q" will quit the emulator and return to MS-DOS.  You will be 
+     prompted to enter "Y" to confirm if you attempt to quit.
+
+[F2] The virtual disk menu.  If you obtained the ROM from a CoCo with Disk
+     BASIC, this menu will allow you to specify what the emulator should use
+     as drives 0, 1, 2, or 3.  See Section 4 for details on using CoCo disks
+     with the emulator.
+
+[F3] Snapshots.  The entire state of the emulator, such as a program or a 
+     game-in-play may be saved to an MS-DOS file, to be retrieved later
+     (even if you exit the emulator or turn off the computer between 
+     sessions.)
+
+     To save a snapshot, press "S" and then type in a name or select it from
+     those already in the directory.  To load, press "L" and select a name
+     as before.  ESC aborts this option.
+
+     Snapshots may also be loaded when the emulator is first run at the 
+     MS-DOS prompt by typing "COCO filename[.PAK]" where "filename" is the 
+     name of the snapshot.
+
+[F4] The virtual cassette menu.  Cassette commands such as CSAVE, CLOAD, etc.
+     can be rerouted to your PC's hard drive using this menu.  More can be
+     found on cassette features in Section 5.
+
+[F5] This turns the sound option on or off.  Sound output can either be routed
+     to a SoundBlaster or the PC's feeble internal speaker, whichever is 
+     selected in the [F6] Options Menu below.
+
+[F6] Options menu.  Pressing the right mouse button will also summon this menu.
+     In the menu, pressing the letter associated with an option changes it.
+     Also, the "+" and "-" keys speed up or slow down the emulator.  The "<"
+     and ">" keys will adjust the SoundBlaster volume if it is selected.  The
+     following options are available in this menu:
+
+        [A] Select a keyboard layout.  This is the same as the [F7] key below,
+            but includes additional modes for Dragon 32 compatibility.  See 
+            the note at the end of this section for Dragon 32 users.
+        
+        [B] Select what to use as the "left joystick" for the emulator.  The
+            options are "Game A", "Game B", "Mouse", or "None".  Game A/B
+            refer to the PC's game port adapter (also found in SoundBlasters).
+            Most PCs only have a single joystick, which is usually "Game A".
+            Be sure to calibrate a joystick for use with the emulator if you
+            select one here or in option C.  Do not select "Game A" or 
+            "Game B" if there is no corresponding joystick, as the emulator 
+            will be slowed by unsuccessful attempts to read the non-existent
+            joystick.
+
+        [C] Same thing for the CoCo's "right joystick".
+
+        [D] Select sound source.  Your choices are "Internal" for the PC's
+            internal speaker, "External" for the SoundBlaster, or "Off".
+
+        [E] This determines the character set:  You can choose from the 
+            factory-standard normal/inverse set, or an upper/lowercase set 
+            which can sometimes be more pleasant to look at.
+        
+        [F] Select artifacting mode.  When "red" or "blue" is selected the
+            hi-res screen will be blurred slightly, similar to when seen on a 
+            normal TV set.  This was considered a "feature" in some games.
+            If you don't want this, set this option to "off".
+
+        [G] Select printer mode.  The CoCo's serial port output is rerouted to
+            the PC's printer in the emulator.  There are three options here:
+            "CR only" which prints the data unmodified, "CR/LF" which adds 
+            linefeeds to the output as required by PC printers so all text
+            does not appear on a single line, and "Disabled" which disables
+            output to the printer.
+
+        [H] Select clock frequency.  You can change the timer interrupt to
+            be either 60Hz or 50Hz, conforming to either NTSC or PAL standards 
+            respectively.
+
+        [I] Select disk drive mode.  If your PC has a 1.2Mb drive, you can
+            use it as either a 40- or 80-track CoCo disk drive.  The initial
+            setting is 40-track as is standard on most CoCo's.  Use this
+            unless you have a customised CoCo with 80-track disks that you
+            wish to read.
+
+     In addition, the Options Menu offers several other commands:
+
+        [K] Debug.  Same as the [F1] key.
+
+        [L] Virtual Disk Menu. Same as the [F2] key.
+
+        [M] Snapshot/Program Pak Menu.  Same as the [F3] key.
+
+        [N] Modify keyboard layout.  Same as the [F8] key.
+
+        [O] Calibrate joystick.  You must do this before using a joystick
+            with the emulator.  You will be prompted to move the joystick to
+            the upper-left corner and press the button, then to move it to the
+            lower-right and press the button again.  ESC aborts.  This command
+            must be issued once for each joystick connected to your PC.
+
+        [P] File import/export utility.  Same at the [F9] key.
+
+        [Q] Quit.  Press "Y" to confirm, or "N" to cancel.
+
+        [R] Restart.  This is the same as rerunning "COCO".  Press "Y" to
+            confirm, or "N" to cancel.
+
+        [S] Shell to DOS.  Calls the MS-DOS prompt.  Type "EXIT" to return to
+            the emulator.
+
+        [T] Virtual Tape Menu.  Same as the [F4] key.
+
+[F7] This changes the keyboard layout.  You have a choice between the PC, 
+     CoCo, or your own Custom layout.  In the CoCo layout, SHIFT-2 would be a 
+     quote while in the PC layout, SHIFT-2 is an "@".  Other keys may not be 
+     so obvious: ESC is the BREAK key, ALT is the CLEAR key, SCROLL LOCK is
+     SHIFT-@.  The arrow keys on the keypad also work.
+
+[F8] Modify the custom keyboard layout.  The emulator includes a Custom layout
+     which you can modify with this option.  Select the PC key you wish to
+     modify by using the arrow keys to scroll through the list, then press
+     [F1] to modify its unSHIFTed definition or [F2] to modify its SHIFTed
+     definition.  Pressing [F4] will erase the custom layout and copy one of 
+     the two preset layouts ("PC" or "CoCo") over it.  The custom keyboard 
+     layout is saved and is automatically reloaded next time your run the 
+     emulator.  You must select the "Custom" layout with [F7] during normal
+     emulator operation (or with the Option Menu's option A) in order for the 
+     custom layout to take effect.
+    
+[F9] File import/export utility.  This runs the "PORT.EXE" program described
+     in Section 4.3.
+
+[F10] Print the help screen summarising these function key choices.
+
+[CTRL-F10] Same as the CoCo's RESET button.
+
+
+NOTE FOR DRAGON 32 USERS: (KEYBOARD SELECTION)
+
+The keyboard layout is also selectable in the [F6] menu, though it has six 
+options rather than three.  They are "PC", "CoCo", and "Custom" -- as 
+described for the [F7] key -- and "DragonPC", "Dragon", or "DgnCustom" which 
+are the analogous choices for the Dragon 32 keyboard mapping.  If you select
+Dragon or DragonPC in this menu, the [F7] key will then toggle between these 
+three settings, rather than "PC", "CoCo", and "Custom".
+
+If you use the keyboard selection for one of the CoCo or Dragon, but the ROMs 
+of the other, then the keys will not respond properly.  (For example, the "A" 
+and "1" keys will be exchanged.)  This is corrected simply by pressing [F6] 
+and using the keyboard layout option to select the correct keyboard. 
+
+
+4. USING DISK FILES WITH THE EMULATOR
+-------------------------------------
+
+To use the emulator's CoCo disk functions, you will need to have copied the
+Disk BASIC ROM to your PC.  This is done by using the method in Section 2.1.
+
+It is also possible to "write protect" a drive containing a virtual disk by
+pressing SHIFT and the drive number in the Virtual Disk Menu.  Write protected
+drives are indicated by a block over the drive number.  This will have no
+effect on physical disks, which must be write protected in the usual manner.
+
+
+4.1 USING THE VIRTUAL DISK MENU
+-------------------------------
+
+CoCo disks can be used with the emulator using two methods:  Either by 
+specifying a disk drive containing a CoCo disk in the [F2] menu, or by copying
+the disk to a "virtual disk file" on your hard drive, and then telling the
+emulator to find the files there.  
+
+In either case, this is accomplished by first selecting the [F2] Virtual Disk
+Menu.  Then, select the CoCo drive number 0, 1, 2, or 3 to assign.  At the
+prompt, enter a drive designation such as "A:" or "B:" to use a physical
+drive,* or enter a "virtual disk" file name.  (You can create new virtual
+disks by typing a name of one not found in the directory on the right.  All
+virtual disks are given the ".DSK" extension, and are automatically formatted
+for use with the CoCo's Disk BASIC.)
+
+You may then use the CoCo's LOAD, SAVE, OPEN, etc. commands on the selected
+CoCo disk or virtual disk file.
+
+*Note: If you are using Disk BASIC 2.0 or later, CoCo drives 0 and 1 will 
+ access the first side of a physical disk, while drives 2 and 3 will access 
+ the second side of a double-sided physical disk.  Virtual disks are always
+ single sided.
+
+
+4.2 MOVING DISK IMAGES BETWEEN REAL DISKS AND VIRTUAL DISK FILES
+----------------------------------------------------------------
+
+You may make virtual disk files from real CoCo disks (i.e. copy the entire
+disk image to your hard drive) or vice versa using the RETRIEVE and DSKINI
+commands respectively.
+
+Any virtual disk file may be written to a 5 1/4" disk, readable by the
+CoCo by entering:
+
+DSKINI [/2] [/8] [d:] [diskname[.DSK]]
+
+where "d:" is the destination drive and "diskname" is the source virtual disk
+file.  At least one of these two parameters must be given.  (The default
+drive for "d:" is A:.)  Paths may be included in the diskname parameter.
+If "diskname" is omitted, a blank disk is formatted.  If the "/2" option
+is specified, the second side of a double-sided disk will be used.  If the
+"/8" option is specified AND YOU ARE USING A 1.2Mb DRIVE, the disk will be 
+formatted for 80-track drives.
+
+Disks may also be read back to virtual disk files using:
+
+RETRIEVE [/2] [/4] [/8] [d:] diskname[.DSK]
+
+The "/2" and "/8" options have the same meaning as for DSKINI.  The "/4"
+tells RETRIEVE that the disk is a 40-track disk.  The default is 35 tracks.
+
+Some CoCo disks may not be readible by the PC.  If you encounter sector
+read errors using RETRIEVE, try the following transfer method:
+
+1. Create a CoCo disk on your PC using DSKINI.EXE.
+
+2. On your CoCo, use BACKUP or COPY to copy the files onto the disk you've
+   just created in step 1.
+
+3. Put the disk back in your PC and use RETRIEVE.EXE to make a virtual disk
+   file from it.
+
+
+4.3 MOVING COCO FILES TO AND FROM THE MS-DOS ENVIRONMENT
+--------------------------------------------------------
+
+The program PORT.EXE can move files between CoCo disks (Disk BASIC format only)
+and the MS-DOS directory, or virtual disks and the MS-DOS directory.  At the 
+MS-DOS prompt, it is entered simply by typing "PORT".  If you are using this 
+program standalone (without the emulator) and wish to access 80-track CoCo 
+disks, you must instead type "PORT /H".
+
+The PORT program may also be run from within the emulator by pressing [F9]
+or selecting option P in the Options Menu.
+
+You may exit the PORT program any time by pressing ESC.  Upon entering the
+PORT program, you must tell it where to find the CoCo disk you will be using.
+Either give a physical drive designation (e.g. "A:" or "B:") or enter the
+name of a virtual disk.  The directory for the selected CoCo disk and your
+current MS-DOS directory will be shown.
+
+The following options are now available:
+
+[F1] To select a new CoCo disk or virtual disk.  You must also select this
+     option if you change the disk in the selected physical drive.
+
+[F2] To select the direction in which you wish to move files.  This will
+     either be "MS-DOS to CoCo" or "CoCo to MS-DOS".
+
+[F3] If you are using a real CoCo disk and it is double-sided, this will allow
+     you to select which side you are using.
+
+[F4] Change maximum allowable number of tracks on the disk.  The choices are
+     either 35, 40, or 80.  (If a disk is formatted for less than this maximum
+     the displayed "free space" may not change when a higher track count is
+     selected.)
+
+[F5] When moving ASCII files, this option will select whether or not the PORT
+     program changes the end-of-line characters in text files to match the
+     format used by the destination computer.  (i.e. whether to change CR/LFs
+     to CRs or back)  This has no effect on binary files.
+
+[F6] When moving ASCII files, this will either add a CTRL-Z to the end of file
+     if moving to MS-DOS, or remove it if moving to the CoCo.  Again, this has
+     no effect on binary files.
+
+[F7] When moving files to the CoCo, this tells PORT what file type to assign
+     to it in the directory.  The choices are "BASIC", "Data", "EXEC", or
+     "Editor".
+
+[F8] When moving files to the CoCo, this tells PORT whether or not the file
+     is ASCII, so it can set the CoCo's directory entry appropriately.  The
+     choices are "ASCII" or "Binary".
+
+You may also enter the name of a file to move, or click it from the directory
+listings with the mouse.  (If you use the mouse, the direction is automatically
+selected so it is moved from whichever enivronment it is in -- MS-DOS or CoCo 
+-- to the other one.)  The mouse may also be used to change any of the options
+above by clicking on them.
+
+
+5. USING COCO CASSETTES WITH THE EMULATOR
+-----------------------------------------
+
+Within the emulator, CLOAD, CSAVE and other cassette commands are rerouted
+to disk files called "virtual cassette files".  If you have a SoundBlaster
+you may then read or write real CoCo cassettes by using the external utilities 
+CASIN.EXE and CASOUT.EXE provided with the emulator.
+
+Section 5.1 explains how to use virtual cassettes with the emulator while
+Section 5.2 explains how to transfer them to a CoCo via the SoundBlaster,
+and Sections 5.3 and 5.4 explain how to transfer from the CoCo to the PC.
+
+
+5.1 THE VIRTUAL CASSETTE MENU
+-----------------------------
+
+The Virtual Cassette Menu is summoned within the emulator by pressing [F4] or
+choosing option T of the Options Menu.  In it, you have the following options, 
+selected by pressing the appropriate key:
+
+[N] Select the name of the virtual cassette file.  (All virtual cassettes end
+    in the .CAS extension.)  You may choose a virtual cassette from the 
+    directory listing, or create new one by typing a new name.
+
+[M] Select read/write mode.  Pressing this key toggles between "RECORD" 
+    (for CSAVE, CSAVEM, PRINT#, etc.) and "PLAYBACK" (for CLOAD, CLOADM,
+    INPUT#, etc.)
+
+[S] Rewinds the counter (shown in the upper-right corner of this menu) to the
+    beginning of the file.
+
+[R] Moves backwards through the virtual cassette file.  The counter will 
+    decrease.
+
+[F] Move forward, the counter will increase.
+
+[E] Moves to the end of the virtual cassette file.
+
+Note that the counter represents the position in the virtual cassette file
+in bytes.  A virtual cassette file cannot exceed 64K.  Be sure that the 
+virtual cassette menu is set correctly before entering a cassette command
+at the emulated CoCo's "OK" prompt.
+
+
+5.2 USING THE SOUNDBLASTER TO WRITE CASSETTES
+---------------------------------------------
+
+By connecting a cassette recorder to your SoundBlaster's output, you can
+record CoCo files on cassette which may be loaded in a real CoCo using CLOAD,
+CLOADM, etc.  Follow the instructions in your SoundBlaster manual on how to
+properly connect a cassette recorder.
+
+To output a cassette file via the SoundBlaster, do the following:
+
+1. Press RECORD on your cassette recorder.
+
+2. Use a command of the form: 
+
+   CASOUT [/Vn] filename[.CAS] 
+   
+   at the MS-DOS prompt, where "filename" is the name of the virtual cassette
+   created within the emulator.  The "/Vn" option sets the volume to "n" where
+   n=7 is the loudest and n=0 is the quietest.  (It is usually sufficient to 
+   use the default setting of /V7.  You may wish to listen to a CoCo cassette
+   tape and compare the volume levels to get it right.)
+
+As an alternative, it is also possible to connect the black plug of your
+CoCo's cassette cable directly to the SoundBlaster SKPR OUT jack, if your
+SoundBlaster is configured to use its internal amplifier.  (Again, see your
+SoundBlaster's instructions for details.)  Step 1 would then be to issue a
+CLOAD or CLOADM command on your CoCo as appropriate, followed by the same
+step 2.
+
+
+5.3 USING THE SOUNDBLASTER TO READ CASSETTES
+--------------------------------------------
+
+You can also load CoCo cassettes into your PC by connecting a cassette player
+to your SoundBlaster.  See the SoundBlaster manual for details on how to 
+properly connect a player.
+
+To input a cassette via the SoundBlaster, follow these steps:
+
+1. At the MS-DOS prompt, issue a command of the form `CASIN filename[.CAS]', 
+   where "filename" is the name you wish to give the virtual cassette file 
+   in your PC's directory.
+
+2. Press PLAY (or release the PAUSE) on your cassette player.
+
+CASIN will initially display "Matching phase...".  Once it has synchronised 
+with the cassette input, "Ready..." will appear, and an asterisk will blink 
+in the upper-right hand corner to indicate data is being recorded.  When the 
+data stops for more than five seconds, CASIN will automatically end recording.
+You can manually end recording by pressing ESC.
+
+If you want to forgo using a cassette player as a go-between, connecting a 
+CoCo directly to your PC for use with CASIN is a little trickier:  
+
+1. On a CoCo 3, you should connect the SoundBlaster's LINE IN jack to the AUDIO
+   OUT of the CoCo.  On a CoCo 1 or 2, you will have to route your channel 3/4
+   TV output through a VCR or a TV with an AUDIO OUT jack, and then connect
+   that AUDIO OUT to the SoundBlaster's LINE IN.  DO NOT CONNECT THE CASSETTE
+   CABLE'S GREY PLUG TO YOUR SOUNDBLASTER.
+
+2. Type `POKE &HFF23,&H3C' on the CoCo.
+
+3. Next, issue the CASIN command on your PC to get it ready to receive data 
+   (i.e. displaying the "Matching phase..." line).  
+
+4. Finally, issue the CSAVE or CSAVEM command on your CoCo, as appropriate, to 
+   send the file.
+
+
+5.4 READING CASSETTES FROM A .WAV FILE RECORDING
+------------------------------------------------
+
+For users who have a soundcard which is not SoundBlaster-compatible, or who
+are having trouble with the method in Section 5.3 above, you may instead take
+a .WAV recording of the CoCo cassette and use CASIN to convert it into a 
+virtual cassette file.
+
+The .WAV recording must be an 11025Hz/mono/8-bit sample (which is the usual
+default of the WREC program).  Follow the steps in Section 5.3 using WREC
+instead of CASIN to record the CoCo cassette data, and then use the command:
+
+CASIN /W filename[.CAS]
+
+to convert the file.  "filename" is the name of the virtual cassette output
+file.  You will be prompted for the name of the .WAV file when CASIN starts.
+
+There is no analogous .CAS to .WAV conversion for CASOUT.
+
+
+6. USING PROGRAM PAKS WITH THE EMULATOR
+---------------------------------------
+
+There are two ways to read a Program Pak on a CoCo while staying in BASIC.
+Either you can cover up the pin on the cartridge that tells the CoCo to
+auto-start it, or you can plug the cartridge in with the power on, after
+starting the following program.
+
+WARNING: THERE HAVE BEEN MANY HORROR STORIES OF AN IMPROPERLY INSERTED
+         CARTRIDGE BLOWING THE UNPROTECTED CPU WHEN THE POWER IS ON.  If
+         you elect to use the latter method, do so carefully and proceed
+         at your own risk.
+
+To transfer your Program Pak to a PC, you will need the same cable used for
+the diskless ROM transfer.  Then, complete the following steps:
+
+1. IF YOU ARE USING THE COVER-THE-PIN METHOD, take the cartridge you are
+   going to use and pull the cover back to expose the pins.  Then, cover
+   up the fourth pin position in on the left on the bottom (pin 8, the
+   "CART" signal).  (IMPORTANT: Most cartridges have no contacts for the
+   first three positions, so this may be the first plated-contact from the
+   left.  In this case, you can usually see where the other three positions
+   should be by the scratch marks from frequent use.)  If needed, you can
+   also cover up the pin on the top side directly above this one, as well as
+   the three pin positions to each of their lefts if necessary.  Be careful
+   not to cover the fifth pins in as this will make the cartridge unreadable.
+
+   Once this is done, insert the Pak into your CoCo with the power off, then
+   turn on the computer.  If you are successful, the CoCo will power up into
+   BASIC's "OK" prompt despite the cartridge being present.
+
+2. Next, for both methods, type in the following program in your CoCo:
+
+   10 POKE 65315,54
+   20 INPUT"INSERT PAK AND PRESS [ENTER] TO SEND";X$
+   30 POKE 150,18
+   40 PRINT#-2,CHR$(0);CHR$(&H20);      'Length of Pak ROM in bytes (LSB/MSB)
+   50 PRINT#-2,CHR$(0);CHR$(&HC0);      'Start address of Pak (LSB/MSB)
+   60 FOR X=&HC000 TO &HDFFF            'Loop for each byte in Pak
+   70 PRINT#-2,CHR$(PEEK(X));
+   80 NEXT X
+
+   Note: You may omit lines 10 and 20 if using the covering-the-pin method.
+
+3. Connect your PC to the CoCo and prepare a terminal capture program on your
+   PC as described in section 2.2.  (Use the extension ".PAK" for Program 
+   Paks.)
+
+4. Run the BASIC program on your CoCo.  If you are using the insert-with-
+   power-on method, insert the cartridge when you are prompted to do so and
+   then press ENTER.  This will begin transmission of the cartridge's data.
+
+The resulting file on your PC should be 8196 bytes long.  
+
+To run the Program Pak in the emulator, simply use the Snapshot Menu, or type
+"COCO pak_name" at the MS-DOS prompt when running the emulator.  To return to 
+BASIC, select "Restart" in the Options Menu.
+
+It is also possible to save snapshots of what you are doing in a Program Pak 
+(such as a game-in-progress), but when reloading, you must first reload the 
+Program Pak's .PAK file before loading the snapshot's .PAK file.
+
+For those who have copied their Program Paks to their PCs using some other
+method, the general format of the file constructed by the above program is:
+
+- 2 byte ROM length (LSB/MSB, usually 8192 decimal)
+- 2 byte start address (LSB/MSB, usually C000H)
+- ROM data (usually 8192 bytes)
+
+Program Pak files created on earlier versions of the emulator are compatible
+to this version.
+
+
+7. THE DEBUGGER
+---------------
+
+The debugger halts the emulator, displaying the current state of all the
+registers in the "6809" CPU, and also includes a 128-byte memory map and
+a disassembly of current instructions.  In the lower-left corner, the first
+few entries on the U and S stacks are shown.  Several commands are available
+to you, as summarised in the box on the lower-right:  (These commands are
+probably best understood through experimentation.  [ESC] will cancel any
+option except [E]DIT, which is immediate.)
+
+[B] Sets a BREAKPOINT address.  The emulator will resume normal execution
+    until the breakpoint is hit, at which time the debugger reappears.  Only
+    one breakpoint can be set at a time.  The breakpoint is cleared the next
+    the the debugger or another menu is displayed.
+
+[C] CONTINUE emulation.  The breakpoint is cleared and the program returns
+    to normal emulation.
+
+[D] Change the start address of DISASSEMBLY.  A register or hexidecimal
+    address can be specified.  If a register is given, the start address of
+    the disassembly will always follow whatever is in that register.  The
+    default for this prompt is the next byte after the last instruction
+    displayed on the current disassembly.
+
+[E] EDIT memory.  Places a cursor on the memory map with which you can
+    directly modify memory.  Arrows, PG UP and PG DN work.  ROM and memory-
+    mapped device addresses behave as in the genuine machine.  ESC or ENTER
+    when done.
+
+[F] Change the 6809 FLAG registers.  Press the letter of the flag to toggle
+    its true (1) or false (0) value.  ESC to abort, ENTER to keep changes
+    and return to main debugger options.
+
+[H] HEXIDECIMAL CALCULATOR.  Enter a hex number or register to start.  You
+    then enter one of the following operations:
+
+    [+], [-], [*], [/], [A]nd, [O]r, [X]or, [N]eg, [S]hift, [R]ot, [D]ecimal
+
+    The first seven of these will prompt for a second number or register to
+    operate with.  [N] will NEGate the current result.  [S] or [R] followed
+    by the left or right arrows will shift or rotate the bit positions of
+    the result as appropriate ([ESC] to return to calculator options).  [D]
+    will display the decimal equivalent and/or allow you to enter a decimal
+    value.  [ESC] will return to the main debugger options.
+
+[M] Change the MEMORY DUMP start address.  Enter either a hex address or a
+    register.  If a register is used, the start address of the memory dump
+    will always follow that register's contents.
+
+[Q] QUIT EMULATOR.  Exits back to MS-DOS.  You must confirm this choice with
+    a "Y".  An other reply will return to the main debugger options.
+
+[R] Change REGISTER contents.  Select a register using the arrow keys
+    followed by [ENTER], or by pressing its letter.  Then type a new hex
+    value for its contents, or the name of another register to copy that
+    register's contents to the currently selected register.
+
+[S] SINGLE STEP.  Execute one 6809 instruction and return to the debugger.
+
+[V] VIEW VIDEO.  Display the current CoCo screen and wait for a key to be
+    pressed.  Pressing any key will return you to the debugger's main
+    options.
+
+Register names are just there 6809 names, without brackets, except for the
+D register.  D is entered as "A/B" to distinguish it from the hex numbers
+000D, 000A, 000B, and 00AB.
+
+
+8. COMMENTS AND HOW TO OBTAIN THE COCO 3 EMULATOR
+-------------------------------------------------
+
+In version 1.30 I mentioned the possibility of developing a CoCo 3 emulator
+if there was sufficient interest.  The response was overwhelming, so many
+months later, the first release of the CoCo 3 emulator is now available.
+
+The design is largely based on this CoCo 2 emulator, though it supports 
+virtually all CoCo 3 hardware features (including the 63.5us interrupt and
+timer if you are operating a fast machine).  It has been tested with a 
+variety of CoCo 3 programs including OS/9 Level II.  There are a couple of 
+extra PC hardware requirements that you should be aware of however:
+
+- A VGA board (EGA graphics are not sufficient).  This VGA board must pass
+  all seven tests in the VGACHECK.EXE included here.
+
+- At least 333K of free DOS low-memory.
+
+- Without EMS memory, the emulator acts as a 128K CoCo 3.  To emulate a 
+  CoCo 3 with 512K, you need 384K of free EMS memory, an additional 96K of 
+  free low memory, and an EMS 4.0 driver (such as EMM386 in MS-DOS 5.0).
+
+- An original CoCo 3 will be needed to copy additional ROM information to
+  your PC.
+
+To order the emulator, send the $25 shareware registration fee and a blank 
+disk to the address below.  (If you have an Internet account, and the ability 
+to receive uuencoded .ZIP files, you can elect to receive the emulator via 
+email rather than on disk.)
+
+PLEASE BE SURE TO RUN THE VGACHECK PROGRAM INCLUDED HERE BEFORE ORDERING.
+The CoCo 3 emulator takes full advantage of the standard VGA and SVGA board
+functions.  Rarely, some boards do not support all these special features.
+(This applies to at least one laptop computer that I know of.)  VGACHECK
+will determine whether your board supports all the features required.
+
+Also, MAKE SURE THE COCO 2 EMULATOR'S "RETRIEVE" COMMAND WILL READ COCO 
+DISKS ON YOUR PC.  I don't want anyone ordering the CoCo 3 emulator only to
+be disappointed to find that their hardware does not support it.
+
+Send registration to:
+
+Rick's Computer Enterprises
+P. O. Box 276
+Liberty, KY
+42539
+USA
+
+Phone: (606) 787-5783
+
+Please make cheques payable to "Rick's Computer Enterprises."  (Rick is now
+the distributor for this package.)
+
+At the time of this release, a web site for RCE was available at
+http://www.voicenet.com/~swyss/cfdm.html, including a link to Rick's email
+address.  If this site is not available, you should contact Rick directly.
+
+E-mail technical comments and questions to the author at: jeffv@physics.ubc.ca
+
+Please note, I CANNOT PROVIDE ROM IMAGES OR THE SOURCE CODE.  No exceptions.
+                                                                             
+If you are having trouble with the above email address, then try
+"jeffv@smaug.physics.mun.ca".  For Internet users, there is an email
+discussion group for users of my emulators.  To be included, send email
+to trs80-request@cs.ubc.ca with the body containing simply the line:
+
+subscribe your@email.address
+
+(Obviously, substitute the correct email address in there.)  The subject
+line is not important and should be left blank.  To unsubscribe, do the
+same thing, but replace "subscribe" with "unsubscribe".  To post a message
+to everyone on the list, send it to trs80@cs.ubc.ca.  Please, do not
+post binaries.
+
+
+Disclaimer:  This package is provided as-is and without warranty.  I assume
+no responsibility for any damage that may result.
+
+Acknowledgements:  Thanks to Jim Veneskey and Lori Paniak for their helpful 
+references in developing and debugging this package.
+
+
+APPENDIX: THE SERIAL CABLE
+--------------------------
+
+For diskless users, you will need a cable to link the serial port of your
+PC to the CoCo's built-in serial port.  There are two kinds of serial
+connectors on most PCs - the 9-pin and the 25-pin versions.
+
+To start you will need a connector to mate with your PC's serial port.  For
+those not used to hardware, it's best to get the "crimping" version.  No
+soldering is necessary.
+
+You'll also need a male 4-pin DIN connector.  Though Radio Shack has 
+discontinued this part, many other electronics stores may still stock them
+stocks these parts.  Also some Radio Shacks may still have a dusty unit
+or two in stock.
+
+The cable itself is very simple.  The pin numbers on the 9-pin and 25-pin
+PC serial connectors are actually visible on the connector itself, next to
+each pin.  For the 4-pin DIN connector, I will use the convention of the
+CoCo's technical reference manual.  Looking at the serial I/O port on the
+back of the computer itself, the pins are numbered as shown:
+     
+     _____              
+   /  |_|  \                    Pin names: 1 = CD
+4 | o     o | 1                            2 = RS232 IN
+  |         |                              3 = GND
+3 |  o   o  | 2                            4 = RS232 OUT
+   \ _____ /
+
+
+Three wires must be connected in this cable, listed below.  (The names of
+the pins are also given for the reference of those interested.)  Be sure
+to select the column appropriate to your PC serial connector.
+
+From CoCo       To PC's        To PC's
+4-pin DIN       9-pin          25-pin 
+=========       =======        =======
+Pin 2 --------> Pin 4   - or - Pin 20
+(RS232 IN)      (DTR*)         (DTR*)
+
+Pin 3 --------> Pin 5   - or - Pin 7
+(GND)           (GND)          (GND)
+
+Pin 4 --------> Pin 2   - or - Pin 3
+(RS232 OUT)     (RD)           (RD)
+
+Once the cable is assembled, it may be tested by loading a terminal program
+on your PC and selecting the appropriate COM: port with the settings:
+2400 baud, 1 stop bit, 8 word length, no parity.  Next, power on your CoCo
+and type the following:
+
+POKE 150,18
+PRINT#-2,"THIS IS A TEST"
+
+If the cable is working properly you should see the message "THIS IS A TEST"
+on your PC.  If no message appears on the PC, but the "OK" prompt returns 
+on your CoCo, check the line connected to the CoCo's pin 4 (RS232 OUT).
+(A ohmmeter or continuity checker would be useful for this.)  If the "OK"
+prompt fails to return, check pin 2 (RS232 IN).  Also, it is a good idea
+to check the GND line in both cases.

@@ -1,0 +1,353 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1254">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>2.</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="2. USING MON51"><font size="2" face="Arial"><strong>2.
+        USING MON51</strong></font></a><font size="2"
+        face="Arial"><br>
+</font></span>        <p><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="2.1 Monitor Commands"><font size="2" face="Arial"><em><strong>2.1
+        Monitor Commands</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The following commands are
+        implemented in the monitor:<br>
+        <br>
+<span style="mso-spacerun: yes">                       </span>A &lt;address&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                          </span>Alter INTERNAL memory.<span style="mso-spacerun: yes"> 
+</span>        MON51 prompts with<span style="mso-spacerun:
+yes">  </span>the<span style="mso-spacerun: yes">  </span>specified<br>
+<span style="mso-spacerun: yes">                          </span>address and its
+        current contents.<span style="mso-spacerun: yes">  </span>You may enter<span style="mso-spacerun: yes">  </span>TWO<span style="mso-spacerun: yes">  </span>hex<br>
+<span style="mso-spacerun: yes">                          </span>digits to change its
+        value,<span style="mso-spacerun: yes">  </span>SPACE to advance to the<span style="mso-spacerun: yes">  </span>next<br>
+<span style="mso-spacerun: yes">                          </span>location, BACKSPACE to
+        backup to the previous location, or<br>
+<span style="mso-spacerun:
+yes">                          </span>CARRIAGE RETURN to
+        terminate the Alter command.<br>
+        <br>
+<span style="mso-spacerun: yes">                       </span>B &lt;breakpoint#&gt;
+        &lt;address&gt;<br>
+        <br>
+<span style="mso-spacerun:
+yes">                          </span>Set breakpoint at
+        specified address. Breakpoint is removed<br>
+<span style="mso-spacerun: yes">                          </span>if address is 0000.<span style="mso-spacerun: yes">  </span>There
+        can be up to four<span style="mso-spacerun: yes">  </span>breakpoints,<br>
+<span style="mso-spacerun: yes">                          </span>which are referenced
+        by the numbers 0-3.<br>
+        <br>
+<span style="mso-spacerun: yes">                          </span>If<span style="mso-spacerun: yes">  </span>SPACE<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>entered<span style="mso-spacerun: yes"> 
+</span>        instead<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>breakpoint#,<span style="mso-spacerun: yes">   </span>the<br>
+<span style="mso-spacerun:
+yes">                          </span>currently set
+        breakpoint addresses are displayed.<br>
+        <br>
+<span style="mso-spacerun: yes">                          </span>NOTE: The 8051 family
+        of processors does not have a single<br>
+<span style="mso-spacerun: yes">              </span><span style="mso-spacerun:
+yes">            </span>byte transfer
+        instruction such<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>normally<span style="mso-spacerun: yes">  </span>used<span style="mso-spacerun: yes">  </span>to<br>
+<span style="mso-spacerun: yes">                          </span>implement<span style="mso-spacerun: yes">  </span>breakpoints.<span style="mso-spacerun: yes">  
+</span>        Breakpoints<span style="mso-spacerun:
+yes">   </span>are<span style="mso-spacerun: yes">   </span>handled<span style="mso-spacerun: yes">   </span>by<br>
+<span style="mso-spacerun:
+yes">                          </span>inserting<span style="mso-spacerun: yes">  </span>'LCALL'<span style="mso-spacerun: yes">  </span>instructions
+        into your code during the<br>
+<span style="mso-spacerun: yes">                          </span>processing of a 'G'<span style="mso-spacerun: yes">  </span>command
+        and restoring the code in the<br>
+<span style="mso-spacerun:
+yes">                          </span>breakpoint handler.<span style="mso-spacerun:
+yes">  </span>Each
+        'LCALL'<span style="mso-spacerun: yes">  </span>occupies three bytes of<br>
+<span style="mso-spacerun: yes">                          </span>memory, which causes
+        the following restrictions when using<br>
+<span style="mso-spacerun: yes">                          </span>breakpoints:<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>You MUST be
+        careful to place breakpoints<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>locations<br>
+<span style="mso-spacerun:
+yes">                             </span>where there will
+        NOT be<span style="mso-spacerun: yes">  </span>any<span style="mso-spacerun: yes">  </span>JUMPs<span style="mso-spacerun: yes">  </span>or<span style="mso-spacerun: yes">  </span>CALLs<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                             </span>addresses
+        containing the second and third bytes of<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                             </span>breakpoint.<span style="mso-spacerun: yes">  </span>For
+        example,<span style="mso-spacerun:
+yes">  </span>if you set a<span style="mso-spacerun: yes">  </span>breakpoint<span style="mso-spacerun: yes">  </span>at<br>
+<span style="mso-spacerun:
+yes">                             </span>address 1234,<span style="mso-spacerun: yes">  </span>there
+        should NOT<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>label<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>your<br>
+<span style="mso-spacerun:
+yes">                             </span>program occuring
+        at address 1235 or 1236 (Note, a label<br>
+<span style="mso-spacerun: yes">                             </span>at 1234 is OK).<br>
+        <br>
+<span style="mso-spacerun:
+yes">                             </span>You may not set
+        breakpoints that are within three bytes<br>
+<span style="mso-spacerun: yes">                             </span>of<span style="mso-spacerun: yes">  </span>each<span style="mso-spacerun: yes">  </span>other.<span style="mso-spacerun: yes"> 
+</span>        The<span style="mso-spacerun: yes">  </span>message<span style="mso-spacerun: yes">  </span>'Breakpoint<span style="mso-spacerun:
+yes">   </span>conflict'<br>
+<span style="mso-spacerun:
+yes">                             </span>results if you
+        attempt to do so.<br>
+        <br>
+<span style="mso-spacerun: yes">                             </span>Attempt to<span style="mso-spacerun: yes">  </span>'G'o
+        at an address containing a<span style="mso-spacerun: yes">  </span>breakpoint<br>
+<span style="mso-spacerun:
+yes">                             </span>will also result
+        in the 'Breakpoint conflict'<span style="mso-spacerun: yes">  </span>message.<br>
+<span style="mso-spacerun: yes">                             </span>This will most
+        commonly occur when you wish<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>resume<br>
+<span style="mso-spacerun:
+yes">                             </span>execution
+        following a breakpoint.<span style="mso-spacerun: yes">  </span>In<span style="mso-spacerun: yes">  </span>this<span style="mso-spacerun: yes">  </span>case,<span style="mso-spacerun: yes">  </span>you<br>
+<span style="mso-spacerun:
+yes">                             </span>must either
+        remove the breakpoint,<span style="mso-spacerun: yes">  </span>or use<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>'S'tep<br>
+<span style="mso-spacerun: yes">                             </span>command to
+        advance the program counter until it is<span style="mso-spacerun: yes">  </span>NOT<br>
+<span style="mso-spacerun: yes">                             </span>positioned over
+        any part<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun:
+yes">  </span>a<span style="mso-spacerun: yes">  </span>breakpoint<span style="mso-spacerun: yes">  </span>(Remember,<br>
+<span style="mso-spacerun:
+yes">                             </span>breakpoints are
+        three bytes long).<br>
+        <br>
+<span style="mso-spacerun: yes">                       </span>C &lt;register&gt;
+        &lt;value&gt;<br>
+        <br>
+<span style="mso-spacerun:
+yes">                          </span>Changes<span style="mso-spacerun: yes">  </span>8051<span style="mso-spacerun: yes">  </span>registers<span style="mso-spacerun: yes"> 
+</span>        values.<span style="mso-spacerun: yes">  </span>Register<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>single<br>
+<span style="mso-spacerun: yes">                          </span>character, which may
+        be as follows:<br>
+        <br>
+<span style="mso-spacerun: yes">               </span><span style="mso-spacerun:
+yes">           </span>A<span style="mso-spacerun: yes">   </span>- Set
+        Accumulator<span style="mso-spacerun: yes">       </span>( 8 bit value).<br>
+<span style="mso-spacerun: yes">                          </span>B<span style="mso-spacerun:
+yes">   </span>- Set B register<span style="mso-spacerun: yes">       
+</span>        ( 8 bit value).<br>
+<span style="mso-spacerun: yes">                          </span>D<span style="mso-spacerun: yes">   </span>- Set DPTR<span style="mso-spacerun: yes">             
+</span>        (16 bit value)<br>
+<span style="mso-spacerun: yes">                          </span>S<span style="mso-spacerun:
+yes">   </span>- Set stack
+        pointer<span style="mso-spacerun: yes">     </span>( 8 bit value).<br>
+<span style="mso-spacerun: yes">                          </span>P<span style="mso-spacerun: yes">   </span>- Set program
+        counter<span style="mso-spacerun: yes">   </span>(16 bit value).<br>
+<span style="mso-spacerun: yes">                          </span>W<span style="mso-spacerun:
+yes">   </span>- Set PSW<span style="mso-spacerun: yes">              
+</span>        ( 8 bit value)<br>
+<span style="mso-spacerun: yes">                          </span>0-7 - Set R0-R7 in
+        current register bank (8 bit value)<br>
+        <br>
+<span style="mso-spacerun: yes">                       </span>D &lt;start&gt;,&lt;end&gt;<br>
+        <br>
+<span style="mso-spacerun:
+yes">                          </span>Displays EXTERNAL DATA
+        memory,<span style="mso-spacerun: yes">  </span>in HEX/ASCII dump<span style="mso-spacerun:
+yes">  </span>format,<br>
+<span style="mso-spacerun: yes">                          </span>starting at the
+        indicated address.<span style="mso-spacerun: yes">  </span>If a SPACE is<span style="mso-spacerun: yes">  </span>entered<br>
+<span style="mso-spacerun: yes">                          </span>for &lt;end&gt;
+        address, assumes FFFF.<br>
+        <br>
+<span style="mso-spacerun: yes">                       </span>E &lt;address&gt;<br>
+        <br>
+<span style="mso-spacerun:
+yes">                          </span>Edit's EXTERNAL DATA<span style="mso-spacerun:
+yes"> 
+</span>        memory,<span style="mso-spacerun: yes">  </span>Address<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>contents<span style="mso-spacerun: yes">  </span>are<br>
+<span style="mso-spacerun: yes">                          </span>displayed, Enter TWO
+        hex digits to change value.<span style="mso-spacerun: yes">  </span>Entering<br>
+<span style="mso-spacerun: yes">                          </span>SPACE skips to the
+        next location, BACKSPACE backups to the<br>
+<span style="mso-spacerun:
+yes">                          </span>previous location.<span style="mso-spacerun:
+yes">  </span>CARRIAGE
+        RETURN<span style="mso-spacerun: yes">  </span>terminates<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>edit<br>
+<span style="mso-spacerun:
+yes">                     </span><span style="mso-spacerun:
+yes">     </span>command.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                       </span>F &lt;start&gt;,&lt;end&gt;
+        &lt;value&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                          </span>Fill's external memory
+        from &lt;start&gt; to &lt;end&gt; with the byte<br>
+<span style="mso-spacerun:
+yes">                          </span>&lt;value&gt;.<br>
+        <br>
+<span style="mso-spacerun: yes">                       </span>G &lt;address&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                          </span>Begins execution at
+        the indicated address.<span style="mso-spacerun: yes">  </span>If a SPACE<span style="mso-spacerun: yes">  </span>is<br>
+<span style="mso-spacerun:
+yes">                          </span>entered instead of an
+        address,<span style="mso-spacerun: yes">  </span>begins<span style="mso-spacerun: yes">  </span>execution<span style="mso-spacerun: yes">  </span>at<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                          </span>address in the 8051
+        program counter.<br>
+        <br>
+<span style="mso-spacerun: yes">                       </span>I &lt;start&gt;,&lt;end&gt;<br>
+        <br>
+<span style="mso-spacerun:
+yes">                          </span>Displays the<span style="mso-spacerun: yes">  </span>contents<span style="mso-spacerun: yes"> 
+</span>        of<span style="mso-spacerun: yes">  </span>INTERNAL<span style="mso-spacerun: yes">  </span>memory<span style="mso-spacerun: yes">  </span>between<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">             </span><span style="mso-spacerun: yes">             </span>specified addresses.<br>
+        <br>
+<span style="mso-spacerun: yes">                       </span>L<br>
+        <br>
+<span style="mso-spacerun: yes">                          </span>Downloads data from
+        the console<span style="mso-spacerun: yes">  </span>port,<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>in<br>
+<span style="mso-spacerun: yes">                          </span>either MOTOROLA or
+        INTEL hex format.<br>
+        <br>
+<span style="mso-spacerun: yes">                          </span>If you accidently
+        enter this command, you may enter either<br>
+<span style="mso-spacerun: yes">                          </span>'S9'<span style="mso-spacerun: yes">  </span>or ':00'<span style="mso-spacerun: yes">  </span>to
+        signify a null download file and return<br>
+<span style="mso-spacerun: yes">                          </span>to the command prompt.<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                       </span>R<br>
+        <br>
+<span style="mso-spacerun: yes">                          </span>Displays the current
+        values of the 8051 registers<span style="mso-spacerun: yes">  </span>(A,<span style="mso-spacerun: yes">  </span>B,<br>
+<span style="mso-spacerun: yes">                          </span>DPTR, SP, PC, PSW and
+        R0-R7).<br>
+        <br>
+<span style="mso-spacerun:
+yes">                       </span>S<br>
+        <br>
+<span style="mso-spacerun:
+yes">                          </span>Single-Stepps<span style="mso-spacerun: yes">  </span>one<span style="mso-spacerun: yes">  </span>instruction<span style="mso-spacerun: yes"> 
+</span>        from<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>current<span style="mso-spacerun: yes">   </span>8051<br>
+<span style="mso-spacerun:
+yes">                          </span>Program Counter
+        address.<span style="mso-spacerun: yes">  </span>Disassembly of<span style="mso-spacerun:
+yes">  </span>the<span style="mso-spacerun: yes">  </span>instruction<br>
+<span style="mso-spacerun: yes">                          </span>stepped is displyed on
+        the console.<br>
+        <br>
+<span style="mso-spacerun: yes">                       </span>U &lt;start&gt;,&lt;end&gt;<br>
+        <br>
+<span style="mso-spacerun:
+yes">                          </span>Un-assembles<span style="mso-spacerun: yes">  </span>PROGRAM<span style="mso-spacerun: yes"> 
+</span>        memory,<span style="mso-spacerun: yes">   </span>starting<span style="mso-spacerun: yes">   </span>at<span style="mso-spacerun: yes">   </span>indicated<br>
+<span style="mso-spacerun: yes">                          </span>address.<span style="mso-spacerun: yes">  </span>If SPACE is
+        entered for &lt;end&gt;<span style="mso-spacerun: yes">  </span>address,<span style="mso-spacerun: yes">  </span>assumes<br>
+<span style="mso-spacerun: yes">              </span><span style="mso-spacerun: yes">            </span>FFFF. Disassembler
+        output contains address, opcodes bytes,<br>
+<span style="mso-spacerun: yes">                          </span>instruction neumonic,
+        and operands to instruction.<br>
+        <br>
+<span style="mso-spacerun: yes">                       </span>?<br>
+        <br>
+<span style="mso-spacerun: yes">                          </span>Displays a short help
+        summary of the commands.<br>
+</font></span>        </p>
+        </td>
+    </tr>
+</table>
+
+<table border="0">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><span style="mso-spacerun: yes">       </span></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="2.2 Display Output"><font size="2" face="Arial"><em><strong>2.2
+        Display Output</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>In order to maintain the maximum
+        amount of data on the terminal<br>
+<span style="mso-spacerun: yes">                  </span>screen during the debugging session,<span style="mso-spacerun: yes"> 
+</span>        MON51 has been<span style="mso-spacerun: yes">  </span>designed<span style="mso-spacerun: yes">  </span>to<br>
+<span style="mso-spacerun:
+yes">                  </span>minimize the number of screen lines in
+        any display.<span style="mso-spacerun: yes">  </span>All<span style="mso-spacerun: yes">  </span>commands<br>
+<span style="mso-spacerun: yes">                  </span>which output only one line of data
+        (such as 'B' and 'S'),<span style="mso-spacerun:
+yes">  </span>will do<br>
+<span style="mso-spacerun: yes">                  </span>so on the same line on which the
+        command is issued<span style="mso-spacerun:
+yes">  </span>(To the<span style="mso-spacerun: yes">  </span>right<br>
+<span style="mso-spacerun: yes">                  </span>of the command).<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>For commands which output larger
+        amounts of data<span style="mso-spacerun: yes">  </span>(such as 'D',<br>
+<span style="mso-spacerun: yes">                  </span>'U'),<span style="mso-spacerun:
+yes">  </span>pressing the SPACE key during
+        the<span style="mso-spacerun:
+yes">  </span>display<span style="mso-spacerun: yes">  </span>will<span style="mso-spacerun: yes">  </span>halt<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>display on the next line. Each
+        subsequent SPACE entered will cause<br>
+<span style="mso-spacerun: yes">                  </span>one more line of data be displayed.<span style="mso-spacerun: yes">  </span>Pressing
+        CARRIAGE RETURN will<br>
+<span style="mso-spacerun: yes">                  </span>allow the display to continue at full
+        speed.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The escape key may be used to
+        cancel command output, and return<br>
+<span style="mso-spacerun: yes">                  </span>to the '*' prompt.<br>
+</font></span>        </td>
+    </tr>
+</table>
+
+<table border="0">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="2.3 Interrupts"><font size="2" face="Arial"><em><strong>2.3
+        Interrupts</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>MON51 re-vectors all interrupts<span style="mso-spacerun: yes"> 
+</span>        (except<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes">  </span>TIMER1<span style="mso-spacerun: yes">  </span>OVERFLOW<br>
+<span style="mso-spacerun: yes">                  </span>which is used internally for
+        single-stepping) to the corresponding<br>
+<span style="mso-spacerun:
+yes">                  </span>locations in the first page of user
+        RAM.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>When debugging any program which
+        uses<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun:
+yes">  </span>interrupt<span style="mso-spacerun: yes">  </span>vectors,<br>
+<span style="mso-spacerun: yes">                  </span>simply origin it at the<span style="mso-spacerun: yes">  </span>beginning<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes"> 
+</span>        user<span style="mso-spacerun: yes">  </span>RAM,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>code<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>interrupt handlers in exactly the same
+        locations<span style="mso-spacerun: yes">  </span>(relative to the<br>
+<span style="mso-spacerun: yes">                  </span>beginning of the<span style="mso-spacerun: yes">  </span>program)<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>you<span style="mso-spacerun:
+yes"> 
+</span>        would<span style="mso-spacerun: yes">  </span>if<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>program<span style="mso-spacerun: yes">  </span>were<br>
+<span style="mso-spacerun: yes">                  </span>origined at location zero.<br>
+</font></span>        </td>
+    </tr>
+</table>
+<table width="605" border="0">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2">&quot;Converted by 
+        BiPOM Electronics to HTML format from original Micro C documentation by 
+        Dunfield Development Systems. Please see the Micro C documentation that 
+        is included with Micro C for the original forms of these pages.&quot;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

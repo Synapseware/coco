@@ -1,0 +1,2360 @@
+.:
+total 72
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 anthem.bin
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:23 DEMOS
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 DOCS
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:22 EDU
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:23 EMULATOR
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:23 GAMES
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 GLOOM3D
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:23 GRAPHICS
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 HARDWARE
+drwxrwxrwx   11 arb      os9archi     4096 Jan 18 14:07 incoming
+drwxr-xr-x    5 arb      os9archi     4096 Jan 24  2001 LANGUAGE
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 MODMAX10
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:23 MODS
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:23 MUSIC
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 PICS
+-rw-r--r--    1 arb      os9archi        0 Feb  7 16:21 rsdos.index
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 TELECOM
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:23 UTIL
+
+./DEMOS:
+total 564
+-rw-r--r--    1 arb      os9archi     1280 Jan 24  2001 28.BAS
+-rw-r--r--    1 arb      os9archi     1152 Jan 24  2001 2WAYSCRL.ARC
+-rw-r--r--    1 arb      os9archi      640 Jan 24  2001 3GOONS.BAS
+-rw-r--r--    1 arb      os9archi     1920 Jan 24  2001 816COLOR.ARC
+-rw-r--r--    1 arb      os9archi   108800 Jan 24  2001 BALLSPIN.ARC
+-rw-r--r--    1 arb      os9archi    28288 Jan 24  2001 BNCEDEM2.ARC
+-rw-r--r--    1 arb      os9archi    72192 Jan 24  2001 BNCEFLIP.ARC
+-rw-r--r--    1 arb      os9archi    18048 Jan 24  2001 BOINKS.ARC
+-rw-r--r--    1 arb      os9archi     4224 Jan 24  2001 CHAINDEM.ARC
+-rw-r--r--    1 arb      os9archi      768 Jan 24  2001 DANCER.BAS
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 DANCER.BIN
+-rw-r--r--    1 arb      os9archi      640 Jan 24  2001 DEMO4CC3.BAS
+-rw-r--r--    1 arb      os9archi     6400 Jan 24  2001 FUNDEMO.BAS
+-rw-r--r--    1 arb      os9archi     4480 Jan 24  2001 GETSMART.BAS
+-rw-r--r--    1 arb      os9archi    12928 Jan 24  2001 GLASDEMO.BIN
+-rw-r--r--    1 arb      os9archi     5760 Jan 24  2001 GOBOING.ARC
+-rw-r--r--    1 arb      os9archi    40576 Jan 24  2001 LDGDEMO2.ARC
+-rw-r--r--    1 arb      os9archi     5120 Jan 24  2001 LINEDEM2.BIN
+-rw-r--r--    1 arb      os9archi    13056 Jan 24  2001 MILLDEMO.ARC
+-rw-r--r--    1 arb      os9archi    10752 Jan 24  2001 MPATDEMO.BIN
+-rw-r--r--    1 arb      os9archi    21632 Jan 24  2001 PMODE4EM.ARC
+-rw-r--r--    1 arb      os9archi     6144 Jan 24  2001 RSDEMO.BAS
+-rw-r--r--    1 arb      os9archi     1152 Jan 24  2001 SINX.BAS
+-rw-r--r--    1 arb      os9archi     1792 Jan 24  2001 SOCKBALL.ARC
+-rw-r--r--    1 arb      os9archi    39296 Jan 24  2001 SOCKDEM2.ARC
+-rw-r--r--    1 arb      os9archi     1536 Jan 24  2001 SOCKLIFE.ARC
+-rw-r--r--    1 arb      os9archi    20352 Jan 24  2001 SPACEDEM.BIN
+-rw-r--r--    1 arb      os9archi     4224 Jan 24  2001 SPINNERS.BAS
+-rw-r--r--    1 arb      os9archi     2432 Jan 24  2001 STARYMOV.BAS
+-rw-r--r--    1 arb      os9archi      896 Jan 24  2001 STICKS.BIN
+-rw-r--r--    1 arb      os9archi    15872 Jan 24  2001 STRDEMOS.ARC
+-rw-r--r--    1 arb      os9archi    32896 Jan 24  2001 SUNDRIVE.ARC
+
+./DOCS:
+total 0
+
+./EDU:
+total 172
+-rw-r--r--    1 arb      os9archi     7792 Jan 24  2001 BASICMAP.BAS
+-rw-r--r--    1 arb      os9archi     7897 Jan 24  2001 BOBO.BAS
+-rw-r--r--    1 arb      os9archi     3112 Jan 24  2001 COILCALC.BAS
+-rw-r--r--    1 arb      os9archi     3174 Jan 24  2001 desc.bbs
+-rw-r--r--    1 arb      os9archi      990 Jan 24  2001 files.bbs
+-rw-r--r--    1 arb      os9archi    11402 Jan 24  2001 GRAPHICS.BAS
+-rw-r--r--    1 arb      os9archi     3830 Jan 24  2001 GUESSFR.BAS
+-rw-r--r--    1 arb      os9archi     5858 Jan 24  2001 HPASSFIL.BAS
+-rw-r--r--    1 arb      os9archi     4078 Jan 24  2001 HURKLE.BAS
+-rw-r--r--    1 arb      os9archi     8349 Jan 24  2001 IC555.BAS
+-rw-r--r--    1 arb      os9archi     3789 Jan 24  2001 MULTIPLY.BAS
+-rw-r--r--    1 arb      os9archi     5000 Jan 24  2001 PIZZA.BAS
+-rw-r--r--    1 arb      os9archi     8832 Jan 24  2001 PWRDES.BAS
+-rw-r--r--    1 arb      os9archi     4260 Jan 24  2001 RCPHASE.BAS
+-rw-r--r--    1 arb      os9archi     3729 Jan 24  2001 REVERSE.BAS
+-rw-r--r--    1 arb      os9archi     8658 Jan 24  2001 SATTRK.BAS
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 SCRAMBLE.BAS
+-rw-r--r--    1 arb      os9archi    11520 Jan 24  2001 SHAPES.BAS
+-rw-r--r--    1 arb      os9archi     7424 Jan 24  2001 TASKTT.BAS
+-rw-r--r--    1 arb      os9archi     4992 Jan 24  2001 TYCOON.BAS
+-rw-r--r--    1 arb      os9archi    20480 Jan 24  2001 ULTRAGRP.ARC
+
+./EMULATOR:
+total 1740
+-rw-r--r--    1 arb      os9archi   141824 Jan 24  2001 CAVE1.DSK
+-rw-r--r--    1 arb      os9archi   184320 Jan 24  2001 CAVES2.DSK
+-rw-r--r--    1 arb      os9archi       44 Jan 24  2001 dgr2dsk.txt
+-rw-r--r--    1 arb      os9archi    46524 Jan 24  2001 dgr2dsk.zip
+-rw-r--r--    1 arb      os9archi       38 Jan 24  2001 dgr2zip.txt
+-rw-r--r--    1 arb      os9archi    83871 Jan 24  2001 digger2.dsk
+-rw-r--r--    1 arb      os9archi       42 Jan 24  2001 digger2.txt
+-rw-r--r--    1 arb      os9archi   153472 Jan 24  2001 MACSPACK.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 milenium.dsk
+-rw-r--r--    1 arb      os9archi    80384 Jan 24  2001 pacdemo.dsk
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 S24.dsk
+-rw-r--r--    1 arb      os9archi     1668 Jan 24  2001 Semi24.htm
+-rw-r--r--    1 arb      os9archi    96512 Jan 24  2001 SHUTTLE.DSK
+-rw-r--r--    1 arb      os9archi   153472 Jan 24  2001 SNDPLYRS.DSK
+-rw-r--r--    1 arb      os9archi   148608 Jan 24  2001 tokstok1.dsk
+-rw-r--r--    1 arb      os9archi   146560 Jan 24  2001 tokstok2.dsk
+-rw-r--r--    1 arb      os9archi     8576 Jan 24  2001 tokstok3.dsk
+-rw-r--r--    1 arb      os9archi   119168 Jan 24  2001 TRIBALLS.DSK
+
+./GAMES:
+total 1052
+-rw-r--r--    1 arb      os9archi     9344 Jan 24  2001 5000.BAS
+-rw-r--r--    1 arb      os9archi    22656 Jan 24  2001 ARENA.ARC
+-rw-r--r--    1 arb      os9archi     4480 Jan 24  2001 BACKGAMN.BIN
+-rw-r--r--    1 arb      os9archi    23040 Jan 24  2001 BCBILL.BIN
+-rw-r--r--    1 arb      os9archi     2193 Jan 24  2001 BUSJUMP.BAS
+-rw-r--r--    1 arb      os9archi    20588 Jan 24  2001 cambush.arc
+-rw-r--r--    1 arb      os9archi     9056 Jan 24  2001 CAVE.BAS
+-rw-r--r--    1 arb      os9archi    33280 Jan 24  2001 CC3CLUE.ARC
+-rw-r--r--    1 arb      os9archi    14848 Jan 24  2001 CC3POKER.ARC
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 CHESS3.BAS
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 CHESS.BIN
+-rw-r--r--    1 arb      os9archi     4910 Jan 24  2001 CHUTE.BAS
+-rw-r--r--    1 arb      os9archi     9335 Jan 24  2001 CIVILWAR.BAS
+-rw-r--r--    1 arb      os9archi    38652 Jan 24  2001 CROID.ARC
+-rw-r--r--    1 arb      os9archi     3761 Jan 24  2001 CROID.DOC
+-rw-r--r--    1 arb      os9archi    11948 Jan 24  2001 c-trek.bas
+-rw-r--r--    1 arb      os9archi     1384 Jan 24  2001 c-trek.txt
+-rw-r--r--    1 arb      os9archi    14330 Jan 24  2001 DEEDYORK.BAS
+-rw-r--r--    1 arb      os9archi     5760 Jan 24  2001 DEFENDER.BAS
+-rw-r--r--    1 arb      os9archi     7234 Jan 24  2001 DESC.BBS
+-rw-r--r--    1 arb      os9archi    46238 Jan 24  2001 DGR2ZIP.ZIP
+-rw-r--r--    1 arb      os9archi     9344 Jan 24  2001 ELIZA.BAS
+-rw-r--r--    1 arb      os9archi     2123 Jan 24  2001 FILES.BBS
+-rw-r--r--    1 arb      os9archi    15925 Jan 24  2001 GARGOYLE.BAS
+-rw-r--r--    1 arb      os9archi     2304 Jan 24  2001 GERM.BIN
+-rw-r--r--    1 arb      os9archi    15360 Jan 24  2001 GILIGAN1.ARC
+-rw-r--r--    1 arb      os9archi    16384 Jan 24  2001 GILIGAN2.ARC
+-rw-r--r--    1 arb      os9archi   129664 Jan 24  2001 gr2k-1.arc
+-rw-r--r--    1 arb      os9archi   106496 Jan 24  2001 gr2k-2.arc
+-rw-r--r--    1 arb      os9archi    14592 Jan 24  2001 gr2k_3.mlb
+-rw-r--r--    1 arb      os9archi     5824 Jan 24  2001 gr2k.txt
+-rw-r--r--    1 arb      os9archi     3072 Jan 24  2001 GREMLIN.BIN
+-rw-r--r--    1 arb      os9archi     3328 Jan 24  2001 GRID.BIN
+-rw-r--r--    1 arb      os9archi     4266 Jan 24  2001 GUNNER.BAS
+-rw-r--r--    1 arb      os9archi    22912 Jan 24  2001 HANGMAN3.ARC
+-rw-r--r--    1 arb      os9archi    22272 Jan 24  2001 HAUNTEDH.ARC
+-rw-r--r--    1 arb      os9archi    10880 Jan 24  2001 HOPBOP.BIN
+-rw-r--r--    1 arb      os9archi     5869 Jan 24  2001 HOW.BAS
+-rw-r--r--    1 arb      os9archi    14720 Jan 24  2001 KALRR.BAS
+-rw-r--r--    1 arb      os9archi    10079 Jan 24  2001 KLONDKE3.BAS
+-rw-r--r--    1 arb      os9archi     6613 Jan 24  2001 LANDER.BAS
+-rw-r--r--    1 arb      os9archi     7151 Jan 24  2001 LIFE.BAS
+-rw-r--r--    1 arb      os9archi    19015 Jan 24  2001 OREGON.BAS
+-rw-r--r--    1 arb      os9archi     8125 Jan 24  2001 OTHELLO.BAS
+-rw-r--r--    1 arb      os9archi    26624 Jan 24  2001 PACDUDE.ARC
+-rw-r--r--    1 arb      os9archi     7839 Jan 24  2001 POKER.BAS
+-rw-r--r--    1 arb      os9archi     8832 Jan 24  2001 PONK.BIN
+-rw-r--r--    1 arb      os9archi    13825 Jan 24  2001 RESTRANT.BAS
+-rw-r--r--    1 arb      os9archi     3590 Jan 24  2001 SEQUENCE.BAS
+-rw-r--r--    1 arb      os9archi    11776 Jan 24  2001 SHIPHUNT.BIN
+-rw-r--r--    1 arb      os9archi    13859 Jan 24  2001 SOLITARE.BAS
+-rw-r--r--    1 arb      os9archi     3328 Jan 24  2001 SQUASH.BIN
+-rw-r--r--    1 arb      os9archi    22624 Jan 24  2001 STAR.BAS
+-rw-r--r--    1 arb      os9archi    19094 Jan 24  2001 STARLANE.BAS
+-rw-r--r--    1 arb      os9archi    19840 Jan 24  2001 TAIPAN3.BAS
+-rw-r--r--    1 arb      os9archi    15360 Jan 24  2001 TETRA.BIN
+-rw-r--r--    1 arb      os9archi     9472 Jan 24  2001 UNO.BAS
+-rw-r--r--    1 arb      os9archi     4096 Jan 24  2001 WIGWORM.BIN
+-rw-r--r--    1 arb      os9archi    26752 Jan 24  2001 WIZARDS.ARC
+-rw-r--r--    1 arb      os9archi     2816 Jan 24  2001 ZEROG.BIN
+
+./GLOOM3D:
+total 312
+-rw-r--r--    1 arb      os9archi    25638 Jan 24  2001 GLOOM2.BIN
+-rw-r--r--    1 arb      os9archi      219 Jan 24  2001 GLOOM2.TXT
+-rw-r--r--    1 arb      os9archi     9396 Jan 24  2001 gloom.asm
+-rw-r--r--    1 arb      os9archi   115699 Jan 24  2001 gloom.bin
+-rw-r--r--    1 arb      os9archi     1600 Jan 24  2001 gloom.txt
+-rw-r--r--    1 arb      os9archi     2512 Jan 24  2001 lsavem.bas
+-rw-r--r--    1 arb      os9archi      486 Jan 24  2001 maketabl.bas
+-rw-r--r--    1 arb      os9archi     2736 Jan 24  2001 map.bas
+-rw-r--r--    1 arb      os9archi    16394 Jan 24  2001 map.bin
+-rw-r--r--    1 arb      os9archi    98447 Jan 24  2001 radar.bin
+-rw-r--r--    1 arb      os9archi     6727 Jan 24  2001 readme.txt
+
+./GRAPHICS:
+total 656
+-rw-r--r--    1 arb      os9archi     3933 Jan 24  2001 ANSI11.BAS
+-rw-r--r--    1 arb      os9archi     7567 Jan 24  2001 APPLES.BAS
+-rw-r--r--    1 arb      os9archi     3584 Jan 24  2001 ASCIIART.ARC
+-rw-r--r--    1 arb      os9archi    20592 Jan 24  2001 AUTUMN.BAS
+-rw-r--r--    1 arb      os9archi     1008 Jan 24  2001 BATMAN.BAS
+-rw-r--r--    1 arb      os9archi    11392 Jan 24  2001 BJOINK.BIN
+-rw-r--r--    1 arb      os9archi     6400 Jan 24  2001 CC2GIF.BIN
+-rw-r--r--    1 arb      os9archi    26624 Jan 24  2001 CC3DEMO.ARC
+-rw-r--r--    1 arb      os9archi     8192 Jan 24  2001 CC3GIF.BIN
+-rw-r--r--    1 arb      os9archi    27776 Jan 24  2001 COCODEMO.BIN
+-rw-r--r--    1 arb      os9archi     6016 Jan 24  2001 CUBE.BIN
+-rw-r--r--    1 arb      os9archi     6700 Jan 24  2001 DESC.BBS
+-rw-r--r--    1 arb      os9archi     3342 Jan 24  2001 DOODLE.BAS
+-rw-r--r--    1 arb      os9archi     8915 Jan 24  2001 EROTICA.BAS
+-rw-r--r--    1 arb      os9archi     2079 Jan 24  2001 FILES.BBS
+-rw-r--r--    1 arb      os9archi    18560 Jan 24  2001 FIRESTRM.BIN
+-rw-r--r--    1 arb      os9archi     8704 Jan 24  2001 FISH.ARC
+-rw-r--r--    1 arb      os9archi     9344 Jan 24  2001 FISHTANK.ARC
+-rw-r--r--    1 arb      os9archi    20352 Jan 24  2001 FNTMANIA.ARC
+-rw-r--r--    1 arb      os9archi     2630 Jan 24  2001 FRACTAL.BAS
+-rw-r--r--    1 arb      os9archi     1536 Jan 24  2001 GALLERY.BIN
+-rw-r--r--    1 arb      os9archi    12928 Jan 24  2001 GLASDEMO.BIN
+-rw-r--r--    1 arb      os9archi    26624 Jan 24  2001 HEADROOM.ARC
+-rw-r--r--    1 arb      os9archi    13824 Jan 24  2001 HIRESJSK.CM3
+-rw-r--r--    1 arb      os9archi    34816 Jan 24  2001 IMAGE30.ARC
+-rw-r--r--    1 arb      os9archi    43392 Jan 24  2001 JAPAN12.ARC
+-rw-r--r--    1 arb      os9archi     8129 Jan 24  2001 JEWISH.BAS
+-rw-r--r--    1 arb      os9archi     3259 Jan 24  2001 KALSCOPE.BAS
+-rw-r--r--    1 arb      os9archi     1024 Jan 24  2001 LINEART.BIN
+-rw-r--r--    1 arb      os9archi      671 Jan 24  2001 LOADSAVE.BAS
+-rw-r--r--    1 arb      os9archi    13445 Jan 24  2001 LOVETREK.BAS
+-rw-r--r--    1 arb      os9archi     2048 Jan 24  2001 MACCC2.BIN
+-rw-r--r--    1 arb      os9archi     3328 Jan 24  2001 MACCC3.BIN
+-rw-r--r--    1 arb      os9archi     4480 Jan 24  2001 MICKEY.BAS
+-rw-r--r--    1 arb      os9archi     1664 Jan 24  2001 PAGETURN.BAS
+-rw-r--r--    1 arb      os9archi     4835 Jan 24  2001 PIX2BAS.BAS
+-rw-r--r--    1 arb      os9archi     2184 Jan 24  2001 PMODE.BAS
+-rw-r--r--    1 arb      os9archi     2048 Jan 24  2001 RGBHELLO.BAS
+-rw-r--r--    1 arb      os9archi    12866 Jan 24  2001 SAWMILL.BAS
+-rw-r--r--    1 arb      os9archi     6400 Jan 24  2001 SCROLART.BIN
+-rw-r--r--    1 arb      os9archi    16000 Jan 24  2001 SEASCAPE.ARC
+-rw-r--r--    1 arb      os9archi    28416 Jan 24  2001 SHUTTLE.BIN
+-rw-r--r--    1 arb      os9archi    47104 Jan 24  2001 TP20.ARC
+-rw-r--r--    1 arb      os9archi    24576 Jan 24  2001 TRIBALL.ARC
+-rw-r--r--    1 arb      os9archi     7402 Jan 24  2001 UNICORN.BAS
+-rw-r--r--    1 arb      os9archi    15872 Jan 24  2001 VUMASTER.BIN
+-rw-r--r--    1 arb      os9archi    30080 Jan 24  2001 WATRFALL.ARC
+-rw-r--r--    1 arb      os9archi     8560 Jan 24  2001 WORLD3D.BAS
+
+./HARDWARE:
+total 132
+-rw-r--r--    1 arb      os9archi     2449 Jan 24  2001 cococabl.txt
+-rw-r--r--    1 arb      os9archi     9580 Jan 24  2001 Cocotemp.lzh
+-rw-r--r--    1 arb      os9archi      256 Jan 24  2001 HI-RES.BIN
+-rw-r--r--    1 arb      os9archi    46261 Jan 24  2001 Mouse.zip
+-rw-r--r--    1 arb      os9archi    24960 Jan 24  2001 REMOTE.ARC
+-rw-r--r--    1 arb      os9archi     3200 Jan 24  2001 REMOTE.BAS
+-rw-r--r--    1 arb      os9archi     9728 Jan 24  2001 REMOTE.DOC
+-rw-r--r--    1 arb      os9archi    10880 Jan 24  2001 REMOTE.LST
+-rw-r--r--    1 arb      os9archi     5248 Jan 24  2001 REMOTE.TXT
+
+./incoming:
+total 8160
+-rw-r--r--    1 arb      os9archi     1280 Jan 24  2001 28.BAS
+-rw-r--r--    1 arb      os9archi    12928 Jan 24  2001 32CLEMUL.ARC
+-rw-r--r--    1 arb      os9archi     2304 Jan 24  2001 3MISCPRG.ARC
+-rw-r--r--    1 arb      os9archi    21010 Jan 24  2001 arkanoid.mod.zip
+-rw-r--r--    1 arb      os9archi    37076 Jan 24  2001 AS9TOO.ZIP
+-rw-r--r--    1 arb      os9archi    10467 Jan 24  2001 ATCOCO.txt
+-rw-r--r--    1 arb      os9archi      512 Jan 24  2001 BOOKPROG.BAS
+-rw-r--r--    1 arb      os9archi    11459 Jan 24  2001 BUXOM.BAS
+-rw-r--r--    1 arb      os9archi    18293 Jan 24  2001 CATHOUSE.BAS
+-rw-r--r--    1 arb      os9archi   184320 Jan 24  2001 caves.dsk
+-rw-r--r--    1 arb      os9archi   211419 Jan 24  2001 cocodsks.zip
+drwxr-xr-x    4 arb      os9archi     4096 Jan 24  2001 cocodudes upload
+drwxr-xr-x    2 arb      os9archi     4096 Feb 10  2001 DISTO Schemantics
+-rw-r--r--    1 arb      os9archi     6823 Jan 24  2001 EDTASM.txt
+-rw-r--r--    1 arb      os9archi    16154 Jan 24  2001 edtasm++.zip
+drwxr-xr-x    9 arb      os9archi     4096 Oct 19 10:40 emulator_images
+-rw-r--r--    1 arb      os9archi    10250 Jan 24  2001 ezdasm.zip
+-rw-r--r--    1 arb      os9archi    17742 Jan 24  2001 Fourcube.bin
+-rw-r--r--    1 arb      os9archi     4159 Jan 24  2001 fourcube.txt
+-rw-r--r--    1 arb      os9archi      179 Jan 24  2001 fourqbreadme.txt
+-rw-r--r--    1 arb      os9archi    10430 Jan 24  2001 HYAPATIA.BAS
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 john collyer
+-rw-r--r--    1 arb      os9archi    10079 Jan 24  2001 klondke3.bas
+-rw-r--r--    1 arb      os9archi    44443 Jan 24  2001 mouse.lha
+drwxr-xr-x    9 arb      os9archi     4096 Jan 24  2001 netrunnrs_uploads
+-rw-r--r--    1 arb      os9archi  1533545 Jan 24  2001 network.doc
+-rw-r--r--    1 arb      os9archi     1405 Jan 24  2001 newboot.bas
+-rw-r--r--    1 arb      os9archi     1405 Jan 24  2001 Newboot.bas
+drwxr-xr-x    2 arb      os9archi     4096 Sep 30 21:03 OS-9 C-Compiler PDF 300DPI
+drwxr-xr-x    9 arb      os9archi     4096 Jan 24  2001 OS-9 Level 2 Manual HTML
+drwxr-xr-x    9 arb      os9archi     4096 Jan 24  2001 OS-9 Level 2 Manual TIF 150
+-rw-r--r--    1 arb      os9archi   131506 Apr 10  2001 PCCCBBS_Master_list.txt
+-rw-r--r--    1 arb      os9archi     1024 Jan 24  2001 RAINBOW.BAS
+-rw-r--r--    1 arb      os9archi    22173 Jan 24  2001 recurs.doc
+-rw-r--r--    1 arb      os9archi   120152 Jan 24  2001 sadfx.mod.zip
+-rw-r--r--    1 arb      os9archi    13859 Jan 24  2001 solitare.bas
+-rw-r--r--    1 arb      os9archi       68 Jan 24  2001 SteveMix.txt
+-rw-r--r--    1 arb      os9archi   183360 Jan 24  2001 SteveMix.zip
+-rw-r--r--    1 arb      os9archi     1280 Jan 24  2001 suncrk10.bas
+-rw-r--r--    1 arb      os9archi     3783 Jan 24  2001 text.bas
+-rw-r--r--    1 arb      os9archi       84 Jan 24  2001 text.txt
+-rw-r--r--    1 ftp      ftp       4308992 Jan 18 14:08 Unravelled II.xls
+drwxr-xr-x    2 arb      os9archi     4096 Nov 12 17:26 UnravelledSeries
+-rw-r--r--    1 ftp      ftp       1241488 Jan 18 14:07 Unravelled_Series_Excel.zip
+
+./incoming/cocodudes upload:
+total 4132
+drwxr-xr-x    4 arb      os9archi     4096 Nov 29 15:24 coco stuff
+-rw-r--r--    1 arb      os9archi   970548 Jan 24  2001 coco stuff -1retry.zip
+-rw-r--r--    1 arb      os9archi   140800 Jan 24  2001 coco stuff -1r.zip
+-rw-r--r--    1 arb      os9archi    27648 Jan 24  2001 coco stuff -1.zip
+-rw-r--r--    1 arb      os9archi  1610540 Jan 24  2001 coco stuff -2r.zip
+-rw-r--r--    1 arb      os9archi  1446400 Jan 24  2001 coco stuff -2.zip
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 ignore zips all files in dir unzipped
+
+./incoming/cocodudes upload/coco stuff:
+total 8
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:24 Cassette Images
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:24 dsk files
+
+./incoming/cocodudes upload/coco stuff/Cassette Images:
+total 92
+-rw-r--r--    1 arb      os9archi    15255 Jan 24  2001 Bedlam.cas
+-rw-r--r--    1 arb      os9archi     6726 Jan 24  2001 Blochead.cas
+-rw-r--r--    1 arb      os9archi     4343 Jan 24  2001 Catch'em.cas
+-rw-r--r--    1 arb      os9archi    22861 Jan 24  2001 Granprix.cas
+-rw-r--r--    1 arb      os9archi     6882 Jan 24  2001 Robotack.cas
+-rw-r--r--    1 arb      os9archi     7458 Jan 24  2001 Whirly.cas
+-rw-r--r--    1 arb      os9archi    18368 Jan 24  2001 Zaxxon.cas
+
+./incoming/cocodudes upload/coco stuff/dsk files:
+total 10572
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 3GAME3.DSK
+-rw-r--r--    1 arb      os9archi    94720 Jan 24  2001 3GAME4.DSK
+-rw-r--r--    1 arb      os9archi   158208 Jan 24  2001 3GAMES1.DSK
+-rw-r--r--    1 arb      os9archi   115200 Jan 24  2001 3GAMES2.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 512BASIC.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 BOOTLEG3.DSK
+-rw-r--r--    1 arb      os9archi   155648 Jan 24  2001 CC3UTIL1.DSK
+-rw-r--r--    1 arb      os9archi   152064 Jan 24  2001 CC3UTIL2.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 CC3UTIL3.DSK
+-rw-r--r--    1 arb      os9archi    85504 Jan 24  2001 CC3UTIL4.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 CC3UTIL4r.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 CCMAX512.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 CLRMX512.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 CLRMX.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 COCOMAX3.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 COCOMAX.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 DIECOM1.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 DSKMATE1.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 DSKMATE2.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 ELITE80.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 FIREONE.DSK
+-rw-r--r--    1 arb      os9archi   140032 Jan 24  2001 GAME10.DSK
+-rw-r--r--    1 arb      os9archi    82944 Jan 24  2001 GAME11.DSK
+-rw-r--r--    1 arb      os9archi   176640 Jan 24  2001 GAME1.DSK
+-rw-r--r--    1 arb      os9archi   183552 Jan 24  2001 GAME2.DSK
+-rw-r--r--    1 arb      os9archi   161024 Jan 24  2001 GAME3.DSK
+-rw-r--r--    1 arb      os9archi   173568 Jan 24  2001 GAME4.DSK
+-rw-r--r--    1 arb      os9archi   158464 Jan 24  2001 GAME5.DSK
+-rw-r--r--    1 arb      os9archi   160512 Jan 24  2001 GAME6.DSK
+-rw-r--r--    1 arb      os9archi   150528 Jan 24  2001 GAME8.DSK
+-rw-r--r--    1 arb      os9archi    82944 Jan 24  2001 GAME9.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 KDISK31.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 KORONIS.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 MICRSC1.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 MICRSC2.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 MUSICA.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 MUSIC.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 OS9BOOT.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 OS9DEV1.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 OS9DEV2.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 OS9MV80A.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 OS9MV80B.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 OS9MVW1.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 OS9MVW2.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 OS9SYSMR.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 PACDUDE.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 PITFALL2.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 POP.DSK
+-rw-r--r--    1 arb      os9archi       73 Jan 24  2001 PORT.CFG
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 PYRAMIX.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 RESCUE.DSK
+-rw-r--r--    1 arb      os9archi   160768 Jan 24  2001 RETURN.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 RETURNr.DSK
+-rw-r--r--    1 arb      os9archi    82944 Jan 24  2001 ROADTEST.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 ROGUE128.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 ROGUE512.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 RUSSIN.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 SIMPLY.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 SPTNIMG.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 SUBSIM1.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 SUBSIM2.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 TW80.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 WILD1.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 WILD2.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 WORDPWR.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 WORDSPEL.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 WRESTLE.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 ZONERUN.DSK
+
+./incoming/cocodudes upload/ignore zips all files in dir unzipped:
+total 0
+
+./incoming/DISTO Schemantics:
+total 928
+-rw-r--r--    1 arb      os9archi   945664 Feb 10  2001 Rs232-300 BW.tif
+
+./incoming/emulator_images:
+total 5044
+-rw-r--r--    1 arb      os9archi    10404 Oct  7 16:47 A Mazing World of Malcom Mortar (1987) (26-3160) (U).zip
+-rw-r--r--    1 arb      os9archi     5265 Oct  7 16:46 Androne (1983) (26-3096) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     6272 Oct  7 16:46 anthem.bin
+-rw-r--r--    1 arb      os9archi    10647 Oct  7 16:46 Arkanoid (1987) (26-3043) (Taito) (U).zip
+-rw-r--r--    1 arb      os9archi     1529 Oct  7 16:46 Audio Spectrum Analyzer (1981) (26-3156) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     3197 Oct  7 16:46 Bingo Math (1980) (26-3150) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     7690 Oct  7 16:46 Bridge Tutor (1982) (26-3158) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     3532 Oct  7 16:46 Bustout (1981) (26-3056) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     5170 Oct  7 16:46 Canyon Climber (1982) (26-3089) (U) [!].zip
+drwxr-xr-x    2 arb      os9archi     4096 Oct 18 11:24 Cassette Images
+-rw-r--r--    1 arb      os9archi     2910 Oct  7 16:46 Castle Guard (1981) (26-3079) (U) [!].zip
+-rw-r--r--    1 arb      os9archi    15790 Oct  7 16:46 Castle of Tharoggad (1988) (26-3159) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     4479 Oct  7 16:46 Clowns & Balloons (1982) (26-3087) (Radio Shack - Steve Bjork) (U) [!].zip
+-rw-r--r--    1 arb      os9archi    36527 Oct  7 17:01 COBBS.ZIP
+-rw-r--r--    1 arb      os9archi    65170 Oct  7 17:01 coco2-15_emulator.zip
+-rw-r--r--    1 arb      os9archi   466061 Oct  7 16:47 cocoquest_set.zip
+-rw-r--r--    1 arb      os9archi    21085 Oct  7 17:01 cocorom.zip
+-rw-r--r--    1 arb      os9archi     6365 Oct  7 16:47 Color Baseball (1980) (26-3095) [!].zip
+-rw-r--r--    1 arb      os9archi     7184 Oct  7 16:47 Color Computer Controller (1982) (26-3022).zip
+-rw-r--r--    1 arb      os9archi     3318 Oct  7 16:47 Color Cubes (1981) (26-3075) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     3792 Oct  7 16:47 Color File (1981) (26-3103) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     5312 Oct  7 16:46 Color Scripsit (1981) (26-3105) (U) [!].zip
+-rw-r--r--    1 arb      os9archi    10297 Oct  7 16:47 Color Scripsit II (1986) (26-3109) (U).zip
+-rw-r--r--    1 arb      os9archi   208590 Oct  7 16:47 commo66_pcver.zip
+-rw-r--r--    1 arb      os9archi     3621 Oct  7 16:47 Deluxe RS-232 Program Pak (1983) (26-2226).zip
+-rw-r--r--    1 arb      os9archi     5419 Oct  7 16:47 Demolition Derby (1984) (26-3044) (U) [!].zip
+-rw-r--r--    1 arb      os9archi   159556 Oct  7 17:01 deskmate.zip
+-rw-r--r--    1 arb      os9archi     1990 Oct  7 16:47 Diagnostics (1980) (26-3019) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     3971 Oct  7 16:47 Direct Connect Modem Pak (1985) (26-2228).zip
+drwxr-xr-x    5 arb      os9archi     4096 Oct 18 11:17 Disk Images
+drwxr-xr-x    3 arb      os9archi     4096 Nov 29 15:26 Docs
+drwxr-xr-x    2 arb      os9archi     4096 Oct 18 11:25 Docs & text files
+-rw-r--r--    1 arb      os9archi     3178 Oct  7 16:47 Doubleback (1982) (26-3091) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     7556 Oct  7 16:47 Dungeons of Daggorath (1982) (26-3093) (DynaMicro) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     9245 Oct  7 16:47 EDTASM+ (1982) (26-3250) (U) [!].zip
+-rw-r--r--    1 arb      os9archi    16154 Oct  7 16:58 edtasm.zip
+drwxr-xr-x    6 arb      os9archi     4096 Oct 19 10:38 Emulators_System_Files
+-rw-r--r--    1 arb      os9archi     5272 Oct  7 16:47 Facemaker (1984) (26-3166) (Spinnaker) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     3152 Oct  7 16:47 Galactic Attack (1982) (26-3066) (U) [!].zip
+-rw-r--r--    1 arb      os9archi   652478 Oct  7 17:02 games1.zip
+-rw-r--r--    1 arb      os9archi   536392 Oct  7 17:03 games2.zip
+-rw-r--r--    1 arb      os9archi   565039 Oct  7 17:04 games3.zip
+-rw-r--r--    1 arb      os9archi   731793 Oct  7 17:04 games4.zip
+-rw-r--r--    1 arb      os9archi    16078 Oct  7 16:47 GFL Championship Football II (1988) (26-3172) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     6449 Oct  7 16:47 Gomoku - Renju (1983) (26-3069) (Intelligent Software Ltd) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     6097 Oct  7 16:48 Kids on Keys (1984) (26-3167) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     3656 Oct  7 16:48 Kindercomp (1984) (26-3168) (Spinnaker) (U) [!].zip
+-rw-r--r--    1 arb      os9archi    23448 Oct  7 17:05 madness_minotaur.zip
+-rw-r--r--    1 arb      os9archi     6202 Oct  7 16:48 Mega-Bug (1982) (26-3076) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     2786 Oct  7 16:48 Micro Painter (1982) (26-3077) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     7480 Oct  7 16:48 Microworks Forth (1981) (U) [!].zip
+-rw-r--r--    1 arb      os9archi    17571 Oct  7 16:48 Mind-Roll (1988) (26-3100) (EPYX) (U) [h1].zip
+-rw-r--r--    1 arb      os9archi    17599 Oct  7 16:48 Mind-Roll (1988) (26-3100) (EPYX) (U) [!].zip
+-rw-r--r--    1 arb      os9archi    49437 Oct  7 16:48 mydsk1.zip
+-rw-r--r--    1 arb      os9archi     6953 Oct  7 16:48 Orchestra 90-CC (1984) (26-3143).zip
+-rw-r--r--    1 arb      os9archi    20225 Oct  7 17:05 os9_tutorial.zip
+-rw-r--r--    1 arb      os9archi     6683 Oct  7 16:48 Personal Finance II (1983) (26-3106) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     3159 Oct  7 16:48 Polaris (1981) (26-3065) (Radio Shack) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     5419 Oct  7 16:48 Poltergeist (1982) (26-3073) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     1946 Oct  7 16:48 Popcorn (1981) (26-3090) (Radio Shack - Steve Bjork) (U) [o1].zip
+-rw-r--r--    1 arb      os9archi     1930 Oct  7 16:48 Popcorn (1981) (26-3090) (Radio Shack - Steve Bjork) (U) [!].zip
+-rw-r--r--    1 arb      os9archi   484026 Oct  7 17:05 Program_Paks.zip
+-rw-r--r--    1 arb      os9archi     5523 Oct  7 16:48 Project Nebula (1981) (26-3063) (U) [!].zip
+-rw-r--r--    1 arb      os9archi    15256 Oct  7 16:48 PYRAMID.cas.txt
+-rw-r--r--    1 arb      os9archi     3664 Oct  7 16:48 Quasar Commander (1980) (26-3051) (U) [!].zip
+-rw-r--r--    1 arb      os9archi    11285 Oct  7 17:05 raakatu_p.zip
+-rw-r--r--    1 arb      os9archi     2958 Oct  7 16:48 Reactoid (1983) (26-3092) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     4993 Oct  7 16:48 Roman Checkers (1981) (26-3071) (The Image Producers) (U).zip
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:26 Rom Pak Images
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:26 Roms
+-rw-r--r--    1 arb      os9archi   161824 Oct  7 17:05 Rouge128&512_ver.zip
+-rw-r--r--    1 arb      os9archi    11860 Oct  7 16:48 Shanghai (1987) (26-3084) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     4965 Oct  7 16:48 Shooting Gallery (1982) (26-3088) (DataSoft) (U).zip
+-rw-r--r--    1 arb      os9archi    11287 Oct  7 16:48 Silpheed (1988) (26-3054) (Sierra) (U).zip
+-rw-r--r--    1 arb      os9archi     5627 Oct  7 16:49 Slay the Nereis (1983) (26-3086) (U) [!].zip
+-rw-r--r--    1 arb      os9archi    11242 Oct  7 16:49 Soko-Ban (1988) (26-3161) (Spectral Associates) (U).zip
+-rw-r--r--    1 arb      os9archi     3316 Oct  7 16:49 Space Assault (1981) (26-3060) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     5686 Oct  7 16:49 Starblaze (1983) (26-3094) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     7259 Oct  7 16:49 Temple of ROM (1984) (26-3045) (Rick Adams) (U) [!].zip
+-rw-r--r--    1 arb      os9archi     5896 Oct  7 16:49 TRS-80 Color Logo (1983) (26-2722) (U) [!].zip
+-rw-r--r--    1 arb      os9archi   155660 Oct  7 17:06 unwashed heathen.zip
+-rw-r--r--    1 arb      os9archi   225385 Oct  7 17:06 utils1.zip
+-rw-r--r--    1 arb      os9archi     3805 Oct  7 16:49 Wildcatting (1982) (26-3067) (U) [!].zip
+
+./incoming/emulator_images/Cassette Images:
+total 2420
+-rw-r--r--    1 arb      os9archi  2425750 Oct 18 11:24 cassette_1.zip
+-rw-r--r--    1 arb      os9archi    44992 Oct 18 11:24 cassette_2.zip
+
+./incoming/emulator_images/Disk Images:
+total 8784
+-rw-r--r--    1 arb      os9archi   159232 Oct 18 11:02 basic1.dsk
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:26 cave_UH
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:51 d01.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:51 d02.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:52 d03.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:52 d04.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:52 d05.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:52 d06.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:53 d07.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:53 d08.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:53 d09.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:53 d10.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:53 d11.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:54 d12.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:54 d13.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:54 d14.dsk
+-rw-r--r--    1 arb      os9archi   104960 Oct 18 10:54 d15.dsk
+-rw-r--r--    1 arb      os9archi   122880 Oct 18 10:54 d16.dsk
+-rw-r--r--    1 arb      os9archi   102656 Oct 18 10:55 d17.dsk
+-rw-r--r--    1 arb      os9archi    82944 Oct 18 10:55 d18.dsk
+-rw-r--r--    1 arb      os9archi    99584 Oct 18 10:55 d19.dsk
+-rw-r--r--    1 arb      os9archi    93184 Oct 18 10:55 d20.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:55 d21.dsk
+-rw-r--r--    1 arb      os9archi    94720 Oct 18 10:55 d22.dsk
+-rw-r--r--    1 arb      os9archi   158208 Oct 18 10:56 d23.dsk
+-rw-r--r--    1 arb      os9archi   115200 Oct 18 10:56 d24.dsk
+-rw-r--r--    1 arb      os9archi   176640 Oct 18 10:56 d25.dsk
+-rw-r--r--    1 arb      os9archi   140032 Oct 18 10:57 d26.dsk
+-rw-r--r--    1 arb      os9archi    82944 Oct 18 10:57 d27.dsk
+-rw-r--r--    1 arb      os9archi   183552 Oct 18 10:58 d28.dsk
+-rw-r--r--    1 arb      os9archi   161024 Oct 18 10:58 d29.dsk
+-rw-r--r--    1 arb      os9archi   173568 Oct 18 10:59 d30.dsk
+-rw-r--r--    1 arb      os9archi   158464 Oct 18 10:59 d31.dsk
+-rw-r--r--    1 arb      os9archi   160512 Oct 18 10:59 d32.dsk
+-rw-r--r--    1 arb      os9archi   150528 Oct 18 10:59 d33.dsk
+-rw-r--r--    1 arb      os9archi    82944 Oct 18 11:00 d34.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 11:00 d35.dsk
+-rw-r--r--    1 arb      os9archi   110080 Oct 18 11:00 d36.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 11:00 d38.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 11:01 d39.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 11:01 d40.dsk
+-rw-r--r--    1 arb      os9archi   176640 Oct 18 11:01 d41.dsk
+-rw-r--r--    1 arb      os9archi   140032 Oct 18 11:02 d42.dsk
+-rw-r--r--    1 arb      os9archi    82944 Oct 18 11:02 d43.dsk
+-rw-r--r--    1 arb      os9archi   183552 Oct 18 10:51 d44.dsk
+-rw-r--r--    1 arb      os9archi   161024 Oct 18 11:02 d45.dsk
+-rw-r--r--    1 arb      os9archi   173568 Oct 18 11:02 d46.dsk
+-rw-r--r--    1 arb      os9archi   158464 Oct 18 11:05 d47.dsk
+-rw-r--r--    1 arb      os9archi   150528 Oct 18 11:04 d49.dsk
+-rw-r--r--    1 arb      os9archi    82944 Oct 18 11:15 d50.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 11:15 elite80.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 11:16 musica.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 11:15 music.dsk
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:26 os9
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:26 Rogue
+-rw-r--r--    1 arb      os9archi   224016 Oct 18 11:16 SEASTALK.DSK
+-rw-r--r--    1 arb      os9archi   184320 Oct 18 11:16 thag.dsk
+-rw-r--r--    1 arb      os9archi   155648 Oct 18 11:17 util1.dsk
+-rw-r--r--    1 arb      os9archi   152064 Oct 18 11:17 util2.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 11:17 util3.dsk
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 11:17 util4.dsk
+
+./incoming/emulator_images/Disk Images/cave_UH:
+total 512
+-rw-r--r--    1 arb      os9archi   184320 Oct 18 10:48 Caves1.dsk
+-rw-r--r--    1 arb      os9archi   141824 Oct 18 10:48 Caves2.dsk
+-rw-r--r--    1 arb      os9archi   184320 Oct 18 10:48 Caves3.dsk
+
+./incoming/emulator_images/Disk Images/os9:
+total 1312
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:48 OS9BOOT.DSK
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:46 OS9DEV1.DSK
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:46 OS9DEV2.DSK
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:47 OS9MV80A.DSK
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:47 OS9MV80B.DSK
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:47 OS9MVW1.DSK
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:48 OS9MVW2.DSK
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:46 OS9SYSMR.DSK
+
+./incoming/emulator_images/Disk Images/Rogue:
+total 328
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:49 ROGUE128.DSK
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 10:49 ROGUE512.DSK
+
+./incoming/emulator_images/Docs:
+total 132
+-rw-r--r--    1 arb      os9archi     5102 Oct 19 10:39 basic.txt
+-rw-r--r--    1 arb      os9archi     7508 Oct 19 10:39 CoCobasics.zip
+-rw-r--r--    1 arb      os9archi    41578 Oct 19 10:39 COCO.DOC
+-rw-r--r--    1 arb      os9archi    29932 Oct 19 10:39 Dagorath_Man.txt
+-rw-r--r--    1 arb      os9archi     9268 Oct 19 10:39 diskbasic.txt
+-rw-r--r--    1 arb      os9archi      195 Oct 19 10:39 DRIVES.CFG
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:26 Dungeons of Daggorath Program_files
+-rw-r--r--    1 arb      os9archi     3569 Oct 19 10:39 extendedbasic.txt
+-rw-r--r--    1 arb      os9archi      393 Oct 19 10:39 GENERAL.CFG
+-rw-r--r--    1 arb      os9archi     9789 Oct 19 10:39 pokes.txt
+
+./incoming/emulator_images/Docs/Dungeons of Daggorath Program_files:
+total 168
+-rw-r--r--    1 arb      os9archi   101480 Oct 19 10:39 DAGGOR1.jpg
+-rw-r--r--    1 arb      os9archi    58496 Oct 19 10:39 DAGGOR3.jpg
+
+./incoming/emulator_images/Docs & text files:
+total 20
+-rw-r--r--    1 arb      os9archi    20225 Oct 18 11:25 os9_tutorial.zip
+
+./incoming/emulator_images/Emulators_System_Files:
+total 88
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:26 coco2-16
+-rw-r--r--    1 arb      os9archi    66497 Oct 18 11:35 coco2-16.zip
+drwxr-xr-x    3 arb      os9archi     4096 Nov 29 15:26 David_k
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:26 Return_of_coco
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:26 Roms
+
+./incoming/emulator_images/Emulators_System_Files/coco2-16:
+total 400
+-rw-r--r--    1 arb      os9archi     1824 Oct 18 11:29 CAS2ROM.EXE
+-rw-r--r--    1 arb      os9archi     2929 Oct 18 11:29 CASIN.EXE
+-rw-r--r--    1 arb      os9archi     3041 Oct 18 11:29 CASOUT.EXE
+-rw-r--r--    1 arb      os9archi    42327 Oct 18 11:29 COCO.DOC
+-rw-r--r--    1 arb      os9archi    86154 Oct 18 11:29 COCO.EXE
+-rw-r--r--    1 arb      os9archi      967 Oct 18 11:30 COCO.PIF
+-rw-r--r--    1 arb      os9archi    32514 Oct 18 11:30 coco.rom
+-rw-r--r--    1 arb      os9archi   161280 Oct 18 11:30 COCOUTIL.DSK
+-rw-r--r--    1 arb      os9archi     3138 Oct 18 11:30 DSKINI.EXE
+-rw-r--r--    1 arb      os9archi    29239 Oct 18 11:30 PORT.EXE
+-rw-r--r--    1 arb      os9archi      986 Oct 18 11:30 READ.ME
+-rw-r--r--    1 arb      os9archi     3218 Oct 18 11:30 RETRIEVE.EXE
+-rw-r--r--    1 arb      os9archi     7086 Oct 18 11:30 VGACHECK.EXE
+
+./incoming/emulator_images/Emulators_System_Files/David_k:
+total 276
+-rw-r--r--    1 arb      os9archi     2035 Oct 18 11:32 26-3019.zip
+-rw-r--r--    1 arb      os9archi     7271 Oct 18 11:32 26-3022.zip
+-rw-r--r--    1 arb      os9archi     7609 Oct 18 11:32 26-3093.zip
+-rw-r--r--    1 arb      os9archi     7044 Oct 18 11:32 26-3143.zip
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:26 coco2-10
+-rw-r--r--    1 arb      os9archi   197511 Oct 18 11:32 coco2-10.zip
+-rw-r--r--    1 arb      os9archi       61 Oct 18 11:32 DIAG.CAR
+-rw-r--r--    1 arb      os9archi     2048 Oct 18 11:32 DIAG.ROM
+-rw-r--r--    1 arb      os9archi       61 Oct 18 11:32 DSKBASIC.CAR
+-rw-r--r--    1 arb      os9archi     8192 Oct 18 11:32 DSKBASIC.ROM
+-rw-r--r--    1 arb      os9archi       61 Oct 18 11:32 DUNGDAGG.CAR
+-rw-r--r--    1 arb      os9archi     8192 Oct 18 11:32 DUNGDAGG.ROM
+-rw-r--r--    1 arb      os9archi       61 Oct 18 11:32 ORCH90.CAR
+-rw-r--r--    1 arb      os9archi     8192 Oct 18 11:32 ORCH90.ROM
+
+./incoming/emulator_images/Emulators_System_Files/David_k/coco2-10:
+total 584
+-rw-r--r--    1 arb      os9archi       61 Oct 18 11:30 BASEBALL.CAR
+-rw-r--r--    1 arb      os9archi     8192 Oct 18 11:30 baseball.rom
+-rw-r--r--    1 arb      os9archi     8192 Oct 18 11:30 BASIC.ROM
+-rw-r--r--    1 arb      os9archi       61 Oct 18 11:30 CALIXTO.CAR
+-rw-r--r--    1 arb      os9archi     6144 Oct 18 11:30 COCO-1.FNT
+-rw-r--r--    1 arb      os9archi     6144 Oct 18 11:30 COCO-2.FNT
+-rw-r--r--    1 arb      os9archi     1638 Oct 18 11:30 COCO.CFG
+-rw-r--r--    1 arb      os9archi   218721 Oct 18 11:31 COCO.EXE
+-rw-r--r--    1 arb      os9archi      384 Oct 18 11:31 COCO.PAL
+-rw-r--r--    1 arb      os9archi      967 Oct 18 11:31 COCO.PIF
+-rw-r--r--    1 arb      os9archi       61 Oct 18 11:31 DIAG.CAR
+-rw-r--r--    1 arb      os9archi     2048 Oct 18 11:31 DIAG.ROM
+-rw-r--r--    1 arb      os9archi       61 Oct 18 11:31 DSKBASIC.CAR
+-rw-r--r--    1 arb      os9archi     8192 Oct 18 11:31 DSKBASIC.ROM
+-rw-r--r--    1 arb      os9archi       61 Oct 18 11:31 DUNGDAGG.CAR
+-rw-r--r--    1 arb      os9archi     8192 Oct 18 11:31 DUNGDAGG.ROM
+-rw-r--r--    1 arb      os9archi     8192 Oct 18 11:31 EXTBASIC.ROM
+-rw-r--r--    1 arb      os9archi       61 Oct 18 11:31 ORCH90.CAR
+-rw-r--r--    1 arb      os9archi     8192 Oct 18 11:31 ORCH90.ROM
+-rw-r--r--    1 arb      os9archi   224016 Oct 18 11:31 Os9-sys2.dsk
+-rw-r--r--    1 arb      os9archi      512 Oct 18 11:31 PCCOCO.KEY
+-rw-r--r--    1 arb      os9archi       61 Oct 18 11:31 POLARIS.CAR
+-rw-r--r--    1 arb      os9archi     4096 Oct 18 11:31 POLARIS.ROM
+-rw-r--r--    1 arb      os9archi    15256 Oct 18 11:31 Pyramid.cas
+-rw-r--r--    1 arb      os9archi      512 Oct 18 11:31 TRSCOCO.KEY
+-rw-r--r--    1 arb      os9archi       67 Oct 18 11:32 Whats.new
+
+./incoming/emulator_images/Emulators_System_Files/Return_of_coco:
+total 716
+-rw-r--r--    1 arb      os9archi    32512 Oct 18 11:33 coco3.rom
+-rw-r--r--    1 arb      os9archi    32514 Oct 18 11:33 coco.rom
+-rw-r--r--    1 arb      os9archi    32514 Oct 18 11:33 Color Computer 3.rom
+-rw-r--r--    1 arb      os9archi   454656 Oct 18 11:34 Return of Coco.exe
+-rw-r--r--    1 arb      os9archi    22073 Oct 18 11:34 roc_coco3.zip
+-rw-r--r--    1 arb      os9archi   146313 Oct 18 11:34 roc.zip
+
+./incoming/emulator_images/Emulators_System_Files/Roms:
+total 244
+-rw-r--r--    1 arb      os9archi    24972 Oct 18 11:34 coco3_mess.zip
+-rw-r--r--    1 arb      os9archi    27728 Oct 18 11:34 coco3.zip
+-rw-r--r--    1 arb      os9archi    32514 Oct 18 11:34 coco.rom
+-rw-r--r--    1 arb      os9archi    21085 Oct 18 11:34 diskextrom.zip
+-rw-r--r--    1 arb      os9archi    55991 Oct 18 11:34 miscroms.zip
+-rw-r--r--    1 arb      os9archi    66251 Oct 18 11:34 russcoco3.zip
+
+./incoming/emulator_images/Rom Pak Images:
+total 2152
+-rw-r--r--    1 arb      os9archi     8839 Oct 19 10:41 assault.pak
+-rw-r--r--    1 arb      os9archi     6696 Oct 19 10:41 attack.pak
+-rw-r--r--    1 arb      os9archi    65741 Oct 19 10:41 black_sa.pak
+-rw-r--r--    1 arb      os9archi    65741 Oct 19 10:41 blacksa.pak
+-rw-r--r--    1 arb      os9archi    65741 Oct 19 10:41 blksan.pak.pak
+-rw-r--r--    1 arb      os9archi     7277 Oct 19 10:41 calixto.pak
+-rw-r--r--    1 arb      os9archi     4100 Oct 19 10:41 cavehunt.pak
+-rw-r--r--    1 arb      os9archi     8639 Oct 19 10:41 checkers.pak
+-rw-r--r--    1 arb      os9archi     9544 Oct 19 10:41 chopper.pak
+-rw-r--r--    1 arb      os9archi    19726 Oct 19 10:41 chuck.pak
+-rw-r--r--    1 arb      os9archi     8839 Oct 19 10:41 Copy of assault.pak
+-rw-r--r--    1 arb      os9archi     8196 Oct 19 10:41 cosmic.pak
+-rw-r--r--    1 arb      os9archi    19829 Oct 19 10:41 crash.pak
+-rw-r--r--    1 arb      os9archi    18867 Oct 19 10:41 crystal.pak
+-rw-r--r--    1 arb      os9archi     6958 Oct 19 10:41 cuber.pak
+-rw-r--r--    1 arb      os9archi     8233 Oct 19 10:41 cyrus.pak
+-rw-r--r--    1 arb      os9archi     9418 Oct 19 10:41 defense.pak
+-rw-r--r--    1 arb      os9archi    16397 Oct 19 10:41 demoseed.pak
+-rw-r--r--    1 arb      os9archi     9511 Oct 19 10:41 devil.pak
+-rw-r--r--    1 arb      os9archi    17258 Oct 19 10:42 diablero.pak
+-rw-r--r--    1 arb      os9archi     8315 Oct 19 10:42 doodle.pak
+-rw-r--r--    1 arb      os9archi     8231 Oct 19 10:42 dos4.pak
+-rw-r--r--    1 arb      os9archi    28969 Oct 19 10:42 draconia.pak
+-rw-r--r--    1 arb      os9archi    65741 Oct 19 10:42 dragon_t.pak
+-rw-r--r--    1 arb      os9archi    10947 Oct 19 10:42 electron.pak
+-rw-r--r--    1 arb      os9archi     4440 Oct 19 10:42 galactic.pak
+-rw-r--r--    1 arb      os9archi    65741 Oct 19 10:43 go.pak
+-rw-r--r--    1 arb      os9archi     6428 Oct 19 10:43 hoppy.pak
+-rw-r--r--    1 arb      os9archi    12132 Oct 19 10:43 invas.pak
+-rw-r--r--    1 arb      os9archi    65741 Oct 19 10:43 junior.pak
+-rw-r--r--    1 arb      os9archi    10273 Oct 19 10:43 katerii.pak
+-rw-r--r--    1 arb      os9archi    19750 Oct 19 10:43 king.pak
+-rw-r--r--    1 arb      os9archi    18674 Oct 19 10:43 lancer.pak
+-rw-r--r--    1 arb      os9archi    65997 Oct 19 10:43 menu.pak
+-rw-r--r--    1 arb      os9archi     4100 Oct 19 10:44 meteor.pak
+-rw-r--r--    1 arb      os9archi    11631 Oct 19 10:44 mines.pak
+-rw-r--r--    1 arb      os9archi    20279 Oct 19 10:44 module.pak
+-rw-r--r--    1 arb      os9archi    24753 Oct 19 10:44 morocco.pak
+-rw-r--r--    1 arb      os9archi    15144 Oct 19 10:44 mudpies.pak
+-rw-r--r--    1 arb      os9archi    11109 Oct 19 10:44 ninja.pak
+-rw-r--r--    1 arb      os9archi    12839 Oct 19 10:44 painter.pak
+-rw-r--r--    1 arb      os9archi   522591 Oct 19 10:44 paks1.zip
+-rw-r--r--    1 arb      os9archi    20289 Oct 19 10:44 patrulha.pak
+-rw-r--r--    1 arb      os9archi     9186 Oct 19 10:45 pengon.pak
+-rw-r--r--    1 arb      os9archi    16562 Oct 19 10:45 pooyan.pak
+-rw-r--r--    1 arb      os9archi    65741 Oct 19 10:45 protecto.pak
+-rw-r--r--    1 arb      os9archi    17788 Oct 19 10:45 protectr.pak
+-rw-r--r--    1 arb      os9archi    13608 Oct 19 10:45 quix.pak
+-rw-r--r--    1 arb      os9archi     8196 Oct 19 10:45 railrunr.pak
+-rw-r--r--    1 arb      os9archi    10039 Oct 19 10:45 ranger.pak
+-rw-r--r--    1 arb      os9archi    65741 Oct 19 10:45 return_o.pak
+-rw-r--r--    1 arb      os9archi    13656 Oct 19 10:45 shamus.pak
+-rw-r--r--    1 arb      os9archi    25383 Oct 19 10:45 shock.pak
+-rw-r--r--    1 arb      os9archi    10999 Oct 19 10:45 skramble.pak
+-rw-r--r--    1 arb      os9archi     4139 Oct 19 10:45 snaky.pak
+-rw-r--r--    1 arb      os9archi    65997 Oct 19 10:45 sound.pak
+-rw-r--r--    1 arb      os9archi    12810 Oct 19 10:45 spacewar.pak
+-rw-r--r--    1 arb      os9archi    65741 Oct 19 10:45 tea_time.pak
+-rw-r--r--    1 arb      os9archi    65741 Oct 19 10:45 the_king.pak
+-rw-r--r--    1 arb      os9archi    18349 Oct 19 10:46 touch.pak
+-rw-r--r--    1 arb      os9archi    65741 Oct 19 10:46 zaxxon.pak
+
+./incoming/emulator_images/Roms:
+total 244
+-rw-r--r--    1 arb      os9archi    24972 Oct  7 17:17 coco3_mess.zip
+-rw-r--r--    1 arb      os9archi    27728 Oct  7 17:16 coco3.zip
+-rw-r--r--    1 arb      os9archi    32514 Oct  7 17:16 coco.rom
+-rw-r--r--    1 arb      os9archi    21085 Oct  7 17:16 diskextrom.zip
+-rw-r--r--    1 arb      os9archi    55991 Oct  7 17:17 miscroms.zip
+-rw-r--r--    1 arb      os9archi    66251 Oct  7 17:17 russcoco3.zip
+
+./incoming/john collyer:
+total 6644
+-rw-r--r--    1 arb      os9archi  6785325 Jan 24  2001 coco.zip
+-rw-r--r--    1 arb      os9archi     1214 Jan 24  2001 README
+
+./incoming/netrunnrs_uploads:
+total 32
+drwxr-xr-x    3 arb      os9archi     4096 Nov 29 15:23 cas
+-rw-r--r--    1 arb      os9archi      282 Jan 24  2001 CoCoEmulation.txt
+drwxr-xr-x    4 arb      os9archi     4096 Nov 29 15:23 disks
+drwxr-xr-x    3 arb      os9archi     4096 Nov 29 15:23 Documents
+drwxr-xr-x    4 arb      os9archi     4096 Nov 29 15:23 incoming
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 pak
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 Roms
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 scrnsaver
+
+./incoming/netrunnrs_uploads/cas:
+total 2352
+-rw-r--r--    1 arb      os9archi    26951 Jan 24  2001 3D_NOUGH.CAS
+-rw-r--r--    1 arb      os9archi    21222 Jan 24  2001 8_BALL.CAS
+-rw-r--r--    1 arb      os9archi    16440 Jan 24  2001 ADVENTUR.CAS
+-rw-r--r--    1 arb      os9archi     8079 Jan 24  2001 AIR_ASSA.CAS
+-rw-r--r--    1 arb      os9archi     8079 Jan 24  2001 Air_Assault.cas
+-rw-r--r--    1 arb      os9archi    25805 Jan 24  2001 AIRBALL.CAS
+-rw-r--r--    1 arb      os9archi    10911 Jan 24  2001 ALCATRAZ.CAS
+-rw-r--r--    1 arb      os9archi    17565 Jan 24  2001 AND_ALL_.CAS
+-rw-r--r--    1 arb      os9archi    30268 Jan 24  2001 Android_Attack.cas
+-rw-r--r--    1 arb      os9archi    30268 Jan 24  2001 ANDROID_.CAS
+-rw-r--r--    1 arb      os9archi     7584 Jan 24  2001 ANOTHER_.CAS
+-rw-r--r--    1 arb      os9archi     7584 Jan 24  2001 Another_Golf_Game.cas
+-rw-r--r--    1 arb      os9archi    21875 Jan 24  2001 AQUANAUT.CAS
+-rw-r--r--    1 arb      os9archi    16371 Jan 24  2001 ARCADIA.CAS
+-rw-r--r--    1 arb      os9archi     7433 Jan 24  2001 ASTROBLA.CAS
+-rw-r--r--    1 arb      os9archi     7004 Jan 24  2001 ATTACK.CAS
+-rw-r--r--    1 arb      os9archi    34196 Jan 24  2001 BACKTRAC.CAS
+-rw-r--r--    1 arb      os9archi        0 Jan 24  2001 BC_BILL.CAS
+-rw-r--r--    1 arb      os9archi    15975 Jan 24  2001 BEAMRIDE.CAS
+-rw-r--r--    1 arb      os9archi    25874 Jan 24  2001 BEANSTAL.CAS
+-rw-r--r--    1 arb      os9archi    14622 Jan 24  2001 BLOC_HEA.CAS
+-rw-r--r--    1 arb      os9archi    20344 Jan 24  2001 BLOCKBUS.CAS
+-rw-r--r--    1 arb      os9archi     6458 Jan 24  2001 BONKA.CAS
+-rw-r--r--    1 arb      os9archi    24795 Jan 24  2001 BORIS_TH.CAS
+-rw-r--r--    1 arb      os9archi    43445 Jan 24  2001 Boulder.cas
+-rw-r--r--    1 arb      os9archi    43445 Jan 24  2001 Boulder_Crash_2.cas
+-rw-r--r--    1 arb      os9archi     8763 Jan 24  2001 BRIDGE.CAS
+-rw-r--r--    1 arb      os9archi    13565 Jan 24  2001 BUBBLE_B.CAS
+-rw-r--r--    1 arb      os9archi    14928 Jan 24  2001 BUG_DIVE.CAS
+-rw-r--r--    1 arb      os9archi    33283 Jan 24  2001 BUZZARD_.CAS
+-rw-r--r--    1 arb      os9archi    33283 Jan 24  2001 buzzb.cas
+-rw-r--r--    1 arb      os9archi     5026 Jan 24  2001 BUZZ.CAS
+-rw-r--r--    1 arb      os9archi     8434 Jan 24  2001 CANYON.CAS
+-rw-r--r--    1 arb      os9archi    82944 Jan 24  2001 CASDSK1.DSK
+-rw-r--r--    1 arb      os9archi    27187 Jan 24  2001 CASH.cas
+-rw-r--r--    1 arb      os9archi     7566 Jan 24  2001 Caves_of_Doom.cas
+-rw-r--r--    1 arb      os9archi    15848 Jan 24  2001 Chuckie_Egg.cas
+-rw-r--r--    1 arb      os9archi    12157 Jan 24  2001 Cuthbert_in_the_Mines.cas
+-rw-r--r--    1 arb      os9archi    33399 Jan 24  2001 DARK_PIT.CAS
+-rw-r--r--    1 arb      os9archi    15411 Jan 24  2001 Demolition_Derby.cas
+-rw-r--r--    1 arb      os9archi    21767 Jan 24  2001 DONKEY.CAS
+-rw-r--r--    1 arb      os9archi    27032 Jan 24  2001 DRACONIA.CAS
+-rw-r--r--    1 arb      os9archi    27032 Jan 24  2001 Draconians.cas
+-rw-r--r--    1 arb      os9archi    21623 Jan 24  2001 Dragon_Selection_1.cas
+-rw-r--r--    1 arb      os9archi    28300 Jan 24  2001 Dungeon_Destiny.cas
+-rw-r--r--    1 arb      os9archi    16065 Jan 24  2001 El_Bandito.cas
+-rw-r--r--    1 arb      os9archi    42938 Jan 24  2001 FORMULA_.CAS
+-rw-r--r--    1 arb      os9archi    21970 Jan 24  2001 Franklins_Tomb.cas
+-rw-r--r--    1 arb      os9archi     8514 Jan 24  2001 FURY.CAS
+-rw-r--r--    1 arb      os9archi    32882 Jan 24  2001 GALACTIC.CAS
+-rw-r--r--    1 arb      os9archi    14245 Jan 24  2001 Grid_Runner.cas
+-rw-r--r--    1 arb      os9archi     7769 Jan 24  2001 INVADERS.CAS
+-rw-r--r--    1 arb      os9archi    33671 Jan 24  2001 JET_SET_.CAS
+-rw-r--r--    1 arb      os9archi     6655 Jan 24  2001 JSWEDIT.CAS
+-rw-r--r--    1 arb      os9archi     6600 Jan 24  2001 JSWGFX.CAS
+-rw-r--r--    1 arb      os9archi     6793 Jan 24  2001 JSWPLAY.CAS
+-rw-r--r--    1 arb      os9archi    34803 Jan 24  2001 JSWPLUS.CAS
+-rw-r--r--    1 arb      os9archi     9305 Jan 24  2001 King_Cuthbert.cas
+-rw-r--r--    1 arb      os9archi    31837 Jan 24  2001 LUNAR.CAS
+-rw-r--r--    1 arb      os9archi    20721 Jan 24  2001 LUNAR_RO.CAS
+-rw-r--r--    1 arb      os9archi     1025 Jan 24  2001 mandel2.cas
+-rw-r--r--    1 arb      os9archi      968 Jan 24  2001 Mandel.cas
+-rw-r--r--    1 arb      os9archi      236 Jan 24  2001 Mandel.txt
+-rw-r--r--    1 arb      os9archi    31942 Jan 24  2001 MANIC_MI.CAS
+-rw-r--r--    1 arb      os9archi    31942 Jan 24  2001 Manic_Miner.cas
+-rw-r--r--    1 arb      os9archi    18721 Jan 24  2001 MANSION_.CAS
+-rw-r--r--    1 arb      os9archi    19327 Jan 24  2001 Megamaze.cas
+-rw-r--r--    1 arb      os9archi    11270 Jan 24  2001 MISCOM.CAS
+-rw-r--r--    1 arb      os9archi      302 Jan 24  2001 MISCOM.TXT
+-rw-r--r--    1 arb      os9archi    31318 Jan 24  2001 MOON_CRE.CAS
+-rw-r--r--    1 arb      os9archi      953 Jan 24  2001 MUSIC.CAS
+-rw-r--r--    1 arb      os9archi    16757 Jan 24  2001 PINBALL.CAS
+-rw-r--r--    1 arb      os9archi    22753 Jan 24  2001 Pit.cas
+-rw-r--r--    1 arb      os9archi       73 Jan 24  2001 PORT.CFG
+-rw-r--r--    1 arb      os9archi    12053 Jan 24  2001 QUEST.CAS
+-rw-r--r--    1 arb      os9archi     3078 Jan 24  2001 RETCHEAT.CAS
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:23 ret-ring
+-rw-r--r--    1 arb      os9archi    36038 Jan 24  2001 RETURN2.CAS
+-rw-r--r--    1 arb      os9archi    17086 Jan 24  2001 RETURN3.CAS
+-rw-r--r--    1 arb      os9archi    18383 Jan 24  2001 RETURN.CAS
+-rw-r--r--    1 arb      os9archi    10522 Jan 24  2001 RETURN_O.CAS
+-rw-r--r--    1 arb      os9archi    26838 Jan 24  2001 Robin_Hood.cas
+-rw-r--r--    1 arb      os9archi    59794 Jan 24  2001 rod.cas
+-rw-r--r--    1 arb      os9archi     2288 Jan 24  2001 SPACE_IN.CAS
+-rw-r--r--    1 arb      os9archi    17267 Jan 24  2001 SPACE_RA.CAS
+-rw-r--r--    1 arb      os9archi    26851 Jan 24  2001 SPACE_WR.CAS
+-rw-r--r--    1 arb      os9archi    27340 Jan 24  2001 SPEED_RA.CAS
+-rw-r--r--    1 arb      os9archi    32034 Jan 24  2001 STARMAN.CAS
+-rw-r--r--    1 arb      os9archi    24359 Jan 24  2001 STONE_RA.CAS
+-rw-r--r--    1 arb      os9archi    27095 Jan 24  2001 SUPERKID.CAS
+-rw-r--r--    1 arb      os9archi     8506 Jan 24  2001 SYNTHER_.CAS
+-rw-r--r--    1 arb      os9archi    30498 Jan 24  2001 SYZYGY.CAS
+-rw-r--r--    1 arb      os9archi    32597 Jan 24  2001 TEMPLE.CAS
+-rw-r--r--    1 arb      os9archi    59794 Jan 24  2001 therng.cas
+-rw-r--r--    1 arb      os9archi    26738 Jan 24  2001 TIME_BAN.CAS
+-rw-r--r--    1 arb      os9archi    26738 Jan 24  2001 Time_Bandit.cas
+-rw-r--r--    1 arb      os9archi    33504 Jan 24  2001 TOTAL_EC.CAS
+-rw-r--r--    1 arb      os9archi    29084 Jan 24  2001 TREKBOER.CAS
+-rw-r--r--    1 arb      os9archi    25868 Jan 24  2001 TROOPER.CAS
+-rw-r--r--    1 arb      os9archi    24295 Jan 24  2001 TUBEARMY.CAS
+-rw-r--r--    1 arb      os9archi    25206 Jan 24  2001 TURBO.CAS
+-rw-r--r--    1 arb      os9archi    15068 Jan 24  2001 UGH!.CAS
+-rw-r--r--    1 arb      os9archi    16719 Jan 24  2001 ULTIMATE.CAS
+-rw-r--r--    1 arb      os9archi    25765 Jan 24  2001 VORTEX.CAS
+-rw-r--r--    1 arb      os9archi    25580 Jan 24  2001 Wizards_Quest.cas
+-rw-r--r--    1 arb      os9archi    19988 Jan 24  2001 WORLD_BO.CAS
+
+./incoming/netrunnrs_uploads/cas/ret-ring:
+total 80
+-rw-r--r--    1 arb      os9archi     3078 Jan 24  2001 RETCHEAT.CAS
+-rw-r--r--    1 arb      os9archi    36038 Jan 24  2001 RETURN2.CAS
+-rw-r--r--    1 arb      os9archi    17086 Jan 24  2001 RETURN3.CAS
+-rw-r--r--    1 arb      os9archi    18383 Jan 24  2001 RETURN.CAS
+
+./incoming/netrunnrs_uploads/disks:
+total 7564
+-rw-r--r--    1 arb      os9archi   159232 Jan 24  2001 Basic1.dsk
+-rw-r--r--    1 arb      os9archi   132864 Jan 24  2001 BASIC2.DSK
+-rw-r--r--    1 arb      os9archi   141824 Jan 24  2001 CAVE1.DSK
+-rw-r--r--    1 arb      os9archi   184320 Jan 24  2001 CAVES2.DSK
+-rw-r--r--    1 arb      os9archi   184320 Jan 24  2001 caves.dsk
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:23 caves_UH
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:23 cfdm
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 COCOUTIL.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D01.dsk
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D02.dsk
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D03.dsk
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D04.dsk
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D05.dsk
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D06.dsk
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D07.dsk
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D08.dsk
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D09.dsk
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D10.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D11.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D12.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D13.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D14.DSK
+-rw-r--r--    1 arb      os9archi   104960 Jan 24  2001 D15.dsk
+-rw-r--r--    1 arb      os9archi   122880 Jan 24  2001 D16.dsk
+-rw-r--r--    1 arb      os9archi   102656 Jan 24  2001 D17.dsk
+-rw-r--r--    1 arb      os9archi    82944 Jan 24  2001 D18.dsk
+-rw-r--r--    1 arb      os9archi    99584 Jan 24  2001 D19.dsk
+-rw-r--r--    1 arb      os9archi    93184 Jan 24  2001 D20.dsk
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D21.dsk
+-rw-r--r--    1 arb      os9archi    94720 Jan 24  2001 D22.dsk
+-rw-r--r--    1 arb      os9archi   158208 Jan 24  2001 D23.dsk
+-rw-r--r--    1 arb      os9archi   115200 Jan 24  2001 D24.dsk
+-rw-r--r--    1 arb      os9archi   176640 Jan 24  2001 D25.dsk
+-rw-r--r--    1 arb      os9archi   140032 Jan 24  2001 D26.dsk
+-rw-r--r--    1 arb      os9archi    82944 Jan 24  2001 D27.dsk
+-rw-r--r--    1 arb      os9archi   183552 Jan 24  2001 D28.dsk
+-rw-r--r--    1 arb      os9archi   161024 Jan 24  2001 D29.dsk
+-rw-r--r--    1 arb      os9archi   173568 Jan 24  2001 D30.dsk
+-rw-r--r--    1 arb      os9archi   158464 Jan 24  2001 D31.dsk
+-rw-r--r--    1 arb      os9archi   160512 Jan 24  2001 D32.dsk
+-rw-r--r--    1 arb      os9archi   150528 Jan 24  2001 D33.dsk
+-rw-r--r--    1 arb      os9archi    82944 Jan 24  2001 D34.dsk
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 D35.dsk
+-rw-r--r--    1 arb      os9archi   110080 Jan 24  2001 D36.dsk
+-rw-r--r--    1 arb      os9archi   104960 Jan 24  2001 G1.DSK
+-rw-r--r--    1 arb      os9archi   122880 Jan 24  2001 G2.DSK
+-rw-r--r--    1 arb      os9archi   102656 Jan 24  2001 G3.DSK
+-rw-r--r--    1 arb      os9archi    82944 Jan 24  2001 G4.DSK
+-rw-r--r--    1 arb      os9archi    99584 Jan 24  2001 G5.DSK
+-rw-r--r--    1 arb      os9archi    93184 Jan 24  2001 G6.DSK
+-rw-r--r--    1 arb      os9archi   110080 Jan 24  2001 GAMES1.DSK
+-rw-r--r--    1 arb      os9archi     5088 Jan 24  2001 greycoco1.gif
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 JOGOS3.DSK
+-rw-r--r--    1 arb      os9archi    80384 Jan 24  2001 pacdemo.dsk
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 S24.dsk
+-rw-r--r--    1 arb      os9archi   148608 Jan 24  2001 tokstok1.dsk
+-rw-r--r--    1 arb      os9archi    26282 Jan 24  2001 trader.bin
+
+./incoming/netrunnrs_uploads/disks/caves_UH:
+total 512
+-rw-r--r--    1 arb      os9archi   184320 Jan 24  2001 Caves1.dsk
+-rw-r--r--    1 arb      os9archi   141824 Jan 24  2001 Caves2.dsk
+-rw-r--r--    1 arb      os9archi   184320 Jan 24  2001 Caves3.dsk
+
+./incoming/netrunnrs_uploads/disks/cfdm:
+total 336
+-rw-r--r--    1 arb      os9archi     3138 Jan 24  2001 DSKINI.EXE
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 ISSUE52M.DSK
+-rw-r--r--    1 arb      os9archi   161280 Jan 24  2001 ISSUE52P.DSK
+-rw-r--r--    1 arb      os9archi     2126 Jan 24  2001 README.TXT
+
+./incoming/netrunnrs_uploads/Documents:
+total 160
+-rw-r--r--    1 arb      os9archi     5271 Jan 24  2001 basic.txt
+-rw-r--r--    1 arb      os9archi     7508 Jan 24  2001 CoCobasics.zip
+-rw-r--r--    1 arb      os9archi    41578 Jan 24  2001 COCO.DOC
+-rw-r--r--    1 arb      os9archi    29932 Jan 24  2001 Dagorath_Man.txt
+-rw-r--r--    1 arb      os9archi     9450 Jan 24  2001 diskbasic.txt
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:23 Dungeons of Daggorath Program_files
+-rw-r--r--    1 arb      os9archi    46848 Jan 24  2001 Dungeons of Daggorath Program.htm
+-rw-r--r--    1 arb      os9archi     3737 Jan 24  2001 extendedbasic.txt
+
+./incoming/netrunnrs_uploads/Documents/Dungeons of Daggorath Program_files:
+total 168
+-rw-r--r--    1 arb      os9archi   101480 Jan 24  2001 DAGGOR1.jpg
+-rw-r--r--    1 arb      os9archi    58496 Jan 24  2001 DAGGOR3.jpg
+
+./incoming/netrunnrs_uploads/incoming:
+total 720
+-rw-r--r--    1 arb      os9archi    22656 Jan 24  2001 ARENA.ARC
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:23 bas
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:23 bin
+-rw-r--r--    1 arb      os9archi    20588 Jan 24  2001 cambush.arc
+-rw-r--r--    1 arb      os9archi    38652 Jan 24  2001 CROID.ARC
+-rw-r--r--    1 arb      os9archi     1384 Jan 24  2001 c-trek.txt
+-rw-r--r--    1 arb      os9archi    46238 Jan 24  2001 DGR2ZIP.ZIP
+-rw-r--r--    1 arb      os9archi    15360 Jan 24  2001 GILIGAN1.ARC
+-rw-r--r--    1 arb      os9archi    16384 Jan 24  2001 GILIGAN2.ARC
+-rw-r--r--    1 arb      os9archi   129664 Jan 24  2001 gr2k-1.arc
+-rw-r--r--    1 arb      os9archi   106496 Jan 24  2001 gr2k-2.arc
+-rw-r--r--    1 arb      os9archi     5824 Jan 24  2001 gr2k.txt
+-rw-r--r--    1 arb      os9archi    22912 Jan 24  2001 HANGMAN3.ARC
+-rw-r--r--    1 arb      os9archi    22272 Jan 24  2001 HAUNTEDH.ARC
+-rw-r--r--    1 arb      os9archi    26624 Jan 24  2001 PACDUDE.ARC
+-rw-r--r--    1 arb      os9archi       73 Jan 24  2001 PORT.CFG
+-rw-r--r--    1 arb      os9archi   183360 Jan 24  2001 SteveMix.zip
+-rw-r--r--    1 arb      os9archi    26752 Jan 24  2001 WIZARDS.ARC
+
+./incoming/netrunnrs_uploads/incoming/bas:
+total 396
+-rw-r--r--    1 arb      os9archi     9344 Jan 24  2001 5000.BAS
+-rw-r--r--    1 arb      os9archi      512 Jan 24  2001 BOOKPROG.BAS
+-rw-r--r--    1 arb      os9archi     2193 Jan 24  2001 BUSJUMP.BAS
+-rw-r--r--    1 arb      os9archi    11459 Jan 24  2001 BUXOM.BAS
+-rw-r--r--    1 arb      os9archi     9056 Jan 24  2001 CAVE.BAS
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 CHESS3.BAS
+-rw-r--r--    1 arb      os9archi     4910 Jan 24  2001 CHUTE.BAS
+-rw-r--r--    1 arb      os9archi     9335 Jan 24  2001 CIVILWAR.BAS
+-rw-r--r--    1 arb      os9archi    24119 Jan 24  2001 clue.bas
+-rw-r--r--    1 arb      os9archi    11948 Jan 24  2001 c-trek.bas
+-rw-r--r--    1 arb      os9archi    14330 Jan 24  2001 DEEDYORK.BAS
+-rw-r--r--    1 arb      os9archi     5760 Jan 24  2001 DEFENDER.BAS
+-rw-r--r--    1 arb      os9archi     9344 Jan 24  2001 ELIZA.BAS
+-rw-r--r--    1 arb      os9archi    15925 Jan 24  2001 GARGOYLE.BAS
+-rw-r--r--    1 arb      os9archi     4266 Jan 24  2001 GUNNER.BAS
+-rw-r--r--    1 arb      os9archi     5869 Jan 24  2001 HOW.BAS
+-rw-r--r--    1 arb      os9archi    10430 Jan 24  2001 HYAPATIA.BAS
+-rw-r--r--    1 arb      os9archi    14720 Jan 24  2001 KALRR.BAS
+-rw-r--r--    1 arb      os9archi    10079 Jan 24  2001 klondke3.bas
+-rw-r--r--    1 arb      os9archi     6613 Jan 24  2001 LANDER.BAS
+-rw-r--r--    1 arb      os9archi     7151 Jan 24  2001 LIFE.BAS
+-rw-r--r--    1 arb      os9archi     1405 Jan 24  2001 newboot.bas
+-rw-r--r--    1 arb      os9archi    19015 Jan 24  2001 OREGON.BAS
+-rw-r--r--    1 arb      os9archi     8125 Jan 24  2001 OTHELLO.BAS
+-rw-r--r--    1 arb      os9archi     7839 Jan 24  2001 POKER.BAS
+-rw-r--r--    1 arb      os9archi       73 Jan 24  2001 PORT.CFG
+-rw-r--r--    1 arb      os9archi     1024 Jan 24  2001 RAINBOW.BAS
+-rw-r--r--    1 arb      os9archi    13825 Jan 24  2001 RESTRANT.BAS
+-rw-r--r--    1 arb      os9archi     3590 Jan 24  2001 SEQUENCE.BAS
+-rw-r--r--    1 arb      os9archi    13859 Jan 24  2001 solitare.bas
+-rw-r--r--    1 arb      os9archi    22624 Jan 24  2001 STAR.BAS
+-rw-r--r--    1 arb      os9archi    19094 Jan 24  2001 STARLANE.BAS
+-rw-r--r--    1 arb      os9archi     1280 Jan 24  2001 suncrk10.bas
+-rw-r--r--    1 arb      os9archi    19840 Jan 24  2001 TAIPAN3.BAS
+-rw-r--r--    1 arb      os9archi     9472 Jan 24  2001 UNO.BAS
+
+./incoming/netrunnrs_uploads/incoming/bin:
+total 120
+-rw-r--r--    1 arb      os9archi     4480 Jan 24  2001 BACKGAMN.BIN
+-rw-r--r--    1 arb      os9archi    23040 Jan 24  2001 BCBILL.BIN
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 CHESS.BIN
+-rw-r--r--    1 arb      os9archi     2304 Jan 24  2001 GERM.BIN
+-rw-r--r--    1 arb      os9archi     3072 Jan 24  2001 GREMLIN.BIN
+-rw-r--r--    1 arb      os9archi     3328 Jan 24  2001 GRID.BIN
+-rw-r--r--    1 arb      os9archi    10880 Jan 24  2001 HOPBOP.BIN
+-rw-r--r--    1 arb      os9archi     8832 Jan 24  2001 PONK.BIN
+-rw-r--r--    1 arb      os9archi       73 Jan 24  2001 PORT.CFG
+-rw-r--r--    1 arb      os9archi    11776 Jan 24  2001 SHIPHUNT.BIN
+-rw-r--r--    1 arb      os9archi     3328 Jan 24  2001 SQUASH.BIN
+-rw-r--r--    1 arb      os9archi    15360 Jan 24  2001 TETRA.BIN
+-rw-r--r--    1 arb      os9archi     4096 Jan 24  2001 WIGWORM.BIN
+-rw-r--r--    1 arb      os9archi     2816 Jan 24  2001 ZEROG.BIN
+
+./incoming/netrunnrs_uploads/pak:
+total 1188
+-rw-r--r--    1 arb      os9archi   283097 Jan 24  2001 30paks.zip
+-rw-r--r--    1 arb      os9archi     8839 Jan 24  2001 ASSAULT.PAK
+-rw-r--r--    1 arb      os9archi     6696 Jan 24  2001 ATTACK.PAK
+-rw-r--r--    1 arb      os9archi    65741 Jan 24  2001 blksan.pak.pak
+-rw-r--r--    1 arb      os9archi     8639 Jan 24  2001 CHECKERS.PAK
+-rw-r--r--    1 arb      os9archi     9544 Jan 24  2001 CHOPPER.PAK
+-rw-r--r--    1 arb      os9archi    19829 Jan 24  2001 CRASH.PAK
+-rw-r--r--    1 arb      os9archi    18867 Jan 24  2001 CRYSTAL.PAK
+-rw-r--r--    1 arb      os9archi     6958 Jan 24  2001 CUBER.PAK
+-rw-r--r--    1 arb      os9archi     8233 Jan 24  2001 CYRUS.PAK
+-rw-r--r--    1 arb      os9archi    16397 Jan 24  2001 DEMOSEED.PAK
+-rw-r--r--    1 arb      os9archi    17258 Jan 24  2001 diablero.pak
+-rw-r--r--    1 arb      os9archi    28969 Jan 24  2001 DRACONIA.PAK
+-rw-r--r--    1 arb      os9archi     4440 Jan 24  2001 GALACTIC.PAK
+-rw-r--r--    1 arb      os9archi    65741 Jan 24  2001 GALAGON.PAK
+-rw-r--r--    1 arb      os9archi    65741 Jan 24  2001 GO.PAK
+-rw-r--r--    1 arb      os9archi    19750 Jan 24  2001 KING.PAK
+-rw-r--r--    1 arb      os9archi    65997 Jan 24  2001 MENU.PAK
+-rw-r--r--    1 arb      os9archi    20279 Jan 24  2001 MODULE.PAK
+-rw-r--r--    1 arb      os9archi    24753 Jan 24  2001 MOROCCO.PAK
+-rw-r--r--    1 arb      os9archi    20289 Jan 24  2001 PATRULHA.PAK
+-rw-r--r--    1 arb      os9archi    17962 Jan 24  2001 POOYAN.PAK
+-rw-r--r--    1 arb      os9archi    65741 Jan 24  2001 PROTECTO.PAK
+-rw-r--r--    1 arb      os9archi    17788 Jan 24  2001 PROTECTR.PAK
+-rw-r--r--    1 arb      os9archi    13608 Jan 24  2001 QUIX.PAK
+-rw-r--r--    1 arb      os9archi     4222 Jan 24  2001 RAILRUNR.PAK
+-rw-r--r--    1 arb      os9archi    13656 Jan 24  2001 SHAMUS.PAK
+-rw-r--r--    1 arb      os9archi    25383 Jan 24  2001 SHOCK.PAK
+-rw-r--r--    1 arb      os9archi    65997 Jan 24  2001 SOUND.PAK
+-rw-r--r--    1 arb      os9archi    18349 Jan 24  2001 TOUCH.PAK
+-rw-r--r--    1 arb      os9archi    65741 Jan 24  2001 Zaxxon.pak
+
+./incoming/netrunnrs_uploads/Roms:
+total 100
+-rw-r--r--    1 arb      os9archi    16386 Jan 24  2001 COCO.ROM
+-rw-r--r--    1 arb      os9archi    16400 Jan 24  2001 d32rom.dgn
+-rw-r--r--    1 arb      os9archi    16400 Jan 24  2001 d64rom2.dgn
+-rw-r--r--    1 arb      os9archi    16400 Jan 24  2001 dragrom.dgn
+-rw-r--r--    1 arb      os9archi    16400 Jan 24  2001 tandyrom.dgn
+
+./incoming/netrunnrs_uploads/scrnsaver:
+total 0
+
+./incoming/OS-9 C-Compiler PDF 300DPI:
+total 9160
+-rw-r--r--    1 arb      os9archi   204064 Sep 30 19:56 Appendix-A.PDF
+-rw-r--r--    1 arb      os9archi   210634 Sep 30 19:57 Appendix-B.PDF
+-rw-r--r--    1 arb      os9archi   342945 Jul 17  2001 Appendix-C.PDF
+-rw-r--r--    1 arb      os9archi   439868 Sep 30 20:00 Appendix-D.PDF
+-rw-r--r--    1 arb      os9archi   578674 Sep 30 20:04 C-Compiler-Ch1.PDF
+-rw-r--r--    1 arb      os9archi   293677 Sep 30 20:06 C-Compiler-Ch2.PDF
+-rw-r--r--    1 arb      os9archi   909877 Sep 30 20:11 C-Compiler-Ch3.PDF
+-rw-r--r--    1 arb      os9archi   867075 Sep 30 20:16 C-Compiler-Ch4.PDF
+-rw-r--r--    1 arb      os9archi    67590 Sep 30 21:03 C-Compiler-TOC-Index BW.PDF
+-rw-r--r--    1 arb      os9archi  5397015 Sep 30 20:48 C-Compiler-TOC-Index.PDF
+
+./incoming/OS-9 Level 2 Manual HTML:
+total 28
+drwxr-xr-x   29 arb      os9archi     4096 Nov 29 15:25 Basic09
+drwxr-xr-x   15 arb      os9archi     4096 Nov 29 15:25 Commands
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Covers
+drwxr-xr-x   13 arb      os9archi     4096 Nov 29 15:25 Getting Started
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Glossary
+drwxr-xr-x   15 arb      os9archi     4096 Nov 29 15:25 Techinical Reference
+drwxr-xr-x    9 arb      os9archi     4096 Nov 29 15:25 Windows
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09:
+total 108
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Appendix A
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Appendix B
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 1
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 10
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 11 Pg 101-126
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 11 Pg 1-26
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 11Pg 127-150
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 11 Pg 151-176
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 11 Pg 177-188
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 11 Pg 27-50
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 11 Pg 51-76
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 11 Pg 77-100
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 12
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 2
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 3
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 4
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 5
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 6
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 7
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 8
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 9 Pg 101-126
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 9 Pg 1-26
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 9 Pg 27-50
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 9 Pg 51-76
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Ch 9 Pg 77-100
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - Index
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Basic09 - TOC
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Appendix A:
+total 24
+-rw-r--r--    1 arb      os9archi    22927 Jan 24  2001 Basic09 - Appendix A.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Appendix B:
+total 12
+-rw-r--r--    1 arb      os9archi    10599 Jan 24  2001 Basic09 - Appendix B.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 1:
+total 32
+-rw-r--r--    1 arb      os9archi    30533 Jan 24  2001 Basic09 - Ch 1.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 10:
+total 48
+-rw-r--r--    1 arb      os9archi    47462 Jan 24  2001 Basic09 - Ch 10.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 11 Pg 101-126:
+total 84
+-rw-r--r--    1 arb      os9archi    80868 Jan 24  2001 Basic09 - Ch 11 Pg 101-126.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 11 Pg 1-26:
+total 92
+-rw-r--r--    1 arb      os9archi    86614 Jan 24  2001 Basic09 - Ch 11 Pg 1-26.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 11Pg 127-150:
+total 32
+-rw-r--r--    1 arb      os9archi    32768 Jan 24  2001 Basic09 - Ch 11Pg 127-150.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 11 Pg 151-176:
+total 80
+-rw-r--r--    1 arb      os9archi    76256 Jan 24  2001 Basic09 - Ch 11 Pg 151-176.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 11 Pg 177-188:
+total 40
+-rw-r--r--    1 arb      os9archi    40946 Jan 24  2001 Basic09 - Ch 11 Pg 177-188.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 11 Pg 27-50:
+total 68
+-rw-r--r--    1 arb      os9archi    64043 Jan 24  2001 Basic09 - Ch 11 Pg 27-50.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 11 Pg 51-76:
+total 76
+-rw-r--r--    1 arb      os9archi    73721 Jan 24  2001 Basic09 - Ch 11 Pg 51-76.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 11 Pg 77-100:
+total 80
+-rw-r--r--    1 arb      os9archi    74357 Jan 24  2001 Basic09 - Ch 11 Pg 77-100.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 12:
+total 16
+-rw-r--r--    1 arb      os9archi    15610 Jan 24  2001 Basic09 - Ch 12.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 2:
+total 12
+-rw-r--r--    1 arb      os9archi    10396 Jan 24  2001 Basic09 - Ch 2.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 3:
+total 40
+-rw-r--r--    1 arb      os9archi    39010 Jan 24  2001 Basic09 - Ch 3.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 4:
+total 56
+-rw-r--r--    1 arb      os9archi    52607 Jan 24  2001 Basic09 - Ch 4.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 5:
+total 24
+-rw-r--r--    1 arb      os9archi    24208 Jan 24  2001 Basic09 - Ch 5.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 6:
+total 72
+-rw-r--r--    1 arb      os9archi    65889 Jan 24  2001 Basic09 - Ch 6.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 7:
+total 40
+-rw-r--r--    1 arb      os9archi    40153 Jan 24  2001 Basic09 - Ch 7.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 8:
+total 64
+-rw-r--r--    1 arb      os9archi    60372 Jan 24  2001 Basic09 - Ch 8.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 9 Pg 101-126:
+total 80
+-rw-r--r--    1 arb      os9archi    74014 Jan 24  2001 Basic09 - Ch 9 Pg 101-126.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 9 Pg 1-26:
+total 92
+-rw-r--r--    1 arb      os9archi    88986 Jan 24  2001 Basic09 - Ch 9 Pg 1-26.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 9 Pg 27-50:
+total 88
+-rw-r--r--    1 arb      os9archi    83711 Jan 24  2001 Basic09 - Ch 9 Pg 27-50.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 9 Pg 51-76:
+total 64
+-rw-r--r--    1 arb      os9archi    57563 Jan 24  2001 Basic09 - Ch 9 Pg 51-76.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Ch 9 Pg 77-100:
+total 84
+-rw-r--r--    1 arb      os9archi    78303 Jan 24  2001 Basic09 - Ch 9 Pg 77-100.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - Index:
+total 40
+-rw-r--r--    1 arb      os9archi    39936 Jan 24  2001 Basic09 - Index.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Basic09/Basic09 - TOC:
+total 24
+-rw-r--r--    1 arb      os9archi    22284 Jan 24  2001 Basic09 - TOC.tif.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Commands:
+total 52
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 App A - OS-9 Error Codes
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 App B - Color Computer 2 Compatibility
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 App C - OS-9 Keyboard Codes
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 App D - Keyboard Control Functions
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 CH 1 - Introduction
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 CH 2 - The OS-9 File System
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 CH 3 - Advanced Features of the Shell
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 CH 4 - Multiprogramming and Memory
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 CH 5 - Useful System Information
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 CH 6 - System Command Descriptions
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 CH 7 - Macro Text Editor
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Index
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 TOC
+
+./incoming/OS-9 Level 2 Manual HTML/Commands/App A - OS-9 Error Codes:
+total 92
+-rw-r--r--    1 arb      os9archi    26439 Jan 24  2001 App A - OS-9 Error Codes.htm
+-rw-r--r--    1 arb      os9archi    11166 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi     7959 Jan 24  2001 GR000002.JPG
+-rw-r--r--    1 arb      os9archi    13186 Jan 24  2001 GR000006.JPG
+-rw-r--r--    1 arb      os9archi    12493 Jan 24  2001 GR000007.JPG
+-rw-r--r--    1 arb      os9archi     9868 Jan 24  2001 GR000012.JPG
+
+./incoming/OS-9 Level 2 Manual HTML/Commands/App B - Color Computer 2 Compatibility:
+total 180
+-rw-r--r--    1 arb      os9archi    47312 Jan 24  2001 App B - Color Computer 2 Compatibility.htm
+-rw-r--r--    1 arb      os9archi     5714 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi    12155 Jan 24  2001 GR000010.JPG
+-rw-r--r--    1 arb      os9archi    14438 Jan 24  2001 GR000015.JPG
+-rw-r--r--    1 arb      os9archi     6241 Jan 24  2001 GR000016.JPG
+-rw-r--r--    1 arb      os9archi     9249 Jan 24  2001 GR000017.JPG
+-rw-r--r--    1 arb      os9archi     5411 Jan 24  2001 GR000021.JPG
+-rw-r--r--    1 arb      os9archi     6531 Jan 24  2001 GR000022.JPG
+-rw-r--r--    1 arb      os9archi     6707 Jan 24  2001 GR000023.JPG
+-rw-r--r--    1 arb      os9archi     6500 Jan 24  2001 GR000024.JPG
+-rw-r--r--    1 arb      os9archi     8664 Jan 24  2001 GR000025.JPG
+-rw-r--r--    1 arb      os9archi    13842 Jan 24  2001 GR000027.JPG
+-rw-r--r--    1 arb      os9archi     7990 Jan 24  2001 GR000031.JPG
+-rw-r--r--    1 arb      os9archi     7552 Jan 24  2001 GR000032.JPG
+
+./incoming/OS-9 Level 2 Manual HTML/Commands/App C - OS-9 Keyboard Codes:
+total 8
+-rw-r--r--    1 arb      os9archi     4937 Jan 24  2001 App C - OS-9 Keyboard Codes.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Commands/App D - Keyboard Control Functions:
+total 20
+-rw-r--r--    1 arb      os9archi    10403 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi     7784 Jan 24  2001 OS-9 L-II Commands Appendix D - Keyboard Control Functions.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Commands/CH 1 - Introduction:
+total 1504
+-rw-r--r--    1 arb      os9archi  1513355 Jan 24  2001 GR000001.JPG
+-rw-r--r--    1 arb      os9archi     2663 Jan 24  2001 GR000002.JPG
+-rw-r--r--    1 arb      os9archi    13472 Jan 24  2001 OS-9 L-II Commands Ch 1.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Commands/CH 2 - The OS-9 File System:
+total 80
+-rw-r--r--    1 arb      os9archi    74661 Jan 24  2001 OS-9 L-II Commands Ch 2.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Commands/CH 3 - Advanced Features of the Shell:
+total 76
+-rw-r--r--    1 arb      os9archi    72571 Jan 24  2001 OS-9 L-II Commands Ch 3.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Commands/CH 4 - Multiprogramming and Memory:
+total 48
+-rw-r--r--    1 arb      os9archi    48585 Jan 24  2001 OS-9 L-II Commands Ch 4.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Commands/CH 5 - Useful System Information:
+total 56
+-rw-r--r--    1 arb      os9archi     4288 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi     6988 Jan 24  2001 GR000001.JPG
+-rw-r--r--    1 arb      os9archi     2692 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi    33501 Jan 24  2001 OS-9 L-II Commands Ch 5.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Commands/CH 6 - System Command Descriptions:
+total 508
+-rw-r--r--    1 arb      os9archi     2393 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi     4481 Jan 24  2001 GR000001.JPG
+-rw-r--r--    1 arb      os9archi     4701 Jan 24  2001 GR000002.JPG
+-rw-r--r--    1 arb      os9archi     9968 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi     2393 Jan 24  2001 GR000004.JPG
+-rw-r--r--    1 arb      os9archi     4481 Jan 24  2001 GR000005.JPG
+-rw-r--r--    1 arb      os9archi     4701 Jan 24  2001 GR000006.JPG
+-rw-r--r--    1 arb      os9archi     9968 Jan 24  2001 GR000007.JPG
+-rw-r--r--    1 arb      os9archi     1673 Jan 24  2001 GR000008.JPG
+-rw-r--r--    1 arb      os9archi     1798 Jan 24  2001 GR000010.JPG
+-rw-r--r--    1 arb      os9archi   438374 Jan 24  2001 OS-9 L-II Commands Ch 6.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Commands/CH 7 - Macro Text Editor:
+total 288
+-rw-r--r--    1 arb      os9archi   286846 Jan 24  2001 CH 7 - Macro Text Editor.htm
+-rw-r--r--    1 arb      os9archi        0 Jan 24  2001 Nope.txt
+
+./incoming/OS-9 Level 2 Manual HTML/Commands/Index:
+total 20
+-rw-r--r--    1 arb      os9archi    17559 Jan 24  2001 OS-9 L-II Commands Index.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Commands/TOC:
+total 248
+-rw-r--r--    1 arb      os9archi     9617 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi     9552 Jan 24  2001 GR000007.JPG
+-rw-r--r--    1 arb      os9archi    18936 Jan 24  2001 GR000008.JPG
+-rw-r--r--    1 arb      os9archi    17989 Jan 24  2001 GR000009.JPG
+-rw-r--r--    1 arb      os9archi     7278 Jan 24  2001 GR000010.JPG
+-rw-r--r--    1 arb      os9archi    15744 Jan 24  2001 GR000013.JPG
+-rw-r--r--    1 arb      os9archi    11372 Jan 24  2001 GR000018.JPG
+-rw-r--r--    1 arb      os9archi    86362 Jan 24  2001 GR000019.JPG
+-rw-r--r--    1 arb      os9archi     5088 Jan 24  2001 GR000020.JPG
+-rw-r--r--    1 arb      os9archi    23237 Jan 24  2001 OS-9 L-II Commands TOC-1.htm
+-rw-r--r--    1 arb      os9archi    22287 Jan 24  2001 OS-9 L-II Commands TOC.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Covers:
+total 316
+-rw-r--r--    1 arb      os9archi   310843 Jan 24  2001 GR000011.JPG
+-rw-r--r--    1 arb      os9archi      972 Jan 24  2001 OS-9 L-II End Cover Inverse 600.htm
+-rw-r--r--    1 arb      os9archi     1529 Jan 24  2001 OS-9 L-II End Cover Inverse.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Getting Started:
+total 44
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Getting Started With OS-9 Ch 1
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Getting Started With OS-9 Ch 2
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Getting Started With OS-9 Ch 3
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Getting Started With OS-9 Ch 4
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Getting Started With OS-9 Ch 5
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Getting Started With OS-9 Ch 6
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Getting Started With OS-9 Ch 7
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Getting Started With OS-9 Index
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Getting Started With OS-9 Part 1
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Getting Started With OS-9 Part 2
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Getting Started With OS-9 TOC
+
+./incoming/OS-9 Level 2 Manual HTML/Getting Started/Getting Started With OS-9 Ch 1:
+total 24
+-rw-r--r--    1 arb      os9archi    21830 Jan 24  2001 Getting Started With OS-9 Ch 1.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Getting Started/Getting Started With OS-9 Ch 2:
+total 20
+-rw-r--r--    1 arb      os9archi    19139 Jan 24  2001 Getting Started With OS-9 Ch 2.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Getting Started/Getting Started With OS-9 Ch 3:
+total 32
+-rw-r--r--    1 arb      os9archi    30761 Jan 24  2001 Getting Started With OS-9 Ch 3.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Getting Started/Getting Started With OS-9 Ch 4:
+total 28
+-rw-r--r--    1 arb      os9archi    24927 Jan 24  2001 Getting Started With OS-9 Ch 4.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Getting Started/Getting Started With OS-9 Ch 5:
+total 40
+-rw-r--r--    1 arb      os9archi    39872 Jan 24  2001 Getting Started With OS-9 Ch 5.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Getting Started/Getting Started With OS-9 Ch 6:
+total 24
+-rw-r--r--    1 arb      os9archi    24393 Jan 24  2001 Getting Started With OS-9 Ch 6.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Getting Started/Getting Started With OS-9 Ch 7:
+total 64
+-rw-r--r--    1 arb      os9archi    60841 Jan 24  2001 Getting Started With OS-9 Ch 7.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Getting Started/Getting Started With OS-9 Index:
+total 16
+-rw-r--r--    1 arb      os9archi    14929 Jan 24  2001 Getting Started With OS-9 Index.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Getting Started/Getting Started With OS-9 Part 1:
+total 4
+-rw-r--r--    1 arb      os9archi     1161 Jan 24  2001 Getting Started With OS-9 Part 1.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Getting Started/Getting Started With OS-9 Part 2:
+total 4
+-rw-r--r--    1 arb      os9archi     1207 Jan 24  2001 Getting Started With OS-9 Part 2.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Getting Started/Getting Started With OS-9 TOC:
+total 16
+-rw-r--r--    1 arb      os9archi    13904 Jan 24  2001 Getting Started With OS-9 TOC.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Glossary:
+total 96
+-rw-r--r--    1 arb      os9archi    92788 Jan 24  2001 OS-9 L-II Glossary.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference:
+total 52
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 App A
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 App B
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 App c
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Ch 1
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Ch 2
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Ch 3
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Ch 4
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Ch 5
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Ch 6
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Ch 7
+drwxr-xr-x    7 arb      os9archi     4096 Nov 29 15:25 Ch 8
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Index
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 TOC
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/App A:
+total 96
+-rw-r--r--    1 arb      os9archi    15118 Jan 24  2001 A.htm
+-rw-r--r--    1 arb      os9archi     5937 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi     3967 Jan 24  2001 GR000001.JPG
+-rw-r--r--    1 arb      os9archi    18045 Jan 24  2001 GR000004.JPG
+-rw-r--r--    1 arb      os9archi    12891 Jan 24  2001 GR000005.JPG
+-rw-r--r--    1 arb      os9archi    31130 Jan 24  2001 GR000011.JPG
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/App B:
+total 4
+-rw-r--r--    1 arb      os9archi     3238 Jan 24  2001 B.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/App c:
+total 60
+-rw-r--r--    1 arb      os9archi    32336 Jan 24  2001 C.htm
+-rw-r--r--    1 arb      os9archi    12406 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi    10655 Jan 24  2001 GR000003.JPG
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/Ch 1:
+total 32
+-rw-r--r--    1 arb      os9archi    11341 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi    17898 Jan 24  2001 OS-9 L-II Technical Reference Ch 1.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/Ch 2:
+total 64
+-rw-r--r--    1 arb      os9archi    54997 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi     4096 Jan 24  2001 OS-9 L-II Technical Reference Ch 2.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/Ch 3:
+total 144
+-rw-r--r--    1 arb      os9archi     7946 Jan 24  2001 GR000001.JPG
+-rw-r--r--    1 arb      os9archi     6501 Jan 24  2001 GR000004.JPG
+-rw-r--r--    1 arb      os9archi    11041 Jan 24  2001 GR000009.JPG
+-rw-r--r--    1 arb      os9archi    14323 Jan 24  2001 GR000010.JPG
+-rw-r--r--    1 arb      os9archi     4077 Jan 24  2001 GR000011.JPG
+-rw-r--r--    1 arb      os9archi    48605 Jan 24  2001 GR000012.JPG
+-rw-r--r--    1 arb      os9archi     8501 Jan 24  2001 GR000014.JPG
+-rw-r--r--    1 arb      os9archi    33994 Jan 24  2001 OS-9 L-II Technical Reference Ch 3.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/Ch 4:
+total 444
+-rw-r--r--    1 arb      os9archi    93534 Jan 24  2001 CH 4.htm
+-rw-r--r--    1 arb      os9archi    78353 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi    21706 Jan 24  2001 GR000001.JPG
+-rw-r--r--    1 arb      os9archi    43621 Jan 24  2001 GR000002.JPG
+-rw-r--r--    1 arb      os9archi     8063 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi     1641 Jan 24  2001 GR000007.JPG
+-rw-r--r--    1 arb      os9archi    24812 Jan 24  2001 GR000008.JPG
+-rw-r--r--    1 arb      os9archi     2478 Jan 24  2001 GR000009.JPG
+-rw-r--r--    1 arb      os9archi     9820 Jan 24  2001 GR000010.JPG
+-rw-r--r--    1 arb      os9archi     8191 Jan 24  2001 GR000014.JPG
+-rw-r--r--    1 arb      os9archi    12171 Jan 24  2001 GR000018.JPG
+-rw-r--r--    1 arb      os9archi     3411 Jan 24  2001 GR000019.JPG
+-rw-r--r--    1 arb      os9archi     4431 Jan 24  2001 GR000020.JPG
+-rw-r--r--    1 arb      os9archi     8860 Jan 24  2001 GR000023.JPG
+-rw-r--r--    1 arb      os9archi    12519 Jan 24  2001 GR000027.JPG
+-rw-r--r--    1 arb      os9archi     3962 Jan 24  2001 GR000028.JPG
+-rw-r--r--    1 arb      os9archi     9421 Jan 24  2001 GR000029.JPG
+-rw-r--r--    1 arb      os9archi     1321 Jan 24  2001 GR000032.JPG
+-rw-r--r--    1 arb      os9archi    12891 Jan 24  2001 GR000035.JPG
+-rw-r--r--    1 arb      os9archi     9791 Jan 24  2001 GR000039.JPG
+-rw-r--r--    1 arb      os9archi     2040 Jan 24  2001 GR000044.JPG
+-rw-r--r--    1 arb      os9archi    12928 Jan 24  2001 GR000051.JPG
+-rw-r--r--    1 arb      os9archi     9914 Jan 24  2001 GR000054.JPG
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/Ch 5:
+total 280
+-rw-r--r--    1 arb      os9archi   120735 Jan 24  2001 CH 5.htm
+-rw-r--r--    1 arb      os9archi     8414 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi    10713 Jan 24  2001 GR000007.JPG
+-rw-r--r--    1 arb      os9archi     8040 Jan 24  2001 GR000008.JPG
+-rw-r--r--    1 arb      os9archi    10085 Jan 24  2001 GR000012.JPG
+-rw-r--r--    1 arb      os9archi     9443 Jan 24  2001 GR000013.JPG
+-rw-r--r--    1 arb      os9archi     4759 Jan 24  2001 GR000023.JPG
+-rw-r--r--    1 arb      os9archi     5450 Jan 24  2001 GR000024.JPG
+-rw-r--r--    1 arb      os9archi     1580 Jan 24  2001 GR000031.JPG
+-rw-r--r--    1 arb      os9archi     1296 Jan 24  2001 GR000032.JPG
+-rw-r--r--    1 arb      os9archi    10561 Jan 24  2001 GR000037.JPG
+-rw-r--r--    1 arb      os9archi    13403 Jan 24  2001 GR000040.JPG
+-rw-r--r--    1 arb      os9archi     7146 Jan 24  2001 GR000041.JPG
+-rw-r--r--    1 arb      os9archi     8241 Jan 24  2001 GR000048.JPG
+-rw-r--r--    1 arb      os9archi     7418 Jan 24  2001 GR000052.JPG
+-rw-r--r--    1 arb      os9archi    10382 Jan 24  2001 GR000053.JPG
+-rw-r--r--    1 arb      os9archi     1380 Jan 24  2001 GR000059.JPG
+-rw-r--r--    1 arb      os9archi     2409 Jan 24  2001 GR000060.JPG
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/Ch 6:
+total 172
+-rw-r--r--    1 arb      os9archi    73470 Jan 24  2001 CH 6.htm
+-rw-r--r--    1 arb      os9archi     8940 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi    10075 Jan 24  2001 GR000004.JPG
+-rw-r--r--    1 arb      os9archi    10951 Jan 24  2001 GR000009.JPG
+-rw-r--r--    1 arb      os9archi     2110 Jan 24  2001 GR000012.JPG
+-rw-r--r--    1 arb      os9archi     7879 Jan 24  2001 GR000019.JPG
+-rw-r--r--    1 arb      os9archi    10973 Jan 24  2001 GR000023.JPG
+-rw-r--r--    1 arb      os9archi     1361 Jan 24  2001 GR000024.JPG
+-rw-r--r--    1 arb      os9archi     9586 Jan 24  2001 GR000025.JPG
+-rw-r--r--    1 arb      os9archi     1316 Jan 24  2001 GR000028.JPG
+-rw-r--r--    1 arb      os9archi    11356 Jan 24  2001 GR000029.JPG
+-rw-r--r--    1 arb      os9archi     2389 Jan 24  2001 GR000032.JPG
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/Ch 7:
+total 36
+-rw-r--r--    1 arb      os9archi    14685 Jan 24  2001 CH 7.htm
+-rw-r--r--    1 arb      os9archi     4289 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi     8476 Jan 24  2001 GR000001.JPG
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/Ch 8:
+total 20
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Pg 101-126
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Pg 1-26
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Pg 27-50
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Pg 51-76
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Pg 77-100
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/Ch 8/Pg 101-126:
+total 304
+-rw-r--r--    1 arb      os9archi     8422 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi     1293 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi     3858 Jan 24  2001 GR000006.JPG
+-rw-r--r--    1 arb      os9archi     1875 Jan 24  2001 GR000008.JPG
+-rw-r--r--    1 arb      os9archi     8765 Jan 24  2001 GR000012.JPG
+-rw-r--r--    1 arb      os9archi    14361 Jan 24  2001 GR000016.JPG
+-rw-r--r--    1 arb      os9archi     5032 Jan 24  2001 GR000018.JPG
+-rw-r--r--    1 arb      os9archi    23429 Jan 24  2001 GR000023.JPG
+-rw-r--r--    1 arb      os9archi     9803 Jan 24  2001 GR000030.JPG
+-rw-r--r--    1 arb      os9archi    10153 Jan 24  2001 GR000032.JPG
+-rw-r--r--    1 arb      os9archi     7193 Jan 24  2001 GR000033.JPG
+-rw-r--r--    1 arb      os9archi     8521 Jan 24  2001 GR000036.JPG
+-rw-r--r--    1 arb      os9archi    10420 Jan 24  2001 GR000039.JPG
+-rw-r--r--    1 arb      os9archi    10839 Jan 24  2001 GR000040.JPG
+-rw-r--r--    1 arb      os9archi    10572 Jan 24  2001 GR000041.JPG
+-rw-r--r--    1 arb      os9archi     1309 Jan 24  2001 GR000045.JPG
+-rw-r--r--    1 arb      os9archi     3534 Jan 24  2001 GR000046.JPG
+-rw-r--r--    1 arb      os9archi     8800 Jan 24  2001 GR000047.JPG
+-rw-r--r--    1 arb      os9archi    11640 Jan 24  2001 GR000051.JPG
+-rw-r--r--    1 arb      os9archi    11575 Jan 24  2001 GR000056.JPG
+-rw-r--r--    1 arb      os9archi    92637 Jan 24  2001 OS-9 L-II Technical Reference Ch 8 Pg 101-126.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/Ch 8/Pg 1-26:
+total 292
+-rw-r--r--    1 arb      os9archi   106364 Jan 24  2001 Ch 8 Pg 1-26.htm
+-rw-r--r--    1 arb      os9archi     7519 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi     1632 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi    10606 Jan 24  2001 GR000007.JPG
+-rw-r--r--    1 arb      os9archi     1603 Jan 24  2001 GR000011.JPG
+-rw-r--r--    1 arb      os9archi     8221 Jan 24  2001 GR000014.JPG
+-rw-r--r--    1 arb      os9archi     9561 Jan 24  2001 GR000018.JPG
+-rw-r--r--    1 arb      os9archi     2045 Jan 24  2001 GR000020.JPG
+-rw-r--r--    1 arb      os9archi     1711 Jan 24  2001 GR000022.JPG
+-rw-r--r--    1 arb      os9archi     8060 Jan 24  2001 GR000034.JPG
+-rw-r--r--    1 arb      os9archi     2303 Jan 24  2001 GR000035.JPG
+-rw-r--r--    1 arb      os9archi    11244 Jan 24  2001 GR000036.JPG
+-rw-r--r--    1 arb      os9archi     2068 Jan 24  2001 GR000040.JPG
+-rw-r--r--    1 arb      os9archi     7446 Jan 24  2001 GR000046.JPG
+-rw-r--r--    1 arb      os9archi     8568 Jan 24  2001 GR000050.JPG
+-rw-r--r--    1 arb      os9archi     9935 Jan 24  2001 GR000052.JPG
+-rw-r--r--    1 arb      os9archi     2912 Jan 24  2001 GR000058.JPG
+-rw-r--r--    1 arb      os9archi    13684 Jan 24  2001 GR000059.JPG
+-rw-r--r--    1 arb      os9archi     2207 Jan 24  2001 GR000062.JPG
+-rw-r--r--    1 arb      os9archi     8835 Jan 24  2001 GR000064.JPG
+-rw-r--r--    1 arb      os9archi     6536 Jan 24  2001 GR000069.JPG
+-rw-r--r--    1 arb      os9archi    16929 Jan 24  2001 GR000072.JPG
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/Ch 8/Pg 27-50:
+total 516
+-rw-r--r--    1 arb      os9archi    10403 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi     6587 Jan 24  2001 GR000010.JPG
+-rw-r--r--    1 arb      os9archi    12155 Jan 24  2001 GR000014.JPG
+-rw-r--r--    1 arb      os9archi    14438 Jan 24  2001 GR000019.JPG
+-rw-r--r--    1 arb      os9archi     6241 Jan 24  2001 GR000020.JPG
+-rw-r--r--    1 arb      os9archi     9249 Jan 24  2001 GR000021.JPG
+-rw-r--r--    1 arb      os9archi     5411 Jan 24  2001 GR000025.JPG
+-rw-r--r--    1 arb      os9archi     6531 Jan 24  2001 GR000026.JPG
+-rw-r--r--    1 arb      os9archi     6707 Jan 24  2001 GR000027.JPG
+-rw-r--r--    1 arb      os9archi     6500 Jan 24  2001 GR000028.JPG
+-rw-r--r--    1 arb      os9archi     8664 Jan 24  2001 GR000029.JPG
+-rw-r--r--    1 arb      os9archi    13842 Jan 24  2001 GR000031.JPG
+-rw-r--r--    1 arb      os9archi     7990 Jan 24  2001 GR000035.JPG
+-rw-r--r--    1 arb      os9archi     7552 Jan 24  2001 GR000036.JPG
+-rw-r--r--    1 arb      os9archi    11166 Jan 24  2001 GR000038.JPG
+-rw-r--r--    1 arb      os9archi     7959 Jan 24  2001 GR000040.JPG
+-rw-r--r--    1 arb      os9archi    13186 Jan 24  2001 GR000044.JPG
+-rw-r--r--    1 arb      os9archi    12493 Jan 24  2001 GR000045.JPG
+-rw-r--r--    1 arb      os9archi     9868 Jan 24  2001 GR000050.JPG
+-rw-r--r--    1 arb      os9archi    11377 Jan 24  2001 GR000056.JPG
+-rw-r--r--    1 arb      os9archi    18164 Jan 24  2001 GR000062.JPG
+-rw-r--r--    1 arb      os9archi    11046 Jan 24  2001 GR000073.JPG
+-rw-r--r--    1 arb      os9archi    12199 Jan 24  2001 GR000080.JPG
+-rw-r--r--    1 arb      os9archi    11458 Jan 24  2001 GR000086.JPG
+-rw-r--r--    1 arb      os9archi     9118 Jan 24  2001 GR000091.JPG
+-rw-r--r--    1 arb      os9archi     8359 Jan 24  2001 GR000093.JPG
+-rw-r--r--    1 arb      os9archi     9423 Jan 24  2001 GR000106.JPG
+-rw-r--r--    1 arb      os9archi    25539 Jan 24  2001 OS-9 L-II Commands Appendix A - OS-9 Error Codes.htm
+-rw-r--r--    1 arb      os9archi    46307 Jan 24  2001 OS-9 L-II Commands Appendix B - Color Computer 2 Compatibility.htm
+-rw-r--r--    1 arb      os9archi     4894 Jan 24  2001 OS-9 L-II Commands Appendix C - OS-9 Keyboard Codes.htm
+-rw-r--r--    1 arb      os9archi     7877 Jan 24  2001 OS-9 L-II Commands Appendix D - Keyboard Control Functions.htm
+-rw-r--r--    1 arb      os9archi    98658 Jan 24  2001 OS-9 L-II Glossary.htm
+-rw-r--r--    1 arb      os9archi     7094 Jan 24  2001 Schedule OCR log.txt
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/Ch 8/Pg 51-76:
+total 240
+-rw-r--r--    1 arb      os9archi     2339 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi     5460 Jan 24  2001 GR000007.JPG
+-rw-r--r--    1 arb      os9archi     7911 Jan 24  2001 GR000022.JPG
+-rw-r--r--    1 arb      os9archi    11172 Jan 24  2001 GR000030.JPG
+-rw-r--r--    1 arb      os9archi    10036 Jan 24  2001 GR000032.JPG
+-rw-r--r--    1 arb      os9archi    14743 Jan 24  2001 GR000033.JPG
+-rw-r--r--    1 arb      os9archi    10099 Jan 24  2001 GR000035.JPG
+-rw-r--r--    1 arb      os9archi     3260 Jan 24  2001 GR000047.JPG
+-rw-r--r--    1 arb      os9archi    10514 Jan 24  2001 GR000048.JPG
+-rw-r--r--    1 arb      os9archi     2850 Jan 24  2001 GR000049.JPG
+-rw-r--r--    1 arb      os9archi     5115 Jan 24  2001 GR000055.JPG
+-rw-r--r--    1 arb      os9archi     7106 Jan 24  2001 GR000059.JPG
+-rw-r--r--    1 arb      os9archi     5780 Jan 24  2001 GR000060.JPG
+-rw-r--r--    1 arb      os9archi    12186 Jan 24  2001 GR000069.JPG
+-rw-r--r--    1 arb      os9archi     9612 Jan 24  2001 GR000072.JPG
+-rw-r--r--    1 arb      os9archi     1781 Jan 24  2001 GR000081.JPG
+-rw-r--r--    1 arb      os9archi    91205 Jan 24  2001 OS-9 L-II Technical Reference Ch 8 Pg 51-76.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/Ch 8/Pg 77-100:
+total 376
+-rw-r--r--    1 arb      os9archi    14986 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi     9500 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi     3175 Jan 24  2001 GR000004.JPG
+-rw-r--r--    1 arb      os9archi    10312 Jan 24  2001 GR000005.JPG
+-rw-r--r--    1 arb      os9archi    13935 Jan 24  2001 GR000009.JPG
+-rw-r--r--    1 arb      os9archi    13106 Jan 24  2001 GR000013.JPG
+-rw-r--r--    1 arb      os9archi     3050 Jan 24  2001 GR000017.JPG
+-rw-r--r--    1 arb      os9archi     2018 Jan 24  2001 GR000018.JPG
+-rw-r--r--    1 arb      os9archi     9412 Jan 24  2001 GR000022.JPG
+-rw-r--r--    1 arb      os9archi     6137 Jan 24  2001 GR000023.JPG
+-rw-r--r--    1 arb      os9archi    14409 Jan 24  2001 GR000024.JPG
+-rw-r--r--    1 arb      os9archi    13970 Jan 24  2001 GR000030.JPG
+-rw-r--r--    1 arb      os9archi    12926 Jan 24  2001 GR000033.JPG
+-rw-r--r--    1 arb      os9archi    12633 Jan 24  2001 GR000037.JPG
+-rw-r--r--    1 arb      os9archi    13711 Jan 24  2001 GR000041.JPG
+-rw-r--r--    1 arb      os9archi    11776 Jan 24  2001 GR000043.JPG
+-rw-r--r--    1 arb      os9archi    14247 Jan 24  2001 GR000044.JPG
+-rw-r--r--    1 arb      os9archi     3161 Jan 24  2001 GR000049.JPG
+-rw-r--r--    1 arb      os9archi    12405 Jan 24  2001 GR000050.JPG
+-rw-r--r--    1 arb      os9archi     1883 Jan 24  2001 GR000051.JPG
+-rw-r--r--    1 arb      os9archi     8749 Jan 24  2001 GR000059.JPG
+-rw-r--r--    1 arb      os9archi     2181 Jan 24  2001 GR000063.JPG
+-rw-r--r--    1 arb      os9archi    12257 Jan 24  2001 GR000067.JPG
+-rw-r--r--    1 arb      os9archi     3450 Jan 24  2001 GR000068.JPG
+-rw-r--r--    1 arb      os9archi     1801 Jan 24  2001 GR000069.JPG
+-rw-r--r--    1 arb      os9archi    18995 Jan 24  2001 GR000072.JPG
+-rw-r--r--    1 arb      os9archi     7891 Jan 24  2001 GR000078.JPG
+-rw-r--r--    1 arb      os9archi    71379 Jan 24  2001 OS-9 L-II Technical Reference Ch 8 Pg 77-100.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/Index:
+total 248
+-rw-r--r--    1 arb      os9archi    14779 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi    11665 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi    16198 Jan 24  2001 GR000004.JPG
+-rw-r--r--    1 arb      os9archi     3944 Jan 24  2001 GR000005.JPG
+-rw-r--r--    1 arb      os9archi     1856 Jan 24  2001 GR000006.JPG
+-rw-r--r--    1 arb      os9archi    10376 Jan 24  2001 GR000009.JPG
+-rw-r--r--    1 arb      os9archi    17255 Jan 24  2001 GR000010.JPG
+-rw-r--r--    1 arb      os9archi     1666 Jan 24  2001 GR000011.JPG
+-rw-r--r--    1 arb      os9archi     2563 Jan 24  2001 GR000016.JPG
+-rw-r--r--    1 arb      os9archi     1767 Jan 24  2001 GR000017.JPG
+-rw-r--r--    1 arb      os9archi    16105 Jan 24  2001 GR000024.JPG
+-rw-r--r--    1 arb      os9archi     1912 Jan 24  2001 GR000025.JPG
+-rw-r--r--    1 arb      os9archi    13912 Jan 24  2001 GR000029.JPG
+-rw-r--r--    1 arb      os9archi    13565 Jan 24  2001 GR000033.JPG
+-rw-r--r--    1 arb      os9archi     2174 Jan 24  2001 GR000034.JPG
+-rw-r--r--    1 arb      os9archi    93190 Jan 24  2001 index.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Techinical Reference/TOC:
+total 0
+-rw-r--r--    1 arb      os9archi        0 Jan 24  2001 OS-9 L-II Technical Reference TOC.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Windows:
+total 28
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Ch 1
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Ch 2
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Ch 3
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Ch 4
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 CH 5
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 Index
+drwxr-xr-x    2 arb      os9archi     4096 Nov 29 15:25 TOC
+
+./incoming/OS-9 Level 2 Manual HTML/Windows/Ch 1:
+total 52
+-rw-r--r--    1 arb      os9archi     3289 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi     8818 Jan 24  2001 GR000001.JPG
+-rw-r--r--    1 arb      os9archi     8530 Jan 24  2001 GR000004.JPG
+-rw-r--r--    1 arb      os9archi     4023 Jan 24  2001 GR000005.JPG
+-rw-r--r--    1 arb      os9archi    18393 Jan 24  2001 OS-9 L-II Windowing System Ch 1.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Windows/Ch 2:
+total 60
+-rw-r--r--    1 arb      os9archi     8987 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi     7299 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi    10379 Jan 24  2001 GR000004.JPG
+-rw-r--r--    1 arb      os9archi     7582 Jan 24  2001 GR000006.JPG
+-rw-r--r--    1 arb      os9archi     2126 Jan 24  2001 GR000007.JPG
+-rw-r--r--    1 arb      os9archi    13938 Jan 24  2001 OS-9 L-II Windowing System Ch 2.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Windows/Ch 3:
+total 320
+-rw-r--r--    1 arb      os9archi     5613 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi     8955 Jan 24  2001 GR000002.JPG
+-rw-r--r--    1 arb      os9archi     9357 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi    10993 Jan 24  2001 GR000006.JPG
+-rw-r--r--    1 arb      os9archi     9338 Jan 24  2001 GR000007.JPG
+-rw-r--r--    1 arb      os9archi     7768 Jan 24  2001 GR000015.JPG
+-rw-r--r--    1 arb      os9archi     9009 Jan 24  2001 GR000018.JPG
+-rw-r--r--    1 arb      os9archi     9482 Jan 24  2001 GR000025.JPG
+-rw-r--r--    1 arb      os9archi     8467 Jan 24  2001 GR000026.JPG
+-rw-r--r--    1 arb      os9archi     8480 Jan 24  2001 GR000030.JPG
+-rw-r--r--    1 arb      os9archi     2785 Jan 24  2001 GR000031.JPG
+-rw-r--r--    1 arb      os9archi     1115 Jan 24  2001 GR000034.JPG
+-rw-r--r--    1 arb      os9archi     7682 Jan 24  2001 GR000036.JPG
+-rw-r--r--    1 arb      os9archi     6509 Jan 24  2001 GR000037.JPG
+-rw-r--r--    1 arb      os9archi     9123 Jan 24  2001 GR000043.JPG
+-rw-r--r--    1 arb      os9archi     8019 Jan 24  2001 GR000052.JPG
+-rw-r--r--    1 arb      os9archi     8407 Jan 24  2001 GR000053.JPG
+-rw-r--r--    1 arb      os9archi     3401 Jan 24  2001 GR000068.JPG
+-rw-r--r--    1 arb      os9archi     9834 Jan 24  2001 GR000070.JPG
+-rw-r--r--    1 arb      os9archi     2259 Jan 24  2001 GR000073.JPG
+-rw-r--r--    1 arb      os9archi   129987 Jan 24  2001 OS-9 L-II Windowing System Ch 3.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Windows/Ch 4:
+total 120
+-rw-r--r--    1 arb      os9archi    12082 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi     2198 Jan 24  2001 GR000001.JPG
+-rw-r--r--    1 arb      os9archi    18693 Jan 24  2001 GR000002.JPG
+-rw-r--r--    1 arb      os9archi     2718 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi    10283 Jan 24  2001 GR000004.JPG
+-rw-r--r--    1 arb      os9archi     2052 Jan 24  2001 GR000005.JPG
+-rw-r--r--    1 arb      os9archi    11448 Jan 24  2001 GR000015.JPG
+-rw-r--r--    1 arb      os9archi     9571 Jan 24  2001 GR000020.JPG
+-rw-r--r--    1 arb      os9archi    11003 Jan 24  2001 GR000023.JPG
+-rw-r--r--    1 arb      os9archi    28517 Jan 24  2001 OS-9 L-II Windowing System Ch 4.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Windows/CH 5:
+total 36
+-rw-r--r--    1 arb      os9archi    10242 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi    10964 Jan 24  2001 GR000002.JPG
+-rw-r--r--    1 arb      os9archi     1741 Jan 24  2001 GR000006.JPG
+-rw-r--r--    1 arb      os9archi     5432 Jan 24  2001 OS-9 L-II Windowing System Ch 5.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Windows/Index:
+total 116
+-rw-r--r--    1 arb      os9archi     9293 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi    20041 Jan 24  2001 GR000004.JPG
+-rw-r--r--    1 arb      os9archi     1789 Jan 24  2001 GR000005.JPG
+-rw-r--r--    1 arb      os9archi    18411 Jan 24  2001 GR000006.JPG
+-rw-r--r--    1 arb      os9archi     1819 Jan 24  2001 GR000013.JPG
+-rw-r--r--    1 arb      os9archi    10981 Jan 24  2001 GR000016.JPG
+-rw-r--r--    1 arb      os9archi     1840 Jan 24  2001 GR000020.JPG
+-rw-r--r--    1 arb      os9archi    40639 Jan 24  2001 OS-9 L-II Windowing System Index.htm
+
+./incoming/OS-9 Level 2 Manual HTML/Windows/TOC:
+total 240
+-rw-r--r--    1 arb      os9archi     8776 Jan 24  2001 GR000000.JPG
+-rw-r--r--    1 arb      os9archi     2994 Jan 24  2001 GR000001.JPG
+-rw-r--r--    1 arb      os9archi     3834 Jan 24  2001 GR000003.JPG
+-rw-r--r--    1 arb      os9archi     4283 Jan 24  2001 GR000004.JPG
+-rw-r--r--    1 arb      os9archi    14461 Jan 24  2001 GR000008.JPG
+-rw-r--r--    1 arb      os9archi     8795 Jan 24  2001 GR000011.JPG
+-rw-r--r--    1 arb      os9archi     3128 Jan 24  2001 GR000012.JPG
+-rw-r--r--    1 arb      os9archi     2111 Jan 24  2001 GR000013.JPG
+-rw-r--r--    1 arb      os9archi    11647 Jan 24  2001 GR000018.JPG
+-rw-r--r--    1 arb      os9archi     2130 Jan 24  2001 GR000019.JPG
+-rw-r--r--    1 arb      os9archi     9392 Jan 24  2001 GR000026.JPG
+-rw-r--r--    1 arb      os9archi     6261 Jan 24  2001 GR000031.JPG
+-rw-r--r--    1 arb      os9archi     1576 Jan 24  2001 GR000034.JPG
+-rw-r--r--    1 arb      os9archi    11237 Jan 24  2001 GR000040.JPG
+-rw-r--r--    1 arb      os9archi    18459 Jan 24  2001 GR000046.JPG
+-rw-r--r--    1 arb      os9archi    19133 Jan 24  2001 GR000047.JPG
+-rw-r--r--    1 arb      os9archi     5368 Jan 24  2001 GR000050.JPG
+-rw-r--r--    1 arb      os9archi     1862 Jan 24  2001 GR000051.JPG
+-rw-r--r--    1 arb      os9archi     2579 Jan 24  2001 GR000058.JPG
+-rw-r--r--    1 arb      os9archi    13399 Jan 24  2001 GR000060.JPG
+-rw-r--r--    1 arb      os9archi     9096 Jan 24  2001 GR000061.JPG
+-rw-r--r--    1 arb      os9archi    26569 Jan 24  2001 GR000066.JPG
+-rw-r--r--    1 arb      os9archi     9620 Jan 24  2001 OS-9 L-II Windowing System TOC.htm
+
+./incoming/OS-9 Level 2 Manual TIF 150:
+total 28
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 Basic09
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 Commands
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 Covers
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 Getting Started
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 Glossary
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 Techinical Reference
+drwxr-xr-x    2 arb      os9archi     4096 Jan 24  2001 Windows
+
+./incoming/OS-9 Level 2 Manual TIF 150/Basic09:
+total 7776
+-rw-r--r--    1 arb      os9archi    75860 Jan 24  2001 Basic09 - Appendix A.tif
+-rw-r--r--    1 arb      os9archi    36144 Jan 24  2001 Basic09 - Appendix B.tif
+-rw-r--r--    1 arb      os9archi   233392 Jan 24  2001 Basic09 - Ch 10.tif
+-rw-r--r--    1 arb      os9archi   453356 Jan 24  2001 Basic09 - Ch 11 Pg 101-126.tif
+-rw-r--r--    1 arb      os9archi   443560 Jan 24  2001 Basic09 - Ch 11 Pg 1-26.tif
+-rw-r--r--    1 arb      os9archi   395884 Jan 24  2001 Basic09 - Ch 11Pg 127-150.tif
+-rw-r--r--    1 arb      os9archi   409700 Jan 24  2001 Basic09 - Ch 11 Pg 151-176.tif
+-rw-r--r--    1 arb      os9archi   203416 Jan 24  2001 Basic09 - Ch 11 Pg 177-188.tif
+-rw-r--r--    1 arb      os9archi   366644 Jan 24  2001 Basic09 - Ch 11 Pg 27-50.tif
+-rw-r--r--    1 arb      os9archi   412152 Jan 24  2001 Basic09 - Ch 11 Pg 51-76.tif
+-rw-r--r--    1 arb      os9archi   377456 Jan 24  2001 Basic09 - Ch 11 Pg 77-100.tif
+-rw-r--r--    1 arb      os9archi   109848 Jan 24  2001 Basic09 - Ch 12.tif
+-rw-r--r--    1 arb      os9archi   163104 Jan 24  2001 Basic09 - Ch 1.tif
+-rw-r--r--    1 arb      os9archi    63884 Jan 24  2001 Basic09 - Ch 2.tif
+-rw-r--r--    1 arb      os9archi   218400 Jan 24  2001 Basic09 - Ch 3.tif
+-rw-r--r--    1 arb      os9archi   262344 Jan 24  2001 Basic09 - Ch 4.tif
+-rw-r--r--    1 arb      os9archi   131140 Jan 24  2001 Basic09 - Ch 5.tif
+-rw-r--r--    1 arb      os9archi   389320 Jan 24  2001 Basic09 - Ch 6.tif
+-rw-r--r--    1 arb      os9archi   218048 Jan 24  2001 Basic09 - Ch 7.tif
+-rw-r--r--    1 arb      os9archi   348708 Jan 24  2001 Basic09 - Ch 8.tif
+-rw-r--r--    1 arb      os9archi   371512 Jan 24  2001 Basic09 - Ch 9 Pg 101-126.tif
+-rw-r--r--    1 arb      os9archi   426364 Jan 24  2001 Basic09 - Ch 9 Pg 1-26.tif
+-rw-r--r--    1 arb      os9archi   483200 Jan 24  2001 Basic09 - Ch 9 Pg 27-50.tif
+-rw-r--r--    1 arb      os9archi   300944 Jan 24  2001 Basic09 - Ch 9 Pg 51-76.tif
+-rw-r--r--    1 arb      os9archi   401420 Jan 24  2001 Basic09 - Ch 9 Pg 77-100.tif
+-rw-r--r--    1 arb      os9archi   411004 Jan 24  2001 Basic09 - Index.tif
+-rw-r--r--    1 arb      os9archi    87056 Jan 24  2001 Basic09 - TOC.tif
+
+./incoming/OS-9 Level 2 Manual TIF 150/Commands:
+total 3924
+-rw-r--r--    1 arb      os9archi   139816 Jan 24  2001 OS-9 L-II Commands Appendix A - OS-9 Error Codes.tif
+-rw-r--r--    1 arb      os9archi   208028 Jan 24  2001 OS-9 L-II Commands Appendix B - Color Computer 2 Compatibility.tif
+-rw-r--r--    1 arb      os9archi    17884 Jan 24  2001 OS-9 L-II Commands Appendix C - OS-9 Keyboard Codes.tif
+-rw-r--r--    1 arb      os9archi    29016 Jan 24  2001 OS-9 L-II Commands Appendix D - Keyboard Control Functions.tif
+-rw-r--r--    1 arb      os9archi    95516 Jan 24  2001 OS-9 L-II Commands Ch 1.tif
+-rw-r--r--    1 arb      os9archi   343092 Jan 24  2001 OS-9 L-II Commands Ch 2.tif
+-rw-r--r--    1 arb      os9archi   222736 Jan 24  2001 OS-9 L-II Commands Ch 3.tif
+-rw-r--r--    1 arb      os9archi   164868 Jan 24  2001 OS-9 L-II Commands Ch 4.tif
+-rw-r--r--    1 arb      os9archi   102828 Jan 24  2001 OS-9 L-II Commands Ch 5.tif
+-rw-r--r--    1 arb      os9archi  1136276 Jan 24  2001 OS-9 L-II Commands Ch 6.tif
+-rw-r--r--    1 arb      os9archi  1147432 Jan 24  2001 OS-9 L-II Commands Ch 7.tif
+-rw-r--r--    1 arb      os9archi   247904 Jan 24  2001 OS-9 L-II Commands Index.tif
+-rw-r--r--    1 arb      os9archi    85968 Jan 24  2001 OS-9 L-II Commands TOC.tif
+
+./incoming/OS-9 Level 2 Manual TIF 150/Covers:
+total 0
+
+./incoming/OS-9 Level 2 Manual TIF 150/Getting Started:
+total 1484
+-rw-r--r--    1 arb      os9archi   136716 Jan 24  2001 Getting Started With OS-9 Ch 1.tif
+-rw-r--r--    1 arb      os9archi   113856 Jan 24  2001 Getting Started With OS-9 Ch 2.tif
+-rw-r--r--    1 arb      os9archi   187924 Jan 24  2001 Getting Started With OS-9 Ch 3.tif
+-rw-r--r--    1 arb      os9archi   143316 Jan 24  2001 Getting Started With OS-9 Ch 4.tif
+-rw-r--r--    1 arb      os9archi   220304 Jan 24  2001 Getting Started With OS-9 Ch 5.tif
+-rw-r--r--    1 arb      os9archi   146980 Jan 24  2001 Getting Started With OS-9 Ch 6.tif
+-rw-r--r--    1 arb      os9archi   299772 Jan 24  2001 Getting Started With OS-9 Ch 7.tif
+-rw-r--r--    1 arb      os9archi    81448 Jan 24  2001 Getting Started With OS-9 Index.tif
+-rw-r--r--    1 arb      os9archi     5740 Jan 24  2001 Getting Started With OS-9 Part 1.tif
+-rw-r--r--    1 arb      os9archi     5796 Jan 24  2001 Getting Started With OS-9 Part 2.tif
+-rw-r--r--    1 arb      os9archi    67576 Jan 24  2001 Getting Started With OS-9 TOC.tif
+-rw-r--r--    1 arb      os9archi    51200 Jan 24  2001 Thumbs.db
+
+./incoming/OS-9 Level 2 Manual TIF 150/Glossary:
+total 4000
+-rw-r--r--    1 arb      os9archi  4090600 Jan 24  2001 OS-9 L-II Glossary.tif
+
+./incoming/OS-9 Level 2 Manual TIF 150/Techinical Reference:
+total 4296
+-rw-r--r--    1 arb      os9archi    53196 Jan 24  2001 OS-9 L-II Technical Reference  Appendix A - Memory Module Diagrams.tif
+-rw-r--r--    1 arb      os9archi    12180 Jan 24  2001 OS-9 L-II Technical Reference  Appendix B - Standard Floppy Disk Format.tif
+-rw-r--r--    1 arb      os9archi   140932 Jan 24  2001 OS-9 L-II Technical Reference  Appendix C - System Error Codes.tif
+-rw-r--r--    1 arb      os9archi    83736 Jan 24  2001 OS-9 L-II Technical Reference Ch 1.tif
+-rw-r--r--    1 arb      os9archi   597344 Jan 24  2001 OS-9 L-II Technical Reference Ch 2.tif
+-rw-r--r--    1 arb      os9archi   153884 Jan 24  2001 OS-9 L-II Technical Reference Ch 3.tif
+-rw-r--r--    1 arb      os9archi   427988 Jan 24  2001 OS-9 L-II Technical Reference Ch 4.tif
+-rw-r--r--    1 arb      os9archi   552600 Jan 24  2001 OS-9 L-II Technical Reference Ch 5.tif
+-rw-r--r--    1 arb      os9archi   345360 Jan 24  2001 OS-9 L-II Technical Reference Ch 6.tif
+-rw-r--r--    1 arb      os9archi    53524 Jan 24  2001 OS-9 L-II Technical Reference Ch 7.tif
+-rw-r--r--    1 arb      os9archi   460512 Jan 24  2001 OS-9 L-II Technical Reference Ch 8 Pg1-26.tif
+-rw-r--r--    1 arb      os9archi   389140 Jan 24  2001 OS-9 L-II Technical Reference Ch 8 Pg 27-50.tif
+-rw-r--r--    1 arb      os9archi   400912 Jan 24  2001 OS-9 L-II Technical Reference Ch 8 Pg 51-76.tif
+-rw-r--r--    1 arb      os9archi   316936 Jan 24  2001 OS-9 L-II Technical Reference Ch 8 Pg 77-100.tif
+-rw-r--r--    1 arb      os9archi   251824 Jan 24  2001 OS-9 L-II Technical Reference Index.tif
+-rw-r--r--    1 arb      os9archi    68908 Jan 24  2001 OS-9 L-II Technical Reference TOC.tif
+
+./incoming/OS-9 Level 2 Manual TIF 150/Windows:
+total 1024
+-rw-r--r--    1 arb      os9archi    82052 Jan 24  2001 OS-9 L-II Windowing System Ch 1.tif
+-rw-r--r--    1 arb      os9archi    44160 Jan 24  2001 OS-9 L-II Windowing System Ch 2.tif
+-rw-r--r--    1 arb      os9archi   572392 Jan 24  2001 OS-9 L-II Windowing System Ch 3.tif
+-rw-r--r--    1 arb      os9archi   152096 Jan 24  2001 OS-9 L-II Windowing System Ch 4.tif
+-rw-r--r--    1 arb      os9archi    27856 Jan 24  2001 OS-9 L-II Windowing System Ch 5.tif
+-rw-r--r--    1 arb      os9archi   103684 Jan 24  2001 OS-9 L-II Windowing System Index.tif
+-rw-r--r--    1 arb      os9archi    36648 Jan 24  2001 OS-9 L-II Windowing System TOC.tif
+
+./incoming/UnravelledSeries:
+total 4276
+-rw-r--r--    1 arb      os9archi  1046286 Nov 12 17:26 color-basic-unravelled.pdf
+-rw-r--r--    1 arb      os9archi  1309075 Nov 12 17:26 disk-basic-unravelled.pdf
+-rw-r--r--    1 arb      os9archi  1071432 Nov 12 17:26 extended-basic-unravelled.pdf
+-rw-r--r--    1 arb      os9archi   928637 Nov 12 17:27 super-extended-basic-unravelled.pdf
+
+./LANGUAGE:
+total 12
+drwxr-xr--    2 arb      os9archi     4096 Nov 29 15:27 BIFFORTH
+drwxr-xr--    2 arb      os9archi     4096 Nov 29 15:27 CF83
+drwxr-xr--    2 arb      os9archi     4096 Nov 29 15:27 FORTH
+
+./LANGUAGE/BIFFORTH:
+total 224
+-rw-r--r--    1 arb      os9archi     9216 Jan 24  2001 bif.bin
+-rw-r--r--    1 arb      os9archi    93819 Jan 24  2001 bifdoc.txt
+-rw-r--r--    1 arb      os9archi      931 Jan 24  2001 bifread.me
+-rw-r--r--    1 arb      os9archi    18816 Jan 24  2001 bifscree.arc
+-rw-r--r--    1 arb      os9archi    88448 Jan 24  2001 bifsourc.arc
+
+./LANGUAGE/CF83:
+total 108
+-rw-r--r--    1 arb      os9archi     1920 Jan 24  2001 BLKTOFIL.BAS
+-rw-r--r--    1 arb      os9archi     4195 Jan 24  2001 BLOKFILE.TXT
+-rw-r--r--    1 arb      os9archi      128 Jan 24  2001 CF83.BAS
+-rw-r--r--    1 arb      os9archi    15360 Jan 24  2001 CF83.BIN
+-rw-r--r--    1 arb      os9archi    25729 Jan 24  2001 CF83.TXT
+-rw-r--r--    1 arb      os9archi     1664 Jan 24  2001 FILTOBLK.BAS
+-rw-r--r--    1 arb      os9archi    12544 Jan 24  2001 GRAFCHAR.BLK
+-rw-r--r--    1 arb      os9archi     4708 Jan 24  2001 GRAFCHAR.TXT
+-rw-r--r--    1 arb      os9archi     9472 Jan 24  2001 TEXTCONT.BLK
+-rw-r--r--    1 arb      os9archi     7987 Jan 24  2001 TEXTCONT.TXT
+
+./LANGUAGE/FORTH:
+total 20
+-rw-r--r--    1 arb      os9archi    17408 Jan 24  2001 Forth.bin
+
+./MODMAX10:
+total 28
+-rw-r--r--    1 arb      os9archi      386 Jan 24  2001 BOOT.BAS
+-rw-r--r--    1 arb      os9archi      256 Jan 24  2001 BOOT.BIN
+-rw-r--r--    1 arb      os9archi      256 Jan 24  2001 CRAK.BIN
+-rw-r--r--    1 arb      os9archi     2199 Jan 24  2001 MAX-10.DOC
+-rw-r--r--    1 arb      os9archi     1025 Jan 24  2001 MAXSAVE.BAS
+-rw-r--r--    1 arb      os9archi      313 Jan 24  2001 PATCH.BAS
+-rw-r--r--    1 arb      os9archi      256 Jan 24  2001 PATCH.BIN
+
+./MODS:
+total 896
+-rw-r--r--    1 arb      os9archi    74918 Jan 24  2001 anotherd.mod
+-rw-r--r--    1 arb      os9archi    62837 Jan 24  2001 atplay.mod
+-rw-r--r--    1 arb      os9archi   116076 Jan 24  2001 axel_f.mod
+-rw-r--r--    1 arb      os9archi   142752 Jan 24  2001 blue3.mod
+-rw-r--r--    1 arb      os9archi    44302 Jan 24  2001 emp.mod
+-rw-r--r--    1 arb      os9archi    66048 Jan 24  2001 fletch.mod
+-rw-r--r--    1 arb      os9archi    60414 Jan 24  2001 floating.mod
+-rw-r--r--    1 arb      os9archi    55586 Jan 24  2001 hypnauti.mod
+-rw-r--r--    1 arb      os9archi     2132 Jan 24  2001 mod13.bas
+-rw-r--r--    1 arb      os9archi     4350 Jan 24  2001 mod13.bin
+-rw-r--r--    1 arb      os9archi     4305 Jan 24  2001 mod13.txt
+-rw-r--r--    1 arb      os9archi     1977 Jan 24  2001 mod6809.bas
+-rw-r--r--    1 arb      os9archi     4554 Jan 24  2001 mod6809.bin
+-rw-r--r--    1 arb      os9archi     3602 Jan 24  2001 mod6809.txt
+-rw-r--r--    1 arb      os9archi     1648 Jan 24  2001 mod.bas
+-rw-r--r--    1 arb      os9archi     4095 Jan 24  2001 mod.bin
+-rw-r--r--    1 arb      os9archi     3797 Jan 24  2001 mod.txt
+-rw-r--r--    1 arb      os9archi    27583 Jan 24  2001 ok.mod
+-rw-r--r--    1 arb      os9archi    71282 Jan 24  2001 popcor01.mod
+-rw-r--r--    1 arb      os9archi    87388 Jan 24  2001 popcorn2.mod
+
+./MUSIC:
+total 1644
+-rw-r--r--    1 arb      os9archi     9216 Jan 24  2001 12day.mus
+-rw-r--r--    1 arb      os9archi     3456 Jan 24  2001 3MINRECD.ARC
+-rw-r--r--    1 arb      os9archi    16384 Jan 24  2001 5thsym.bin
+-rw-r--r--    1 arb      os9archi     2262 Jan 24  2001 ADDPLAY.BAS
+-rw-r--r--    1 arb      os9archi    12416 Jan 24  2001 adeste.bin
+-rw-r--r--    1 arb      os9archi     3840 Jan 24  2001 air.bin
+-rw-r--r--    1 arb      os9archi     4096 Jan 24  2001 alfie.mus
+-rw-r--r--    1 arb      os9archi      896 Jan 24  2001 amazing.bin
+-rw-r--r--    1 arb      os9archi     1664 Jan 24  2001 amazing.mus
+-rw-r--r--    1 arb      os9archi     2048 Jan 24  2001 america.mus
+-rw-r--r--    1 arb      os9archi     2176 Jan 24  2001 anchors.bin
+-rw-r--r--    1 arb      os9archi     2304 Jan 24  2001 angels.mus
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 anthem.bin
+-rw-r--r--    1 arb      os9archi     1920 Jan 24  2001 arioso.lyr
+-rw-r--r--    1 arb      os9archi     4864 Jan 24  2001 arioso.mus
+-rw-r--r--    1 arb      os9archi     8064 Jan 24  2001 arthur.bin
+-rw-r--r--    1 arb      os9archi     3328 Jan 24  2001 ATEAM.BIN
+-rw-r--r--    1 arb      os9archi    18688 Jan 24  2001 autoplay.arc
+-rw-r--r--    1 arb      os9archi    18688 Jan 24  2001 AUTOPLAY.ARC
+-rw-r--r--    1 arb      os9archi     1280 Jan 24  2001 ave1.bin
+-rw-r--r--    1 arb      os9archi     8064 Jan 24  2001 AXEL.MUS
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 B52.PIX
+-rw-r--r--    1 arb      os9archi     3072 Jan 24  2001 babyel.mus
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 BABYM.PIX
+-rw-r--r--    1 arb      os9archi     6577 Jan 24  2001 BACH1.MUS
+-rw-r--r--    1 arb      os9archi     8620 Jan 24  2001 BACH2.MUS
+-rw-r--r--    1 arb      os9archi     5191 Jan 24  2001 BACH3.MUS
+-rw-r--r--    1 arb      os9archi    16369 Jan 24  2001 BACH4.MUS
+-rw-r--r--    1 arb      os9archi     1792 Jan 24  2001 ballad.lyr
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 BAMBI.PIX
+-rw-r--r--    1 arb      os9archi     7424 Jan 24  2001 bandrun.mus
+-rw-r--r--    1 arb      os9archi    12416 Jan 24  2001 bbpolka.bin
+-rw-r--r--    1 arb      os9archi   123136 Jan 24  2001 BCKDIG31.ARC
+-rw-r--r--    1 arb      os9archi     3328 Jan 24  2001 BCKDIGI2.ARC
+-rw-r--r--    1 arb      os9archi     7552 Jan 24  2001 BEATIT.MUS
+-rw-r--r--    1 arb      os9archi    16896 Jan 24  2001 beatles.bin
+-rw-r--r--    1 arb      os9archi     5760 Jan 24  2001 beerbarl.mus
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 BEES.PIX
+-rw-r--r--    1 arb      os9archi     4736 Jan 24  2001 ben.mus
+-rw-r--r--    1 arb      os9archi     5120 Jan 24  2001 bewitchd.mus
+-rw-r--r--    1 arb      os9archi     7424 Jan 24  2001 BIGSHOT.MUS
+-rw-r--r--    1 arb      os9archi     2048 Jan 24  2001 birthday.mus
+-rw-r--r--    1 arb      os9archi    12416 Jan 24  2001 blowin.bin
+-rw-r--r--    1 arb      os9archi     8192 Jan 24  2001 blutango.lyr
+-rw-r--r--    1 arb      os9archi    11648 Jan 24  2001 bohemian.mus
+-rw-r--r--    1 arb      os9archi     9984 Jan 24  2001 bolero.lyr
+-rw-r--r--    1 arb      os9archi     5632 Jan 24  2001 break.mus
+-rw-r--r--    1 arb      os9archi     5120 Jan 24  2001 brian.bin
+-rw-r--r--    1 arb      os9archi      768 Jan 24  2001 buglers.bas
+-rw-r--r--    1 arb      os9archi     9600 Jan 24  2001 buglers.exe
+-rw-r--r--    1 arb      os9archi     9344 Jan 24  2001 bumble.mus
+-rw-r--r--    1 arb      os9archi     4992 Jan 24  2001 burger.mus
+-rw-r--r--    1 arb      os9archi     4223 Jan 24  2001 cabaret.mus
+-rw-r--r--    1 arb      os9archi     2816 Jan 24  2001 calif.bin
+-rw-r--r--    1 arb      os9archi    10240 Jan 24  2001 candida.mus
+-rw-r--r--    1 arb      os9archi     4993 Jan 24  2001 CANNON.BIN
+-rw-r--r--    1 arb      os9archi     5120 Jan 24  2001 CANON.MUS
+-rw-r--r--    1 arb      os9archi     9728 Jan 24  2001 cantina.mus
+-rw-r--r--    1 arb      os9archi     1024 Jan 24  2001 carol.bin
+-rw-r--r--    1 arb      os9archi     1408 Jan 24  2001 carols.bin
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 CASTLE.PIX
+-rw-r--r--    1 arb      os9archi     8710 Jan 24  2001 CHARIOT.MUS
+-rw-r--r--    1 arb      os9archi    10240 Jan 24  2001 cherish.mus
+-rw-r--r--    1 arb      os9archi     4224 Jan 24  2001 chickenr.mus
+-rw-r--r--    1 arb      os9archi     2304 Jan 24  2001 child.mus
+-rw-r--r--    1 arb      os9archi     1152 Jan 24  2001 chopstix.bin
+-rw-r--r--    1 arb      os9archi      896 Jan 24  2001 choral.bin
+-rw-r--r--    1 arb      os9archi     3968 Jan 24  2001 circus.bin
+-rw-r--r--    1 arb      os9archi     3328 Jan 24  2001 CLASSGAS.BIN
+-rw-r--r--    1 arb      os9archi     5120 Jan 24  2001 CLASSIC.BIN
+-rw-r--r--    1 arb      os9archi    12289 Jan 24  2001 CMAUDIO.ARC
+-rw-r--r--    1 arb      os9archi     5120 Jan 24  2001 cntryrd.bin
+-rw-r--r--    1 arb      os9archi     6656 Jan 24  2001 cocoboog.mus
+-rw-r--r--    1 arb      os9archi    12416 Jan 24  2001 color.bin
+-rw-r--r--    1 arb      os9archi     2688 Jan 24  2001 coming.mus
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 COMPUTER.PIX
+-rw-r--r--    1 arb      os9archi     2304 Jan 24  2001 coventry.mus
+-rw-r--r--    1 arb      os9archi     3712 Jan 24  2001 dancer.mus
+-rw-r--r--    1 arb      os9archi     2047 Jan 24  2001 deck.mus
+-rw-r--r--    1 arb      os9archi     1322 Jan 24  2001 DEPLAY.BAS
+-rw-r--r--    1 arb      os9archi     2681 Jan 24  2001 DESC.BBS
+-rw-r--r--    1 arb      os9archi     9472 Jan 24  2001 DIGI-512.ARC
+-rw-r--r--    1 arb      os9archi      256 Jan 24  2001 DIGIML.BIN
+-rw-r--r--    1 arb      os9archi     2262 Jan 24  2001 DIGITIZE.BAS
+-rw-r--r--    1 arb      os9archi     7168 Jan 24  2001 dixie.lyr
+-rw-r--r--    1 arb      os9archi     1792 Jan 24  2001 dmajor.bin
+-rw-r--r--    1 arb      os9archi     5376 Jan 24  2001 doit4you.lyr
+-rw-r--r--    1 arb      os9archi     7168 Jan 24  2001 doremi.mus
+-rw-r--r--    1 arb      os9archi     3072 Jan 24  2001 dppurple.mus
+-rw-r--r--    1 arb      os9archi     3584 Jan 24  2001 DUSTWIND.BIN
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 EAGLE.PIX
+-rw-r--r--    1 arb      os9archi     2304 Jan 24  2001 EDOML.BIN
+-rw-r--r--    1 arb      os9archi     9878 Jan 24  2001 ELITE.MUS
+-rw-r--r--    1 arb      os9archi      514 Jan 24  2001 FILES.BBS
+-rw-r--r--    1 arb      os9archi     8458 Jan 24  2001 FINCOUNT.MUS
+-rw-r--r--    1 arb      os9archi    10368 Jan 24  2001 FLASHDAN.MUS
+-rw-r--r--    1 arb      os9archi     5888 Jan 24  2001 FUGUE.BIN
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 GARDEN.PIX
+-rw-r--r--    1 arb      os9archi     6155 Jan 24  2001 GREATWAV.PIX
+-rw-r--r--    1 arb      os9archi     9984 Jan 24  2001 GREMLINS.MUS
+-rw-r--r--    1 arb      os9archi     8960 Jan 24  2001 GRENGRAS.MUS
+-rw-r--r--    1 arb      os9archi     2176 Jan 24  2001 HILL.BIN
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 HORSE.PIX
+-rw-r--r--    1 arb      os9archi     6802 Jan 24  2001 IMONFI.MUS
+-rw-r--r--    1 arb      os9archi     7424 Jan 24  2001 IMPERIAL.MUS
+-rw-r--r--    1 arb      os9archi     8960 Jan 24  2001 JBGOOD.MUS
+-rw-r--r--    1 arb      os9archi     2367 Jan 24  2001 JUKEBOX.BAS
+-rw-r--r--    1 arb      os9archi     9984 Jan 24  2001 JUMP.BIN
+-rw-r--r--    1 arb      os9archi    12544 Jan 24  2001 KAHN.BIN
+-rw-r--r--    1 arb      os9archi    61696 Jan 24  2001 KSYNTHER.ARC
+-rw-r--r--    1 arb      os9archi    10240 Jan 24  2001 KYRIE.MUS
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 LENNON.PIX
+-rw-r--r--    1 arb      os9archi     6080 Jan 24  2001 LINUS.MUS
+-rw-r--r--    1 arb      os9archi     6084 Jan 24  2001 LUCY.BIN
+-rw-r--r--    1 arb      os9archi    11136 Jan 24  2001 MESSIAH.MUS
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 MISSION.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 MODEM.PIX
+-rw-r--r--    1 arb      os9archi     7168 Jan 24  2001 MOLECULE.PIX
+-rw-r--r--    1 arb      os9archi     4795 Jan 24  2001 MOULIN.MUS
+-rw-r--r--    1 arb      os9archi     9344 Jan 24  2001 MUSBOX.BIN
+-rw-r--r--    1 arb      os9archi    20158 Jan 24  2001 MUSBOX.DOC
+-rw-r--r--    1 arb      os9archi     1280 Jan 24  2001 MUSFIX.BAS
+-rw-r--r--    1 arb      os9archi    33537 Jan 24  2001 MUSIC.ARC
+-rw-r--r--    1 arb      os9archi    13056 Jan 24  2001 NINE25.MUS
+-rw-r--r--    1 arb      os9archi     3457 Jan 24  2001 NUTCRACK.BIN
+-rw-r--r--    1 arb      os9archi    24545 Jan 24  2001 ORC90-1.ARC
+-rw-r--r--    1 arb      os9archi    18096 Jan 24  2001 ORC90-2.ARC
+-rw-r--r--    1 arb      os9archi    27077 Jan 24  2001 ORC90-3.ARC
+-rw-r--r--    1 arb      os9archi    19288 Jan 24  2001 ORC90-4.ARC
+-rw-r--r--    1 arb      os9archi    25615 Jan 24  2001 ORCH.ARC
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 OUTPOST.PIX
+-rw-r--r--    1 arb      os9archi     7168 Jan 24  2001 PANDA.PIX
+-rw-r--r--    1 arb      os9archi     8320 Jan 24  2001 PGUNN.BIN
+-rw-r--r--    1 arb      os9archi     9984 Jan 24  2001 PIANOMAN.MUS
+-rw-r--r--    1 arb      os9archi     3584 Jan 24  2001 POLONA.BIN
+-rw-r--r--    1 arb      os9archi    13453 Jan 24  2001 PRESTO.MUS
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 RAIN.PIX
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 REAGAN.PIX
+-rw-r--r--    1 arb      os9archi     9984 Jan 24  2001 ROXANNE.MUS
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 SFIELD.PIX
+-rw-r--r--    1 arb      os9archi     6016 Jan 24  2001 SILENCE.MUS
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 SPACE.PIX
+-rw-r--r--    1 arb      os9archi    13896 Jan 24  2001 STAIRWAY.MUS
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 STARTREK.PIX
+-rw-r--r--    1 arb      os9archi     7425 Jan 24  2001 SUPER.MUS
+-rw-r--r--    1 arb      os9archi     6528 Jan 24  2001 SURFER.MUS
+-rw-r--r--    1 arb      os9archi     6016 Jan 24  2001 TAXMAN.MUS
+-rw-r--r--    1 arb      os9archi     4883 Jan 24  2001 THEME.MUS
+-rw-r--r--    1 arb      os9archi     6155 Jan 24  2001 TIGER.PIX
+-rw-r--r--    1 arb      os9archi     5889 Jan 24  2001 TOYOTA.MUS
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 TRUCK.PIX
+-rw-r--r--    1 arb      os9archi     7168 Jan 24  2001 VOLTRON.PIX
+-rw-r--r--    1 arb      os9archi     7168 Jan 24  2001 WABBIT.PIX
+-rw-r--r--    1 arb      os9archi     6901 Jan 24  2001 WASHPOST.MUS
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 WATCH.PIX
+-rw-r--r--    1 arb      os9archi     6016 Jan 24  2001 WAYUARE.MUS
+-rw-r--r--    1 arb      os9archi    10112 Jan 24  2001 WEARE.MUS
+-rw-r--r--    1 arb      os9archi    16256 Jan 24  2001 willtell.mus
+-rw-r--r--    1 arb      os9archi    10681 Jan 24  2001 WIZARD.MUS
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 ZORRO.PIX
+
+./PICS:
+total 224
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 B52.PIX
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 BABYM.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 BAMBI.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 BEES.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 CASTLE.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 COMPUTER.PIX
+-rw-r--r--    1 arb      os9archi     2681 Jan 24  2001 DESC.BBS
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 EAGLE.PIX
+-rw-r--r--    1 arb      os9archi      514 Jan 24  2001 FILES.BBS
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 GARDEN.PIX
+-rw-r--r--    1 arb      os9archi     6155 Jan 24  2001 GREATWAV.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 HORSE.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 LENNON.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 MISSION.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 MODEM.PIX
+-rw-r--r--    1 arb      os9archi     7168 Jan 24  2001 MOLECULE.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 OUTPOST.PIX
+-rw-r--r--    1 arb      os9archi     7168 Jan 24  2001 PANDA.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 RAIN.PIX
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 REAGAN.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 SFIELD.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 SPACE.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 STARTREK.PIX
+-rw-r--r--    1 arb      os9archi     6155 Jan 24  2001 TIGER.PIX
+-rw-r--r--    1 arb      os9archi     6154 Jan 24  2001 TRUCK.PIX
+-rw-r--r--    1 arb      os9archi     7168 Jan 24  2001 VOLTRON.PIX
+-rw-r--r--    1 arb      os9archi     7168 Jan 24  2001 WABBIT.PIX
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 WATCH.PIX
+-rw-r--r--    1 arb      os9archi     6272 Jan 24  2001 ZORRO.PIX
+
+./TELECOM:
+total 616
+-rw-r--r--    1 arb      os9archi     6230 Jan 24  2001 ALLRAM.BAS
+-rw-r--r--    1 arb      os9archi     9473 Jan 24  2001 ALLRAM.DOC
+-rw-r--r--    1 arb      os9archi    24031 Jan 24  2001 bitbang.bas
+-rw-r--r--    1 arb      os9archi     4607 Jan 24  2001 bitbang.doc
+-rw-r--r--    1 arb      os9archi     7338 Jan 24  2001 CODETYPE.BAS
+-rw-r--r--    1 arb      os9archi    11008 Jan 24  2001 CUTS.BAS
+-rw-r--r--    1 arb      os9archi     6619 Jan 24  2001 DESC.BBS
+-rw-r--r--    1 arb      os9archi     5278 Jan 24  2001 EDITOR.BAS
+-rw-r--r--    1 arb      os9archi     3087 Jan 24  2001 FILE.BAS
+-rw-r--r--    1 arb      os9archi      747 Jan 24  2001 FILE.DOC
+-rw-r--r--    1 arb      os9archi     1921 Jan 24  2001 FILES.BBS
+-rw-r--r--    1 arb      os9archi     4992 Jan 24  2001 GEC11.BIN
+-rw-r--r--    1 arb      os9archi    25472 Jan 24  2001 GEMANUAL.TXT
+-rw-r--r--    1 arb      os9archi    26112 Jan 24  2001 GEMANUL2.TXT
+-rw-r--r--    1 arb      os9archi    25600 Jan 24  2001 GETERM.BIN
+-rw-r--r--    1 arb      os9archi     8193 Jan 24  2001 HAM.BAS
+-rw-r--r--    1 arb      os9archi     8148 Jan 24  2001 iterm.bin
+-rw-r--r--    1 arb      os9archi     1047 Jan 24  2001 iterm.txt
+-rw-r--r--    1 arb      os9archi      128 Jan 24  2001 MABEL2.BAS
+-rw-r--r--    1 arb      os9archi     7808 Jan 24  2001 MABEL2.BIN
+-rw-r--r--    1 arb      os9archi    18695 Jan 24  2001 MTERM1.BAS
+-rw-r--r--    1 arb      os9archi    18663 Jan 24  2001 MTERM2.BAS
+-rw-r--r--    1 arb      os9archi    18945 Jan 24  2001 MTERM2.DOC
+-rw-r--r--    1 arb      os9archi    18539 Jan 24  2001 MTERM3.BAS
+-rw-r--r--    1 arb      os9archi    15010 Jan 24  2001 MTERM3.DOC
+-rw-r--r--    1 arb      os9archi      424 Jan 24  2001 MTERM4.BAS
+-rw-r--r--    1 arb      os9archi     1880 Jan 24  2001 MTPAK.BAS
+-rw-r--r--    1 arb      os9archi     4570 Jan 24  2001 MTPAK.HLP
+-rw-r--r--    1 arb      os9archi    16394 Jan 24  2001 MTRM47.BIN
+-rw-r--r--    1 arb      os9archi     2923 Jan 24  2001 MTTAPE.BAS
+-rw-r--r--    1 arb      os9archi     7681 Jan 24  2001 RTERM.ARC
+-rw-r--r--    1 arb      os9archi     6144 Jan 24  2001 TAPETERM.BIN
+-rw-r--r--    1 arb      os9archi    23552 Jan 24  2001 TDD43.ARC
+-rw-r--r--    1 arb      os9archi     6913 Jan 24  2001 TELETERM.BIN
+-rw-r--r--    1 arb      os9archi     4736 Jan 24  2001 TMSTERM.BIN
+-rw-r--r--    1 arb      os9archi    19786 Jan 24  2001 twi-term212.bin
+-rw-r--r--    1 arb      os9archi    14776 Jan 24  2001 TWTERM21.BIN
+-rw-r--r--    1 arb      os9archi    16896 Jan 24  2001 TWTRM26C.BIN
+-rw-r--r--    1 arb      os9archi    15104 Jan 24  2001 TWTRMANL.TXT
+-rw-r--r--    1 arb      os9archi      128 Jan 24  2001 ULTCLOCK.BIN
+-rw-r--r--    1 arb      os9archi    28928 Jan 24  2001 ULTDOC1.TXT
+-rw-r--r--    1 arb      os9archi    31488 Jan 24  2001 ULTDOC2.TXT
+-rw-r--r--    1 arb      os9archi    27264 Jan 24  2001 ULTDOC3.TXT
+-rw-r--r--    1 arb      os9archi    27648 Jan 24  2001 ULTITERM.BIN
+
+./UTIL:
+total 1124
+-rw-r--r--    1 arb      os9archi     1090 Jan 24  2001 ADDFIND.BAS
+-rw-r--r--    1 arb      os9archi      528 Jan 24  2001 ALARM.BAS
+-rw-r--r--    1 arb      os9archi     2560 Jan 24  2001 ARCHIVES.BIN
+-rw-r--r--    1 arb      os9archi     2816 Jan 24  2001 BINTOBAS.BAS
+-rw-r--r--    1 arb      os9archi     5551 Jan 24  2001 BUDGET.BAS
+-rw-r--r--    1 arb      os9archi     3554 Jan 24  2001 CAL.BAS
+-rw-r--r--    1 arb      os9archi     1312 Jan 24  2001 CALCPRNT.BAS
+-rw-r--r--    1 arb      os9archi    11388 Jan 24  2001 CC3DATER.BAS
+-rw-r--r--    1 arb      os9archi    18560 Jan 24  2001 CHECKBK.TXT
+-rw-r--r--    1 arb      os9archi    16640 Jan 24  2001 CHECKS3.BAS
+-rw-r--r--    1 arb      os9archi    65792 Jan 24  2001 CHEKDEMO.COM
+-rw-r--r--    1 arb      os9archi     1920 Jan 24  2001 CLOCK.BAS
+-rw-r--r--    1 arb      os9archi    12286 Jan 24  2001 CNFGDIR2.BAS
+-rw-r--r--    1 arb      os9archi     5263 Jan 24  2001 COCODOC.BAS
+-rw-r--r--    1 arb      os9archi     7133 Jan 24  2001 COCOWORD.BAS
+-rw-r--r--    1 arb      os9archi     4224 Jan 24  2001 CUSTOM1.BIN
+-rw-r--r--    1 arb      os9archi    12544 Jan 24  2001 CUSTOM1.DOC
+-rw-r--r--    1 arb      os9archi     5076 Jan 24  2001 DATABASE.BAS
+-rw-r--r--    1 arb      os9archi     1243 Jan 24  2001 DATAGE.BAS
+-rw-r--r--    1 arb      os9archi    36352 Jan 24  2001 DB.ARC
+-rw-r--r--    1 arb      os9archi     6016 Jan 24  2001 DECIDE.BAS
+-rw-r--r--    1 arb      os9archi      896 Jan 24  2001 DECOMP.BAS
+-rw-r--r--    1 arb      os9archi    17486 Jan 24  2001 DESC.BBS
+-rw-r--r--    1 arb      os9archi      995 Jan 24  2001 DISKCOMP.BIN
+-rw-r--r--    1 arb      os9archi     6277 Jan 24  2001 DISKTEST.BIN
+-rw-r--r--    1 arb      os9archi     2718 Jan 24  2001 DISKWASH.BAS
+-rw-r--r--    1 arb      os9archi      494 Jan 24  2001 DSD2.BAS
+-rw-r--r--    1 arb      os9archi      384 Jan 24  2001 DSDD.BAS
+-rw-r--r--    1 arb      os9archi     2688 Jan 24  2001 dshrink.bin
+-rw-r--r--    1 arb      os9archi     2560 Jan 24  2001 DSHRINK.BIN
+-rw-r--r--    1 arb      os9archi     1003 Jan 24  2001 DSKDMP.BAS
+-rw-r--r--    1 arb      os9archi     1921 Jan 24  2001 EASYLIST.BAS
+-rw-r--r--    1 arb      os9archi     4358 Jan 24  2001 ENVELOPE.BAS
+-rw-r--r--    1 arb      os9archi     5248 Jan 24  2001 FAST-80.ARC
+-rw-r--r--    1 arb      os9archi     3072 Jan 24  2001 FDOS.BIN
+-rw-r--r--    1 arb      os9archi     5632 Jan 24  2001 FDOS.DOC
+-rw-r--r--    1 arb      os9archi     7296 Jan 24  2001 FILER.ARC
+-rw-r--r--    1 arb      os9archi     4580 Jan 24  2001 FILES.BBS
+-rw-r--r--    1 arb      os9archi    29116 Jan 24  2001 FmtSCSI.bas
+-rw-r--r--    1 arb      os9archi     3976 Jan 24  2001 FmtSCSI.TXT
+-rw-r--r--    1 arb      os9archi     1408 Jan 24  2001 FORMAT.ARC
+-rw-r--r--    1 arb      os9archi     5249 Jan 24  2001 GENEAL.BAS
+-rw-r--r--    1 arb      os9archi    14679 Jan 24  2001 HANDYMAN.BAS
+-rw-r--r--    1 arb      os9archi   135667 Jan 24  2001 HOMEPAC.DSK
+-rw-r--r--    1 arb      os9archi    20992 Jan 24  2001 KDSKDOC1.TXT
+-rw-r--r--    1 arb      os9archi    11520 Jan 24  2001 KDSKDOC2.TXT
+-rw-r--r--    1 arb      os9archi    25088 Jan 24  2001 KDSKUTIL.BIN
+-rw-r--r--    1 arb      os9archi     8457 Jan 24  2001 LABEL.BAS
+-rw-r--r--    1 arb      os9archi    32128 Jan 24  2001 LANDLORD.ARC
+-rw-r--r--    1 arb      os9archi     5376 Jan 24  2001 LSAVEM.ARC
+-rw-r--r--    1 arb      os9archi    17408 Jan 24  2001 MAGICMU.ARC
+-rw-r--r--    1 arb      os9archi     3688 Jan 24  2001 MAKECASS.BAS
+-rw-r--r--    1 arb      os9archi     4962 Jan 24  2001 MDOS.BAS
+-rw-r--r--    1 arb      os9archi      556 Jan 24  2001 Mlfinder.bin
+-rw-r--r--    1 arb      os9archi      484 Jan 24  2001 mlfinder.txt
+-rw-r--r--    1 arb      os9archi      484 Jan 24  2001 Mlfinder.txt
+-rw-r--r--    1 arb      os9archi    12012 Jan 24  2001 MOVIES.BAS
+-rw-r--r--    1 arb      os9archi      689 Jan 24  2001 MULTBACK.BIN
+-rw-r--r--    1 arb      os9archi     1840 Jan 24  2001 MULTBACK.DOC
+-rw-r--r--    1 arb      os9archi     1536 Jan 24  2001 NEWCMDS.BIN
+-rw-r--r--    1 arb      os9archi     4224 Jan 24  2001 newcmds.doc
+-rw-r--r--    1 arb      os9archi     4224 Jan 24  2001 NEWCMDS.DOC
+-rw-r--r--    1 arb      os9archi    41472 Jan 24  2001 NEWDOS.ARC
+-rw-r--r--    1 arb      os9archi      768 Jan 24  2001 P80X28.BAS
+-rw-r--r--    1 arb      os9archi      663 Jan 24  2001 PCLEAR0.BAS
+-rw-r--r--    1 arb      os9archi     4768 Jan 24  2001 PRINT.BIN
+-rw-r--r--    1 arb      os9archi     4736 Jan 24  2001 RAMDISKS.ARC
+-rw-r--r--    1 arb      os9archi    14845 Jan 24  2001 RBCALC.BAS
+-rw-r--r--    1 arb      os9archi    12801 Jan 24  2001 RBCALC.DOC
+-rw-r--r--    1 arb      os9archi      736 Jan 24  2001 REGIS.BAS
+-rw-r--r--    1 arb      os9archi     6784 Jan 24  2001 REGISTER.BAS
+-rw-r--r--    1 arb      os9archi    11392 Jan 24  2001 REVDEMO.ARC
+-rw-r--r--    1 arb      os9archi      604 Jan 24  2001 ROMBACK.BAS
+-rw-r--r--    1 arb      os9archi      224 Jan 24  2001 ROM.BAS
+-rw-r--r--    1 arb      os9archi      111 Jan 24  2001 ROMFIX.BIN
+-rw-r--r--    1 arb      os9archi     3073 Jan 24  2001 SCOREBRD.BAS
+-rw-r--r--    1 arb      os9archi     3072 Jan 24  2001 SCRN51.BIN
+-rw-r--r--    1 arb      os9archi     3072 Jan 24  2001 SCRN51.DOC
+-rw-r--r--    1 arb      os9archi     5120 Jan 24  2001 SNAP.BIN
+-rw-r--r--    1 arb      os9archi     2944 Jan 24  2001 SPLITTER.BAS
+-rw-r--r--    1 arb      os9archi     5527 Jan 24  2001 STARWORD.BAS
+-rw-r--r--    1 arb      os9archi     6785 Jan 24  2001 STOCK.BAS
+-rw-r--r--    1 arb      os9archi    11264 Jan 24  2001 STOCKS.BAS
+-rw-r--r--    1 arb      os9archi    11164 Jan 24  2001 SU3.BAS
+-rw-r--r--    1 arb      os9archi     1575 Jan 24  2001 TAPECNTL.BAS
+-rw-r--r--    1 arb      os9archi     4097 Jan 24  2001 TC12.BIN
+-rw-r--r--    1 arb      os9archi     3968 Jan 24  2001 TC3.BIN
+-rw-r--r--    1 arb      os9archi     4224 Jan 24  2001 TC40.BIN
+-rw-r--r--    1 arb      os9archi     4224 Jan 24  2001 tc512k.bin
+-rw-r--r--    1 arb      os9archi     4224 Jan 24  2001 tc.bin
+-rw-r--r--    1 arb      os9archi     2432 Jan 24  2001 TIMER.BIN
+-rw-r--r--    1 arb      os9archi     7341 Jan 24  2001 TVTESTER.BAS
+-rw-r--r--    1 arb      os9archi     7168 Jan 24  2001 UNARC512.BIN
+-rw-r--r--    1 arb      os9archi     2304 Jan 24  2001 UNCNDIR2.BIN
+-rw-r--r--    1 arb      os9archi     1894 Jan 24  2001 UNLOCK.BIN
+-rw-r--r--    1 arb      os9archi    10240 Jan 24  2001 VCRMANGR.BAS
+-rw-r--r--    1 arb      os9archi    27648 Jan 24  2001 VIRTUAL.ARC
+-rw-r--r--    1 arb      os9archi     8258 Jan 24  2001 WEATHER.BAS
+-rw-r--r--    1 arb      os9archi     3877 Jan 24  2001 WP2.BAS
+-rw-r--r--    1 arb      os9archi     2251 Jan 24  2001 WP2.DOC
+-rw-r--r--    1 arb      os9archi    13850 Jan 24  2001 ZIPCODE.BAS

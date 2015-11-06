@@ -1,0 +1,57 @@
+Like many of you old CoCo users out there, I've longed for better hardware, more memory  
+and modern interfaces.  Recently, I downloaded Paul Barton's 512k schematic from  
+coco3.com and decided to build the circuit.  The motivation for the project came from  
+cloud9tech.com, but due to the notice on their website, I felt time would be better  
+spent building the upgrade myself, as opposed to waiting for them to do it.  The  
+success of my project came from the documentation on how to install their upgrade,
+which I assumed was very closely related to Paul Barton's board.
+
+I began by purchasing a perfboard with solder points from Vetco Electronics, here in  
+Bellevue.  Next, I ordered the 30 pin SIMM sockets from Jameco electronics online.  I  
+found the SIMM modules in a bag of old 486's I had in storage, and luckily for me, I  
+have 4 of the 9 chip modules.  After measuring out the board and cutting it with a
+butter knife (I'm low on tool supplies as I'm in the process of moving) and spiral saw,
+I began by mounting the SIMM sockets.  Once the sockets were spaced correctly, I mounted
+the wire wrap strip-posts in the appropriate locations.  I guess I got lucky with the
+parts, because everything lined, and the board could be easily inserted/removed from
+the CoCo3 memory expansion headers.
+
+Not having any way to manufacture an etched circuit board, I decided the wire-wrapping  
+was my best option.  This took the better part of the weekend.  After many blurry, cross
+eyed moments and near burns from the soldering iron, I completed my Frankenstein  
+project.  Double checking the wire-wraps took about 4 hours, but I verified them by
+visual cross reference to the schematic, and then with a volt meter to make sure all the
+connections were good from the expansion headers to the SIMM module pins.  Again,
+another stroke of luck, because not one wire was misplaced!  Now, anybody that knows me
+would be surprised by this, and I was certainly taken aback by my novice good fortune.
+
+I hope your projects go as smoothly as mine did!
+
+Once the board was tested and the memory modules were snapped into place, I nervously  
+mounted the board on the machine and hooked up the power.  Nothing.  Nada.  No Disk  
+Basic screen to greet me.  In fact, I seemed to be pushing the GIME chip into some  
+rather bizarre contortions, as the poor machine attempted to do something with the  
+electricity I was giving it.  Alas, I nearly gave up when I happened to remember reading  
+something about cloud9tech.com's install directions.  And yes, there it was, on the last  
+page: remove the existing memory and bust out 2 filter caps.  Easy!  Once I removed the  
+memory and the offending capacitors, I plugged everything back in and - voila!  My heart  
+jumped at the familiar psychedelic cursor and disk basic welcome message!  Success!  All  
+my years of failed analog projects, burned IC's and smoking resistors had paid off in a  
+resounding success.
+
+Included you will find pictures of the memory expansion board.  There is one note of  
+caution that I will try to pass on: make sure to measure correctly!  While my board may  
+fit horizontally, the memory is too tall to put the top of the case back on.  Seems like  
+my next project will be to mount everything in a mini-tower PC case.  Mod central, here  
+I come!
+
+I hope you enjoyed reading my article, and hopefully I'll have many more experiences to  
+share with the growing revival of this wonderful little machine.
+
+I'd also like to recommend that you purchase a copy of Portal-9 from Roger Taylor at  
+coco3.com.  The IDE is great, and the CCASM support is outstanding.  I highly recommend  
+the 6809 for anybody who is interested in learning micro processor programming and  
+assembly language.
+
+Matthew Potter
+matthew@synapseware.com

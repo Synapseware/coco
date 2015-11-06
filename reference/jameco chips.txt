@@ -1,0 +1,22 @@
+Jameco parts that I have:
+
+
+7) SRM2264 - (8k x 8 bit) HIGH SPEED CMOS 64K BIT STATIC RAM
+
+2) KM2865A - 8K x 8 BIT CMOS ELECTRICALLY ERASABLE PROM
+
+2) D43256BCZ - UPD43256BCZ-70L : 256K-BIT CMOS STATIC RAM 32K-WORD BY 8-BIT [NEC]
+
+2) 6522 - VIA adapter
+
+4) 74LS138 - 3 to 8 decoder
+
+4) 74LS164 - 8-BIT PARALLEL-OUT SERIAL SHIFT REGISTERS
+
+4) ADC0803LCN - CMOS 8-bit A/D converters
+
+4) DAC0808LCN - 8-Bit D/A Converter 
+
+2) 74LS148 - 8-line-to-3-line Octal Priority Encoders
+
+2) 74LS151 - 1-of-8 line data selector/multiplexor

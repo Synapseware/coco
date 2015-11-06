@@ -1,0 +1,13 @@
+Program name:   MANDELBROT SET
+Author:         Graham Lee
+Program type:   Fractal Generator
+Supplied by:    Stephen J Woolham
+
+
+Notes:
+
+This program works best on Paul Burgin's T3 DRAGON emulator with the
+emulation speed set to MAX.
+
+
+

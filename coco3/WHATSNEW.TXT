@@ -1,0 +1,181 @@
+New features in version 1.60 
+----------------------------
+
+(This is a reference for previous users of versions 1.4x and 1.5x.  New users
+ may prefer to read COCO3.DOC, which has also been revised to reflect all
+ the changes indicated here.)
+
+COCO3X.EXE is a new version of the CoCo 3 emulator with several enhancements
+and bug corrections.  It is provided as is, without warranty.  You should
+retain a copy of your previous CoCo 3 emulator, COCO3.EXE, in case
+you experience new compatibility problems with this release.
+
+The following new features and bug corrections are available in version 1.60:
+
+* Hi-res joystick support:  Under the Options Menu [F6], "hi-res" is now
+  a valid selection for either joystick port.  In this mode, your PC mouse
+  will act like a hi-res joystick.  You should set only one joystick (left
+  or right, but not both) to hi-res at a time, however.
+
+* "Sync lock" mode:  Under the Timer option of the Options Menu [F6], you
+  can select "sync lock."  This will slow the emulator down to match the
+  speed of an original CoCo 3.  (Your computer must at least fast enough to
+  run the emulator full speed, however.)  Note that sync lock has been known
+  to cause problems when run through Windows and Windows 95.  As a general
+  rule, the emulator should always be run in MS-DOS Exclusive Mode in
+  Windows 95.  In Windows 3.1, you should exit Windows and run the emulator
+  from the DOS prompt, *not* an MS-DOS Command Prompt window.
+
+* Bug fixes: adjustments have been made to fix bugs with CoCo Max III and
+  ADOS-3.
+
+  To use CoCo Max III, you must select either the "sync lock" or
+  "60Hz/16kHz" timer mode in the [F6] Options Menu.   CoCo Max III will
+  *NOT* work in the "60Hz only" mode.
+
+  For details on setting up ADOS-3 with the emulator, see the end
+  of this document.
+
+* Some users were experiencing alignment problems with their video.  This
+  has been fixed.
+
+* Mouse registers: PRINT PEEK(&HFF86)*256+PEEK(&HFF87) gives you the X
+  coordinate of the mouse, and PRINT PEEK(&HFF88)*256+PEEK(&HFF89) gives you
+  the Y coordinate of the mouse.
+
+* Real-time clock: You can read the PC's date and time in BASIC using PEEK.
+  Use PRINT PEEK(&HFFC0) to update the clock and return the top two digits of
+  the year (e.g. "19" for 1996).  In general,
+
+    Use                 To get
+    ---                 ------
+    PRINT PEEK(&HFFC0)  First two digits of year (e.g. "19" for 1996)
+    PRINT PEEK(&HFFC1)  Last two digits of year (e.g. "96" for 1996)
+    PRINT PEEK(&HFFC2)  Month
+    PRINT PEEK(&HFFC3)  Day
+    PRINT PEEK(&HFFC4)  Day of week (0=Sunday, ... 6=Saturday)
+    PRINT PEEK(&HFFC5)  Hour
+    PRINT PEEK(&HFFC6)  Minutes
+    PRINT PEEK(&HFFC7)  Seconds
+    PRINT PEEK(&HFFC8)  100ths of a second
+
+  IMPORTANT: You *must* read PEEK(&HFFC0) first each time you want to
+  retrieve the current time.  This updates all the values at the other
+  PEEK addresses.  This is actually a feature :-) as it allows you to 
+  "lock-in" the time so that it doesn't change between reading the minutes
+  and seconds, for example.
+  
+* The debugger has a "Step Over" feature, which will run past subroutine
+  calls, stopping at the first instruction after the RETurn.  It also has
+  a memory search function ("Locate word"), that will search accessible
+  address space for occurrences of a specified 16-bit word value.
+
+* A bug in PORT.EXE involving single-character filenames has been fixed.
+
+  [The remaining enhancements will mainly benefit OS-9 users.]
+
+* 2Mb of RAM:  By typing the command "ECHO >2MEGS" at the MS-DOS prompt
+  while in the CoCo 3 directory, you will enable the 2Mb mode of the CoCo 3
+  emulator.  This command creates an empty file called 2MEGS in the CoCo 3
+  directory.  If the emulator sees this file when it is starting up and at
+  least 2Mb of EMS memory is available, the emulator will "open up" a full
+  2Mb of RAM for use in OS-9.  You will still need appropriate drivers for
+  the full 2Mb, but this extension does conform to the standard for 2Mb
+  enhancements on the real CoCo 3.  (i.e. selecting this option enables
+  bits 6 and 7 of the MMU registers and the $FF9B extension to the GIME
+  addressing.)
+
+* Virtual hard disk:  Virtual hard disk support is now available.  This
+  package includes a virtual hard disk driver on the OS9UTIL.DSK.  See the
+  read.me file on the OS9UTIL.DSK for details.
+
+* Enhanced OS-9 keyboard support:  A new default keyboard layout, "OS-9,"
+  can be selected in the [F6] Options Menu.  This layout maps your PC's
+  CAPS LOCK, _, \, |, ~, [, ], {, }, and ^ to the correct OS-9 CTRL sequences.
+  The [F8] keyboard customiser now also allows to add CTRL+ as a prefix to
+  any key binding.  (NOTE: Due to technical limitations, CTRL+@ is the only
+  key combination which cannot be mapped to a single key.  You can still
+  use this combination by mapping the "`" key to @ and manually typing
+  CTRL+`.)
+
+* The donated "getclock" utility on the OS9UTIL.DSK (in the CMDS directory)
+  can be added to your startup to automatically set the OS-9 clock to match
+  your PC's date and time.  This uses the addresses documented above.
+
+* Extended sector-per-track counts:  You can easily create virtual disks with
+  extended sector/track counts.  Simply copy 255SPT.DSK to another file
+  (e.g. "MYDISK.DSK") under MS-DOS, and then, using a custom OS-9 driver
+  for 255 sector/track disks, format MYDISK.DSK.  The secret to this format
+  is that the emulator checks the size of the virtual disk file.  If it is
+  not a multiple of 256 bytes (the old format), it assumes the first byte
+  contains the number of sectors per track.  255SPT.DSK is a 1-byte file
+  containing 255 in that field.
+
+  [And finally an advanced hybrid programming feature:]
+
+* You can enable 80x86 native code hooks by writing $4A to $FF86 and $56
+  to $FF87.  Once this is done, the 6809 opcodes 10 FE and 10 FF take on
+  special meaning.  Issuing a 10 FE will exit the emulator (equivalent to
+  the key sequence F6, Q, Y).  Issuing a 10 FF will switch into 80x86 mode.
+  In this mode, the code immediately following the 10 FF is executed as
+  80x86 code.  You must return to 6809 mode via an 80x86 RETF at the end of
+  your native code.  Upon entry and exit, 6809 and 80x86 registers are
+  mapped as follows:
+
+  AH = DP
+  BX = U
+  BP = S
+  CX = X
+  DH = A
+  DL = B
+  DI = Y
+  SI = PC
+
+  Note that this means you must load the 80x86 register SI with your
+  6809 re-entry address before issuing a RETF.  Upon entry into 80x86 mode,
+  DS: and ES: point to the segment containing the top 64K of CoCo RAM.
+  80x86 native code must not cross 8K MMU boundaries in the CS: segment
+  in which it is entered, though it is ok to access or branch to the top 64K
+  of CoCo RAM pointed to by DS:/ES:.
+
+
+Special notes on ADOS-3
+-----------------------
+
+To use ADOS-3 with the emulator, first locate your EPROM file for ADOS-3,
+and then use the PORT program to copy it to your MS-DOS directory.
+
+Next, enter the following MS-DOS commands.  Note here that "EPROM.BIN" is
+assumed to be the name of your EPROM file.  If your file has a different
+name, substitute it for EPROM.BIN in the "DEBUG" command:
+
+DEBUG EPROM.BIN [ENTER]
+  (a "-" prompt will appear)
+RCX [ENTER]
+  (a hex number will appear followed by a ":" prompt)
+4002 [ENTER]
+  (the "-" prompt comes back)
+A103 [ENTER]
+  (a prompt of the form "____:0103" will appear)
+DW C000 [ENTER]
+  (a prompt of the form "____:0105" will appear)
+[ENTER]
+  (the "-" prompt will return)
+N DISK.ROM [ENTER]
+  (the "-" prompt returns again)
+W 103 [ENTER]
+  (you will see "Writing 4002 bytes" followed by the "-" prompt)
+Q [ENTER]
+
+ADOS-3 will now be in the MS-DOS file DISK.ROM.  This file should be in
+your default directory for the CoCo 3 Emulator.
+
+IMPORTANT: COCO3.ROM and DISK.ROM should be the ONLY files with the *.ROM
+extension in the CoCo 3 Emulator's directory.
+
+Next, run the new CoCo 3 Emulator, COCO3X.
+
+Go to the F6 Options Menu and change the "Timer" option to "60Hz/16kHz" (note
+this should NOT be "60Hz only").
+
+ADOS-3 should now work under the CoCo 3 Emulator.

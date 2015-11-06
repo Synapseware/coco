@@ -1,0 +1,22 @@
+
+There's been talk about interlaced graphics for the CoCo on coco.listserv
+lately.  I promised I would put up a program that actually DID it, and here
+it is!
+
+ITERM.BIN is an old version of Twilight Terminal that was put together
+specifically as an experiment in interlaced graphics.  It runs in 640x450
+graphics mode in 4 colors.  The 4 colors are all shades of green and used
+in such a way as to anti-alias the font graphics to keep them from
+flickering and to increase their apparent resolution to about 1280x450 !
+
+This program needs 512k, RGB, and a Tandy or Disto RS-232 card to run.
+The interlace mode also seems to only kick in when used on a CoCo with the
+OLD (1986?1985?) version of the GIME chip.  On the newer (1987) GIME chip,
+the interlace doesn't seem to kick in, at least not with this particular
+way of achieving it.  This doesn't mean the new GIME can't DO it, it's just
+that you have to think of another way of doing it.
+
+
+			)( Sock Master )(  (John Kowalski)
+			http://www.axess.com/twilight/sock
+			mailto:twilight@axess.com

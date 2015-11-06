@@ -1,0 +1,192 @@
+     Custom Coco Basic, Program and Manual
+     Copyright (C) 1988 by: Alan DeKok,
+     All rights reserved.
+
+
+                        CCB Manual V 1.0
+                      -:================:-
+
+
+     This is a preliminary manual for Custom Coco Basic, (hereafter referred to as CCB). While the documentation may not be very long or explicit, it is complete.
+
+     This program IS NOT public domain, it is copyrighted. However, you may distribute it freely as long as it is TOTALLY  unchanged and the original manual accompanies it.
+     This program is shareware, so donations would be helpful. You can send something to the address below, ($15 is suggested) or for $20 and a nice cover letter with an SASE and formatted  disk, I will send you a personalized up-to-date version with a (
+hopefully) more complete manual and basic programs that use CCB. I will also try to write a CONFIG program and see if I can find a way to EPROM CCB. If there is, I will include full instructions in the up-to-date manual on how to install an EPROM with CC
+B. Also, when you send me a disk I will try to cram as much stuff on it as possible. I have written many programs which I have uploaded to DELPHI, and some which I haven't. Some are patches, fixes, enhancements, or stand-alone programs. Rest assured, you
+r disk will not be empty when it is returned to you.
+
+     However, as I am still attending university and don't have much time, don't expect many more add-ons to CCB or a huge and technical manual. I will do my best to make it as clear and as useful as possible, But I do have limitations.
+
+ You can write to me at:
+
+     Alan DeKok,
+     1070 March Rd., RR#1
+     Kanata, Ontario, Canada.
+     K2K 1X7
+
+     Checks or whatever should be made out to > Alan DeKok <.
+
+
+
+
+                        Opening remarks
+                      -:===============:-
+
+      To be able to properly understand the syntax of the various commands, you must first understand the forms used to explain the commands. A list of the forms and their explicit meanings is as follows:
+
+     <#0-255>    any number from 0-255 is allowed here
+     <A,B,C>     this command accepts any of the letters listed
+
+
+
+                        Command Summary
+                      -:===============:-
+
+     SET <F,L,S,U>
+                 F - sets clock to double speed, 2MHz
+                 L - forces token listing to be lowercase
+                 S - sets clock to slow speed
+                 U - forces token listing to be uppercase
+
+    - SET W=<#0-255>,<#0-65535>
+                 The first value is the key delay before repeat,  and the second is the key repeat value. '1' is very fast and '255' is very slow. The defualt values are 33,&h11B. It is not   necessary to set the second number, so SETW=33 is valid.
+
+    - SET <#0-128>
+                 Changes the defualt 32 column screen                             attributes. A listing of the various values
+                 and their effects follows.
+
+                 64 - green border
+                 32 - reverse video
+                 16 - true lowercase enable
+                 8  - red screen
+                 80 - defualt startup value
+                 0  - original value, black border, no lowercase
+
+
+     ON RESET GOTO <line#>
+                 Does a GOTO to the specified line if the RESET button is pressed. A line number of '0' will cause the computer to return to the direct mode on a RESET.
+
+     BRK <ON,OFF>
+                 Turns the BRK key sense on or off. If it is     off, any previous or later ON BRK GOTO will not work. Once you turn BRK ON, a press of the BRK key will GOTO a specified line number.
+
+     RESTORE <line#>
+                 RESTOREs the data pointer to a specific line    number. The next READ data statement will read the data at the start of that line.
+
+     JOYSTK(#) where # is <4,5>
+                 4 - reads the hi-res joystick X value,
+                 5 - reads the hi-res Y value.
+            NOTE*: All hi-res reads are done from 0-639, so you will have to calculate the range that you want.
+            i.e. X=JOYSTK(4)/2 will have X from 0-319.
+
+     HPAINT@(X,Y),C1,C2
+                 Paints color C1 on colour C2. This command is a complement to the normal HPAINT, which will paint over everything until it sees colour C2. HPAINT@ will only paint where there is colour C2, it will stop at any other colour.
+
+     HPRINT@(X,Y),string
+                 Does a HPRINT, except the background colour will also be printed, so you do not have to clear out the HPRINT area beforehand.
+
+    - HPRINT <#0-8>,<#0-1>
+                 Sets the font number 0-8, '0' is the original   Coco 3 font, and number 1-8 are the added fonts.
+                 The second value specifies HPRINT positioning,
+         '0' is the normal postition 0-79,0-23.
+         '1' allows full 0-319,0-191 positioning.
+         NOTE*: The full screen positioning will only work perfectly on HSCREEN2, any other screen will not have the text at the place you wanted it to be. This is because of the nature of HSCREEN2, which allows easy positioning.
+
+     HSCREEN<#0-4>,<#0-50>
+                 The first number will set the HSCREEN, and the second number specifies the BLOCK that the screen is to start  at. If you use HSCREENs 2 or 4, the highest allowed block is 48.
+
+    - HSCREEN ,<#0-50>
+                 like the 'PMODE' command, specifies the screen
+                 that drawing is to take place on.
+
+    - HSCREEN
+                 displays the previously specified screen, from
+                 the command above.
+
+
+   - HSCREEN <#0-4>
+                 works exactly like the original HSCREEN, uses
+                 the default block number 48.
+
+     HCOLOR <#0-80>,<#0-80>
+                 Specifies the foreground and background colours
+                 to draw with. The range is:
+                  0-15  -  normal colours
+                  16-79 -  patterns 0-63
+                  80    -  reverse colour, does EOR with screen.
+
+
+    - HCOLOR <#16-79> TO X,Y
+                 Pulls the specified pattern from the given screen X and Y coordinates. You must use a HCOLOR <#16-79> afterwards to draw with that pattern.
+
+     HCOPY B1,X,Y,CX,CY TO B2,X2,Y2
+                 Copies a portion of a screen starting at block number 'B1' and screen position 'X,Y' with length 'CX,CY' to a screen starting at block 'B2' position 'X2,Y2'.
+                 e.g. HCOPY &H30,0,0,10,20 to &H28,30,40 will copy from block &H30 from '0,0' for 11 bytes to the right and 21 screen line down, TO a screen starting at block &H28 '30,40'
+                 NOTE*: CX is measured in BYTES, while CY is measured in vertical screen lines. Both CX and CY will copy for one more byte/line than is specified. So if BOTH CX and CY are zero, then it will copy the byte at 'X,Y'.
+
+     LOAD <F,P,S>"filename"
+                 F - loads font into a font buffer. Default is
+                   zero.
+                   LOADF"SMALL.FNT",7 loads the font into font
+                   buffer 7.
+                   NOTE*: this command will load ANY binary file that is the right length ($300 bytes) regardless of start and end addresses. This allows you to LOADF a font that is used by another program and was saved from a different address.
+             Defualt extension is FNT.
+
+                 P - loads a pattern file into the pattern buffer. Again, any file of the right length ($800 bytes) will load regardless of any previous start and end addresses.
+             The default extension is PTN
+
+                 S - loads a screen. The screen MUST be in uncompressed MGE format. Any other format will give an ?FS ERROR.
+             If you add <,"R"> or <,"C"> after the filename, the palette values will automatically be changed to be RGB or CMP. So if you load a file that was saved in RGB colours on your computer which has a TV as a monitor, a LOADS"filename","C" will t
+ell the computer to change all of the RGB colours to their composite counterparts.
+             The default extension is MGE.
+
+     SAVE <F,P,S>"filename"
+                 saves a font, pattern buffer or screen.
+                 F - You can specify the font buffer to be saved from, like the LOAD command. The font will be saved as a normal machine language file with start $F09D and end $F39C so someone without CCB can simply LOADM the font and have it work.
+
+                 P - The pattern is saved as a machine language file with start $0E00 so it has the usual file format.
+
+                 S - saves the screen that is currently being drawn on. So HSCREEN2,&H30:SAVES"file" is the same as HSCREEN,&H30:SAVES"file" which is the same as HSCREEN2:SAVES"file".
+            NOTE*: all files are 32000 bytes long, so you may not see the last few lines of the file. Also, if you use HGET and HPUT in a program, you can save the GET/PUT buffers as part of a screen by using HSCREEN1,&H32:SAVES"file". Since HSCREENs 1 a
+nd 3 are only 16k long, anything after the screen will automatically be saved and loaded with it.
+
+     PALETTE# ST,CT,DV
+                 does palette animation. Rotates palette values starting at ST for a count CT, with a delay DV. The maximum value for ST is 14, while the maximum value of ST+CT is 15. DV is how many interrupts to wait before rotating the palettes, the ma
+ximum is 255.
+           e.g. PALETTE# 1,10,60 will rotate palettes 1 through 11 once very second.
+
+     PALETTE ON/OFF
+                 ON  - turns palette cycling on.
+                 OFF - stops palette cycling.
+
+     LIST"filename"
+                 lists a disk file to the screen. Binary files will give an error, while tokenized BASIC files will be automatically de-tokenized and listed. Ascii text files which have file type '3' will have spaces inserted in the proper tab positions 
+before being listed. i.e. An EDTSAM+ assemble file will list properly, and the text will not be all crunched up together.
+
+     LLIST"filename"
+                 works exactly like LIST, but outputs to the printer.
+
+        NOTE*:If you do an OPEN"O",#x,"file" :POKE&H6F,x :LIST"file2" , the output will be re-routed to the first file. This is useful for making ascii copies of basic programs without destroying the program in memory. It can also be used to make EDTASM+
+ listings compatible with other assemblers.
+
+
+
+                         Other features
+                       -:==============:-
+
+     In addition to all the enhanced commands, CCB fixes most of the bugs and misgivings of the Coco 3. All palette values will be preserved on a RESET, as will the current text attributes. PRINT TAB and PRINT"","" will now work properly on the 40 and 80
+ column screens. The SCREEN command will automatically switch to 32 column SAM type graphics before displaying, so it will work properly from a 40 or 80 column screen. The 40 and 80 column screens have been moved to the $C000 range form $2000 so that the
+ computer will not crash when the stack is between $2000-$4000. The LPEEK/LPOKE commands have been re-written so that they do not crash the computer is the stack is below $2000.
+
+     Besides fixing bugs and adding commands, CCB allows lowercase entry of commands, user adjustable key repeat, and  disk access including format at double speed. The PALETTE# command will cycle palettes even when the computer is drawing on the graphic
+s screen, so it is possible to see an area being HPAINTed with a pattern while the colours are cycling in the pattern.
+
+     To make CCB as friendly as possible, every command knows when to stop. If you use <SHIFT-@> to pause the computer, the palette cycling will also pause. When you enter direct mode (OK prompt), the cycling automatically stops and the BRK key is automa
+tically enabled. Any ON RESET GOTO commands will not affect the computer when you RESET it in direct mode.
+
+
+                            Summary
+                          -:=======:-
+
+     In conclusion, if you find any bugs in CCB or have any ideas that you would like to share, please feel free to contact me at the above address, or on DELPHI where I can be reached as ALANDEKOK. I would like to hear response from people who are using
+ CCB as to what they find hard to use, or what they don't understand. If there is enough communication between me the programmer and you the user, then CCB will become better and easier to use.
+                  

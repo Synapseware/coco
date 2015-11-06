@@ -1,0 +1,212 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1254">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>4.</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0" width="630">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><span style="mso-spacerun: yes">    </span></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="4. APPENDICES - 4,1"><font size="2" face="Arial"><strong>4.
+        APPENDICES</strong><br>
+        </font></a><font size="2" face="Arial"><br>
+<span style="mso-spacerun: yes">               </span><em><strong>4.1 Object file formats</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Object files are produced by the
+        assemblers in<span style="mso-spacerun: yes">  </span>either<span style="mso-spacerun:
+yes">  </span>of<span style="mso-spacerun: yes">  </span>two<br>
+<span style="mso-spacerun: yes">                  </span>standard formats,<span style="mso-spacerun: yes">  </span>both of which<span style="mso-spacerun:
+yes">  </span>represent<span style="mso-spacerun: yes"> 
+</span>        the<span style="mso-spacerun: yes">  </span>binary<span style="mso-spacerun: yes">  </span>data<span style="mso-spacerun: yes">  </span>as<br>
+<span style="mso-spacerun: yes">                  </span>two-digit printable ASCII hex numbers.<span style="mso-spacerun: yes"> 
+</span>        The exact contents of<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>two standard format object files is as
+        follows:<br>
+        <br>
+<span style="mso-spacerun: yes">            </span>4.1.1 Motorola hex format<br>
+        <br>
+<span style="mso-spacerun: yes">            </span>Data Record:
+        'Stnnaaaadddddddddddddddddddddddddddddddd...cc'<br>
+<span style="mso-spacerun:
+yes">                  </span>Where:<span style="mso-spacerun: yes">  </span>S = 'S', indicates start of
+        data record<br>
+<span style="mso-spacerun:
+yes">                          </span>t = Record type,
+        '1'=data, '9'=end of file.<br>
+<span style="mso-spacerun: yes">                          </span>n = Count of number of
+        bytes in record.<span style="mso-spacerun: yes">   </span>(in ASCII/HEX)<br>
+<span style="mso-spacerun: yes">                          </span>a = Load address of
+        data record.<span style="mso-spacerun: yes">          </span>(in ASCII/HEX)<br>
+<span style="mso-spacerun: yes">                          </span>d = Actual data bytes
+        in record.<span style="mso-spacerun: yes">          </span>(in ASCII/HEX)<br>
+<span style="mso-spacerun: yes">                          </span>c = Checksum of count,
+        address, and data. (in ASCII/HEX)<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>Note1: Checksum is
+        computed as one's complement of eight<br>
+<span style="mso-spacerun: yes">                               </span>bit sum of
+        all values fron 'nn' to end of data.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Note2: Count 'nn' is three
+        greater then the number of data<br>
+<span style="mso-spacerun:
+yes">                               </span>bytes in the
+        record.<br>
+        <br>
+<span style="mso-spacerun: yes">            </span>4.1.2 Intel hex format<br>
+        <br>
+<span style="mso-spacerun: yes">            </span>Data Record:
+        ':nnaaaattdddddddddddddddddddddddddddddd...cc'<br>
+<span style="mso-spacerun:
+yes">                  </span>Where:<span style="mso-spacerun: yes">  </span>: = Indicates start of data
+        record<br>
+<span style="mso-spacerun:
+yes">                          </span>n = Count of number of
+        bytes in record.<span style="mso-spacerun: yes">   </span>(in ASCII/HEX)<br>
+<span style="mso-spacerun: yes">                          </span>a = Load address of
+        data record.<span style="mso-spacerun: yes">          </span>(in ASCII/HEX)<br>
+<span style="mso-spacerun: yes">                          </span>t = Record type<span style="mso-spacerun: yes">               
+</span>        (00=Data, 01=End of file)<br>
+<span style="mso-spacerun: yes">                          </span>d = Actual data bytes
+        in record<span style="mso-spacerun: yes">           </span>(in ASCII/HEX)<br>
+<span style="mso-spacerun: yes">                          </span>c = Checksum of count,
+        address, and data. (in ASCII/HEX)<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Note1: Checksum is
+        computed as two's complement of eight<br>
+<span style="mso-spacerun:
+yes">                               </span>bit sum of
+        all values fron 'nn' to end of data.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Note2: End of file record
+        contains count of 00.<br>
+</font></span>        </td>
+    </tr>
+</table>
+
+<table border="0" width="630">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="4.2 ASCII code chart"><font size="2" face="Arial"><em><strong>4.2
+        ASCII code chart</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun:
+yes">                                     </span>Most
+        Significant Figure<br>
+        <br>
+<span style="mso-spacerun: yes">                      </span>HEX||<span style="mso-spacerun:
+yes">  </span>0<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>1<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>2<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes"> 
+</span>        3<span style="mso-spacerun:
+yes">  </span>|<span style="mso-spacerun: yes">  </span>4<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>5<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun:
+yes">  </span>6<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>7<span style="mso-spacerun: yes">  </span>|<br>
+<span style="mso-spacerun: yes">                      </span>===++=====+=====+=====+=====+=====+=====+=====+=====+<br>
+<span style="mso-spacerun: yes">                       </span>0 || NUL | DLE |<span style="mso-spacerun: yes">     </span>|<span style="mso-spacerun: yes"> 
+</span>        0<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun:
+yes">  </span>@<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>P<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>`<span style="mso-spacerun:
+yes">  </span>|<span style="mso-spacerun: yes">  </span>p<span style="mso-spacerun: yes">  </span>|<br>
+<span style="mso-spacerun:
+yes">                      </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                       </span>1 || SOH | DC1 |<span style="mso-spacerun: yes">  </span>!<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>1<span style="mso-spacerun:
+yes"> 
+</span>        |<span style="mso-spacerun: yes">  </span>A<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>Q<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun:
+yes">  </span>a<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>q<span style="mso-spacerun: yes">  </span>|<br>
+<span style="mso-spacerun: yes">                  </span>L<span style="mso-spacerun: yes">   </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                  </span>e<span style="mso-spacerun: yes">    </span>2 || STX | DC2 |<span style="mso-spacerun: yes">  </span>&quot;<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes"> 
+</span>        2<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>B<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun:
+yes">  </span>R<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>b<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>r<span style="mso-spacerun:
+yes">  </span>|<br>
+<span style="mso-spacerun: yes">                  </span>a<span style="mso-spacerun: yes">   </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                  </span>s<span style="mso-spacerun: yes">    </span>3 || ETX | DC3 |<span style="mso-spacerun: yes">  </span>#<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>3<span style="mso-spacerun: yes"> 
+</span>        |<span style="mso-spacerun: yes">  </span>C<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun:
+yes">  </span>S<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>c<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>s<span style="mso-spacerun:
+yes">  </span>|<br>
+<span style="mso-spacerun: yes">                  </span>t<span style="mso-spacerun: yes">   </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                       </span>4 || EOT | DC4 |<span style="mso-spacerun: yes">  </span>$<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>4<span style="mso-spacerun:
+yes"> 
+</span>        |<span style="mso-spacerun: yes">  </span>D<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>T<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun:
+yes">  </span>d<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>t<span style="mso-spacerun: yes">  </span>|<br>
+<span style="mso-spacerun: yes">                  </span>S<span style="mso-spacerun: yes">   </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                  </span>i<span style="mso-spacerun: yes">    </span>5 || ENQ | NAK |<span style="mso-spacerun: yes">  </span>%<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>5<span style="mso-spacerun: yes"> 
+</span>        |<span style="mso-spacerun: yes">  </span>E<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun:
+yes">  </span>U<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>e<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>u<span style="mso-spacerun:
+yes">  </span>|<br>
+<span style="mso-spacerun: yes">                  </span>g<span style="mso-spacerun: yes">   </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                  </span>n<span style="mso-spacerun: yes">    </span>6 || ACK | SYN |<span style="mso-spacerun: yes">  </span>&amp;<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes"> 
+</span>        6<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>F<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun:
+yes">  </span>V<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>f<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>v<span style="mso-spacerun:
+yes">  </span>|<br>
+<span style="mso-spacerun: yes">                  </span>i<span style="mso-spacerun: yes">   </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                  </span>f<span style="mso-spacerun: yes">    </span>7 || BEL | ETB |<span style="mso-spacerun: yes">  </span>'<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>7<span style="mso-spacerun: yes"> 
+</span>        |<span style="mso-spacerun: yes">  </span>G<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun:
+yes">  </span>W<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>g<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>w<span style="mso-spacerun:
+yes">  </span>|<br>
+<span style="mso-spacerun: yes">                  </span>i<span style="mso-spacerun: yes">   </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                  </span>c<span style="mso-spacerun: yes">    </span>8 || BS<span style="mso-spacerun: yes">  </span>| CAN |<span style="mso-spacerun: yes">  </span>(<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>8<span style="mso-spacerun: yes"> 
+</span>        |<span style="mso-spacerun: yes">  </span>H<span style="mso-spacerun:
+yes">  </span>|<span style="mso-spacerun: yes">  </span>X<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>h<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun:
+yes">  </span>x<span style="mso-spacerun: yes">  </span>|<br>
+<span style="mso-spacerun: yes">                  </span>a<span style="mso-spacerun: yes">   </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                  </span>n<span style="mso-spacerun: yes">    </span>9 || HT<span style="mso-spacerun: yes">  </span>| EM<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>)<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>9<span style="mso-spacerun: yes"> 
+</span>        |<span style="mso-spacerun:
+yes">  </span>I<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>Y<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>i<span style="mso-spacerun:
+yes">  </span>|<span style="mso-spacerun: yes">  </span>y<span style="mso-spacerun: yes">  </span>|<br>
+<span style="mso-spacerun:
+yes">                  </span>t<span style="mso-spacerun: yes">   </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                       </span>A || LF<span style="mso-spacerun: yes">  </span>| SUB |<span style="mso-spacerun: yes">  </span>*<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun:
+yes">  </span>:<span style="mso-spacerun: yes"> 
+</span>        |<span style="mso-spacerun: yes">  </span>J<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>Z<span style="mso-spacerun:
+yes">  </span>|<span style="mso-spacerun: yes">  </span>j<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>z<span style="mso-spacerun: yes">  </span>|<br>
+<span style="mso-spacerun: yes">                  </span>F<span style="mso-spacerun: yes">   </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                  </span>i<span style="mso-spacerun: yes">    </span>B || VT<span style="mso-spacerun: yes">  </span>| ESC |<span style="mso-spacerun: yes">  </span>+<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>;<span style="mso-spacerun:
+yes"> 
+</span>        |<span style="mso-spacerun: yes">  </span>K<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>[<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun:
+yes">  </span>k<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>{<span style="mso-spacerun: yes">  </span>|<br>
+<span style="mso-spacerun: yes">                  </span>g<span style="mso-spacerun: yes">   </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                  </span>u<span style="mso-spacerun: yes">    </span>C || FF<span style="mso-spacerun: yes">  </span>| FS<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>,<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>&lt;<span style="mso-spacerun: yes"> 
+</span>        |<span style="mso-spacerun:
+yes">  </span>L<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>\<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>l<span style="mso-spacerun:
+yes">  </span>|<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>|<br>
+<span style="mso-spacerun:
+yes">                  </span>r<span style="mso-spacerun: yes">   </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                  </span>e<span style="mso-spacerun: yes">    </span>D || CR<span style="mso-spacerun: yes">  </span>| GS<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>-<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>=<span style="mso-spacerun: yes"> 
+</span>        |<span style="mso-spacerun:
+yes">  </span>M<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>]<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>m<span style="mso-spacerun:
+yes">  </span>|<span style="mso-spacerun: yes">  </span>}<span style="mso-spacerun: yes">  </span>|<br>
+<span style="mso-spacerun:
+yes">                      </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                       </span>E || SO<span style="mso-spacerun: yes">  </span>| RS<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>.<span style="mso-spacerun:
+yes">  </span>|<span style="mso-spacerun: yes"> 
+</span>        &gt;<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>N<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun:
+yes">  </span>^<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>n<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>~<span style="mso-spacerun:
+yes">  </span>|<br>
+<span style="mso-spacerun: yes">                      </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+<span style="mso-spacerun: yes">                       </span>F || SI<span style="mso-spacerun: yes">  </span>| US<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>/<span style="mso-spacerun:
+yes">  </span>|<span style="mso-spacerun: yes"> 
+</span>        ?<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>O<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun:
+yes">  </span>_<span style="mso-spacerun: yes">  </span>|<span style="mso-spacerun: yes">  </span>o<span style="mso-spacerun: yes">  </span>| DEL |<br>
+<span style="mso-spacerun: yes">                      </span>---++-----+-----+-----+-----+-----+-----+-----+-----+<br>
+</font></span>        </td>
+    </tr>
+</table>
+<table width="605" border="0">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2">&quot;Converted by 
+        BiPOM Electronics to HTML format from original Micro C documentation by 
+        Dunfield Development Systems. Please see the Micro C documentation that 
+        is included with Micro C for the original forms of these pages.&quot;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

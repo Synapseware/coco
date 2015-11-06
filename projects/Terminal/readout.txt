@@ -1,0 +1,10 @@
+*BUILDING*
+
+
+cm main.asm -v -de -q -nr -o=Files\main.bin
+
+cm video.asm -v -de -q -nr -o=Files\video.bin
+
+cm serial.asm -v -de -q -nr -o=Files\serial.bin
+
+*BUILD COMPLETE*

@@ -1,0 +1,55 @@
+    This set of files will allow you to patch Max-10 so that it will not need
+the 'clicker' to run, and so that it will work with the Tandy Hi-res interface.
+    You will need to have:
+
+ 1)  CRAK    /BIN
+ 2)  MAX SAVE/BAS
+ 3)  PATCH   /BAS
+ 4)  PATCH   /BIN
+ 5)  BOOT    /BAS
+ 6)  BOOT    /BIN (all saved together on a disk)
+ 7)  Two formatted disks,
+ 8)  A 512k COCO 3. (sorry, 128k just won't work)
+
+Procedure
+=========
+
+1-  BACKUP your original Max-10 disk to the first formatted disk, and
+COPY"CRAK/BIN" to the backup.
+
+1a- If necessary, do a CONFIGure on the backed-up copy.
+
+2-  LOAD"MAX"
+   If it is configged, then type:
+  51 LOADM"CRAK
+   or else type:
+  81 LOADM"CRAK
+
+3-  RUN the loader program. (With the clicker installed)
+    NOTE* every once in a while, for no apparent reason, Max-10 will crash
+before it is running. If this happens, simply go back to step 2 until it works.
+
+  4-  Once the program is up and running, and the arrow cursor is on the
+screen, press the right joystick button.
+    NOTE* Do not do anything, don't select a menu or type in any text or else
+the patch will not work properly.
+    The text cursor will stop flashing, and after a second you will return to
+the 32-column screen, and you will see BASIC's sign-on message.
+
+5-  LOAD"MAX SAVE"  and insert the second formatted disk. Then type RUN.
+
+6-  The drive will whir and the program will inform you of what stage it is at.
+After it is finished, you will have a copy of Max-10 on the disk.
+    NOTE* This copy is STILL copyright by COLORWARE, so DO NOT hand it around.
+This patch is NOT for the purpose of 'breaking' Max-10, but so that the
+ORIGINAL buyer may use it without bothering with switching hi-res interfaces
+and the clicker.
+
+7-  using the COPY command, copy the last four programs to the second disk.
+  i.e. PATCH/BAS, PATCH/BIN, BOOT/BAS, BOOT/BIN.
+
+8-  RUN"PATCH"    The disk will go back and forth , and after a short wait
+MAX-10 will load and run. You will be exactly where you left off.
+
+    Now you have a copy of Max-10 on the disk, and whenever you want to use it
+simply type RUN"BOOT" and it will be up and running in a few seconds.

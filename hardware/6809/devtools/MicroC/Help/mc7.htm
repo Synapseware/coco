@@ -1,0 +1,271 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1254">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>7.</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0">
+    <tr>
+        <td><a name="7. THE MICRO-C COMPILER"><font size="2"
+        face="Arial"><strong>7. THE MICRO-C COMPILER</strong></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>The heart of the MICRO-C programming
+        environment is the<span style="mso-spacerun: yes">  </span>COMPILER.<br>
+<span style="mso-spacerun:
+yes">               </span>This program reads a<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun: yes">  </span>containing<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes"> 
+</span>        'C'<span style="mso-spacerun: yes">  </span>source<span style="mso-spacerun: yes">  </span>program,<span style="mso-spacerun: yes">  </span>and<br>
+<span style="mso-spacerun: yes">               </span>translates it into an equivalent assembly
+        language program.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>The compiler includes its<span style="mso-spacerun: yes">  </span>own<span style="mso-spacerun: yes">  </span>limited<span style="mso-spacerun: yes"> 
+</span>        pre-processor,<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>is<br>
+<span style="mso-spacerun: yes">               </span>suitable for<span style="mso-spacerun: yes">  </span>compiling<span style="mso-spacerun: yes">  </span>programs<span style="mso-spacerun: yes">  </span>requiring<span style="mso-spacerun: yes"> 
+</span>        only<span style="mso-spacerun: yes">  </span>non-parameterized<br>
+<span style="mso-spacerun: yes">               </span>MACRO substitution, simple INCLUDE file
+        capability,<span style="mso-spacerun: yes">  </span>and single-level<br>
+<span style="mso-spacerun: yes">               </span>CONDITIONAL processing.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>A complete description of the language
+        accepted by MCC,<span style="mso-spacerun: yes">  </span>as well<br>
+<span style="mso-spacerun: yes">               </span>as error messages and other detals is given
+        in the<span style="mso-spacerun: yes">  </span>section<span style="mso-spacerun: yes">  </span>entitled<br>
+<span style="mso-spacerun:
+yes">               </span>&quot;THE MICRO-C PROGRAMMING
+        LANGUAGE&quot;.<br>
+        <br>
+<span style="mso-spacerun: yes">               </span></font><a name="7.1 The MCC command"><span style="mso-spacerun: yes"><font
+        size="2" face="Arial"><em><strong></strong></em></font></span><font
+        size="2" face="Arial"><em><strong>7.1 The MCC command</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The format of the MICRO-C {CPU}
+        Compiler command line is:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                           </span>MCC [input_file]
+        [output_file] [options]<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>[input_file]<span style="mso-spacerun: yes">  </span>is the name of
+        the<span style="mso-spacerun: yes">  </span>source<span style="mso-spacerun:
+yes">  </span>file<span style="mso-spacerun: yes">  </span>containing<span style="mso-spacerun: yes">  </span>'C'<br>
+<span style="mso-spacerun:
+yes">              </span><span style="mso-spacerun: yes">    </span>statements to read.<span style="mso-spacerun: yes">  </span>If no filenames
+        are given,<span style="mso-spacerun: yes">  </span>MCC will<span style="mso-spacerun: yes">  </span>read<br>
+<span style="mso-spacerun:
+yes">                  </span>from standard input.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>[output_file]<span style="mso-spacerun: yes">  </span>is the name of
+        the file to which<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>generated<br>
+<span style="mso-spacerun: yes">                  </span>assembly language code is written.<span style="mso-spacerun: yes">  </span>If
+        less than two filenames are<br>
+<span style="mso-spacerun: yes">                  </span>specified, MCC will write to standard
+        output.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>7.1.1 Command Line Options</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>MCC accepts the following
+        command<span style="mso-spacerun: yes">  </span>line<span style="mso-spacerun:
+yes">  </span>[options],<span style="mso-spacerun: yes">  </span>which<br>
+<span style="mso-spacerun: yes">                     </span>are recognized in lower case
+        only:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>-c<span style="mso-spacerun: yes">      </span>- Include the
+        'C' source code as assembly comments.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>-f<span style="mso-spacerun: yes">      </span>- Causes the
+        compiler to &quot;Fold&quot; its literal pool.<br>
+<span style="mso-spacerun:
+yes">                                  </span>(Identical
+        strings not contained in explicit<br>
+<span style="mso-spacerun: yes">                                  </span>variables
+        occur only once in memory).<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>-l<span style="mso-spacerun:
+yes">      </span>- Enables MCC
+        to accept line numbers.<br>
+<span style="mso-spacerun: yes">                                  </span>(At
+        beginning of line, followed by ':').<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>-q<span style="mso-spacerun:
+yes">      </span>- Causes
+        MCC to be quiet (no startup message).<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>-s<span style="mso-spacerun: yes">      </span>- Includes
+        info about the C symbols in the output<br>
+<span style="mso-spacerun:
+yes">                                  </span>file
+        as special assembly language comments.<br>
+        <br>
+<span style="mso-spacerun: yes">            </span>8051:<span style="mso-spacerun: yes">       </span>m=0-4<span style="mso-spacerun: yes">   </span>- Specify the memory
+        model to use:<br>
+<span style="mso-spacerun:
+yes">                                  </span>(0=Tiny,
+        1=Small, 2=Compact, 3=Medium, 4=Large)<br>
+        <br>
+<span style="mso-spacerun: yes">            </span>6816:<span style="mso-spacerun: yes">       </span>m=0-1<span style="mso-spacerun: yes">   </span>- Specify the memory
+        model to use:<br>
+<span style="mso-spacerun:
+yes">                                  </span>(0=Small,
+        1=Large)<br>
+        <br>
+<span style="mso-spacerun: yes">            </span>8086:<span style="mso-spacerun:
+yes">       </span>m=0-3<span style="mso-spacerun: yes">   </span>- Specify the memory
+        model to use:<br>
+<span style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:&quot;MS Mincho&quot;"><span style="mso-spacerun: yes">                                  </span>(0=Tiny,
+        1=Small, 2=Rom)</span></font><span style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:&quot;MS Mincho&quot;"><p class="MsoPlainText"><font
+        size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="7.2 Symbol Information Comments"><font size="2"
+        face="Arial"><em><strong>7.2 Symbol Information Comments</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>When the -S option is used, MCC
+        outputs special comments into<br>
+<span style="mso-spacerun: yes">                  </span>the output file which provide
+        information about<span style="mso-spacerun: yes">  </span>symbols<span style="mso-spacerun: yes">  </span>used<span style="mso-spacerun: yes">  </span>in<br>
+<span style="mso-spacerun:
+yes">                  </span>the program:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>#fun &lt;symbol_name&gt;
+        &lt;stack_allocation&gt; &lt;local_reference&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>This indicates the start of<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes"> 
+</span>        function<span style="mso-spacerun: yes">  </span>named<span style="mso-spacerun: yes">  </span>&lt;symbol_name&gt;.<br>
+<span style="mso-spacerun: yes">                  </span>&lt;stack_allocation&gt;<span style="mso-spacerun: yes">  </span>is the
+        amount of stack used for local variable<br>
+<span style="mso-spacerun:
+yes">                  </span>storage,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>&lt;local_reference&gt;<span style="mso-spacerun: yes"> 
+</span>        is an value that increments with<br>
+<span style="mso-spacerun: yes">                  </span>each function,<span style="mso-spacerun: yes">  </span>and is used in a
+        unique prefix<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes">  </span>local<span style="mso-spacerun: yes">  </span>static<br>
+<span style="mso-spacerun: yes">                  </span>variables.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>#end<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>This comment indicates<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>end<span style="mso-spacerun: yes"> 
+</span>        of<span style="mso-spacerun:
+yes">  </span>the<span style="mso-spacerun: yes">  </span>function<span style="mso-spacerun: yes">  </span>code.<span style="mso-spacerun: yes">  </span>The<br>
+<span style="mso-spacerun: yes">                  </span>addresses listed with #fun and #end
+        can be used to<span style="mso-spacerun: yes">  </span>determine<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>memory block occupied by the function
+        code.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>#lcl &lt;symbol_name&gt; &lt;type&gt;
+        &lt;index&gt; [#dims dim...]<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>This comment indicates a symbol
+        local to the current<span style="mso-spacerun: yes">  </span>function.<br>
+<span style="mso-spacerun: yes">                  </span>#lcl will always occur between the
+        #fun and a<span style="mso-spacerun: yes">  </span>#end<span style="mso-spacerun: yes">  </span>comments<span style="mso-spacerun: yes">  </span>for<br>
+<span style="mso-spacerun: yes">                  </span>the function in which these symbols
+        are in scope.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>#gbl &lt;symbol_name&gt; &lt;type&gt;
+        &lt;index&gt; [#dims dim...]<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>This comment indicates a symbol
+        which is global to<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>entire<br>
+<span style="mso-spacerun: yes">                  </span>program.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>&lt;type&gt;<span style="mso-spacerun: yes">  </span>is a 16<span style="mso-spacerun: yes">  </span>bit<span style="mso-spacerun: yes">  </span>value<span style="mso-spacerun: yes"> 
+</span>        (in<span style="mso-spacerun: yes">  </span>decimal)<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>indicates<span style="mso-spacerun: yes">  </span>type<br>
+<span style="mso-spacerun:
+yes">                  </span>information from the compilers symbol
+        table,<span style="mso-spacerun: yes">  </span>in bit positions<span style="mso-spacerun:
+yes">  </span>as<br>
+<span style="mso-spacerun: yes">                  </span>follows:<br>
+        <br>
+<span style="mso-spacerun: yes">                </span>REFERENCE<span style="mso-spacerun: yes">   </span>0x8000<span style="mso-spacerun: yes">  </span>- symbol has been
+        referenced<br>
+<span style="mso-spacerun: yes">                </span>INITED<span style="mso-spacerun:
+yes">      </span>0x4000<span style="mso-spacerun: yes">  </span>- symbol is
+        initialized in declaration<br>
+<span style="mso-spacerun: yes">                </span>ARGUMENT<span style="mso-spacerun: yes">    </span>0x2000<span style="mso-spacerun: yes">  </span>- symbol is a
+        function argument<br>
+<span style="mso-spacerun: yes">                </span>EXTERNAL<span style="mso-spacerun:
+yes">    </span>0x1000<span style="mso-spacerun: yes">  </span>- external
+        attribute<br>
+<span style="mso-spacerun: yes">                </span>STATIC<span style="mso-spacerun: yes">      </span>0x0800<span style="mso-spacerun: yes">  </span>- static
+        attribute<br>
+<span style="mso-spacerun: yes">                </span>REGISTER<span style="mso-spacerun: yes">    </span>0x0400<span style="mso-spacerun: yes">  </span>- register
+        attribute<br>
+<span style="mso-spacerun: yes">                </span>TVOID<span style="mso-spacerun:
+yes">       </span>0x0200<span style="mso-spacerun: yes">  </span>- void
+        attribute<br>
+<span style="mso-spacerun: yes">                </span>UNSIGNED<span style="mso-spacerun: yes">    </span>0x0100<span style="mso-spacerun: yes">  </span>- unsigned
+        attribute<br>
+<span style="mso-spacerun: yes">                </span>BYTE<span style="mso-spacerun: yes">        </span>0x0080<span style="mso-spacerun: yes">  </span>- 0=16 bit,
+        1=8 bit<br>
+<span style="mso-spacerun: yes">                </span>CONSTANT<span style="mso-spacerun:
+yes">    </span>0x0040<span style="mso-spacerun: yes">  </span>- const attribute<br>
+<span style="mso-spacerun: yes">                </span>SYMTYPE<span style="mso-spacerun: yes">     </span>0x0030<span style="mso-spacerun: yes">  </span>- Symbol type
+        (see below):<br>
+<span style="mso-spacerun:
+yes">                          </span><span style="mso-spacerun:
+yes">      </span>0<span style="mso-spacerun: yes">   </span>- A
+        simple variable<br>
+<span style="mso-spacerun: yes">                                </span>1<span style="mso-spacerun: yes">   </span>- A
+        structure member<br>
+<span style="mso-spacerun: yes">                                </span>2<span style="mso-spacerun: yes">   </span>- A
+        structure template<br>
+<span style="mso-spacerun: yes">                                </span>3<span style="mso-spacerun: yes">   </span>- A
+        function(global) or GOTO label(local)<br>
+<span style="mso-spacerun: yes">                </span>ARRAY<span style="mso-spacerun: yes">       </span>0x0008<span style="mso-spacerun: yes">  </span>- symbol is an
+        array<br>
+<span style="mso-spacerun: yes">                </span>POINTER<span style="mso-spacerun: yes">     </span>0x0007<span style="mso-spacerun: yes">  </span>- level of
+        pointer indirection<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>&lt;index&gt; is a 16 bit value with
+        the following meaning:<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                </span>Global symbol:<span style="mso-spacerun: yes">              </span>Set
+        to zero<br>
+<span style="mso-spacerun: yes">                </span>Local (!static) variable:<span style="mso-spacerun: yes">   </span>Offset of
+        variable into stack frame<br>
+<span style="mso-spacerun: yes">                </span>Function argument:<span style="mso-spacerun: yes">          </span>Offset
+        from stack at function entry<br>
+<span style="mso-spacerun: yes">                </span>Goto label (always local):<span style="mso-spacerun: yes">  </span>Compiler
+        generated symbol number<br>
+<span style="mso-spacerun: yes">                </span>Static symbol:<span style="mso-spacerun: yes">              </span>Local
+        ref. number (unqiue to function)<br>
+<span style="mso-spacerun: yes">                </span>Struct/Union tag:<span style="mso-spacerun: yes">           </span>Size
+        (in bytes) of structure<br>
+<span style="mso-spacerun: yes">                </span>Struct/Union member:<span style="mso-spacerun: yes">        </span>Offset
+        of member into structure<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>If the symbol represents an array
+        (ARRAY bit set in &lt;index&gt;),<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>next value will indicate the total
+        number<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>dimensions<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>array. Following that are the sizes of
+        each dimension.<br>
+        </font></span></p>
+        </span></td>
+    </tr>
+</table>
+<table width="605" border="0">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2">&quot;Converted by 
+        BiPOM Electronics to HTML format from original Micro C documentation by 
+        Dunfield Development Systems. Please see the Micro C documentation that 
+        is included with Micro C for the original forms of these pages.&quot;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,293 @@
+LIST 3
+This file must be called "KDSKDOC2.TXT" on your computer.
+
+ 
+14.   <N>UMBER  FIND - Used with options DUMP SECTOR,  EDIT SECTOR and  HEX
+DUMP.  Searches   screen display  for  selected numbers (in hex).   Inverts
+screen display for easy location.
+ 
+     To use:
+ 
+      a.  Select option <N>.
+ 
+      b.  Type in HEX digits to search for (12 digits max).
+ 
+      c.  Use with other dump or edit options.
+ 
+      d.  To turn NUMBER FIND off,   Press ENTER instead of entering digits
+          to find.
+ 
+ 
+15.   <O>PTS  A S=*  D=* - Sets the default drives for other menu  options.
+The first parameter is 'A' or 'F'.  'A' is for absolute disk addressing and
+'F' is for file addressing. S is source drive,  D is for destination drive.
+If  an automatic  default  is  not desired,   hit  enter  instead  of drive
+number.   Menu  displays  default values  selected.  Asterix  indicates  no
+default  value.   Use  arrow  keys to change baud rate.  Press  ENTER  when
+correct  baud rate appears.   The left margin can be set from 0 to 9 for  a
+cleaner  print  out.  However,  some features of KDSK (LIBRARY) use  an  80
+column listing.  To use the margins and avoid line wrapping on the printer,
+set printer to 12 CPI instead of the normal 10 CPI.
+ 
+      To use:
+ 
+      a.  Select option <O>.
+ 
+      b.  Answer  prompts for source and destination  drives.   Use   ENTER
+          for no default drive.
+ 
+      c.  <A>bsolute or <F>ile disk access - Select 'A' or 'F' or hit ENTER
+          to leave as is. The current setting is the Inverted letter.
+ 
+      d.  Select baud rate for printer (Use up/down arrow keys).
+ 
+      e.  Select left margin if desired.
+ 
+ 
+16.   <P>ASSWORD -  Encrypts and decrypts files with the key word or phrase
+you provide.
+ 
+     To use:
+ 
+      a.  Select  option <P> when main menu is on the screen.
+ 
+      b.  Select drive and select file to encrypt/decrypt.
+ 
+      c.  Enter key word or phrase. Phrase can be up to 255 characters long.
+ 
+Warning: Key word or phrase must be exactly the same to decrypt a file.
+ 
+17.   <Q>UIT - Aborts the program and returns to Basic.   Takes program out
+of memory.
+ 
+ 
+18.   <R>ECOVER   DIRECTORY - Will retrieve the backup directory (if  saved
+with  first  the SAVE DIRECTORY option) and restore it  to   the   original
+location (RS format only).  Restored  directory  will  be  the same as when
+last  saved  (by  SAVE  option or COPY  option).   A  directory  cannot  be
+recovered  unless   it   was   first   saved.    Used  to  recover  crashed
+directories (explained later).
+ 
+     To use:
+ 
+      a.  Select option <R>.
+ 
+      b.  Answer prompt for source drive.
+ 
+ 
+19.   <S>AVE   DIRECTORY   - Use  of  this option  will  save  the  granule
+allocation  table and directory (RS format only) in the upper half  of  the
+directory track.  This  area  on the  disk cannot be accessed during normal
+disk  use  and is usually dead space on the disk.   As such,   use of  this
+option will not tie up a granule of  disk space  as  some  other  directory
+saving  schemes do.   Use of this option and RECOVER DIRECTORY  option  can
+help to recover a crashed disk.
+ 
+     To use:
+ 
+      a.  Select option <S>.
+ 
+      b.  Answer prompt for source drive.
+ 
+ 
+20.   <T>RACKS  = 35/18 - Sets the maximum  tracks  and  sectors  that  can
+be accessed by the other menu options.   Can be set for any number from  00
+to 99.  Current status is displayed on the main menu.
+ 
+     To use:
+ 
+      a.  Select option <T>.
+ 
+      b.  Answer  prompts  for  maximum number of tracks  and  sectors  per
+          track.  Answer with 2 digit numbers (09 instead of 9).
+ 
+Note  that  if  tracks are set to 40,   option <I> will format  40  tracks,
+option <B> will backup 40 tracks, etc...
+ 
+ 
+21.   <U>PLOAD  - Uploads machine language or  basic  programs  from   tape
+and transfers  program  to  disk (RS format).   Displays  start,  end,  and
+exec  addresses  for machine language programs.  Has options to  skip  over
+files if desired.
+ 
+     To use:
+ 
+      a.  Select option <U>.
+ 
+      b.  Ready   cassette   and  press  ENTER   when   prompted.    Option
+          will automatically write file to disk.
+ 
+ 
+22.   <V>ERIFY   -  Acts   as   a   toggle  switch for  the  verify  on/off
+command.  Current status is displayed on the main menu.  When verify is on,
+each  track written is immediately re-read to insure write was  successful.
+This  slows  down  all  disk writes and is  recommended  only  if  you  are
+experiencing problems with a disk or drive.
+ 
+     To use:
+ 
+      a.  Select option <V>. Current status is displayed on main menu.
+ 
+ 
+23.  <W> FLEX TO RS -  Converts Flex formatted files to RS format. JOB must
+be  set on appropriate Flex format option.  Converted file is put on target
+drive and source file is untouched.  This option is limited to ASCII  files
+and  binary  files with one load address (Most binary files have  only  one
+load address).
+ 
+     To Use:
+ 
+      a.  Set JOB to correct Flex format.
+ 
+      b.  Select  Option <W> from main menu and answer questions for source
+          and target drives.
+ 
+      c.  A  list of Flex files on the source disk will be displayed with a
+          letter  preceding  each filename.  Select files by letter  to  be
+          converted to RS format and hit ENTER.
+ 
+ 
+24.   <X>   EXAMINE   TRACK  -  Allows  you  to examine an entire track  of
+data,  including control data on the disk.  Uses the same  format  as  DUMP
+command.   Press any key to display next screen and <LEFT ARROW> to go back
+one  screen.  Displays bytes viewed in upper right corner in hex and can be
+used with NUMBER FIND.
+ 
+     To use:
+ 
+      a.  Select option <X>.
+ 
+      b.  Answer prompt for source drive.
+ 
+      c.  Displays  64  bytes at a time.  Any key advances to next  screen.
+          <LEFT ARROW> goes back 64 bytes.
+ 
+ 
+ 
+                                 SPECIAL KEYS
+ 
+The  following  commands can be used for those options above that  use  the
+arrow keys (not all commands apply in all cases):
+ 
+     <UP ARROW>         -  Goes to next track.
+ 
+     <DOWN ARROW>       -  Goes to previous track.
+ 
+     <RIGHT ARROW>      -  Goes to next sector.
+ 
+     <LEFT ARROW>       -  Goes to previous sector.
+ 
+     <SPACE BAR>        -  Goes to next page.
+ 
+     <->                -  Starts option or page over.
+ 
+     <BREAK>           -  Aborts  and  returns  to main menu.  Can be  used
+                          with any option any time program is waiting   for
+                          a response.
+ 
+     <CLEAR>             - Same  as break key only does not  display  Title
+                           page.
+ 
+     <SHIFT><UP ARROW>  - Sends screen  contents to printer.  Can be used  at
+                          any time.
+ 
+ 
+                         RECOVERING A CRASHED DISK
+ 
+     There  are several ways to recover a crashed disk with KDSK.  The most
+common crash is in the directory track (track 17). The first thing to do is
+use BACKUP to make a copy of the readable sectors on a crashed  disk.  Each
+time  KDSK stops with a disk error,  note the track & sector  number,  then
+press  the space bar to continue.  If the error was a CRC error,  there's a
+good  chance  the  data is still intact and the backup  will  work  as  the
+original did. If not, read on...
+ 
+     Recovering  the directory is easy now if you used the SAVE  option  or
+used COPY to copy a file to the disk before it crashed.  Use RECOVER on the
+backup  disk and your directory will be restored the same image as the last
+SAVE or COPY.
+ 
+     Another  method  is INITIALIZE (format) just  the  bad  sector.  (KDSK
+actually  must reformat the entire track but rewrites the readable  sectors
+when  it's finished).  Hit return for the fill character and KDSK will fill
+the  bad  sector  with whatever data can be  read  after  initializing  the
+sector.  Again,  if you had only CRC errors, you may be finished, otherwise
+follow the directions in previous paragraph.
+ 
+ 
+                             CUSTOMIZING KDSK
+ 
+    KDSK  UTILITY  can be  customized  by  changing  the   verify   status,
+default  drive  status,  printer baud rate (use up/down arrow keys), number
+of  tracks,  number of sectors/track,  etc  on loading to reflect what  you
+normally use with your system.   To change,  select <Y> on initial load and
+answer  questions.
+ 
+  When  asked   for   printer   control   characters,    answer   in   hex,
+including  escape characters if  needed.  Be sure to use leading zeros when
+entering  hex numbers (Ex:  use 0F not F,  and use 01 instead of  1).   Hit
+enter  if  no  changes  are  needed.   KDSK  is initially setup up for Star
+Printers as follows:
+ 
+     Normal Print    =  1B351B481B461B4201
+ 
+           1B 35    selects standard character set.
+           1B 48    cancels double-strike printing.
+           1B 46    cancels emphasized printing.
+           1B 42 01 sets pitch to 10 characters/inch (Pica).
+ 
+     Condensed Print  =  1B4303
+ 
+           1B 43 03  sets pitch to 17 characters/inch.
+ 
+     Expanded Print   =  0E1B451B341B47
+ 
+           0E        selects expanded print for rest of line.
+           1B 45     selects emphasized printing.
+           1B 34     selects italics.
+           1B 47     selects double-strike printing.
+ 
+ 
+                                 GLOSSARY
+ 
+RS          - Radio  Shack - used to mean standard Radio Shack disk  format
+            (35 tracks,  18 sectors/track,  directory in track  17,  double
+            density,  single  sided,  files linked via Granule  Table,  256
+            bytes sectors)
+ 
+Flex        - Flex  Operating  System  - used to mean  standard  Flex  disk
+            format  (Single  sided 40 tracks,  18 sectors/tracks or  Double
+            sided 40 tracks,  36 sectors/track,  double density with  track
+            zero  single density,  directory starting in track zero,  files
+            linked via first 4 bytes of each sector, 256 byte sectors)
+ 
+MS-DOS       - MS-DOS/PC-DOS  Operating System - used to mean  MS-DOS  disk
+            format (Single or double sided, double density, 40 tracks, 8 or
+            9 sectors/track, Directory starting in track zero, files linked
+            via File Allocation Table (FAT), 512 byte sectors)
+ 
+                         SPECIAL NOTES/SHORT CUTS
+ 
+1. When asked for track number on DUMP or EDIT sectors, if you reply with a
+"D", you will get the directory track (track 17, sector 3).
+ 
+2.  The  drive  being  accessed is in the upper left corner of  the  screen
+(DR=#).
+ 
+3. When editing a sector, moving the arrow keys off the top row advances to
+the  next page.  An easy way to get the last character of the first line is
+do go down one line and backup one character.
+ 
+4. For double sided drives, add 4 to drive number to access the second side
+of the drive.  For example, drive 4 would be the second side of drive 0 and
+drive 5 would be the second side of drive 1.
+ 
+ 
+ 
+   ALL SUGGESTIONS ON USES/IMPROVEMENTS TO THIS PROGRAM ARE APPRECIATED.
+
+ACTION> (Next, Down, Xm, List) 
+                                                                        
+
+
+                                                                                           

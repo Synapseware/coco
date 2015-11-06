@@ -1,0 +1,154 @@
+TRS-80 COLOUR COMPUTER 3 EMULATOR Ver. 1.6B (C) 1993-97 Jeff Vavasour
+=====================================================================
+
+(Visit http://www.vavasour.ca/jeff/trs80.html#coco3 for contact info.)
+
+This is a quick summary of things you must know about the CoCo 3 Emulator, for 
+those already familiar with the CoCo 2 Emulator.  Full details may be found in 
+the COCO3.DOC file.
+
+PC REQUIREMENTS:
+
+- Full VGA-compatibility.
+- 333K of free low memory.
+- MS-DOS 3.3.
+
+Recommended:
+
+- MS-DOS 5.0 with an additional 96K of free low memory, EMS 4.0 and 384K 
+  of free EMS memory.
+- a fast CPU.
+
+You will also need a real CoCo 3 to obtain a copy of the "Super Extended
+BASIC" ROM as described below.  (Users intending to work exclusively in OS/9
+Level II can bypass this requirement, see below.)
+
+If you have the recommended memory requirements, the emulator will work as
+a 512K CoCo 3.  Otherwise it will work as a 128K CoCo 3.
+
+The CoCo 3 memory size is indicated on the title screen when you run the 
+emulator.  Also, for quicker reference, the colour of the title screen's 
+background will also reflect the memory size (blue if 128K, green if 512K).
+
+
+OBTAINING THE ROM FROM A REAL COCO 3:
+------------------------------------
+
+This section outlines how to use a disk-based transfer method to obtain the 
+ROMs from a CoCo 3.  See COCO.DOC on how to transfer the ROMs from diskless 
+CoCo 3's.
+
+1. Install the CoCo 3 emulator into a NEW DIRECTORY on your PC.  (It must NOT
+   be in the same directory as the CoCo 2 emulator.)
+
+2. Use the `PORT' program to write `GET3ROM.BAS' to a CoCo 3 disk.  (Before
+   sending, press [F7] until a "BASIC" file type is selected, and then [F8] 
+   until an "ASCII" format is selected.)
+
+3. Take the disk to your CoCo 3 an RUN the GET3ROM.BAS program on it.  This
+   disk must have at least 43K of free space.
+
+4. Bring the disk with the ROM back to your PC, and run the `PORT' program
+   again.  MAKE SURE THE "ADD/STRIP LFS" AND "ADD/STRIP EOF BYTE" OPTIONS
+   ARE SET TO "NO".  (Use the [F5] and [F6] keys to change these settings.)
+
+5. With the settings specified in step 4, tell PORT to move the files 
+   "COCO3.ROM" and "DISK.ROM" from the CoCo disk to your MS-DOS directory.
+
+The file "COCO3.ROM" should be 32258 bytes long, and "DISK.ROM" should be 
+8194 bytes long.  If these are correct, you may now run the emulator by typing 
+"COCO3" at the MS-DOS prompt.
+
+If you have trouble reading the CoCo disk on your PC, try formatting a new
+one on the PC using the DSKINI.EXE program.  Then, use that disk for the 
+transfer process instead.  If the file lengths are wrong, check that settings 
+in step 4 are correct and that there was enough space on the disk.
+
+If you are using ADOS-3, see COCO3.DOC section 2.5 for details on how to
+transfer this to the emulator.
+
+
+
+CHANGES TO THE OPTIONS MENU:
+---------------------------
+
+The following options on the [F6] Options Menu are different in the CoCo 3
+emulator:
+
+[A] Keyboard.  A layout specifically designed for OS-9 is now available.
+
+[B] Joysticks.  A "hi-res" mode is available wherein the mouse can be used
+[C] to represent the hi-res joystick interface add-on used in CoCo Max III,
+    etc.  At most, only one of [B] or [C] should be set to "hi-res" at any
+    given time.
+
+[E] Colour set.  The colours on a CoCo RGB monitor are different than on its
+    Composite TV output.  You may choose either the RGB colour set, or a 
+    crude approximation of the Composite colour set using this option.  Note
+    that artifacting is not supported in the CoCo 3 emulator.
+
+[F] Border colour.  Use this option to either force the screen border to be
+    black, or to allow it to change to the colours used on the genuine 
+    CoCo 3.
+
+[H] Timers.  In addition to selecting a 60Hz or 50Hz clock as with the CoCo 2
+    emulator, you can now enable the 16kHz horizontal sync and programmable
+    timer interrupts.  BE WARNED THAT THIS MAY LOCK UP SLOW COMPUTERS OR 
+    HAVE ADVERSE EFFECTS ON SYSTEM PERFORMANCE.  If you find you can no longer
+    run the emulator after changing this option, delete the file GENERAL.CC3
+    in the emulator's directory.
+
+
+SNAPSHOTS AND PROGRAM PAKS:
+--------------------------
+
+Snapshots from the CoCo 2 emulator are NOT compatible, however, Program Pak 
+images from the CoCo 2 emulator CAN be used with the CoCo 3 emulator.  CoCo 3 
+snapshots will be either 129K or 513K in length depending on whether the 
+emulated CoCo had 128K or 512K of RAM.
+
+See COCO3.DOC for information on how to obtain Program Pak images for either
+machine.
+
+
+KEYBOARD:
+--------
+
+The additional keys on the CoCo 3 keyboard are mapped as follows:
+
+        CoCo 3 key:     PC key:
+         BREAK           ESC
+         CLEAR           HOME
+         CTRL            CTRL
+         ALT             ALT
+         SHIFT-@         SCROLL LOCK
+         F1              F11
+         F2              F12
+
+This keyboard map may be changed in the [F8] Keyboard Customization option.
+Changes take effect when the "Custom" keyboard layout is selected via the
+[F7] key.  Three standard layouts are available, one that matches the PC
+keyboard for use in BASIC, one that matches it for use in OS-9, and one that
+puts the keys in positions that most closely resemble the layout of the
+original CoCo keyboard.
+
+
+USING OS/9 LEVEL II WITHOUT THE COCO ROMS:
+-----------------------------------------
+
+OS/9 Level II requires the CoCo ROMs only so that you can execute the "DOS"
+command.  You can bypass this requirement by installing the emulator's OS/9
+boot loader, OS9BOOT.MOR.  This is done simply by typing the following command
+at the MS-DOS prompt:
+
+COPY OS9BOOT.MOR COCO3.ROM
+
+Upon executing the emulator, the disk in the emulated CoCo's drive 0 (as 
+specified in the virtual disk menu, see Section 4.1 for details) will now
+automatically be booted.
+
+You may still install the CoCo 3 ROMs at a later date by following any one of
+the procedures in Sections 2.1 through 2.3 of COCO3.DOC.
+
+Many other enhancements for OS-9 are also included.  See section 7.3 of
+COCO3.DOC for details.

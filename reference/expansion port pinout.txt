@@ -1,0 +1,51 @@
+Cartridge Slot Pins 
+PIN SIGNAL NAME DESCRIPTION 
+1		N.C. (-12 VDC on CoCo 1 and 2) 
+2		N.C. (+12 VDC on CoCo 1 and 2) 
+
+3		HALT* Halt input to the CPU 
+4		NMI* Non-Maskable Interrupt to the CPU 
+5		RESET* Main Reset and Power-up Clear 
+6		E CLOCK Main CPU Clock 
+7		Q CLOCK Clock which leads E by 90 degrees 
+8		CART* Rom-Pak Detection Interrupt 
+
+9		+5 VDC +5 Volts DC (300 mA) 
+
+10		DATA 0 CPU Data Bus - Bit 0 
+11		DATA 1 CPU Data Bus - Bit 1 
+12		DATA 2 CPU Data Bus - Bit 2 
+13		DATA 3 CPU Data Bus - Bit 3 
+14		DATA 4 CPU Data Bus - Bit 4 
+15		DATA 5 CPU Data Bus - Bit 5 
+16		DATA 6 CPU Data Bus - Bit 6 
+17		DATA 7 CPU Data Bus - Bit 7 
+
+18		R/W* CPU Read/Write Signal 
+
+19		ADDR 0 CPU Address Bus - Bit 0 			0
+20		ADDR 1 CPU Address Bus - Bit 1 			1
+21		ADDR 2 CPU Address Bus - Bit 2 			2
+22		ADDR 3 CPU Address Bus - Bit 3 			3
+23		ADDR 4 CPU Address Bus - Bit 4 			4
+24		ADDR 5 CPU Address Bus - Bit 5 			5
+25		ADDR 6 CPU Address Bus - Bit 6 			6
+26		ADDR 7 CPU Address Bus - Bit 7 			7
+
+27		ADDR 8 CPU Address Bus - Bit 8 			0
+28		ADDR 9 CPU Address Bus - Bit 9 			1
+29		ADDR 10 CPU Address Bus - Bit 10 		2
+30		ADDR 11 CPU Address Bus - Bit 11 		3
+31		ADDR 12 CPU Address Bus - Bit 12 		4
+37		ADDR 13 CPU Address Bus - Bit 13 		5
+38		ADDR 14 CPU Address Bus - Bit 14 		6
+39		ADDR 15 CPU Address Bus - Bit 15 		7
+
+
+32		CTS* Cartridge (ROM) Select Signal 
+33		GROUND Signal Ground 
+34		GROUND Signal Ground 
+35		SND Cartridge Sound Input 
+36		SCS* Spare Cartridge (DISK) Select Signal 
+
+40		SLENB* Input to Disable Internal Devices 

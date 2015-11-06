@@ -1,0 +1,546 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0094)http://zeppelin.tzo.cc/servlets/cc.tzo.zeppelin.cocopage.Cocopage?page=Howto&selection=opcodes -->
+<HTML><HEAD><TITLE>TRS-80 & Tandy Color Computer Homepage</TITLE><!--- AAAAAHHHH Don't look at this source code!
+	  Well, ok - go ahead and look,
+	  but java servlets don't exactly lend themselves to
+	  beautiful HTML -->
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2462.0" name=GENERATOR>
+<META 
+content="TRS-80, Coco, Color Computer, MC-10, TDP-100, Tandy Color Computer, Tandy, OS-9" 
+name=KEYWORDS></HEAD>
+<BODY text=#ffffff vLink=#666666 aLink=#666666 link=#000000 bgColor=#000066>
+<DIV align=right>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0><!-- TOP ROW -->
+  <TBODY>
+  <TR>
+    <TD width=100 height=36><IMG height=36 
+      src="BASIC Opcode Reference Lis_files/column1top.gif" width=179 align=top 
+      border=0></TD>
+    <TD width="100%" 
+    background="BASIC Opcode Reference Lis_files/topGreenBar.gif" 
+    height=36>&nbsp;</TD>
+    <TD width=177 height=36><IMG height=36 
+      src="BASIC Opcode Reference Lis_files/column4top.gif" width=177 
+    border=0></TD></TR><!-- MAIN ROW -->
+  <TR><!-- INDEX Column -->
+    <TD vAlign=top width=179 
+    background="BASIC Opcode Reference Lis_files/column1.gif" height=300><IMG 
+      height=300 src="BASIC Opcode Reference Lis_files/titlebottom.gif" 
+      width=179 border=0> 
+      <CENTER><SMALL>
+      <TABLE cellSpacing=0 cellPadding=8 border=0>
+        <TBODY>
+        <TR>
+          <TD><SMALL>
+            <CENTER>Dedicated to the support, preservation and enjoyment of the 
+            TRS-80 / Tandy Color Computers 1,2 and 3 (Coco, 80C), TRS-80 MC-10, 
+            Dragon computers, TDP-100, CP-400, FHL Tomcat TC-9, other 
+            compatibles and the emerging retrocomputing hobby. 
+            <HR width="70%">
+            <BR><IMG height=19 alt=1 
+            src="BASIC Opcode Reference Lis_files/one.gif" width=16><IMG 
+            height=19 alt=6 src="BASIC Opcode Reference Lis_files/six.gif" 
+            width=16><IMG height=19 alt=0 
+            src="BASIC Opcode Reference Lis_files/zero.gif" width=16><IMG 
+            height=19 alt=0 src="BASIC Opcode Reference Lis_files/zero.gif" 
+            width=16><IMG height=19 alt=0 
+            src="BASIC Opcode Reference Lis_files/zero.gif" width=16><IMG 
+            height=19 alt=0 src="BASIC Opcode Reference Lis_files/zero.gif" 
+            width=16><BR><BR>Coconuts and lost web surfers have visited since 
+            June 5, 1996. 
+            <HR width="70%">
+            This page is the proud member of several <A 
+            href="http://zeppelin.tzo.cc/servlets/cc.tzo.zeppelin.cocopage.Cocopage?page=Webrings">Webrings</A>. 
+
+            <HR width="70%">
+            </SMALL></CENTER></TD></TR></TBODY></TABLE></SMALL></CENTER></TD><!-- MAIN INFORMATION CELL - Main Menu and Selected Content -->
+    <TD vAlign=top bgColor=#ccffcc rowSpan=2 text="#009966"><FONT 
+      color=#009966><BR><FONT color=#009966>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="5%">&nbsp;</TD>
+          <TD vAlign=top align=left width="90%">
+            <TABLE cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top bgColor=#009966><IMG height=16 alt="" 
+                  src="BASIC Opcode Reference Lis_files/corner.gif" width=13 
+                  align=top> <BR></TD>
+                <TD bgColor=#009966><IMG height=50 alt=[Icon] 
+                  src="BASIC Opcode Reference Lis_files/traceroute.gif" width=50 
+                  align=left valign="top"></TD>
+                <TD width="99%" bgColor=#009966>
+                  <TABLE cellSpacing=3 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><FONT face=arial,helvetica color=#ffffff 
+                        size=4>Trace Route 
+              </B></FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+          <TD width="5%">&nbsp;</TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="10%">&nbsp;</TD>
+          <TD width="85%"><FONT color=#009966><FONT face=arial,helvetica 
+            color=#ffffff size=4><A 
+            href="http://zeppelin.tzo.cc/servlets/cc.tzo.zeppelin.cocopage.Cocopage?page=Homepage">Main 
+            Menu</A><IMG height=15 alt=" --> " 
+            src="BASIC Opcode Reference Lis_files/minitrace.gif" width=30><A 
+            href="http://zeppelin.tzo.cc/servlets/cc.tzo.zeppelin.cocopage.Cocopage?page=Howto">Howto 
+            Main Menu</A> </FONT></FONT></TD>
+          <TD width="5%">&nbsp;</TD></TR></TBODY></TABLE><BR><FONT color=#009966>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="5%">&nbsp;</TD>
+          <TD vAlign=top align=left width="90%">
+            <TABLE cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top bgColor=#009966><IMG height=16 alt="" 
+                  src="BASIC Opcode Reference Lis_files/corner.gif" width=13 
+                  align=top> <BR></TD>
+                <TD width="99%" bgColor=#009966>
+                  <TABLE cellSpacing=3 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><FONT face=arial,helvetica color=#ffffff 
+                        size=4>BASIC Opcode Reference List 
+                    </B></FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+          <TD width="5%">&nbsp;</TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width="10%">&nbsp;</TD>
+          <TD width="85%"><FONT color=#009966>
+            <TABLE cellPadding=5 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD vAlign=top width="50%"><FONT color=#009966>Code</FONT></TD>
+                <TD vAlign=top width="50%"><FONT 
+                color=#009966>KeyWord</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>128</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>FOR</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>129</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>GO</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>130</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>REM</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>131</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>'</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>132</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>ELSE</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>133</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>IF</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>134</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>DATA</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>135</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>PRINT</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>136</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>ON</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>137</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>INPUT</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>138</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>END</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>139</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>NEXT</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>140</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>DIM</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>141</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>READ</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>142</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>RUN</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>143</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>RESTORE</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>144</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>RETURN</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>145</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>STOP</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>146</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>POKE</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>147</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>CONT</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>148</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>LIST</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>149</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>CLEAR</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>150</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>NEW</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>151</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>CLOAD</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>152</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>CSAVE</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>153</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>OPEN</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>154</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>CLOSE</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>155</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>LLIST</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>156</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>SET</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>157</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>RESET</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>158</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>CLS</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>159</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>MOTOR</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>160</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>SOUND</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>161</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>AUDIO</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>162</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>EXEC</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>163</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>SKIPF</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>164</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>TAB(</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>165</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>TO</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>166</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>SUB</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>167</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>THEN</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>168</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>NOT</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>169</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>STEP</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>170</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>OFF</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>171</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>"+"</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>172</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>"-"</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>173</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>"*"</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>174</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>"/"</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>175</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>"^"</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>176</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>AND</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>177</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>OR</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>178</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>"&gt;"</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>179</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>"="</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>180</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>"&lt;"</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>181</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>DEL</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>182</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>EDIT</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>183</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>TRON</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>184</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>TROFF</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>185</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>DEF</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>186</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>LET</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>187</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>LINE</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>188</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>PCLS</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>189</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>PSET</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>190</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>PRESET</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>191</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>SCREEN</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>192</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>PCLEAR</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>193</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>COLOR</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>194</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>CIRCLE</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>195</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>PAINT</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>196</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>GET</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>197</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>PUT</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>198</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>DRAW</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>199</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>PCOPY</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>200</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>PMODE</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>201</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>PLAY</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>202</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>DLOAD</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>203</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>RENUM</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>204</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>FN</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>205</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>USING</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 128</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>SGN</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 129</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>INT</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 130</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>ABS</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 131</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>USR</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 132</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>RND</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 133</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>SIN</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 134</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>PEEK</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 135</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>LEN</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 136</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>STR$</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 137</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>VAL</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 138</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>ASC</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 139</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>CHR$</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 140</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>EOF</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 141</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>JOYSTK</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 142</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>LEFT$</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 143</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>RIGHT$</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 144</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>MID$</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 145</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>POINT</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 146</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>INKEY$</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 147</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>MEM</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 148</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>ATN</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 149</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>COS</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 150</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>TAN</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 151</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>EXP</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 152</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>FIX</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 153</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>LOG</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 154</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>POS</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 155</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>SQR</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 156</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>HEX$</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 157</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>VARPTR</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 158</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>INSTR</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 159</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>TIMER</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 160</FONT></TD>
+                <TD vAlign=top><FONT color=#009966>PPOINT</FONT></TD></TR>
+              <TR>
+                <TD vAlign=top><FONT color=#009966>255 + 161</FONT></TD>
+                <TD vAlign=top><FONT 
+            color=#009966>STRING$</FONT></TD></TR></TBODY></TABLE></FONT></TD>
+          <TD width="5%">&nbsp;</TD></TR></TBODY></TABLE></FONT></FONT></FONT>
+    <TD vAlign=top width=177 
+    background="BASIC Opcode Reference Lis_files/column4.gif" rowSpan=2><IMG 
+      height=58 src="BASIC Opcode Reference Lis_files/column4middle.gif" 
+      width=177 align=top border=0> 
+      <TABLE cellSpacing=0 cellPadding=5 border=0>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=5 width="99%" align=center 
+              border=0><SMALL>
+              <FORM action=http:/servlets/cc.tzo.zeppelin.cocopage.Cocopage 
+              method=post><INPUT type=hidden value=Howto name=page> <INPUT 
+              type=hidden value=invalid name=Subpage> <INPUT type=hidden 
+              value=Logon name=login> 
+              <CENTER><INPUT type=hidden value=opcodes name=selection> 
+              <B>Username</B><BR><INPUT tabIndex=1 size=15 
+              name=Username><BR><B>Password</B><BR><INPUT tabIndex=2 
+              type=password size=15 name=Password> <INPUT tabIndex=3 type=image 
+              height=24 alt="[Log On]" width=128 
+              src="BASIC Opcode Reference Lis_files/logon_anm.gif" 
+              border=0></CENTER></FORM>
+              <CENTER><A 
+              href="http://zeppelin.tzo.cc/servlets/cc.tzo.zeppelin.cocopage.Cocopage?page=Forgot&amp;action=ask">[Forgot 
+              Password]</A><BR><A 
+              href="http://zeppelin.tzo.cc/servlets/cc.tzo.zeppelin.cocopage.Cocopage?page=Newuser">[New 
+              User Login]</A><BR><A 
+              href="http://zeppelin.tzo.cc/servlets/cc.tzo.zeppelin.cocopage.Cocopage?page=Privacy">[Privacy 
+              &amp; Why log on?]</A></SMALL></CENTER>
+              <TBODY></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width=179 
+    background="BASIC Opcode Reference Lis_files/column1.gif">
+      <TABLE height="100%" cellSpacing=0 cellPadding=10 border=0 
+valign="bottom">
+        <TBODY>
+        <TR>
+          <TD vAlign=top></TD></TR>
+        <TR>
+          <TD vAlign=bottom><SMALL>
+            <CENTER>Information about contacting the <A 
+            href="http://zeppelin.tzo.cc/servlets/cc.tzo.zeppelin.cocopage.Cocopage?page=Sysops">Sysops 
+            / Webmasters is available here</A>.
+            <P>Many of the pictures were captured on my Pentium's TV tuner card, 
+            which allows the Coco to use my 17" monitor 8-). Yes, Intel Pentium: 
+            the ultimate Coco peripheral. 
+            <HR width="70%">
+            <IMG height=33 alt="[THIS ZEPPELIN IS POWERED BY]" 
+            src="BASIC Opcode Reference Lis_files/zeppelin.gif" width=71 
+            border=0><BR>zeppelin.tzo.cc is...
+            <P><A href="http://www.linux.org/"><IMG height=44 
+            alt="[Powered by Linux]" 
+            src="BASIC Opcode Reference Lis_files/linux-pengo-small.gif" 
+            width=110 border=0></A> <BR>
+            <P><A href="http://www.apache.org/"><IMG height=19 
+            alt="[Powered by Apache]" 
+            src="BASIC Opcode Reference Lis_files/apache_pb.gif" width=154 
+            border=0></A> 
+            <P><A href="http://www.mysql.org/"><IMG height=46 
+            alt="[Powered by MYSQL]" 
+            src="BASIC Opcode Reference Lis_files/powered_by_mysql.gif" width=88 
+            border=0></A> 
+            <P><A href="http://lynx.browser.org/"><IMG height=31 
+            alt="[This is a Lynx Friendly Site]" 
+            src="BASIC Opcode Reference Lis_files/lynx.gif" width=88 
+            border=0></A> <BR>(cough... well sort of)
+            <P>
+            <HR width="70%">
+            This web page was sent to you from <A 
+            href="http://duke.usask.ca/~lowey/Saskatoon/">Saskatoon</A>, Canada 
+            <IMG height=15 alt="Maple Leaf" 
+            src="BASIC Opcode Reference Lis_files/leaf2.gif" 
+            width=15></CENTER></SMALL>
+            <CENTER></CENTER></SMALL></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD width=179 height=99 rowSpan=2><IMG height=99 
+      src="BASIC Opcode Reference Lis_files/column1bottom.gif" width=179 
+      border=0></TD>
+    <TD bgColor=#ccffcc height=63>&nbsp;</TD>
+    <TD width=177 height=99 rowSpan=2><IMG height=99 
+      src="BASIC Opcode Reference Lis_files/column4bottom.gif" width=177 
+      border=0></TD></TR>
+  <TR>
+    <TD width="100%" 
+    background="BASIC Opcode Reference Lis_files/bottomGreenBar.gif" 
+    height=36>&nbsp;</TD></TR></TBODY></TABLE></DIV></BODY></HTML>

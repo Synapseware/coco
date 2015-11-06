@@ -1,0 +1,74 @@
+                        )( COCO-TRACKER for 6809 )(
+                 by John Kowalski (Sock Master) May 24, 1996.
+
+Prepare to be even more amazed!  As of now, something that even I thought to be
+entirely impossible on a regular (non 6309) CoCo3, is not just possible but now
+an actual reality!
+
+What is it?  It's a MOD file player!  MOD files aren't new, they've been around
+for years.  They originated on the Amiga and were pretty much designed around
+the Amiga's sound hardware.  Pretty soon there were players for the Atari ST,
+and then finally also on the PC and Mac.  All these computers are at least 16
+bit, have at least 8Mhz processors and usually special audio hardware.
+
+MOD files have become a sort of generic song file that can be played on many
+different kinds of computers, but until now, no 8 bit computer has ever been
+able to play them.
+
+Through the magic of creative programming, long hours writing and rewriting
+code until it's as fast as can be, and more hours figuring out how to decode
+MOD files...etc... (you get the idea), a new technical achievement has been
+accomplished.  It's COCOTRACKER - the very first MOD file player on the CoCo.
+
+This version of CocoTracker is actually a port of my original 6309 version.
+Because of some breakthroughs that I had with the 6309 version, I've decided
+that it could also be done on a regular CoCo3.  It has all the features of the
+6309 version, except Orchestra-90 support, and I've eliminated a small aspect
+of the video display for speed considerations.  As expected though, the 6809
+version doesn't perform quite as well as the 6309 version.  The audio playback
+is a little rougher because of the lower sampling rate, and the oscilloscope
+runs a bit slower too - but you can speed up the oscilloscope by shrinking
+it's size or lowering the selectable sampling rate.   It's pretty much a small
+miracle that this can be done at all!
+
+COCOTRACKER is still in development, but it's finally starting to look good!
+Out of the many MOD files I've tested with it, it only completely messed
+up playing one (it plays, but it sounds all wrong).  The majority of the MOD
+files I've tried sound okay.  I'll add better decoding of MOD files in future
+versions and hopefully fix playback with any problem files.
+
+Requirements:
+ *You NEED a CoCo 3.
+ *512K is preferred, but you ought to be able to play really small MOD files
+  with 128k of RAM.
+ *RSDOS will do, but this makes it hard for you to save larger than 153K MOD
+  files.  CoCoTracker now patches vanilla RSDOS1.1 to be able to read 80
+  tracks and double sided disks - but you till have to find another way to
+  actually SAVE your MOD files in that format.
+ *The program boots up in RGB colors, but if you have a TV and don't mind
+  funny colors you can still use CocoTracker.
+
+I've uploaded these files to FTP://os9archive.rtsi.com/RSDOS/MODS/
+
+MOD6809.TXT (ASCII TEXT)
+MOD6809.BAS (BASIC ASCII)
+MOD6809.BIN (MACHINE BINARY)
+
+You'll need to download some MOD files too to try the program out so I'll put
+a few of those there too.
+
+Remember to *quickly* read the shareware notice when the player screen pops up.
+(The notice only stays on the screen very briefly.)  The idea is that if you
+like the program, then please send 10$ to :
+
+                                     John Kowalski
+                                     4885 Legion street
+                                     St-Hubert, Quebec, Canada
+                                     J3Y 1Z3
+
+
+Enjoy the program.  Please send any comments to Twilight@axess.com
+
+                                       John Kowalski (Sock Master)
+  
+ 

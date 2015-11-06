@@ -1,0 +1,37 @@
+*BUILDING*
+
+
+cm bsort.asm -v -de -l -de=Temp\errors.dat -nr -o=Files\bsort.bin
+
+
+CCASM 3.1: assembling bsort.asm to bsort.bin
+
+                      * QUICKER BUBBLE SORT
+                      * this bubble sort takes into account that on each pass
+                      * the highest value always sinks to the bottom, so we
+                      * don't need to scan the whole screen each time, but
+                      * rather 1 byte less on each pass
+                                          		
+                                         org 	$0300	
+              {$FF80}  BURNADDR          equ 	$FF80	
+              {$FF82}  BURNDATA          equ 	$FF82	
+              {$FF83}  BURNCTRL          equ 	$FF83	
+                                          		
+              {$8000}  BUFFSTART         equ 	32768	
+              {$A000}  BUFFEND           equ 	40960	
+                                          		
+ 0300 BE   8000        start             ldx 	BUFFSTART	
+ 0303 108E 0000                          ldy 	#0	
+ 0307 A6   80          loop              lda 	,x+	
+ 0309 10BF FF80                          sty 	BURNADDR	
+ 030D B7   FF82                          sta 	BURNDATA	
+ 0310 F6   FF82        write_wait        ldb 	BURNDATA	
+ 0313 C4   80                            andb 	#128	
+ 0315 26   F9                            bne 	write_wait	
+ 0317 BC   A000                          cmpx 	BUFFEND	
+ 031A 25   EB                            blo 	loop	
+ 031C 39                                 rts 		
+              {$0000}                    end 		
+[26 lines] [No Errors] ['bsort.bin' is 29 bytes long]
+
+*BUILD COMPLETE*

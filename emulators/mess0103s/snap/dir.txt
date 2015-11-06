@@ -1,0 +1,1 @@
+Screenshots will be stored here.

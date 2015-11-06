@@ -1,0 +1,913 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+<TITLE>E:\MYDOCU~1\OCR\OS-9CO~1\INDEX\OS-9 L-II Commands Index.htm</TITLE>
+<META NAME="GENERATOR" CONTENT="ADOBE SYSTEMS, INC. - WORD FOR WORD">
+</HEAD>
+
+<BODY>
+<BASEFONT SIZE="3">
+<H1 ALIGN="CENTER">
+<FONT SIZE="7" FACE="Times Roman" COLOR="#000000">
+OS-9
+</FONT>
+</H1>
+<H1 ALIGN="CENTER">
+<FONT SIZE="7" FACE="Times Roman" COLOR="#000000">
+Commands
+</FONT>
+</H1>
+<H1 ALIGN="CENTER">
+<FONT SIZE="7" FACE="Times Roman" COLOR="#000000">
+Reference
+</FONT>
+</H1>
+<FONT SIZE="7" FACE="Times Roman" COLOR="#000000">
+<DIV ALIGN="CENTER">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\INDEX\GR000021.JPG" WIDTH="24" HEIGHT="5">
+<P ALIGN="CENTER">
+</DIV>
+</FONT>
+<FONT SIZE="2" FACE="Garamond1" COLOR="#000000">
+<DIV ALIGN="CENTER">
+<B>OS-9&copy; Level Two Operating System</B>
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="2" FACE="Garamond1" COLOR="#000000">
+<B>&copy;1983, 1986 Microware Systems Corporation.</B>
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="2" FACE="Garamond1" COLOR="#000000">
+<B>Licensed to Tandy Corporation.</B>
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="2" FACE="Garamond1" COLOR="#000000">
+<B>All Rights Reserved.</B>
+</FONT>
+</P>
+<FONT SIZE="2" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="CENTER">
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>OS-9 Commands:</B>
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>&copy;1986 Tandy Corporation</B>
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>and Microware Systems Corporation.</B>
+</FONT>
+</P>
+<P ALIGN="CENTER">
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>All Rights Reserved.</B>
+</FONT>
+</P>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Reproduction or use, without express written permission</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>from Tandy Corporation or Microware Systems</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Corporation, of any portion of this manual is prohibited.</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>While reasonable efforts have been taken in preparation of</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>this manual to assure its accuracy, neither Tandy</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>Corporation nor Microware Systems Corporation assumes</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>any liability resulting from any errors in or omissions</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>from this manual, or from the use of the information</B>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<B>contained herein.</B>
+</FONT>
+</P>
+<H2 ALIGN="LEFT">
+<FONT SIZE="2" FACE="Garamond" COLOR="#000000">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\INDEX\GR000022.JPG" WIDTH="234" HEIGHT="2">
+<H2 ALIGN="LEFT">
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\INDEX\GR000023.JPG" WIDTH="309" HEIGHT="2">
+<H2 ALIGN="LEFT">
+</FONT>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+Contents
+</FONT>
+</H2>
+<FONT SIZE="6" FACE="Times Roman" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Chapter 1 Introduction </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .1-1
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+The Kernel . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .1-1
+</UL>
+</FONT>
+</P>
+<UL>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The Input/Output Manager . . . . . . . . . . . . . . . . . . . . . . . . . .1-2
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Device Drivers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .1-2
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Device Descriptors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .1-2
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The Shell  1-3
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Going On  1-3
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Chapter 2 The OS-9 File System </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+. . . . . . . . . . . . . . . . . . . . . . 2-1
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Input/Output Paths . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2-1
+</UL>
+</FONT>
+</P>
+<UL>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Disk Directories . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2-2
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Subdirectories . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2-3
+</UL>
+</UL>
+</UL>
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Disk Files  2-3
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Sectors  2-4
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Text Files  2-5
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Random-Access Data Files . . . . . . . . . . . . . . . . . . . . . . . . 2-6
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Procedure Files . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2-6
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Executable Program Module Files . . . . . . . . . . . . . . . . . 2-7
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Miscellaneous File Use . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2-8
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The File Security System . . . . . . . . . . . . . . . . . . . . . . . . . 2-8
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Examining and Changing File Attributes . . . . . . . . . . 2-9
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Record Lockout  2-11
+</UL>
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Device Names . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .2-12
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Chapter 3 Advanced Features of the Shell </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+. . . . . . . . . . . . 3-1
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+More About Command Line Processing . . . . . . . . . . . . . . . 3-1
+</UL>
+</FONT>
+</P>
+<UL>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Command Modifiers . . . . . . . . . . . . . . : . . . . . . . . . . . . . . . . . . 3-3
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Execution Modifiers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3-3
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Alternate Memory Size Modifier . . . . . . . . . . . . . . . . . 3-3
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+I/O Redirection Modifiers . . . . . . . . . . . . . . . . . . . . . . . 3-4
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Command Separators . . . . . . . . . . . . . . . . . . . . . . . . . . 3-5
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Sequential Execution Using the
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Semicolon  3-6
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Concurrent Execution Using the
+</UL>
+</UL>
+<BR>
+<UL>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Ampersand . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .3-6
+</UL>
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Combining Sequential and Concurrent
+</UL>
+</UL>
+<BR>
+ <UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Executions  3-7
+</UL>
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Using Pipes: the Exclamation Mark . . . . . . . . . . . . . 3-7
+</UL>
+<BR>
+ <UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Raw Disk Input/Output . . . . . . . . . . . . . . . . . . . . . . . . 3-8
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Command Grouping . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3-9
+</UL>
+<BR>
+<IMG SRC="file:///E:\MYDOCU~1\OCR\OS-9CO~1\INDEX\GR000024.JPG" WIDTH="309" HEIGHT="1">
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Shell Procedure Files . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .3-10<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Built-in Shell Commands and Options . . . . . . . . . . . . . . .3-11
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Running Compiled Intermediate Code Programs . . . . . .3-12
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Chapter 4 Multiprogramming and Memory<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Management </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+1
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Processor Time Allocation and Timeslicing . . . . . . . . . . . . 4-1
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Process States . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+2 Creation of Processes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+3 Basic Memory Management Functions . . . . . . . . . . . . . . . . 4
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+5 Loading Program Modules Into Memory . . . . . . . . . . . . 4-6
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Deleting Modules From Memory . . . . . . . . . . . . . . . . . . . 4-7
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Loading Multiple Programs . . . . . . . . . . . . . . . . . . . . . . . 4-8
+</UL>
+</UL>
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Chapter 5 Useful System Information<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+<UL>
+<UL>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>and Functions </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5-1
+</UL>
+</UL>
+</UL>
+</FONT>
+</P>
+<UL>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+File Managers, Device Drivers, and Descriptors . . . . . . . 5-1
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The Sys Directory . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5-2
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The Startup File . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5-3
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+The CMDS Directory . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5-3
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Making New System Diskettes . . . . . . . . . . . . . . . . . . . . . . . 5-3
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+Technical Information for the RS-232 Port . . . . . . . . . . . . 5-4
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Chapter 6 System Command Descriptions </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+. . . . . . . . . . . . 6-1
+</FONT>
+</P>
+ 
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Organization of Entries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6-1
+</FONT>
+</P>
+  
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Command Syntax Notation . . . . . . . . . . . . . . . . . . . . . . . . 6-1
+</FONT>
+</P>
+ 
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Command Summary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6-3
+</FONT>
+</P>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+<BR>
+<P ALIGN="JUSTIFY">
+</FONT>
+<FONT SIZE="3" FACE="Garamond" COLOR="#000000">
+<B>Chapter 7 Macro Text Editor </B>
+</FONT>
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+. . . . . . . . . . . . . . . . . . . . . . . . . 7-1
+</FONT>
+</P>
+ 
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+1
+</FONT>
+</P>
+  
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Text Buffers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+1
+</FONT>
+</P>
+  
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Edit Pointers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+1
+</FONT>
+</P>
+  
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Entering Commands . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-2
+</FONT>
+</P>
+  
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Control Keys . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+2
+</FONT>
+</P>
+  
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Command Parameters . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-3
+</FONT>
+</P>
+  
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Numeric Parameters . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-3
+</FONT>
+</P>
+  
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+String Parameters . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-4
+</FONT>
+</P>
+  
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Syntax Notation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-4
+</FONT>
+</P>
+ 
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Getting Started . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-4
+</FONT>
+</P>
+ 
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Edit Commands . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-6
+</FONT>
+</P>
+  
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Displaying Text . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-6
+</FONT>
+</P>
+  
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Manipulating the Edit Pointer . . . . . . . . . . . . . . . . . . . . . 7-7
+</FONT>
+</P>
+  
+<P ALIGN="JUSTIFY">
+<FONT SIZE="3" FACE="Garamond1" COLOR="#000000">
+Inserting and Deleting Lines . . . . . . . . . . . . . . . . . . . . .7-10
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Searching and Substituting . . . . . . . . . . . . . . . . . . . . . .7-13
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Miscellaneous Commands . . . . . . . . . . . . . . . . . . . . . . . .7-14
+</UL>
+</FONT>
+</P>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Manipulating Multiple Buffers . . . . . . . . . . . . . . . . . . . .7-17
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Text File Operations . . . . . . . . . . . . . . . . . . . . . . . . . . . . .7-18
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Conditionals and Command Series Repetition . . . . . .7-21
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Edit Macros . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-25
+</UL>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Macro Headers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-25
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Using Macros . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-26
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Macro Commands . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-28
+</UL>
+</FONT>
+</P>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Sample Session 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .7-32
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Sample Session 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .7-38
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Sample Session 3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-40
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Sample Session 4 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-45
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Sample Session 5 . . . . . . . . . . . . . . . . . . . . . . . . . . . . : . . . . . 7-49
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Edit (quick Reference Summary . . . . . . . . . . . . . . . . . . . . .7-55
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Edit Commands . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-55
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Pseudo Macros . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-57
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Editor Error Messages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7-59
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>Appendices<BR>
+</B>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<BR>
+ 
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>A OS-9 Error Codes  </B>A-1<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Device Driver Errors . . . . . . . . . . . . . . . . . . . . . . . . . . . . A-5
+</UL>
+<BR>
+<BR>
+<P ALIGN="JUSTIFY">
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>B Color Computer 2 Compatibility </B>. . . . . . . . . . . . . . . . . . . B-1
+</UL>
+</FONT>
+</P>
+<P ALIGN="JUSTIFY">
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Alpha Mode Display . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . B-2
+</UL>
+</FONT>
+</P>
+<UL>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Using Alpha Mode Controls with Windows . . . . . . . . . B-2
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Alpha Mode Command Codes . . . . . . . . . . . . . . . . . . . . . B-3
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Graphics Mode Display . . . . . . . . . . . . . . . . . . . . . . . . . . . . . B-5
+</UL>
+<BR>
+<UL>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Graphics Mode Selection Codes . . . . . . . . . . . . . . . . . . . B-5
+</UL>
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Graphics Mode Control Commands . . . . . . . . . . . . . . . . B-6
+</UL>
+<BR>
+<UL>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+Display Control Codes Summary . . . . . . . . . . . . . . . . . . . . B-8
+</UL>
+<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>C OS-9 Keyboard Codes </B>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . C-1<BR>
+<BR>
+</FONT>
+<FONT SIZE="3" FACE="Times Roman" COLOR="#000000">
+<B>D Keyboard Control Functions </B>. . . . . . . . . . . . . . . . . . . . . . D-1<BR>
+</FONT>
+</BODY>
+</HTML>

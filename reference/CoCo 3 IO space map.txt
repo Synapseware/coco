@@ -1,0 +1,288 @@
+FF00:     Keyboard row scan
+
+FF01:     7    Hsync flag
+          2    changes FF00 to DDR
+          1-0  Hsync IRQ control
+
+FF02:     Keyboard column scan
+
+FF03:     7    Vsync flag
+          2    changes FF02 to DDR
+	  	  1-0  Vsync IRQ control
+
+
+FF10  \     $FF1x is a mirror of $FF0x.   BUT writing to $FF0x gets the GIME
+:      >    excited about SAM registers.  Writing/reading $FF1x gets you direct
+FF1F  /     access to the hardware PIA pins, without having the GIME do funny
+	    stuff to your SAM registers. (Alan DeKok)
+
+FF20:  		7-2  D/A converter
+       		1    Bit Bang out
+	 		0    Cassette in
+
+FF21:  		7    carrier detect flag
+       		3    cassette motor          
+	  		2    changes FF20 to DDR
+	  		1-0  Carrier FIRQ control
+
+FF22:    	7-4  VDG control
+         	3    RGB monitor flag
+         	2    mirror FF02 bit 6
+	 		1    single bit sound out
+	 		0    Bit Bang in
+
+
+FF23:		7    cartridge interrupt flag
+			3    sound enable
+			2    changes FF22 to DDR
+	 		1-0  Cartridge FIRQ control
+
+
+FF30 \   
+:     >   Mirror of FF2x, without involving the GIME
+FF3F /    (Alan DeKok)
+
+
+FF40 \
+:     >   Floppy Drive Controller (all?)
+FF4F /
+
+FF50 \
+:     >  Tandy, Disto mini controller, mirror of drive controller
+FF5F /
+
+FF50 \
+:     >   Disto Mini Expansion Bus
+FF57 /
+
+FF50 \
+:     > Glenside IDE controller default address
+FF58 /
+
+   The Glenside IDE board memory map is as follows:
+FFx0 - 1st 8 bits of DATA register
+FFx1 - Error (read) / Features (Write) register
+FFx2 - Sector count register
+FFx3 - Sector # register
+FFx4 - Cylinder low byte
+FFx5 - Cylinder high byte
+FFx6 - Device/head register
+FFx7 - Status (read) / Command (Write) register
+FFx8 - 2nd 8 bits of DATA register (latch)
+
+    Please note, that if you are using ATAPI, most of these change
+(which is why the current driver will not handle ATAPI, except for
+detecting it's presence). (L. Curtis Boyle)
+
+FF60 \			FF60 X position of pen    
+:     >   X-pad		FF61 Y position of pen
+FF62 /			FF62 pen status
+			
+FF60 \
+:     >  CoCo Max A/D module
+FF67 /
+
+     It is unfortunately simplistic to say that the addresses are as
+you say.  The first time an address is accessed (read), it sets up an
+A/D conversion cycle for the channel as you specify above.  THEN the
+next access is normally a read which reads the value converted from
+the previous read access.  By doing a read on the next channel, you
+set up the A/D conversion cycle for the channel read, but read the
+previous channel's data. Here's another way to look at it.
+
+Access(read)  address      data retrieved
+    1        FF60        Whatever channel was set up last
+    2        FF61        Data from channel #0 (X pos)
+    3        FF62        Data from channel #1 (Y pos)
+    4        FF63        Data from channel #2 (pen switch)
+    5        any         Data from channel #3 (not used in CCMax)
+    6        Ad-nausium...
+	     (Nosko S.)
+
+FF60  \  TC^3 SCSI interface uses two addresses anywhere 
+:      > in this range
+FF7F  /
+
+FF68 \
+:     >   RS-232 pak 6551
+FF6B /
+
+FF6C \
+:     >   Modem Pak 6551
+FF6F /
+
+FF70 > alternate address of LR-Tech SASI controller 
+
+FF70                 \  Musica stereo pack - the two stereo channels
+FF72 - (*NOT* FF71)  /  (Nosko S.)
+
+FF70 - X               \ 
+FF71 - Y                >  laser light show D/A converters
+FF72 - Z (intensity)   /   (Nosko S.)
+
+FF70 \
+:     > SPEECH SYSTEMS SUPERVOICE (VOTRAX SC-02) 
+FF74 /  new model (1 MHZ clock)
+        (these can be modified to be 2MHz)
+	(Rodney V Hamilton)
+
+FF70 \
+:     >  Burke & Burke CYBERVOICE (VOTRAX SC-02)
+FF74 /   2MHz clock, OS9L2/CoCo 3 compatible
+         (Rodney V Hamilton)
+
+FF70 \
+:     > Glenside IDE controller alternate address
+FF78 /
+
+FF74 > default address of LR-Tech SASI controller
+
+FF74 \
+:     >   Disto SCII haltless controller additional addresses
+FF77 /
+
+FF7A \				FF7A left channel d/a 
+:     >   Orchestra 90-CC Pak	FF7B right channel d/a
+FF7B /
+
+
+FF7D \
+:     >   Speech/Sound pak  
+FF7E /
+
+FF7F  >   Multi-Pak interface slot control switch (0=0,17=1,34=2,51=3)
+					     (0=0,0x11=1,0x22=2,0x33=3)
+                    binary 00rr00ii
+                    bits 5-4: number of active CTS slot (ROM
+                    C000-DFFF) & CART* select
+                    bits 1-0: number of active SCS slot (I/O
+                    FF40-FF5F)
+                    (tim lindner)
+
+ 
+FF80 \
+:     >   COLORWARE REAL TALKER (VOTRAX SC-01)
+FFBF /    (incomplete decode)
+FFA0	  nominal address 
+          (not CoCo3 compatible, and needs +12V for internal oscillator)
+          (Rodney V Hamilton)
+
+FF80 \
+:     >  SPEECH SYSTEMS SUPERVOICE (VOTRAX SC-02) 
+FF84 /   old model (1 MHZ clock)
+        (these can be modified to be CYBERVOICE address/speed compatible)
+        (Rodney V Hamilton)
+
+FF90:     7    CoCo 1/2 compatable map
+          6    MMU enable
+          5    IRQ enable
+          4    FIRQ enable
+          3    DRAM @ xFExx is constant
+          2    standard SCS
+          1-0  ROM control (00=16k int/ext, 10=32k int, 11=32k ext)
+
+FF91:     5    timer select (0=63 microseconds, 1=279 nanoseconds)
+          0    MMU task select (TR)
+
+
+FF92:     5    timer               \
+          4    Horizontal border    \
+          3    Verticle border       > IRQ enable
+          2    Bit Bang in          /
+          1    key press           /
+          0    cartridge          /
+
+FF93:     5    timer               \
+          4    Horizontal boarder   \
+          3    Verticle border       > FIRQ enable
+          2    Bit Bang in          /
+          1    key press           /
+          0    cartridge          /
+
+FF94:     Timer MSN
+FF95:     Timer LSB
+
+FF98:     7    bit plane
+          5    burst phase invert
+          4    monochrome                : 000=1 (graphics)  011=8
+          3    50hz verticle sync       /  001=2 (CoCo 1/2)  100=9
+          2-0  lines per character row <   010=3             110=12
+
+FF99:     6-5  Lines per field (00=192, 01=200, 11=225) \
+          4-2  Horizontal resolution                     > video resolution
+          1-0  Color resolution                         /
+
+Due to a design error in the GIME, the "200-line" mode only displays
+199 lines of active video on the screen.  If you do the BASIC pokes
+for 25 lines on the WIDTH 40 and WIDTH 80 screens, you will see the
+blinking underscore cursor disappear at the bottom line.  If the
+graphic screens are poked for 200 lines, the bottom-most line will
+be #198, not #199.  Try it and see. (Rodney V Hamilton) 
+
+
+FF9A:     5-0  Border color register
+
+FF9C:     3-0  Vertical scroll     LSN
+FF9D:          Vertical offset     MSB
+FF9E:          Vertical offset     LSB
+
+FF9F:     7    Virtual horizontal enable
+          6-0  virtual horizontal offset
+
+FFA0 \
+:     > MMU @ TR=0
+FFA8 /
+FFA9 \
+:     > MMU @ TR=1
+FFAF /
+
+FFB0 \				palette 0 = text backround 0
+:     > Palette registers	[...]
+FFBF /				palette 7 = text backround 7
+				palette 8 = text foreground 0
+				[...]
+				palette 15 = text foreground 7
+				(Rick Adams)
+
+FFC1 \                      \
+:     >   Display mode       \
+FFC5 /                        \
+FFC7 \                         > SAM emulation echo
+:     >   Display offset      /
+FFD3 /                       /
+FFD9      CPU rate          /
+FFDF	  ROM disable      / 
+
+FFF0 \     6309 execption vector (Illegal instruction/division by 0)
+FFF1 /
+FFF2 \     SWI3  vector
+FFF3 /
+FFF4 \     SWI2  vector
+FFF5 /
+FFF6 \     FIRQ  vector
+FFF7 /
+FFF8 \     IRQ   vector
+FFF9 /
+FFFA \     SWI1  vector
+FFFB /
+FFFC \     NMI   vector
+FFFD /
+FFFE \     RESET vector
+FFFF /
+
+Willard
+-- 
+Willard Goosey  goosey at sdc.org
+Socorro, New Mexico, USA
+"I've never been to Contempt!  Isn't that somewhere in New Mexico?"
+   --- Yacko
+
+
+
+
+  Previous message: [Coco] This seems to work... 
+  Next message: [Coco] Test 
+  Messages sorted by: [ date ] [ thread ] [ subject ] [ author ] 
+
+
+More information about the Coco mailing list

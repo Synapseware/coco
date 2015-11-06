@@ -1,0 +1,82 @@
+                        )( COCO-TRACKER version 1.3 )(
+                 by John Kowalski (Sock Master) May 19, 1996.
+
+Prepare to be amazed!  As of now, something that was thought to be entirely
+impossible on the CoCo, is not just possible but an actual reality!
+
+What is it?  It's a MOD file player!  MOD files aren't new, they've been around
+for years.  They originated on the Amiga and were pretty much designed around
+the Amiga's sound hardware.  Pretty soon there were players for the Atari ST,
+and then finally also on the PC and Mac.  All these computers are at least 16
+bit, have at least 8Mhz processors and usually special audio hardware.
+
+MOD files have become a sort of generic song file that can be played on many
+different kinds of computers, but until now, no 8 bit computer has ever been
+able to play them.
+
+Through the magic of creative programming, long hours writing and rewriting
+code until it's as fast as can be, and more hours figuring out how to decode
+MOD files...etc... (you get the idea), a new technical achievement has been
+accomplished.  It's COCOTRACKER - the very first MOD file player on the CoCo.
+
+This new version of CocoTracker can now play Mod files at a higher fidelity,
+and also lets you have a MUCH faster oscilloscope on the screen.  This program
+is so blindingly fast that my 2Mhz CoCo3 compares very well to my 32bit 80Mhz
+PC.  It now also has better Mod decoding, and plays more complex files than
+before.  There's also a new 50/60hz selector for Mod files that sound better
+with a 50hz based tempo, and for those of you accross the sea. Now it also lets
+you play the audio in STEREO if you have the Orchestra-90 Pak - though don't
+try it if you don't have one.  I don't have one myself, so I can't be
+absolutely certain that it actually works!
+
+COCOTRACKER is still in development, but it's finally starting to look really
+good!  Out of the 30 MOD files I've tested with it, it only completely messed
+up playing one (it plays, but it sounds all wrong).  The rest of the MOD files
+I've tried sound good.  I'll add better decoding of MOD files in future
+versions and hopefully fix playback with any problem files.
+
+Requirements:
+ *You NEED a 6309 CPU.  A few years ago I did a feasability study to see if
+  it could be done with a 6809 and the result was a flat no.  More recently I
+  did a study to see if the 6309 could do it, and the result was no - but
+  just barely so.  After some creative test programming, the result became
+  yes - but just barely.  4 or 5 rewrites of the 'core' audio routine later,
+  the results became ABSOLUTELY YES!  With these new breakthroughs in
+  programming, it just *MIGHT* be possible to make a 6809 version in the
+  future, but the sound quality will definately be worse than it is now.
+ *512K is preferred, but you ought to be able to play really small MOD files
+  with 128k of RAM.
+ *RSDOS will do, but this makes it hard for you to save larger than 153K MOD
+  files.  CoCoTracker now patches vanilla RSDOS1.1 to be able to read 80
+  tracks and double sided disks - but you till have to find another way to
+  actually SAVE your MOD files in that format.
+ *The program boots up in RGB colors, but if you have a TV and don't mind
+  funny colors you can still use CocoTracker.
+ *Orchestra-90 Pak is now supported for even better quality stereo sound.
+
+I've uploaded these files to FTP://os9archive.rtsi.com/RSDOS/MODS/
+
+MOD13.TXT (ASCII TEXT)
+MOD13.BAS (BASIC ASCII)
+MOD13.BIN (MACHINE BINARY)
+
+You'll need to download some MOD files too to try the program out so I'll put
+a few of those there too.
+
+Remember to *quickly* read the shareware notice when the player screen pops up.
+(The notice only stays on the screen very briefly.)  The idea is that if you
+like the program, then please send 10$ to :
+
+                                     John Kowalski
+                                     4885 Legion street
+                                     St-Hubert, Quebec, Canada
+                                     J3Y 1Z3
+
+Yes it's a new address, but the old one is still good for the next few months
+as well.
+
+Enjoy the program.  Please send any comments to Twilight@axess.com
+
+                                       John Kowalski (Sock Master)
+  
+ 

@@ -1,0 +1,238 @@
+**************************************************************
+
+Started the scheduled OCR jobs at time: 4:38:52 PM
+
+--------------------------------------------------------------
+
+Loading page 1 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix D - Keyboard Control Functions.tif
+Loading...OK
+
+Loading page 2 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix D - Keyboard Control Functions.tif
+Loading...OK
+
+Recognizing page 1...OK
+Recognizing page 2...OK
+
+Saving to:
+F:\My Documents\ScheduleOCR Output\OS-9 L-II Commands Appendix D - Keyboard Control Functions.htm
+Saving as format HTML...OK
+
+--------------------------------------------------------------
+
+Loading page 1 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix B - Color Computer 2 Compatibility.tif
+Loading...OK
+
+Loading page 2 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix B - Color Computer 2 Compatibility.tif
+Loading...OK
+
+Loading page 3 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix B - Color Computer 2 Compatibility.tif
+Loading...OK
+
+Loading page 4 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix B - Color Computer 2 Compatibility.tif
+Loading...OK
+
+Loading page 5 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix B - Color Computer 2 Compatibility.tif
+Loading...OK
+
+Loading page 6 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix B - Color Computer 2 Compatibility.tif
+Loading...OK
+
+Loading page 7 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix B - Color Computer 2 Compatibility.tif
+Loading...OK
+
+Loading page 8 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix B - Color Computer 2 Compatibility.tif
+Loading...OK
+
+Loading page 9 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix B - Color Computer 2 Compatibility.tif
+Loading...OK
+
+Recognizing page 1...OK
+Recognizing page 2...OK
+Recognizing page 3...OK
+Recognizing page 4...OK
+Recognizing page 5...OK
+Recognizing page 6...OK
+Recognizing page 7...OK
+Recognizing page 8...OK
+Recognizing page 9...OK
+
+Saving to:
+F:\My Documents\ScheduleOCR Output\OS-9 L-II Commands Appendix B - Color Computer 2 Compatibility.htm
+Saving as format HTML...OK
+
+--------------------------------------------------------------
+
+Loading page 1 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix C - OS-9 Keyboard Codes.tif
+Loading...OK
+
+Recognizing page 1...OK
+
+Saving to:
+F:\My Documents\ScheduleOCR Output\OS-9 L-II Commands Appendix C - OS-9 Keyboard Codes.htm
+Saving as format HTML...OK
+
+--------------------------------------------------------------
+
+Loading page 1 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix A - OS-9 Error Codes.tif
+Loading...OK
+
+Loading page 2 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix A - OS-9 Error Codes.tif
+Loading...OK
+
+Loading page 3 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix A - OS-9 Error Codes.tif
+Loading...OK
+
+Loading page 4 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix A - OS-9 Error Codes.tif
+Loading...OK
+
+Loading page 5 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix A - OS-9 Error Codes.tif
+Loading...OK
+
+Loading page 6 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Commands Appendix A - OS-9 Error Codes.tif
+Loading...OK
+
+Recognizing page 1...OK
+Recognizing page 2...OK
+Recognizing page 3...OK
+Recognizing page 4...OK
+Recognizing page 5...OK
+Recognizing page 6...OK
+
+Saving to:
+F:\My Documents\ScheduleOCR Output\OS-9 L-II Commands Appendix A - OS-9 Error Codes.htm
+Saving as format HTML...OK
+
+--------------------------------------------------------------
+
+Loading page 1 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 2 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 3 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 4 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 5 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 6 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 7 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 8 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 9 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 10 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 11 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 12 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 13 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 14 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 15 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 16 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 17 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 18 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 19 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 20 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Loading page 21 from image file:
+F:\My Documents\ScheduleOCR Input\OS-9 L-II Glossary.tif
+Loading...OK
+
+Recognizing page 1...OK
+Recognizing page 2...OK
+Recognizing page 3...OK
+Recognizing page 4...OK
+Recognizing page 5...OK
+Recognizing page 6...OK
+Recognizing page 7...OK
+Recognizing page 8...OK
+Recognizing page 9...OK
+Recognizing page 10...OK
+Recognizing page 11...OK
+Recognizing page 12...OK
+Recognizing page 13...OK
+Recognizing page 14...OK
+Recognizing page 15...OK
+Recognizing page 16...OK
+Recognizing page 17...OK
+Recognizing page 18...OK
+Recognizing page 19...OK
+Recognizing page 20...OK
+Recognizing page 21...OK
+
+Saving to:
+F:\My Documents\ScheduleOCR Output\OS-9 L-II Glossary.htm
+Saving as format HTML...OK
+
+--------------------------------------------------------------
+
+Finished all scheduled OCR jobs at time: 4:52:10 PM
+

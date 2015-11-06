@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0056)http://www.nickm.launch.net.au/CoCoWorkshop/256mode.html -->
+<HTML><HEAD><TITLE>In Search of 256</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2462.0" name=GENERATOR></HEAD>
+<BODY text=#ffffff vLink=#ff8040 link=#ff8040 
+background="In Search of 256_files/space-bg.jpg">
+<CENTER>
+<TABLE cellPadding=2 width=700 align=center>
+  <TBODY>
+  <TR>
+    <TD>
+      <H1 align=center><FONT color=yellow>"In Search of 256"</FONT> </H1>
+      <P align=center>There have been rumours of a secret 256 color mode hidden 
+      within the GIME chip's architecture. 
+      <P align=center>This page reveals all the information that I have 
+      collected over the last three years with the hope<BR>that one day the 
+      truth will be revealed. 
+      <P align=center><IMG height=3 src="In Search of 256_files/line.gif" 
+      width=585> 
+      <P align=center>
+      <H3>
+      <P align=justify><FONT color=lime><B>Introducing the GIME chip</B></FONT> 
+      </H3>
+      <P align=justify>The GIME chip within the Color Computer 3 is an 
+      incredible piece of work. Not only does it almost completely emulate the 
+      functions of the 6847 VDG and 6883 SAM chip architecture of the earlier 
+      Color Computers but it adds a lot more! Advanced bank switching of RAM up 
+      to 512K, advanced interrupt handling and many more sophisticated graphics 
+      modes. 
+      <P align=justify>The Color Computer 3 with its GIME chip has expanded upon 
+      the earlier models with their more limited 128x192 four color and 256x192 
+      two color modes. The GIME chip has added new modes of 16 colors with a 
+      resolution up to 320x225 and 2 color modes with a resolution up to 
+      640x225, the&nbsp;colors being selectable from a total palette of 64. 
+      <H3>
+      <P align=justify><FONT color=lime><B>An interesting 
+      observation!</B></FONT> </H3>
+      <P align=justify>In 1999, I pointed John Kowalski's attention to the block 
+      diagram of the GIME chip on page 96 of the Tandy Color Computer 3 service 
+      manual. John made an interesting observation that got us both curious. The 
+      diagram shows that the output of the "Reconfigurable (Graphics) Shift 
+      Register" is fed through a gate, followed by a "Register" and then on to 
+      the "Palette 16x6 Bipolar RAM", finally ending up at another register then 
+      on to the DAC for output. This seems sound and as one would expect. What 
+      got John suspicious was that the output of the "Reconfigurable (Graphics) 
+      Shift Register" ALSO routed to another unlabeled "Register" which appeared 
+      to bypass the "Palette 16x6 Bipolar RAM" and fed in the register that 
+      follows it. John came with the suspicion that this register allowed 8 bit 
+      data from the shift register directly past the 64 color palette RAM!! 
+      <P align=justify>
+      <P align=justify><IMG height=511 alt="Block diagram of GIME chip" 
+      src="In Search of 256_files/gime-diagram.gif" width=681> 
+      <P align=justify>
+      <P align=justify>We both puzzled over this but and no one had any ideas of 
+      what it could be. Suddenly I came into contact with a very prominant 
+      ex-radio shack employee who had a very close association with the 
+      development of the Color Computer 3 via one of the CoCo IRC chat sessions. 
+      To say that his question to me..."Have you found the 256 color 
+      mode?"...raised the hairs on my back was a gross understatement!! 
+      <H3>
+      <P align=justify><FONT color=lime><B>"Have you found the 256 color 
+      mode?"</B></FONT> </H3>
+      <P align=justify>Here is an edited transcript of what he had to say about 
+      this mode... 
+      <P align=justify><FONT color=yellow><I>Have you found the 256 color 
+      mode?</I></FONT> 
+      <P align=justify><FONT color=yellow><I>There is a real 256 color mode in 
+      there. I was hoping someone would discover it. It's a real byte level 
+      pixel, 320x200 mode. It uses a yyyyyrgb format, 5 bits of intensity, 3 
+      bits of color.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>The mode is rather complicted to 
+      get to and did not work reliably on the first run of GIME chips and its 
+      been too long, I don't remember the sequence anymore and I got overruled 
+      by Roach on the disclosure of the mode because it was too much competition 
+      with the 1000. It's really the last secret in the Color Computer 
+      3.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>You can only have one 256 color 
+      page but it was very complicated to set up. It could view 512K and that 
+      was one of the problems because of the page at the top of memory. I was 
+      not allowed to tell anyone exactly what to look for either.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>The only thing I remember about how 
+      to get into it is that you have to switch the mode while you are in the 
+      IRQ in the protected page at $FE00. It had to be set as a mode on the IRQ, 
+      it didn't use the IRQ. While in that routine from an IRQ there is a 
+      machine state that changes the meaning of the graphics mode. I don't have 
+      a clue what that pattern is anymore.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>John Prickett ran out of pins to 
+      make it work so it reused some of them in while in the IRQ 
+      state.</I></FONT> 
+      <P align=justify>I, along with John Kowalski, was able to get in touch 
+      with this person for a second time to get a few more questions in and here 
+      is the edited transcript ... 
+      <P align=justify><FONT color=yellow><I>[MR X] It is a machine state, so it 
+      does require the right set of events and I am probably the only one who 
+      ever turned it on and played with it. My demo program put up changing 
+      color patterns. It was designed to be for games.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[JOHN] So, you're saying that an 
+      IRQ routine that 'itself' is located in the $FEOO-$FEFF page is used to 
+      switch on the mode?</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[MR X] That's correct, John and as 
+      I remember it's the only place you can do it.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[JOHN] Any hints as to what 
+      generates the IRQ signal? Does it matter?</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[MR X] I did it on the timer I 
+      think.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[NICK] Is the 256 mode visible in 
+      both RGB and composite video output? </I></FONT>
+      <P align=justify><FONT color=yellow><I>[MR X] I believe so, its a real 
+      mode.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[JOHN] So if I set up a TIMER based 
+      IRQ that jumps to the $FExx range... If I systematically trash random 
+      hardware registers $FFOO to $FFFF, eventually the mode should turn on.. 
+      shouldn't it?</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[MR X] It sees to me some of the 
+      regs had to be written with a given interval so random data is not going 
+      to do it and I can tell you the routine is not in Tandy archives anymore 
+      either.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[JOHN] What would be the reason for 
+      the program code to be in $FExx range? It's not like the GIME can tell 
+      where the CPU's PC is.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[MR X] That's not true John, there 
+      are times the GIME does know. AII the coco files were distroyed 2 years 
+      before I left Tandy. No, once in the mode the computer acts as it did 
+      before, but no way to exit the video mode without a reset because the MMU 
+      is part of the addressing so the MMU has to intercept the 
+      address.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[JOHN] So.. the GIME remembers the 
+      last address issued on the CPU bus, and if that address is not exactly 
+      'some number', the mode will not activate?</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[MR X] The special page is treated 
+      differntly by the MMU and the memory map becomes unstable during the mode 
+      change so it has to be one in that page system needs to be in the RAM 
+      mode.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[NICK] MMU on or off?</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[MR X] On.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[NICK] CoCo1/2 compatible mode on 
+      or off?</I></FONT> 
+      <P align=justify><FONT color=yellow><I>[MR X] CoCo 3 mode.</I></FONT> 
+      <H3>
+      <P align=justify><FONT color=lime><B>GIME chip designer found!</B></FONT> 
+      </H3>
+      <P align=justify>My next avenue of pursuit was to locate the man 
+      responsible for the design of the GIME chip and I was given the name, John 
+      Prickett. My search on the&nbsp;internet located a John Prickett working 
+      for AMD at the time and here is his response to my question... 
+      <P align=justify><FONT color=yellow><I>I'm John Prickett, and I did design 
+      the chip you referenced, but that was 14 years and 50 designs ago. I 
+      couldn't possibly tell you any of the internal intricacies of the chip 
+      now. You probably know more about it that I do right now.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>I do seem to remember that it was 
+      64 colors only -- we only used a 6-bit palette, and so I very much doubt 
+      that there is a 'hidden 256 color' mode. But I could be wrong.</I></FONT> 
+      <P align=justify><FONT color=yellow><I>Sorry I couldn't be more help, 
+      John</I></FONT> 
+      <P align=justify>John appears to have moved on and I have lost contact 
+      with him. 
+      <H3>
+      <P align=justify><FONT color=lime>More Proof!</FONT> </H3>
+      <P align=justify>During my job as PennFest 2000 co-organiser, I came into 
+      contact with Mark Hawkins of Microware. Mark is one of the 3 people who 
+      developed the CoCo3's Super Extended Basic and is one of the "Three 
+      Mugsters" that appears on the CTRL-ALT-RESET page. I asked Mark about this 
+      mode and he was unfamiliar with it but he said that he would look through 
+      the archives at Microware for old documentation about the GIME chip. He 
+      found the original "Color Computer Custom Video Proposed Feature List" 
+      document which came from Tandy's R&amp;D section. All of the info is as 
+      found in the service manual except for the cover page which lists the 256 
+      color mode! 
+      <P align=justify> 
+      <P align=center><IMG height=658 alt="R&amp;D Document" 
+      src="In Search of 256_files/gime-r&amp;d.gif" width=450> 
+      <P align=center> 
+      <P align=justify>This proves that the mode was at least in the planning 
+      stages. What we are unsure of &nbsp;from this page is what the references 
+      are about 1 and 2 banks of RAM and how that effects the modes. We have 
+      seen references to this in CoCo3 memory maps but it has always been 
+      ignored. 
+      <P align=left> 
+      <CENTER>
+      <TABLE cellSpacing=0 cellPadding=5 align=center border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD>
+            <H3>FF91: </H3></TD>
+          <TD colSpan=2>
+            <H3>INITIALIZATION REGISTER 1 </H3></TD></TR>
+        <TR vAlign=top>
+          <TD>
+            <P>
+            <P></P></TD>
+          <TD>Bit 7 - 
+            <P>Bit 6 - 
+            <P>Bit 5 - 
+            <P>Bit 4 - 
+            <P>Bit 3 - 
+            <P>Bit 2 - 
+            <P>Bit 1 - 
+            <P>Bit 0 -</P></TD>
+          <TD>0 = Two banks of DRAM 
+            <P>0 = 64K chips, 1 = 256K chips 
+            <P>Timer Input Clock Select 1=70ns, 0=63ns 
+            <P>NOT USED 
+            <P>NOT USED 
+            <P>NOT USED 
+            <P>NOT USED 
+            <P>MMU Task Register Select</P></TD></TR></TBODY></TABLE></CENTER>
+      <P> 
+      <P>Another interesting observation that ha sme curious (but may not be 
+      related&nbsp;to&nbsp;the 256 mode)&nbsp;is the function of BITS 6 and 7 in 
+      the FF99 Video Resolution Register. The functions are listed in the CoCo3 
+      memory maps as... 
+      <P> 
+      <CENTER>
+      <TABLE cellPadding=2 align=center border=0>
+        <TBODY>
+        <TR>
+          <TD colSpan=3>
+            <H3>
+            <P align=center>Lines&nbsp;per Field </H3></P></TD></TR>
+        <TR>
+          <TD>
+            <P align=center>BIT 1 
+            <P align=center>0 
+            <P align=center>0 
+            <P align=center>1 
+            <P align=center>1</P></TD>
+          <TD>
+            <P align=center>BIT 0 
+            <P align=center>0 
+            <P align=center>1 
+            <P align=center>0 
+            <P align=center>1</P></TD>
+          <TD>&nbsp; 
+            <P>192 
+            <P>200 
+            <P>210 
+            <P>225</P></TD></TR></TBODY></TABLE></CENTER>
+      <P align=justify>The Lines Per Field is the number of vertical scanlines 
+      or vertical resolution of the mode. All of these work fine except for the 
+      210 setting. This does not create 210 lines. Instead it appears to create 
+      an infinite number of lines. With this setting, the display stretches past 
+      the top and bottom and it seems to pick whatever color the GIME was 
+      processing at the time the mode is set. If it was in the border region of 
+      the screen, it keeps generating this color otherwise it repeats the 
+      current color in the active portion of the screen. 
+      <H3 align=justify><FONT color=lime>Current Status</FONT> </H3>
+      <P align=justify>John and I have run tests on the various GIME chip 
+      locations, running random data and experimenting&nbsp;with all the areas 
+      of the map that are marked as undefined &nbsp;or not used. The mode, if it 
+      truly exists, does not take the form of a normal register function. As our 
+      friend on the IRC chat explained, the designers ran out of pins to make it 
+      work properly and had to reused pins during a specific machine state of 
+      the GIME. This makes it extremely difficult to locate because even if we 
+      are looking at the right places to setup the mode, the mode is 
+      non-functional and therefore will not present itself unless this specific 
+      state is met. 
+      <P align=justify>We need more information and vital clues in order to 
+      proceed further. What are those 2 registers that appear to be part of some 
+      bypass of 8 bit video data in the GIME chip and how are they accessed? 
+      Could the mode have been removed from final production GIME chips or does 
+      the mode still exist but has been carefully "hidden" under the request of 
+      Tandy management so as not to conflict with the sales of the Tandy 1000 
+      line of PC compatibles in the product line at the 
+time.</P></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

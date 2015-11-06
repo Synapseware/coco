@@ -1,0 +1,841 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1254">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>9.</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0">
+    <tr>
+        <td><a name="9. THE SOURCE LINKER"><font size="2"
+        face="Arial"><em><strong>9. THE SOURCE LINKER</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>Many small development environments
+        have assemblers which<span style="mso-spacerun:
+yes">  </span>do<span style="mso-spacerun: yes">  </span>not<br>
+<span style="mso-spacerun: yes">               </span>directly support an object linker.<span style="mso-spacerun: yes">  </span>This
+        causes a<span style="mso-spacerun:
+yes">  </span>problem<span style="mso-spacerun: yes">  </span>with<span style="mso-spacerun: yes">  </span>'C'<br>
+<span style="mso-spacerun:
+yes">               </span>development,<span style="mso-spacerun: yes">  </span>because the library functions
+        must be included<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">               </span>source code, with several drawbacks:<br>
+        <br>
+<span style="mso-spacerun: yes">                </span>1)<span style="mso-spacerun: yes">  </span>There is no way to automatically tell
+        which library functions<br>
+<span style="mso-spacerun: yes">                    </span>to include, therefore, you must do
+        it manually.<br>
+        <br>
+<span style="mso-spacerun: yes">                </span>2)<span style="mso-spacerun: yes">  </span>'C' library functions must be<span style="mso-spacerun: yes">  </span>re-compiled
+        every<span style="mso-spacerun: yes">  </span>time,<span style="mso-spacerun: yes">  </span>in<br>
+<span style="mso-spacerun:
+yes">                    </span>order to avoid conflict between
+        compiler generated labels.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>The MICRO-C Source Linker<span style="mso-spacerun: yes">  </span>(SLINK)<span style="mso-spacerun: yes">  </span>helps
+        overcome these problems,<br>
+<span style="mso-spacerun: yes">               </span>by automatically<span style="mso-spacerun: yes">  </span>joining<span style="mso-spacerun: yes">  </span>previously<span style="mso-spacerun: yes">  </span>compiled<span style="mso-spacerun: yes"> 
+</span>        (assembly<span style="mso-spacerun: yes">  </span>language)<br>
+<span style="mso-spacerun: yes">               </span>source code from the library<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>your<span style="mso-spacerun: yes">  </span>programs.<span style="mso-spacerun: yes"> 
+</span>        Only<span style="mso-spacerun: yes">  </span>those<span style="mso-spacerun: yes">  </span>files<br>
+<span style="mso-spacerun: yes">               </span>containing functions which you<span style="mso-spacerun: yes">  </span>reference<span style="mso-spacerun: yes"> 
+</span>        are<span style="mso-spacerun: yes">  </span>joined<span style="mso-spacerun: yes">  </span>(Taking<span style="mso-spacerun: yes">  </span>into<br>
+<span style="mso-spacerun:
+yes">               </span>consideration functions called<span style="mso-spacerun:
+yes">  </span>by<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>included<span style="mso-spacerun: yes"> 
+</span>        library<span style="mso-spacerun: yes">  </span>functions<br>
+<span style="mso-spacerun: yes">               </span>etc...).<span style="mso-spacerun:
+yes">  </span>As the files are<span style="mso-spacerun: yes">  </span>joined,<span style="mso-spacerun: yes">  </span>compiler<span style="mso-spacerun: yes"> 
+</span>        generated<span style="mso-spacerun: yes">  </span>labels<span style="mso-spacerun: yes">  </span>are<br>
+<span style="mso-spacerun: yes">               </span>adjusted to be unique within each file.<br>
+        <br>
+<span style="mso-spacerun: yes">               </span></font><a name="9.1 The SLINK Command"><font
+        size="2" face="Arial"><em><strong>9.1 The SLINK Command</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>The format of the SLINK command
+        line is:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                           </span>SLINK input_file...
+        [options] output_file<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>&quot;input_file&quot;<span style="mso-spacerun: yes">  </span>is the
+        name of the<span style="mso-spacerun:
+yes">  </span>source<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun: yes">  </span>containing<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>compiler output from your program.<span style="mso-spacerun: yes">  </span>Several<span style="mso-spacerun: yes"> 
+</span>        input<span style="mso-spacerun: yes">  </span>files<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun:
+yes">                  </span>specified,<span style="mso-spacerun: yes">  </span>in which case they will
+        all be processed into a single<br>
+<span style="mso-spacerun: yes">                  </span>output file.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>&quot;output_file&quot;<span style="mso-spacerun: yes">  </span>is the
+        name of the<span style="mso-spacerun:
+yes">  </span>file<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>linked<br>
+<span style="mso-spacerun: yes">                  </span>source code is written.<br>
+        <br clear="all" style="page-break-before:always">
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>9.1.1 Command line options</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>SLINK accepts the
+        following command line [options]:<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>?<span style="mso-spacerun: yes">  </span><span style="mso-spacerun: yes">     </span>- Display command
+        line help summary.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>-c<span style="mso-spacerun: yes">      </span>- Removes comments
+        from the output file<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>c=char<span style="mso-spacerun: yes">  </span>- Indicate comment
+        character (Default is '*').<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>f=file<span style="mso-spacerun: yes">  </span>- Specify a file
+        containing source file names.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>i=name<span style="mso-spacerun: yes">  </span>- Specify name of the
+        External Index File.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>-l<span style="mso-spacerun: yes">      </span>- Instructs SLINK to
+        list each library used.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>l=path<span style="mso-spacerun: yes">  </span>- Specify directory path
+        taken to reference library<br>
+<span style="mso-spacerun:
+yes">                              </span>files. If not
+        given, defaults to: '\mc\slib'<br>
+        <br>
+<span style="mso-spacerun: yes">          </span><span style="mso-spacerun: yes">          </span>p=char<span style="mso-spacerun:
+yes">  </span>- Set PREFIX character of
+        compiler generated symbols.<br>
+<span style="mso-spacerun: yes">                              </span>Defaults is
+        '?'.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>-q<span style="mso-spacerun:
+yes">      </span>- Inhibit display of
+        the startup message.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>-s<span style="mso-spacerun:
+yes">      </span>- Inserts special
+        comments showing the files linked.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>s=file<span style="mso-spacerun:
+yes">  </span>- Specify a library file
+        to override (replace) the<br>
+<span style="mso-spacerun: yes">                              </span>first default
+        &quot;prefix&quot; file defined in the index.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>t=string- Prefix to prepend to
+        temp files (Default is '$').<br>
+        <br>
+<span style="mso-spacerun:
+yes">                    </span>-w<span style="mso-spacerun: yes">      </span>- Sort WORD data to
+        beginning of allocated bulk<br>
+<span style="mso-spacerun:
+yes">                              </span>uninitialized
+        storage (See $DD: directive).<br>
+        <br>
+<span style="mso-spacerun: yes">               </span></font><a name="9.2 Multiple Input Files"><font
+        size="2" face="Arial"><em><strong>9.2 Multiple Input
+        Files</strong></em></font></a><font size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>SLINK accepts multiple input
+        files on<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>command<span style="mso-spacerun: yes">  </span>line,<span style="mso-spacerun: yes">  </span>and<br>
+<span style="mso-spacerun: yes">                  </span>processes each file to build the
+        output file.<span style="mso-spacerun: yes">  </span>This allows you<span style="mso-spacerun: yes">  </span>to<br>
+<span style="mso-spacerun: yes">                  </span>&quot;link&quot; together several
+        previously compiled (or assembly language)<br>
+<span style="mso-spacerun:
+yes">                  </span>modules into one final program.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Any external references<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes"> 
+</span>        are<span style="mso-spacerun: yes">  </span>not<span style="mso-spacerun: yes">  </span>resolvable<span style="mso-spacerun: yes">  </span>from<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>library are assumed to be resolved by<span style="mso-spacerun: yes"> 
+</span>        one<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun:
+yes">  </span>input<span style="mso-spacerun: yes">  </span>source<br>
+<span style="mso-spacerun: yes">                  </span>files.<span style="mso-spacerun:
+yes">  </span>Since SLINK does not have
+        knowledge of the public<span style="mso-spacerun: yes">  </span>symbols<br>
+<span style="mso-spacerun:
+yes">                  </span>defined<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>input<span style="mso-spacerun: yes">  </span>files,<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes"> 
+</span>        absence<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>an<span style="mso-spacerun: yes">   </span>externally<br>
+<span style="mso-spacerun: yes">                  </span>referenced symbol will not be detected<span style="mso-spacerun: yes"> 
+</span>        until<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>assembly<span style="mso-spacerun: yes">  </span>step<br>
+<span style="mso-spacerun: yes">                  </span>(where it will cause an undefined
+        symbol error).<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>If you have too many input files
+        to specify on the command line<br>
+<span style="mso-spacerun: yes">                  </span>(128 characters),<span style="mso-spacerun: yes">  </span>you can use<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes"> 
+</span>        F=file<span style="mso-spacerun: yes">  </span>option<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>read<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>filenames<span style="mso-spacerun:
+yes">  </span>from<span style="mso-spacerun: yes">  </span>a <span style="mso-spacerun: yes"> </span>file<span style="mso-spacerun: yes">  </span>(one<span style="mso-spacerun: yes">  </span>per<span style="mso-spacerun: yes"> 
+</span>        line).<span style="mso-spacerun: yes">  </span>These<span style="mso-spacerun: yes">  </span>filenames<span style="mso-spacerun: yes">  </span>are<br>
+<span style="mso-spacerun:
+yes">                  </span>interpreted as if they had all been
+        entered on the command line at<br>
+<span style="mso-spacerun: yes">                  </span>the point where the F= option occurs.<span style="mso-spacerun: yes"> 
+</span>        NOTE: If you do not have an<br>
+<span style="mso-spacerun: yes">                  </span>output filename FOLLOWING F= the last
+        file from the F=file will be<br>
+<span style="mso-spacerun: yes">                  </span>used as the output file!<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">               </span></font><a name="9.3 The External Index File"><font
+        size="2" face="Arial"><em><strong>9.3 The External Index
+        File</strong></em></font></a><font size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>SLINK uses a special file from
+        the library to<span style="mso-spacerun:
+yes">  </span>determine<span style="mso-spacerun: yes">  </span>which<br>
+<span style="mso-spacerun: yes">            </span><span style="mso-spacerun:
+yes">      </span>symbols are in which files.<span style="mso-spacerun: yes">  </span>This
+        files<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>called<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>EXTERNAL<br>
+<span style="mso-spacerun: yes">                  </span>INDEX FILE,<span style="mso-spacerun: yes">  </span>and is found<span style="mso-spacerun:
+yes">  </span>in<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes"> 
+</span>        library<span style="mso-spacerun: yes">  </span>directory<span style="mso-spacerun: yes">  </span>(see<span style="mso-spacerun: yes">  </span>'l='<br>
+<span style="mso-spacerun:
+yes">                  </span>option), under the name
+        &quot;EXTINDEX.LIB&quot;.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>This<span style="mso-spacerun:
+yes">  </span>file<span style="mso-spacerun: yes">  </span>contains<span style="mso-spacerun: yes">  </span>entries<span style="mso-spacerun: yes"> 
+</span>        which<span style="mso-spacerun: yes">  </span>cross-reference<span style="mso-spacerun: yes">  </span>external<br>
+<span style="mso-spacerun:
+yes">                  </span>symbols to files. Each entry is as
+        follows:<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>1)<span style="mso-spacerun:
+yes">  </span>Any lines beginning with
+        '&lt;' contain the names of files<br>
+<span style="mso-spacerun: yes">                        </span>which are to be processed
+        and included at the BEGINNING<br>
+<span style="mso-spacerun: yes">                        </span>of the program (Before
+        your source file). This the best<br>
+<span style="mso-spacerun: yes">                        </span>way to include the startup
+        code and any runtime library<br>
+<span style="mso-spacerun:
+yes">                        </span>routines which are
+        required<span style="mso-spacerun: yes">  </span>at<span style="mso-spacerun: yes">  </span>all<span style="mso-spacerun: yes">  </span>times,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>also<br>
+<span style="mso-spacerun: yes">                        </span>provides a method of
+        initializing any segments used.<br>
+<span style="mso-spacerun: yes">                            </span>eg: &lt;6809rl.asm<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>Note:<span style="mso-spacerun: yes">  </span>You can specify up
+        to 5 of these &quot;prefix&quot; files,<br>
+<span style="mso-spacerun: yes">                        </span>and the &quot;S=&quot;
+        command line option allows you to override<br>
+<span style="mso-spacerun: yes">                        </span>the first prefix file
+        defined with any<span style="mso-spacerun: yes">  </span>other<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun: yes">  </span>in<br>
+<span style="mso-spacerun: yes">                 </span><span style="mso-spacerun: yes">       </span>the library directory.
+        This allows you to place default<br>
+<span style="mso-spacerun: yes">                        </span>system/memory map
+        information<span style="mso-spacerun: yes">   </span>(EQU, ORG etc.)<span style="mso-spacerun: yes">  </span>in the<br>
+<span style="mso-spacerun: yes">                        </span>first file,<span style="mso-spacerun: yes">  </span>and
+        substitute alternate information files<br>
+<span style="mso-spacerun: yes">                        </span>for different system
+        configurations.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>2)<span style="mso-spacerun: yes">  </span>Any lines beginning with '^'
+        contain the names of files<br>
+<span style="mso-spacerun: yes">                        </span>which are to be processed
+        AFTER the program and library<br>
+<span style="mso-spacerun: yes">                        </span>source files, but BEFORE
+        any<span style="mso-spacerun: yes">  </span>uninitialized<span style="mso-spacerun: yes">  </span>data areas<br>
+<span style="mso-spacerun:
+yes">                        </span>are output. This is the
+        best way to set up the location<br>
+<span style="mso-spacerun: yes">                        </span>and storage class of the
+        uninitialized data<span style="mso-spacerun: yes">  </span>if it does<br>
+<span style="mso-spacerun: yes">                        </span>not immediately follow the
+        executable program code, and<br>
+<span style="mso-spacerun: yes">                        </span>also providing any
+        postamble needed by the segments.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>3)<span style="mso-spacerun: yes">  </span>Any lines beginning with
+        '&gt;' contain the names of files<br>
+<span style="mso-spacerun:
+yes">                        </span>which are to be processed
+        at the END<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>program,<br>
+<span style="mso-spacerun: yes">                        </span>after all other
+        information is output. This is the best<br>
+<span style="mso-spacerun: yes">                        </span>way to define heap memory
+        storage,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>to provide any<br>
+<span style="mso-spacerun: yes">                        </span>post-amble needed by the
+        assembler.<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>4)<span style="mso-spacerun: yes">  </span>Any lines beginning with '-'
+        contain the names of files<br>
+<span style="mso-spacerun: yes">                        </span>which are to<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>included<span style="mso-spacerun: yes"> 
+</span>        if<span style="mso-spacerun: yes">  </span>any<span style="mso-spacerun:
+yes">  </span>of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>following<br>
+<span style="mso-spacerun:
+yes">                        </span>symbols<span style="mso-spacerun: yes">  </span>(Up to another
+        '&lt;', '^', '&gt;', '-' or '$')<span style="mso-spacerun: yes">  </span>are<br>
+<span style="mso-spacerun: yes">                        </span>referenced.<br>
+<span style="mso-spacerun: yes">                            </span>eg: -printf.asm
+        format.asm fgets.asm fget.asm<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>NOTE: In most cases, the
+        library functions will contain<br>
+<span style="mso-spacerun:
+yes">                        </span>indications of any
+        external references that they do, in<br>
+<span style="mso-spacerun: yes">                        </span>which case SLINK will
+        automatically include those files<br>
+<span style="mso-spacerun:
+yes">                        </span>even of the names are not
+        mentioned on the '-' line. In<br>
+<span style="mso-spacerun: yes">                        </span>the example above, the
+        following would suffice:<br>
+<span style="mso-spacerun:
+yes">                                </span>-printf.asm<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                    </span>5)<span style="mso-spacerun: yes">  </span>The names<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>each<span style="mso-spacerun: yes">  </span>symbol<span style="mso-spacerun: yes"> 
+</span>        which<span style="mso-spacerun: yes">  </span>may<span style="mso-spacerun: yes">  </span>be<span style="mso-spacerun: yes">  </span>referenced<br>
+<span style="mso-spacerun: yes">                        </span>externally must follow the
+        '&lt;', '^', '&gt;' or<span style="mso-spacerun: yes">  </span>'-' entry.<br>
+<span style="mso-spacerun:
+yes">                        </span>Symbols must occur one per
+        line,<span style="mso-spacerun: yes">  </span>with<span style="mso-spacerun: yes">  </span>no<span style="mso-spacerun: yes">  </span>leading<span style="mso-spacerun: yes">  </span>or<br>
+<span style="mso-spacerun:
+yes">                        </span>trailing spaces.<br>
+<span style="mso-spacerun:
+yes">                            </span>eg: printf<br>
+<span style="mso-spacerun:
+yes">                                </span>fprintf<br>
+<span style="mso-spacerun:
+yes">                                </span>sprintf<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>6)<span style="mso-spacerun:
+yes">  </span>A line beginning with '$' is
+        used to define the pseudo-<br>
+<span style="mso-spacerun: yes">                        </span>opcode used by SLINK to
+        reserve uninitialized<span style="mso-spacerun: yes">  </span>data<span style="mso-spacerun: yes">  </span>at<br>
+<span style="mso-spacerun:
+yes">                        </span>the end of the output
+        file.<span style="mso-spacerun: yes">  </span>Only<span style="mso-spacerun: yes">  </span>one<span style="mso-spacerun: yes">  </span>line<span style="mso-spacerun: yes">  </span>beginning<br>
+<span style="mso-spacerun:
+yes">                        </span>with '$' should be entered
+        into the EXTINDEX.LIB<span style="mso-spacerun: yes">  </span>file.<br>
+<span style="mso-spacerun: yes">                        </span>The remainder of this
+        line, including all<span style="mso-spacerun: yes">  </span>spaces<span style="mso-spacerun: yes">  </span>etc.<br>
+<span style="mso-spacerun:
+yes">                        </span>is entered between each
+        symbol name,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>decimal<br>
+<span style="mso-spacerun: yes">                        </span>size (in bytes) which is
+        written to the output file.<br>
+<span style="mso-spacerun:
+yes">                            </span>eg: '$ RMB '<span style="mso-spacerun: yes">   
+</span>        &lt;- Quotes are for clarity<br>
+        <br>
+<span style="mso-spacerun:
+yes">                    </span>A complete example:<br>
+        <br>
+<span style="mso-spacerun: yes">                            </span>-printf.asm<br>
+<span style="mso-spacerun: yes">                            </span>printf<br>
+<span style="mso-spacerun: yes">                            </span>fprintf<br>
+<span style="mso-spacerun: yes">                            </span>sprintf<br>
+<span style="mso-spacerun: yes">                            </span>-scanf.asm<br>
+<span style="mso-spacerun: yes">                            </span>scanf<br>
+<span style="mso-spacerun: yes">                            </span>fscanf<br>
+<span style="mso-spacerun: yes">                            </span>sscanf<br>
+<span style="mso-spacerun: yes">                            </span>&lt;PREFIX.asm<br>
+<span style="mso-spacerun: yes">                            </span>^MIDDLE.ASM<br>
+<span style="mso-spacerun: yes">                            </span>&gt;SUFFIX.ASM<br>
+<span style="mso-spacerun: yes">                            </span>$ RMB<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>In summary, the output file is
+        written from:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>1 - The '&lt;' (prefix)
+        files<span style="mso-spacerun:
+yes">              </span>*<br>
+<span style="mso-spacerun:
+yes">                        </span>2 - The program source
+        files<span style="mso-spacerun: yes">            </span>*\<br>
+<span style="mso-spacerun:
+yes">                        </span>3 - Library files
+        referenced (if any)<span style="mso-spacerun: yes">   </span>* &gt; See note<br>
+<span style="mso-spacerun: yes">                        </span>4 - The '^' (middle) files<span style="mso-spacerun: yes">             
+</span>        */<br>
+<span style="mso-spacerun: yes">                        </span>5 - Segments 1-9 from
+        above files<span style="mso-spacerun: yes">       </span>*<br>
+<span style="mso-spacerun: yes">                        </span>6 - Uninitialized data
+        definitions<span style="mso-spacerun: yes">      </span>(if any)<br>
+<span style="mso-spacerun: yes">                        </span>7 - The '&gt;' (suffix)
+        files<br>
+<span style="mso-spacerun: yes">                        </span>8 - Segments 1-9 from
+        suffix file(s)<span style="mso-spacerun: yes">    </span>* See note<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span>* NOTE: If these files contain
+        multiple segments (see later),<br>
+<span style="mso-spacerun: yes">                            </span>all segments are
+        grouped and written<span style="mso-spacerun: yes">  </span>in<span style="mso-spacerun: yes">  </span>sequential<br>
+<span style="mso-spacerun:
+yes">                            </span>order. IE: Seg 0
+        from all files is written, followed<br>
+<span style="mso-spacerun: yes">                            </span>by Seg 1, etc.<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">               </span></font><a name="9.4 Source file information"><font
+        size="2" face="Arial"><em><strong>9.4 Source file
+        information</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>9.4.1 SLINK Directives</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>SLINK interprets several
+        &quot;directives&quot;<span style="mso-spacerun: yes">  </span>which may be inserted<br>
+<span style="mso-spacerun: yes">                     </span>in the<span style="mso-spacerun:
+yes">  </span>input<span style="mso-spacerun: yes">  </span>source<span style="mso-spacerun: yes">  </span>files<span style="mso-spacerun: yes"> 
+</span>        to<span style="mso-spacerun: yes">  </span>control<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>source<span style="mso-spacerun: yes">  </span>linking<br>
+<span style="mso-spacerun: yes">                     </span>process. These directives must
+        be on a separate line, beginning<br>
+<span style="mso-spacerun: yes">                     </span>in column 1,<span style="mso-spacerun: yes">  </span>and must be in
+        uppercase.<span style="mso-spacerun: yes">  </span>They<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>removed<span style="mso-spacerun: yes">  </span>by<br>
+<span style="mso-spacerun: yes">                     </span>SLINK during processing,<span style="mso-spacerun: yes">  </span>and
+        thus will not cause conflict with<br>
+<span style="mso-spacerun: yes">                     </span>the normal syntax used by the
+        assembler.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                          
+</span>        $SE:&lt;0-9&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">            </span><span style="mso-spacerun:
+yes">            </span>The<span style="mso-spacerun: yes">  </span>'$SE'<span style="mso-spacerun: yes">  </span>directive is
+        used by SLINK<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>define<span style="mso-spacerun: yes">  </span>multiple<br>
+<span style="mso-spacerun: yes">                     </span>output segments.<span style="mso-spacerun: yes">  </span>Up to 10
+        segments are allowed, with segment 0<br>
+<span style="mso-spacerun: yes">                     </span>being the default which<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun:
+yes">  </span>selected<span style="mso-spacerun: yes"> 
+</span>        when<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>first<br>
+<span style="mso-spacerun:
+yes">                     </span>encountered.<span style="mso-spacerun: yes">  </span>Other<span style="mso-spacerun: yes">  </span>segments<span style="mso-spacerun: yes"> 
+</span>        (1-9)<span style="mso-spacerun: yes">  </span>when<span style="mso-spacerun: yes">  </span>selected<span style="mso-spacerun: yes">  </span>via<span style="mso-spacerun: yes">  </span>this<br>
+<span style="mso-spacerun: yes">                     </span>directive are written to
+        temporary files,<span style="mso-spacerun: yes">  </span>and re-joined at the<br>
+<span style="mso-spacerun: yes">                     </span>end of processing in<span style="mso-spacerun: yes">  </span>sequential<span style="mso-spacerun: yes"> 
+</span>        order.<span style="mso-spacerun: yes">  </span>this<span style="mso-spacerun: yes">  </span>allows<span style="mso-spacerun: yes">  </span>you<span style="mso-spacerun: yes">  </span>to<br>
+<span style="mso-spacerun: yes">                     </span>separate sections of the source
+        file (such as initialized data,<br>
+<span style="mso-spacerun: yes">                     </span>literal pool etc.) into distinct
+        areas of memory.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                             
+</span>        $FS:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>The '$FS'<span style="mso-spacerun: yes">  </span>directive
+        &quot;flushes&quot;<span style="mso-spacerun: yes">  </span>the segments,<span style="mso-spacerun:
+yes">  </span>insuring that<br>
+<span style="mso-spacerun: yes">                     </span>all data pending in segments 1-9
+        are written to the output file<br>
+<span style="mso-spacerun: yes">                     </span>at this point.<span style="mso-spacerun: yes">  </span>It is<span style="mso-spacerun: yes">  </span>used<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes"> 
+</span>        terminate<span style="mso-spacerun: yes">  </span>(and<span style="mso-spacerun: yes">  </span>restart)<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                     </span>segmentation process from a
+        specific point. This directive also<br>
+<span style="mso-spacerun: yes">                     </span>resets output to segment 0.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                     </span>$RS:&lt;bit
+        flag number&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>The<span style="mso-spacerun:
+yes">  </span>'$RS'<span style="mso-spacerun: yes">  </span>directive
+        defines a<span style="mso-spacerun: yes">  </span>&quot;runtime library<span style="mso-spacerun: yes">  </span>section&quot;,<br>
+<span style="mso-spacerun: yes">                     </span>which will only be included if<span style="mso-spacerun: yes"> 
+</span>        this<span style="mso-spacerun:
+yes">  </span>function<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>flagged<span style="mso-spacerun: yes">  </span>as<br>
+<span style="mso-spacerun: yes">                     </span>being used<span style="mso-spacerun: yes">  </span>(See '$RL'
+        directive).<span style="mso-spacerun: yes">  </span>To determine if the section<br>
+<span style="mso-spacerun: yes">                     </span>is required,<span style="mso-spacerun: yes">  </span>the operands to
+        all<span style="mso-spacerun: yes">  </span>'$RL'<span style="mso-spacerun: yes">  </span>directives<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>ORed<br>
+<span style="mso-spacerun:
+yes">                     </span>together, and then ANDed with
+        the operand to the '$RS' section.<br>
+<span style="mso-spacerun: yes">                     </span>A<span style="mso-spacerun: yes">  </span>non-zero<span style="mso-spacerun: yes">  </span>result<span style="mso-spacerun: yes">  </span>indicates<span style="mso-spacerun: yes"> 
+</span>        that<span style="mso-spacerun: yes">  </span>this<span style="mso-spacerun: yes">  </span>section<span style="mso-spacerun: yes">  </span>should<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                     </span>included.<span style="mso-spacerun: yes">  </span>'$RS:0' is a special
+        case, and resumes unconditional<br>
+<span style="mso-spacerun:
+yes">                     </span>output.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                     </span>$RL:&lt;bit
+        flag number&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>The<span style="mso-spacerun:
+yes">  </span>'$RL'<span style="mso-spacerun: yes">  </span>directive<span style="mso-spacerun: yes">  </span>flags<span style="mso-spacerun: yes"> 
+</span>        specific<span style="mso-spacerun: yes">  </span>functions<span style="mso-spacerun: yes">  </span>from<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                     </span>&quot;runtime library&quot;<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes"> 
+</span>        being<span style="mso-spacerun: yes">  </span>required.<span style="mso-spacerun: yes">  </span>Any<span style="mso-spacerun: yes">  </span>subsequent<span style="mso-spacerun: yes">  </span>'$RS'<br>
+<span style="mso-spacerun:
+yes">                     </span>sections which have at least one
+        bit in common with<span style="mso-spacerun: yes">  </span>any<span style="mso-spacerun:
+yes">  </span>'$RL'<br>
+<span style="mso-spacerun: yes">                     </span>directive will be included.<br>
+        <br clear="all" style="page-break-before:
+always">
+<span style="mso-spacerun:
+yes">                                     
+</span>        $DD:&lt;symbol&gt; &lt;size&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>The<span style="mso-spacerun:
+yes">  </span>'$DD'<span style="mso-spacerun: yes">  </span>directive is
+        used to define<span style="mso-spacerun: yes">  </span>uninitialized<span style="mso-spacerun: yes">  </span>data<br>
+<span style="mso-spacerun:
+yes">                     </span>storage areas, which will be
+        allocated by SLINK between the '^'<br>
+<span style="mso-spacerun: yes">                     </span>(middle)<span style="mso-spacerun: yes">  </span>and '&gt;' (suffix)<span style="mso-spacerun: yes"> 
+</span>        files.<span style="mso-spacerun: yes">  </span>This allows you to allocate<br>
+<span style="mso-spacerun: yes">                     </span>uninitialized data outside of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes"> 
+</span>        bounds<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>executable<br>
+<span style="mso-spacerun: yes">                     </span>image,<span style="mso-spacerun: yes">  </span>and thus exclude it
+        from<span style="mso-spacerun: yes">  </span>being<span style="mso-spacerun:
+yes">  </span>saved<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>disk.<span style="mso-spacerun: yes">  </span>This<br>
+<span style="mso-spacerun: yes">                     </span>action may be thought of as an
+        additional (11'th) segment which<br>
+<span style="mso-spacerun: yes">                     </span>is available for uninitialized
+        data only,<span style="mso-spacerun: yes">  </span>and which avoids the<br>
+<span style="mso-spacerun: yes">                     </span>temporary file read/write
+        overhead associated with use<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                     </span>other segments.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                                         
+</span>        $EX:&lt;symbol&gt;<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>The '$EX' directive is
+        used by SLINK to identify any symbols<br>
+<span style="mso-spacerun: yes">                     </span>which are externally referenced.<span style="mso-spacerun: yes"> 
+</span>        Whenever a '$EX' directive is<br>
+<span style="mso-spacerun:
+yes">                     </span>found,<span style="mso-spacerun: yes">  </span>SLINK searches the<span style="mso-spacerun: yes">  </span>EXTINDEX.LIB<span style="mso-spacerun: yes"> 
+</span>        file<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>named<br>
+<span style="mso-spacerun:
+yes">                     </span>symbol,<span style="mso-spacerun: yes">  </span>and marks the
+        corresponding files for inclusion in the<br>
+<span style="mso-spacerun: yes">               </span><span style="mso-spacerun:
+yes">      </span>program.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>If you<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>writing<span style="mso-spacerun: yes">  </span>assembly<span style="mso-spacerun: yes"> 
+</span>        language<span style="mso-spacerun: yes">  </span>programs<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                     </span>library,<span style="mso-spacerun: yes">  </span>be sure to include<span style="mso-spacerun: yes">  </span>&quot;$SE:&lt;0-9&gt;&quot;<span style="mso-spacerun: yes"> 
+</span>        directives<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes">  </span>any<br>
+<span style="mso-spacerun: yes">                     </span>segments you wish to access,<span style="mso-spacerun: yes">  </span>&quot;$DD:&lt;symbol&gt;<span style="mso-spacerun: yes"> 
+</span>        &lt;size&gt;&quot; directives<br>
+<span style="mso-spacerun: yes">                     </span>for<span style="mso-spacerun:
+yes">  </span>any<span style="mso-spacerun: yes">  </span>uninitialized<span style="mso-spacerun: yes">  </span>data<span style="mso-spacerun: yes"> 
+</span>        you<span style="mso-spacerun: yes">  </span>wish<span style="mso-spacerun: yes">   </span>to<span style="mso-spacerun: yes">   </span>allocate,<span style="mso-spacerun: yes">   </span>and<br>
+<span style="mso-spacerun: yes">                     </span>&quot;$EX:&lt;symbol&gt;&quot;<span style="mso-spacerun: yes"> 
+</span>        directives for any symbols which you externally<br>
+<span style="mso-spacerun: yes">                     </span>reference. If you wish to place
+        an assembly language comment on<br>
+<span style="mso-spacerun:
+yes">                     </span>the same line,<span style="mso-spacerun: yes">  </span>make sure it is
+        separated from the remainder of<br>
+<span style="mso-spacerun: yes">                     </span>the directive by at least one
+        space or tab character.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Notes:<br>
+<span style="mso-spacerun: yes">                     </span>- $EX directives will have no
+        effect in MIDDLE or SUFFIX files,<br>
+<span style="mso-spacerun: yes">                       </span>because the external
+        references have already been resolved by<br>
+<span style="mso-spacerun:
+yes">                       </span>the time they are processed.<br>
+<span style="mso-spacerun: yes">                     </span>- $DD directives will have no
+        effect in SUFFIX<span style="mso-spacerun: yes">  </span>files,<span style="mso-spacerun: yes">  </span>because<br>
+<span style="mso-spacerun:
+yes">                       </span>uninitialized storage has<span style="mso-spacerun:
+yes">  </span>already<span style="mso-spacerun: yes"> 
+</span>        been<span style="mso-spacerun: yes">  </span>allocated<span style="mso-spacerun: yes">  </span>at<span style="mso-spacerun: yes">  </span>that<br>
+<span style="mso-spacerun: yes">                       </span>point.<br>
+<span style="mso-spacerun: yes">               </span><span style="mso-spacerun:
+yes">      </span>- $RL directives will have no<span style="mso-spacerun:
+yes">  </span>effect<span style="mso-spacerun: yes"> 
+</span>        on<span style="mso-spacerun: yes">  </span>$RS<span style="mso-spacerun: yes">  </span>sections<span style="mso-spacerun: yes">  </span>which<br>
+<span style="mso-spacerun: yes">                       </span>occur BEFORE them.<span style="mso-spacerun: yes">  </span>Normally,
+        $RL is placed in the PREFIX and<br>
+<span style="mso-spacerun: yes">                       </span>PROGRAM files,<span style="mso-spacerun: yes">  </span>and $RS is
+        placed in the<span style="mso-spacerun: yes">  </span>MIDDLE<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>SUFFIX<br>
+<span style="mso-spacerun: yes">                       </span>files.<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                  </span><em><strong>9.4.2 Compiler generated
+        labels</strong></em><br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>As it processes each
+        source file,<span style="mso-spacerun: yes">  </span>SLINK scans each line for<br>
+<span style="mso-spacerun: yes">                     </span>symbols which consist of the '?'
+        character<span style="mso-spacerun: yes">  </span>(See 'p='<span style="mso-spacerun: yes">  </span>option),<br>
+<span style="mso-spacerun:
+yes">                     </span>followed by a number.<span style="mso-spacerun: yes">  </span>If it
+        finds such as symbol, it inserts a<br>
+<span style="mso-spacerun:
+yes">                     </span>two character sequence ranging
+        from 'AA'<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>'ZZ'<span style="mso-spacerun: yes">  </span>between the<br>
+<span style="mso-spacerun: yes">                     </span>'?', and the number. This
+        sequence will be incremented for each<br>
+<span style="mso-spacerun:
+yes">                     </span>source file processed,<span style="mso-spacerun:
+yes">  </span>and<span style="mso-spacerun: yes">  </span>thus<span style="mso-spacerun: yes"> 
+</span>        insures<span style="mso-spacerun: yes">  </span>that<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>compiler<br>
+<span style="mso-spacerun:
+yes">                     </span>generated symbols will be unique
+        for each file.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>If you<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>writing<span style="mso-spacerun: yes">  </span>assembly<span style="mso-spacerun: yes"> 
+</span>        language<span style="mso-spacerun: yes">  </span>programs<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                     </span>library,<span style="mso-spacerun: yes">  </span>you must be careful
+        to avoid<span style="mso-spacerun: yes">  </span>using<span style="mso-spacerun: yes">  </span>identical<span style="mso-spacerun: yes">  </span>local<br>
+<span style="mso-spacerun: yes">                     </span>symbols in any of the library
+        files,<span style="mso-spacerun: yes">  </span>one way to do this is<span style="mso-spacerun: yes">  </span>to<br>
+<span style="mso-spacerun: yes">                     </span>use symbols which meet the above
+        criteria.<br>
+        <br>
+<span style="mso-spacerun: yes">               </span></font><a name="9.5 The SCONVERT command"><font
+        size="2" face="Arial"><em><strong>9.5 The SCONVERT
+        command</strong></em></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>SCONVERT is a utility<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>assists<span style="mso-spacerun: yes"> 
+</span>        in<span style="mso-spacerun: yes">  </span>converting<span style="mso-spacerun: yes">  </span>existing<br>
+<span style="mso-spacerun:
+yes">                  </span>assembly language<span style="mso-spacerun: yes">  </span>source<span style="mso-spacerun: yes">  </span>files<span style="mso-spacerun: yes">  </span>into<span style="mso-spacerun: yes"> 
+</span>        a<span style="mso-spacerun: yes">  </span>format<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>more<br>
+<span style="mso-spacerun: yes">                  </span>suitable for use by the SLINK. Two
+        main functions are performed:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>1)<span style="mso-spacerun: yes">  </span>All comments are removed,<span style="mso-spacerun: yes">  </span>and
+        all spacing<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>reduced<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun:
+yes">                     </span>single space.<span style="mso-spacerun: yes">  </span>This minimizes
+        the size of the file,<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes">  </span>helps<br>
+<span style="mso-spacerun: yes">                     </span>decrease linkage time.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>2)<span style="mso-spacerun: yes">  </span>All symbols defined in the file
+        which are<span style="mso-spacerun:
+yes">  </span>not<span style="mso-spacerun: yes">  </span>identified<span style="mso-spacerun: yes">  </span>as<br>
+<span style="mso-spacerun:
+yes">                     </span>&quot;keep&quot;<span style="mso-spacerun: yes">  </span>symbols are
+        converted to resemble the MICRO-C<span style="mso-spacerun:
+yes">  </span>compiler<br>
+<span style="mso-spacerun: yes">                     </span>generated symbols.<span style="mso-spacerun: yes">  </span>This allows
+        SLINK<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun:
+yes">  </span>adjust<span style="mso-spacerun: yes">  </span>them<span style="mso-spacerun: yes">  </span>to<span style="mso-spacerun: yes">  </span>be<br>
+<span style="mso-spacerun: yes">                     </span>unique within each source file.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>The format of the SCONVERT
+        command line is:<br>
+        <br>
+        <br>
+<span style="mso-spacerun: yes">                         </span>SCONVERT [input_file]
+        [output_file] [options]<br>
+        <br>
+<span style="mso-spacerun: yes">                    </span><span style="mso-spacerun: yes"> </span>[input_file]<span style="mso-spacerun: yes">  </span>is the name of
+        the<span style="mso-spacerun:
+yes">  </span>source<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun: yes">  </span>containing<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun: yes">                  </span>original assembly language program.<span style="mso-spacerun: yes">  </span>If<span style="mso-spacerun: yes"> 
+</span>        no<span style="mso-spacerun: yes">  </span>filenames<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>given,<br>
+<span style="mso-spacerun:
+yes">                  </span>SCONVERT will read from standard
+        input.<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>[output_file]<span style="mso-spacerun: yes">  </span>is the name of
+        the file to which<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>converted<br>
+<span style="mso-spacerun: yes">                  </span>source code is written.<span style="mso-spacerun: yes">  </span>If less that<span style="mso-spacerun: yes"> 
+</span>        two<span style="mso-spacerun: yes">  </span>filenames<span style="mso-spacerun: yes">  </span>are<span style="mso-spacerun: yes">  </span>given,<br>
+<span style="mso-spacerun:
+yes">                  </span>SCONVERT will write to standard
+        output.<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">                  </span><em><strong>9.5.1 Command line options</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>SCONVERT accepts the
+        following command line [options]:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>?<span style="mso-spacerun:
+yes">       </span>- Display
+        command line help summary.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>c=char<span style="mso-spacerun: yes">  </span>- Identifies the
+        character used to begin a comment<br>
+<span style="mso-spacerun: yes">                                  </span>at the
+        trailing end of a source line. If no 'c='<br>
+<span style="mso-spacerun: yes">                                  </span>is
+        defined, SCONVERT will terminate processing at<br>
+<span style="mso-spacerun:
+yes">                                  </span>the
+        first blank or tab which follows the operand<br>
+<span style="mso-spacerun: yes">                                  </span>field.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>C=char<span style="mso-spacerun: yes">  </span>- Identifies the
+        character which indicates a comment<br>
+<span style="mso-spacerun:
+yes">                                  </span>line
+        in the source code. Defaults to '*'.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>k=name<span style="mso-spacerun: yes">  </span>- Identifies a
+        symbol name to KEEP. This symbol will<br>
+<span style="mso-spacerun:
+yes">                                  </span>not be
+        converted. Multiple 'k=' are permitted.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>K=file<span style="mso-spacerun: yes">  </span>- Identifies a
+        file containing the names of symbols<br>
+<span style="mso-spacerun:
+yes">                                  </span>to
+        KEEP, one per line. Multiple 'K=' are permitted.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>p=char<span style="mso-spacerun: yes">  </span>- Identifies the
+        PREFIX character which is to be used<br>
+<span style="mso-spacerun:
+yes">                             </span><span style="mso-spacerun:
+yes">     </span>for
+        the converted symbols. Defaults to '?'.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>-q<span style="mso-spacerun:
+yes">      </span>- Instructs
+        SCONVERT to be quiet, and not issue its<br>
+<span style="mso-spacerun: yes">                                  </span>startup
+        message.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>SCONVERT identifies
+        symbols in the input source file as<span style="mso-spacerun: yes">  </span>any<br>
+<span style="mso-spacerun:
+yes">                     </span>string beginning with 'A-Z',
+        'a-z', '_' or '?',<span style="mso-spacerun: yes">  </span>and containing<br>
+<span style="mso-spacerun: yes">                     </span>these characters plus<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>digits<span style="mso-spacerun: yes"> 
+</span>        '0-9'.<span style="mso-spacerun: yes">  </span>If<span style="mso-spacerun: yes">  </span>your<span style="mso-spacerun: yes">  </span>assembler<br>
+<span style="mso-spacerun: yes">                     </span>source files uses any other
+        characters in its symbols, you must<br>
+<span style="mso-spacerun:
+yes">                     </span>edit your sources and change the
+        symbols.<br>
+        <br>
+<span style="mso-spacerun: yes">               </span></font><a name="9.6 The SRENUM command"><font
+        size="2" face="Arial"><em><strong>9.6 The SRENUM command</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>SRENUM<span style="mso-spacerun:
+yes">  </span>is<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>small<span style="mso-spacerun: yes">  </span>utility<span style="mso-spacerun: yes"> 
+</span>        which<span style="mso-spacerun: yes">  </span>re-numbers<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>compiler<br>
+<span style="mso-spacerun: yes">                  </span>generated symbols within a assembly
+        language source file.<span style="mso-spacerun: yes">  </span>This is<br>
+<span style="mso-spacerun: yes">                  </span>useful if you have made added symbols
+        to the<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun: yes">  </span>by<span style="mso-spacerun: yes">  </span>hand,<span style="mso-spacerun: yes">  </span>and<br>
+<span style="mso-spacerun: yes">                  </span>wish to make it &quot;pretty&quot;
+        before adding it to the library etc.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                     </span>The format of the SRENUM command
+        is:<br>
+        <br>
+<span style="mso-spacerun: yes">                          </span>SRENUM [input_file]
+        [output_file] [options]<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>9.6.1 Command line options</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">           </span><span style="mso-spacerun: yes">             </span>SRENUM accepts the
+        following command line [options]:<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>?<span style="mso-spacerun: yes">       </span>- Display
+        command line help summary.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>p=char<span style="mso-spacerun: yes">  </span>- Identifies the
+        PREFIX character which is to be used<br>
+<span style="mso-spacerun: yes">                                  </span>to
+        recognize compiler generated symbols.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                        </span>-q<span style="mso-spacerun: yes">      </span>- Instructs
+        SRENUM to be quiet, and not issue its<br>
+<span style="mso-spacerun:
+yes">                                  </span>startup
+        message.<br>
+        <br clear="all" style="page-break-before:always">
+<span style="mso-spacerun: yes">               </span></font><a name="9.7 The SINDEX command"><font
+        size="2" face="Arial"><em><strong>9.7 The SINDEX command</strong></em></font></a><font
+        size="2" face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                </span><span style="mso-spacerun: yes">     </span>SINDEX is a utility<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>assists<span style="mso-spacerun: yes"> 
+</span>        in<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>creation<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>the<br>
+<span style="mso-spacerun:
+yes">                  </span>EXTINDEX.LIB file used by SLINK.<span style="mso-spacerun: yes">  </span>When
+        you run SINDEX, it examines<br>
+<span style="mso-spacerun: yes">                  </span>all of the<span style="mso-spacerun:
+yes">  </span>'.ASM'<span style="mso-spacerun: yes">  </span>files in the
+        current directory,<span style="mso-spacerun: yes">  </span>and writes<span style="mso-spacerun: yes">  </span>a<br>
+<span style="mso-spacerun:
+yes">                  </span>EXTINDEX.LIB file which contains a<span style="mso-spacerun: yes">  </span>'-'<span style="mso-spacerun: yes"> 
+</span>        type entry for each file,<br>
+<span style="mso-spacerun: yes">                  </span>and<span style="mso-spacerun: yes">  </span>external<span style="mso-spacerun: yes">  </span>symbol<span style="mso-spacerun: yes">  </span>entries<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes"> 
+</span>        any<span style="mso-spacerun: yes">  </span>labels<span style="mso-spacerun: yes">  </span>which<span style="mso-spacerun: yes">  </span>it<span style="mso-spacerun: yes">  </span>finds<br>
+<span style="mso-spacerun: yes">                  </span>conforming to the 'C' naming
+        conventions (Starts with 'a-z', 'A-Z'<br>
+<span style="mso-spacerun: yes">                  </span>or '_', and contains only 'a-z',
+        'A-Z', '0-9' or '_').<br>
+        <br>
+<span style="mso-spacerun: yes">                     </span>Once<span style="mso-spacerun: yes">  </span>you<span style="mso-spacerun: yes">  </span>have<span style="mso-spacerun: yes">  </span>run<span style="mso-spacerun: yes">  </span>SINDEX,<span style="mso-spacerun: yes"> 
+</span>        you<span style="mso-spacerun: yes">  </span>must<span style="mso-spacerun: yes">  </span>manually<span style="mso-spacerun: yes">   </span>edit<span style="mso-spacerun: yes">   </span>the<br>
+<span style="mso-spacerun: yes">                  </span>EXTINDEX.LIB file, and remove any file
+        or symbol entries which you<br>
+<span style="mso-spacerun: yes">                  </span>do not wish to have available as
+        external references,<span style="mso-spacerun: yes">  </span>as well<span style="mso-spacerun: yes">  </span>as<br>
+<span style="mso-spacerun:
+yes">                  </span>insert any necessary entries for
+        '&lt;', '^', '&gt;' and '$' commands.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span><em><strong>9.7.1 Command line options</strong></em><br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>SINDEX accepts the
+        following command line options:<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>?<span style="mso-spacerun:
+yes">       </span>- Display
+        command line help summary.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>i=name<span style="mso-spacerun: yes">  </span>- Specify name
+        for index file to be written.<br>
+<span style="mso-spacerun: yes">                                  </span>Default
+        is &quot;EXTINDEX.LIB&quot;.<br>
+        <br>
+<span style="mso-spacerun: yes">                        </span>You may also instruct
+        SINDEX to search for<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun: yes">  </span>file<span style="mso-spacerun: yes">  </span>pattern<br>
+<span style="mso-spacerun: yes">                     </span>other than '*.ASM' by passing it
+        as a command line parameter.<br>
+        <br>
+<span style="mso-spacerun: yes">                                       
+</span>        eg: SINDEX *.AS1<br>
+        </font></td>
+    </tr>
+</table>
+<table width="605" border="0">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2">&quot;Converted by 
+        BiPOM Electronics to HTML format from original Micro C documentation by 
+        Dunfield Development Systems. Please see the Micro C documentation that 
+        is included with Micro C for the original forms of these pages.&quot;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,13 @@
+Program name:   MISSILE COMMAND
+Author:         David Makin & Stephen J Woolham
+Program type:   Arcade Game Simulation
+Supplied by:    Stephen J Woolham
+
+
+Notes:
+
+This game is best played on Paul Burgin's T3 DRAGON emulator at 150% - 180%
+emulation speed to simulate the DRAGON's double speed poke.
+
+
+

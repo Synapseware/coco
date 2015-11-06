@@ -1,0 +1,102 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1254">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>1.</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<table border="0">
+    <tr>
+        <td><font size="2" face="Arial"><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><span style="mso-spacerun: yes">    </span></span></font><span style="mso-fareast-font-family:&quot;MS Mincho&quot;"><a
+        name="1. INTRODUCTION"><font size="2" face="Arial"><strong>1.
+        INTRODUCTION</strong></font></a><font size="2"
+        face="Arial"><br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>MON51 is an interactive software<span style="mso-spacerun: yes">  </span>debugger<span style="mso-spacerun: yes"> 
+</span>        and<span style="mso-spacerun: yes">  </span>machine<span style="mso-spacerun: yes">  </span>language<br>
+<span style="mso-spacerun: yes">               </span>monitor for the Intel 8051 family<span style="mso-spacerun: yes">  </span>of<span style="mso-spacerun: yes">  </span>microprocessors.<span style="mso-spacerun: yes"> 
+</span>        It<span style="mso-spacerun: yes">  </span>contains<br>
+<span style="mso-spacerun:
+yes">               </span>display/alter memory/register facilities,<span style="mso-spacerun: yes">  </span>as
+        well<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>a<span style="mso-spacerun:
+yes">  </span>full<span style="mso-spacerun: yes">  </span>8051<br>
+<span style="mso-spacerun: yes">               </span>disassembler, breakpoint, and software
+        single step functions.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>MON51<span style="mso-spacerun: yes">  </span>requires<span style="mso-spacerun: yes">  </span>no<span style="mso-spacerun: yes">  </span>hardware<span style="mso-spacerun: yes">  </span>assist,<span style="mso-spacerun: yes"> 
+</span>        all<span style="mso-spacerun: yes">  </span>functions<span style="mso-spacerun: yes">   </span>including<br>
+<span style="mso-spacerun: yes">               </span>single-step are implemented in the MON51
+        firmware. MON51 communicates<br>
+<span style="mso-spacerun: yes">               </span>with<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>user<span style="mso-spacerun: yes">  </span>via<span style="mso-spacerun: yes">  </span>the<span style="mso-spacerun: yes">  </span>internal<span style="mso-spacerun: yes">  
+</span>        serial<span style="mso-spacerun: yes">   </span>port<span style="mso-spacerun: yes">   </span>of<span style="mso-spacerun: yes">   </span>the<span style="mso-spacerun: yes">   </span>8051<br>
+<span style="mso-spacerun: yes">               </span>microcontroller,<span style="mso-spacerun: yes">  </span>although the<span style="mso-spacerun:
+yes">  </span>RDCHR<span style="mso-spacerun: yes">  </span>and<span style="mso-spacerun: yes"> 
+</span>        WRCHR<span style="mso-spacerun: yes">  </span>subroutines<span style="mso-spacerun: yes">  </span>could<br>
+<span style="mso-spacerun: yes">               </span>easily be modified to support communications
+        through an external UART<br>
+<span style="mso-spacerun:
+yes">               </span>device.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>MON51 requires 80 bytes of external<span style="mso-spacerun: yes">  </span>read/write<span style="mso-spacerun: yes"> 
+</span>        memory,<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun: yes">  </span>its<br>
+<span style="mso-spacerun: yes">               </span>buffers and save areas,<span style="mso-spacerun: yes">  </span>and about 3700
+        bytes of ROM memory<span style="mso-spacerun: yes">  </span>for<span style="mso-spacerun:
+yes">  </span>the<br>
+<span style="mso-spacerun: yes">               </span>program.<span style="mso-spacerun: yes">  </span>If MON51 is placed in an 4K (2732
+        or compatable) rom,<span style="mso-spacerun: yes">  </span>this<br>
+<span style="mso-spacerun: yes">               </span>will leave over 300 bytes of space for user
+        I/O routines.<span style="mso-spacerun: yes">  </span>The<span style="mso-spacerun: yes">  </span>MON51<br>
+<span style="mso-spacerun: yes">               </span>rom must be at the bottom of the<span style="mso-spacerun: yes">  </span>8051<span style="mso-spacerun: yes">  </span>memory<span style="mso-spacerun: yes"> 
+</span>        map,<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>it<span style="mso-spacerun: yes">  </span>has<span style="mso-spacerun:
+yes">  </span>to<br>
+<span style="mso-spacerun: yes">               </span>control the 8051 interrupt vectors.<br>
+        <br>
+<span style="mso-spacerun: yes">                  </span>In order to be able to download and
+        set breakpoints, MON51 must be<br>
+<span style="mso-spacerun: yes">               </span>able to WRITE to the program memory.<span style="mso-spacerun: yes">  </span>Since<span style="mso-spacerun:
+yes"> 
+</span>        this<span style="mso-spacerun: yes">  </span>operation<span style="mso-spacerun: yes">  </span>is<span style="mso-spacerun: yes">  </span>not<br>
+<span style="mso-spacerun: yes">               </span>supported by the 8051 architecture when
+        using separate CODE and<span style="mso-spacerun: yes">  </span>DATA<br>
+<span style="mso-spacerun: yes">               </span>memory, the download area of RAM MUST BE
+        ADDRESSED BY THE HARDWARE AS<br>
+<span style="mso-spacerun: yes">               </span>BOTH CODE AND DATA! This can be accomplished
+        by ANDing the -PSEN<span style="mso-spacerun: yes">  </span>and<br>
+<span style="mso-spacerun: yes">               </span>-RD signals to generate the memory select.<br>
+        <br>
+<span style="mso-spacerun:
+yes">                  </span>MON51 preserves the entire contents of
+        registers and internal<span style="mso-spacerun: yes">  </span>RAM<br>
+<span style="mso-spacerun: yes">               </span>when passing control back and forth to the
+        user program.<span style="mso-spacerun: yes">  </span>This allows<br>
+<span style="mso-spacerun: yes">               </span>the user program to<span style="mso-spacerun: yes">  </span>operate<span style="mso-spacerun: yes">  </span>as<span style="mso-spacerun: yes">  </span>if<span style="mso-spacerun:
+yes">  </span>it<span style="mso-spacerun: yes"> 
+</span>        were<span style="mso-spacerun: yes">  </span>running<span style="mso-spacerun: yes">  </span>&quot;standalone&quot;<br>
+<span style="mso-spacerun: yes">               </span>without fear of conflicting with MON51.
+        TIMER1 of the 8051 is used by<br>
+<span style="mso-spacerun: yes">               </span>MON51 both as the baud rate generator for
+        serial communications,<span style="mso-spacerun: yes">  </span>and<br>
+<span style="mso-spacerun: yes">               </span>as a interrupt source when single stepping.<span style="mso-spacerun: yes"> 
+</span>        All other 8051<span style="mso-spacerun: yes">  </span>hardware<br>
+<span style="mso-spacerun: yes">               </span>is available to the user program.<br>
+</font></span>        </td>
+    </tr>
+</table>
+<table width="605" border="0">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><font face="Arial, Helvetica, sans-serif" size="2">&quot;Converted by 
+        BiPOM Electronics to HTML format from original Micro C documentation by 
+        Dunfield Development Systems. Please see the Micro C documentation that 
+        is included with Micro C for the original forms of these pages.&quot;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,618 @@
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page 12
+
+
+
+                                Using the Buffer
+    
+
+    All  routines that output from the buffer (tape, disk, printer, transmit
+    buffer, and XMODEM transmit) will use the start and end marks.   Reading
+    a  file  into  the buffer will automatically set the start and end marks
+    for that file.  However, if the buffer is marked later, these marks will
+    be honored instead.
+
+    For example:  A disk file is loaded into the buffer  for  upload.  It is
+    desired  to  leave the buffer open because a record of the session is to
+    be saved or printed.  This is permitted  with  MIKEYTERM.   The incoming
+    data  will  simply  be  appended to the end of the existing file in your
+    buffer.
+
+    The  best  part  is  that  the  end  mark won't be altered.  It is still
+    positioned to mark the end of the file that was loaded.   When  the time
+    comes to transmit or upload, only the file that was loaded will be sent,
+    and nothing more.
+
+    Whenever  you  exit  Communications mode, MIKEYTERM remembers all of the
+    parameters that you set, things  like  whether  word  wrap  was  on/off,
+    whether  the  buffer was opened or closed, your ENTIRE screen and cursor
+    position, etc.  When re-entering Communications, all of these parameters
+    will be restored, just as if you'd never left.
+
+    When in combat with the "Auto Halt" feature turned  ON,  (assuming  that
+    the  host  supports XON/XOFF protocol) the act of leaving Communications
+    will issue a control-S to the host  so  that  while  the  user  is  away
+    scanning  the  buffer  (or  any  other  function)  the  host  won't send
+    anything.  Upon returning to Communications mode, MIKEYTERM will  send a
+    control-Q  to  restart the host's transmission.  That way if any traffic
+    was pending, it will be sent at that time.  It is even possible  to exit
+    right  in  the  middle  of  a  line,  if  necessary.   When returning to
+    Communications, conditions will be restored to normal, just  as  if  the
+    exit had never occurred.  (It's a good idea to leave this feature OFF if
+    in doubt about your host.)
+    
+    
+                          What Is Saved In The Buffer
+    
+
+    Received  data that is to be saved in the buffer will be appended to any
+    existing buffer data.  Please  refer  to  the  section  on  "Marking the
+    Buffer" for further details.
+
+    When in 7-bit mode, all data received from the RS-232 interface will  go
+    into the buffer except:
+                
+                Linefeeds  (Hex 0A)
+                Control-R  (Hex 12)   (Open  buffer)
+                Control-T  (Hex 14)   (Close buffer)
+                Null       (Hex 00)
+                Rubout     (Hex 7F)
+                
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page 13
+
+
+
+    When in 8-BIT mode, everything received from the RS-232 port is saved in
+    the buffer if it is open.  Data sent from the keyboard is  not  saved in
+    the buffer in Communications mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page 14
+
+
+
+                                 D I S P L A Y
+    
+    
+                               Main Menu Option 2
+    
+    
+    
+
+    The  Display  mode is provided in order that users may view the contents
+    of the buffer.  The following commands are supported by MIKEYTERM:
+    
+
+    <T>op                 Move to the top of the buffer
+    
+
+    <B>ottom              Move to the bottom of the buffer
+    
+
+    <Down-arrow>          Move down one line
+    
+
+    <Up-arrow>            Move up one line
+    
+
+    <SHIFT>+<down-arrow>  Move down a full screen
+    
+
+    <SHIFT>+<up-arrow>    Move up 12 lines
+    
+
+    <P>rint               Print the  contents of the buffer.  If  a
+                          portion  of  the buffer has been  marked,
+                          then  only  that portion will be printed.
+    
+
+    <BREAK>               Return to MIKEYTERM's Main Menu.   If you
+                          are  printing, the <BREAK> will abort the
+                          print operation  and redisplay the screen
+                          from which printing was initiated.
+    
+
+    <spacebar>                 Return      to      Communications      mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page 15
+
+
+
+    <F>ind                Find  a  character  string in the buffer.
+                          You  will  be  prompted  for  a   "search
+                          string".   Type in  the  string  for  the
+                          search and hit <ENTER>.  Use upper and/or
+                          lower case as required.   The buffer will
+                          then be scanned  for the first occurrence
+                          of the search string.
+    
+                          When  found,    a  full  screen  will  be
+                          displayed   beginning  with  the   search
+                          string.   If  the  search string  is  not
+                          found,  the  screen from which the search
+                          was  initiated will  then be redisplayed.
+    
+
+    <N>ext                Find the next  occurrence  of the  search
+                          string  defined  previously  with the "F"
+                          function.   If another  occurrence of the
+                          string cannot be found,  then the current
+                          screen will be re-displayed.
+    
+    
+                   Marking the Buffer for Saving or Printing
+    
+
+    To mark a portion of the buffer, the Display mode must first be selected
+    from the Main Menu.  You may mark any portion of the  buffer  for output
+    to  disk,  tape,  or  printer.   While  there are no restrictions on the
+    nature of the data that can be marked, saving marked portions of  binary
+    data  (such  as  M/L  programs or compressed BASIC programs) may produce
+    undesirable and/or unpredictable results.   The  user  is  urged  to use
+    caution.
+
+    Here's how to mark the buffer.  Put the first line of the  start  of the
+    portion  you  wish to save on the screen somewhere using the up and down
+    arrow keys.  (Use the <SHIFT> also, if necessary.)  Push <M> for "MARK".
+    A  blue  cursor will appear at the upper left-hand corner of the screen.
+    Position the cursor at the START of the  line  of  the  portion  of  the
+    buffer  that  you  want  to  save,  then push <S> for "START".  The blue
+    cursor will then disappear and you'll hear a tone to inform you that the
+    mark was made. 
+
+    Now the end mark.  Use the up and down arrow keys (and  the  <SHIFT>, if
+    you choose) to put the last line of the chosen area on the screen.  Push
+    <M> for mark.  The blue cursor will be visible  again.   Place  it UNDER
+    the  last  line  of the portion that you wish to save, then push <E> for
+    "END".  The cursor will disappear and again you'll hear a tone to inform
+    you that the end point is now marked also.
+
+    NOTES:  You may mark EITHER the starting point or the ending point first
+            for the portion to be saved.
+
+
+
+
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page 16
+
+
+
+    Generally,  it's  best to mark the buffer ONLY if it contains pure ASCII
+    data.  Attempting to mark the start and/or end  points  of  binary files
+    (such  as M/L or compressed BASIC) is an approximation at best, and will
+    usually cause unpredictable and/or disastrous results!
+
+    Anytime  you push <M> for mark, the "word wrap" feature will be disabled
+    and the screen will be "unwrapped".  This means  that  the  lines within
+    the  buffer  will  "break"  at the right side of the screen, rather than
+    being formatted for 32 characters per line.  (This is necessary in order
+    to  let  you  mark  the buffer accurately.)  Don't let this concern you,
+    because all of your default parameters (including "word wrap")  will  be
+    restored  when  you  return to Communications.  In the meantime, you may
+    turn the "word wrap" function on and off (while you're in display  mode)
+    by pressing the <W>.
+
+    Now that the buffer has been marked, you may save the marked portion  of
+    the  buffer  to  disk  or tape, print it, or transmit it.  All functions
+    that output from the buffer (tape, disk, printer,  or  transmit  buffer)
+    use  the  start  and end marks.  If you never mark the buffer, the marks
+    will remain the same as the LOGICAL start and end of your buffer.   This
+    means  that  if you load a file into the buffer, the start and end marks
+    will be adjusted to reflect the true  start and end points  of  the file
+    that  you just loaded.  The file may then be saved, printed, (if approp-
+    riate) or transmitted.
+
+    However, if you sign-on to your favorite BBS, even with the buffer open,
+    YOU MUST MARK THE BUFFER before saving, printing,  or  transmitting  any
+    portion of the buffer.  If in doubt, it's ALWAYS best to mark the buffer
+    manually.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page 17
+
+
+
+                                   M O D E M
+    
+                               Main Menu Option 3
+    
+    
+    
+
+    This option is primarily designed to support the Radio Shack  Modem  II.
+    MIKEYTERM  will  program the Modem II to dial a phone number using "slow
+    rotary" dialing.  A 3 to 11 digit phone number may be  set  at  any time
+    using Main Menu Option 8.  (Change parms)
+
+    Those wishing to use the Hayes  SmartModem  may  enter  the  appropriate
+    command  string into the buffer using the "Buffer Entry" option from the
+    Main Menu.
+    
+        Example:  To dial a number using the Hayes' "TouchTone"
+                  method, use Main Menu Option 7 (Buffer Entry)
+                  to enter the string "AT DT 237-8113 <ENTER>" into
+                  the buffer in order to dial the local phone
+                  number of 237-8113.  (Without quotes, of course.)
+
+    After  entering Communications, a control-9 will send the command string
+    to the SmartModem.
+
+    A  more  reasonable  alternative  is  the use of the "CNFG47" program to
+    define one of the function keys with the required command string,  which
+    can then be used to send the string to the Hayes SmartModems.
+    
+    
+    
+    
+    
+                            R E S E T   B U F F E R
+    
+                               Main Menu Option 4
+    
+    
+    
+
+    Choosing <4> at the Main  Menu  will  allow  the  entire  buffer  to  be
+    cleared.  This action will make available the full buffer capacity.
+
+    You will be asked to verify that you REALLY want to  erase  the  buffer.
+    Anything  besides  a  "Y"  will  abort  the  operation.   The  buffer is
+    automatically cleared before loading files from disk or tape.
+
+    The  amount  of  used  and  free  buffer space is displayed (in decimal)
+    whenever the Main Menu is selected.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page 18
+
+
+
+                            T A P E   U T I L I T Y
+    
+                               Main Menu Option 5
+    
+    
+    
+
+    This portion of MIKEYTERM is provided for those who  wish  to  use  tape
+    I/O.  It is menu-driven for simplicity of operation.
+
+    MIKEYTERM will read most common tape files into  the  buffer,  and  will
+    write  files  to tape in either ASCII or binary format.  The buffer will
+    be automatically cleared before the file is loaded.
+
+    It's usually convenient to position the tape to be read at the beginning
+    of the file  However, loading of a cassette file  may  begin practically
+    anywhere on the tape because a general purpose routine is used to locate
+    the start of the file.
+
+    To  use the tape utility portion of MIKEYTERM, hit <5> at the Main Menu.
+    You'll be asked if you want to:
+    
+        [1]  Read a tape into MIKEYTERM's buffer, or
+        [2]  Write the buffer (or a marked portion) to tape. 
+
+    Choose  whichever option is appropriate.  <BREAK> will return you to the
+    Main Menu.
+
+    If writing the buffer to tape, you'll be prompted for the file type:
+    
+        [1]  ASCII, or
+        [2]  Binary
+
+    Again choose whichever type is appropriate to  your  situation.  If  you
+    choose  [2],  you'll be given the opportunity to supply the starting and
+    execute addresses (in hexadecimal) that will be written to  tape.   This
+    is  necessary  because  MIKEYTERM has no way of knowing this information
+    following a file transfer.  If you merely  press  <ENTER>,  binary files
+    written  to  cassette will be given start and execute addresses of zero.
+    (The user should use whatever offset is  appropriate  when  loading  the
+    tape from BASIC.)
+
+    You'll then be prompted to prepare your cassette machine.   Hit  <ENTER>
+    whenever you're ready.
+
+    MIKEYTERM writes "gapped" files to  tape.   The  starting  and  stopping
+    motion  that  you may notice from your cassette recorder is normal while
+    MIKEYTERM is writing the buffer to tape.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page 19
+
+
+
+                            D I S K    U T I L I T Y
+    
+                               Main Menu Option 6
+    
+    
+    
+
+    The disk utility portion of MIKEYTERM is also menu-driven  in  order  to
+    make  it  friendly  and easy to use, as well as to provide the user with
+    good error recovery and descriptive messages.  It was provided  to allow
+    MIKEYTERM's  users to read files from disk into the buffer, save to disk
+    from the buffer, and obtain disk directory  displays.   All  drives  are
+    supported.
+
+    A directory display (in two-column format) can be obtained  by  entering
+    the drive number in response to the "FILENAME?" prompt.  Free disk space
+    is also indicated.   After  the  directory  is  displayed,  you  will be
+    re-prompted for the filename.
+
+    There are no restrictions on the filename as long as you  use  at  least
+    two characters.  (One character entries are interpreted as drive numbers
+    for  purposes  of  obtaining  directory  displays.)  Use  upper   and/or
+    lowercase characters as appropriate.
+
+    The default extension is TXT.   If  a  blank  extension  is  desired for
+    reading  or  writing a file, use a "/" after the filename followed by an
+    <ENTER> at the "FILENAME?" prompt.
+
+        Example: TESTFILE/<ENTER>  or  TESTFILE/:1<ENTER>
+
+    A drive number may be appended to the filename if a drive other than the
+    current  default  drive  is  to  be used.  It must be separated from the
+    extension with a colon.
+
+        Example: TESTFILE/TXT:1<ENTER>
+
+    The data in the buffer (or a marked portion) may be written to  disk  as
+    any file type you choose.  When a disk file is read into the buffer, the
+    file type is displayed.  Note that the buffer  is  automatically cleared
+    before loading a file.
+
+    Rewriting an existing disk file is  permitted  by  MIKEYTERM.   However,
+    you'll  be  notified that the file already exists, and asked if you want
+    to overwrite it.  If you respond with a  "Y",  the  file  will  be over-
+    written.  Any other response will abort the operation.
+
+    The <BREAK> key will abort any operation except actual disk  I/O.   When
+    in doubt, use it and start over.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page 20
+
+
+
+                        Disk and Tape File Compatability
+    
+    
+    
+
+    Only  ASCII  files  can be freely transferred from tape to disk and vice
+    versa.  However, transfer of any file  type  from  disk  to  disk  is no
+    problem with MIKEYTERM.
+
+    The following file types are supported when saving the buffer  to  disk.
+    They   are   menu-selectable  from  within  MIKEYTERM's  "Disk  Utility"
+    function.
+    
+                     (1)  BASIC program / ASCII format
+                     (2)  BASIC program / Compressed (binary) format
+                     (3)  Machine language program
+                     (4)  Data / ASCII
+                     (5)  Data / Binary
+
+    You  may  save  the data in your buffer (or any portion of it) in ANY of
+    the above formats.  No checks are ever performed on the contents  of the
+    buffer regarding data type.  This makes it possible to transmit any type
+    of disk file to another user of MIKEYTERM as long as the sender loads it
+    from  disk  and the receiver saves it on disk as the same file type that
+    the sender transmitted.
+
+    Machine  language  programs  loaded  from disk will have their start and
+    execute addresses preserved, as well as  the  file  length.   Compressed
+    BASIC programs will also function normally.
+
+    This also makes it possible to save your buffer data as  something  that
+    it  is  not.   For  example,  you  may  save ASCII data files as machine
+    language programs if you wish.  MIKEYTERM will be able to  read  it, but
+    BASIC may not.
+
+    NOTE:  These features of MIKEYTERM are extremely flexible, and the user
+           is cautioned to exercise due care in their use.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   MIKEYTERM Users Manual               Version 4.7                  Page 21
+
+
+
+                            A Caution For Tape Users
+    
+
+    Because of differing file types, disk files in M/L format  will  require
+    conversion  to  CoCo  tape  format  before they may be saved to tape.  A
+    utility program, TAPCNV, is supplied on the distribution disk  for  this
+    purpose.
+
+    Specifically, M/L programs known to have been submitted IN  DISK  FORMAT
+    to  CompuServe  or  BBS's  will require conversion before being saved to
+    tape in a usable form.  This is due to a  basic  incompatibility between
+    the two file types, (disk versus tape) and is NOT a consequence of using
+    MIKEYTERM and/or XMODEM.
+
+    Simply  type  CLOADM  "TAPCNV":EXEC  and  follow  the program prompts to
+    convert any  M/L tape  files  that  you've  downloaded  into  the proper
+    format for tape systems.
+t

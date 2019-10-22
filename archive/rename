@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+MATCH="&amp;"
+REPL="&"
+
+while read -r name
+do
+
+	rename=${name//$MATCH/$REPL}
+	if [ ! -f "$rename" ]; then
+		mv -v "$name" "$rename"
+	fi
+
+done < "./rename.dat"
+

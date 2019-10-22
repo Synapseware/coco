@@ -9,6 +9,7 @@ low.txt
 high.txt
 TcfTransactionLog.csv
 **.directory
+**/.DS_Store
 
 #Ignore AVR Studio and Visual Studio files
 [Dd]ebug/
